@@ -1,0 +1,7 @@
+<map id="SpiMaster.h" name="SpiMaster.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="5,80,64,107" />
+<area shape="rect" href="$_barometer_8c.html" title="Driver for the barometer sensor. " alt="" coords="88,80,181,107" />
+<area shape="rect" href="$_dac_8c.html" title="Driver for the DAC. " alt="" coords="205,80,261,107" />
+<area shape="rect" href="$_gyroscope_8c.html" title="Driver for the gyroscope sensor. " alt="" coords="285,80,381,107" />
+<area shape="rect" href="$_spi_master_8c.html" title="SPI Master Module. " alt="" coords="405,80,496,107" />
+</map>

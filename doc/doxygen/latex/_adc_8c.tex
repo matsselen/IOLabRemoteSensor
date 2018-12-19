@@ -1,0 +1,826 @@
+\hypertarget{_adc_8c}{\section{Adc.\-c File Reference}
+\label{_adc_8c}\index{Adc.\-c@{Adc.\-c}}
+}
+
+
+Analog-\/to-\/digital conversion module driver.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Adc.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Event\-Queue.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+Include dependency graph for Adc.\-c\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_adc_8c_struct_adc_calibration_info__t}{Adc\-Calibration\-Info\-\_\-t}
+\item 
+struct \hyperlink{_adc_8c_struct_adc_reference_calibration_info__t}{Adc\-Reference\-Calibration\-Info\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_adc_8c_a3fe891ff1171ff2d3d53393ad06cfb68}{A\-D\-C\-\_\-\-M\-A\-X\-\_\-\-R\-E\-S\-U\-L\-T}~(4095u)
+\item 
+\#define \hyperlink{_adc_8c_a6da9d6f60495f087b317dcf0c0acd085}{A\-D\-C\-\_\-\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}~(256)
+\item 
+\#define \hyperlink{_adc_8c_abad1a0eb2456fa57969581c4ea05bed8}{A\-D\-C\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H}~(16u)
+\item 
+\#define \hyperlink{_adc_8c_abb01a1630fecb54d3ec480a859412cb9}{A\-D\-C\-\_\-\-R\-E\-F\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H}~(6u)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_adc_8c_a134691b10b538ea12ffb694ca7109607}{Adc\-Cal\-Info\-Result\-\_\-t} \{ \\*
+{\bfseries Adc\-Cal\-Info\-Result\-\_\-\-F\-A\-I\-L\-U\-R\-E}, 
+\\*
+{\bfseries Adc\-Cal\-Info\-Result\-\_\-\-S\-U\-C\-C\-E\-S\-S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_adc_8c_ad41a7943b5c26fbe607328388a72bfa3}{\-\_\-\-Move\-Samples\-To\-User\-Location} (void)
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{_adc_8c_a349938431b6c84cf2227ad3d102c5e08}{\-\_\-\-Adc\-Isr} (void)
+\item 
+static \hyperlink{_adc_8c_a134691b10b538ea12ffb694ca7109607}{Adc\-Cal\-Info\-Result\-\_\-t} \hyperlink{_adc_8c_a5501d5342b5fe5f3e9742e7340cf2b1a}{\-\_\-\-Get\-Adc\-Calibration\-Info} (\hyperlink{_adc_8c_struct_adc_calibration_info__t}{Adc\-Calibration\-Info\-\_\-t} $\ast$cal\-Info)
+\item 
+static \hyperlink{_adc_8c_a134691b10b538ea12ffb694ca7109607}{Adc\-Cal\-Info\-Result\-\_\-t} \hyperlink{_adc_8c_a85bdfc5285f049b4d00c840fef33af58}{\-\_\-\-Get\-Reference\-Calibration\-Info} (\hyperlink{_adc_8c_struct_adc_reference_calibration_info__t}{Adc\-Reference\-Calibration\-Info\-\_\-t} $\ast$cal\-Info)
+\item 
+void \hyperlink{_adc_8c_ad5f7fb41187df370fba496edbf10778d}{Adc\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_adc_8c_aeb038bcf326000ca3a320d29351100a3}{Adc\-\_\-\-Config} (const \hyperlink{_adc_8h_struct_adc_config__t}{Adc\-Config\-\_\-t} $\ast$config)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_adc_8c_a6f94bbae1b16f5347055058a72896411}{Adc\-\_\-\-Is\-Conversion\-In\-Progress} (void)
+\item 
+void \hyperlink{_adc_8c_a8201a8154546752a07f766fa604c77d1}{Adc\-\_\-\-Set\-Channel\-Sequence} (const \hyperlink{_adc_8h_struct_adc_channel_config__t}{Adc\-Channel\-Config\-\_\-t} config\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} num\-Channels, \hyperlink{_adc_8h_ab065ea6cd1f92b1b545afa593ff38d9a}{Adc\-Reference\-Level\-\_\-t} ref\-Level)
+\item 
+void \hyperlink{_adc_8c_adc40c1d1983f3470f32d9d2b6f999285}{Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels} (void)
+\item 
+void \hyperlink{_adc_8c_afe5cd10dd67ef2ad4ade4f71a6ada010}{Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking} (void)
+\item 
+void \hyperlink{_adc_8c_a48bd94f6c7b5c13bae12ee2ae824145b}{Adc\-\_\-\-Stop\-Conversion} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_8c_ae5b5233dec820cd89c8ee46ad8266cde}{Adc\-\_\-\-Get\-Number\-Of\-Conversions} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_8c_a0842a80966234b58516235a957b58083}{Adc\-\_\-\-Get\-Gain\-Factor} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_8c_ada428cf10ffb15cbb03e1ea5daa36786}{Adc\-\_\-\-Get\-Offset} (void)
+\item 
+void \hyperlink{_adc_8c_ab5bb9ded6c4d0124cb23c44d21109009}{Adc\-\_\-\-Get\-Temp\-Calib} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$cal85\-C, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$cal30\-C)
+\item 
+\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} \hyperlink{_adc_8c_a44545a68fa78a91a8e872863c0670522}{Adc\-\_\-\-Convert\-Value\-To\-Temp} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_adc_8c_a0a024b2fd783988c7108d17c5532b09b}{Adc\-\_\-\-Apply\-Correction} (\hyperlink{_adc_8h_a0f342edd236961c0bb82dd65c84b910b}{Adc\-Correction\-\_\-t} correction, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} num\-Values\-To\-Correct, const \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} raw\-Values\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} corrected\-Values\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_adc_8c_a92eaaf19cc914d995fb9c256861d5af6}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_adc_8c_ad9452ac0b5fe2afc071675347e6fd157}{\-\_\-conversion\-In\-Progress} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$ \hyperlink{_adc_8c_ab4a4fd4c90ae77158d896d2cd527f299}{\-\_\-result\-Destinations} \mbox{[}\hyperlink{_adc_8h_ad35edd6ae5973b68a467def2a430462e}{A\-D\-C\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_8c_aff8af90bb6359ac2ac009af4321f167d}{\-\_\-num\-Channels\-Configured} = 0u
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_adc_8c_a1e627de14f7d885d6ad06261b732882a}{\-\_\-use\-Temp\-Sensor} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_adc_8c_acfe84b0b860b2313bce3a0361eb24adc}{\-\_\-use\-Internal\-Reference} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_adc_8h_ab065ea6cd1f92b1b545afa593ff38d9a}{Adc\-Reference\-Level\-\_\-t} \hyperlink{_adc_8c_ac89c23e26efc32cdc3607f0b21f601e6}{\-\_\-selected\-Reference\-Level} = Adc\-Reference\-Level\-\_\-1p5\-\_\-\-V\-O\-L\-T\-S
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_8c_a2433521b8b10790808b129d28e6a3d10}{\-\_\-number\-Of\-Conversions} = 0u
+\item 
+static \hyperlink{_adc_8c_struct_adc_calibration_info__t}{Adc\-Calibration\-Info\-\_\-t} \hyperlink{_adc_8c_ad49c36821ae9dcacd8ec839385dd8d4b}{\-\_\-adc\-Calibration\-Info}
+\item 
+static \\*
+\hyperlink{_adc_8c_struct_adc_reference_calibration_info__t}{Adc\-Reference\-Calibration\-Info\-\_\-t} \hyperlink{_adc_8c_a5b6fc0e53414202198ccfe97b2815dd8}{\-\_\-ref\-Calibration\-Info}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_8c_a8ca3bd83accb79971bf4ba9a2f4007d7}{\-\_\-temperature\-Gain\-Factor\-Ref15\-V} = 0u
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_8c_ab171a027f58e4a7295193b5eb7cee1e6}{\-\_\-temperature\-Gain\-Factor\-Ref20\-V} = 0u
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_8c_ad6cadfa7ac3fef55ec76480717702619}{\-\_\-temperature\-Gain\-Factor\-Ref25\-V} = 0u
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Analog-\/to-\/digital conversion module driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This module provides functions to setup and operate the 12-\/bit A\-D\-C hardware on the M\-S\-P430. 
+
+Definition in file \hyperlink{_adc_8c_source}{Adc.\-c}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Adc\-Calibration\-Info\-\_\-t@{Adc\-Calibration\-Info\-\_\-t}}\label{struct_adc_calibration_info__t}
+\hypertarget{_adc_8c_struct_adc_calibration_info__t}{}
+\subsubsection{struct Adc\-Calibration\-Info\-\_\-t}
+Structure to hold the A\-D\-C calibration info 
+
+Definition at line 45 of file Adc.\-c.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_adc_8c_a999d037cccba5fe22509aebbcdead954}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_a999d037cccba5fe22509aebbcdead954}
+&
+gain\-Factor&
+\\
+\hline
+
+\hypertarget{_adc_8c_a59f874d10bf763992bd4b427fdb7f0cd}{\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t}}\label{_adc_8c_a59f874d10bf763992bd4b427fdb7f0cd}
+&
+offset&
+\\
+\hline
+
+\hypertarget{_adc_8c_ae1881bd30fdccd7a3eaf7c89cd179929}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_ae1881bd30fdccd7a3eaf7c89cd179929}
+&
+temp30\-Ref15\-V&
+\\
+\hline
+
+\hypertarget{_adc_8c_a525ebcdb248ab202cf8e8fcf825ad8f1}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_a525ebcdb248ab202cf8e8fcf825ad8f1}
+&
+temp30\-Ref20\-V&
+\\
+\hline
+
+\hypertarget{_adc_8c_a8b2f4d8b29608186d4d2196fdeb6c181}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_a8b2f4d8b29608186d4d2196fdeb6c181}
+&
+temp30\-Ref25\-V&
+\\
+\hline
+
+\hypertarget{_adc_8c_a99aaad1b4c280ab7a866ddc80353dbdf}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_a99aaad1b4c280ab7a866ddc80353dbdf}
+&
+temp85\-Ref15\-V&
+\\
+\hline
+
+\hypertarget{_adc_8c_a8cdda50992a0eab696b7bb14d7e0dd70}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_a8cdda50992a0eab696b7bb14d7e0dd70}
+&
+temp85\-Ref20\-V&
+\\
+\hline
+
+\hypertarget{_adc_8c_a334a88fc1db5f378d738b256a9f81695}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_a334a88fc1db5f378d738b256a9f81695}
+&
+temp85\-Ref25\-V&
+\\
+\hline
+
+\end{DoxyFields}
+\index{Adc\-Reference\-Calibration\-Info\-\_\-t@{Adc\-Reference\-Calibration\-Info\-\_\-t}}\label{struct_adc_reference_calibration_info__t}
+\hypertarget{_adc_8c_struct_adc_reference_calibration_info__t}{}
+\subsubsection{struct Adc\-Reference\-Calibration\-Info\-\_\-t}
+Structure to hold the internal voltage reference calibration info 
+
+Definition at line 58 of file Adc.\-c.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_adc_8c_a08dd7d7df0be6068434590f3d9a741a7}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_a08dd7d7df0be6068434590f3d9a741a7}
+&
+ref15\-V\-Factor&
+\\
+\hline
+
+\hypertarget{_adc_8c_a8c3f7fa4a0aab66c3fcbbf5a388e90b8}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_a8c3f7fa4a0aab66c3fcbbf5a388e90b8}
+&
+ref20\-V\-Factor&
+\\
+\hline
+
+\hypertarget{_adc_8c_a4e3f841703120ea71fe694ed7553c74e}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_adc_8c_a4e3f841703120ea71fe694ed7553c74e}
+&
+ref25\-V\-Factor&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_adc_8c_abad1a0eb2456fa57969581c4ea05bed8}{\index{Adc.\-c@{Adc.\-c}!A\-D\-C\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H@{A\-D\-C\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{A\-D\-C\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H@{A\-D\-C\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H}!Adc.c@{Adc.\-c}}
+\subsubsection[{A\-D\-C\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-C\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H~(16u)}}\label{_adc_8c_abad1a0eb2456fa57969581c4ea05bed8}
+Length (in bytes) of the A\-D\-C12 calibration section in the T\-L\-V structure 
+
+Definition at line 40 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Get\-Adc\-Calibration\-Info().
+
+\hypertarget{_adc_8c_a3fe891ff1171ff2d3d53393ad06cfb68}{\index{Adc.\-c@{Adc.\-c}!A\-D\-C\-\_\-\-M\-A\-X\-\_\-\-R\-E\-S\-U\-L\-T@{A\-D\-C\-\_\-\-M\-A\-X\-\_\-\-R\-E\-S\-U\-L\-T}}
+\index{A\-D\-C\-\_\-\-M\-A\-X\-\_\-\-R\-E\-S\-U\-L\-T@{A\-D\-C\-\_\-\-M\-A\-X\-\_\-\-R\-E\-S\-U\-L\-T}!Adc.c@{Adc.\-c}}
+\subsubsection[{A\-D\-C\-\_\-\-M\-A\-X\-\_\-\-R\-E\-S\-U\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-C\-\_\-\-M\-A\-X\-\_\-\-R\-E\-S\-U\-L\-T~(4095u)}}\label{_adc_8c_a3fe891ff1171ff2d3d53393ad06cfb68}
+Maximum value of an A\-D\-C result 
+
+Definition at line 34 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Apply\-Correction(), and Adc\-\_\-\-Convert\-Value\-To\-Temp().
+
+\hypertarget{_adc_8c_abb01a1630fecb54d3ec480a859412cb9}{\index{Adc.\-c@{Adc.\-c}!A\-D\-C\-\_\-\-R\-E\-F\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H@{A\-D\-C\-\_\-\-R\-E\-F\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{A\-D\-C\-\_\-\-R\-E\-F\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H@{A\-D\-C\-\_\-\-R\-E\-F\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H}!Adc.c@{Adc.\-c}}
+\subsubsection[{A\-D\-C\-\_\-\-R\-E\-F\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-C\-\_\-\-R\-E\-F\-\_\-\-C\-A\-L\-\_\-\-T\-L\-V\-\_\-\-L\-E\-N\-G\-T\-H~(6u)}}\label{_adc_8c_abb01a1630fecb54d3ec480a859412cb9}
+Length (in bytes) of the R\-E\-F calibration section in the T\-L\-V structure 
+
+Definition at line 42 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Get\-Reference\-Calibration\-Info().
+
+\hypertarget{_adc_8c_a6da9d6f60495f087b317dcf0c0acd085}{\index{Adc.\-c@{Adc.\-c}!A\-D\-C\-\_\-\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R@{A\-D\-C\-\_\-\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}}
+\index{A\-D\-C\-\_\-\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R@{A\-D\-C\-\_\-\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}!Adc.c@{Adc.\-c}}
+\subsubsection[{A\-D\-C\-\_\-\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-C\-\_\-\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R~(256)}}\label{_adc_8c_a6da9d6f60495f087b317dcf0c0acd085}
+Scale factor used to improve accuracy in temperature calculations 
+
+Definition at line 37 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Convert\-Value\-To\-Temp(), and Adc\-\_\-\-Init().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_adc_8c_a134691b10b538ea12ffb694ca7109607}{\index{Adc.\-c@{Adc.\-c}!Adc\-Cal\-Info\-Result\-\_\-t@{Adc\-Cal\-Info\-Result\-\_\-t}}
+\index{Adc\-Cal\-Info\-Result\-\_\-t@{Adc\-Cal\-Info\-Result\-\_\-t}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-Cal\-Info\-Result\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Adc\-Cal\-Info\-Result\-\_\-t}}}\label{_adc_8c_a134691b10b538ea12ffb694ca7109607}
+Possible results when getting the A\-D\-C calibration info 
+
+Definition at line 66 of file Adc.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_adc_8c_a349938431b6c84cf2227ad3d102c5e08}{\index{Adc.\-c@{Adc.\-c}!\-\_\-\-Adc\-Isr@{\-\_\-\-Adc\-Isr}}
+\index{\-\_\-\-Adc\-Isr@{\-\_\-\-Adc\-Isr}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-\-Adc\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void \-\_\-\-Adc\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_a349938431b6c84cf2227ad3d102c5e08}
+Interrupt handler for the A\-D\-C12 interrupt. 
+
+Definition at line 726 of file Adc.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_adc_8c_a5501d5342b5fe5f3e9742e7340cf2b1a}{\index{Adc.\-c@{Adc.\-c}!\-\_\-\-Get\-Adc\-Calibration\-Info@{\-\_\-\-Get\-Adc\-Calibration\-Info}}
+\index{\-\_\-\-Get\-Adc\-Calibration\-Info@{\-\_\-\-Get\-Adc\-Calibration\-Info}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-\-Get\-Adc\-Calibration\-Info}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Adc\-Cal\-Info\-Result\-\_\-t} \-\_\-\-Get\-Adc\-Calibration\-Info (
+\begin{DoxyParamCaption}
+\item[{{\bf Adc\-Calibration\-Info\-\_\-t} $\ast$}]{cal\-Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_a5501d5342b5fe5f3e9742e7340cf2b1a}
+Get the A\-D\-C calibration info out of the T\-L\-V (tag-\/length-\/value) device descriptors structure.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em cal\-Info} & -\/ Pointer to structure where the calibration info should be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adc\-Cal\-Info\-Result\-\_\-\-S\-U\-C\-C\-E\-S\-S if calibration info is found. Otherwise, Adc\-Cal\-Info\-Result\-\_\-\-F\-A\-I\-L\-U\-R\-E. 
+\end{DoxyReturn}
+
+
+Definition at line 794 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_a85bdfc5285f049b4d00c840fef33af58}{\index{Adc.\-c@{Adc.\-c}!\-\_\-\-Get\-Reference\-Calibration\-Info@{\-\_\-\-Get\-Reference\-Calibration\-Info}}
+\index{\-\_\-\-Get\-Reference\-Calibration\-Info@{\-\_\-\-Get\-Reference\-Calibration\-Info}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-\-Get\-Reference\-Calibration\-Info}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Adc\-Cal\-Info\-Result\-\_\-t} \-\_\-\-Get\-Reference\-Calibration\-Info (
+\begin{DoxyParamCaption}
+\item[{{\bf Adc\-Reference\-Calibration\-Info\-\_\-t} $\ast$}]{cal\-Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_a85bdfc5285f049b4d00c840fef33af58}
+Get the internal voltage referenced calibration info out of the T\-L\-V (tag-\/length-\/value) device descriptors structure.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em cal\-Info} & -\/ Pointer to structure where the calibration info should be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adc\-Cal\-Info\-Result\-\_\-\-S\-U\-C\-C\-E\-S\-S if calibration info is found. Otherwise, Adc\-Cal\-Info\-Result\-\_\-\-F\-A\-I\-L\-U\-R\-E. 
+\end{DoxyReturn}
+
+
+Definition at line 905 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_ad41a7943b5c26fbe607328388a72bfa3}{\index{Adc.\-c@{Adc.\-c}!\-\_\-\-Move\-Samples\-To\-User\-Location@{\-\_\-\-Move\-Samples\-To\-User\-Location}}
+\index{\-\_\-\-Move\-Samples\-To\-User\-Location@{\-\_\-\-Move\-Samples\-To\-User\-Location}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-\-Move\-Samples\-To\-User\-Location}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Move\-Samples\-To\-User\-Location (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_ad41a7943b5c26fbe607328388a72bfa3}
+Moves the samples from the sample buffer to the user memory locations. 
+
+Definition at line 452 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_a0a024b2fd783988c7108d17c5532b09b}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Apply\-Correction@{Adc\-\_\-\-Apply\-Correction}}
+\index{Adc\-\_\-\-Apply\-Correction@{Adc\-\_\-\-Apply\-Correction}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Apply\-Correction}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-\_\-\-Apply\-Correction (
+\begin{DoxyParamCaption}
+\item[{{\bf Adc\-Correction\-\_\-t}}]{correction, }
+\item[{{\bf uint16\-\_\-t}}]{num\-Values\-To\-Correct, }
+\item[{const {\bf uint16\-\_\-t}}]{raw\-Values\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint16\-\_\-t}}]{corrected\-Values\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_a0a024b2fd783988c7108d17c5532b09b}
+Applies the given correction to A\-D\-C raw values. These corrections are based on the A\-D\-C and internal voltage reference (R\-E\-F) calibration values.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em correction} & -\/ Correction to perform. \\
+\hline
+\mbox{\tt in}  & {\em num\-Values\-To\-Correct} & -\/ Number of values to correct. \\
+\hline
+\mbox{\tt in}  & {\em raw\-Values} & -\/ Raw A\-D\-C values to correct. \\
+\hline
+\mbox{\tt out}  & {\em corrected\-Values} & -\/ Corrected A\-D\-C values. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 645 of file Adc.\-c.
+
+\hypertarget{_adc_8c_aeb038bcf326000ca3a320d29351100a3}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Config@{Adc\-\_\-\-Config}}
+\index{Adc\-\_\-\-Config@{Adc\-\_\-\-Config}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-\_\-\-Config (
+\begin{DoxyParamCaption}
+\item[{const {\bf Adc\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_aeb038bcf326000ca3a320d29351100a3}
+Configures the A\-D\-C module to use the specific A\-D\-C global configuration settings
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ Configuration information for the A\-D\-C module \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 195 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Setup\-Adc\-For\-Normal\-Mode(), Adc\-\_\-\-Init(), and Adc\-Manager\-\_\-\-Enable\-Channel().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_a44545a68fa78a91a8e872863c0670522}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Convert\-Value\-To\-Temp@{Adc\-\_\-\-Convert\-Value\-To\-Temp}}
+\index{Adc\-\_\-\-Convert\-Value\-To\-Temp@{Adc\-\_\-\-Convert\-Value\-To\-Temp}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Convert\-Value\-To\-Temp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int16\-\_\-t} Adc\-\_\-\-Convert\-Value\-To\-Temp (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_a44545a68fa78a91a8e872863c0670522}
+Converts an A\-D\-C raw value to a temperature in degrees Celsius.
+
+The raw A\-D\-C value should not be corrected in any way before being passed to this function, as the calibration values used to perform the conversion take the other corrections into account.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & -\/ Raw A\-D\-C value to convert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The temperature in degrees Celsius. 
+\end{DoxyReturn}
+
+
+Definition at line 557 of file Adc.\-c.
+
+\hypertarget{_adc_8c_a0842a80966234b58516235a957b58083}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Get\-Gain\-Factor@{Adc\-\_\-\-Get\-Gain\-Factor}}
+\index{Adc\-\_\-\-Get\-Gain\-Factor@{Adc\-\_\-\-Get\-Gain\-Factor}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Get\-Gain\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Adc\-\_\-\-Get\-Gain\-Factor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_a0842a80966234b58516235a957b58083}
+Gets the A\-D\-C gain factor that can be used to scale the A\-D\-C readings for higher accuracy.
+
+\begin{DoxyReturn}{Returns}
+The A\-D\-C gain factor 
+\end{DoxyReturn}
+
+
+Definition at line 492 of file Adc.\-c.
+
+
+
+Referenced by Adc\-Manager\-\_\-\-Get\-Gain\-Factor().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_ae5b5233dec820cd89c8ee46ad8266cde}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Get\-Number\-Of\-Conversions@{Adc\-\_\-\-Get\-Number\-Of\-Conversions}}
+\index{Adc\-\_\-\-Get\-Number\-Of\-Conversions@{Adc\-\_\-\-Get\-Number\-Of\-Conversions}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Get\-Number\-Of\-Conversions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Adc\-\_\-\-Get\-Number\-Of\-Conversions (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_ae5b5233dec820cd89c8ee46ad8266cde}
+Returns the number of conversions that have occurred since this function was last called. 
+
+Definition at line 443 of file Adc.\-c.
+
+
+
+Referenced by Adc\-Manager\-\_\-\-Process\-Conversion().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_ada428cf10ffb15cbb03e1ea5daa36786}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Get\-Offset@{Adc\-\_\-\-Get\-Offset}}
+\index{Adc\-\_\-\-Get\-Offset@{Adc\-\_\-\-Get\-Offset}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Get\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Adc\-\_\-\-Get\-Offset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_ada428cf10ffb15cbb03e1ea5daa36786}
+Gets the A\-D\-C offset that can be used to shift the A\-D\-C readings for higher accuracy.
+
+\begin{DoxyReturn}{Returns}
+The A\-D\-C offset 
+\end{DoxyReturn}
+
+
+Definition at line 505 of file Adc.\-c.
+
+
+
+Referenced by Adc\-Manager\-\_\-\-Get\-Offset().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_ab5bb9ded6c4d0124cb23c44d21109009}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Get\-Temp\-Calib@{Adc\-\_\-\-Get\-Temp\-Calib}}
+\index{Adc\-\_\-\-Get\-Temp\-Calib@{Adc\-\_\-\-Get\-Temp\-Calib}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Get\-Temp\-Calib}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-\_\-\-Get\-Temp\-Calib (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t} $\ast$}]{cal85\-C, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{cal30\-C}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_ab5bb9ded6c4d0124cb23c44d21109009}
+Gets the A\-D\-C calibration that is used for temperature conversion for more accurate readings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em cal85\-C} & -\/ the calibration value at 85°\-C \\
+\hline
+\mbox{\tt out}  & {\em cal30\-C} & -\/ the calibration value at 30°\-C \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 519 of file Adc.\-c.
+
+
+
+Referenced by Thermometer\-Control\-\_\-\-Read\-Calibration().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_ad5f7fb41187df370fba496edbf10778d}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Init@{Adc\-\_\-\-Init}}
+\index{Adc\-\_\-\-Init@{Adc\-\_\-\-Init}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_ad5f7fb41187df370fba496edbf10778d}
+This function initializes the A\-D\-C variables.
+
+Each channel is sampled for about 3 microseconds. Each conversion (sample time + conversion time) takes about 6 microseconds.
+
+\begin{DoxyNote}{Note}
+The reference voltage takes 75 microseconds to settle (typical) and the temperature sensor, which is sourced by the reference voltage, requires a minimum sampling time of 30 microseconds. 
+\end{DoxyNote}
+
+
+Definition at line 144 of file Adc.\-c.
+
+
+
+Referenced by Adc\-Manager\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_a6f94bbae1b16f5347055058a72896411}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Is\-Conversion\-In\-Progress@{Adc\-\_\-\-Is\-Conversion\-In\-Progress}}
+\index{Adc\-\_\-\-Is\-Conversion\-In\-Progress@{Adc\-\_\-\-Is\-Conversion\-In\-Progress}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Is\-Conversion\-In\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Adc\-\_\-\-Is\-Conversion\-In\-Progress (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_a6f94bbae1b16f5347055058a72896411}
+\begin{DoxyReturn}{Returns}
+True if a conversion is in progress, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 253 of file Adc.\-c.
+
+\hypertarget{_adc_8c_a8201a8154546752a07f766fa604c77d1}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Set\-Channel\-Sequence@{Adc\-\_\-\-Set\-Channel\-Sequence}}
+\index{Adc\-\_\-\-Set\-Channel\-Sequence@{Adc\-\_\-\-Set\-Channel\-Sequence}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Set\-Channel\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-\_\-\-Set\-Channel\-Sequence (
+\begin{DoxyParamCaption}
+\item[{const {\bf Adc\-Channel\-Config\-\_\-t}}]{config\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint16\-\_\-t}}]{num\-Channels, }
+\item[{{\bf Adc\-Reference\-Level\-\_\-t}}]{ref\-Level}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_a8201a8154546752a07f766fa604c77d1}
+Configures the A\-D\-C module to sample the given sequence of channels.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ Configuration information for each channel in the sequence. \\
+\hline
+\mbox{\tt in}  & {\em num\-Channels} & -\/ Number of channels in the sequence. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 265 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Initialze\-X\-Adc\-Channels(), and Adc\-Manager\-\_\-\-Single\-Sample\-Blocking().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_afe5cd10dd67ef2ad4ade4f71a6ada010}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking@{Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking}}
+\index{Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking@{Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_afe5cd10dd67ef2ad4ade4f71a6ada010}
+Starts the conversion of a sequence of channels and blocks until they are finished. 
+
+Definition at line 387 of file Adc.\-c.
+
+
+
+Referenced by Adc\-Manager\-\_\-\-Single\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_adc40c1d1983f3470f32d9d2b6f999285}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels@{Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels}}
+\index{Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels@{Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_adc40c1d1983f3470f32d9d2b6f999285}
+Starts the conversion of a sequence of channels. 
+
+Definition at line 371 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Adc\-Start().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_8c_a48bd94f6c7b5c13bae12ee2ae824145b}{\index{Adc.\-c@{Adc.\-c}!Adc\-\_\-\-Stop\-Conversion@{Adc\-\_\-\-Stop\-Conversion}}
+\index{Adc\-\_\-\-Stop\-Conversion@{Adc\-\_\-\-Stop\-Conversion}!Adc.c@{Adc.\-c}}
+\subsubsection[{Adc\-\_\-\-Stop\-Conversion}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-\_\-\-Stop\-Conversion (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_8c_a48bd94f6c7b5c13bae12ee2ae824145b}
+Stops the A\-D\-C from sampling. 
+
+Definition at line 433 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Adc\-Stop().
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_adc_8c_ad49c36821ae9dcacd8ec839385dd8d4b}{\index{Adc.\-c@{Adc.\-c}!\-\_\-adc\-Calibration\-Info@{\-\_\-adc\-Calibration\-Info}}
+\index{\-\_\-adc\-Calibration\-Info@{\-\_\-adc\-Calibration\-Info}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-adc\-Calibration\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Adc\-Calibration\-Info\-\_\-t} \-\_\-adc\-Calibration\-Info\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_ad49c36821ae9dcacd8ec839385dd8d4b}
+Stores the A\-D\-C calibration info 
+
+Definition at line 110 of file Adc.\-c.
+
+\hypertarget{_adc_8c_ad9452ac0b5fe2afc071675347e6fd157}{\index{Adc.\-c@{Adc.\-c}!\-\_\-conversion\-In\-Progress@{\-\_\-conversion\-In\-Progress}}
+\index{\-\_\-conversion\-In\-Progress@{\-\_\-conversion\-In\-Progress}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-conversion\-In\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-conversion\-In\-Progress = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_ad9452ac0b5fe2afc071675347e6fd157}
+Indicates if a conversion is currently in progress. 
+
+Definition at line 77 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Adc\-Isr(), \-\_\-\-Move\-Samples\-To\-User\-Location(), Adc\-\_\-\-Is\-Conversion\-In\-Progress(), Adc\-\_\-\-Set\-Channel\-Sequence(), Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking(), Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels(), and Adc\-\_\-\-Stop\-Conversion().
+
+\hypertarget{_adc_8c_a92eaaf19cc914d995fb9c256861d5af6}{\index{Adc.\-c@{Adc.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_a92eaaf19cc914d995fb9c256861d5af6}
+Indicates if the A\-D\-C module was initialized 
+
+Definition at line 74 of file Adc.\-c.
+
+\hypertarget{_adc_8c_a2433521b8b10790808b129d28e6a3d10}{\index{Adc.\-c@{Adc.\-c}!\-\_\-number\-Of\-Conversions@{\-\_\-number\-Of\-Conversions}}
+\index{\-\_\-number\-Of\-Conversions@{\-\_\-number\-Of\-Conversions}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-number\-Of\-Conversions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-number\-Of\-Conversions = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_a2433521b8b10790808b129d28e6a3d10}
+Stores the number of conversions that have occurred in the system 
+
+Definition at line 107 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Adc\-Isr(), and Adc\-\_\-\-Get\-Number\-Of\-Conversions().
+
+\hypertarget{_adc_8c_aff8af90bb6359ac2ac009af4321f167d}{\index{Adc.\-c@{Adc.\-c}!\-\_\-num\-Channels\-Configured@{\-\_\-num\-Channels\-Configured}}
+\index{\-\_\-num\-Channels\-Configured@{\-\_\-num\-Channels\-Configured}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-num\-Channels\-Configured}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-num\-Channels\-Configured = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_aff8af90bb6359ac2ac009af4321f167d}
+Tracks the number of channels that are configured to be used in a conversion sequence. 
+
+Definition at line 93 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Adc\-Isr(), \-\_\-\-Move\-Samples\-To\-User\-Location(), Adc\-\_\-\-Set\-Channel\-Sequence(), Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking(), and Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels().
+
+\hypertarget{_adc_8c_a5b6fc0e53414202198ccfe97b2815dd8}{\index{Adc.\-c@{Adc.\-c}!\-\_\-ref\-Calibration\-Info@{\-\_\-ref\-Calibration\-Info}}
+\index{\-\_\-ref\-Calibration\-Info@{\-\_\-ref\-Calibration\-Info}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-ref\-Calibration\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Adc\-Reference\-Calibration\-Info\-\_\-t} \-\_\-ref\-Calibration\-Info\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_a5b6fc0e53414202198ccfe97b2815dd8}
+Stores the internal voltage reference calibration info 
+
+Definition at line 113 of file Adc.\-c.
+
+\hypertarget{_adc_8c_ab4a4fd4c90ae77158d896d2cd527f299}{\index{Adc.\-c@{Adc.\-c}!\-\_\-result\-Destinations@{\-\_\-result\-Destinations}}
+\index{\-\_\-result\-Destinations@{\-\_\-result\-Destinations}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-result\-Destinations}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t}$\ast$ \-\_\-result\-Destinations\mbox{[}{\bf A\-D\-C\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_ab4a4fd4c90ae77158d896d2cd527f299}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL},
+    \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL},
+    \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL},
+    \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}, NULL
+\}
+\end{DoxyCode}
+Stores the user-\/defined destinations where the conversion results should be copied to. 
+
+Definition at line 82 of file Adc.\-c.
+
+
+
+Referenced by \-\_\-\-Adc\-Isr(), \-\_\-\-Move\-Samples\-To\-User\-Location(), and Adc\-\_\-\-Set\-Channel\-Sequence().
+
+\hypertarget{_adc_8c_ac89c23e26efc32cdc3607f0b21f601e6}{\index{Adc.\-c@{Adc.\-c}!\-\_\-selected\-Reference\-Level@{\-\_\-selected\-Reference\-Level}}
+\index{\-\_\-selected\-Reference\-Level@{\-\_\-selected\-Reference\-Level}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-selected\-Reference\-Level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Adc\-Reference\-Level\-\_\-t} \-\_\-selected\-Reference\-Level = Adc\-Reference\-Level\-\_\-1p5\-\_\-\-V\-O\-L\-T\-S\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_ac89c23e26efc32cdc3607f0b21f601e6}
+Tracks the currently selected internal voltage reference level 
+
+Definition at line 104 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Apply\-Correction(), Adc\-\_\-\-Convert\-Value\-To\-Temp(), Adc\-\_\-\-Get\-Temp\-Calib(), and Adc\-\_\-\-Set\-Channel\-Sequence().
+
+\hypertarget{_adc_8c_a8ca3bd83accb79971bf4ba9a2f4007d7}{\index{Adc.\-c@{Adc.\-c}!\-\_\-temperature\-Gain\-Factor\-Ref15\-V@{\-\_\-temperature\-Gain\-Factor\-Ref15\-V}}
+\index{\-\_\-temperature\-Gain\-Factor\-Ref15\-V@{\-\_\-temperature\-Gain\-Factor\-Ref15\-V}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-temperature\-Gain\-Factor\-Ref15\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-temperature\-Gain\-Factor\-Ref15\-V = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_a8ca3bd83accb79971bf4ba9a2f4007d7}
+Stores the temperature sensor gain factor computed from the calibration values for the internal 1.\-5\-V reference level. 
+
+Definition at line 118 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Convert\-Value\-To\-Temp(), and Adc\-\_\-\-Init().
+
+\hypertarget{_adc_8c_ab171a027f58e4a7295193b5eb7cee1e6}{\index{Adc.\-c@{Adc.\-c}!\-\_\-temperature\-Gain\-Factor\-Ref20\-V@{\-\_\-temperature\-Gain\-Factor\-Ref20\-V}}
+\index{\-\_\-temperature\-Gain\-Factor\-Ref20\-V@{\-\_\-temperature\-Gain\-Factor\-Ref20\-V}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-temperature\-Gain\-Factor\-Ref20\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-temperature\-Gain\-Factor\-Ref20\-V = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_ab171a027f58e4a7295193b5eb7cee1e6}
+Stores the temperature sensor gain factor computed from the calibration values for the internal 2.\-0\-V reference level. 
+
+Definition at line 122 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Convert\-Value\-To\-Temp(), and Adc\-\_\-\-Init().
+
+\hypertarget{_adc_8c_ad6cadfa7ac3fef55ec76480717702619}{\index{Adc.\-c@{Adc.\-c}!\-\_\-temperature\-Gain\-Factor\-Ref25\-V@{\-\_\-temperature\-Gain\-Factor\-Ref25\-V}}
+\index{\-\_\-temperature\-Gain\-Factor\-Ref25\-V@{\-\_\-temperature\-Gain\-Factor\-Ref25\-V}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-temperature\-Gain\-Factor\-Ref25\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-temperature\-Gain\-Factor\-Ref25\-V = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_ad6cadfa7ac3fef55ec76480717702619}
+Stores the temperature sensor gain factor computed from the calibration values for the internal 2.\-5\-V reference level. 
+
+Definition at line 126 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Convert\-Value\-To\-Temp(), and Adc\-\_\-\-Init().
+
+\hypertarget{_adc_8c_acfe84b0b860b2313bce3a0361eb24adc}{\index{Adc.\-c@{Adc.\-c}!\-\_\-use\-Internal\-Reference@{\-\_\-use\-Internal\-Reference}}
+\index{\-\_\-use\-Internal\-Reference@{\-\_\-use\-Internal\-Reference}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-use\-Internal\-Reference}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-use\-Internal\-Reference = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_acfe84b0b860b2313bce3a0361eb24adc}
+Indicates if the current sequence requires the internal voltage reference. 
+
+Definition at line 102 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Set\-Channel\-Sequence().
+
+\hypertarget{_adc_8c_a1e627de14f7d885d6ad06261b732882a}{\index{Adc.\-c@{Adc.\-c}!\-\_\-use\-Temp\-Sensor@{\-\_\-use\-Temp\-Sensor}}
+\index{\-\_\-use\-Temp\-Sensor@{\-\_\-use\-Temp\-Sensor}!Adc.c@{Adc.\-c}}
+\subsubsection[{\-\_\-use\-Temp\-Sensor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-use\-Temp\-Sensor = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_adc_8c_a1e627de14f7d885d6ad06261b732882a}
+Indicates if the current sequence accesses the internal temperature sensor. 
+
+Definition at line 98 of file Adc.\-c.
+
+
+
+Referenced by Adc\-\_\-\-Set\-Channel\-Sequence().
+

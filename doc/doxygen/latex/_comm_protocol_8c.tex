@@ -1,0 +1,1129 @@
+\hypertarget{_comm_protocol_8c}{\section{Comm\-Protocol.\-c File Reference}
+\label{_comm_protocol_8c}\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}}
+}
+
+
+Communications protocol module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Event\-Queue.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Comm\-Protocol.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Spi\-Slave.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Led\-Control.\-h$>$}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Battery\-Control.\-h$>$}\\*
+{\ttfamily \#include $<$Configuration\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$System.\-h$>$}\\*
+{\ttfamily \#include $<$Timer\-Tick.\-h$>$}\\*
+{\ttfamily \#include $<$Version.\-h$>$}\\*
+Include dependency graph for Comm\-Protocol.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_comm_protocol_8c_abb59a566539e5e148f63599ee6e67ea1}{D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}~( 114u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_a1b4137d9e1f6321c8dcedbe3335768ea}{M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}~( 30u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_a127b640f9efee0d98964b7904cc41587}{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E}~( 0x02u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_ae693d93dee3594c96bc9305a8e851087}{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-I\-N\-D\-E\-X}~( 0u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_a65f90690a2ab8de4d725a64ae63b3725}{E\-N\-D\-\_\-\-O\-F\-\_\-\-P\-A\-C\-K\-E\-T}~( 0x0\-Au )
+\item 
+\#define \hyperlink{_comm_protocol_8c_a3632a9df53c584d87f8858ab54280106}{E\-N\-D\-\_\-\-O\-F\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X}~( \hyperlink{_comm_protocol_8c_abb59a566539e5e148f63599ee6e67ea1}{D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E} -\/ 1u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_abb34ec02655537ee221939bfbf3c3b70}{E\-N\-D\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X}~( \hyperlink{_comm_protocol_8c_a1b4137d9e1f6321c8dcedbe3335768ea}{M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E} -\/ 1u)
+\item 
+\#define \hyperlink{_comm_protocol_8c_a59d6d5ba88924b3c1b75a58aab856099}{C\-O\-M\-M\-A\-N\-D\-\_\-\-I\-N\-D\-E\-X}~( 1u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_a4d0c8a0981ad9a87e04e30d8c1a8303e}{T\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}~( \hyperlink{_comm_protocol_8c_a59d6d5ba88924b3c1b75a58aab856099}{C\-O\-M\-M\-A\-N\-D\-\_\-\-I\-N\-D\-E\-X} + 1u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_a4980295a63f147ba326383263f2d4a18}{V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X}~( \hyperlink{_comm_protocol_8c_a4d0c8a0981ad9a87e04e30d8c1a8303e}{T\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X} )
+\item 
+\#define \hyperlink{_comm_protocol_8c_ace2bdbd49514202f51122111008858ee}{R\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}~( \hyperlink{_comm_protocol_8c_a4980295a63f147ba326383263f2d4a18}{V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X} + 1u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_ad37e6bd263d0d2a94525eeac1727f902}{B\-Y\-T\-E\-S\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}~( 3u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_a341b22f0bb9874fc0a365bd3927fa8c8}{T\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X}~( \hyperlink{_comm_protocol_8c_a4980295a63f147ba326383263f2d4a18}{V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X} + 1u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_aafa19ebe5aaccafe719a3bd0357ff709}{R\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X}~( 0u )
+\item 
+\#define \hyperlink{_comm_protocol_8c_a4b1472871b1c43a3e5107c4c7be2e677}{M\-A\-X\-\_\-\-N\-O\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C}~((\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t})( 1000u $\ast$ 60u )) /$\ast$ 60 seconds in msec $\ast$/
+\item 
+\hypertarget{_comm_protocol_8c_a85c38f332c59fb6e0a2080c5919c81a2}{\#define {\bfseries S\-T\-A\-T\-U\-S\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-L\-E\-N\-G\-T\-H}~( 3u )}\label{_comm_protocol_8c_a85c38f332c59fb6e0a2080c5919c81a2}
+
+\item 
+\hypertarget{_comm_protocol_8c_a497b461ca409b008acc0f754ed41986d}{\#define {\bfseries F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-I\-N\-D\-E\-X}~( 0u )}\label{_comm_protocol_8c_a497b461ca409b008acc0f754ed41986d}
+
+\item 
+\hypertarget{_comm_protocol_8c_ab55da0185fb1535398ff75a337d809e6}{\#define {\bfseries F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-M\-I\-N\-O\-R\-\_\-\-I\-N\-D\-E\-X}~( 1u )}\label{_comm_protocol_8c_ab55da0185fb1535398ff75a337d809e6}
+
+\item 
+\hypertarget{_comm_protocol_8c_a5d54fd74802b43b45da715fe312c1dea}{\#define {\bfseries C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-I\-N\-D\-E\-X}~( 2u )}\label{_comm_protocol_8c_a5d54fd74802b43b45da715fe312c1dea}
+
+\item 
+\hypertarget{_comm_protocol_8c_a4e11193a777ac171c0cb2ae5e2783338}{\#define {\bfseries O\-U\-T\-P\-U\-T\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-E\-F\-U\-L\-\_\-\-D\-A\-T\-A\-\_\-\-O\-F\-F\-S\-E\-T}~( 2u )}\label{_comm_protocol_8c_a4e11193a777ac171c0cb2ae5e2783338}
+
+\item 
+\hypertarget{_comm_protocol_8c_ace58b096e03828b60f1e4179e5e859a7}{\#define {\bfseries F\-I\-X\-E\-D\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-E\-F\-U\-L\-\_\-\-D\-A\-T\-A\-\_\-\-O\-F\-F\-S\-E\-T}~( 1u )}\label{_comm_protocol_8c_ace58b096e03828b60f1e4179e5e859a7}
+
+\item 
+\hypertarget{_comm_protocol_8c_ac02bb63409a6bd3051c4c1b4c77976a6}{\#define {\bfseries L\-E\-N\-G\-T\-H\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-P\-L\-Y}~( 6u )}\label{_comm_protocol_8c_ac02bb63409a6bd3051c4c1b4c77976a6}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_comm_protocol_8c_a08b00554c8a219189af1f06113ef9327}{Comm\-Command\-\_\-t} \{ \\*
+{\bfseries Comm\-Command\-\_\-\-I\-N\-V\-A\-L\-I\-D} = 0u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-F\-I\-R\-S\-T} = 0x10u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-R\-F\-\_\-\-P\-A\-C\-K\-E\-T} = Comm\-Command\-\_\-\-F\-I\-R\-S\-T, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-S\-T\-A\-T\-U\-S} = 0x11u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-S\-T\-A\-R\-T\-\_\-\-D\-A\-T\-A} = 0x20u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-S\-T\-O\-P\-\_\-\-D\-A\-T\-A} = 0x21u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-S\-E\-T\-\_\-\-S\-E\-N\-S\-O\-R\-\_\-\-C\-O\-N\-F\-I\-G} = 0x22u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-G\-E\-T\-\_\-\-S\-E\-N\-S\-O\-R\-\_\-\-C\-O\-N\-F\-I\-G} = 0x23u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-S\-E\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-C\-O\-N\-F\-I\-G} = 0x24u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-G\-E\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-C\-O\-N\-F\-I\-G} = 0x25u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-S\-E\-T\-\_\-\-F\-I\-X\-E\-D\-\_\-\-C\-O\-N\-F\-I\-G} = 0x26u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-G\-E\-T\-\_\-\-F\-I\-X\-E\-D\-\_\-\-C\-O\-N\-F\-I\-G} = 0x27u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-G\-E\-T\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G} = 0x28u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-G\-E\-T\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N} = 0x29u, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-G\-E\-T\-\_\-\-S\-T\-A\-T\-U\-S} = 0x2\-Au, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-P\-O\-W\-E\-R\-\_\-\-D\-O\-W\-N} = 0x2\-Bu, 
+\\*
+{\bfseries Comm\-Command\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_comm_protocol_8c_a9ebdc7e81440a8557cb273b975d68280}{\-\_\-\-Handle\-Rf\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_abc8625ef2a7c7423feb07820b122653c}{\-\_\-\-Handle\-Status\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_ac57d6e434789b4376a6ad58dad7dcaf8}{\-\_\-\-Handle\-Set\-Sensor\-Config\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_ae98918eca90672314bb3e90ea5e73288}{\-\_\-\-Handle\-Get\-Sensor\-Config\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_ad5fef6fd66017234708bd9c6b471679f}{\-\_\-\-Handle\-Set\-Output\-Config\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_ac971e7ecbf614b6520af7cd52c42be97}{\-\_\-\-Handle\-Get\-Output\-Config\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_a986851da5c358916c721584263145f05}{\-\_\-\-Handle\-Set\-Fixed\-Config\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_a4e853f76f376ef41de83d2a81d43096f}{\-\_\-\-Handle\-Get\-Fixed\-Config\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_a4b4bfcd3a90d44f1a5c5f8b98e695fd5}{\-\_\-\-Handle\-Get\-Packet\-Config\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_ac034c3f9caa94012ccf6ebdfe63ac98c}{\-\_\-\-Handle\-Get\-Calibration\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_aa007fe810b7377ade839f7990c71a096}{\-\_\-\-Handle\-Get\-Status\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_a625a34a41751da66d4cc2a34c6dd6522}{\-\_\-\-Handle\-Power\-Down\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+static void \hyperlink{_comm_protocol_8c_afd67693872dec702559be107e645ed53}{\-\_\-\-Set\-Tx\-Command} (\hyperlink{_comm_protocol_8c_a08b00554c8a219189af1f06113ef9327}{Comm\-Command\-\_\-t} command)
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_comm_protocol_8c_a868481fb326a9bb0b259b475aa7d09b4}{\-\_\-\-Write\-Message\-Data} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Start\-Index, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]})
+\item 
+static void \hyperlink{_comm_protocol_8c_a86d2766ab8f82592b15dc9077a2ae287}{\-\_\-\-Handle\-Rf\-Status\-I\-S\-R} (void)
+\item 
+void \hyperlink{_comm_protocol_8c_af530adc2e8aa195eeebc30a5c16626c7}{Comm\-Protocol\-\_\-\-Init} ()
+\item 
+void \hyperlink{_comm_protocol_8c_a1601bc62252475a299e517b13e49766d}{Comm\-Protocol\-\_\-\-Rx\-Handler} (void)
+\item 
+void \hyperlink{_comm_protocol_8c_a0591f11adf0d52b4fd5fa913498e9dd9}{Comm\-Protocol\-\_\-\-Tx\-Handler} (void)
+\item 
+void \hyperlink{_comm_protocol_8c_ac8a28eff6efb38ab48e5becd361757e9}{Comm\-Protocol\-\_\-\-Get\-Rf\-Status} (\hyperlink{_comm_protocol_8h_struct_rf_status__t}{Rf\-Status\-\_\-t} $\ast$status)
+\item 
+void \hyperlink{_comm_protocol_8c_a11fcf3a095c467e5da58a75e746059f1}{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+void \hyperlink{_comm_protocol_8c_a1f65077f8bed3f077ec2a561f20bf4b5}{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_comm_protocol_8c_ad2f53c730e58ff50034b27c414cd5fff}{\-\_\-buffer\-Tx\-Zero} \mbox{[}\hyperlink{_comm_protocol_8c_abb59a566539e5e148f63599ee6e67ea1}{D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}\mbox{]} = \{ 0u \}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_comm_protocol_8c_a5b866e4c579ba78ff1ef9459f5a74a57}{\-\_\-buffer\-Tx\-One} \mbox{[}\hyperlink{_comm_protocol_8c_abb59a566539e5e148f63599ee6e67ea1}{D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}\mbox{]} = \{ 0u \}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_comm_protocol_8c_a381e94b58b20ed0e94f48bbdd7a58c07}{\-\_\-message\-Buffer} \mbox{[}\hyperlink{_comm_protocol_8c_a1b4137d9e1f6321c8dcedbe3335768ea}{M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}\mbox{]} = \{ 0u \}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$ \hyperlink{_comm_protocol_8c_ac7b0e49f917ba685747a788d9bc5873e}{\-\_\-active\-Write\-Array} = \hyperlink{_comm_protocol_8c_ad2f53c730e58ff50034b27c414cd5fff}{\-\_\-buffer\-Tx\-Zero}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_comm_protocol_8c_a10ef05afe0e332c9a0bacbc6f736695b}{\-\_\-buffer\-Rx} \mbox{[}\hyperlink{_comm_protocol_8c_abb59a566539e5e148f63599ee6e67ea1}{D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}\mbox{]} = \{ 0u \}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_comm_protocol_8c_a51028b106a0927e3f7169378131c0cf0}{\-\_\-data\-Mode} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_comm_protocol_8h_struct_rf_status__t}{Rf\-Status\-\_\-t} \hyperlink{_comm_protocol_8c_a0850573d4fb77a533cad76fc0d239e1f}{\-\_\-rf\-Status} = \{ Rf\-Connection\-Status\-\_\-\-I\-N\-V\-L\-A\-L\-I\-D, 0u, 0u \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Communications protocol module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The communications protocol module manages the data coming in and going out from the other microcontroller. 
+
+Definition in file \hyperlink{_comm_protocol_8c_source}{Comm\-Protocol.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_comm_protocol_8c_ad37e6bd263d0d2a94525eeac1727f902}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!B\-Y\-T\-E\-S\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{B\-Y\-T\-E\-S\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}}
+\index{B\-Y\-T\-E\-S\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{B\-Y\-T\-E\-S\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{B\-Y\-T\-E\-S\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-Y\-T\-E\-S\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D~( 3u )}}\label{_comm_protocol_8c_ad37e6bd263d0d2a94525eeac1727f902}
+Defines how many bytes of the packet is overhead 
+
+Definition at line 119 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+\hypertarget{_comm_protocol_8c_a59d6d5ba88924b3c1b75a58aab856099}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!C\-O\-M\-M\-A\-N\-D\-\_\-\-I\-N\-D\-E\-X@{C\-O\-M\-M\-A\-N\-D\-\_\-\-I\-N\-D\-E\-X}}
+\index{C\-O\-M\-M\-A\-N\-D\-\_\-\-I\-N\-D\-E\-X@{C\-O\-M\-M\-A\-N\-D\-\_\-\-I\-N\-D\-E\-X}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{C\-O\-M\-M\-A\-N\-D\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-M\-M\-A\-N\-D\-\_\-\-I\-N\-D\-E\-X~( 1u )}}\label{_comm_protocol_8c_a59d6d5ba88924b3c1b75a58aab856099}
+Defines where in the packet the command value is located 
+
+Definition at line 110 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Set\-Tx\-Command(), Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet(), Comm\-Protocol\-\_\-\-Init(), and Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+\hypertarget{_comm_protocol_8c_abb59a566539e5e148f63599ee6e67ea1}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E@{D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}}
+\index{D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E@{D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E~( 114u )}}\label{_comm_protocol_8c_abb59a566539e5e148f63599ee6e67ea1}
+Defines the size of the packets used in the protocol. 
+
+Definition at line 43 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init(), Comm\-Protocol\-\_\-\-Rx\-Handler(), and Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+\hypertarget{_comm_protocol_8c_a3632a9df53c584d87f8858ab54280106}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!E\-N\-D\-\_\-\-O\-F\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X@{E\-N\-D\-\_\-\-O\-F\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X}}
+\index{E\-N\-D\-\_\-\-O\-F\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X@{E\-N\-D\-\_\-\-O\-F\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{E\-N\-D\-\_\-\-O\-F\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-D\-\_\-\-O\-F\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X~( {\bf D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E} -\/ 1u )}}\label{_comm_protocol_8c_a3632a9df53c584d87f8858ab54280106}
+Defines where in the data packet the end message is located 
+
+Definition at line 55 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+\hypertarget{_comm_protocol_8c_abb34ec02655537ee221939bfbf3c3b70}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!E\-N\-D\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X@{E\-N\-D\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X}}
+\index{E\-N\-D\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X@{E\-N\-D\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{E\-N\-D\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-D\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-I\-N\-D\-E\-X~( {\bf M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E} -\/ 1u)}}\label{_comm_protocol_8c_abb34ec02655537ee221939bfbf3c3b70}
+Defines where in the message packet the end message is located 
+
+Definition at line 57 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+\hypertarget{_comm_protocol_8c_a65f90690a2ab8de4d725a64ae63b3725}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!E\-N\-D\-\_\-\-O\-F\-\_\-\-P\-A\-C\-K\-E\-T@{E\-N\-D\-\_\-\-O\-F\-\_\-\-P\-A\-C\-K\-E\-T}}
+\index{E\-N\-D\-\_\-\-O\-F\-\_\-\-P\-A\-C\-K\-E\-T@{E\-N\-D\-\_\-\-O\-F\-\_\-\-P\-A\-C\-K\-E\-T}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{E\-N\-D\-\_\-\-O\-F\-\_\-\-P\-A\-C\-K\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-D\-\_\-\-O\-F\-\_\-\-P\-A\-C\-K\-E\-T~( 0x0\-Au )}}\label{_comm_protocol_8c_a65f90690a2ab8de4d725a64ae63b3725}
+Defines the value for the end of message byte 
+
+Definition at line 53 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+\hypertarget{_comm_protocol_8c_a4b1472871b1c43a3e5107c4c7be2e677}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!M\-A\-X\-\_\-\-N\-O\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C@{M\-A\-X\-\_\-\-N\-O\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C}}
+\index{M\-A\-X\-\_\-\-N\-O\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C@{M\-A\-X\-\_\-\-N\-O\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{M\-A\-X\-\_\-\-N\-O\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-N\-O\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C~(({\bf uint32\-\_\-t})( 1000u $\ast$ 60u )) /$\ast$ 60 seconds in msec $\ast$/}}\label{_comm_protocol_8c_a4b1472871b1c43a3e5107c4c7be2e677}
+Defines the maximum amount of time the system is allowed to be \char`\"{}not connected\char`\"{} 
+
+Definition at line 127 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Rf\-Status\-I\-S\-R().
+
+\hypertarget{_comm_protocol_8c_a1b4137d9e1f6321c8dcedbe3335768ea}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E@{M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}}
+\index{M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E@{M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E~( 30u )}}\label{_comm_protocol_8c_a1b4137d9e1f6321c8dcedbe3335768ea}
+Defines the size of the packets used for the non-\/data messages 
+
+Definition at line 45 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Write\-Message\-Data().
+
+\hypertarget{_comm_protocol_8c_ace2bdbd49514202f51122111008858ee}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!R\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X@{R\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}}
+\index{R\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X@{R\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{R\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X~( {\bf V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X} + 1u )}}\label{_comm_protocol_8c_ace2bdbd49514202f51122111008858ee}
+Defines where in the packet the start of the R\-X data is 
+
+Definition at line 116 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+\hypertarget{_comm_protocol_8c_aafa19ebe5aaccafe719a3bd0357ff709}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!R\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X@{R\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X}}
+\index{R\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X@{R\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{R\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X~( 0u )}}\label{_comm_protocol_8c_aafa19ebe5aaccafe719a3bd0357ff709}
+Defines where the remote I\-D index in on the message data received by the message handlers 
+
+Definition at line 124 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Get\-Calibration\-Packet(), \-\_\-\-Handle\-Get\-Fixed\-Config\-Packet(), \-\_\-\-Handle\-Get\-Packet\-Config\-Packet(), and \-\_\-\-Handle\-Get\-Status\-Packet().
+
+\hypertarget{_comm_protocol_8c_a127b640f9efee0d98964b7904cc41587}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E@{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E}}
+\index{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E@{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E~( 0x02u )}}\label{_comm_protocol_8c_a127b640f9efee0d98964b7904cc41587}
+Defines the value for the start of message byte 
+
+Definition at line 48 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+\hypertarget{_comm_protocol_8c_ae693d93dee3594c96bc9305a8e851087}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-I\-N\-D\-E\-X@{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-I\-N\-D\-E\-X}}
+\index{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-I\-N\-D\-E\-X@{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-I\-N\-D\-E\-X}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-A\-R\-T\-\_\-\-O\-F\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-I\-N\-D\-E\-X~( 0u )}}\label{_comm_protocol_8c_ae693d93dee3594c96bc9305a8e851087}
+Defines where in the packet the start message is located 
+
+Definition at line 50 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+\hypertarget{_comm_protocol_8c_a4d0c8a0981ad9a87e04e30d8c1a8303e}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!T\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X@{T\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}}
+\index{T\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X@{T\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{T\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X~( {\bf C\-O\-M\-M\-A\-N\-D\-\_\-\-I\-N\-D\-E\-X} + 1u )}}\label{_comm_protocol_8c_a4d0c8a0981ad9a87e04e30d8c1a8303e}
+Defines where in the packet the start of the T\-X data is 
+
+Definition at line 112 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+\hypertarget{_comm_protocol_8c_a341b22f0bb9874fc0a365bd3927fa8c8}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!T\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X@{T\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X}}
+\index{T\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X@{T\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{T\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-X\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-\_\-\-I\-N\-D\-E\-X~( {\bf V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X} + 1u )}}\label{_comm_protocol_8c_a341b22f0bb9874fc0a365bd3927fa8c8}
+Defines where the remote I\-D index belongs in a transmitted message 
+
+Definition at line 122 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Get\-Calibration\-Packet(), \-\_\-\-Handle\-Get\-Fixed\-Config\-Packet(), \-\_\-\-Handle\-Get\-Packet\-Config\-Packet(), and \-\_\-\-Handle\-Get\-Status\-Packet().
+
+\hypertarget{_comm_protocol_8c_a4980295a63f147ba326383263f2d4a18}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X@{V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X}}
+\index{V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X@{V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-I\-N\-D\-E\-X~( {\bf T\-X\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X} )}}\label{_comm_protocol_8c_a4980295a63f147ba326383263f2d4a18}
+Defines where in the packet the valid data length value is located 
+
+Definition at line 114 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Get\-Calibration\-Packet(), \-\_\-\-Handle\-Get\-Fixed\-Config\-Packet(), \-\_\-\-Handle\-Get\-Output\-Config\-Packet(), \-\_\-\-Handle\-Get\-Packet\-Config\-Packet(), \-\_\-\-Handle\-Get\-Sensor\-Config\-Packet(), \-\_\-\-Handle\-Get\-Status\-Packet(), \-\_\-\-Handle\-Power\-Down\-Packet(), \-\_\-\-Handle\-Set\-Sensor\-Config\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet(), Comm\-Protocol\-\_\-\-Init(), and Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_comm_protocol_8c_a08b00554c8a219189af1f06113ef9327}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!Comm\-Command\-\_\-t@{Comm\-Command\-\_\-t}}
+\index{Comm\-Command\-\_\-t@{Comm\-Command\-\_\-t}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{Comm\-Command\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Comm\-Command\-\_\-t}}}\label{_comm_protocol_8c_a08b00554c8a219189af1f06113ef9327}
+Defines the possible command values 
+
+Definition at line 61 of file Comm\-Protocol.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_comm_protocol_8c_ac034c3f9caa94012ccf6ebdfe63ac98c}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Get\-Calibration\-Packet@{\-\_\-\-Handle\-Get\-Calibration\-Packet}}
+\index{\-\_\-\-Handle\-Get\-Calibration\-Packet@{\-\_\-\-Handle\-Get\-Calibration\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Get\-Calibration\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Get\-Calibration\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_ac034c3f9caa94012ccf6ebdfe63ac98c}
+Handles the packet data for the Get Calibration Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 646 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a4e853f76f376ef41de83d2a81d43096f}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Get\-Fixed\-Config\-Packet@{\-\_\-\-Handle\-Get\-Fixed\-Config\-Packet}}
+\index{\-\_\-\-Handle\-Get\-Fixed\-Config\-Packet@{\-\_\-\-Handle\-Get\-Fixed\-Config\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Get\-Fixed\-Config\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Get\-Fixed\-Config\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a4e853f76f376ef41de83d2a81d43096f}
+Handles the packet data for the Get Fixed Configuration Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 581 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_ac971e7ecbf614b6520af7cd52c42be97}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Get\-Output\-Config\-Packet@{\-\_\-\-Handle\-Get\-Output\-Config\-Packet}}
+\index{\-\_\-\-Handle\-Get\-Output\-Config\-Packet@{\-\_\-\-Handle\-Get\-Output\-Config\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Get\-Output\-Config\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Get\-Output\-Config\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_ac971e7ecbf614b6520af7cd52c42be97}
+Handles the packet data for the Get Output Configuration Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 545 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a4b4bfcd3a90d44f1a5c5f8b98e695fd5}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Get\-Packet\-Config\-Packet@{\-\_\-\-Handle\-Get\-Packet\-Config\-Packet}}
+\index{\-\_\-\-Handle\-Get\-Packet\-Config\-Packet@{\-\_\-\-Handle\-Get\-Packet\-Config\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Get\-Packet\-Config\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Get\-Packet\-Config\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a4b4bfcd3a90d44f1a5c5f8b98e695fd5}
+Handles the packet data for the Get Packet Configuration Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 607 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_ae98918eca90672314bb3e90ea5e73288}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Get\-Sensor\-Config\-Packet@{\-\_\-\-Handle\-Get\-Sensor\-Config\-Packet}}
+\index{\-\_\-\-Handle\-Get\-Sensor\-Config\-Packet@{\-\_\-\-Handle\-Get\-Sensor\-Config\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Get\-Sensor\-Config\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Get\-Sensor\-Config\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_ae98918eca90672314bb3e90ea5e73288}
+Handles the packet data for the Get Sensor Configuration Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 509 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_aa007fe810b7377ade839f7990c71a096}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Get\-Status\-Packet@{\-\_\-\-Handle\-Get\-Status\-Packet}}
+\index{\-\_\-\-Handle\-Get\-Status\-Packet@{\-\_\-\-Handle\-Get\-Status\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Get\-Status\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Get\-Status\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_aa007fe810b7377ade839f7990c71a096}
+Handles the packet data for the Get Status Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 695 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a625a34a41751da66d4cc2a34c6dd6522}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Power\-Down\-Packet@{\-\_\-\-Handle\-Power\-Down\-Packet}}
+\index{\-\_\-\-Handle\-Power\-Down\-Packet@{\-\_\-\-Handle\-Power\-Down\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Power\-Down\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Power\-Down\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a625a34a41751da66d4cc2a34c6dd6522}
+Handles the packet data for the Power Down Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 730 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a9ebdc7e81440a8557cb273b975d68280}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Rf\-Packet@{\-\_\-\-Handle\-Rf\-Packet}}
+\index{\-\_\-\-Handle\-Rf\-Packet@{\-\_\-\-Handle\-Rf\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Rf\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Rf\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a9ebdc7e81440a8557cb273b975d68280}
+Handles the packet data for the R\-F Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 354 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a86d2766ab8f82592b15dc9077a2ae287}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Rf\-Status\-I\-S\-R@{\-\_\-\-Handle\-Rf\-Status\-I\-S\-R}}
+\index{\-\_\-\-Handle\-Rf\-Status\-I\-S\-R@{\-\_\-\-Handle\-Rf\-Status\-I\-S\-R}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Rf\-Status\-I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Rf\-Status\-I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a86d2766ab8f82592b15dc9077a2ae287}
+Processes system tasks based on the state of the R\-F connection and the time spent in that state. This should be called by the timer tick at regular intervals. 
+
+Definition at line 795 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a986851da5c358916c721584263145f05}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Set\-Fixed\-Config\-Packet@{\-\_\-\-Handle\-Set\-Fixed\-Config\-Packet}}
+\index{\-\_\-\-Handle\-Set\-Fixed\-Config\-Packet@{\-\_\-\-Handle\-Set\-Fixed\-Config\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Set\-Fixed\-Config\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Set\-Fixed\-Config\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a986851da5c358916c721584263145f05}
+Handles the packet data for the Set Fixed Configuration Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 562 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_ad5fef6fd66017234708bd9c6b471679f}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Set\-Output\-Config\-Packet@{\-\_\-\-Handle\-Set\-Output\-Config\-Packet}}
+\index{\-\_\-\-Handle\-Set\-Output\-Config\-Packet@{\-\_\-\-Handle\-Set\-Output\-Config\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Set\-Output\-Config\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Set\-Output\-Config\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_ad5fef6fd66017234708bd9c6b471679f}
+Handles the packet data for the Set Output Configuration Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 526 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_ac57d6e434789b4376a6ad58dad7dcaf8}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Set\-Sensor\-Config\-Packet@{\-\_\-\-Handle\-Set\-Sensor\-Config\-Packet}}
+\index{\-\_\-\-Handle\-Set\-Sensor\-Config\-Packet@{\-\_\-\-Handle\-Set\-Sensor\-Config\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Set\-Sensor\-Config\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Set\-Sensor\-Config\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_ac57d6e434789b4376a6ad58dad7dcaf8}
+Handles the packet data for the Set Sensor Configuration Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 492 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_abc8625ef2a7c7423feb07820b122653c}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Handle\-Status\-Packet@{\-\_\-\-Handle\-Status\-Packet}}
+\index{\-\_\-\-Handle\-Status\-Packet@{\-\_\-\-Handle\-Status\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Status\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Status\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_abc8625ef2a7c7423feb07820b122653c}
+Handles the packet data for the Status Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 369 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_afd67693872dec702559be107e645ed53}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Set\-Tx\-Command@{\-\_\-\-Set\-Tx\-Command}}
+\index{\-\_\-\-Set\-Tx\-Command@{\-\_\-\-Set\-Tx\-Command}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Set\-Tx\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Set\-Tx\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Comm\-Command\-\_\-t}}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_afd67693872dec702559be107e645ed53}
+Sets the command byte to the proper value based on the type of command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em command} & -\/ the type of command to set for the T\-X Packet \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 749 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Get\-Calibration\-Packet(), \-\_\-\-Handle\-Get\-Fixed\-Config\-Packet(), \-\_\-\-Handle\-Get\-Output\-Config\-Packet(), \-\_\-\-Handle\-Get\-Packet\-Config\-Packet(), \-\_\-\-Handle\-Get\-Sensor\-Config\-Packet(), \-\_\-\-Handle\-Get\-Status\-Packet(), \-\_\-\-Handle\-Power\-Down\-Packet(), \-\_\-\-Handle\-Rf\-Packet(), \-\_\-\-Handle\-Set\-Fixed\-Config\-Packet(), \-\_\-\-Handle\-Set\-Output\-Config\-Packet(), \-\_\-\-Handle\-Set\-Sensor\-Config\-Packet(), \-\_\-\-Handle\-Status\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet(), and Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a868481fb326a9bb0b259b475aa7d09b4}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-\-Write\-Message\-Data@{\-\_\-\-Write\-Message\-Data}}
+\index{\-\_\-\-Write\-Message\-Data@{\-\_\-\-Write\-Message\-Data}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Write\-Message\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-\-Write\-Message\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Start\-Index, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length, }
+\item[{const {\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a868481fb326a9bb0b259b475aa7d09b4}
+Takes message data and writes it to the active write array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Start\-Index} & -\/ the array index where the data should start at \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of bytes of the message to write \\
+\hline
+\mbox{\tt in}  & {\em message\-Data} & -\/ the data of the message to write to the array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the data would fit, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 765 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Get\-Calibration\-Packet(), and \-\_\-\-Handle\-Get\-Packet\-Config\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_ac8a28eff6efb38ab48e5becd361757e9}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!Comm\-Protocol\-\_\-\-Get\-Rf\-Status@{Comm\-Protocol\-\_\-\-Get\-Rf\-Status}}
+\index{Comm\-Protocol\-\_\-\-Get\-Rf\-Status@{Comm\-Protocol\-\_\-\-Get\-Rf\-Status}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Get\-Rf\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Get\-Rf\-Status (
+\begin{DoxyParamCaption}
+\item[{{\bf Rf\-Status\-\_\-t} $\ast$}]{status}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8c_ac8a28eff6efb38ab48e5becd361757e9}
+Gets the R\-F Status information.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em status} & -\/ structure to hold the R\-F status in \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 342 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Rf\-Command(), and \-\_\-\-Process\-Events\-\_\-\-R\-U\-N().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a11fcf3a095c467e5da58a75e746059f1}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet@{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet}}
+\index{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet@{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8c_a11fcf3a095c467e5da58a75e746059f1}
+Handles the packet data for the Start Data Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 424 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler(), and Self\-Test\-\_\-\-Process().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a1f65077f8bed3f077ec2a561f20bf4b5}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet@{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet}}
+\index{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet@{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8c_a1f65077f8bed3f077ec2a561f20bf4b5}
+Handles the packet data for the Stop Data Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 458 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler(), and Self\-Test\-\_\-\-Process().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_af530adc2e8aa195eeebc30a5c16626c7}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!Comm\-Protocol\-\_\-\-Init@{Comm\-Protocol\-\_\-\-Init}}
+\index{Comm\-Protocol\-\_\-\-Init@{Comm\-Protocol\-\_\-\-Init}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8c_af530adc2e8aa195eeebc30a5c16626c7}
+Initialized the comm protocol. 
+
+Definition at line 198 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a1601bc62252475a299e517b13e49766d}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!Comm\-Protocol\-\_\-\-Rx\-Handler@{Comm\-Protocol\-\_\-\-Rx\-Handler}}
+\index{Comm\-Protocol\-\_\-\-Rx\-Handler@{Comm\-Protocol\-\_\-\-Rx\-Handler}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Rx\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Rx\-Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8c_a1601bc62252475a299e517b13e49766d}
+Handles the events related to the received events for the Comm Protocol. 
+
+Definition at line 228 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8c_a0591f11adf0d52b4fd5fa913498e9dd9}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!Comm\-Protocol\-\_\-\-Tx\-Handler@{Comm\-Protocol\-\_\-\-Tx\-Handler}}
+\index{Comm\-Protocol\-\_\-\-Tx\-Handler@{Comm\-Protocol\-\_\-\-Tx\-Handler}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Tx\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Tx\-Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8c_a0591f11adf0d52b4fd5fa913498e9dd9}
+Handles the events related to the transmitted events for the Comm Protocol. 
+
+Definition at line 307 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_comm_protocol_8c_ac7b0e49f917ba685747a788d9bc5873e}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-active\-Write\-Array@{\-\_\-active\-Write\-Array}}
+\index{\-\_\-active\-Write\-Array@{\-\_\-active\-Write\-Array}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-active\-Write\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t}$\ast$ \-\_\-active\-Write\-Array = {\bf \-\_\-buffer\-Tx\-Zero}\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_ac7b0e49f917ba685747a788d9bc5873e}
+A pointer to the active write array 
+
+Definition at line 137 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Get\-Calibration\-Packet(), \-\_\-\-Handle\-Get\-Fixed\-Config\-Packet(), \-\_\-\-Handle\-Get\-Output\-Config\-Packet(), \-\_\-\-Handle\-Get\-Packet\-Config\-Packet(), \-\_\-\-Handle\-Get\-Sensor\-Config\-Packet(), \-\_\-\-Handle\-Get\-Status\-Packet(), \-\_\-\-Handle\-Power\-Down\-Packet(), \-\_\-\-Handle\-Set\-Sensor\-Config\-Packet(), \-\_\-\-Set\-Tx\-Command(), \-\_\-\-Write\-Message\-Data(), Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet(), Comm\-Protocol\-\_\-\-Init(), and Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+\hypertarget{_comm_protocol_8c_a10ef05afe0e332c9a0bacbc6f736695b}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-buffer\-Rx@{\-\_\-buffer\-Rx}}
+\index{\-\_\-buffer\-Rx@{\-\_\-buffer\-Rx}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-buffer\-Rx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} \-\_\-buffer\-Rx\mbox{[}{\bf D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}\mbox{]} = \{ 0u \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a10ef05afe0e332c9a0bacbc6f736695b}
+A buffer to store the received data in 
+
+Definition at line 139 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init(), and Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+\hypertarget{_comm_protocol_8c_a5b866e4c579ba78ff1ef9459f5a74a57}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-buffer\-Tx\-One@{\-\_\-buffer\-Tx\-One}}
+\index{\-\_\-buffer\-Tx\-One@{\-\_\-buffer\-Tx\-One}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-buffer\-Tx\-One}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} \-\_\-buffer\-Tx\-One\mbox{[}{\bf D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}\mbox{]} = \{ 0u \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a5b866e4c579ba78ff1ef9459f5a74a57}
+A buffer to store the protocol data in 
+
+Definition at line 133 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet(), Comm\-Protocol\-\_\-\-Init(), and Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+\hypertarget{_comm_protocol_8c_ad2f53c730e58ff50034b27c414cd5fff}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-buffer\-Tx\-Zero@{\-\_\-buffer\-Tx\-Zero}}
+\index{\-\_\-buffer\-Tx\-Zero@{\-\_\-buffer\-Tx\-Zero}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-buffer\-Tx\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} \-\_\-buffer\-Tx\-Zero\mbox{[}{\bf D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}\mbox{]} = \{ 0u \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_ad2f53c730e58ff50034b27c414cd5fff}
+A buffer to store the protocol data in 
+
+Definition at line 131 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet(), Comm\-Protocol\-\_\-\-Init(), and Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+\hypertarget{_comm_protocol_8c_a51028b106a0927e3f7169378131c0cf0}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-data\-Mode@{\-\_\-data\-Mode}}
+\index{\-\_\-data\-Mode@{\-\_\-data\-Mode}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-data\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-data\-Mode = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a51028b106a0927e3f7169378131c0cf0}
+Tracks if the protocol is in data mode or not 
+
+Definition at line 142 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet(), and Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+\hypertarget{_comm_protocol_8c_a381e94b58b20ed0e94f48bbdd7a58c07}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-message\-Buffer@{\-\_\-message\-Buffer}}
+\index{\-\_\-message\-Buffer@{\-\_\-message\-Buffer}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-message\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} \-\_\-message\-Buffer\mbox{[}{\bf M\-E\-S\-S\-A\-G\-E\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-S\-I\-Z\-E}\mbox{]} = \{ 0u \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a381e94b58b20ed0e94f48bbdd7a58c07}
+A buffer to store the non-\/data messages 
+
+Definition at line 135 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet(), Comm\-Protocol\-\_\-\-Init(), and Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+\hypertarget{_comm_protocol_8c_a0850573d4fb77a533cad76fc0d239e1f}{\index{Comm\-Protocol.\-c@{Comm\-Protocol.\-c}!\-\_\-rf\-Status@{\-\_\-rf\-Status}}
+\index{\-\_\-rf\-Status@{\-\_\-rf\-Status}!CommProtocol.c@{Comm\-Protocol.\-c}}
+\subsubsection[{\-\_\-rf\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rf\-Status\-\_\-t} \-\_\-rf\-Status = \{ Rf\-Connection\-Status\-\_\-\-I\-N\-V\-L\-A\-L\-I\-D, 0u, 0u \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_comm_protocol_8c_a0850573d4fb77a533cad76fc0d239e1f}
+Stores the current R\-F Status 
+
+Definition at line 145 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Get\-Rf\-Status().
+

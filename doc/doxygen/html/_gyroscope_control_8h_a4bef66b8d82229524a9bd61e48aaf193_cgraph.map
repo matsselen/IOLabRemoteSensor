@@ -1,0 +1,10 @@
+<map id="GyroControl_SetConfig" name="GyroControl_SetConfig">
+<area shape="rect" href="$_key_value_8c.html#a30aa66a5e57b84caf453be8ec13a23f8" title="KeyValue_Separate" alt="" coords="215,5,354,32" />
+<area shape="rect" href="$_gyroscope_8c.html#afa99c1ed7e101c54ad829e253a49a28a" title="Gyroscope_Stop" alt="" coords="224,56,344,83" />
+<area shape="rect" href="$_gyroscope_8c.html#adf8e70db6c91c04de88b89452ce7b9d9" title="Gyroscope_Start" alt="" coords="224,157,344,184" />
+<area shape="rect" href="$_gyroscope_8c.html#a775cf3c806825e690cdf82ab4023a3e1" title="Gyroscope_Config" alt="" coords="219,107,350,133" />
+<area shape="rect" href="$_gyroscope_8c.html#a19ef56e939e27332ee83eca1a34bc6a8" title="_GyroWriteRegister" alt="" coords="430,107,568,133" />
+<area shape="rect" href="$_spi_master_8c.html#a92f3539ef78eccf3780715b433c04075" title="Spi_WriteRegister" alt="" coords="644,107,772,133" />
+<area shape="rect" href="$_gyroscope_8c.html#a7c3643655affa818995c762203dca652" title="_GyroReadMultipleRegisters" alt="" coords="403,157,595,184" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="644,157,772,184" />
+</map>

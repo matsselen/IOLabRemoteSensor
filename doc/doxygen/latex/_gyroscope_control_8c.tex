@@ -1,0 +1,185 @@
+\hypertarget{_gyroscope_control_8c}{\section{Gyroscope\-Control.\-c File Reference}
+\label{_gyroscope_control_8c}\index{Gyroscope\-Control.\-c@{Gyroscope\-Control.\-c}}
+}
+
+
+Controls the gyroscope driver.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Gyroscope\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Gyroscope.\-h$>$}\\*
+{\ttfamily \#include $<$Event\-Queue.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+Include dependency graph for Gyroscope\-Control.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_gyroscope_control_8c_a510950fd6e1a53eaddd48feb7f6e6251}{\-\_\-\-Gyro\-Data\-Ready\-Isr} (void)
+\item 
+void \hyperlink{_gyroscope_control_8c_a62c5033ca6c32f4b11a24dcba13e43e5}{Gyro\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_gyroscope_control_8c_aa25f6658dc42b0351df7fa47fa37390e}{Gyro\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} key\-Value)
+\item 
+void \hyperlink{_gyroscope_control_8c_a0f632c20363de00827df20235ebc7919}{Gyro\-Control\-\_\-\-Read\-Gyro} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_gyroscope_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_gyroscope_8h_struct_gyro_config__t}{Gyro\-Config\-\_\-t} \hyperlink{_gyroscope_control_8c_ab561b082d15aea3719a58789ba657754}{\-\_\-gyro\-Config}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the gyroscope driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the gyroscope driver and controls the configuration for it. 
+
+Definition in file \hyperlink{_gyroscope_control_8c_source}{Gyroscope\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_gyroscope_control_8c_a510950fd6e1a53eaddd48feb7f6e6251}{\index{Gyroscope\-Control.\-c@{Gyroscope\-Control.\-c}!\-\_\-\-Gyro\-Data\-Ready\-Isr@{\-\_\-\-Gyro\-Data\-Ready\-Isr}}
+\index{\-\_\-\-Gyro\-Data\-Ready\-Isr@{\-\_\-\-Gyro\-Data\-Ready\-Isr}!GyroscopeControl.c@{Gyroscope\-Control.\-c}}
+\subsubsection[{\-\_\-\-Gyro\-Data\-Ready\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Gyro\-Data\-Ready\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_gyroscope_control_8c_a510950fd6e1a53eaddd48feb7f6e6251}
+The data ready I\-S\-R handles the gyroscope data ready interrupt and will add an event to the event queue to notify the system to read the gyroscope. 
+
+Definition at line 191 of file Gyroscope\-Control.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_control_8c_a62c5033ca6c32f4b11a24dcba13e43e5}{\index{Gyroscope\-Control.\-c@{Gyroscope\-Control.\-c}!Gyro\-Control\-\_\-\-Init@{Gyro\-Control\-\_\-\-Init}}
+\index{Gyro\-Control\-\_\-\-Init@{Gyro\-Control\-\_\-\-Init}!GyroscopeControl.c@{Gyroscope\-Control.\-c}}
+\subsubsection[{Gyro\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Gyro\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_control_8c_a62c5033ca6c32f4b11a24dcba13e43e5}
+Initializes the accelerometer controller. 
+
+Definition at line 57 of file Gyroscope\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_control_8c_a0f632c20363de00827df20235ebc7919}{\index{Gyroscope\-Control.\-c@{Gyroscope\-Control.\-c}!Gyro\-Control\-\_\-\-Read\-Gyro@{Gyro\-Control\-\_\-\-Read\-Gyro}}
+\index{Gyro\-Control\-\_\-\-Read\-Gyro@{Gyro\-Control\-\_\-\-Read\-Gyro}!GyroscopeControl.c@{Gyroscope\-Control.\-c}}
+\subsubsection[{Gyro\-Control\-\_\-\-Read\-Gyro}]{\setlength{\rightskip}{0pt plus 5cm}void Gyro\-Control\-\_\-\-Read\-Gyro (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_control_8c_a0f632c20363de00827df20235ebc7919}
+Gets a reading from the accelerometer. 
+
+Definition at line 157 of file Gyroscope\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_control_8c_aa25f6658dc42b0351df7fa47fa37390e}{\index{Gyroscope\-Control.\-c@{Gyroscope\-Control.\-c}!Gyro\-Control\-\_\-\-Set\-Config@{Gyro\-Control\-\_\-\-Set\-Config}}
+\index{Gyro\-Control\-\_\-\-Set\-Config@{Gyro\-Control\-\_\-\-Set\-Config}!GyroscopeControl.c@{Gyroscope\-Control.\-c}}
+\subsubsection[{Gyro\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Gyro\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{key\-Value}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_control_8c_aa25f6658dc42b0351df7fa47fa37390e}
+Sets a configuration value to the accelerometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file Gyroscope\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_gyroscope_control_8c_ab561b082d15aea3719a58789ba657754}{\index{Gyroscope\-Control.\-c@{Gyroscope\-Control.\-c}!\-\_\-gyro\-Config@{\-\_\-gyro\-Config}}
+\index{\-\_\-gyro\-Config@{\-\_\-gyro\-Config}!GyroscopeControl.c@{Gyroscope\-Control.\-c}}
+\subsubsection[{\-\_\-gyro\-Config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gyro\-Config\-\_\-t} \-\_\-gyro\-Config\hspace{0.3cm}{\ttfamily [static]}}}\label{_gyroscope_control_8c_ab561b082d15aea3719a58789ba657754}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    GyroOdr\_95,
+    GyroResolution\_250,
+\}
+\end{DoxyCode}
+Stores the settings for the gyroscope 
+
+Definition at line 45 of file Gyroscope\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Start\-Data().
+
+\hypertarget{_gyroscope_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Gyroscope\-Control.\-c@{Gyroscope\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!GyroscopeControl.c@{Gyroscope\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gyroscope_control_8c_a4eb99285a0129893d3f48de7de237df5}
+tracks if the controller has been initialized 
+
+Definition at line 42 of file Gyroscope\-Control.\-c.
+

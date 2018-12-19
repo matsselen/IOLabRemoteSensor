@@ -1,0 +1,51 @@
+<map id="ProjectTypes.h" name="ProjectTypes.h">
+<area shape="rect" href="$_configuration_manager_8c.html" title="The configuration manager keeps track of all the sensor configurations. " alt="" coords="5,80,168,107" />
+<area shape="rect" href="$_data_buffer_8c.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="192,80,288,107" />
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="312,80,371,107" />
+<area shape="rect" href="$_self_test_8c_source.html" title="SelfTest.c" alt="" coords="395,80,475,107" />
+<area shape="rect" href="$_state_machine_8c.html" title="State logic handling. " alt="" coords="499,80,611,107" />
+<area shape="rect" href="$_accelerometer_control_8c.html" title="Controls the accelerometer driver. " alt="" coords="635,80,795,107" />
+<area shape="rect" href="$_ambient_light_control_8c.html" title="Controls reading the ambient light sensor. " alt="" coords="819,80,971,107" />
+<area shape="rect" href="$_analog7_control_8c.html" title="Controls reading analog input in header pin 7. " alt="" coords="995,80,1117,107" />
+<area shape="rect" href="$_analog8_control_8c.html" title="Controls reading analog input in header pin 8. " alt="" coords="1141,80,1264,107" />
+<area shape="rect" href="$_analog9_control_8c.html" title="Controls reading analog input in header pin 9. " alt="" coords="1288,80,1411,107" />
+<area shape="rect" href="$_barometer_control_8c.html" title="Controls the barometer driver. " alt="" coords="1435,80,1571,107" />
+<area shape="rect" href="$_battery_control_8c.html" title="Controls reading the battery voltage. " alt="" coords="1595,80,1712,107" />
+<area shape="rect" href="$_buzzer_control_8c.html" title="Controls the buzzer. " alt="" coords="1736,80,1851,107" />
+<area shape="rect" href="$_comm_protocol_8c.html" title="Communications protocol module. " alt="" coords="1875,80,1995,107" />
+<area shape="rect" href="$_dac_control_8c.html" title="Controls the hardware DAC. " alt="" coords="2019,80,2117,107" />
+<area shape="rect" href="$_digital_input_control_8c.html" title="Controls reading digital inputs on the header and buttons. " alt="" coords="2141,80,2283,107" />
+<area shape="rect" href="$_digital_i_o_control_8c.html" title="Controller for the digital IO. " alt="" coords="2307,80,2432,107" />
+<area shape="rect" href="$_ecg6_chan_control_8c_source.html" title="Ecg6ChanControl.c" alt="" coords="2456,80,2592,107" />
+<area shape="rect" href="$_ecg_control_8c.html" title="Controls reading the 6&#45;channel ECG. " alt="" coords="2616,80,2712,107" />
+<area shape="rect" href="$_encoder_control_8c.html" title="Controls the Quadrature Encoder driver. " alt="" coords="2736,80,2859,107" />
+<area shape="rect" href="$_force_gauge_control_8c.html" title="Controls the force gauge. " alt="" coords="2883,80,3032,107" />
+<area shape="rect" href="$_gyroscope_control_8c.html" title="Controls the gyroscope driver. " alt="" coords="3056,80,3195,107" />
+<area shape="rect" href="$_header1_control_8c.html" title="Controls header pin 1. " alt="" coords="3219,80,3344,107" />
+<area shape="rect" href="$_header2_control_8c.html" title="Controls header pin 2. " alt="" coords="3368,80,3493,107" />
+<area shape="rect" href="$_header3_control_8c.html" title="Controls header pin 3. " alt="" coords="3517,80,3643,107" />
+<area shape="rect" href="$_header4_control_8c_source.html" title="Header4Control.c" alt="" coords="3667,80,3792,107" />
+<area shape="rect" href="$_header5_control_8c_source.html" title="Header5Control.c" alt="" coords="3816,80,3941,107" />
+<area shape="rect" href="$_header6_control_8c.html" title="Controls header pin 6. " alt="" coords="3965,80,4091,107" />
+<area shape="rect" href="$_high_gain_control_8c.html" title="Controls reading the high gain input. " alt="" coords="4115,80,4245,107" />
+<area shape="rect" href="$_led_control_8c.html" title="LED Controller. " alt="" coords="4269,80,4365,107" />
+<area shape="rect" href="$_magnetometer_control_8c.html" title="Magnetometer control module. " alt="" coords="4389,80,4549,107" />
+<area shape="rect" href="$_microphone_control_8c.html" title="Controls reading the microphone. " alt="" coords="4573,80,4717,107" />
+<area shape="rect" href="$_pmm_control_8c.html" title="Power management module control. " alt="" coords="4741,80,4845,107" />
+<area shape="rect" href="$_push_button_control_8c.html" title="Control for the push buttons. " alt="" coords="4869,80,5013,107" />
+<area shape="rect" href="$_test_protocol_8c.html" title="Manages the self&#45;test protocol. " alt="" coords="5037,80,5144,107" />
+<area shape="rect" href="$_thermometer_control_8c.html" title="Controls the thermometer driver. " alt="" coords="5168,80,5323,107" />
+<area shape="rect" href="$_ui_manager_8c.html" title="Manages Feedback to the user. " alt="" coords="5635,155,5731,182" />
+<area shape="rect" href="$_star_wars_sequence_data_8h.html" title="Contains the sequence data information for the star wars UI sequence. " alt="" coords="5397,80,5573,107" />
+<area shape="rect" href="$_success_sequence_data_8h.html" title="Contains the sequence data information for the star wars UI sequence. " alt="" coords="5597,80,5768,107" />
+<area shape="rect" href="$_fail_sequence_data_8h.html" title="Contains the sequence data information for the star wars UI sequence. " alt="" coords="5792,80,5933,107" />
+<area shape="rect" href="$_girl_i_left_behind_sequence_data_8h.html" title="Contains the sequence data information for the Girl I Left Behind UI sequence. " alt="" coords="5957,80,6165,107" />
+<area shape="rect" href="$_accelerometer_8c.html" title="Accelerometer sensor interface module. " alt="" coords="6189,80,6307,107" />
+<area shape="rect" href="$_adc_manager_8c.html" title="Analog to digital conversion manager. " alt="" coords="6331,80,6437,107" />
+<area shape="rect" href="$_barometer_8c.html" title="Driver for the barometer sensor. " alt="" coords="6461,80,6555,107" />
+<area shape="rect" href="$_buzzer_8c_source.html" title="Buzzer.c" alt="" coords="6579,80,6651,107" />
+<area shape="rect" href="$_dac_8c.html" title="Driver for the DAC. " alt="" coords="6675,80,6731,107" />
+<area shape="rect" href="$_encoder_8c.html" title="The hardware driver for the quadrature encoder. " alt="" coords="6755,80,6835,107" />
+<area shape="rect" href="$_gpio_manager_8c.html" title="Manager for the digital input and output. " alt="" coords="6859,80,6971,107" />
+<area shape="rect" href="$_gyroscope_8c.html" title="Driver for the gyroscope sensor. " alt="" coords="6995,80,7091,107" />
+</map>

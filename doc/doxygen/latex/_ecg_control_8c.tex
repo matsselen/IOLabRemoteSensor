@@ -1,0 +1,340 @@
+\hypertarget{_ecg_control_8c}{\section{Ecg\-Control.\-c File Reference}
+\label{_ecg_control_8c}\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}}
+}
+
+
+Controls reading the 6-\/channel E\-C\-G.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Ecg\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Adc\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for Ecg\-Control.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_ecg_control_8c_a994b65be7a691d0841df0fed7c595bb1}{H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}~0x\-F000
+\item 
+\#define \hyperlink{_ecg_control_8c_a7b64795f5efe5ed8d52ac8c430c1ac7f}{N\-U\-M\-\_\-\-A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}~3u
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_adc_manager_8h_af206deec0c553ff1354dab154a2f976e}{Adc\-Man\-Ref\-\_\-t} \hyperlink{_ecg_control_8c_aa7d5d336770482e5171536f07d5184db}{\-\_\-\-Ecg\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref} (\hyperlink{_key_value_8h_a225b7ea7781bf90efa8be1ba8456df6f}{Ecg\-Ref\-Volt\-\_\-t} ref\-Volt)
+\item 
+static void \hyperlink{_ecg_control_8c_ac931a84cf3f606bacfa2ed6eb6aa7e92}{\-\_\-\-Ecg1\-Data\-Callback} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data)
+\item 
+static void \hyperlink{_ecg_control_8c_a5b80f7b1560b7ab3237aeea0839a1539}{\-\_\-\-Ecg2\-Data\-Callback} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data)
+\item 
+static void \hyperlink{_ecg_control_8c_a7a4a22d8bc2224eb6b6831265390fb7b}{\-\_\-\-Ecg3\-Data\-Callback} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data)
+\item 
+static void \hyperlink{_ecg_control_8c_aef223ca6e28c87f0a00fc3beee7d02e7}{\-\_\-\-Ecg\-Add\-To\-Data\-Buffer} (void)
+\item 
+void \hyperlink{_ecg_control_8c_a421609537cb7a922b2543e1cafb506c7}{Ecg\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_ecg_control_8c_af23ac3a526d06ab4cb41fda6ee5872ec}{Ecg\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_ecg_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_key_value_8h_a34cce44af7d33f75ed293f2863d9131c}{Ecg\-Sample\-Rate\-\_\-t} \hyperlink{_ecg_control_8c_aaff5395d04028c6ffae33d50402756e7}{\-\_\-sample\-Rate} = \hyperlink{_key_value_8h_a2306d65934a65a7fd1b30e2ac2e24670}{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_ecg_control_8c_a7805b05f96f7a2ec757e0daf0018de4b}{\-\_\-data\-Samples} \mbox{[}\hyperlink{_ecg_control_8c_a7b64795f5efe5ed8d52ac8c430c1ac7f}{N\-U\-M\-\_\-\-A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]} = \{\hyperlink{_ecg_control_8c_a994b65be7a691d0841df0fed7c595bb1}{H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}, \hyperlink{_ecg_control_8c_a994b65be7a691d0841df0fed7c595bb1}{H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}, \hyperlink{_ecg_control_8c_a994b65be7a691d0841df0fed7c595bb1}{H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}\}
+\item 
+static \hyperlink{_key_value_8h_a225b7ea7781bf90efa8be1ba8456df6f}{Ecg\-Ref\-Volt\-\_\-t} \hyperlink{_ecg_control_8c_a4885c67a69bdb62da2b0ff44bcf3f966}{\-\_\-ref\-Volt} = \hyperlink{_key_value_8h_a98493e757405454b12ebd051c20d0ed8}{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls reading the 6-\/channel E\-C\-G. Controls reading the E\-C\-G.
+
+{\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the 6-\/channel E\-C\-G and manages the configurations and settings associated with the E\-C\-G.
+
+{\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the E\-C\-G and manages the configurations and settings associated with the E\-C\-G. 
+
+Definition in file \hyperlink{_ecg_control_8c_source}{Ecg\-Control.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_ecg_control_8c_a994b65be7a691d0841df0fed7c595bb1}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E@{H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}}
+\index{H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E@{H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E~0x\-F000}}\label{_ecg_control_8c_a994b65be7a691d0841df0fed7c595bb1}
+The most significant nibble should always be 0 since the A to D is 12 bits 
+
+Definition at line 39 of file Ecg\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Ecg1\-Data\-Callback(), \-\_\-\-Ecg2\-Data\-Callback(), and \-\_\-\-Ecg3\-Data\-Callback().
+
+\hypertarget{_ecg_control_8c_a7b64795f5efe5ed8d52ac8c430c1ac7f}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!N\-U\-M\-\_\-\-A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S@{N\-U\-M\-\_\-\-A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}}
+\index{N\-U\-M\-\_\-\-A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S@{N\-U\-M\-\_\-\-A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S~3u}}\label{_ecg_control_8c_a7b64795f5efe5ed8d52ac8c430c1ac7f}
+Number of A\-D\-C channels for E\-C\-G 
+
+Definition at line 42 of file Ecg\-Control.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_ecg_control_8c_ac931a84cf3f606bacfa2ed6eb6aa7e92}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!\-\_\-\-Ecg1\-Data\-Callback@{\-\_\-\-Ecg1\-Data\-Callback}}
+\index{\-\_\-\-Ecg1\-Data\-Callback@{\-\_\-\-Ecg1\-Data\-Callback}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{\-\_\-\-Ecg1\-Data\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Ecg1\-Data\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_ecg_control_8c_ac931a84cf3f606bacfa2ed6eb6aa7e92}
+Takes the E\-C\-G data and stores it in the data array. This function is designed to be called every time there is data for the first E\-C\-G channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & -\/ The sample from the E\-C\-G that should be stored in the proper location. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 222 of file Ecg\-Control.\-c.
+
+
+
+Referenced by Ecg\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ecg_control_8c_a5b80f7b1560b7ab3237aeea0839a1539}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!\-\_\-\-Ecg2\-Data\-Callback@{\-\_\-\-Ecg2\-Data\-Callback}}
+\index{\-\_\-\-Ecg2\-Data\-Callback@{\-\_\-\-Ecg2\-Data\-Callback}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{\-\_\-\-Ecg2\-Data\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Ecg2\-Data\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_ecg_control_8c_a5b80f7b1560b7ab3237aeea0839a1539}
+Takes the E\-C\-G data and stores it in the data array. This function is designed to be called every time there is data for the second E\-C\-G channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & -\/ The sample from the E\-C\-G that should be stored in the proper location. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 244 of file Ecg\-Control.\-c.
+
+
+
+Referenced by Ecg\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ecg_control_8c_a7a4a22d8bc2224eb6b6831265390fb7b}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!\-\_\-\-Ecg3\-Data\-Callback@{\-\_\-\-Ecg3\-Data\-Callback}}
+\index{\-\_\-\-Ecg3\-Data\-Callback@{\-\_\-\-Ecg3\-Data\-Callback}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{\-\_\-\-Ecg3\-Data\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Ecg3\-Data\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_ecg_control_8c_a7a4a22d8bc2224eb6b6831265390fb7b}
+Takes the E\-C\-G data and stores it in the data array. This function is designed to be called every time there is data for the third E\-C\-G channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & -\/ The sample from the E\-C\-G that should be stored in the proper location. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 266 of file Ecg\-Control.\-c.
+
+
+
+Referenced by Ecg\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ecg_control_8c_aa7d5d336770482e5171536f07d5184db}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!\-\_\-\-Ecg\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref@{\-\_\-\-Ecg\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref}}
+\index{\-\_\-\-Ecg\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref@{\-\_\-\-Ecg\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{\-\_\-\-Ecg\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Adc\-Man\-Ref\-\_\-t} \-\_\-\-Ecg\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf Ecg\-Ref\-Volt\-\_\-t}}]{ref\-Volt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_ecg_control_8c_aa7d5d336770482e5171536f07d5184db}
+Converts from an Ecg\-Ref\-Volt\-\_\-t to an Adc\-Man\-Ref\-\_\-t.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref\-Volt} & -\/ the voltage reference selection to match \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Adc\-Man\-Ref\-\_\-t value corresponding to the ref\-Volt value 
+\end{DoxyReturn}
+
+
+Definition at line 192 of file Ecg\-Control.\-c.
+
+
+
+Referenced by Ecg\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ecg_control_8c_aef223ca6e28c87f0a00fc3beee7d02e7}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!\-\_\-\-Ecg\-Add\-To\-Data\-Buffer@{\-\_\-\-Ecg\-Add\-To\-Data\-Buffer}}
+\index{\-\_\-\-Ecg\-Add\-To\-Data\-Buffer@{\-\_\-\-Ecg\-Add\-To\-Data\-Buffer}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{\-\_\-\-Ecg\-Add\-To\-Data\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Ecg\-Add\-To\-Data\-Buffer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_ecg_control_8c_aef223ca6e28c87f0a00fc3beee7d02e7}
+Takes the E\-C\-G data and stores it in the proper location. This function is designed to be called every time there is data for the E\-C\-G. 
+
+Definition at line 285 of file Ecg\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Ecg1\-Data\-Callback(), \-\_\-\-Ecg2\-Data\-Callback(), and \-\_\-\-Ecg3\-Data\-Callback().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ecg_control_8c_a421609537cb7a922b2543e1cafb506c7}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!Ecg\-Control\-\_\-\-Init@{Ecg\-Control\-\_\-\-Init}}
+\index{Ecg\-Control\-\_\-\-Init@{Ecg\-Control\-\_\-\-Init}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{Ecg\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Ecg\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_ecg_control_8c_a421609537cb7a922b2543e1cafb506c7}
+Initializes the E\-C\-G reading control. 
+
+Definition at line 67 of file Ecg\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ecg_control_8c_af23ac3a526d06ab4cb41fda6ee5872ec}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!Ecg\-Control\-\_\-\-Set\-Config@{Ecg\-Control\-\_\-\-Set\-Config}}
+\index{Ecg\-Control\-\_\-\-Set\-Config@{Ecg\-Control\-\_\-\-Set\-Config}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{Ecg\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Ecg\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_ecg_control_8c_af23ac3a526d06ab4cb41fda6ee5872ec}
+Takes a configuration and sets it for the E\-C\-G reading.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the Key\-Value configuration setting for the E\-C\-G reading. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file Ecg\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_ecg_control_8c_a7805b05f96f7a2ec757e0daf0018de4b}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!\-\_\-data\-Samples@{\-\_\-data\-Samples}}
+\index{\-\_\-data\-Samples@{\-\_\-data\-Samples}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{\-\_\-data\-Samples}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-data\-Samples\mbox{[}{\bf N\-U\-M\-\_\-\-A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]} = \{{\bf H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}, {\bf H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}, {\bf H\-I\-G\-H\-\_\-\-N\-I\-B\-B\-L\-E}\}\hspace{0.3cm}{\ttfamily [static]}}}\label{_ecg_control_8c_a7805b05f96f7a2ec757e0daf0018de4b}
+array containing latest samples from all 3 analog inputs for the E\-C\-G 
+
+Definition at line 52 of file Ecg\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Ecg1\-Data\-Callback(), \-\_\-\-Ecg2\-Data\-Callback(), \-\_\-\-Ecg3\-Data\-Callback(), and \-\_\-\-Ecg\-Add\-To\-Data\-Buffer().
+
+\hypertarget{_ecg_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_ecg_control_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the module has been initialized 
+
+Definition at line 46 of file Ecg\-Control.\-c.
+
+\hypertarget{_ecg_control_8c_a4885c67a69bdb62da2b0ff44bcf3f966}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!\-\_\-ref\-Volt@{\-\_\-ref\-Volt}}
+\index{\-\_\-ref\-Volt@{\-\_\-ref\-Volt}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{\-\_\-ref\-Volt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ecg\-Ref\-Volt\-\_\-t} \-\_\-ref\-Volt = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}\hspace{0.3cm}{\ttfamily [static]}}}\label{_ecg_control_8c_a4885c67a69bdb62da2b0ff44bcf3f966}
+Stores the desired analog reference voltage of the header pin 
+
+Definition at line 55 of file Ecg\-Control.\-c.
+
+
+
+Referenced by Ecg\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_ecg_control_8c_aaff5395d04028c6ffae33d50402756e7}{\index{Ecg\-Control.\-c@{Ecg\-Control.\-c}!\-\_\-sample\-Rate@{\-\_\-sample\-Rate}}
+\index{\-\_\-sample\-Rate@{\-\_\-sample\-Rate}!EcgControl.c@{Ecg\-Control.\-c}}
+\subsubsection[{\-\_\-sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ecg\-Sample\-Rate\-\_\-t} \-\_\-sample\-Rate = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_ecg_control_8c_aaff5395d04028c6ffae33d50402756e7}
+Stores the desired sample rate of the E\-C\-G reading 
+
+Definition at line 49 of file Ecg\-Control.\-c.
+
+
+
+Referenced by Ecg\-Control\-\_\-\-Set\-Config().
+

@@ -1,0 +1,6 @@
+<map id="Version.h" name="Version.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="5,80,64,107" />
+<area shape="rect" href="$_comm_protocol_8c.html" title="Communications protocol module. " alt="" coords="88,80,208,107" />
+<area shape="rect" href="$_test_protocol_8c.html" title="Manages the self&#45;test protocol. " alt="" coords="232,80,339,107" />
+<area shape="rect" href="$_version_8c.html" title="Version information about the device and firmware. " alt="" coords="363,80,440,107" />
+</map>

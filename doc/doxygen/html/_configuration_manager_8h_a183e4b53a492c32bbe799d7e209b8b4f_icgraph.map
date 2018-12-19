@@ -1,0 +1,13 @@
+<map id="ConMan_SetSensorConfig" name="ConMan_SetSensorConfig">
+<area shape="rect" href="$_configuration_manager_8h.html#a4af394c25a5c58205d8832071eae3b0b" title="ConMan_StartData" alt="" coords="235,52,371,79" />
+<area shape="rect" href="$_configuration_manager_8h.html#a7e20b92732fc46ab8a1937e144066938" title="ConMan_StopData" alt="" coords="236,107,370,134" />
+<area shape="rect" href="$_comm_protocol_8h.html#a11fcf3a095c467e5da58a75e746059f1" title="CommProtocol_HandleStart\lDataPacket" alt="" coords="434,40,620,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="684,56,863,83" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="711,107,836,134" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="914,56,1098,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1396,56,1594,83" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1171,6,1323,32" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1147,107,1347,134" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1643,56,1694,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1f65077f8bed3f077ec2a561f20bf4b5" title="CommProtocol_HandleStopData\lPacket" alt="" coords="420,107,634,150" />
+</map>

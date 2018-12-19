@@ -1,0 +1,246 @@
+\hypertarget{_version_8c}{\section{Version.\-c File Reference}
+\label{_version_8c}\index{Version.\-c@{Version.\-c}}
+}
+
+
+Version information about the device and firmware.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Version.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for Version.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_version_8c_a1a53b724b6de666faa8a9e0d06d1055f}{V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}~(\hyperlink{_version_8c_a4389b6bab8263472250ac0655158a8b9}{V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y}\mbox{[}6u\mbox{]})
+\item 
+\hypertarget{_version_8c_ae0cb52afb79b185b1bf82c7e235f682b}{\#define {\bfseries V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R}~(\hyperlink{_version_8c_a4389b6bab8263472250ac0655158a8b9}{V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y}\mbox{[}7u\mbox{]})}\label{_version_8c_ae0cb52afb79b185b1bf82c7e235f682b}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} \hyperlink{_version_8c_ae426eb14333ed1319597b55bed4ae3a9}{Wafer\-Id} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_version_8c_a898bb328d7048ee08fd26c267bf4f0be}{Wafer\-X\-Position} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_version_8c_a71f5d84b010b037001724d45cccbaeb6}{Wafer\-Y\-Position} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_version_8c_a3f7395b151707ceba5f0b6d676ba9de3}{Device\-Id} (void)
+\item 
+\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_version_8c_a4e215b16a550c0e2373c54132cc6ac65}{Hardware\-Revision\-Micro} (void)
+\item 
+\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_version_8c_a3d767fbe2abec42aaf02711c6c290115}{Firmware\-Revision\-Micro} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_version_8c_ac57cb67b47703d647b7a3587f9cc1323}{User\-Firmware\-Version} (void)
+\item 
+\hypertarget{_version_8c_a2352afa7a6d2f829b5e82534108423ba}{const char $\ast$ {\bfseries User\-Firmware\-Version\-String} (void)}\label{_version_8c_a2352afa7a6d2f829b5e82534108423ba}
+
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_version_8c_a72d05551df39ca90d2d18934614217ef}{User\-Hardware\-Version} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_version_8c_a4389b6bab8263472250ac0655158a8b9}{V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y} \mbox{[}8u\mbox{]} = \{ 0x\-A\-A, 0x\-B\-B, 0x\-C\-C, 0x\-D\-D, 0x\-E\-E, 0x\-F\-F, U\-S\-E\-R\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-M\-A\-J\-O\-R, U\-S\-E\-R\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-M\-I\-N\-O\-R \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Version information about the device and firmware. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The version module stores version information about the device and the firmware. 
+
+Definition in file \hyperlink{_version_8c_source}{Version.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_version_8c_a1a53b724b6de666faa8a9e0d06d1055f}{\index{Version.\-c@{Version.\-c}!V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R@{V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}}
+\index{V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R@{V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}!Version.c@{Version.\-c}}
+\subsubsection[{V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R~({\bf V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y}\mbox{[}6u\mbox{]})}}\label{_version_8c_a1a53b724b6de666faa8a9e0d06d1055f}
+define macros to use the version number from the version number array so that the array doesn't get left out by the linker 
+
+Definition at line 38 of file Version.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_version_8c_a3f7395b151707ceba5f0b6d676ba9de3}{\index{Version.\-c@{Version.\-c}!Device\-Id@{Device\-Id}}
+\index{Device\-Id@{Device\-Id}!Version.c@{Version.\-c}}
+\subsubsection[{Device\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Device\-Id (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_version_8c_a3f7395b151707ceba5f0b6d676ba9de3}
+Reads the 2 byte Device Id from the microcontroller.
+
+M\-S\-P430\-F5329 should be 0x811\-B M\-S\-P430\-F5328 should be 0x811\-A M\-S\-P430\-F5327 should be 0x8119 M\-S\-P430\-F5326 should be 0x8118 M\-S\-P430\-F5325 should be 0x8117 M\-S\-P430\-F5324 should be 0x8116
+
+\begin{DoxyReturn}{Returns}
+The 2-\/byte Device Id of the microcontroller. 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file Version.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Ver\-Command().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_version_8c_a3d767fbe2abec42aaf02711c6c290115}{\index{Version.\-c@{Version.\-c}!Firmware\-Revision\-Micro@{Firmware\-Revision\-Micro}}
+\index{Firmware\-Revision\-Micro@{Firmware\-Revision\-Micro}!Version.c@{Version.\-c}}
+\subsubsection[{Firmware\-Revision\-Micro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} Firmware\-Revision\-Micro (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_version_8c_a3d767fbe2abec42aaf02711c6c290115}
+Reads the microcontroller firmware revision.
+
+\begin{DoxyReturn}{Returns}
+The 1-\/byte firmware revision. 
+\end{DoxyReturn}
+
+
+Definition at line 111 of file Version.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Ver\-Command().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_version_8c_a4e215b16a550c0e2373c54132cc6ac65}{\index{Version.\-c@{Version.\-c}!Hardware\-Revision\-Micro@{Hardware\-Revision\-Micro}}
+\index{Hardware\-Revision\-Micro@{Hardware\-Revision\-Micro}!Version.c@{Version.\-c}}
+\subsubsection[{Hardware\-Revision\-Micro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} Hardware\-Revision\-Micro (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_version_8c_a4e215b16a550c0e2373c54132cc6ac65}
+Reads the microcontroller hardware revision.
+
+\begin{DoxyReturn}{Returns}
+The 1-\/byte hardware revision. 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file Version.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Ver\-Command().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_version_8c_ac57cb67b47703d647b7a3587f9cc1323}{\index{Version.\-c@{Version.\-c}!User\-Firmware\-Version@{User\-Firmware\-Version}}
+\index{User\-Firmware\-Version@{User\-Firmware\-Version}!Version.c@{Version.\-c}}
+\subsubsection[{User\-Firmware\-Version}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} User\-Firmware\-Version (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_version_8c_ac57cb67b47703d647b7a3587f9cc1323}
+Reads the 2 byte firmware version of the code. The high byte is the major revision version and the low byte is the minor revision version.
+
+\begin{DoxyReturn}{Returns}
+The 2-\/byte firmware version. 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file Version.\-c.
+
+\hypertarget{_version_8c_a72d05551df39ca90d2d18934614217ef}{\index{Version.\-c@{Version.\-c}!User\-Hardware\-Version@{User\-Hardware\-Version}}
+\index{User\-Hardware\-Version@{User\-Hardware\-Version}!Version.c@{Version.\-c}}
+\subsubsection[{User\-Hardware\-Version}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} User\-Hardware\-Version (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_version_8c_a72d05551df39ca90d2d18934614217ef}
+Reads the 2 byte hardware version of the P\-C\-B. The high byte is the major revision version and the low byte is the minor revision version.
+
+\begin{DoxyReturn}{Returns}
+The 2-\/byte hardware version. 
+\end{DoxyReturn}
+
+
+Definition at line 146 of file Version.\-c.
+
+\hypertarget{_version_8c_ae426eb14333ed1319597b55bed4ae3a9}{\index{Version.\-c@{Version.\-c}!Wafer\-Id@{Wafer\-Id}}
+\index{Wafer\-Id@{Wafer\-Id}!Version.c@{Version.\-c}}
+\subsubsection[{Wafer\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint32\-\_\-t} Wafer\-Id (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_version_8c_ae426eb14333ed1319597b55bed4ae3a9}
+Reads the 4 byte Wafer Id from the microcontroller.
+
+\begin{DoxyReturn}{Returns}
+The 4-\/byte Wafer Id of the microcontroller. 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file Version.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Ver\-Command().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_version_8c_a898bb328d7048ee08fd26c267bf4f0be}{\index{Version.\-c@{Version.\-c}!Wafer\-X\-Position@{Wafer\-X\-Position}}
+\index{Wafer\-X\-Position@{Wafer\-X\-Position}!Version.c@{Version.\-c}}
+\subsubsection[{Wafer\-X\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Wafer\-X\-Position (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_version_8c_a898bb328d7048ee08fd26c267bf4f0be}
+Reads the 2 byte Wafer X Position from the microcontroller.
+
+\begin{DoxyReturn}{Returns}
+The 2-\/byte Wafer X Position of the microcontroller. 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file Version.\-c.
+
+\hypertarget{_version_8c_a71f5d84b010b037001724d45cccbaeb6}{\index{Version.\-c@{Version.\-c}!Wafer\-Y\-Position@{Wafer\-Y\-Position}}
+\index{Wafer\-Y\-Position@{Wafer\-Y\-Position}!Version.c@{Version.\-c}}
+\subsubsection[{Wafer\-Y\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Wafer\-Y\-Position (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_version_8c_a71f5d84b010b037001724d45cccbaeb6}
+Reads the 2 byte Wafer Y position from the microcontroller.
+
+\begin{DoxyReturn}{Returns}
+The 2-\/byte Wafer Y position from the microcontroller. 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Version.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_version_8c_a4389b6bab8263472250ac0655158a8b9}{\index{Version.\-c@{Version.\-c}!V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y@{V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y}}
+\index{V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y@{V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y}!Version.c@{Version.\-c}}
+\subsubsection[{V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint8\-\_\-t} V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-R\-R\-A\-Y\mbox{[}8u\mbox{]} = \{ 0x\-A\-A, 0x\-B\-B, 0x\-C\-C, 0x\-D\-D, 0x\-E\-E, 0x\-F\-F, U\-S\-E\-R\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-M\-A\-J\-O\-R, U\-S\-E\-R\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-M\-I\-N\-O\-R \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_version_8c_a4389b6bab8263472250ac0655158a8b9}
+Define a local array that has a fixed sequence of bytes before the version number so that the version number can be located in the binary code image 
+
+Definition at line 33 of file Version.\-c.
+

@@ -1,0 +1,406 @@
+\hypertarget{_gyroscope_8h}{\section{Gyroscope.\-h File Reference}
+\label{_gyroscope_8h}\index{Gyroscope.\-h@{Gyroscope.\-h}}
+}
+
+
+Header file for Gyroscope sensor driver.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_gyroscope_8h_struct_gyro_config__t}{Gyro\-Config\-\_\-t}
+\item 
+struct \hyperlink{_gyroscope_8h_struct_gyro_sample__t}{Gyro\-Sample\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_gyroscope_8h_a03f1b40a30321e1f606ef80e0d3149d3}{Gyro\-Isr\-Pointer\-\_\-t} )(void)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_gyroscope_8h_a9c153f4ba762426ba372991fb870497d}{Gyro\-Odr\-\_\-t} \{ \\*
+{\bfseries Gyro\-Odr\-\_\-760}, 
+\\*
+{\bfseries Gyro\-Odr\-\_\-380}, 
+\\*
+{\bfseries Gyro\-Odr\-\_\-190}, 
+\\*
+{\bfseries Gyro\-Odr\-\_\-95}
+ \}
+\item 
+enum \hyperlink{_gyroscope_8h_a9a8572ce7fc1344382eec26a0a69d17c}{Gyro\-Resolution\-\_\-t} \{ \\*
+{\bfseries Gyro\-Resolution\-\_\-2000}, 
+\\*
+{\bfseries Gyro\-Resolution\-\_\-500}, 
+\\*
+{\bfseries Gyro\-Resolution\-\_\-250}
+ \}
+\item 
+enum \hyperlink{_gyroscope_8h_a657e96d2bae13792d6f00d519a7a462d}{Gyro\-Bandwidth\-\_\-t} \{ \\*
+{\bfseries Gyro\-Bandwidth\-\_\-0}, 
+\\*
+{\bfseries Gyro\-Bandwidth\-\_\-1}, 
+\\*
+{\bfseries Gyro\-Bandwidth\-\_\-2}, 
+\\*
+{\bfseries Gyro\-Bandwidth\-\_\-3}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_gyroscope_8h_af21c974c68ac43ddcbe29cd0b2e0c84f}{Gyroscope\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_gyroscope_8h_a775cf3c806825e690cdf82ab4023a3e1}{Gyroscope\-\_\-\-Config} (const \hyperlink{_gyroscope_8h_struct_gyro_config__t}{Gyro\-Config\-\_\-t} $\ast$config)
+\item 
+void \hyperlink{_gyroscope_8h_adf8e70db6c91c04de88b89452ce7b9d9}{Gyroscope\-\_\-\-Start} (void)
+\item 
+void \hyperlink{_gyroscope_8h_afa99c1ed7e101c54ad829e253a49a28a}{Gyroscope\-\_\-\-Stop} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_gyroscope_8h_ab65933152860c82db86c5da812e0bf51}{Gyroscope\-\_\-\-Read\-Sample} (\hyperlink{_gyroscope_8h_struct_gyro_sample__t}{Gyro\-Sample\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_gyroscope_8h_a3442d46e2e13980e37951e2196e7e6bb}{Gyroscope\-\_\-\-Read\-Sample\-Array} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_project_types_8h_aef44329758059c91c76d334e8fc09700}{int8\-\_\-t} \hyperlink{_gyroscope_8h_aa4f36bdacf69079c5b83860981bffb8c}{Gyroscope\-\_\-\-Read\-Temperature} (void)
+\item 
+void \hyperlink{_gyroscope_8h_ab69758992330e23b7c1262c44b1b9562}{Gyroscope\-\_\-\-Register\-Isr} (\hyperlink{_gyroscope_8h_a03f1b40a30321e1f606ef80e0d3149d3}{Gyro\-Isr\-Pointer\-\_\-t} isr)
+\item 
+void \hyperlink{_gyroscope_8h_aa75ee4fec5dd8fdddecf94fa975b8043}{Gyroscope\-\_\-\-Unregister\-Isr} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for Gyroscope sensor driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The gyroscope sensor driver accesses the 3-\/axis readings from the gyroscope sensor. 
+
+Definition in file \hyperlink{_gyroscope_8h_source}{Gyroscope.\-h}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Gyro\-Config\-\_\-t@{Gyro\-Config\-\_\-t}}\label{struct_gyro_config__t}
+\hypertarget{_gyroscope_8h_struct_gyro_config__t}{}
+\subsubsection{struct Gyro\-Config\-\_\-t}
+Defines a structure to hold the gyroscope configuration data in. 
+
+Definition at line 70 of file Gyroscope.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_gyroscope_8h_a1c57f209f3a1133987c469edd9a35ce9}{\hyperlink{_gyroscope_8h_a9c153f4ba762426ba372991fb870497d}{Gyro\-Odr\-\_\-t}}\label{_gyroscope_8h_a1c57f209f3a1133987c469edd9a35ce9}
+&
+odr&
+\\
+\hline
+
+\hypertarget{_gyroscope_8h_a9bca32b4996a2ae9198fbfa4d22069d7}{\hyperlink{_gyroscope_8h_a9a8572ce7fc1344382eec26a0a69d17c}{Gyro\-Resolution\-\_\-t}}\label{_gyroscope_8h_a9bca32b4996a2ae9198fbfa4d22069d7}
+&
+resolution&
+\\
+\hline
+
+\end{DoxyFields}
+\index{Gyro\-Sample\-\_\-t@{Gyro\-Sample\-\_\-t}}\label{struct_gyro_sample__t}
+\hypertarget{_gyroscope_8h_struct_gyro_sample__t}{}
+\subsubsection{struct Gyro\-Sample\-\_\-t}
+Defines a structure to hold the gyroscope sample data in 
+
+Definition at line 79 of file Gyroscope.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_gyroscope_8h_a8233479bd1e4ef8169db8080cb0879f8}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_gyroscope_8h_a8233479bd1e4ef8169db8080cb0879f8}
+&
+x\-Data&
+\\
+\hline
+
+\hypertarget{_gyroscope_8h_a9157198cc6c139c833cfd5e2d355605b}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_gyroscope_8h_a9157198cc6c139c833cfd5e2d355605b}
+&
+y\-Data&
+\\
+\hline
+
+\hypertarget{_gyroscope_8h_af1eee0a1ae125ed2478775abd750cc8b}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_gyroscope_8h_af1eee0a1ae125ed2478775abd750cc8b}
+&
+z\-Data&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_gyroscope_8h_a03f1b40a30321e1f606ef80e0d3149d3}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyro\-Isr\-Pointer\-\_\-t@{Gyro\-Isr\-Pointer\-\_\-t}}
+\index{Gyro\-Isr\-Pointer\-\_\-t@{Gyro\-Isr\-Pointer\-\_\-t}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyro\-Isr\-Pointer\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Gyro\-Isr\-Pointer\-\_\-t)(void)}}\label{_gyroscope_8h_a03f1b40a30321e1f606ef80e0d3149d3}
+Defines an gyroscope I\-S\-R function pointer 
+
+Definition at line 25 of file Gyroscope.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_gyroscope_8h_a657e96d2bae13792d6f00d519a7a462d}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyro\-Bandwidth\-\_\-t@{Gyro\-Bandwidth\-\_\-t}}
+\index{Gyro\-Bandwidth\-\_\-t@{Gyro\-Bandwidth\-\_\-t}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyro\-Bandwidth\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Gyro\-Bandwidth\-\_\-t}}}\label{_gyroscope_8h_a657e96d2bae13792d6f00d519a7a462d}
+Defines the Bandwidth setting for the gyroscope. The cutoff value depends on the output data rate. 
+
+Definition at line 61 of file Gyroscope.\-h.
+
+\hypertarget{_gyroscope_8h_a9c153f4ba762426ba372991fb870497d}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyro\-Odr\-\_\-t@{Gyro\-Odr\-\_\-t}}
+\index{Gyro\-Odr\-\_\-t@{Gyro\-Odr\-\_\-t}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyro\-Odr\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Gyro\-Odr\-\_\-t}}}\label{_gyroscope_8h_a9c153f4ba762426ba372991fb870497d}
+Defines the options for the gyroscope sample rates in Hz Defines a structure to hold the gyroscope configuration settings Defines the output data rates that the gyroscope can run at. 
+
+Definition at line 40 of file Gyroscope.\-h.
+
+\hypertarget{_gyroscope_8h_a9a8572ce7fc1344382eec26a0a69d17c}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyro\-Resolution\-\_\-t@{Gyro\-Resolution\-\_\-t}}
+\index{Gyro\-Resolution\-\_\-t@{Gyro\-Resolution\-\_\-t}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyro\-Resolution\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Gyro\-Resolution\-\_\-t}}}\label{_gyroscope_8h_a9a8572ce7fc1344382eec26a0a69d17c}
+Defines the resolution setting for the gyroscope in degrees per second. 
+
+Definition at line 51 of file Gyroscope.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_gyroscope_8h_a775cf3c806825e690cdf82ab4023a3e1}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyroscope\-\_\-\-Config@{Gyroscope\-\_\-\-Config}}
+\index{Gyroscope\-\_\-\-Config@{Gyroscope\-\_\-\-Config}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyroscope\-\_\-\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Config (
+\begin{DoxyParamCaption}
+\item[{const {\bf Gyro\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8h_a775cf3c806825e690cdf82ab4023a3e1}
+Reads in the value of the data from the gyroscope
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample-\/} & the location to store the sample data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 368 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8h_af21c974c68ac43ddcbe29cd0b2e0c84f}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyroscope\-\_\-\-Init@{Gyroscope\-\_\-\-Init}}
+\index{Gyroscope\-\_\-\-Init@{Gyroscope\-\_\-\-Init}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyroscope\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8h_af21c974c68ac43ddcbe29cd0b2e0c84f}
+Initializes the gyroscope, but does not configure or start sampling 
+
+Definition at line 341 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8h_ab65933152860c82db86c5da812e0bf51}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyroscope\-\_\-\-Read\-Sample@{Gyroscope\-\_\-\-Read\-Sample}}
+\index{Gyroscope\-\_\-\-Read\-Sample@{Gyroscope\-\_\-\-Read\-Sample}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyroscope\-\_\-\-Read\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Gyroscope\-\_\-\-Read\-Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf Gyro\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8h_ab65933152860c82db86c5da812e0bf51}
+Reads in the value of the data from the gyroscope
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample-\/} & the location to store the sample data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 487 of file Gyroscope.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Gyro\-Command(), and Gyro\-Control\-\_\-\-Read\-Gyro().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8h_a3442d46e2e13980e37951e2196e7e6bb}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyroscope\-\_\-\-Read\-Sample\-Array@{Gyroscope\-\_\-\-Read\-Sample\-Array}}
+\index{Gyroscope\-\_\-\-Read\-Sample\-Array@{Gyroscope\-\_\-\-Read\-Sample\-Array}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyroscope\-\_\-\-Read\-Sample\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Read\-Sample\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8h_a3442d46e2e13980e37951e2196e7e6bb}
+Reads a sample from the gyroscope if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Length} & -\/ the maximum length of bytes data\mbox{[}\mbox{]} can hold \\
+\hline
+\mbox{\tt out}  & {\em actual\-Length} & -\/ the actual number of bytes written to data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em data} & -\/ an array to hold the data from the accelerometer reading \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 513 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Read\-Gyro().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8h_aa4f36bdacf69079c5b83860981bffb8c}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyroscope\-\_\-\-Read\-Temperature@{Gyroscope\-\_\-\-Read\-Temperature}}
+\index{Gyroscope\-\_\-\-Read\-Temperature@{Gyroscope\-\_\-\-Read\-Temperature}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyroscope\-\_\-\-Read\-Temperature}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int8\-\_\-t} Gyroscope\-\_\-\-Read\-Temperature (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8h_aa4f36bdacf69079c5b83860981bffb8c}
+Reads a temperature sample from the gyroscope
+
+\begin{DoxyReturn}{Returns}
+Temperature in °\-C as a signed 8-\/bit integer number 
+\end{DoxyReturn}
+
+
+Definition at line 544 of file Gyroscope.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_gyroscope_8h_ab69758992330e23b7c1262c44b1b9562}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyroscope\-\_\-\-Register\-Isr@{Gyroscope\-\_\-\-Register\-Isr}}
+\index{Gyroscope\-\_\-\-Register\-Isr@{Gyroscope\-\_\-\-Register\-Isr}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyroscope\-\_\-\-Register\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Register\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Gyro\-Isr\-Pointer\-\_\-t}}]{isr}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8h_ab69758992330e23b7c1262c44b1b9562}
+Sets a function that will be ran when the data ready interrupt occurs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em isr} & -\/ pointer to the gyroscope data ready I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 557 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8h_adf8e70db6c91c04de88b89452ce7b9d9}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyroscope\-\_\-\-Start@{Gyroscope\-\_\-\-Start}}
+\index{Gyroscope\-\_\-\-Start@{Gyroscope\-\_\-\-Start}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyroscope\-\_\-\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8h_adf8e70db6c91c04de88b89452ce7b9d9}
+Starts the gyroscope sampling at its configured data rate. 
+
+Definition at line 441 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8h_afa99c1ed7e101c54ad829e253a49a28a}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyroscope\-\_\-\-Stop@{Gyroscope\-\_\-\-Stop}}
+\index{Gyroscope\-\_\-\-Stop@{Gyroscope\-\_\-\-Stop}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyroscope\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8h_afa99c1ed7e101c54ad829e253a49a28a}
+Stops the data collecting of the gyroscope. 
+
+Definition at line 468 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8h_aa75ee4fec5dd8fdddecf94fa975b8043}{\index{Gyroscope.\-h@{Gyroscope.\-h}!Gyroscope\-\_\-\-Unregister\-Isr@{Gyroscope\-\_\-\-Unregister\-Isr}}
+\index{Gyroscope\-\_\-\-Unregister\-Isr@{Gyroscope\-\_\-\-Unregister\-Isr}!Gyroscope.h@{Gyroscope.\-h}}
+\subsubsection[{Gyroscope\-\_\-\-Unregister\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Unregister\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8h_aa75ee4fec5dd8fdddecf94fa975b8043}
+Clears the custom I\-S\-R for the gyroscope. 
+
+Definition at line 567 of file Gyroscope.\-c.
+

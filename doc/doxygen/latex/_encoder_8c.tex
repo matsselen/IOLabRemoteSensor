@@ -1,0 +1,371 @@
+\hypertarget{_encoder_8c}{\section{Encoder.\-c File Reference}
+\label{_encoder_8c}\index{Encoder.\-c@{Encoder.\-c}}
+}
+
+
+The hardware driver for the quadrature encoder.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Encoder.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Timer.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for Encoder.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_encoder_8c_a1473beb20fbd7931ef5313e18aa94b41}{N\-U\-M\-\_\-\-D\-I\-R\-E\-C\-T\-I\-O\-N\-\_\-\-C\-H\-A\-N\-G\-E}~( 2u )
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_encoder_8c_ac5256c94c862f3830491b346c293d516}{Encoder\-Direction\-\_\-t} \{ \\*
+{\bfseries Encoder\-Direction\-\_\-\-I\-N\-V\-A\-L\-I\-D}, 
+\\*
+{\bfseries Encoder\-Direction\-\_\-\-F\-O\-R\-W\-A\-R\-D}, 
+\\*
+{\bfseries Encoder\-Direction\-\_\-\-B\-A\-C\-K\-W\-A\-R\-D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_encoder_8c_ab3c6fee0e5a230c3b9f8d065bef5634f}{\-\_\-\-Encoder\-\_\-\-Add\-Sample} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} counts, \hyperlink{_encoder_8c_ac5256c94c862f3830491b346c293d516}{Encoder\-Direction\-\_\-t} direction)
+\item 
+static void \hyperlink{_encoder_8c_ac60cabf6f4e0f21139a909d5d168c578}{\-\_\-\-Encoder\-\_\-\-Clear\-Buffer} (void)
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{_encoder_8c_a3c784b6eb56465d2fa591868cc8e944d}{\-\_\-\-Timer\-A2\-C\-C0\-Isr} (void)
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{_encoder_8c_a48a90f83b07b44eca98b158eb05b1e2e}{\-\_\-\-Timer\-A2\-C\-Cx\-Isr} (void)
+\item 
+void \hyperlink{_encoder_8c_a1c8318d644fc2e61cc1ef9cb0710feb6}{Encoder\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_encoder_8c_aebbaa45bf07e0fe0c34185589998f871}{Encoder\-\_\-\-Start} (void)
+\item 
+void \hyperlink{_encoder_8c_a70d889a12cdee37e168987ba50cc02f6}{Encoder\-\_\-\-Stop} (void)
+\item 
+\hyperlink{_encoder_8h_aec382a01a008a58028aef12cc54de987}{Encoder\-Status\-\_\-t} \hyperlink{_encoder_8c_a433dcdf1689d78f0710da855c15f2aa4}{Encoder\-\_\-\-Read} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} counts\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$elements, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Elements)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_encoder_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_encoder_8c_abc38eb8cce2a55636053c3c34d7b6ccf}{\-\_\-previous\-Count}
+\item 
+static \hyperlink{_encoder_8c_ac5256c94c862f3830491b346c293d516}{Encoder\-Direction\-\_\-t} \hyperlink{_encoder_8c_afcf0800f255a57d47568035802096df2}{\-\_\-previous\-Direction}
+\item 
+static \hyperlink{_encoder_8h_aec382a01a008a58028aef12cc54de987}{Encoder\-Status\-\_\-t} \hyperlink{_encoder_8c_a9e2d79b6d3c283adeece9780353fed4d}{\-\_\-current\-Status} = Encoder\-Status\-\_\-\-O\-K\-A\-Y
+\item 
+static \hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} \hyperlink{_encoder_8c_acbebdabc38f28c2d09782c09d45f417a}{\-\_\-encoder\-Counts} \mbox{[}\hyperlink{_encoder_8c_a1473beb20fbd7931ef5313e18aa94b41}{N\-U\-M\-\_\-\-D\-I\-R\-E\-C\-T\-I\-O\-N\-\_\-\-C\-H\-A\-N\-G\-E}\mbox{]} = \{ 0u \}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_encoder_8c_a9f1baa375a374cbc2ec7214d43404933}{\-\_\-encoder\-Count\-Index} = 0u
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The hardware driver for the quadrature encoder. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The quadrature encoder uses a a direction and count input to count how many pulses and in which direction a specially designed encoder moved.
+
+The encoder module uses timer A2 of for hardware counting and direction checking. 
+
+Definition in file \hyperlink{_encoder_8c_source}{Encoder.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_encoder_8c_a1473beb20fbd7931ef5313e18aa94b41}{\index{Encoder.\-c@{Encoder.\-c}!N\-U\-M\-\_\-\-D\-I\-R\-E\-C\-T\-I\-O\-N\-\_\-\-C\-H\-A\-N\-G\-E@{N\-U\-M\-\_\-\-D\-I\-R\-E\-C\-T\-I\-O\-N\-\_\-\-C\-H\-A\-N\-G\-E}}
+\index{N\-U\-M\-\_\-\-D\-I\-R\-E\-C\-T\-I\-O\-N\-\_\-\-C\-H\-A\-N\-G\-E@{N\-U\-M\-\_\-\-D\-I\-R\-E\-C\-T\-I\-O\-N\-\_\-\-C\-H\-A\-N\-G\-E}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-D\-I\-R\-E\-C\-T\-I\-O\-N\-\_\-\-C\-H\-A\-N\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-D\-I\-R\-E\-C\-T\-I\-O\-N\-\_\-\-C\-H\-A\-N\-G\-E~( 2u )}}\label{_encoder_8c_a1473beb20fbd7931ef5313e18aa94b41}
+Defines how many previous direction changes to store 
+
+Definition at line 47 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Encoder\-\_\-\-Add\-Sample(), \-\_\-\-Encoder\-\_\-\-Clear\-Buffer(), and Encoder\-\_\-\-Read().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_encoder_8c_ac5256c94c862f3830491b346c293d516}{\index{Encoder.\-c@{Encoder.\-c}!Encoder\-Direction\-\_\-t@{Encoder\-Direction\-\_\-t}}
+\index{Encoder\-Direction\-\_\-t@{Encoder\-Direction\-\_\-t}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{Encoder\-Direction\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Encoder\-Direction\-\_\-t}}}\label{_encoder_8c_ac5256c94c862f3830491b346c293d516}
+Defines the direction options for the timer 
+
+Definition at line 39 of file Encoder.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_encoder_8c_ab3c6fee0e5a230c3b9f8d065bef5634f}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-\-Encoder\-\_\-\-Add\-Sample@{\-\_\-\-Encoder\-\_\-\-Add\-Sample}}
+\index{\-\_\-\-Encoder\-\_\-\-Add\-Sample@{\-\_\-\-Encoder\-\_\-\-Add\-Sample}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-\-Encoder\-\_\-\-Add\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Encoder\-\_\-\-Add\-Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{counts, }
+\item[{{\bf Encoder\-Direction\-\_\-t}}]{direction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_8c_ab3c6fee0e5a230c3b9f8d065bef5634f}
+Adds an encoder sample to the buffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em counts} & -\/ the value of the encoder H\-W counter \\
+\hline
+\mbox{\tt in}  & {\em direction} & -\/ the current direction of the encoder \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Timer\-A2\-C\-C0\-Isr(), and \-\_\-\-Timer\-A2\-C\-Cx\-Isr().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_8c_ac60cabf6f4e0f21139a909d5d168c578}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-\-Encoder\-\_\-\-Clear\-Buffer@{\-\_\-\-Encoder\-\_\-\-Clear\-Buffer}}
+\index{\-\_\-\-Encoder\-\_\-\-Clear\-Buffer@{\-\_\-\-Encoder\-\_\-\-Clear\-Buffer}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-\-Encoder\-\_\-\-Clear\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Encoder\-\_\-\-Clear\-Buffer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_8c_ac60cabf6f4e0f21139a909d5d168c578}
+Clears the storage buffer for the encoder. 
+
+Definition at line 254 of file Encoder.\-c.
+
+
+
+Referenced by Encoder\-\_\-\-Read(), and Encoder\-\_\-\-Start().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_8c_a3c784b6eb56465d2fa591868cc8e944d}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-\-Timer\-A2\-C\-C0\-Isr@{\-\_\-\-Timer\-A2\-C\-C0\-Isr}}
+\index{\-\_\-\-Timer\-A2\-C\-C0\-Isr@{\-\_\-\-Timer\-A2\-C\-C0\-Isr}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-\-Timer\-A2\-C\-C0\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void \-\_\-\-Timer\-A2\-C\-C0\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8c_a3c784b6eb56465d2fa591868cc8e944d}
+Interrupt service routine for the timer A2 compare/capture 0 interrupt. The interrupt flag is cleared in hardware when the I\-S\-R is called.
+
+Read the value of the counter when the direction change occurred and start counting in the other direction. 
+
+Definition at line 274 of file Encoder.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_encoder_8c_a48a90f83b07b44eca98b158eb05b1e2e}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-\-Timer\-A2\-C\-Cx\-Isr@{\-\_\-\-Timer\-A2\-C\-Cx\-Isr}}
+\index{\-\_\-\-Timer\-A2\-C\-Cx\-Isr@{\-\_\-\-Timer\-A2\-C\-Cx\-Isr}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-\-Timer\-A2\-C\-Cx\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void \-\_\-\-Timer\-A2\-C\-Cx\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8c_a48a90f83b07b44eca98b158eb05b1e2e}
+Interrupt service routine for the timer A2 compare/capture 1-\/4 interrupt. The interrupt flag is cleared in hardware when the I\-S\-R is called.
+
+Read the value of the counter and store the value. 
+
+Definition at line 312 of file Encoder.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_encoder_8c_a1c8318d644fc2e61cc1ef9cb0710feb6}{\index{Encoder.\-c@{Encoder.\-c}!Encoder\-\_\-\-Init@{Encoder\-\_\-\-Init}}
+\index{Encoder\-\_\-\-Init@{Encoder\-\_\-\-Init}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{Encoder\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Encoder\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8c_a1c8318d644fc2e61cc1ef9cb0710feb6}
+Initializes the encoder module. 
+
+Definition at line 75 of file Encoder.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_8c_a433dcdf1689d78f0710da855c15f2aa4}{\index{Encoder.\-c@{Encoder.\-c}!Encoder\-\_\-\-Read@{Encoder\-\_\-\-Read}}
+\index{Encoder\-\_\-\-Read@{Encoder\-\_\-\-Read}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{Encoder\-\_\-\-Read}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoder\-Status\-\_\-t} Encoder\-\_\-\-Read (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{counts\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{elements, }
+\item[{{\bf uint16\-\_\-t}}]{max\-Elements}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8c_a433dcdf1689d78f0710da855c15f2aa4}
+Read the value of the encoder counts.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em counts} & -\/ the counts and direction of the encoder. \\
+\hline
+\mbox{\tt out}  & {\em elements} & -\/ the actual number of samples that were put in counts \\
+\hline
+\mbox{\tt in}  & {\em max\-Elements} & -\/ the maximum number of samples that fit into counts\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of the encoder over the last sample. 
+\end{DoxyReturn}
+
+
+Definition at line 138 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Encoder\-Command(), and Enc\-Control\-\_\-\-Read\-Enc().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_8c_aebbaa45bf07e0fe0c34185589998f871}{\index{Encoder.\-c@{Encoder.\-c}!Encoder\-\_\-\-Start@{Encoder\-\_\-\-Start}}
+\index{Encoder\-\_\-\-Start@{Encoder\-\_\-\-Start}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{Encoder\-\_\-\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Encoder\-\_\-\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8c_aebbaa45bf07e0fe0c34185589998f871}
+Starts the counting of the encoder. 
+
+Definition at line 97 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Encoder\-Command(), and Enc\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_8c_a70d889a12cdee37e168987ba50cc02f6}{\index{Encoder.\-c@{Encoder.\-c}!Encoder\-\_\-\-Stop@{Encoder\-\_\-\-Stop}}
+\index{Encoder\-\_\-\-Stop@{Encoder\-\_\-\-Stop}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{Encoder\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Encoder\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8c_a70d889a12cdee37e168987ba50cc02f6}
+Stops the counting of the encoder. 
+
+Definition at line 117 of file Encoder.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_encoder_8c_a9e2d79b6d3c283adeece9780353fed4d}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-current\-Status@{\-\_\-current\-Status}}
+\index{\-\_\-current\-Status@{\-\_\-current\-Status}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-current\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoder\-Status\-\_\-t} \-\_\-current\-Status = Encoder\-Status\-\_\-\-O\-K\-A\-Y\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_8c_a9e2d79b6d3c283adeece9780353fed4d}
+Current Encoder Status 
+
+Definition at line 59 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Encoder\-\_\-\-Add\-Sample(), \-\_\-\-Timer\-A2\-C\-C0\-Isr(), \-\_\-\-Timer\-A2\-C\-Cx\-Isr(), and Encoder\-\_\-\-Read().
+
+\hypertarget{_encoder_8c_a9f1baa375a374cbc2ec7214d43404933}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-encoder\-Count\-Index@{\-\_\-encoder\-Count\-Index}}
+\index{\-\_\-encoder\-Count\-Index@{\-\_\-encoder\-Count\-Index}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-encoder\-Count\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-encoder\-Count\-Index = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_8c_a9f1baa375a374cbc2ec7214d43404933}
+Stores the index of hte encoder counts 
+
+Definition at line 64 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Encoder\-\_\-\-Add\-Sample(), \-\_\-\-Encoder\-\_\-\-Clear\-Buffer(), and Encoder\-\_\-\-Read().
+
+\hypertarget{_encoder_8c_acbebdabc38f28c2d09782c09d45f417a}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-encoder\-Counts@{\-\_\-encoder\-Counts}}
+\index{\-\_\-encoder\-Counts@{\-\_\-encoder\-Counts}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-encoder\-Counts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int16\-\_\-t} \-\_\-encoder\-Counts\mbox{[}{\bf N\-U\-M\-\_\-\-D\-I\-R\-E\-C\-T\-I\-O\-N\-\_\-\-C\-H\-A\-N\-G\-E}\mbox{]} = \{ 0u \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_8c_acbebdabc38f28c2d09782c09d45f417a}
+Stores the encoder counts 
+
+Definition at line 62 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Encoder\-\_\-\-Add\-Sample(), \-\_\-\-Encoder\-\_\-\-Clear\-Buffer(), and Encoder\-\_\-\-Read().
+
+\hypertarget{_encoder_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the module has been initialized 
+
+Definition at line 51 of file Encoder.\-c.
+
+\hypertarget{_encoder_8c_abc38eb8cce2a55636053c3c34d7b6ccf}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-previous\-Count@{\-\_\-previous\-Count}}
+\index{\-\_\-previous\-Count@{\-\_\-previous\-Count}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-previous\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-previous\-Count\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_8c_abc38eb8cce2a55636053c3c34d7b6ccf}
+Tracks the count on the timer the last time it was captured. 
+
+Definition at line 54 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Encoder\-\_\-\-Add\-Sample(), and Encoder\-\_\-\-Start().
+
+\hypertarget{_encoder_8c_afcf0800f255a57d47568035802096df2}{\index{Encoder.\-c@{Encoder.\-c}!\-\_\-previous\-Direction@{\-\_\-previous\-Direction}}
+\index{\-\_\-previous\-Direction@{\-\_\-previous\-Direction}!Encoder.c@{Encoder.\-c}}
+\subsubsection[{\-\_\-previous\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoder\-Direction\-\_\-t} \-\_\-previous\-Direction\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_8c_afcf0800f255a57d47568035802096df2}
+Tracks the direction of the timer 
+
+Definition at line 56 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Encoder\-\_\-\-Add\-Sample(), and Encoder\-\_\-\-Start().
+

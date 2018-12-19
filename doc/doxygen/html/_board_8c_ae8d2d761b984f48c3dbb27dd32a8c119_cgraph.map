@@ -1,0 +1,14 @@
+<map id="Board_Init" name="Board_Init">
+<area shape="rect" href="$_system_8c.html#a2d83fc2a9b232bc80dde93d2f128d99a" title="System_Init" alt="" coords="136,6,227,32" />
+<area shape="rect" href="$_gpio_8c.html#aec6c2e01969e7a086f7dc11853dad378" title="Gpio_Init" alt="" coords="144,107,219,134" />
+<area shape="rect" href="$_pmm_8c.html#aa8fb224458270c38abc8dadb405f8e3e" title="Pmm_Init" alt="" coords="143,183,220,210" />
+<area shape="rect" href="$_clock_8c.html#a4ee5840233644c3821175ec1ea6c265e" title="Clock_Init" alt="" coords="141,56,221,83" />
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="292,56,407,83" />
+<area shape="rect" href="$_gpio_8c.html#a07fdff112775345cdaf7696ba3a7d01c" title="Gpio_EnableResistor" alt="" coords="276,107,423,134" />
+<area shape="rect" href="$_gpio_8c.html#abc265c23bd04304f28525bd29da4c42e" title="Gpio_ConfigurePortU" alt="" coords="275,158,424,184" />
+<area shape="rect" href="$_gpio_8c.html#afcb987f4ad78e26f735ec3bfcfec083e" title="_UnlockPortU" alt="" coords="480,107,584,134" />
+<area shape="rect" href="$_gpio_8c.html#aa751eb0ce20ef9c79739ced94de232c8" title="_LockPortU" alt="" coords="487,158,577,184" />
+<area shape="rect" href="$_pmm_8c.html#a379bc13f25c3722052caa0aa2084baba" title="_SetVCore" alt="" coords="307,208,392,235" />
+<area shape="rect" href="$_pmm_8c.html#a7a5f8864a43fd504c1771fa2d1ea89d0" title="_SetVCoreUp" alt="" coords="480,208,584,235" />
+<area shape="rect" href="$_pmm_8c.html#aed1b0b979515495fa5a5e3159b205a73" title="_SetVCoreDown" alt="" coords="472,259,592,286" />
+</map>

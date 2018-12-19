@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['magdatascaling_5fscaled',['MagDataScaling_SCALED',['../_magnetometer_8h.html#abef6362719decc38527f275363b90674a5a8b6ecc013f8b5c5a8972bc9b1a3877',1,'Magnetometer.h']]],
+  ['magreg_5fctrl_5freg1',['MagReg_CTRL_REG1',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237af28586785c97910ba615fe973412bc52',1,'Magnetometer.c']]],
+  ['magreg_5fctrl_5freg2',['MagReg_CTRL_REG2',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237ac6e6166ec8f13fe839958c88a8f98dd1',1,'Magnetometer.c']]],
+  ['magreg_5fdie_5ftemp',['MagReg_DIE_TEMP',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a6e76fa50dd331296a9e8722d142986a1',1,'Magnetometer.c']]],
+  ['magreg_5foff_5fx_5flsb',['MagReg_OFF_X_LSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a876d0fc7d58bf56c8f18d07fc71fe0fa',1,'Magnetometer.c']]],
+  ['magreg_5foff_5fx_5fmsb',['MagReg_OFF_X_MSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237aac2f1580b3609755d04331348d0d39a7',1,'Magnetometer.c']]],
+  ['magreg_5foff_5fy_5flsb',['MagReg_OFF_Y_LSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237aa230d4b7f080a1e1608cadff0d36b3c2',1,'Magnetometer.c']]],
+  ['magreg_5foff_5fy_5fmsb',['MagReg_OFF_Y_MSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a3110edcd5697c318b31762d964da1cf5',1,'Magnetometer.c']]],
+  ['magreg_5foff_5fz_5flsb',['MagReg_OFF_Z_LSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237aee7e3ab1e60c7ac417367191de28661f',1,'Magnetometer.c']]],
+  ['magreg_5foff_5fz_5fmsb',['MagReg_OFF_Z_MSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a00b7f2b2fbe95c2000b550da79717bda',1,'Magnetometer.c']]],
+  ['magreg_5fout_5fx_5flsb',['MagReg_OUT_X_LSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a80de27f1f71bfdc9501979f7a15f46b7',1,'Magnetometer.c']]],
+  ['magreg_5fout_5fx_5fmsb',['MagReg_OUT_X_MSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a8ce097b152c39cd732ab463f3084200b',1,'Magnetometer.c']]],
+  ['magreg_5fout_5fy_5flsb',['MagReg_OUT_Y_LSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a979db1e24ec0d7762b095f4379cb675e',1,'Magnetometer.c']]],
+  ['magreg_5fout_5fy_5fmsb',['MagReg_OUT_Y_MSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a29ab98a87251a61350c4d39f3ddc2b12',1,'Magnetometer.c']]],
+  ['magreg_5fout_5fz_5flsb',['MagReg_OUT_Z_LSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a7750d8d6f8829912849a5a7b0edf8830',1,'Magnetometer.c']]],
+  ['magreg_5fout_5fz_5fmsb',['MagReg_OUT_Z_MSB',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a091f19b1b1219c0dee7e5146c36612ac',1,'Magnetometer.c']]],
+  ['magreg_5fsysmod',['MagReg_SYSMOD',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237a47df885a1e80633f98c9a8d9993b678a',1,'Magnetometer.c']]],
+  ['magreg_5fwho_5fam_5fi',['MagReg_WHO_AM_I',['../_magnetometer_8c.html#a4dcfc6e16b201756dfc37500aac53237ab1e9051811f7ec6e38c4e2fb8e25519b',1,'Magnetometer.c']]]
+];

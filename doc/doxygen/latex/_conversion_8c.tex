@@ -1,0 +1,193 @@
+\hypertarget{_conversion_8c}{\section{Conversion.\-c File Reference}
+\label{_conversion_8c}\index{Conversion.\-c@{Conversion.\-c}}
+}
+
+
+Conversion module for performing generic conversion operations.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Conversion.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for Conversion.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_conversion_8c_a16fa735e971e7bf6230471cb415cd2e1}{U\-I\-N\-T\-\_\-12\-\_\-\-M\-A\-X}~(0x0\-F\-F\-F)
+\item 
+\#define \hyperlink{_conversion_8c_ae41740430e893b4ceaade4cb053d0316}{U\-I\-N\-T\-\_\-4\-\_\-\-M\-A\-X}~(0x0\-F)
+\item 
+\#define \hyperlink{_conversion_8c_a2be24110a9cae79a1e3333c6af119779}{I\-N\-T\-\_\-12\-\_\-\-M\-A\-X}~(0x07\-F\-F)
+\item 
+\#define \hyperlink{_conversion_8c_aa84c58e6ab63e03384d7ed25975fdc56}{I\-N\-T\-\_\-4\-\_\-\-M\-A\-X}~(0x07)
+\item 
+\#define \hyperlink{_conversion_8c_ac6dd63906bbc29569443a229bc9bf4d1}{I\-N\-T\-\_\-12\-\_\-\-M\-I\-N}~((-\/0x07\-F\-F) -\/ 1)
+\item 
+\#define \hyperlink{_conversion_8c_a700f95e1d8d11dd4cf1c8db75d18e027}{I\-N\-T\-\_\-4\-\_\-\-M\-I\-N}~((-\/0x07) -\/ 1)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_conversion_8h_a72feb356df51c4604c5badc161514ba6}{Conversion\-Status\-\_\-t} \hyperlink{_conversion_8c_a189f44c849d4594b64feb6edb881a45b}{\-\_\-\-Check\-For\-Overflow\-Unsigned} (\hyperlink{_conversion_8h_a373f04746a60fe927b56cd5012dd37e2}{Number\-Size\-\_\-t} size, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} number)
+\item 
+\hyperlink{_conversion_8h_a72feb356df51c4604c5badc161514ba6}{Conversion\-Status\-\_\-t} \hyperlink{_conversion_8c_a3b7fd02a6d2e0ef778c43ca14e08fecb}{\-\_\-\-Check\-For\-Overflow\-Signed} (\hyperlink{_conversion_8h_a373f04746a60fe927b56cd5012dd37e2}{Number\-Size\-\_\-t} size, \hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} number)
+\item 
+\hypertarget{_conversion_8c_ab964be05be045121c4399af42ae19818}{\hyperlink{_conversion_8h_a72feb356df51c4604c5badc161514ba6}{Conversion\-Status\-\_\-t} {\bfseries Conversion\-\_\-\-Hex\-String\-To\-Uint} (const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} string\mbox{[}$\,$\mbox{]}, \hyperlink{_conversion_8h_a373f04746a60fe927b56cd5012dd37e2}{Number\-Size\-\_\-t} size, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$result)}\label{_conversion_8c_ab964be05be045121c4399af42ae19818}
+
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_conversion_8c_a317ef7641c368ea1d9f1660884133d2a}{Conversion\-\_\-\-Swap\-Bytes} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} number)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Conversion module for performing generic conversion operations. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The conversion module contains functions and macros that will perform generic conversion such as string to integer type conversions. 
+
+Definition in file \hyperlink{_conversion_8c_source}{Conversion.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_conversion_8c_a2be24110a9cae79a1e3333c6af119779}{\index{Conversion.\-c@{Conversion.\-c}!I\-N\-T\-\_\-12\-\_\-\-M\-A\-X@{I\-N\-T\-\_\-12\-\_\-\-M\-A\-X}}
+\index{I\-N\-T\-\_\-12\-\_\-\-M\-A\-X@{I\-N\-T\-\_\-12\-\_\-\-M\-A\-X}!Conversion.c@{Conversion.\-c}}
+\subsubsection[{I\-N\-T\-\_\-12\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-\_\-12\-\_\-\-M\-A\-X~(0x07\-F\-F)}}\label{_conversion_8c_a2be24110a9cae79a1e3333c6af119779}
+Defines the maximum 12-\/bit signed number 
+
+Definition at line 39 of file Conversion.\-c.
+
+
+
+Referenced by \-\_\-\-Check\-For\-Overflow\-Signed().
+
+\hypertarget{_conversion_8c_ac6dd63906bbc29569443a229bc9bf4d1}{\index{Conversion.\-c@{Conversion.\-c}!I\-N\-T\-\_\-12\-\_\-\-M\-I\-N@{I\-N\-T\-\_\-12\-\_\-\-M\-I\-N}}
+\index{I\-N\-T\-\_\-12\-\_\-\-M\-I\-N@{I\-N\-T\-\_\-12\-\_\-\-M\-I\-N}!Conversion.c@{Conversion.\-c}}
+\subsubsection[{I\-N\-T\-\_\-12\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-\_\-12\-\_\-\-M\-I\-N~((-\/0x07\-F\-F) -\/ 1)}}\label{_conversion_8c_ac6dd63906bbc29569443a229bc9bf4d1}
+Defines the minimum 12-\/bit signed number 
+
+Definition at line 45 of file Conversion.\-c.
+
+
+
+Referenced by \-\_\-\-Check\-For\-Overflow\-Signed().
+
+\hypertarget{_conversion_8c_aa84c58e6ab63e03384d7ed25975fdc56}{\index{Conversion.\-c@{Conversion.\-c}!I\-N\-T\-\_\-4\-\_\-\-M\-A\-X@{I\-N\-T\-\_\-4\-\_\-\-M\-A\-X}}
+\index{I\-N\-T\-\_\-4\-\_\-\-M\-A\-X@{I\-N\-T\-\_\-4\-\_\-\-M\-A\-X}!Conversion.c@{Conversion.\-c}}
+\subsubsection[{I\-N\-T\-\_\-4\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-\_\-4\-\_\-\-M\-A\-X~(0x07)}}\label{_conversion_8c_aa84c58e6ab63e03384d7ed25975fdc56}
+Defines the maximum 4-\/bit signed number 
+
+Definition at line 42 of file Conversion.\-c.
+
+
+
+Referenced by \-\_\-\-Check\-For\-Overflow\-Signed().
+
+\hypertarget{_conversion_8c_a700f95e1d8d11dd4cf1c8db75d18e027}{\index{Conversion.\-c@{Conversion.\-c}!I\-N\-T\-\_\-4\-\_\-\-M\-I\-N@{I\-N\-T\-\_\-4\-\_\-\-M\-I\-N}}
+\index{I\-N\-T\-\_\-4\-\_\-\-M\-I\-N@{I\-N\-T\-\_\-4\-\_\-\-M\-I\-N}!Conversion.c@{Conversion.\-c}}
+\subsubsection[{I\-N\-T\-\_\-4\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-\_\-4\-\_\-\-M\-I\-N~((-\/0x07) -\/ 1)}}\label{_conversion_8c_a700f95e1d8d11dd4cf1c8db75d18e027}
+Defines the minimum 4-\/bit signed number 
+
+Definition at line 48 of file Conversion.\-c.
+
+
+
+Referenced by \-\_\-\-Check\-For\-Overflow\-Signed().
+
+\hypertarget{_conversion_8c_a16fa735e971e7bf6230471cb415cd2e1}{\index{Conversion.\-c@{Conversion.\-c}!U\-I\-N\-T\-\_\-12\-\_\-\-M\-A\-X@{U\-I\-N\-T\-\_\-12\-\_\-\-M\-A\-X}}
+\index{U\-I\-N\-T\-\_\-12\-\_\-\-M\-A\-X@{U\-I\-N\-T\-\_\-12\-\_\-\-M\-A\-X}!Conversion.c@{Conversion.\-c}}
+\subsubsection[{U\-I\-N\-T\-\_\-12\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T\-\_\-12\-\_\-\-M\-A\-X~(0x0\-F\-F\-F)}}\label{_conversion_8c_a16fa735e971e7bf6230471cb415cd2e1}
+Defines the maximum 12-\/bit unsigned number 
+
+Definition at line 33 of file Conversion.\-c.
+
+
+
+Referenced by \-\_\-\-Check\-For\-Overflow\-Unsigned().
+
+\hypertarget{_conversion_8c_ae41740430e893b4ceaade4cb053d0316}{\index{Conversion.\-c@{Conversion.\-c}!U\-I\-N\-T\-\_\-4\-\_\-\-M\-A\-X@{U\-I\-N\-T\-\_\-4\-\_\-\-M\-A\-X}}
+\index{U\-I\-N\-T\-\_\-4\-\_\-\-M\-A\-X@{U\-I\-N\-T\-\_\-4\-\_\-\-M\-A\-X}!Conversion.c@{Conversion.\-c}}
+\subsubsection[{U\-I\-N\-T\-\_\-4\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T\-\_\-4\-\_\-\-M\-A\-X~(0x0\-F)}}\label{_conversion_8c_ae41740430e893b4ceaade4cb053d0316}
+Defines the maximum 4-\/bit unsigned number 
+
+Definition at line 36 of file Conversion.\-c.
+
+
+
+Referenced by \-\_\-\-Check\-For\-Overflow\-Unsigned().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_conversion_8c_a3b7fd02a6d2e0ef778c43ca14e08fecb}{\index{Conversion.\-c@{Conversion.\-c}!\-\_\-\-Check\-For\-Overflow\-Signed@{\-\_\-\-Check\-For\-Overflow\-Signed}}
+\index{\-\_\-\-Check\-For\-Overflow\-Signed@{\-\_\-\-Check\-For\-Overflow\-Signed}!Conversion.c@{Conversion.\-c}}
+\subsubsection[{\-\_\-\-Check\-For\-Overflow\-Signed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversion\-Status\-\_\-t} \-\_\-\-Check\-For\-Overflow\-Signed (
+\begin{DoxyParamCaption}
+\item[{{\bf Number\-Size\-\_\-t}}]{size, }
+\item[{{\bf int16\-\_\-t}}]{number}
+\end{DoxyParamCaption}
+)}}\label{_conversion_8c_a3b7fd02a6d2e0ef778c43ca14e08fecb}
+Checks to see if a signed number is out of range for its specified number of bits.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & -\/ The enumeration for the max number of bits in the number \\
+\hline
+\mbox{\tt in}  & {\em number} & -\/ the number to check for overflow\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Conversion\-Status\-\_\-\-S\-U\-C\-C\-E\-S\-S if the number is within limits 
+
+Conversion\-Status\-\_\-\-F\-A\-I\-L\-U\-R\-E if the number is not within limits 
+\end{DoxyReturn}
+
+
+Definition at line 214 of file Conversion.\-c.
+
+\hypertarget{_conversion_8c_a189f44c849d4594b64feb6edb881a45b}{\index{Conversion.\-c@{Conversion.\-c}!\-\_\-\-Check\-For\-Overflow\-Unsigned@{\-\_\-\-Check\-For\-Overflow\-Unsigned}}
+\index{\-\_\-\-Check\-For\-Overflow\-Unsigned@{\-\_\-\-Check\-For\-Overflow\-Unsigned}!Conversion.c@{Conversion.\-c}}
+\subsubsection[{\-\_\-\-Check\-For\-Overflow\-Unsigned}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversion\-Status\-\_\-t} \-\_\-\-Check\-For\-Overflow\-Unsigned (
+\begin{DoxyParamCaption}
+\item[{{\bf Number\-Size\-\_\-t}}]{size, }
+\item[{{\bf uint16\-\_\-t}}]{number}
+\end{DoxyParamCaption}
+)}}\label{_conversion_8c_a189f44c849d4594b64feb6edb881a45b}
+Checks to see if an unsigned number is out of range for its specified number of bits.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & -\/ The enumeration for the max number of bits in the number \\
+\hline
+\mbox{\tt in}  & {\em number} & -\/ the number to check for overflow\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Conversion\-Status\-\_\-\-S\-U\-C\-C\-E\-S\-S if the number is within limits 
+
+Conversion\-Status\-\_\-\-F\-A\-I\-L\-U\-R\-E if the number is not within limits 
+\end{DoxyReturn}
+
+
+Definition at line 156 of file Conversion.\-c.
+
+\hypertarget{_conversion_8c_a317ef7641c368ea1d9f1660884133d2a}{\index{Conversion.\-c@{Conversion.\-c}!Conversion\-\_\-\-Swap\-Bytes@{Conversion\-\_\-\-Swap\-Bytes}}
+\index{Conversion\-\_\-\-Swap\-Bytes@{Conversion\-\_\-\-Swap\-Bytes}!Conversion.c@{Conversion.\-c}}
+\subsubsection[{Conversion\-\_\-\-Swap\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Conversion\-\_\-\-Swap\-Bytes (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{number}
+\end{DoxyParamCaption}
+)}}\label{_conversion_8c_a317ef7641c368ea1d9f1660884133d2a}
+Swaps the bytes of the input variable.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em number} & -\/ The number to swap the bytes in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The byte swapped version of number 
+\end{DoxyReturn}
+
+
+Definition at line 138 of file Conversion.\-c.
+

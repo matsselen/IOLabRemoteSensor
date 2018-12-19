@@ -1,0 +1,5 @@
+<map id="Buzzer_Disable" name="Buzzer_Disable">
+<area shape="rect" href="$_pwm_8c.html#a7371820ffd6164c6fe538095708d2190" title="Pwm_Disable" alt="" coords="170,31,271,57" />
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="342,5,456,32" />
+<area shape="rect" href="$_pwm_8c.html#a4cde0daf6b044c1a1fc69b618509c8d6" title="_AnyChannelsEnabled" alt="" coords="320,56,478,83" />
+</map>

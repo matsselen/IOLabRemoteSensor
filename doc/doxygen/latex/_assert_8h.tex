@@ -1,0 +1,66 @@
+\hypertarget{_assert_8h}{\section{Assert.\-h File Reference}
+\label{_assert_8h}\index{Assert.\-h@{Assert.\-h}}
+}
+
+
+Manages asserts use to check expected logic conditions.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_assert_8h_abcf48e15927e5b4f217fccc4afa7b6df}{\#define {\bfseries A\-S\-S\-E\-R\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D}}\label{_assert_8h_abcf48e15927e5b4f217fccc4afa7b6df}
+
+\item 
+\#define \hyperlink{_assert_8h_ad523d59a8ca4f42658e8213b1712ed24}{A\-S\-S\-E\-R\-T}(expr, error\-Mode)~((void)(expr))
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_assert_8h_ab506034a8cdc90744170ed2ef1052882}{Error\-Led\-Mode\-\_\-t} \{ \\*
+{\bfseries Error\-Led\-Mode\-\_\-\-N\-O\-N\-E} = 0u, 
+\\*
+{\bfseries Error\-Led\-Mode\-\_\-\-M\-E\-M\-O\-R\-Y}, 
+\\*
+{\bfseries Error\-Led\-Mode\-\_\-\-S\-O\-F\-T\-W\-A\-R\-E}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages asserts use to check expected logic conditions. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The assert module can be used to check for certain logic conditions and stop execution if the expected conditions were not present. 
+
+Definition in file \hyperlink{_assert_8h_source}{Assert.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_assert_8h_ad523d59a8ca4f42658e8213b1712ed24}{\index{Assert.\-h@{Assert.\-h}!A\-S\-S\-E\-R\-T@{A\-S\-S\-E\-R\-T}}
+\index{A\-S\-S\-E\-R\-T@{A\-S\-S\-E\-R\-T}!Assert.h@{Assert.\-h}}
+\subsubsection[{A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-S\-S\-E\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{expr, }
+\item[{}]{error\-Mode}
+\end{DoxyParamCaption}
+)~((void)(expr))}}\label{_assert_8h_ad523d59a8ca4f42658e8213b1712ed24}
+Assertion macro disabled. Declare a void call of expr so that the variable isn't unused 
+
+Definition at line 69 of file Assert.\-h.
+
+
+
+Referenced by \-\_\-\-Acc\-Read\-Multiple\-Registers(), \-\_\-\-Acc\-Read\-Single\-Register(), \-\_\-\-Acc\-Write\-Single\-Register(), \-\_\-\-Adc\-Isr(), \-\_\-\-Bar\-Read\-Multiple\-Registers(), \-\_\-\-Check\-For\-Overflow\-Signed(), \-\_\-\-Check\-For\-Overflow\-Unsigned(), \-\_\-\-Con\-Man\-\_\-\-Allocate\-Buffer(), \-\_\-\-Gyro\-Read\-Multiple\-Registers(), \-\_\-\-Handle\-Human\-Acc\-Command(), \-\_\-\-Handle\-Human\-Adc1\-Command(), \-\_\-\-Handle\-Human\-Barc\-Command(), \-\_\-\-Handle\-Human\-Bar\-Command(), \-\_\-\-Handle\-Human\-Encoder\-Command(), \-\_\-\-Handle\-Human\-Gpi\-Command(), \-\_\-\-Handle\-Human\-Gyro\-Command(), \-\_\-\-Handle\-Human\-Mag\-Command(), \-\_\-\-Handle\-Human\-Packets(), \-\_\-\-Handle\-Human\-Rf\-Command(), \-\_\-\-Handle\-Human\-Ver\-Command(), \-\_\-\-Handle\-Status\-Packet(), \-\_\-\-Handle\-Uart\-Receive\-Interrupt(), \-\_\-\-Index\-Of\-Subarray\-Id(), \-\_\-\-Initialze\-X\-Adc\-Channels(), \-\_\-\-Play\-Sequence(), \-\_\-\-Read\-Multiple\-Registers(), \-\_\-\-Read\-Single\-Register(), \-\_\-\-Send\-Ack\-Human(), \-\_\-\-Send\-Nak\-Human(), \-\_\-\-Setup\-Timer\-Config(), \-\_\-\-Set\-V\-Core(), \-\_\-\-Set\-V\-Core\-Down(), \-\_\-\-Set\-V\-Core\-Up(), \-\_\-\-Uart\-A0\-Isr(), \-\_\-\-Uart\-A1\-Isr(), \-\_\-\-Write\-Single\-Register(), Acc\-Control\-\_\-\-Read\-Acc(), Accelerometer\-\_\-\-Config(), Accelerometer\-\_\-\-Init(), Accelerometer\-\_\-\-Read\-Sample(), Accelerometer\-\_\-\-Read\-Sample\-Array(), Accelerometer\-\_\-\-Register\-Isr(), Accelerometer\-\_\-\-Start(), Accelerometer\-\_\-\-Trigger\-Sample\-Blocking(), Adc\-\_\-\-Apply\-Correction(), Adc\-\_\-\-Convert\-Value\-To\-Temp(), Adc\-\_\-\-Get\-Temp\-Calib(), Adc\-\_\-\-Init(), Adc\-\_\-\-Set\-Channel\-Sequence(), Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking(), Adc\-\_\-\-Start\-Conversion\-Sequence\-Of\-Channels(), Adc\-Manager\-\_\-\-Disable\-Channel(), Adc\-Manager\-\_\-\-Enable\-Channel(), Adc\-Manager\-\_\-\-Process\-Conversion(), Ambient\-Light\-Control\-\_\-\-Set\-Config(), Analog7\-Control\-\_\-\-Set\-Config(), Analog8\-Control\-\_\-\-Set\-Config(), Analog9\-Control\-\_\-\-Set\-Config(), Barometer\-\_\-\-Read\-Coeff\-Array(), Barometer\-\_\-\-Read\-Coefficients(), Barometer\-\_\-\-Read\-Sample(), Barometer\-\_\-\-Read\-Sample\-Array(), Barometer\-\_\-\-Trigger\-Sample\-Blocking(), Barometer\-Control\-\_\-\-Read\-Bar(), Barometer\-Control\-\_\-\-Read\-Calibration(), Barometer\-Control\-\_\-\-Set\-Config(), Battery\-Control\-\_\-\-Read\-Calibration(), Battery\-Control\-\_\-\-Set\-Config(), Clock\-\_\-\-Init(), Con\-Man\-\_\-\-Get\-Calibration(), Con\-Man\-\_\-\-Set\-Fixed\-Config(), Con\-Man\-\_\-\-Set\-Output\-Config(), Con\-Man\-\_\-\-Set\-Sensor\-Config(), Data\-Buffer\-\_\-\-Create\-Subarray(), Data\-Buffer\-\_\-\-Get\-Idle\-Buffer(), Data\-Buffer\-\_\-\-Init(), Data\-Buffer\-\_\-\-Set\-Data(), Digital\-Input\-Control\-\_\-\-Set\-Config(), Dma\-\_\-\-Arm(), Dma\-\_\-\-Configure(), Dma\-\_\-\-Disable(), Dma\-\_\-\-Disable\-Isr(), Dma\-\_\-\-Enable(), Dma\-\_\-\-Enable\-Isr(), Dma\-\_\-\-Register\-Isr(), Dma\-\_\-\-Trigger(), Dma\-\_\-\-Unregister\-Isr(), Ecg\-Control\-\_\-\-Set\-Config(), Enc\-Control\-\_\-\-Read\-Enc(), Enc\-Control\-\_\-\-Set\-Config(), Encoder\-\_\-\-Read(), Encoder\-\_\-\-Start(), Encoder\-\_\-\-Stop(), Event\-Queue\-\_\-\-Add(), Fg\-Control\-\_\-\-Set\-Config(), Gpio\-\_\-\-Clear(), Gpio\-\_\-\-Clear\-Port\-U(), Gpio\-\_\-\-Configure(), Gpio\-\_\-\-Configure\-Port\-J(), Gpio\-\_\-\-Configure\-Port\-U(), Gpio\-\_\-\-Disable\-Resistor(), Gpio\-\_\-\-Enable\-Resistor(), Gpio\-\_\-\-Get\-Interrupt\-Edge(), Gpio\-\_\-\-Get\-Value(), Gpio\-\_\-\-Get\-Value\-Port\-U(), Gpio\-\_\-\-Register\-Isr(), Gpio\-\_\-\-Select\-Interrupt\-Edge(), Gpio\-\_\-\-Set(), Gpio\-\_\-\-Set\-Port\-U(), Gpio\-\_\-\-Unregister\-Isr(), Gyro\-Control\-\_\-\-Read\-Gyro(), Gyroscope\-\_\-\-Config(), Gyroscope\-\_\-\-Init(), Gyroscope\-\_\-\-Read\-Sample(), Gyroscope\-\_\-\-Read\-Sample\-Array(), Gyroscope\-\_\-\-Register\-Isr(), Gyroscope\-\_\-\-Start(), High\-Gain\-Control\-\_\-\-Set\-Config(), I2c\-\_\-\-Close(), I2c\-\_\-\-Init(), I2c\-\_\-\-Open(), I2c\-\_\-\-Receive\-Byte(), I2c\-\_\-\-Receive\-Byte\-End(), I2c\-\_\-\-Transmit\-Byte(), I2c\-\_\-\-Transmit\-Byte\-End(), I2c\-\_\-\-Transmit\-Start(), I2c\-\_\-\-Wait\-Until\-Bus\-Idle(), Key\-Value\-\_\-\-Separate(), Led\-Control\-\_\-\-Set\-Led(), Mag\-Control\-\_\-\-Read\-Mag(), Magnetometer\-\_\-\-Config(), Magnetometer\-\_\-\-Init(), Magnetometer\-\_\-\-Read\-Sample(), Magnetometer\-\_\-\-Read\-Sample\-Array(), Magnetometer\-\_\-\-Register\-Isr(), Magnetometer\-\_\-\-Reset\-Sensor\-Blocking(), Magnetometer\-\_\-\-Set\-Calibration(), Magnetometer\-\_\-\-Start(), Magnetometer\-\_\-\-Trigger\-Sample\-Blocking(), Microphone\-Control\-\_\-\-Set\-Config(), Pmm\-\_\-\-Init(), Self\-Test\-\_\-\-Process(), Serial\-\_\-\-Get\-Packet(), Serial\-\_\-\-Process\-Received\-Bytes(), Serial\-\_\-\-Send\-Packet(), Serial\-\_\-\-Send\-String(), Serial\-\_\-\-Send\-String3\-Numbers(), Serial\-\_\-\-Send\-String\-Blocking(), Serial\-\_\-\-Send\-String\-Number(), Serial\-\_\-\-Send\-String\-Number\-U32(), Spi\-\_\-\-Init(), Spi\-\_\-\-Read\-Register(), Spi\-\_\-\-Write\-Byte(), Spi\-\_\-\-Write\-Register(), Spi\-Slave\-\_\-\-Load\-Packet(), Spi\-Slave\-\_\-\-Read\-Packet(), Thermometer\-Control\-\_\-\-Read\-Calibration(), Thermometer\-Control\-\_\-\-Set\-Config(), Timer\-Tick\-\_\-\-Cancel\-Timeout(), Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback(), Timer\-Tick\-\_\-\-Disable\-Tick\-Isr(), Timer\-Tick\-\_\-\-Enable\-Tick\-Isr(), Timer\-Tick\-\_\-\-Register\-Tick\-Isr(), Timer\-Tick\-\_\-\-Request\-Timeout(), Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr(), Uart\-\_\-\-Disable\-Receive(), Uart\-\_\-\-Enable\-Receive(), Uart\-\_\-\-Init(), Uart\-\_\-\-Open(), Uart\-\_\-\-Read\-Byte(), Uart\-\_\-\-Read\-Byte\-Array(), Uart\-\_\-\-Write\-Byte(), Uart\-\_\-\-Write\-Byte\-Array(), Uart\-\_\-\-Write\-Byte\-Array\-Blocking(), Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking(), Uart\-\_\-\-Write\-Byte\-Blocking(), Uart\-\_\-\-Write\-Byte\-Hex(), Uart\-\_\-\-Write\-Byte\-Hex\-Blocking(), Uart\-\_\-\-Write\-String(), and Uart\-\_\-\-Write\-String\-Blocking().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_assert_8h_ab506034a8cdc90744170ed2ef1052882}{\index{Assert.\-h@{Assert.\-h}!Error\-Led\-Mode\-\_\-t@{Error\-Led\-Mode\-\_\-t}}
+\index{Error\-Led\-Mode\-\_\-t@{Error\-Led\-Mode\-\_\-t}!Assert.h@{Assert.\-h}}
+\subsubsection[{Error\-Led\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Error\-Led\-Mode\-\_\-t}}}\label{_assert_8h_ab506034a8cdc90744170ed2ef1052882}
+Possible error modes. The value of each mode is blinked on the Safe and Pair L\-E\-Ds simultaneously. 
+
+Definition at line 28 of file Assert.\-h.
+

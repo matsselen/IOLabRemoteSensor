@@ -1,0 +1,12 @@
+<map id="_ReadMultipleRegisters" name="_ReadMultipleRegisters">
+<area shape="rect" href="$_magnetometer_8h.html#aaddbb66c4df1f1e47afc3cdbe4c1122a" title="Magnetometer_ReadSample" alt="" coords="232,31,424,57" />
+<area shape="rect" href="$_magnetometer_8h.html#a20958a3807b25a8b07da31a385af787a" title="Magnetometer_ReadSampleArray" alt="" coords="216,81,440,108" />
+<area shape="rect" href="$_magnetometer_8h.html#a74a9a63d349b4532ea66269102cb9768" title="Magnetometer_TriggerSample\lBlocking" alt="" coords="227,132,429,175" />
+<area shape="rect" href="$_magnetometer_control_8h.html#ad749af8babba2a3ca08af61ffdb4fb10" title="MagControl_ReadMag" alt="" coords="512,56,667,83" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="740,56,924,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1223,56,1420,83" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="997,56,1149,83" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="973,107,1173,133" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1469,56,1520,83" />
+<area shape="rect" href="$_test_protocol_8c.html#ac199ffeaa6cfb4ea2d155d22b06f98b9" title="_HandleHumanMagCommand" alt="" coords="489,140,689,167" />
+</map>

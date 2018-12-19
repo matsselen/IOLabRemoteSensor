@@ -1,0 +1,349 @@
+\hypertarget{_barometer_control_8c}{\section{Barometer\-Control.\-c File Reference}
+\label{_barometer_control_8c}\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}}
+}
+
+
+Controls the barometer driver.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Barometer\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Barometer.\-h$>$}\\*
+{\ttfamily \#include $<$Timer\-Tick.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for Barometer\-Control.\-c\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_barometer_control_8c_struct_barometer_sample_array__t}{Barometer\-Sample\-Array\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_barometer_control_8c_a493ae5a7c8d33361064abf8e25b79a58}{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}~( 10u )
+\item 
+\#define \hyperlink{_barometer_control_8c_a3c83bbf741854c4089c289ecef0d65ae}{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}~( 20u )
+\item 
+\#define \hyperlink{_barometer_control_8c_a9937cbda6211a3b2325149d7ce42bbf0}{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z}~( 100u )
+\item 
+\#define \hyperlink{_barometer_control_8c_a0af6efee8263ca7ffc5ed2a50f5fd515}{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z}~( 1000u )
+\item 
+\#define \hyperlink{_barometer_control_8c_aad818e8657a6c92a0fbce27f748575df}{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-S}~(4u)
+\item 
+\hypertarget{_barometer_control_8c_ab33b9c7ebe7930822dcb01a22a0c68b0}{\#define {\bfseries N\-U\-M\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-B\-Y\-T\-E\-S}~( 8u )}\label{_barometer_control_8c_ab33b9c7ebe7930822dcb01a22a0c68b0}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_barometer_control_8c_a11bb61f607a234a0fa1059293db65741}{\-\_\-\-Barometer\-Array\-Glitched} (\hyperlink{_barometer_control_8c_struct_barometer_sample_array__t}{Barometer\-Sample\-Array\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_barometer_control_8c_a24e269b4a27b4861c858188f9c44fdd3}{Barometer\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_barometer_control_8c_a4b342c3505697fdeb10576ed1cf021b8}{Barometer\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} key\-Value)
+\item 
+void \hyperlink{_barometer_control_8c_ae701fa38d333d53c59f78c09902f806b}{Barometer\-Control\-\_\-\-Read\-Bar} (void)
+\item 
+void \hyperlink{_barometer_control_8c_af46a0eb22c9d26bb77fce5faf8a0de08}{Barometer\-Control\-\_\-\-Read\-Calibration} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Calibration\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Calibration\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} calibration\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_barometer_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}{Tick\-Timeout\-Handle\-\_\-t} \hyperlink{_barometer_control_8c_a0773a851a16e38753ef7771c2df7676a}{\-\_\-tick\-Handle}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_barometer_control_8c_acbb6232870f7ea042e81804a08d54236}{\-\_\-tick\-In\-Use} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_key_value_8h_a8c5384539767d61db6adc97aa1c71176}{Barometer\-Sample\-Rate\-\_\-t} \hyperlink{_barometer_control_8c_acd845f315409de56fdb3d24dbc3cd1a5}{\-\_\-sample\-Rate} = \hyperlink{_key_value_8h_acc8d89567bd8f2e84e147d51f4810949}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}
+\item 
+static \hyperlink{_barometer_control_8c_struct_barometer_sample_array__t}{Barometer\-Sample\-Array\-\_\-t} \hyperlink{_barometer_control_8c_a3339f9050d5a782dd613aa4ad19151a4}{\-\_\-last\-Good\-Sample} = \{ .data = 0u \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the barometer driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the barometer driver and controls the configuration for it. 
+
+Definition in file \hyperlink{_barometer_control_8c_source}{Barometer\-Control.\-c}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Barometer\-Sample\-Array\-\_\-t@{Barometer\-Sample\-Array\-\_\-t}}\label{struct_barometer_sample_array__t}
+\hypertarget{_barometer_control_8c_struct_barometer_sample_array__t}{}
+\subsubsection{struct Barometer\-Sample\-Array\-\_\-t}
+Define a typedef for a struct to hold a barometer data sample 
+
+Definition at line 53 of file Barometer\-Control.\-c.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_barometer_control_8c_a59e764bfd5f74d7dfbaf2af82bf0cc98}{\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t}}\label{_barometer_control_8c_a59e764bfd5f74d7dfbaf2af82bf0cc98}
+&
+data\mbox{[}\hyperlink{_barometer_control_8c_aad818e8657a6c92a0fbce27f748575df}{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_barometer_control_8c_aad818e8657a6c92a0fbce27f748575df}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-S@{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-S}}
+\index{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-S@{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-S}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-S~(4u)}}\label{_barometer_control_8c_aad818e8657a6c92a0fbce27f748575df}
+Define the maximum number of data bytes the barometer will return. 
+
+Definition at line 50 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Read\-Bar().
+
+\hypertarget{_barometer_control_8c_a493ae5a7c8d33361064abf8e25b79a58}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z~( 10u )}}\label{_barometer_control_8c_a493ae5a7c8d33361064abf8e25b79a58}
+defines how many milliseconds to wait between samples for a 100 Hz rate 
+
+Definition at line 38 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_barometer_control_8c_a9937cbda6211a3b2325149d7ce42bbf0}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z~( 100u )}}\label{_barometer_control_8c_a9937cbda6211a3b2325149d7ce42bbf0}
+defines how many milliseconds to wait between samples for a 10 Hz rate 
+
+Definition at line 44 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_barometer_control_8c_a0af6efee8263ca7ffc5ed2a50f5fd515}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z~( 1000u )}}\label{_barometer_control_8c_a0af6efee8263ca7ffc5ed2a50f5fd515}
+defines how many milliseconds to wait between samples for a 1 Hz rate 
+
+Definition at line 47 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_barometer_control_8c_a3c83bbf741854c4089c289ecef0d65ae}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z~( 20u )}}\label{_barometer_control_8c_a3c83bbf741854c4089c289ecef0d65ae}
+defines how many milliseconds to wait between samples for a 50 Hz rate 
+
+Definition at line 41 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Set\-Config().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_barometer_control_8c_a11bb61f607a234a0fa1059293db65741}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!\-\_\-\-Barometer\-Array\-Glitched@{\-\_\-\-Barometer\-Array\-Glitched}}
+\index{\-\_\-\-Barometer\-Array\-Glitched@{\-\_\-\-Barometer\-Array\-Glitched}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{\-\_\-\-Barometer\-Array\-Glitched}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf bool} \-\_\-\-Barometer\-Array\-Glitched (
+\begin{DoxyParamCaption}
+\item[{{\bf Barometer\-Sample\-Array\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_barometer_control_8c_a11bb61f607a234a0fa1059293db65741}
+Checks if the barometer data array is from a glitched reading.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample} & -\/ sample array from the barometer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sample was a glitched sample.
+\end{DoxyReturn}
+The sample is defined as glitched of all values are 0x00 or 0x\-F\-F. 
+
+Definition at line 266 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Read\-Bar().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_control_8c_a24e269b4a27b4861c858188f9c44fdd3}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!Barometer\-Control\-\_\-\-Init@{Barometer\-Control\-\_\-\-Init}}
+\index{Barometer\-Control\-\_\-\-Init@{Barometer\-Control\-\_\-\-Init}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{Barometer\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Barometer\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_barometer_control_8c_a24e269b4a27b4861c858188f9c44fdd3}
+Initializes the barometer controller. 
+
+Definition at line 86 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_control_8c_ae701fa38d333d53c59f78c09902f806b}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!Barometer\-Control\-\_\-\-Read\-Bar@{Barometer\-Control\-\_\-\-Read\-Bar}}
+\index{Barometer\-Control\-\_\-\-Read\-Bar@{Barometer\-Control\-\_\-\-Read\-Bar}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{Barometer\-Control\-\_\-\-Read\-Bar}]{\setlength{\rightskip}{0pt plus 5cm}void Barometer\-Control\-\_\-\-Read\-Bar (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_barometer_control_8c_ae701fa38d333d53c59f78c09902f806b}
+Gets a reading from the Barometer. 
+
+Definition at line 190 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_control_8c_af46a0eb22c9d26bb77fce5faf8a0de08}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!Barometer\-Control\-\_\-\-Read\-Calibration@{Barometer\-Control\-\_\-\-Read\-Calibration}}
+\index{Barometer\-Control\-\_\-\-Read\-Calibration@{Barometer\-Control\-\_\-\-Read\-Calibration}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{Barometer\-Control\-\_\-\-Read\-Calibration}]{\setlength{\rightskip}{0pt plus 5cm}void Barometer\-Control\-\_\-\-Read\-Calibration (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Calibration\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Calibration\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{calibration\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_barometer_control_8c_af46a0eb22c9d26bb77fce5faf8a0de08}
+Reads the calibration values from the barometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Calibration\-Length} & -\/ the maximum number of bytes allocated for calibration\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em actual\-Calibration\-Length} & -\/ the number of bytes of calibration data placed in calibration\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em calibration\mbox{[}$\,$\mbox{]}} & -\/ the calibration data from the barometer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 244 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Get\-Calibration().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_control_8c_a4b342c3505697fdeb10576ed1cf021b8}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!Barometer\-Control\-\_\-\-Set\-Config@{Barometer\-Control\-\_\-\-Set\-Config}}
+\index{Barometer\-Control\-\_\-\-Set\-Config@{Barometer\-Control\-\_\-\-Set\-Config}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{Barometer\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Barometer\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{key\-Value}
+\end{DoxyParamCaption}
+)}}\label{_barometer_control_8c_a4b342c3505697fdeb10576ed1cf021b8}
+Sets a configuration value to the Barometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_barometer_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_barometer_control_8c_a4eb99285a0129893d3f48de7de237df5}
+tracks if the controller has been initialized 
+
+Definition at line 62 of file Barometer\-Control.\-c.
+
+\hypertarget{_barometer_control_8c_a3339f9050d5a782dd613aa4ad19151a4}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!\-\_\-last\-Good\-Sample@{\-\_\-last\-Good\-Sample}}
+\index{\-\_\-last\-Good\-Sample@{\-\_\-last\-Good\-Sample}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{\-\_\-last\-Good\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Barometer\-Sample\-Array\-\_\-t} \-\_\-last\-Good\-Sample = \{ .data = 0u \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_barometer_control_8c_a3339f9050d5a782dd613aa4ad19151a4}
+Keeps a copy of the last valid barometer reading. Occassionally the barometer will return bad data (all zeros or F\-Fs) that is likely caused by a glitch on the barometer because we are reading it too fast or the S\-P\-I clock rate is too high. Regardless of the reason, buffer the last value and report the last good value when reading samples if the new sample is bad. 
+
+Definition at line 77 of file Barometer\-Control.\-c.
+
+\hypertarget{_barometer_control_8c_acd845f315409de56fdb3d24dbc3cd1a5}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!\-\_\-sample\-Rate@{\-\_\-sample\-Rate}}
+\index{\-\_\-sample\-Rate@{\-\_\-sample\-Rate}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{\-\_\-sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Barometer\-Sample\-Rate\-\_\-t} \-\_\-sample\-Rate = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_barometer_control_8c_acd845f315409de56fdb3d24dbc3cd1a5}
+Stores the barometer sample rate setting 
+
+Definition at line 70 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_barometer_control_8c_a0773a851a16e38753ef7771c2df7676a}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!\-\_\-tick\-Handle@{\-\_\-tick\-Handle}}
+\index{\-\_\-tick\-Handle@{\-\_\-tick\-Handle}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{\-\_\-tick\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tick\-Timeout\-Handle\-\_\-t} \-\_\-tick\-Handle\hspace{0.3cm}{\ttfamily [static]}}}\label{_barometer_control_8c_a0773a851a16e38753ef7771c2df7676a}
+Handle to the timer tick timeout for the barometer 
+
+Definition at line 65 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Set\-Config(), Self\-Test\-\_\-\-Process(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_barometer_control_8c_acbb6232870f7ea042e81804a08d54236}{\index{Barometer\-Control.\-c@{Barometer\-Control.\-c}!\-\_\-tick\-In\-Use@{\-\_\-tick\-In\-Use}}
+\index{\-\_\-tick\-In\-Use@{\-\_\-tick\-In\-Use}!BarometerControl.c@{Barometer\-Control.\-c}}
+\subsubsection[{\-\_\-tick\-In\-Use}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-tick\-In\-Use = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_barometer_control_8c_acbb6232870f7ea042e81804a08d54236}
+tracks if the tick handle is in use to make sure not to use an invalid tick handle 
+
+Definition at line 67 of file Barometer\-Control.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Read\-Bar(), Barometer\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+

@@ -1,0 +1,320 @@
+\hypertarget{_configuration_manager_8h}{\section{Configuration\-Manager.\-h File Reference}
+\label{_configuration_manager_8h}\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}}
+}
+
+
+The configuration manager keeps track of all the sensor configurations.  
+
+
+{\ttfamily \#include $<$Fixed\-Config\-List.\-h$>$}\\*
+Include dependency graph for Configuration\-Manager.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_configuration_manager_8h_ac8b698cc609b8b41fe3ff823b2046b85}{Con\-Man\-\_\-\-Init} ()
+\item 
+void \hyperlink{_configuration_manager_8h_a183e4b53a492c32bbe799d7e209b8b4f}{Con\-Man\-\_\-\-Set\-Sensor\-Config} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config\-Length, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_configuration_manager_8h_a37bcc957cd9c30133a4a655b595a4dd6}{Con\-Man\-\_\-\-Set\-Fixed\-Config} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config\-Length, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_fixed_config_list_8h_a538ef88cf4d76e520f92757762528f17}{Fixed\-Config\-List\-\_\-t} \hyperlink{_configuration_manager_8h_ab9f61516e8edc77b45f326491749df2f}{Con\-Man\-\_\-\-Get\-Fixed\-Config} (void)
+\item 
+void \hyperlink{_configuration_manager_8h_adbdfea8b605f6178d2e63cfd0eb3723b}{Con\-Man\-\_\-\-Set\-Output\-Config} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config\-Length, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config\mbox{[}$\,$\mbox{]})
+\item 
+const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$ \hyperlink{_configuration_manager_8h_aedabe632ca2eac8517dabd3aa62f927b}{Con\-Man\-\_\-\-Get\-Packet\-Config} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$packet\-Length)
+\item 
+void \hyperlink{_configuration_manager_8h_a8f284af259f31d10135d4cb98fc2e474}{Con\-Man\-\_\-\-Get\-Calibration} (Sensor\-Id\-\_\-t sensor\-Id, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} calibration\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_configuration_manager_8h_a4af394c25a5c58205d8832071eae3b0b}{Con\-Man\-\_\-\-Start\-Data} ()
+\item 
+void \hyperlink{_configuration_manager_8h_a7e20b92732fc46ab8a1937e144066938}{Con\-Man\-\_\-\-Stop\-Data} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The configuration manager keeps track of all the sensor configurations. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The configuration manager is the module that will keep track of configuration all the sensors to be in the proper sensor mode based on the setup commands. 
+
+Definition in file \hyperlink{_configuration_manager_8h_source}{Configuration\-Manager.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_configuration_manager_8h_a8f284af259f31d10135d4cb98fc2e474}{\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}!Con\-Man\-\_\-\-Get\-Calibration@{Con\-Man\-\_\-\-Get\-Calibration}}
+\index{Con\-Man\-\_\-\-Get\-Calibration@{Con\-Man\-\_\-\-Get\-Calibration}!ConfigurationManager.h@{Configuration\-Manager.\-h}}
+\subsubsection[{Con\-Man\-\_\-\-Get\-Calibration}]{\setlength{\rightskip}{0pt plus 5cm}void Con\-Man\-\_\-\-Get\-Calibration (
+\begin{DoxyParamCaption}
+\item[{Sensor\-Id\-\_\-t}]{sensor\-Id, }
+\item[{{\bf uint16\-\_\-t}}]{max\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{calibration\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_configuration_manager_8h_a8f284af259f31d10135d4cb98fc2e474}
+Returns the configuration data for a specific sensor.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sensor\-Id} & -\/ the sensor the configuration is for \\
+\hline
+\mbox{\tt in}  & {\em max\-Length} & -\/ the number of bytes allocation fro the calibration array \\
+\hline
+\mbox{\tt out}  & {\em actual\-Length} & -\/ the number of bytes put in the calibration array \\
+\hline
+\mbox{\tt out}  & {\em calibration\mbox{[}$\,$\mbox{]}} & -\/ the calibration data for sensor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 574 of file Configuration\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Get\-Calibration\-Packet().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_configuration_manager_8h_ab9f61516e8edc77b45f326491749df2f}{\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}!Con\-Man\-\_\-\-Get\-Fixed\-Config@{Con\-Man\-\_\-\-Get\-Fixed\-Config}}
+\index{Con\-Man\-\_\-\-Get\-Fixed\-Config@{Con\-Man\-\_\-\-Get\-Fixed\-Config}!ConfigurationManager.h@{Configuration\-Manager.\-h}}
+\subsubsection[{Con\-Man\-\_\-\-Get\-Fixed\-Config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fixed\-Config\-List\-\_\-t} Con\-Man\-\_\-\-Get\-Fixed\-Config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_configuration_manager_8h_ab9f61516e8edc77b45f326491749df2f}
+Fetches and returns the current fixed configuration setting.
+
+\begin{DoxyReturn}{Returns}
+The setting for the current fixed configuration. 
+\end{DoxyReturn}
+
+
+Definition at line 306 of file Configuration\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Get\-Fixed\-Config\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_configuration_manager_8h_aedabe632ca2eac8517dabd3aa62f927b}{\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}!Con\-Man\-\_\-\-Get\-Packet\-Config@{Con\-Man\-\_\-\-Get\-Packet\-Config}}
+\index{Con\-Man\-\_\-\-Get\-Packet\-Config@{Con\-Man\-\_\-\-Get\-Packet\-Config}!ConfigurationManager.h@{Configuration\-Manager.\-h}}
+\subsubsection[{Con\-Man\-\_\-\-Get\-Packet\-Config}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint8\-\_\-t}$\ast$ Con\-Man\-\_\-\-Get\-Packet\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t} $\ast$}]{packet\-Length}
+\end{DoxyParamCaption}
+)}}\label{_configuration_manager_8h_aedabe632ca2eac8517dabd3aa62f927b}
+Returns the current configuration of the data packet.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em packet\-Length} & -\/ the number of bytes in the packet config array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a static constant array containing the packet config 
+\end{DoxyReturn}
+
+
+Definition at line 394 of file Configuration\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Get\-Packet\-Config\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_configuration_manager_8h_ac8b698cc609b8b41fe3ff823b2046b85}{\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}!Con\-Man\-\_\-\-Init@{Con\-Man\-\_\-\-Init}}
+\index{Con\-Man\-\_\-\-Init@{Con\-Man\-\_\-\-Init}!ConfigurationManager.h@{Configuration\-Manager.\-h}}
+\subsubsection[{Con\-Man\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Con\-Man\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_configuration_manager_8h_ac8b698cc609b8b41fe3ff823b2046b85}
+Initializes the configuration manager. The initialization include initializing all the sensors for which the configuration manager manages. 
+
+Definition at line 101 of file Configuration\-Manager.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_configuration_manager_8h_a37bcc957cd9c30133a4a655b595a4dd6}{\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}!Con\-Man\-\_\-\-Set\-Fixed\-Config@{Con\-Man\-\_\-\-Set\-Fixed\-Config}}
+\index{Con\-Man\-\_\-\-Set\-Fixed\-Config@{Con\-Man\-\_\-\-Set\-Fixed\-Config}!ConfigurationManager.h@{Configuration\-Manager.\-h}}
+\subsubsection[{Con\-Man\-\_\-\-Set\-Fixed\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Con\-Man\-\_\-\-Set\-Fixed\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{config\-Length, }
+\item[{const {\bf uint8\-\_\-t}}]{config\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_configuration_manager_8h_a37bcc957cd9c30133a4a655b595a4dd6}
+Selects the fixed configuration and sends the configuration data to the appropriate sensors to manage the settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config\-Length} & -\/ the number of valid bytes in the configuration data \\
+\hline
+\mbox{\tt in}  & {\em config\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the configuration \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 276 of file Configuration\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Set\-Fixed\-Config\-Packet(), and Self\-Test\-\_\-\-Start().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_configuration_manager_8h_adbdfea8b605f6178d2e63cfd0eb3723b}{\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}!Con\-Man\-\_\-\-Set\-Output\-Config@{Con\-Man\-\_\-\-Set\-Output\-Config}}
+\index{Con\-Man\-\_\-\-Set\-Output\-Config@{Con\-Man\-\_\-\-Set\-Output\-Config}!ConfigurationManager.h@{Configuration\-Manager.\-h}}
+\subsubsection[{Con\-Man\-\_\-\-Set\-Output\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Con\-Man\-\_\-\-Set\-Output\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{config\-Length, }
+\item[{const {\bf uint8\-\_\-t}}]{config\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_configuration_manager_8h_adbdfea8b605f6178d2e63cfd0eb3723b}
+Parses the output configuration command and sends the configuration data to the appropriate sensors to manage the settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config\-Length} & -\/ the number of valid bytes in the configuration data \\
+\hline
+\mbox{\tt in}  & {\em config\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the configuration \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 319 of file Configuration\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Set\-Output\-Config\-Packet().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_configuration_manager_8h_a183e4b53a492c32bbe799d7e209b8b4f}{\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}!Con\-Man\-\_\-\-Set\-Sensor\-Config@{Con\-Man\-\_\-\-Set\-Sensor\-Config}}
+\index{Con\-Man\-\_\-\-Set\-Sensor\-Config@{Con\-Man\-\_\-\-Set\-Sensor\-Config}!ConfigurationManager.h@{Configuration\-Manager.\-h}}
+\subsubsection[{Con\-Man\-\_\-\-Set\-Sensor\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Con\-Man\-\_\-\-Set\-Sensor\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{config\-Length, }
+\item[{const {\bf uint8\-\_\-t}}]{config\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_configuration_manager_8h_a183e4b53a492c32bbe799d7e209b8b4f}
+Parses the sensor configuration command sends the configuration data to the appropriate sensors to manage the settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config\-Length} & -\/ the number of valid bytes in the configuration data \\
+\hline
+\mbox{\tt in}  & {\em config\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the configuration \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 144 of file Configuration\-Manager.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Start\-Data(), and Con\-Man\-\_\-\-Stop\-Data().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_configuration_manager_8h_a4af394c25a5c58205d8832071eae3b0b}{\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}!Con\-Man\-\_\-\-Start\-Data@{Con\-Man\-\_\-\-Start\-Data}}
+\index{Con\-Man\-\_\-\-Start\-Data@{Con\-Man\-\_\-\-Start\-Data}!ConfigurationManager.h@{Configuration\-Manager.\-h}}
+\subsubsection[{Con\-Man\-\_\-\-Start\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Con\-Man\-\_\-\-Start\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_configuration_manager_8h_a4af394c25a5c58205d8832071eae3b0b}
+Sets the previously or default configured sensors to active mode to begin collecting data. 
+
+Definition at line 695 of file Configuration\-Manager.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_configuration_manager_8h_a7e20b92732fc46ab8a1937e144066938}{\index{Configuration\-Manager.\-h@{Configuration\-Manager.\-h}!Con\-Man\-\_\-\-Stop\-Data@{Con\-Man\-\_\-\-Stop\-Data}}
+\index{Con\-Man\-\_\-\-Stop\-Data@{Con\-Man\-\_\-\-Stop\-Data}!ConfigurationManager.h@{Configuration\-Manager.\-h}}
+\subsubsection[{Con\-Man\-\_\-\-Stop\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Con\-Man\-\_\-\-Stop\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_configuration_manager_8h_a7e20b92732fc46ab8a1937e144066938}
+Stops the enabled sensors from collecting data. 
+
+Definition at line 932 of file Configuration\-Manager.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

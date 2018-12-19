@@ -1,0 +1,182 @@
+\hypertarget{_ui_manager_8h}{\section{Ui\-Manager.\-h File Reference}
+\label{_ui_manager_8h}\index{Ui\-Manager.\-h@{Ui\-Manager.\-h}}
+}
+
+
+Manages Feedback to the user.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_ui_manager_8h_a58d2f9d08c52a00df235b4ea090106d4}{Ui\-Sequence\-\_\-t} \{ \\*
+{\bfseries Ui\-Sequence\-\_\-\-S\-U\-C\-C\-E\-S\-S}, 
+\\*
+{\bfseries Ui\-Sequence\-\_\-\-F\-A\-I\-L}, 
+\\*
+{\bfseries Ui\-Sequence\-\_\-\-S\-P\-E\-C\-I\-A\-L}, 
+\\*
+{\bfseries Ui\-Sequence\-\_\-\-I\-N\-\_\-\-P\-R\-O\-G\-R\-E\-S\-S}
+ \}
+\item 
+enum \hyperlink{_ui_manager_8h_a92ca95ba4a3280fad2afbee99c3a5aeb}{Play\-Sequence\-Status\-\_\-t} \{ \\*
+{\bfseries Play\-Sequence\-Status\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Play\-Sequence\-Status\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Play\-Sequence\-Status\-\_\-\-S\-U\-C\-C\-E\-S\-S} = Play\-Sequence\-Status\-\_\-\-F\-I\-R\-S\-T, 
+\\*
+{\bfseries Play\-Sequence\-Status\-\_\-\-B\-U\-S\-Y}, 
+\\*
+{\bfseries Play\-Sequence\-Status\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E}, 
+\\*
+{\bfseries Play\-Sequence\-Status\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_ui_manager_8h_ad784f2ee281b3069b1d8e39da48b2b10}{Play\-Mode\-\_\-t} \{ \\*
+{\bfseries Play\-Mode\-\_\-\-S\-I\-N\-G\-L\-E}, 
+\\*
+{\bfseries Play\-Mode\-\_\-\-R\-E\-P\-E\-A\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_ui_manager_8h_adee285ad94e23c403c0be6bf499813f4}{Ui\-Manager\-\_\-\-Init} ()
+\item 
+\hyperlink{_ui_manager_8h_a92ca95ba4a3280fad2afbee99c3a5aeb}{Play\-Sequence\-Status\-\_\-t} \hyperlink{_ui_manager_8h_a64c0bf6dac5078278c785307c7e2befe}{Ui\-Manager\-\_\-\-Play\-Sequence} (\hyperlink{_ui_manager_8h_a58d2f9d08c52a00df235b4ea090106d4}{Ui\-Sequence\-\_\-t} sequence, \hyperlink{_ui_manager_8h_ad784f2ee281b3069b1d8e39da48b2b10}{Play\-Mode\-\_\-t} mode)
+\item 
+void \hyperlink{_ui_manager_8h_a05ab7e85f5f6b42ad24038d9deb45b0f}{Ui\-Manager\-\_\-\-Stop\-Sequence} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_ui_manager_8h_aa7694ddb3bf5ff0dbf3a8cd51f350c16}{Ui\-Manager\-\_\-\-Sequence\-In\-Progress} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages Feedback to the user. {\bfseries Description} Manages feedback to the user controlling the buzzer and the backlight L\-E\-Ds. 
+
+Definition in file \hyperlink{_ui_manager_8h_source}{Ui\-Manager.\-h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_ui_manager_8h_ad784f2ee281b3069b1d8e39da48b2b10}{\index{Ui\-Manager.\-h@{Ui\-Manager.\-h}!Play\-Mode\-\_\-t@{Play\-Mode\-\_\-t}}
+\index{Play\-Mode\-\_\-t@{Play\-Mode\-\_\-t}!UiManager.h@{Ui\-Manager.\-h}}
+\subsubsection[{Play\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Play\-Mode\-\_\-t}}}\label{_ui_manager_8h_ad784f2ee281b3069b1d8e39da48b2b10}
+Defines the play modes that the sequence can play with 
+
+Definition at line 46 of file Ui\-Manager.\-h.
+
+\hypertarget{_ui_manager_8h_a92ca95ba4a3280fad2afbee99c3a5aeb}{\index{Ui\-Manager.\-h@{Ui\-Manager.\-h}!Play\-Sequence\-Status\-\_\-t@{Play\-Sequence\-Status\-\_\-t}}
+\index{Play\-Sequence\-Status\-\_\-t@{Play\-Sequence\-Status\-\_\-t}!UiManager.h@{Ui\-Manager.\-h}}
+\subsubsection[{Play\-Sequence\-Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Play\-Sequence\-Status\-\_\-t}}}\label{_ui_manager_8h_a92ca95ba4a3280fad2afbee99c3a5aeb}
+Defines the possible results of the Ui\-Manager\-\_\-\-Play\-Sequence function. 
+
+Definition at line 35 of file Ui\-Manager.\-h.
+
+\hypertarget{_ui_manager_8h_a58d2f9d08c52a00df235b4ea090106d4}{\index{Ui\-Manager.\-h@{Ui\-Manager.\-h}!Ui\-Sequence\-\_\-t@{Ui\-Sequence\-\_\-t}}
+\index{Ui\-Sequence\-\_\-t@{Ui\-Sequence\-\_\-t}!UiManager.h@{Ui\-Manager.\-h}}
+\subsubsection[{Ui\-Sequence\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ui\-Sequence\-\_\-t}}}\label{_ui_manager_8h_a58d2f9d08c52a00df235b4ea090106d4}
+Define a list of sequences that the U\-I can indicate 
+
+Definition at line 26 of file Ui\-Manager.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_ui_manager_8h_adee285ad94e23c403c0be6bf499813f4}{\index{Ui\-Manager.\-h@{Ui\-Manager.\-h}!Ui\-Manager\-\_\-\-Init@{Ui\-Manager\-\_\-\-Init}}
+\index{Ui\-Manager\-\_\-\-Init@{Ui\-Manager\-\_\-\-Init}!UiManager.h@{Ui\-Manager.\-h}}
+\subsubsection[{Ui\-Manager\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Ui\-Manager\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_ui_manager_8h_adee285ad94e23c403c0be6bf499813f4}
+Initializes the U\-I manager and the dependancies that the U\-I manager controls 
+
+Definition at line 94 of file Ui\-Manager.\-c.
+
+
+
+Referenced by Self\-Test\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ui_manager_8h_a64c0bf6dac5078278c785307c7e2befe}{\index{Ui\-Manager.\-h@{Ui\-Manager.\-h}!Ui\-Manager\-\_\-\-Play\-Sequence@{Ui\-Manager\-\_\-\-Play\-Sequence}}
+\index{Ui\-Manager\-\_\-\-Play\-Sequence@{Ui\-Manager\-\_\-\-Play\-Sequence}!UiManager.h@{Ui\-Manager.\-h}}
+\subsubsection[{Ui\-Manager\-\_\-\-Play\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Play\-Sequence\-Status\-\_\-t} Ui\-Manager\-\_\-\-Play\-Sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf Ui\-Sequence\-\_\-t}}]{sequence, }
+\item[{{\bf Play\-Mode\-\_\-t}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{_ui_manager_8h_a64c0bf6dac5078278c785307c7e2befe}
+Plays a preset sequence that the U\-I manager can indicate an event to the user. The U\-I Manager can only play one sequence at a time, so it will not play another sequence if one is currently in progress. It does post an event to the event queue when the sequence is finished playing so that another sequence can be played if needed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sequence} & -\/ sequence to play to the user \\
+\hline
+\mbox{\tt in}  & {\em mode} & -\/ the play mode to play the sequence with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status if the sequence was played and the reason if it wasn't. 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file Ui\-Manager.\-c.
+
+
+
+Referenced by Self\-Test\-\_\-\-Start().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ui_manager_8h_aa7694ddb3bf5ff0dbf3a8cd51f350c16}{\index{Ui\-Manager.\-h@{Ui\-Manager.\-h}!Ui\-Manager\-\_\-\-Sequence\-In\-Progress@{Ui\-Manager\-\_\-\-Sequence\-In\-Progress}}
+\index{Ui\-Manager\-\_\-\-Sequence\-In\-Progress@{Ui\-Manager\-\_\-\-Sequence\-In\-Progress}!UiManager.h@{Ui\-Manager.\-h}}
+\subsubsection[{Ui\-Manager\-\_\-\-Sequence\-In\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Ui\-Manager\-\_\-\-Sequence\-In\-Progress (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_ui_manager_8h_aa7694ddb3bf5ff0dbf3a8cd51f350c16}
+Queries the Ui\-Manager to check if a sequence is currently in progress.
+
+\begin{DoxyReturn}{Returns}
+True if a sequence is in progress. False otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 191 of file Ui\-Manager.\-c.
+
+\hypertarget{_ui_manager_8h_a05ab7e85f5f6b42ad24038d9deb45b0f}{\index{Ui\-Manager.\-h@{Ui\-Manager.\-h}!Ui\-Manager\-\_\-\-Stop\-Sequence@{Ui\-Manager\-\_\-\-Stop\-Sequence}}
+\index{Ui\-Manager\-\_\-\-Stop\-Sequence@{Ui\-Manager\-\_\-\-Stop\-Sequence}!UiManager.h@{Ui\-Manager.\-h}}
+\subsubsection[{Ui\-Manager\-\_\-\-Stop\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}void Ui\-Manager\-\_\-\-Stop\-Sequence (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_ui_manager_8h_a05ab7e85f5f6b42ad24038d9deb45b0f}
+Commands the U\-I manager to stop playing the current sequence. 
+
+Definition at line 169 of file Ui\-Manager.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+

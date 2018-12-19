@@ -1,0 +1,10 @@
+<map id="SpiMaster.c" name="SpiMaster.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_spi_master_8h.html" title="SPI Master Module. " alt="" coords="139,80,230,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="254,80,323,107" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="347,80,419,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="372,155,439,182" />
+<area shape="rect" href="$_gpio_8h.html" title="GPIO configuration and control macros and functions. " alt="" coords="494,80,552,107" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="520,155,592,182" />
+<area shape="rect" href="$_board_8h.html" title="Board initialization module header file. " alt="" coords="627,80,694,107" />
+</map>

@@ -1,0 +1,6 @@
+<map id="_SetupTimerConfig" name="_SetupTimerConfig">
+<area shape="rect" href="$_timer_8c.html#a02f931c9a4a5037b499d531f49ebc3b9" title="Timer_A0_Configure" alt="" coords="204,6,348,32" />
+<area shape="rect" href="$_timer_8c.html#a3b787ac79e251ea6217447ed05be53bb" title="Timer_A0CCX_Configure" alt="" coords="191,56,361,83" />
+<area shape="rect" href="$_adc_manager_8c.html#a9d5382aa474494126282fe96a47dbea1" title="_InitialzeXAdcChannels" alt="" coords="195,107,357,134" />
+<area shape="rect" href="$_adc_8c.html#a8201a8154546752a07f766fa604c77d1" title="Adc_SetChannelSequence" alt="" coords="411,107,592,134" />
+</map>

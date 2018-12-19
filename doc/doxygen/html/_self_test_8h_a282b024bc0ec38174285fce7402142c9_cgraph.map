@@ -1,0 +1,33 @@
+<map id="SelfTest_Start" name="SelfTest_Start">
+<area shape="rect" href="$_configuration_manager_8c.html#a37bcc957cd9c30133a4a655b595a4dd6" title="ConMan_SetFixedConfig" alt="" coords="165,147,336,173" />
+<area shape="rect" href="$_led_control_8c.html#a15c78074311de3071ee99c4905d1c87e" title="LedControl_SetLed" alt="" coords="183,263,319,289" />
+<area shape="rect" href="$_ui_manager_8c.html#a64c0bf6dac5078278c785307c7e2befe" title="UiManager_PlaySequence" alt="" coords="161,313,340,340" />
+<area shape="rect" href="$_event_queue_8c.html#afd41d1979b21c13ff21bab60d9c57c27" title="EventQueue_Add" alt="" coords="857,528,983,555" />
+<area shape="rect" href="$_serial_8c.html#ae3c36491780ee25b86bf0b3ac9e61fa7" title="Serial_SendStringNumber" alt="" coords="395,107,571,133" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="640,107,752,133" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="624,5,768,32" />
+<area shape="rect" href="$_uart_8c.html#aba2063d7e89a1358197b4643996daaed" title="Uart_WriteByteHex" alt="" coords="628,56,764,83" />
+<area shape="rect" href="$_ui_manager_8c.html#a6219944d11ab23283bb8b21a2f8ce9aa" title="_ZeroCurrentSequence" alt="" coords="840,477,1000,504" />
+<area shape="rect" href="$_timer_tick_8c.html#a2bd17b27521b73890cadba2767679193" title="TimerTick_RequestTimeout" alt="" coords="391,440,575,467" />
+<area shape="rect" href="$_ui_manager_8c.html#ac066839b7cc3e3b90ae5bdd7f629b3c4" title="_UiTickCallBack" alt="" coords="424,288,541,315" />
+<area shape="rect" href="$_ui_manager_8c.html#a4aabb887cd84641062375402ec60026b" title="_PlaySequence" alt="" coords="639,339,753,365" />
+<area shape="rect" href="$_buzzer_8h.html#a4559e9aaf84818b843b06ebc825c8ae6" title="Buzzer_SetDuty" alt="" coords="424,197,541,224" />
+<area shape="rect" href="$_timer_tick_8c.html#a5d2a66cec0fe5f6d8554c05bfeacfd2c" title="_InsertTimeout" alt="" coords="641,440,751,467" />
+<area shape="rect" href="$_buzzer_8h.html#a82cbbadfc4f17ae9a96d34230aea2a5c" title="Buzzer_SetFrequency" alt="" coords="844,208,996,235" />
+<area shape="rect" href="$_buzzer_8h.html#a00bd24efcdaf817cfcf6a7cd6d871765" title="Buzzer_Enable" alt="" coords="864,376,976,403" />
+<area shape="rect" href="$_buzzer_8h.html#a32beb337abd6ef07b2e0a1be1785fc05" title="Buzzer_Disable" alt="" coords="863,427,977,453" />
+<area shape="rect" href="$_timer_tick_8c.html#ab3e7e710e30409b5e98b715960bacf39" title="TimerTick_CancelTimeoutFrom\lCallback" alt="" coords="816,259,1024,301" />
+<area shape="rect" href="$_timer_tick_8c.html#a2e533e7d0f92d79186280f85476710be" title="TimerTick_CancelTimeout" alt="" coords="832,325,1008,352" />
+<area shape="rect" href="$_pwm_8c.html#a3bcc133bd11de8cdebe6cca148a86697" title="Pwm_SetFrequency" alt="" coords="1072,216,1213,243" />
+<area shape="rect" href="$_timer_8c.html#a9c2492c1b5bfb4de29379c4ab7881d9c" title="Timer_B0_Configure" alt="" coords="1268,220,1412,247" />
+<area shape="rect" href="$_pwm_8c.html#a0b1227ceeeff83336f29d8b94d6ef238" title="Pwm_SetDuty" alt="" coords="1288,169,1392,196" />
+<area shape="rect" href="$_pwm_8c.html#a4cde0daf6b044c1a1fc69b618509c8d6" title="_AnyChannelsEnabled" alt="" coords="1261,321,1419,348" />
+<area shape="rect" href="$_pwm_8c.html#a44f8de75f3f084d05fff0a54dc0b7df5" title="_DutyToCount" alt="" coords="1500,220,1607,247" />
+<area shape="rect" href="$_timer_8c.html#a6590a26eceba06333f451e69d6ea3987" title="Timer_B0CCX_Configure" alt="" coords="1468,296,1639,323" />
+<area shape="rect" href="$_pwm_8c.html#aeeb64145d199ec26bf1529408072857e" title="Pwm_Enable" alt="" coords="1093,325,1192,352" />
+<area shape="rect" href="$_pwm_8c.html#af615c07bb1843dbc746ddfa848592b8b" title="Pwm_GetDuty" alt="" coords="1089,376,1196,403" />
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="1283,427,1397,453" />
+<area shape="rect" href="$_pwm_8c.html#a7371820ffd6164c6fe538095708d2190" title="Pwm_Disable" alt="" coords="1092,427,1193,453" />
+<area shape="rect" href="$_interrupt_8c.html#a0e5431ce2b9097e2a21c245e7c75e953" title="Interrupt_Lock" alt="" coords="1089,503,1196,529" />
+<area shape="rect" href="$_interrupt_8c.html#a4f840d0ee81cd63fc8ab0c938a6e755b" title="Interrupt_Unlock" alt="" coords="1084,553,1201,580" />
+</map>

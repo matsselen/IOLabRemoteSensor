@@ -1,0 +1,20 @@
+<map id="_HandleHumanAccCommand" name="_HandleHumanAccCommand">
+<area shape="rect" href="$_accelerometer_8c.html#a2daa1344e52ddb15175faf6fa207a4ab" title="Accelerometer_TriggerSample\lBlocking" alt="" coords="251,171,454,213" />
+<area shape="rect" href="$_serial_8c.html#a88d9cf267de40eaeac599d0fa554908f" title="Serial_SendPacket" alt="" coords="531,284,664,311" />
+<area shape="rect" href="$_test_protocol_8c.html#a9a6c77304d30771f67961c7100ad749a" title="_SendAckHuman" alt="" coords="290,237,415,264" />
+<area shape="rect" href="$_accelerometer_8c.html#ac8a2ae0e168a1a611f846d6c8e3eaa63" title="Accelerometer_Stop" alt="" coords="527,233,668,260" />
+<area shape="rect" href="$_accelerometer_8c.html#a7e17ec73aec4e5e30c29c770600c8bbb" title="Accelerometer_Config" alt="" coords="522,183,674,209" />
+<area shape="rect" href="$_accelerometer_8c.html#a50c3ab0bd7821b6522abfe15d809d340" title="Accelerometer_Start" alt="" coords="527,132,668,159" />
+<area shape="rect" href="$_accelerometer_8c.html#a7f7a735f35344e05636854b28df834b9" title="Accelerometer_ReadSample" alt="" coords="502,81,694,108" />
+<area shape="rect" href="$_accelerometer_8c.html#ac4d20255c523c786b86f430d083bf28a" title="_AccWriteSingleRegister" alt="" coords="751,208,919,235" />
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="979,157,1123,184" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="988,208,1114,235" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="988,107,1114,133" />
+<area shape="rect" href="$_i2c_8c.html#afbfb0c0fbc0025ced1d88290aa899fa9" title="I2c_TransmitByteEnd" alt="" coords="976,259,1126,285" />
+<area shape="rect" href="$_accelerometer_8c.html#a0699e7afdbf83edc44f0800ad5cc65f7" title="_AccReadSingleRegister" alt="" coords="751,157,919,184" />
+<area shape="rect" href="$_i2c_8c.html#a0df5e64148fcf1e7c7c1cc90e107db49" title="I2c_ReceiveByteEnd" alt="" coords="979,56,1123,83" />
+<area shape="rect" href="$_accelerometer_8c.html#a95df76fc222507aa3e76ed437159e1dc" title="_AccReadMultipleRegisters" alt="" coords="743,107,927,133" />
+<area shape="rect" href="$_i2c_8c.html#a6f3a9e8f5dd4856ddf5a891e84ea82ea" title="I2c_ReceiveByte" alt="" coords="991,5,1111,32" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="779,321,891,348" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="763,271,907,297" />
+</map>

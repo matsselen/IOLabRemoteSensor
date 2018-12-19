@@ -1,0 +1,14 @@
+<map id="AdcManager_DisableChannel" name="AdcManager_DisableChannel">
+<area shape="rect" href="$_adc_manager_8c.html#af8416f3a8c779a5631aa5335064ed481" title="AdcManager_PoweredChannel\lControl" alt="" coords="255,5,460,48" />
+<area shape="rect" href="$_adc_manager_8c.html#acb5db715bc62a5ddfe2b5cb71e889afa" title="_AllChannelsDisabled" alt="" coords="281,72,433,99" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaff7c685a2d029cb452bb271c369716" title="_AdcStop" alt="" coords="319,123,396,149" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaa24713515810380e7943554d22b137" title="_SetupAdcForNormalMode" alt="" coords="267,199,448,225" />
+<area shape="rect" href="$_adc_8c.html#a48bd94f6c7b5c13bae12ee2ae824145b" title="Adc_StopConversion" alt="" coords="553,109,700,136" />
+<area shape="rect" href="$_adc_8c.html#aeb038bcf326000ca3a320d29351100a3" title="Adc_Config" alt="" coords="581,160,672,187" />
+<area shape="rect" href="$_adc_manager_8c.html#a52cb89e87f72c24ad896dfc4151724e3" title="AdcManager_AdcManRefToAdcRef" alt="" coords="511,211,743,237" />
+<area shape="rect" href="$_adc_manager_8c.html#a5e91c4affb5c1439c47170585670a2bf" title="_SetupTimerConfig" alt="" coords="559,261,695,288" />
+<area shape="rect" href="$_timer_8c.html#a02f931c9a4a5037b499d531f49ebc3b9" title="Timer_A0_Configure" alt="" coords="807,211,951,237" />
+<area shape="rect" href="$_timer_8c.html#a3b787ac79e251ea6217447ed05be53bb" title="Timer_A0CCX_Configure" alt="" coords="793,261,964,288" />
+<area shape="rect" href="$_adc_manager_8c.html#a9d5382aa474494126282fe96a47dbea1" title="_InitialzeXAdcChannels" alt="" coords="797,312,960,339" />
+<area shape="rect" href="$_adc_8c.html#a8201a8154546752a07f766fa604c77d1" title="Adc_SetChannelSequence" alt="" coords="1013,312,1195,339" />
+</map>

@@ -1,0 +1,470 @@
+\hypertarget{_accelerometer_8h}{\section{Accelerometer.\-h File Reference}
+\label{_accelerometer_8h}\index{Accelerometer.\-h@{Accelerometer.\-h}}
+}
+
+
+Accelerometer interface header.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_accelerometer_8h_struct_acc_config__t}{Acc\-Config\-\_\-t}
+\item 
+struct \hyperlink{_accelerometer_8h_struct_acc_sample__t}{Acc\-Sample\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_accelerometer_8h_a95871830017785e9918f254c63da3795}{Acc\-Isr\-Pointer\-\_\-t} )(void)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_accelerometer_8h_adf3370dc576a5d1948c3f76f1ac93f4f}{Acc\-Odr\-\_\-t} \{ \\*
+{\bfseries Acc\-Odr\-\_\-800}, 
+\\*
+{\bfseries Acc\-Odr\-\_\-400}, 
+\\*
+{\bfseries Acc\-Odr\-\_\-200}, 
+\\*
+{\bfseries Acc\-Odr\-\_\-100}, 
+\\*
+{\bfseries Acc\-Odr\-\_\-50}, 
+\\*
+{\bfseries Acc\-Odr\-\_\-12\-\_\-5}, 
+\\*
+{\bfseries Acc\-Odr\-\_\-6\-\_\-25}, 
+\\*
+{\bfseries Acc\-Odr\-\_\-1\-\_\-56}
+ \}
+\item 
+enum \hyperlink{_accelerometer_8h_a537c88723fab1f199bd0af6d60f466b4}{Acc\-Resolution\-\_\-t} \{ \\*
+{\bfseries Acc\-Resolution\-\_\-14bit}, 
+\\*
+{\bfseries Acc\-Resolution\-\_\-8bit}
+ \}
+\item 
+enum \hyperlink{_accelerometer_8h_aa9f877c7e28bc2a932de1b6a6e286cd9}{Acc\-Full\-Scale\-Range\-\_\-t} \{ \\*
+{\bfseries Acc\-Full\-Scale\-Range\-\_\-8g}, 
+\\*
+{\bfseries Acc\-Full\-Scale\-Range\-\_\-4g}, 
+\\*
+{\bfseries Acc\-Full\-Scale\-Range\-\_\-2g}
+ \}
+\item 
+enum \hyperlink{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741}{Acc\-Over\-Sample\-\_\-t} \{ \\*
+{\bfseries Acc\-Over\-Sample\-\_\-\-Normal}, 
+\\*
+\hyperlink{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741accd6225118801008933fa4a8f5c27fe3}{Acc\-Over\-Sample\-\_\-\-L\-N\-L\-P}, 
+\\*
+\hyperlink{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741a76b689b411a2003fc30732a315b5399e}{Acc\-Over\-Sample\-\_\-\-High\-Res}, 
+\\*
+\hyperlink{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741acff51d6ff4c966685a0316214e30c02e}{Acc\-Over\-Sample\-\_\-\-Low\-Power}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_accelerometer_8h_aab95b4004ca553f62854d5ef981d83f3}{Accelerometer\-\_\-\-Init} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_accelerometer_8h_a7e17ec73aec4e5e30c29c770600c8bbb}{Accelerometer\-\_\-\-Config} (const \hyperlink{_accelerometer_8h_struct_acc_config__t}{Acc\-Config\-\_\-t} $\ast$config)
+\item 
+void \hyperlink{_accelerometer_8h_a50c3ab0bd7821b6522abfe15d809d340}{Accelerometer\-\_\-\-Start} (void)
+\item 
+void \hyperlink{_accelerometer_8h_ac8a2ae0e168a1a611f846d6c8e3eaa63}{Accelerometer\-\_\-\-Stop} (void)
+\item 
+void \hyperlink{_accelerometer_8h_a2daa1344e52ddb15175faf6fa207a4ab}{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking} (\hyperlink{_accelerometer_8h_struct_acc_sample__t}{Acc\-Sample\-\_\-t} $\ast$sample)
+\item 
+\hypertarget{_accelerometer_8h_a6692d28df6233f41b9be5efdca98d9ec}{void {\bfseries Accelerometer\-\_\-\-Set\-Calibration} (const \hyperlink{_accelerometer_8h_struct_acc_sample__t}{Acc\-Sample\-\_\-t} $\ast$calibration)}\label{_accelerometer_8h_a6692d28df6233f41b9be5efdca98d9ec}
+
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_accelerometer_8h_a7f7a735f35344e05636854b28df834b9}{Accelerometer\-\_\-\-Read\-Sample} (\hyperlink{_accelerometer_8h_struct_acc_sample__t}{Acc\-Sample\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_accelerometer_8h_ae8796d84277befae45dcd5bd63a143fb}{Accelerometer\-\_\-\-Read\-Sample\-Array} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_accelerometer_8h_a38496c82db2e6068b2f0fa6d66a1f4f0}{Accelerometer\-\_\-\-Register\-Isr} (\hyperlink{_accelerometer_8h_a95871830017785e9918f254c63da3795}{Acc\-Isr\-Pointer\-\_\-t} isr)
+\item 
+void \hyperlink{_accelerometer_8h_a242fe4636491b9aabe4b78fc09bf5765}{Accelerometer\-\_\-\-Unregister\-Isr} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Accelerometer interface header. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Header file for the 3-\/axis accelerometer sensor interface logic. 
+
+Definition in file \hyperlink{_accelerometer_8h_source}{Accelerometer.\-h}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Acc\-Config\-\_\-t@{Acc\-Config\-\_\-t}}\label{struct_acc_config__t}
+\hypertarget{_accelerometer_8h_struct_acc_config__t}{}
+\subsubsection{struct Acc\-Config\-\_\-t}
+Defines a structure to hold the accelerometer configuration data in. 
+
+Definition at line 70 of file Accelerometer.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_accelerometer_8h_a06ddb72dd4628f9da9ea4beb67063923}{\hyperlink{_accelerometer_8h_adf3370dc576a5d1948c3f76f1ac93f4f}{Acc\-Odr\-\_\-t}}\label{_accelerometer_8h_a06ddb72dd4628f9da9ea4beb67063923}
+&
+odr&
+\\
+\hline
+
+\hypertarget{_accelerometer_8h_a4f5d8e18ad256c179a136737665b2825}{\hyperlink{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741}{Acc\-Over\-Sample\-\_\-t}}\label{_accelerometer_8h_a4f5d8e18ad256c179a136737665b2825}
+&
+over\-Sample\-Mode&
+\\
+\hline
+
+\hypertarget{_accelerometer_8h_a77e5a2914f20a229164e56d0f89be2b4}{\hyperlink{_accelerometer_8h_aa9f877c7e28bc2a932de1b6a6e286cd9}{Acc\-Full\-Scale\-Range\-\_\-t}}\label{_accelerometer_8h_a77e5a2914f20a229164e56d0f89be2b4}
+&
+range&
+\\
+\hline
+
+\hypertarget{_accelerometer_8h_a1f6a786ffb6a0216ac0bb4e10f80fe57}{\hyperlink{_accelerometer_8h_a537c88723fab1f199bd0af6d60f466b4}{Acc\-Resolution\-\_\-t}}\label{_accelerometer_8h_a1f6a786ffb6a0216ac0bb4e10f80fe57}
+&
+resolution&
+\\
+\hline
+
+\end{DoxyFields}
+\index{Acc\-Sample\-\_\-t@{Acc\-Sample\-\_\-t}}\label{struct_acc_sample__t}
+\hypertarget{_accelerometer_8h_struct_acc_sample__t}{}
+\subsubsection{struct Acc\-Sample\-\_\-t}
+Defines a structure to hold the accelerometer data in. 
+
+Definition at line 79 of file Accelerometer.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_accelerometer_8h_ac1c6787923f3bad936b9c33b14c16daf}{\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t}}\label{_accelerometer_8h_ac1c6787923f3bad936b9c33b14c16daf}
+&
+x\-Data&
+\\
+\hline
+
+\hypertarget{_accelerometer_8h_a09ae4bb2b92fbe9e5422b1b6f602ff10}{\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t}}\label{_accelerometer_8h_a09ae4bb2b92fbe9e5422b1b6f602ff10}
+&
+y\-Data&
+\\
+\hline
+
+\hypertarget{_accelerometer_8h_ae92f459ab8384b36ba61695c68feb33e}{\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t}}\label{_accelerometer_8h_ae92f459ab8384b36ba61695c68feb33e}
+&
+z\-Data&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_accelerometer_8h_a95871830017785e9918f254c63da3795}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Acc\-Isr\-Pointer\-\_\-t@{Acc\-Isr\-Pointer\-\_\-t}}
+\index{Acc\-Isr\-Pointer\-\_\-t@{Acc\-Isr\-Pointer\-\_\-t}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Acc\-Isr\-Pointer\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Acc\-Isr\-Pointer\-\_\-t)(void)}}\label{_accelerometer_8h_a95871830017785e9918f254c63da3795}
+Defines an accelerometer I\-S\-R function pointer 
+
+Definition at line 88 of file Accelerometer.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_accelerometer_8h_aa9f877c7e28bc2a932de1b6a6e286cd9}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Acc\-Full\-Scale\-Range\-\_\-t@{Acc\-Full\-Scale\-Range\-\_\-t}}
+\index{Acc\-Full\-Scale\-Range\-\_\-t@{Acc\-Full\-Scale\-Range\-\_\-t}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Acc\-Full\-Scale\-Range\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Acc\-Full\-Scale\-Range\-\_\-t}}}\label{_accelerometer_8h_aa9f877c7e28bc2a932de1b6a6e286cd9}
+Defines the full scale range output from the accelerometer in g 
+
+Definition at line 51 of file Accelerometer.\-h.
+
+\hypertarget{_accelerometer_8h_adf3370dc576a5d1948c3f76f1ac93f4f}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Acc\-Odr\-\_\-t@{Acc\-Odr\-\_\-t}}
+\index{Acc\-Odr\-\_\-t@{Acc\-Odr\-\_\-t}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Acc\-Odr\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Acc\-Odr\-\_\-t}}}\label{_accelerometer_8h_adf3370dc576a5d1948c3f76f1ac93f4f}
+Defines the output data rates that the accelerometer can run at. Lower sample rates consume less power. 
+
+Definition at line 29 of file Accelerometer.\-h.
+
+\hypertarget{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Acc\-Over\-Sample\-\_\-t@{Acc\-Over\-Sample\-\_\-t}}
+\index{Acc\-Over\-Sample\-\_\-t@{Acc\-Over\-Sample\-\_\-t}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Acc\-Over\-Sample\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Acc\-Over\-Sample\-\_\-t}}}\label{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741}
+Defines the over sampling mode for the accelerometer. The higher resolution uses more power. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Acc\-Over\-Sample\-\_\-\-L\-N\-L\-P@{Acc\-Over\-Sample\-\_\-\-L\-N\-L\-P}!Accelerometer.\-h@{Accelerometer.\-h}}\index{Accelerometer.\-h@{Accelerometer.\-h}!Acc\-Over\-Sample\-\_\-\-L\-N\-L\-P@{Acc\-Over\-Sample\-\_\-\-L\-N\-L\-P}}\item[{\em 
+\hypertarget{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741accd6225118801008933fa4a8f5c27fe3}{Acc\-Over\-Sample\-\_\-\-L\-N\-L\-P}\label{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741accd6225118801008933fa4a8f5c27fe3}
+}]High resolution. \index{Acc\-Over\-Sample\-\_\-\-High\-Res@{Acc\-Over\-Sample\-\_\-\-High\-Res}!Accelerometer.\-h@{Accelerometer.\-h}}\index{Accelerometer.\-h@{Accelerometer.\-h}!Acc\-Over\-Sample\-\_\-\-High\-Res@{Acc\-Over\-Sample\-\_\-\-High\-Res}}\item[{\em 
+\hypertarget{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741a76b689b411a2003fc30732a315b5399e}{Acc\-Over\-Sample\-\_\-\-High\-Res}\label{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741a76b689b411a2003fc30732a315b5399e}
+}]Low noise, but also low power. \index{Acc\-Over\-Sample\-\_\-\-Low\-Power@{Acc\-Over\-Sample\-\_\-\-Low\-Power}!Accelerometer.\-h@{Accelerometer.\-h}}\index{Accelerometer.\-h@{Accelerometer.\-h}!Acc\-Over\-Sample\-\_\-\-Low\-Power@{Acc\-Over\-Sample\-\_\-\-Low\-Power}}\item[{\em 
+\hypertarget{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741acff51d6ff4c966685a0316214e30c02e}{Acc\-Over\-Sample\-\_\-\-Low\-Power}\label{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741acff51d6ff4c966685a0316214e30c02e}
+}]Highest resolution, especially at lower O\-D\-R. lowest power, but highest noise \end{description}
+\end{Desc}
+
+
+Definition at line 61 of file Accelerometer.\-h.
+
+\hypertarget{_accelerometer_8h_a537c88723fab1f199bd0af6d60f466b4}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Acc\-Resolution\-\_\-t@{Acc\-Resolution\-\_\-t}}
+\index{Acc\-Resolution\-\_\-t@{Acc\-Resolution\-\_\-t}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Acc\-Resolution\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Acc\-Resolution\-\_\-t}}}\label{_accelerometer_8h_a537c88723fab1f199bd0af6d60f466b4}
+Defines the resolution setting for the accelerometer Lower resolution allows for lower bus traffic 
+
+Definition at line 44 of file Accelerometer.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_accelerometer_8h_a7e17ec73aec4e5e30c29c770600c8bbb}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Accelerometer\-\_\-\-Config@{Accelerometer\-\_\-\-Config}}
+\index{Accelerometer\-\_\-\-Config@{Accelerometer\-\_\-\-Config}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Accelerometer\-\_\-\-Config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Accelerometer\-\_\-\-Config (
+\begin{DoxyParamCaption}
+\item[{const {\bf Acc\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8h_a7e17ec73aec4e5e30c29c770600c8bbb}
+Configures the accelerometer, but does not start the sampling.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ Structure of selected accelerometer settings.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the configuration was successful, false otherwise. The configuration will fail if the accelerometer is not in standby when configured. 
+\end{DoxyReturn}
+
+
+Definition at line 556 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Set\-Config(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8h_aab95b4004ca553f62854d5ef981d83f3}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Accelerometer\-\_\-\-Init@{Accelerometer\-\_\-\-Init}}
+\index{Accelerometer\-\_\-\-Init@{Accelerometer\-\_\-\-Init}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Accelerometer\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8h_aab95b4004ca553f62854d5ef981d83f3}
+Initializes the accelerometer, but does not configure or start sampling 
+
+Definition at line 527 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8h_a7f7a735f35344e05636854b28df834b9}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Accelerometer\-\_\-\-Read\-Sample@{Accelerometer\-\_\-\-Read\-Sample}}
+\index{Accelerometer\-\_\-\-Read\-Sample@{Accelerometer\-\_\-\-Read\-Sample}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Accelerometer\-\_\-\-Read\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Accelerometer\-\_\-\-Read\-Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8h_a7f7a735f35344e05636854b28df834b9}
+Reads a sample from the accelerometer if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em sample} & -\/ structure to hold the sample data once it is collected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sample was ready, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 818 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Read\-Acc(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8h_ae8796d84277befae45dcd5bd63a143fb}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Accelerometer\-\_\-\-Read\-Sample\-Array@{Accelerometer\-\_\-\-Read\-Sample\-Array}}
+\index{Accelerometer\-\_\-\-Read\-Sample\-Array@{Accelerometer\-\_\-\-Read\-Sample\-Array}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Accelerometer\-\_\-\-Read\-Sample\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Read\-Sample\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8h_ae8796d84277befae45dcd5bd63a143fb}
+Reads a sample from the accelerometer if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Length} & -\/ the maximum length of bytes data\mbox{[}\mbox{]} can hold \\
+\hline
+\mbox{\tt out}  & {\em actual\-Length} & -\/ the actual number of bytes written to data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em data} & -\/ an array to hold the data from the accelerometer reading \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 855 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Read\-Acc().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8h_a38496c82db2e6068b2f0fa6d66a1f4f0}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Accelerometer\-\_\-\-Register\-Isr@{Accelerometer\-\_\-\-Register\-Isr}}
+\index{Accelerometer\-\_\-\-Register\-Isr@{Accelerometer\-\_\-\-Register\-Isr}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Accelerometer\-\_\-\-Register\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Register\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Isr\-Pointer\-\_\-t}}]{isr}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8h_a38496c82db2e6068b2f0fa6d66a1f4f0}
+Sets a function that will be ran when the data ready interrupt occurs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em isr} & -\/ pointer to the accelerometer data ready I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 890 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8h_a50c3ab0bd7821b6522abfe15d809d340}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Accelerometer\-\_\-\-Start@{Accelerometer\-\_\-\-Start}}
+\index{Accelerometer\-\_\-\-Start@{Accelerometer\-\_\-\-Start}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Accelerometer\-\_\-\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8h_a50c3ab0bd7821b6522abfe15d809d340}
+Starts the accelerometer sampling at its configured data rate. 
+
+Definition at line 717 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Set\-Config(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8h_ac8a2ae0e168a1a611f846d6c8e3eaa63}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Accelerometer\-\_\-\-Stop@{Accelerometer\-\_\-\-Stop}}
+\index{Accelerometer\-\_\-\-Stop@{Accelerometer\-\_\-\-Stop}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Accelerometer\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8h_ac8a2ae0e168a1a611f846d6c8e3eaa63}
+Stops the data collecting of the accelerometer. 
+
+Definition at line 752 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Set\-Config(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8h_a2daa1344e52ddb15175faf6fa207a4ab}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Accelerometer\-\_\-\-Trigger\-Sample\-Blocking@{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking}}
+\index{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking@{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Trigger\-Sample\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8h_a2daa1344e52ddb15175faf6fa207a4ab}
+Triggers the accelerometer to take a sample and block until the sample is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em sample} & -\/ the result of the accelerometer sample. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 772 of file Accelerometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Acc\-Command().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8h_a242fe4636491b9aabe4b78fc09bf5765}{\index{Accelerometer.\-h@{Accelerometer.\-h}!Accelerometer\-\_\-\-Unregister\-Isr@{Accelerometer\-\_\-\-Unregister\-Isr}}
+\index{Accelerometer\-\_\-\-Unregister\-Isr@{Accelerometer\-\_\-\-Unregister\-Isr}!Accelerometer.h@{Accelerometer.\-h}}
+\subsubsection[{Accelerometer\-\_\-\-Unregister\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Unregister\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8h_a242fe4636491b9aabe4b78fc09bf5765}
+Clears the custom I\-S\-R for the accelerometer. 
+
+Definition at line 901 of file Accelerometer.\-c.
+

@@ -1,0 +1,9 @@
+<map id="Buzzer_SetFrequency" name="Buzzer_SetFrequency">
+<area shape="rect" href="$_ui_manager_8c.html#a4aabb887cd84641062375402ec60026b" title="_PlaySequence" alt="" coords="208,31,323,57" />
+<area shape="rect" href="$_ui_manager_8h.html#a64c0bf6dac5078278c785307c7e2befe" title="UiManager_PlaySequence" alt="" coords="540,31,719,57" />
+<area shape="rect" href="$_ui_manager_8c.html#ac066839b7cc3e3b90ae5bdd7f629b3c4" title="_UiTickCallBack" alt="" coords="372,56,490,83" />
+<area shape="rect" href="$_self_test_8h.html#a282b024bc0ec38174285fce7402142c9" title="SelfTest_Start" alt="" coords="770,31,874,57" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="923,31,1123,57" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1172,31,1370,57" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1419,31,1470,57" />
+</map>

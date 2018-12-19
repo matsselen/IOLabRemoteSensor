@@ -1,0 +1,9 @@
+<map id="Barometer_TriggerSampleBlocking" name="Barometer_TriggerSampleBlocking">
+<area shape="rect" href="$_barometer_8c.html#a98ecada381db13090b6700291a2681c4" title="Barometer_StartSampleConversion" alt="" coords="283,6,515,32" />
+<area shape="rect" href="$_barometer_8c.html#a91a50f620e6bae96b4279bf29ada9e86" title="Barometer_ReadSample" alt="" coords="315,56,483,83" />
+<area shape="rect" href="$_barometer_8c.html#a0e23021916eeffe45a8b5ee622d45bc5" title="_BarWriteRegister" alt="" coords="590,6,720,32" />
+<area shape="rect" href="$_spi_master_8c.html#a92f3539ef78eccf3780715b433c04075" title="Spi_WriteRegister" alt="" coords="796,6,924,32" />
+<area shape="rect" href="$_barometer_8c.html#a68205b78d3fed44531eb4d88f5df60dc" title="_BarReadMultipleRegisters" alt="" coords="563,56,747,83" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="796,56,924,83" />
+<area shape="rect" href="$_spi_master_8c.html#a77dac8d70655f0b711a13787359f723e" title="Spi_WriteByte" alt="" coords="808,107,912,134" />
+</map>

@@ -1,0 +1,23 @@
+<map id="TimerTick_CancelTimeout" name="TimerTick_CancelTimeout">
+<area shape="rect" href="$_ui_manager_8c.html#a4aabb887cd84641062375402ec60026b" title="_PlaySequence" alt="" coords="271,5,386,32" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1426,207,1610,233" />
+<area shape="rect" href="$_barometer_control_8h.html#a26fa8a3b7bce475950cc2b3d1096c05e" title="BarometerControl_SetConfig" alt="" coords="232,173,424,200" />
+<area shape="rect" href="$_digital_input_control_8h.html#a7683dde04bce1ad9c79e2cb2052b8e07" title="DigitalInputControl\l_SetConfig" alt="" coords="263,224,394,267" />
+<area shape="rect" href="$_encoder_control_8h.html#adb39c8747a1af85b65dc901e8f7e667d" title="EncControl_SetConfig" alt="" coords="252,56,404,83" />
+<area shape="rect" href="$_thermometer_control_8h.html#a66bc07257860cca63270cdbab132e418" title="ThermometerControl\l_SetConfig" alt="" coords="256,107,400,149" />
+<area shape="rect" href="$_ui_manager_8h.html#a05ab7e85f5f6b42ad24038d9deb45b0f" title="UiManager_StopSequence" alt="" coords="238,341,419,368" />
+<area shape="rect" href="$_ui_manager_8h.html#a64c0bf6dac5078278c785307c7e2befe" title="UiManager_PlaySequence" alt="" coords="703,56,882,83" />
+<area shape="rect" href="$_ui_manager_8c.html#ac066839b7cc3e3b90ae5bdd7f629b3c4" title="_UiTickCallBack" alt="" coords="504,56,622,83" />
+<area shape="rect" href="$_self_test_8h.html#a282b024bc0ec38174285fce7402142c9" title="SelfTest_Start" alt="" coords="1466,81,1570,108" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1659,152,1859,179" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1908,203,2106,229" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="2155,203,2206,229" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1683,203,1835,229" />
+<area shape="rect" href="$_configuration_manager_8h.html#a183e4b53a492c32bbe799d7e209b8b4f" title="ConMan_SetSensorConfig" alt="" coords="474,161,652,188" />
+<area shape="rect" href="$_configuration_manager_8h.html#a4af394c25a5c58205d8832071eae3b0b" title="ConMan_StartData" alt="" coords="724,152,860,179" />
+<area shape="rect" href="$_configuration_manager_8h.html#a7e20b92732fc46ab8a1937e144066938" title="ConMan_StopData" alt="" coords="726,211,859,237" />
+<area shape="rect" href="$_comm_protocol_8h.html#a11fcf3a095c467e5da58a75e746059f1" title="CommProtocol_HandleStart\lDataPacket" alt="" coords="946,140,1132,183" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="1196,207,1375,233" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="1223,152,1348,179" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1f65077f8bed3f077ec2a561f20bf4b5" title="CommProtocol_HandleStopData\lPacket" alt="" coords="932,207,1146,249" />
+</map>

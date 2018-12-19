@@ -1,0 +1,39 @@
+<map id="Board.h" name="Board.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="5,80,64,107" />
+<area shape="rect" href="$_self_test_8c_source.html" title="SelfTest.c" alt="" coords="88,80,168,107" />
+<area shape="rect" href="$_analog7_control_8c.html" title="Controls reading analog input in header pin 7. " alt="" coords="192,80,315,107" />
+<area shape="rect" href="$_analog8_control_8c.html" title="Controls reading analog input in header pin 8. " alt="" coords="339,80,461,107" />
+<area shape="rect" href="$_analog9_control_8c.html" title="Controls reading analog input in header pin 9. " alt="" coords="485,80,608,107" />
+<area shape="rect" href="$_battery_control_8c.html" title="Controls reading the battery voltage. " alt="" coords="632,80,749,107" />
+<area shape="rect" href="$_digital_input_control_8c.html" title="Controls reading digital inputs on the header and buttons. " alt="" coords="773,80,915,107" />
+<area shape="rect" href="$_ecg6_chan_control_8c_source.html" title="Ecg6ChanControl.c" alt="" coords="939,80,1075,107" />
+<area shape="rect" href="$_ecg_control_8c.html" title="Controls reading the 6&#45;channel ECG. " alt="" coords="1099,80,1195,107" />
+<area shape="rect" href="$_header1_control_8c.html" title="Controls header pin 1. " alt="" coords="1219,80,1344,107" />
+<area shape="rect" href="$_header2_control_8c.html" title="Controls header pin 2. " alt="" coords="1368,80,1493,107" />
+<area shape="rect" href="$_header3_control_8c.html" title="Controls header pin 3. " alt="" coords="1517,80,1643,107" />
+<area shape="rect" href="$_header4_control_8c_source.html" title="Header4Control.c" alt="" coords="1667,80,1792,107" />
+<area shape="rect" href="$_header5_control_8c_source.html" title="Header5Control.c" alt="" coords="1816,80,1941,107" />
+<area shape="rect" href="$_header6_control_8c.html" title="Controls header pin 6. " alt="" coords="1965,80,2091,107" />
+<area shape="rect" href="$_high_gain_control_8c.html" title="Controls reading the high gain input. " alt="" coords="2115,80,2245,107" />
+<area shape="rect" href="$_led_control_8c.html" title="LED Controller. " alt="" coords="2269,80,2365,107" />
+<area shape="rect" href="$_push_button_control_8c.html" title="Control for the push buttons. " alt="" coords="2389,80,2533,107" />
+<area shape="rect" href="$_test_protocol_8c.html" title="Manages the self&#45;test protocol. " alt="" coords="2557,80,2664,107" />
+<area shape="rect" href="$_accelerometer_8c.html" title="Accelerometer sensor interface module. " alt="" coords="2688,80,2805,107" />
+<area shape="rect" href="$_adc_manager_8c.html" title="Analog to digital conversion manager. " alt="" coords="2829,80,2936,107" />
+<area shape="rect" href="$_barometer_8c.html" title="Driver for the barometer sensor. " alt="" coords="2960,80,3053,107" />
+<area shape="rect" href="$_buzzer_8c_source.html" title="Buzzer.c" alt="" coords="3077,80,3149,107" />
+<area shape="rect" href="$_dac_8c.html" title="Driver for the DAC. " alt="" coords="3173,80,3229,107" />
+<area shape="rect" href="$_encoder_8c.html" title="The hardware driver for the quadrature encoder. " alt="" coords="3253,80,3333,107" />
+<area shape="rect" href="$_gyroscope_8c.html" title="Driver for the gyroscope sensor. " alt="" coords="3357,80,3453,107" />
+<area shape="rect" href="$_magnetometer_8c.html" title="Magnetometer sensor interface module. " alt="" coords="3477,80,3595,107" />
+<area shape="rect" href="$_pwm_8c.html" title="Pulse width modulation module driver. " alt="" coords="3619,80,3680,107" />
+<area shape="rect" href="$_ultrasound_8c.html" title="Driver for the Ultrasonic Transducer Circuit. " alt="" coords="3704,80,3800,107" />
+<area shape="rect" href="$_adc_8c.html" title="Analog&#45;to&#45;digital conversion module driver. " alt="" coords="3824,80,3877,107" />
+<area shape="rect" href="$_board_8c.html" title="Board initialization module. " alt="" coords="3901,80,3968,107" />
+<area shape="rect" href="$_clock_8c.html" title="Clock configuration module. " alt="" coords="3992,80,4056,107" />
+<area shape="rect" href="$_gpio_8c.html" title="GPIO configuration and control macros and functions. " alt="" coords="4080,80,4139,107" />
+<area shape="rect" href="$_spi_master_8c.html" title="SPI Master Module. " alt="" coords="4163,80,4253,107" />
+<area shape="rect" href="$_spi_slave_8c.html" title="SPI Slave Module. " alt="" coords="4277,80,4360,107" />
+<area shape="rect" href="$_system_8c.html" title="System module. " alt="" coords="4384,80,4459,107" />
+<area shape="rect" href="$_assert_8c.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="4483,80,4552,107" />
+</map>

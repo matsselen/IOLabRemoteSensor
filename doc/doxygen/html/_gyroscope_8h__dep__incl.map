@@ -1,0 +1,6 @@
+<map id="Gyroscope.h" name="Gyroscope.h">
+<area shape="rect" href="$_configuration_manager_8c.html" title="The configuration manager keeps track of all the sensor configurations. " alt="" coords="6,80,168,107" />
+<area shape="rect" href="$_gyroscope_control_8c.html" title="Controls the gyroscope driver. " alt="" coords="192,80,331,107" />
+<area shape="rect" href="$_test_protocol_8c.html" title="Manages the self&#45;test protocol. " alt="" coords="355,80,462,107" />
+<area shape="rect" href="$_gyroscope_8c.html" title="Driver for the gyroscope sensor. " alt="" coords="486,80,582,107" />
+</map>

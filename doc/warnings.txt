@@ -1,0 +1,251 @@
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/PushButtonControl.c:38: warning: Compound PushButtonInfo_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.h:46: warning: Compound BarometerCoef_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Accelerometer.c:806: warning: Member Accelerometer_SetCalibration(const AccSample_t *calibration) (function) of file Accelerometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Accelerometer.c:502: warning: Member _ctrlRegTwo (variable) of file Accelerometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Accelerometer.c:503: warning: Member _ctrlRegThree (variable) of file Accelerometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Accelerometer.c:504: warning: Member _ctrlRegFour (variable) of file Accelerometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Accelerometer.c:505: warning: Member _ctrlRegFive (variable) of file Accelerometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Accelerometer.c:506: warning: Member _xyzDataConfig (variable) of file Accelerometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Accelerometer.h:97: warning: Member Accelerometer_SetCalibration(const AccSample_t *calibration) (function) of file Accelerometer.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/AccelerometerControl.c:197: warning: Member MAX_DATA_BYTES (macro definition) of file AccelerometerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Adc.c:440: warning: return type of member Adc_GetNumberOfConversions is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Adc.c:259: warning: The following parameters of Adc_SetChannelSequence(const AdcChannelConfig_t config[], uint16_t numChannels, AdcReferenceLevel_t refLevel) are not documented:
+  parameter 'refLevel'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Adc.c:440: warning: return type of member Adc_GetNumberOfConversions is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Adc.c:259: warning: The following parameters of Adc_SetChannelSequence(const AdcChannelConfig_t config[], uint16_t numChannels, AdcReferenceLevel_t refLevel) are not documented:
+  parameter 'refLevel'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/AdcManager.c:258: warning: Member _SetupAdcSingleChannel(AdcManChannel_t channel, AdcManRef_t reference) (function) of file AdcManager.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/AdcManager.c:137: warning: Member _poweredSensorsEnabled (variable) of file AdcManager.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/AdcManager.c:890: warning: parameters of member _SetupAdcForNormalMode are not (all) documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/AdcManager.c:837: warning: Found unknown command `\NOTE'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/AdcManager.c:291: warning: The following parameters of AdcManager_EnableChannel(AdcManChannel_t channel, AdcManSampleRate_t rate, AdcManRef_t reference, AdcDataCallback_t callback) are not documented:
+  parameter 'reference'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/AdcManager.c:781: warning: Found unknown command `\NOTE'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/AdcManager.c:837: warning: Found unknown command `\NOTE'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/AdcManager.c:291: warning: The following parameters of AdcManager_EnableChannel(AdcManChannel_t channel, AdcManSampleRate_t rate, AdcManRef_t reference, AdcDataCallback_t callback) are not documented:
+  parameter 'reference'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/AdcManager.c:781: warning: Found unknown command `\NOTE'
+warning: Included by graph for 'Assert.h' not generated, too many nodes. Consider increasing DOT_GRAPH_MAX_NODES.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Utilities/Assert.h:36: warning: Member ASSERT_DISABLED (macro definition) of file Assert.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.c:64: warning: Member BAROMETER_END_SPI_XFER (macro definition) of file Barometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.c:92: warning: Member Barometer_Init(void) (function) of file Barometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.c:96: warning: Member Barometer_Config(const BarometerConfig_t *config) (function) of file Barometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.c:97: warning: Member Barometer_Start(void) (function) of file Barometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.c:98: warning: Member Barometer_Stop(void) (function) of file Barometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.h:56: warning: Member Barometer_Init(void) (function) of file Barometer.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.h:57: warning: Member Barometer_Config(const BarometerConfig_t *config) (function) of file Barometer.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.h:58: warning: Member Barometer_Start(void) (function) of file Barometer.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Barometer.h:59: warning: Member Barometer_Stop(void) (function) of file Barometer.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BarometerControl.c:250: warning: Member NUM_BAROMETER_CALIBRATION_BYTES (macro definition) of file BarometerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BatteryControl.c:187: warning: Member NUM_BATTERY_CALIBRATION_BYTES (macro definition) of file BatteryControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BatteryControl.c:159: warning: Member BatteryControl_GetCounts(void) (function) of file BatteryControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BatteryControl.h:26: warning: Member BatteryCounts_t (typedef) of file BatteryControl.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BatteryControl.h:33: warning: Member BatteryControl_GetCounts(void) (function) of file BatteryControl.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BuzzerControl.c:35: warning: Member _lowFrequencies[BuzzerLowFrequency_LAST] (variable) of file BuzzerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BuzzerControl.c:71: warning: Member _highFrequencies[BuzzerHighFrequency_LAST] (variable) of file BuzzerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BuzzerControl.c:107: warning: Member _lowPitches[BuzzerLowPitch_LAST] (variable) of file BuzzerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BuzzerControl.c:143: warning: Member _medPitches[BuzzerMidPitch_LAST] (variable) of file BuzzerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BuzzerControl.c:179: warning: Member _highPitches[BuzzerHighPitch_LAST] (variable) of file BuzzerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/BuzzerControl.c:215: warning: Member _dutyCycles[BuzzerDutyCycle_LAST] (variable) of file BuzzerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/CommProtocol.c:373: warning: Member STATUS_PACKET_EXPECTED_LENGTH (macro definition) of file CommProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/CommProtocol.c:374: warning: Member FIRMWARE_MAJOR_INDEX (macro definition) of file CommProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/CommProtocol.c:375: warning: Member FIRMWARE_MINOR_INDEX (macro definition) of file CommProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/CommProtocol.c:376: warning: Member CONNECTION_STATUS_INDEX (macro definition) of file CommProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/CommProtocol.c:533: warning: Member OUTPUT_CONFIG_USEFUL_DATA_OFFSET (macro definition) of file CommProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/CommProtocol.c:569: warning: Member FIXED_CONFIG_USEFUL_DATA_OFFSET (macro definition) of file CommProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/CommProtocol.c:699: warning: Member LENGTH_STATUS_REPLY (macro definition) of file CommProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/ConfigurationManager.c:67: warning: Member ENABLE_ACCELEROMETER (macro definition) of file ConfigurationManager.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Utilities/Conversion.c:57: warning: Member Conversion_HexStringToUint(const char_t string[], NumberSize_t size, uint16_t *result) (function) of file Conversion.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Utilities/Conversion.h:49: warning: Member Conversion_HexStringToUint(const char_t string[], NumberSize_t size, uint16_t *result) (function) of file Conversion.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Dac.c:39: warning: Member DAC_END_SPI_XFER (macro definition) of file Dac.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Dac.c:52: warning: Member DacInit(void) (function) of file Dac.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Dac.c:56: warning: Member DacConfig(void) (function) of file Dac.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Dac.h:31: warning: Member DacInit(void) (function) of file Dac.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Dac.h:32: warning: Member DacConfig(void) (function) of file Dac.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:333: warning: argument 'subarrayId' of command @param is not found in the argument list of DataBuffer_AddToSubarray16Bit(uint8_t subArrayId, uint16_t length, const uint16_t data[])
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:333: warning: The following parameters of DataBuffer_AddToSubarray16Bit(uint8_t subArrayId, uint16_t length, const uint16_t data[]) are not documented:
+  parameter 'subArrayId'
+  parameter 'data'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:279: warning: argument 'subarrayId' of command @param is not found in the argument list of DataBuffer_AddToSubarray8Bit(uint8_t subArrayId, uint16_t length, const uint8_t data[])
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:279: warning: The following parameters of DataBuffer_AddToSubarray8Bit(uint8_t subArrayId, uint16_t length, const uint8_t data[]) are not documented:
+  parameter 'subArrayId'
+  parameter 'data'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:209: warning: argument 'subarrayId' of command @param is not found in the argument list of DataBuffer_CreateSubarray(uint8_t subArrayId, uint16_t length)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:209: warning: The following parameters of DataBuffer_CreateSubarray(uint8_t subArrayId, uint16_t length) are not documented:
+  parameter 'subArrayId'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:405: warning: argument 'subarrayId' of command @param is not found in the argument list of DataBuffer_SubarrayExists(uint8_t subArrayId)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:405: warning: The following parameters of DataBuffer_SubarrayExists(uint8_t subArrayId) are not documented:
+  parameter 'subArrayId'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:333: warning: argument 'subarrayId' of command @param is not found in the argument list of DataBuffer_AddToSubarray16Bit(uint8_t subArrayId, uint16_t length, const uint16_t data[])
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:333: warning: The following parameters of DataBuffer_AddToSubarray16Bit(uint8_t subArrayId, uint16_t length, const uint16_t data[]) are not documented:
+  parameter 'subArrayId'
+  parameter 'data'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:279: warning: argument 'subarrayId' of command @param is not found in the argument list of DataBuffer_AddToSubarray8Bit(uint8_t subArrayId, uint16_t length, const uint8_t data[])
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:279: warning: The following parameters of DataBuffer_AddToSubarray8Bit(uint8_t subArrayId, uint16_t length, const uint8_t data[]) are not documented:
+  parameter 'subArrayId'
+  parameter 'data'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:209: warning: argument 'subarrayId' of command @param is not found in the argument list of DataBuffer_CreateSubarray(uint8_t subArrayId, uint16_t length)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:209: warning: The following parameters of DataBuffer_CreateSubarray(uint8_t subArrayId, uint16_t length) are not documented:
+  parameter 'subArrayId'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:405: warning: argument 'subarrayId' of command @param is not found in the argument list of DataBuffer_SubarrayExists(uint8_t subArrayId)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/DataBuffer.c:405: warning: The following parameters of DataBuffer_SubarrayExists(uint8_t subArrayId) are not documented:
+  parameter 'subArrayId'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/DigitalInputControl.c:228: warning: argument 'data' of command @param is not found in the argument list of _ReadPins(void)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Dma.c:124: warning: Member DMA_CHANNELS_PER_TRIG_REG (macro definition) of file Dma.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Dma.h:108: warning: Member DMA_CHANNEL_1 (macro definition) of file Dma.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Dma.h:109: warning: Member DMA_CHANNEL_2 (macro definition) of file Dma.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/EncoderControl.c:69: warning: argument 'keyValue' of command @param is not found in the argument list of EncControl_SetConfig(uint8_t control)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/EncoderControl.c:69: warning: The following parameters of EncControl_SetConfig(uint8_t control) are not documented:
+  parameter 'control'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/EncoderControl.c:69: warning: argument 'keyValue' of command @param is not found in the argument list of EncControl_SetConfig(uint8_t control)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/EncoderControl.c:69: warning: The following parameters of EncControl_SetConfig(uint8_t control) are not documented:
+  parameter 'control'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/FailSequenceData.h:32: warning: Member failBuzzerSteps[] (variable) of file FailSequenceData.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/FailSequenceData.h:201: warning: Member failBacklightSteps[] (variable) of file FailSequenceData.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/FailSequenceData.h:217: warning: Member failSequence (variable) of file FailSequenceData.h is not documented.
+<failBacklightSteps>:1: warning: parameters of member failBacklightSteps are not (all) documented
+<failSequence>:1: warning: parameters of member failSequence are not (all) documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/GirlILeftBehindSequenceData.h:34: warning: Member girlILeftBehindBuzzerSteps[] (variable) of file GirlILeftBehindSequenceData.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/GirlILeftBehindSequenceData.h:248: warning: Member girlILeftBehindBacklightSteps[] (variable) of file GirlILeftBehindSequenceData.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/GirlILeftBehindSequenceData.h:264: warning: Member girlILeftBehindSequence (variable) of file GirlILeftBehindSequenceData.h is not documented.
+<girlILeftBehindBacklightSteps>:1: warning: parameters of member girlILeftBehindBacklightSteps are not (all) documented
+<girlILeftBehindSequence>:1: warning: parameters of member girlILeftBehindSequence are not (all) documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Gpio.c:717: warning: Member INPUT_BIT_SHIFT (macro definition) of file Gpio.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Gpio.c:675: warning: return type of member Gpio_GetValue is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Gpio.c:739: warning: return type of member Gpio_GetValuePortJ is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Gpio.c:707: warning: return type of member Gpio_GetValuePortU is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Gpio.c:675: warning: return type of member Gpio_GetValue is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Gpio.c:739: warning: return type of member Gpio_GetValuePortJ is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/Gpio.c:707: warning: return type of member Gpio_GetValuePortU is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:72: warning: Member GYROSCOPE_END_SPI_XFER (macro definition) of file Gyroscope.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:320: warning: Member _ctrlRegTwo (variable) of file Gyroscope.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:321: warning: Member _ctrlRegThree (variable) of file Gyroscope.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:322: warning: Member _ctrlRegFour (variable) of file Gyroscope.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:323: warning: Member _ctrlRegFive (variable) of file Gyroscope.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:363: warning: argument 'sample' of command @param is not found in the argument list of Gyroscope_Config(const GyroConfig_t *config)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:363: warning: The following parameters of Gyroscope_Config(const GyroConfig_t *config) are not documented:
+  parameter 'config'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:482: warning: return type of member Gyroscope_ReadSample is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:363: warning: argument 'sample' of command @param is not found in the argument list of Gyroscope_Config(const GyroConfig_t *config)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:363: warning: The following parameters of Gyroscope_Config(const GyroConfig_t *config) are not documented:
+  parameter 'config'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Gyroscope.c:482: warning: return type of member Gyroscope_ReadSample is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/Header1Control.c:45: warning: Member _Header1Control_SetPinOutput(void) (function) of file Header1Control.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/Header2Control.c:45: warning: Member _Header2Control_SetPinOutput(void) (function) of file Header2Control.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/Header3Control.c:45: warning: Member _Header3Control_SetPinOutput(void) (function) of file Header3Control.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/Header6Control.c:45: warning: Member _Header6Control_SetPinOutput(void) (function) of file Header6Control.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Magnetometer.c:421: warning: Member BYTES_IN_SAMPLE (macro definition) of file Magnetometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Magnetometer.c:116: warning: Member CtrlRegTwo (enumeration) of file Magnetometer.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Magnetometer.c:143: warning: Member _controlRegTwo (variable) of file Magnetometer.c is not documented.
+<CtrlRegTwo>:1: warning: parameters of member CtrlRegTwo are not (all) documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Magnetometer.c:553: warning: argument 'actuaLength' of command @param is not found in the argument list of Magnetometer_ReadSampleArray(uint16_t maxLength, uint16_t *actualLength, uint8_t data[])
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Magnetometer.c:553: warning: The following parameters of Magnetometer_ReadSampleArray(uint16_t maxLength, uint16_t *actualLength, uint8_t data[]) are not documented:
+  parameter 'actualLength'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Magnetometer.h:131: warning: Member Magnetometer_UnregisterIsr(void) (function) of file Magnetometer.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Magnetometer.c:553: warning: argument 'actuaLength' of command @param is not found in the argument list of Magnetometer_ReadSampleArray(uint16_t maxLength, uint16_t *actualLength, uint8_t data[])
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Magnetometer.c:553: warning: The following parameters of Magnetometer_ReadSampleArray(uint16_t maxLength, uint16_t *actualLength, uint8_t data[]) are not documented:
+  parameter 'actualLength'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Include/NoteDurationToMs.h:33: warning: Member QUARTER_NOTE_MS (macro definition) of file NoteDurationToMs.h is not documented.
+warning: Included by graph for 'ProjectTypes.h' not generated, too many nodes. Consider increasing DOT_GRAPH_MAX_NODES.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Pwm.c:329: warning: return type of member _AnyChannelsEnabled is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Pwm.c:312: warning: return type of member _DutyToCount is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Pwm.c:180: warning: return type of member Pwm_Enable is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Pwm.c:136: warning: return type of member Pwm_SetDuty is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Pwm.c:180: warning: return type of member Pwm_Enable is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Pwm.c:136: warning: return type of member Pwm_SetDuty is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Include/SensorId.h:26: warning: Member SensorId_t (enumeration) of file SensorId.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/SpiSlave.c:45: warning: Member _dmaChannelRx (variable) of file SpiSlave.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/SpiSlave.c:55: warning: Member _dmaChannelTx (variable) of file SpiSlave.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/SpiSlave.c:172: warning: return type of member SpiSlave_PacketLoaded is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/SpiSlave.c:172: warning: return type of member SpiSlave_PacketLoaded is not documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/StarWarsSequenceData.h:32: warning: Member starWarsBuzzerSteps[] (variable) of file StarWarsSequenceData.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/StarWarsSequenceData.h:71: warning: Member starWarsBacklightSteps[] (variable) of file StarWarsSequenceData.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/StarWarsSequenceData.h:87: warning: Member starWarsSequence (variable) of file StarWarsSequenceData.h is not documented.
+<starWarsBacklightSteps>:1: warning: parameters of member starWarsBacklightSteps are not (all) documented
+<starWarsSequence>:1: warning: parameters of member starWarsSequence are not (all) documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/SuccessSequenceData.h:32: warning: Member successBuzzerSteps[] (variable) of file SuccessSequenceData.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/SuccessSequenceData.h:96: warning: Member successBacklightSteps[] (variable) of file SuccessSequenceData.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData/SuccessSequenceData.h:112: warning: Member successSequence (variable) of file SuccessSequenceData.h is not documented.
+<successBacklightSteps>:1: warning: parameters of member successBacklightSteps are not (all) documented
+<successSequence>:1: warning: parameters of member successSequence are not (all) documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Micro/System.c:109: warning: Member NUM_RESET_REASON_STRINGS (macro definition) of file System.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/TestProtocol.c:232: warning: Member PORT_J_UINT (macro definition) of file TestProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/TestProtocol.c:234: warning: Member PORT_U_UINT (macro definition) of file TestProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/TestProtocol.c:351: warning: Member PORT_J_UINT (macro definition) of file TestProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/TestProtocol.c:353: warning: Member PORT_U_UINT (macro definition) of file TestProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/TestProtocol.c:753: warning: Member NUM_ENC_ITEMS (macro definition) of file TestProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/TestProtocol.c:837: warning: Member NUMBER_ADC_USED (macro definition) of file TestProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/TestProtocol.c:111: warning: Member _HandleHumanUsGoCommand(void) (function) of file TestProtocol.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/ThermometerControl.c:24: warning: Member THERMOMETER_USE_ADC (macro definition) of file ThermometerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/ThermometerControl.c:309: warning: Member NUM_TEMP_CALIBRATION_BYTES (macro definition) of file ThermometerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/ThermometerControl.c:81: warning: Member _numberAccumulated (variable) of file ThermometerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/ThermometerControl.c:82: warning: Member _numberToAccumulate (variable) of file ThermometerControl.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiManager.c:36: warning: Member __DISABLE_BACKLIGHT (macro definition) of file UiManager.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiManager.c:331: warning: expected whitespace after [ command
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiManager.c:329: warning: argument 'in' of command @param is not found in the argument list of _ZeroCurrentSequence(CurrentSequence_t *sequence)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiManager.c:329: warning: argument 'out' of command @param is not found in the argument list of _ZeroCurrentSequence(CurrentSequence_t *sequence)
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiManager.c:329: warning: The following parameters of _ZeroCurrentSequence(CurrentSequence_t *sequence) are not documented:
+  parameter 'sequence'
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Ultrasound.c:43: warning: Member ULTRASOUND_DELAY_US (macro definition) of file Ultrasound.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Ultrasound.c:46: warning: Member ULTRASOUND_NUM_PULSES (macro definition) of file Ultrasound.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Ultrasound.c:53: warning: Member _TxEnable(void) (function) of file Ultrasound.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Ultrasound.c:54: warning: Member _RxEnable(void) (function) of file Ultrasound.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Ultrasound.c:56: warning: Member UltrasoundInit(void) (function) of file Ultrasound.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Ultrasound.c:105: warning: Member UltrasoundStopTransmit(void) (function) of file Ultrasound.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Ultrasound.h:31: warning: Member UltrasoundInit(void) (function) of file Ultrasound.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Devices/Ultrasound.h:33: warning: Member UltrasoundStopTransmit(void) (function) of file Ultrasound.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Utilities/Version.c:39: warning: Member VERSION_MINOR (macro definition) of file Version.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Utilities/Version.c:128: warning: Member UserFirmwareVersionString(void) (function) of file Version.c is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Drivers/Utilities/Version.h:50: warning: Member UserFirmwareVersionString(void) (function) of file Version.h is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:89: warning: Member numberOfBytes (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:90: warning: Member numberOfSensors (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:91: warning: Member magnetometerId (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:92: warning: Member magnetometerLength (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:93: warning: Member magnetometerData[12u] (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:94: warning: Member accelerometerId (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:95: warning: Member accelerometerLength (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:96: warning: Member accelerometerData[12u] (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:97: warning: Member encoderId (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:98: warning: Member encoderLength (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:99: warning: Member encoderData[8u] (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:100: warning: Member forceGaugeId (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:101: warning: Member forceGaugeLength (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:102: warning: Member forceGaugeData[4u] (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:103: warning: Member gyroscopeId (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:104: warning: Member gyroscopeLength (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:105: warning: Member gyroscopeData[12u] (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:106: warning: Member ambientLightId (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:107: warning: Member ambientLightLength (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:108: warning: Member ambientLightData[4u] (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:109: warning: Member microphoneId (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:110: warning: Member microphoneLength (variable) of class SelfTest_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:111: warning: Member microphoneData[4u] (variable) of class SelfTest_t is not documented.
+<accelerometerData>:1: warning: parameters of member SelfTest_t::accelerometerData are not (all) documented
+<accelerometerId>:1: warning: parameters of member SelfTest_t::accelerometerId are not (all) documented
+<accelerometerLength>:1: warning: parameters of member SelfTest_t::accelerometerLength are not (all) documented
+<ambientLightData>:1: warning: parameters of member SelfTest_t::ambientLightData are not (all) documented
+<ambientLightId>:1: warning: parameters of member SelfTest_t::ambientLightId are not (all) documented
+<ambientLightLength>:1: warning: parameters of member SelfTest_t::ambientLightLength are not (all) documented
+<encoderData>:1: warning: parameters of member SelfTest_t::encoderData are not (all) documented
+<encoderId>:1: warning: parameters of member SelfTest_t::encoderId are not (all) documented
+<encoderLength>:1: warning: parameters of member SelfTest_t::encoderLength are not (all) documented
+<forceGaugeData>:1: warning: parameters of member SelfTest_t::forceGaugeData are not (all) documented
+<forceGaugeId>:1: warning: parameters of member SelfTest_t::forceGaugeId are not (all) documented
+<forceGaugeLength>:1: warning: parameters of member SelfTest_t::forceGaugeLength are not (all) documented
+<gyroscopeData>:1: warning: parameters of member SelfTest_t::gyroscopeData are not (all) documented
+<gyroscopeId>:1: warning: parameters of member SelfTest_t::gyroscopeId are not (all) documented
+<gyroscopeLength>:1: warning: parameters of member SelfTest_t::gyroscopeLength are not (all) documented
+<magnetometerData>:1: warning: parameters of member SelfTest_t::magnetometerData are not (all) documented
+<magnetometerId>:1: warning: parameters of member SelfTest_t::magnetometerId are not (all) documented
+<magnetometerLength>:1: warning: parameters of member SelfTest_t::magnetometerLength are not (all) documented
+<microphoneData>:1: warning: parameters of member SelfTest_t::microphoneData are not (all) documented
+<microphoneId>:1: warning: parameters of member SelfTest_t::microphoneId are not (all) documented
+<microphoneLength>:1: warning: parameters of member SelfTest_t::microphoneLength are not (all) documented
+<numberOfBytes>:1: warning: parameters of member SelfTest_t::numberOfBytes are not (all) documented
+<numberOfSensors>:1: warning: parameters of member SelfTest_t::numberOfSensors are not (all) documented
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:117: warning: Member xData (variable) of class ThreeAxisSensorData_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:118: warning: Member yData (variable) of class ThreeAxisSensorData_t is not documented.
+C:/Projects/IOLab/mainline/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Application/SelfTest.c:119: warning: Member zData (variable) of class ThreeAxisSensorData_t is not documented.
+<xData>:1: warning: parameters of member ThreeAxisSensorData_t::xData are not (all) documented
+<yData>:1: warning: parameters of member ThreeAxisSensorData_t::yData are not (all) documented
+<zData>:1: warning: parameters of member ThreeAxisSensorData_t::zData are not (all) documented

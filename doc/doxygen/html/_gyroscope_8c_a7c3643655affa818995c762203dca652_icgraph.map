@@ -1,0 +1,21 @@
+<map id="_GyroReadMultipleRegisters" name="_GyroReadMultipleRegisters">
+<area shape="rect" href="$_gyroscope_8h.html#ab65933152860c82db86c5da812e0bf51" title="Gyroscope_ReadSample" alt="" coords="262,56,432,83" />
+<area shape="rect" href="$_gyroscope_8h.html#a3442d46e2e13980e37951e2196e7e6bb" title="Gyroscope_ReadSampleArray" alt="" coords="246,5,448,32" />
+<area shape="rect" href="$_gyroscope_8h.html#adf8e70db6c91c04de88b89452ce7b9d9" title="Gyroscope_Start" alt="" coords="287,107,407,133" />
+<area shape="rect" href="$_gyroscope_control_8h.html#a0f632c20363de00827df20235ebc7919" title="GyroControl_ReadGyro" alt="" coords="519,5,679,32" />
+<area shape="rect" href="$_test_protocol_8c.html#a5a0700d249688ed73deb98b8ce5bf961" title="_HandleHumanGyroCommand" alt="" coords="498,56,700,83" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1658,64,1842,91" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="2140,64,2338,91" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1915,13,2067,40" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1891,115,2091,141" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="2387,64,2438,91" />
+<area shape="rect" href="$_gyroscope_control_8h.html#a4bef66b8d82229524a9bd61e48aaf193" title="GyroControl_SetConfig" alt="" coords="520,107,678,133" />
+<area shape="rect" href="$_thermometer_control_8h.html#a66bc07257860cca63270cdbab132e418" title="ThermometerControl\l_SetConfig" alt="" coords="527,157,671,200" />
+<area shape="rect" href="$_configuration_manager_8h.html#a183e4b53a492c32bbe799d7e209b8b4f" title="ConMan_SetSensorConfig" alt="" coords="751,115,930,141" />
+<area shape="rect" href="$_configuration_manager_8h.html#a4af394c25a5c58205d8832071eae3b0b" title="ConMan_StartData" alt="" coords="979,127,1115,153" />
+<area shape="rect" href="$_configuration_manager_8h.html#a7e20b92732fc46ab8a1937e144066938" title="ConMan_StopData" alt="" coords="980,72,1114,99" />
+<area shape="rect" href="$_comm_protocol_8h.html#a11fcf3a095c467e5da58a75e746059f1" title="CommProtocol_HandleStart\lDataPacket" alt="" coords="1178,123,1364,165" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="1428,64,1607,91" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="1455,115,1580,141" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1f65077f8bed3f077ec2a561f20bf4b5" title="CommProtocol_HandleStopData\lPacket" alt="" coords="1164,56,1378,99" />
+</map>

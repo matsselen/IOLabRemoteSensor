@@ -1,0 +1,563 @@
+\hypertarget{_magnetometer_8h}{\section{Magnetometer.\-h File Reference}
+\label{_magnetometer_8h}\index{Magnetometer.\-h@{Magnetometer.\-h}}
+}
+
+
+Magnetometer Interface Header.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_magnetometer_8h_struct_mag_config__t}{Mag\-Config\-\_\-t}
+\item 
+struct \hyperlink{_magnetometer_8h_struct_mag_sample__t}{Mag\-Sample\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_magnetometer_8h_a20bc53d859cc96133576afd1193ddba1}{Mag\-Isr\-Pointer\-\_\-t} )(void)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_magnetometer_8h_a8b236a4d8176fe85dab5f115de6bb6b1}{Mag\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Mag\-Sample\-Rate\-\_\-1280}, 
+\\*
+{\bfseries Mag\-Sample\-Rate\-\_\-640}, 
+\\*
+{\bfseries Mag\-Sample\-Rate\-\_\-320}, 
+\\*
+{\bfseries Mag\-Sample\-Rate\-\_\-160}, 
+\\*
+{\bfseries Mag\-Sample\-Rate\-\_\-80}, 
+\\*
+{\bfseries Mag\-Sample\-Rate\-\_\-40}, 
+\\*
+{\bfseries Mag\-Sample\-Rate\-\_\-20}, 
+\\*
+{\bfseries Mag\-Sample\-Rate\-\_\-10}
+ \}
+\item 
+enum \hyperlink{_magnetometer_8h_ab2b83502b670234800662ee110f14d0a}{Mag\-Over\-Sample\-Ratio\-\_\-t} \{ \\*
+{\bfseries Mag\-Over\-Sample\-Ratio\-\_\-16}, 
+\\*
+{\bfseries Mag\-Over\-Sample\-Ratio\-\_\-32}, 
+\\*
+{\bfseries Mag\-Over\-Sample\-Ratio\-\_\-64}, 
+\\*
+{\bfseries Mag\-Over\-Sample\-Ratio\-\_\-128}
+ \}
+\item 
+enum \hyperlink{_magnetometer_8h_abef6362719decc38527f275363b90674}{Mag\-Data\-Scaling\-\_\-t} \{ \\*
+{\bfseries Mag\-Data\-Scaling\-\_\-\-R\-A\-W}, 
+\\*
+\hyperlink{_magnetometer_8h_abef6362719decc38527f275363b90674a5a8b6ecc013f8b5c5a8972bc9b1a3877}{Mag\-Data\-Scaling\-\_\-\-S\-C\-A\-L\-E\-D}
+ \}
+\item 
+enum \hyperlink{_magnetometer_8h_a75dda8cbfc3fd054dbea3a50672b2b2f}{Mag\-Auto\-Reset\-\_\-t} \{ \\*
+{\bfseries Mag\-Auto\-Reset\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D}, 
+\\*
+{\bfseries Mag\-Auto\-Reset\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+ \}
+\item 
+enum \hyperlink{_magnetometer_8h_a68825057e7de2eaf4db032634e6f2450}{Mag\-Sampling\-Mode\-\_\-t} \{ \\*
+{\bfseries Mag\-Sampling\-\_\-\-Auto}, 
+\\*
+{\bfseries Mag\-Sampling\-\_\-\-Triggered}
+ \}
+\item 
+enum \hyperlink{_magnetometer_8h_a35012e5ee1e4a7b4a5817e04c91718e1}{Mag\-Resolution\-\_\-t} \{ \\*
+{\bfseries Mag\-Resolution\-\_\-16\-B\-I\-T}, 
+\\*
+{\bfseries Mag\-Resolution\-\_\-8\-B\-I\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_magnetometer_8h_a24236d83f8ad5a94c17e6414904ea6f6}{Magnetometer\-\_\-\-Init} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_magnetometer_8h_ae85c6dbba68d26df7855b25d8979f9ce}{Magnetometer\-\_\-\-Config} (const \hyperlink{_magnetometer_8h_struct_mag_config__t}{Mag\-Config\-\_\-t} $\ast$config)
+\item 
+void \hyperlink{_magnetometer_8h_ab1c7f61cf144d63503818c735afe6834}{Magnetometer\-\_\-\-Start} (void)
+\item 
+void \hyperlink{_magnetometer_8h_aa859a7cf895fd5118acfcb44fc596517}{Magnetometer\-\_\-\-Stop} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_magnetometer_8h_a74a9a63d349b4532ea66269102cb9768}{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking} (\hyperlink{_magnetometer_8h_struct_mag_sample__t}{Mag\-Sample\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_magnetometer_8h_a2f8aa103b7db96d01167f9dfa83bb053}{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking} (void)
+\item 
+void \hyperlink{_magnetometer_8h_abf9639cb901b8a88043c1a73e4fad906}{Magnetometer\-\_\-\-Set\-Calibration} (const \hyperlink{_magnetometer_8h_struct_mag_sample__t}{Mag\-Sample\-\_\-t} $\ast$calibration)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_magnetometer_8h_aaddbb66c4df1f1e47afc3cdbe4c1122a}{Magnetometer\-\_\-\-Read\-Sample} (\hyperlink{_magnetometer_8h_struct_mag_sample__t}{Mag\-Sample\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_magnetometer_8h_a20958a3807b25a8b07da31a385af787a}{Magnetometer\-\_\-\-Read\-Sample\-Array} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_project_types_8h_aef44329758059c91c76d334e8fc09700}{int8\-\_\-t} \hyperlink{_magnetometer_8h_aff2683c4a9992b3fb92207239d130622}{Magnetometer\-\_\-\-Read\-Temp} (void)
+\item 
+void \hyperlink{_magnetometer_8h_aa39b22c63f0f6fda46569d535070334e}{Magnetometer\-\_\-\-Register\-Isr} (\hyperlink{_magnetometer_8h_a20bc53d859cc96133576afd1193ddba1}{Mag\-Isr\-Pointer\-\_\-t} isr)
+\item 
+\hypertarget{_magnetometer_8h_ace1cf695cd88b4dff2922f6a5874035a}{void {\bfseries Magnetometer\-\_\-\-Unregister\-Isr} (void)}\label{_magnetometer_8h_ace1cf695cd88b4dff2922f6a5874035a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Magnetometer Interface Header. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Header file for the magnetometer (3-\/axis Hall effect) sensor interface logic. 
+
+Definition in file \hyperlink{_magnetometer_8h_source}{Magnetometer.\-h}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Mag\-Config\-\_\-t@{Mag\-Config\-\_\-t}}\label{struct_mag_config__t}
+\hypertarget{_magnetometer_8h_struct_mag_config__t}{}
+\subsubsection{struct Mag\-Config\-\_\-t}
+Defines the magnetometer configuration structure 
+
+Definition at line 92 of file Magnetometer.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_magnetometer_8h_a094c480d3669d15247f4b5c5db1bc308}{\hyperlink{_magnetometer_8h_a75dda8cbfc3fd054dbea3a50672b2b2f}{Mag\-Auto\-Reset\-\_\-t}}\label{_magnetometer_8h_a094c480d3669d15247f4b5c5db1bc308}
+&
+auto\-Reset&
+\\
+\hline
+
+\hypertarget{_magnetometer_8h_a969e1a406d11980ec19dcd0f6d5bd0c4}{\hyperlink{_magnetometer_8h_abef6362719decc38527f275363b90674}{Mag\-Data\-Scaling\-\_\-t}}\label{_magnetometer_8h_a969e1a406d11980ec19dcd0f6d5bd0c4}
+&
+data\-Scaling&
+\\
+\hline
+
+\hypertarget{_magnetometer_8h_a95f49b9706d6bcfd0175a406e06c28e1}{\hyperlink{_magnetometer_8h_ab2b83502b670234800662ee110f14d0a}{Mag\-Over\-Sample\-Ratio\-\_\-t}}\label{_magnetometer_8h_a95f49b9706d6bcfd0175a406e06c28e1}
+&
+over\-Sample\-Ratio&
+\\
+\hline
+
+\hypertarget{_magnetometer_8h_a7e1a4ade0bfc7962b2f6edcd8598e46a}{\hyperlink{_magnetometer_8h_a35012e5ee1e4a7b4a5817e04c91718e1}{Mag\-Resolution\-\_\-t}}\label{_magnetometer_8h_a7e1a4ade0bfc7962b2f6edcd8598e46a}
+&
+resolution&
+\\
+\hline
+
+\hypertarget{_magnetometer_8h_a9989a7c463cc9147d2edefa818ef88ba}{\hyperlink{_magnetometer_8h_a8b236a4d8176fe85dab5f115de6bb6b1}{Mag\-Sample\-Rate\-\_\-t}}\label{_magnetometer_8h_a9989a7c463cc9147d2edefa818ef88ba}
+&
+sample\-Rate&
+\\
+\hline
+
+\hypertarget{_magnetometer_8h_ad9f801d93fd3d8a40021d76dc0c28558}{\hyperlink{_magnetometer_8h_a68825057e7de2eaf4db032634e6f2450}{Mag\-Sampling\-Mode\-\_\-t}}\label{_magnetometer_8h_ad9f801d93fd3d8a40021d76dc0c28558}
+&
+sampling\-Mode&
+\\
+\hline
+
+\end{DoxyFields}
+\index{Mag\-Sample\-\_\-t@{Mag\-Sample\-\_\-t}}\label{struct_mag_sample__t}
+\hypertarget{_magnetometer_8h_struct_mag_sample__t}{}
+\subsubsection{struct Mag\-Sample\-\_\-t}
+Defines the structure that will hold the sample data from a magnetometer reading. 
+
+Definition at line 105 of file Magnetometer.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_magnetometer_8h_ac1c6787923f3bad936b9c33b14c16daf}{\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t}}\label{_magnetometer_8h_ac1c6787923f3bad936b9c33b14c16daf}
+&
+x\-Data&
+\\
+\hline
+
+\hypertarget{_magnetometer_8h_a09ae4bb2b92fbe9e5422b1b6f602ff10}{\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t}}\label{_magnetometer_8h_a09ae4bb2b92fbe9e5422b1b6f602ff10}
+&
+y\-Data&
+\\
+\hline
+
+\hypertarget{_magnetometer_8h_ae92f459ab8384b36ba61695c68feb33e}{\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t}}\label{_magnetometer_8h_ae92f459ab8384b36ba61695c68feb33e}
+&
+z\-Data&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_magnetometer_8h_a20bc53d859cc96133576afd1193ddba1}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Mag\-Isr\-Pointer\-\_\-t@{Mag\-Isr\-Pointer\-\_\-t}}
+\index{Mag\-Isr\-Pointer\-\_\-t@{Mag\-Isr\-Pointer\-\_\-t}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Mag\-Isr\-Pointer\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Mag\-Isr\-Pointer\-\_\-t)(void)}}\label{_magnetometer_8h_a20bc53d859cc96133576afd1193ddba1}
+Defines an magnetometer I\-S\-R function pointer 
+
+Definition at line 113 of file Magnetometer.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_magnetometer_8h_a75dda8cbfc3fd054dbea3a50672b2b2f}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Mag\-Auto\-Reset\-\_\-t@{Mag\-Auto\-Reset\-\_\-t}}
+\index{Mag\-Auto\-Reset\-\_\-t@{Mag\-Auto\-Reset\-\_\-t}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Mag\-Auto\-Reset\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Mag\-Auto\-Reset\-\_\-t}}}\label{_magnetometer_8h_a75dda8cbfc3fd054dbea3a50672b2b2f}
+Selects if the magnetometer should reset its sensor before each reading. Resetting is necessary after being exposed to a large magnetic field.
+
+\begin{DoxyNote}{Note}
+Auto-\/reset is recommended. 
+\end{DoxyNote}
+
+
+Definition at line 66 of file Magnetometer.\-h.
+
+\hypertarget{_magnetometer_8h_abef6362719decc38527f275363b90674}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Mag\-Data\-Scaling\-\_\-t@{Mag\-Data\-Scaling\-\_\-t}}
+\index{Mag\-Data\-Scaling\-\_\-t@{Mag\-Data\-Scaling\-\_\-t}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Mag\-Data\-Scaling\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Mag\-Data\-Scaling\-\_\-t}}}\label{_magnetometer_8h_abef6362719decc38527f275363b90674}
+Defines the scaling mode for the output data. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Mag\-Data\-Scaling\-\_\-\-S\-C\-A\-L\-E\-D@{Mag\-Data\-Scaling\-\_\-\-S\-C\-A\-L\-E\-D}!Magnetometer.\-h@{Magnetometer.\-h}}\index{Magnetometer.\-h@{Magnetometer.\-h}!Mag\-Data\-Scaling\-\_\-\-S\-C\-A\-L\-E\-D@{Mag\-Data\-Scaling\-\_\-\-S\-C\-A\-L\-E\-D}}\item[{\em 
+\hypertarget{_magnetometer_8h_abef6362719decc38527f275363b90674a5a8b6ecc013f8b5c5a8972bc9b1a3877}{Mag\-Data\-Scaling\-\_\-\-S\-C\-A\-L\-E\-D}\label{_magnetometer_8h_abef6362719decc38527f275363b90674a5a8b6ecc013f8b5c5a8972bc9b1a3877}
+}]Outputs raw data from the A\-D\-C. Scales the A\-D\-C data by the user set scaling values \end{description}
+\end{Desc}
+
+
+Definition at line 55 of file Magnetometer.\-h.
+
+\hypertarget{_magnetometer_8h_ab2b83502b670234800662ee110f14d0a}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Mag\-Over\-Sample\-Ratio\-\_\-t@{Mag\-Over\-Sample\-Ratio\-\_\-t}}
+\index{Mag\-Over\-Sample\-Ratio\-\_\-t@{Mag\-Over\-Sample\-Ratio\-\_\-t}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Mag\-Over\-Sample\-Ratio\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Mag\-Over\-Sample\-Ratio\-\_\-t}}}\label{_magnetometer_8h_ab2b83502b670234800662ee110f14d0a}
+Defines the oversampling ratio of the magnetometer. The higher the oversampling ratio the lower the noise in the measurement, but the slower the output data rate. Output Data Rate = Mag\-Sample\-Rate / Mag\-Over\-Sample\-Ratio 
+
+Definition at line 46 of file Magnetometer.\-h.
+
+\hypertarget{_magnetometer_8h_a35012e5ee1e4a7b4a5817e04c91718e1}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Mag\-Resolution\-\_\-t@{Mag\-Resolution\-\_\-t}}
+\index{Mag\-Resolution\-\_\-t@{Mag\-Resolution\-\_\-t}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Mag\-Resolution\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Mag\-Resolution\-\_\-t}}}\label{_magnetometer_8h_a35012e5ee1e4a7b4a5817e04c91718e1}
+Defines what resolution the sensor readings will be. 8-\/bit resolution return the M\-S\-B only from a 16-\/bit value. This will allow for lower data rates when lower resolution data is acceptable. 
+
+Definition at line 85 of file Magnetometer.\-h.
+
+\hypertarget{_magnetometer_8h_a8b236a4d8176fe85dab5f115de6bb6b1}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Mag\-Sample\-Rate\-\_\-t@{Mag\-Sample\-Rate\-\_\-t}}
+\index{Mag\-Sample\-Rate\-\_\-t@{Mag\-Sample\-Rate\-\_\-t}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Mag\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Mag\-Sample\-Rate\-\_\-t}}}\label{_magnetometer_8h_a8b236a4d8176fe85dab5f115de6bb6b1}
+Defines the A\-D\-C sample rate in Hz that the magnetometer will run at. Lower sample rates consume less power. Output Data Rate = Mag\-Sample\-Rate / Mag\-Over\-Sample\-Ratio 
+
+Definition at line 30 of file Magnetometer.\-h.
+
+\hypertarget{_magnetometer_8h_a68825057e7de2eaf4db032634e6f2450}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Mag\-Sampling\-Mode\-\_\-t@{Mag\-Sampling\-Mode\-\_\-t}}
+\index{Mag\-Sampling\-Mode\-\_\-t@{Mag\-Sampling\-Mode\-\_\-t}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Mag\-Sampling\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Mag\-Sampling\-Mode\-\_\-t}}}\label{_magnetometer_8h_a68825057e7de2eaf4db032634e6f2450}
+Defines how the sensor will gather samples Auto mode will collect samples at the configured rate determined by the sample rate and over sampling mode. 
+
+Definition at line 75 of file Magnetometer.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_magnetometer_8h_ae85c6dbba68d26df7855b25d8979f9ce}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Config@{Magnetometer\-\_\-\-Config}}
+\index{Magnetometer\-\_\-\-Config@{Magnetometer\-\_\-\-Config}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Magnetometer\-\_\-\-Config (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mag\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_ae85c6dbba68d26df7855b25d8979f9ce}
+Configures the magnetometer, but does not start the sampling.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ Structure of selected magnetometer settings.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the configuration was successful, false otherwise. The configuration will fail if the magnetometer is not in standby when configured. 
+\end{DoxyReturn}
+
+
+Definition at line 193 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_a24236d83f8ad5a94c17e6414904ea6f6}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Init@{Magnetometer\-\_\-\-Init}}
+\index{Magnetometer\-\_\-\-Init@{Magnetometer\-\_\-\-Init}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_a24236d83f8ad5a94c17e6414904ea6f6}
+Initializes the magnetometer, but does not configure or start the sampling. 
+
+Definition at line 159 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_aaddbb66c4df1f1e47afc3cdbe4c1122a}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Read\-Sample@{Magnetometer\-\_\-\-Read\-Sample}}
+\index{Magnetometer\-\_\-\-Read\-Sample@{Magnetometer\-\_\-\-Read\-Sample}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Read\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Magnetometer\-\_\-\-Read\-Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf Mag\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_aaddbb66c4df1f1e47afc3cdbe4c1122a}
+Reads a sample from the magnetometer if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample} & -\/ structure to hold the sample data once it is collected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sample was ready, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 526 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Read\-Mag().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_a20958a3807b25a8b07da31a385af787a}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Read\-Sample\-Array@{Magnetometer\-\_\-\-Read\-Sample\-Array}}
+\index{Magnetometer\-\_\-\-Read\-Sample\-Array@{Magnetometer\-\_\-\-Read\-Sample\-Array}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Read\-Sample\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Read\-Sample\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_a20958a3807b25a8b07da31a385af787a}
+Reads a sample from the magnetometer if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Length} & -\/ the maximum number of items that can be written to data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em actua\-Length} & -\/ the actual number of items written to data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em data} & -\/ the array that the data will be stored in. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 560 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Read\-Mag().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_aff2683c4a9992b3fb92207239d130622}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Read\-Temp@{Magnetometer\-\_\-\-Read\-Temp}}
+\index{Magnetometer\-\_\-\-Read\-Temp@{Magnetometer\-\_\-\-Read\-Temp}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Read\-Temp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int8\-\_\-t} Magnetometer\-\_\-\-Read\-Temp (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_aff2683c4a9992b3fb92207239d130622}
+Reads the die temperature of the device.
+
+\begin{DoxyReturn}{Returns}
+Temperature in °\-C as a signed 8-\/bit integer number 
+\end{DoxyReturn}
+
+
+Definition at line 590 of file Magnetometer.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_aa39b22c63f0f6fda46569d535070334e}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Register\-Isr@{Magnetometer\-\_\-\-Register\-Isr}}
+\index{Magnetometer\-\_\-\-Register\-Isr@{Magnetometer\-\_\-\-Register\-Isr}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Register\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Register\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Mag\-Isr\-Pointer\-\_\-t}}]{isr}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_aa39b22c63f0f6fda46569d535070334e}
+Sets a function that will be ran when the data ready interrupt occurs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em isr} & -\/ pointer to the accelerometer data ready I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 603 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_a2f8aa103b7db96d01167f9dfa83bb053}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Reset\-Sensor\-Blocking@{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking}}
+\index{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking@{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Reset\-Sensor\-Blocking (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_a2f8aa103b7db96d01167f9dfa83bb053}
+Resets the sensor in the magnetometer and blocks until the sensor is reset. 
+
+Definition at line 460 of file Magnetometer.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_abf9639cb901b8a88043c1a73e4fad906}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Set\-Calibration@{Magnetometer\-\_\-\-Set\-Calibration}}
+\index{Magnetometer\-\_\-\-Set\-Calibration@{Magnetometer\-\_\-\-Set\-Calibration}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Set\-Calibration}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Set\-Calibration (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mag\-Sample\-\_\-t} $\ast$}]{calibration}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_abf9639cb901b8a88043c1a73e4fad906}
+Writes the sensor calibration data to the magnetometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em calibration} & -\/ structure to hold the calibration data to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 487 of file Magnetometer.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_ab1c7f61cf144d63503818c735afe6834}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Start@{Magnetometer\-\_\-\-Start}}
+\index{Magnetometer\-\_\-\-Start@{Magnetometer\-\_\-\-Start}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_ab1c7f61cf144d63503818c735afe6834}
+Starts the magnetometer sampling at its configured data rate. 
+
+Definition at line 368 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_aa859a7cf895fd5118acfcb44fc596517}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Stop@{Magnetometer\-\_\-\-Stop}}
+\index{Magnetometer\-\_\-\-Stop@{Magnetometer\-\_\-\-Stop}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_aa859a7cf895fd5118acfcb44fc596517}
+Stops the data collecting of the magnetometer. 
+
+Definition at line 399 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8h_a74a9a63d349b4532ea66269102cb9768}{\index{Magnetometer.\-h@{Magnetometer.\-h}!Magnetometer\-\_\-\-Trigger\-Sample\-Blocking@{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking}}
+\index{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking@{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking}!Magnetometer.h@{Magnetometer.\-h}}
+\subsubsection[{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Magnetometer\-\_\-\-Trigger\-Sample\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Mag\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8h_a74a9a63d349b4532ea66269102cb9768}
+Triggers a sample from the magnetometer and blocks until the sample is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample} & -\/ structure to hold the sample data once it is collected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sample was aquired, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 419 of file Magnetometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Mag\-Command().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

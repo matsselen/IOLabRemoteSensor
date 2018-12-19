@@ -1,0 +1,153 @@
+\hypertarget{_high_gain_control_8c}{\section{High\-Gain\-Control.\-c File Reference}
+\label{_high_gain_control_8c}\index{High\-Gain\-Control.\-c@{High\-Gain\-Control.\-c}}
+}
+
+
+Controls reading the high gain input.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}High\-Gain\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Adc\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for High\-Gain\-Control.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_high_gain_control_8c_a3504e8e0aa3b8ffa39826b1de00ccec7}{\-\_\-\-High\-Gain\-Data\-Callback} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data)
+\item 
+void \hyperlink{_high_gain_control_8c_a4f1eef7329f6f6af569289d91eacfc8c}{High\-Gain\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_high_gain_control_8c_ad418efb991a502d179523b3f9a6eabde}{High\-Gain\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_high_gain_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_key_value_8h_a4dc2c7fef980d44cc0625aaba52b01cb}{High\-Gain\-Sample\-Rate\-\_\-t} \hyperlink{_high_gain_control_8c_ac6f220aed7a7af6903bbc069a52bf33d}{\-\_\-sample\-Rate} = \hyperlink{_key_value_8h_a25e6261abc68bba750b57aa88c8246fc}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls reading the high gain input. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the high gain input and manages the configurations and settings associated with the high gain input. 
+
+Definition in file \hyperlink{_high_gain_control_8c_source}{High\-Gain\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_high_gain_control_8c_a3504e8e0aa3b8ffa39826b1de00ccec7}{\index{High\-Gain\-Control.\-c@{High\-Gain\-Control.\-c}!\-\_\-\-High\-Gain\-Data\-Callback@{\-\_\-\-High\-Gain\-Data\-Callback}}
+\index{\-\_\-\-High\-Gain\-Data\-Callback@{\-\_\-\-High\-Gain\-Data\-Callback}!HighGainControl.c@{High\-Gain\-Control.\-c}}
+\subsubsection[{\-\_\-\-High\-Gain\-Data\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-High\-Gain\-Data\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_high_gain_control_8c_a3504e8e0aa3b8ffa39826b1de00ccec7}
+Takes the high gain input data and stores it in the proper location. This function is designed to be called every time there is data for the high gain input.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & -\/ The sample from the high gain input that should be stored in the proper location. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file High\-Gain\-Control.\-c.
+
+
+
+Referenced by High\-Gain\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_high_gain_control_8c_a4f1eef7329f6f6af569289d91eacfc8c}{\index{High\-Gain\-Control.\-c@{High\-Gain\-Control.\-c}!High\-Gain\-Control\-\_\-\-Init@{High\-Gain\-Control\-\_\-\-Init}}
+\index{High\-Gain\-Control\-\_\-\-Init@{High\-Gain\-Control\-\_\-\-Init}!HighGainControl.c@{High\-Gain\-Control.\-c}}
+\subsubsection[{High\-Gain\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void High\-Gain\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_high_gain_control_8c_a4f1eef7329f6f6af569289d91eacfc8c}
+Initializes the high gain input reading control. 
+
+Definition at line 54 of file High\-Gain\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_high_gain_control_8c_ad418efb991a502d179523b3f9a6eabde}{\index{High\-Gain\-Control.\-c@{High\-Gain\-Control.\-c}!High\-Gain\-Control\-\_\-\-Set\-Config@{High\-Gain\-Control\-\_\-\-Set\-Config}}
+\index{High\-Gain\-Control\-\_\-\-Set\-Config@{High\-Gain\-Control\-\_\-\-Set\-Config}!HighGainControl.c@{High\-Gain\-Control.\-c}}
+\subsubsection[{High\-Gain\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void High\-Gain\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_high_gain_control_8c_ad418efb991a502d179523b3f9a6eabde}
+Takes a configuration and sets it for the high gain input reading.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the Key\-Value configuration setting for the high gain input reading. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file High\-Gain\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_high_gain_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{High\-Gain\-Control.\-c@{High\-Gain\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!HighGainControl.c@{High\-Gain\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_high_gain_control_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the module has been initialized 
+
+Definition at line 42 of file High\-Gain\-Control.\-c.
+
+\hypertarget{_high_gain_control_8c_ac6f220aed7a7af6903bbc069a52bf33d}{\index{High\-Gain\-Control.\-c@{High\-Gain\-Control.\-c}!\-\_\-sample\-Rate@{\-\_\-sample\-Rate}}
+\index{\-\_\-sample\-Rate@{\-\_\-sample\-Rate}!HighGainControl.c@{High\-Gain\-Control.\-c}}
+\subsubsection[{\-\_\-sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf High\-Gain\-Sample\-Rate\-\_\-t} \-\_\-sample\-Rate = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_high_gain_control_8c_ac6f220aed7a7af6903bbc069a52bf33d}
+Stores the desired sample rate of the high gain input reading 
+
+Definition at line 45 of file High\-Gain\-Control.\-c.
+
+
+
+Referenced by High\-Gain\-Control\-\_\-\-Set\-Config().
+

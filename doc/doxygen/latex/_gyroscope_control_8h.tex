@@ -1,0 +1,112 @@
+\hypertarget{_gyroscope_control_8h}{\section{Gyroscope\-Control.\-h File Reference}
+\label{_gyroscope_control_8h}\index{Gyroscope\-Control.\-h@{Gyroscope\-Control.\-h}}
+}
+
+
+Controls the gyroscope driver.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_gyroscope_control_8h_a62c5033ca6c32f4b11a24dcba13e43e5}{Gyro\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_gyroscope_control_8h_a4bef66b8d82229524a9bd61e48aaf193}{Gyro\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} value)
+\item 
+void \hyperlink{_gyroscope_control_8h_a0f632c20363de00827df20235ebc7919}{Gyro\-Control\-\_\-\-Read\-Gyro} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the gyroscope driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the gyroscope driver and controls the configuration for it. 
+
+Definition in file \hyperlink{_gyroscope_control_8h_source}{Gyroscope\-Control.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_gyroscope_control_8h_a62c5033ca6c32f4b11a24dcba13e43e5}{\index{Gyroscope\-Control.\-h@{Gyroscope\-Control.\-h}!Gyro\-Control\-\_\-\-Init@{Gyro\-Control\-\_\-\-Init}}
+\index{Gyro\-Control\-\_\-\-Init@{Gyro\-Control\-\_\-\-Init}!GyroscopeControl.h@{Gyroscope\-Control.\-h}}
+\subsubsection[{Gyro\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Gyro\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_control_8h_a62c5033ca6c32f4b11a24dcba13e43e5}
+Initializes the accelerometer controller. 
+
+Definition at line 57 of file Gyroscope\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_control_8h_a0f632c20363de00827df20235ebc7919}{\index{Gyroscope\-Control.\-h@{Gyroscope\-Control.\-h}!Gyro\-Control\-\_\-\-Read\-Gyro@{Gyro\-Control\-\_\-\-Read\-Gyro}}
+\index{Gyro\-Control\-\_\-\-Read\-Gyro@{Gyro\-Control\-\_\-\-Read\-Gyro}!GyroscopeControl.h@{Gyroscope\-Control.\-h}}
+\subsubsection[{Gyro\-Control\-\_\-\-Read\-Gyro}]{\setlength{\rightskip}{0pt plus 5cm}void Gyro\-Control\-\_\-\-Read\-Gyro (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_control_8h_a0f632c20363de00827df20235ebc7919}
+Gets a reading from the accelerometer. 
+
+Definition at line 157 of file Gyroscope\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_control_8h_a4bef66b8d82229524a9bd61e48aaf193}{\index{Gyroscope\-Control.\-h@{Gyroscope\-Control.\-h}!Gyro\-Control\-\_\-\-Set\-Config@{Gyro\-Control\-\_\-\-Set\-Config}}
+\index{Gyro\-Control\-\_\-\-Set\-Config@{Gyro\-Control\-\_\-\-Set\-Config}!GyroscopeControl.h@{Gyroscope\-Control.\-h}}
+\subsubsection[{Gyro\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Gyro\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{key\-Value}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_control_8h_a4bef66b8d82229524a9bd61e48aaf193}
+Sets a configuration value to the accelerometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file Gyroscope\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

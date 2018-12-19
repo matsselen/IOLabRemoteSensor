@@ -1,0 +1,93 @@
+\hypertarget{_clock_8c}{\section{Clock.\-c File Reference}
+\label{_clock_8c}\index{Clock.\-c@{Clock.\-c}}
+}
+
+
+Clock configuration module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Clock.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+Include dependency graph for Clock.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_clock_8c_ab9c706c3a10bb72a93f0bcfb2fbba308}{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-U\-S\-E\-C\-S}~(250u)
+\item 
+\#define \hyperlink{_clock_8c_a0d442f1a1d1d503c5109d5ed120f0b9f}{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-L\-O\-O\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L\-\_\-\-U\-S\-E\-C\-S}~(25u)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_clock_8c_a4ee5840233644c3821175ec1ea6c265e}{Clock\-\_\-\-Init} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clock configuration module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This file provides functions to configure the Unified Clock System (U\-C\-S) on M\-S\-P430x5xx microcontrollers. It also handles any crystal failure interrupts. 
+
+Definition in file \hyperlink{_clock_8c_source}{Clock.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_clock_8c_a0d442f1a1d1d503c5109d5ed120f0b9f}{\index{Clock.\-c@{Clock.\-c}!O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-L\-O\-O\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L\-\_\-\-U\-S\-E\-C\-S@{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-L\-O\-O\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L\-\_\-\-U\-S\-E\-C\-S}}
+\index{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-L\-O\-O\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L\-\_\-\-U\-S\-E\-C\-S@{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-L\-O\-O\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L\-\_\-\-U\-S\-E\-C\-S}!Clock.c@{Clock.\-c}}
+\subsubsection[{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-L\-O\-O\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L\-\_\-\-U\-S\-E\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-L\-O\-O\-P\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L\-\_\-\-U\-S\-E\-C\-S~(25u)}}\label{_clock_8c_a0d442f1a1d1d503c5109d5ed120f0b9f}
+Approximate delay (exact M\-C\-L\-K freq not known, probably about 1 M\-Hz) used in the loop waiting for the oscillator input to stabilize. 
+
+Definition at line 46 of file Clock.\-c.
+
+
+
+Referenced by Clock\-\_\-\-Init().
+
+\hypertarget{_clock_8c_ab9c706c3a10bb72a93f0bcfb2fbba308}{\index{Clock.\-c@{Clock.\-c}!O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-U\-S\-E\-C\-S@{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-U\-S\-E\-C\-S}}
+\index{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-U\-S\-E\-C\-S@{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-U\-S\-E\-C\-S}!Clock.c@{Clock.\-c}}
+\subsubsection[{O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-U\-S\-E\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-S\-C\-\_\-\-S\-T\-A\-B\-I\-L\-I\-Z\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-U\-S\-E\-C\-S~(250u)}}\label{_clock_8c_ab9c706c3a10bb72a93f0bcfb2fbba308}
+Maximum amount of time (in microseconds) that the oscillator input takes to stabilize. Usually happens within 25 microseconds. This timeout is just used to exit a while loop. 
+
+Definition at line 42 of file Clock.\-c.
+
+
+
+Referenced by Clock\-\_\-\-Init().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_clock_8c_a4ee5840233644c3821175ec1ea6c265e}{\index{Clock.\-c@{Clock.\-c}!Clock\-\_\-\-Init@{Clock\-\_\-\-Init}}
+\index{Clock\-\_\-\-Init@{Clock\-\_\-\-Init}!Clock.c@{Clock.\-c}}
+\subsubsection[{Clock\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_clock_8c_a4ee5840233644c3821175ec1ea6c265e}
+Setup the system clocks. An external 24 M\-Hz oscillator is used to source A\-C\-L\-K and S\-M\-C\-L\-K as the reference clock source.
+
+A\-C\-L\-K is sourced by X\-T2 divided by 32 at 750 K\-Hz. S\-M\-C\-L\-K is sourced by X\-T2 divided by 1 at 24 M\-Hz. M\-C\-L\-K is sourced by the X\-T2 divided by 1 at 24 M\-Hz. 
+
+Definition at line 60 of file Clock.\-c.
+
+
+
+Referenced by Board\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

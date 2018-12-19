@@ -1,0 +1,5 @@
+<map id="Magnetometer_RegisterIsr" name="Magnetometer_RegisterIsr">
+<area shape="rect" href="$_magnetometer_control_8h.html#a68beb1d94ceabab1ebab02ec5ef4e13b" title="MagControl_Init" alt="" coords="233,5,348,32" />
+<area shape="rect" href="$_configuration_manager_8h.html#ac8b698cc609b8b41fe3ff823b2046b85" title="ConMan_Init" alt="" coords="399,5,495,32" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="544,5,595,32" />
+</map>

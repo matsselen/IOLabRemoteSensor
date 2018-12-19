@@ -1,0 +1,5 @@
+<map id="Dma.h" name="Dma.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="6,80,64,107" />
+<area shape="rect" href="$_dma_8c.html" title="Configuration and control functions and macros for the DMA. " alt="" coords="88,80,147,107" />
+<area shape="rect" href="$_spi_slave_8c.html" title="SPI Slave Module. " alt="" coords="171,80,254,107" />
+</map>

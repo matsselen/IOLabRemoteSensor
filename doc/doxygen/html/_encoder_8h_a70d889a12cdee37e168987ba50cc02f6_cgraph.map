@@ -1,0 +1,5 @@
+<map id="Encoder_Stop" name="Encoder_Stop">
+<area shape="rect" href="$_gpio_8c.html#a702acc0a1b5485271411e6f779209bb0" title="Gpio_ClearPortU" alt="" coords="160,31,283,57" />
+<area shape="rect" href="$_gpio_8c.html#afcb987f4ad78e26f735ec3bfcfec083e" title="_UnlockPortU" alt="" coords="331,5,435,32" />
+<area shape="rect" href="$_gpio_8c.html#aa751eb0ce20ef9c79739ced94de232c8" title="_LockPortU" alt="" coords="337,56,428,83" />
+</map>

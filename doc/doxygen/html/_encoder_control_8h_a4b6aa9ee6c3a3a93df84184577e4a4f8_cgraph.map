@@ -1,0 +1,5 @@
+<map id="EncControl_Init" name="EncControl_Init">
+<area shape="rect" href="$_encoder_8c.html#a1c8318d644fc2e61cc1ef9cb0710feb6" title="Encoder_Init" alt="" coords="165,31,261,57" />
+<area shape="rect" href="$_timer_8c.html#a80a6a3058ed404d5fe9f247424d1b32f" title="Timer_A2_Configure" alt="" coords="324,5,468,32" />
+<area shape="rect" href="$_timer_8c.html#a41f12d88c0d6062ad6161df56c9ad074" title="Timer_A2CCX_Configure" alt="" coords="311,56,481,83" />
+</map>

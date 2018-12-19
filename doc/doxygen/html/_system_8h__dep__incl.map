@@ -1,0 +1,7 @@
+<map id="System.h" name="System.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="6,80,64,107" />
+<area shape="rect" href="$_state_machine_8c.html" title="State logic handling. " alt="" coords="88,80,200,107" />
+<area shape="rect" href="$_comm_protocol_8c.html" title="Communications protocol module. " alt="" coords="224,80,344,107" />
+<area shape="rect" href="$_board_8c.html" title="Board initialization module. " alt="" coords="368,80,435,107" />
+<area shape="rect" href="$_system_8c.html" title="System module. " alt="" coords="459,80,534,107" />
+</map>

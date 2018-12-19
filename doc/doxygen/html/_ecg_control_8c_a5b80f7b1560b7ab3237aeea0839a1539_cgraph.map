@@ -1,0 +1,9 @@
+<map id="_Ecg2DataCallback" name="_Ecg2DataCallback">
+<area shape="rect" href="$_ecg_control_8c.html#aef223ca6e28c87f0a00fc3beee7d02e7" title="_EcgAddToDataBuffer" alt="" coords="192,57,347,84" />
+<area shape="rect" href="$_data_buffer_8c.html#a3b77682af68cdfbdf4dbcf06f5468008" title="DataBuffer_AddToSubarray16Bit" alt="" coords="395,19,611,45" />
+<area shape="rect" href="$_serial_8c.html#ae3c36491780ee25b86bf0b3ac9e61fa7" title="Serial_SendStringNumber" alt="" coords="415,95,591,121" />
+<area shape="rect" href="$_data_buffer_8c.html#ad726ed4ec48df844bfd5225ccca52117" title="_IndexOfSubarrayId" alt="" coords="661,5,800,32" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="675,56,787,83" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="659,107,803,133" />
+<area shape="rect" href="$_uart_8c.html#aba2063d7e89a1358197b4643996daaed" title="Uart_WriteByteHex" alt="" coords="663,157,799,184" />
+</map>

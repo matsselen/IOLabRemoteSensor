@@ -1,0 +1,3628 @@
+\hypertarget{_key_value_8h}{\section{Key\-Value.\-h File Reference}
+\label{_key_value_8h}\index{Key\-Value.\-h@{Key\-Value.\-h}}
+}
+
+
+Contains the definitions of the Key-\/\-Value pairs.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a2300f054a9db411c9bd3145a4797793b}{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}~( 8u )
+\item 
+\#define \hyperlink{_key_value_8h_a9c76fcefd8c73ef94f3a3909d01f0f6c}{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}~( 32u )
+\item 
+\#define \hyperlink{_key_value_8h_a41e2f6a6712d78355904fd4e09e36c25}{K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T}~( 5u )
+\item 
+\#define \hyperlink{_key_value_8h_a2300f054a9db411c9bd3145a4797793b}{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}~( 8u )
+\item 
+\#define \hyperlink{_key_value_8h_a9c76fcefd8c73ef94f3a3909d01f0f6c}{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}~( 32u )
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_key_value_8h_ab1715655efd8f48a5527cd1c8abcf8c1}{Key\-Value\-\_\-t}
+\item 
+typedef \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_key_value_8h_ac0021207a3006e2fdee4dd548efb121b}{Key\-\_\-t}
+\item 
+typedef \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_key_value_8h_ae4f885993210de8f325613124dbd14a8}{Value\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_key_value_8h_ad987cb5dca6c5394630668061fac6590}{Key\-Value\-\_\-\-Separate} (\hyperlink{_key_value_8h_ab1715655efd8f48a5527cd1c8abcf8c1}{Key\-Value\-\_\-t} key\-Value, \hyperlink{_key_value_8h_ac0021207a3006e2fdee4dd548efb121b}{Key\-\_\-t} $\ast$key, \hyperlink{_key_value_8h_ae4f885993210de8f325613124dbd14a8}{Value\-\_\-t} $\ast$value)
+\item 
+\hyperlink{_key_value_8h_ab1715655efd8f48a5527cd1c8abcf8c1}{Key\-Value\-\_\-t} \hyperlink{_key_value_8h_ab005de5fd051ae974f41254f2ea7a5f9}{Key\-Value\-\_\-\-Combine} (\hyperlink{_key_value_8h_ac0021207a3006e2fdee4dd548efb121b}{Key\-\_\-t} key, \hyperlink{_key_value_8h_ae4f885993210de8f325613124dbd14a8}{Value\-\_\-t} value)
+\end{DoxyCompactItemize}
+\subsection*{Accelerometer Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_ae98966d2b91183880cef5dfad9fe0a30}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Accelerometer\-Sample\-Rate\-\_\-100 )
+\item 
+\#define \hyperlink{_key_value_8h_af1e7af2b8b1d79938a7c7525d484eed0}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}~( Accelerometer\-Resolution\-\_\-2g )
+\item 
+\#define \hyperlink{_key_value_8h_a3be5a5d977ea2d7ad8a8fc796dc848be}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}~( Accelerometer\-Over\-Sample\-\_\-\-N\-O\-R\-M\-A\-L )
+\item 
+enum \hyperlink{_key_value_8h_a11758fa997cecf17eec7d057916a0e15}{Accelerometer\-Key\-\_\-t} \{ \\*
+{\bfseries Accelerometer\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Accelerometer\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Accelerometer\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Accelerometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Accelerometer\-Key\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Accelerometer\-Key\-\_\-\-O\-V\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E} = 3u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Accelerometer\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a84739c7fd423ec94aefeda893ab2e6d4}{Accelerometer\-Mode\-\_\-t} \{ \\*
+{\bfseries Accelerometer\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Accelerometer\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Accelerometer\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Accelerometer\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Accelerometer\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a56c11a67c1e873a2a9be8d6681be6ada}{Accelerometer\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-1\-\_\-56} = 0u, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-6\-\_\-25} = 1u, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-12\-\_\-5} = 2u, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-50} = 3u, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-100} = 4u, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-200} = 5u, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-400} = 6u, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-800} = 7u, 
+\\*
+{\bfseries Accelerometer\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_aba096166c12de4d707afc0893d660ef6}{Accelerometer\-Resolution\-\_\-t} \{ \\*
+{\bfseries Accelerometer\-Resolution\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Accelerometer\-Resolution\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Accelerometer\-Resolution\-\_\-2g} = 0u, 
+\\*
+{\bfseries Accelerometer\-Resolution\-\_\-4g} = 1u, 
+\\*
+{\bfseries Accelerometer\-Resolution\-\_\-8g} = 2u, 
+\\*
+{\bfseries Accelerometer\-Resolution\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a64db1606b296809267df9d33053b78a7}{Accelerometer\-Over\-Sample\-\_\-t} \{ \\*
+{\bfseries Accelerometer\-Over\-Sample\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Accelerometer\-Over\-Sample\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Accelerometer\-Over\-Sample\-\_\-\-N\-O\-R\-M\-A\-L} = 0u, 
+\\*
+{\bfseries Accelerometer\-Over\-Sample\-\_\-\-L\-N\-L\-P} = 1u, 
+\\*
+\hyperlink{_key_value_8h_a64db1606b296809267df9d33053b78a7a85eec2cdaf88a2bd93b90b3ee0d03b54}{Accelerometer\-Over\-Sample\-\_\-\-H\-I\-\_\-\-R\-E\-S} = 2u, 
+\\*
+{\bfseries Accelerometer\-Over\-Sample\-\_\-\-L\-O\-\_\-\-P\-W\-R} = 3u, 
+\\*
+{\bfseries Accelerometer\-Over\-Sample\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Magnetometer Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_ac0ad99d43832f68eeb6599f2d3e96eb4}{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-G\-N\-E\-T\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Magnetomter\-Sample\-Rate\-\_\-80 )
+\item 
+enum \hyperlink{_key_value_8h_ae40240bfac9f369b794bf19574383a09}{Magnetometer\-Key\-\_\-t} \{ \\*
+{\bfseries Magnetometer\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Magnetometer\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Magnetometer\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Magnetometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Magnetometer\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a11b8ae425149b8a26456769cc35648a3}{Magnetometer\-Mode\-\_\-t} \{ \\*
+{\bfseries Magnetometer\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Magnetometer\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Magnetometer\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Magnetometer\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Magnetometer\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a71f76c14a8701562d06824adc1ace584}{Magnetometer\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-0\-\_\-63} = 0u, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-1\-\_\-25} = 1u, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-2\-\_\-5} = 2u, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-5} = 3u, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-10} = 4u, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-20} = 5u, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-40} = 6u, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-80} = 7u, 
+\\*
+{\bfseries Magnetometer\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Gyroscope Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a25ac0c1387cc666b0a11b581b6dfee91}{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Gyroscope\-Sample\-Rate\-\_\-95 )
+\item 
+\#define \hyperlink{_key_value_8h_a90f19cfe84c45ccb9a44f9c7087a3303}{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}~( Gyroscope\-Resolution\-\_\-250 )
+\item 
+enum \hyperlink{_key_value_8h_abee6360441f0fbb3c11a5f2dcd29b307}{Gyroscope\-Key\-\_\-t} \{ \\*
+{\bfseries Gyroscope\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Gyroscope\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Gyroscope\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Gyroscope\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Gyroscope\-Key\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Gyroscope\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a319a17ef9b4b689c3b9854ba47c040e9}{Gyroscope\-Mode\-\_\-t} \{ \\*
+{\bfseries Gyroscope\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Gyroscope\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Gyroscope\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Gyroscope\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Gyroscope\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a74db35be20f005c6e6ab0fba85c28468}{Gyroscope\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Gyroscope\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Gyroscope\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Gyroscope\-Sample\-Rate\-\_\-95} = 0u, 
+\\*
+{\bfseries Gyroscope\-Sample\-Rate\-\_\-190} = 1u, 
+\\*
+{\bfseries Gyroscope\-Sample\-Rate\-\_\-380} = 2u, 
+\\*
+{\bfseries Gyroscope\-Sample\-Rate\-\_\-760} = 3u, 
+\\*
+{\bfseries Gyroscope\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_abe8562113820fb22bf8be69673ce715b}{Gyroscope\-Resolution\-\_\-t} \{ \\*
+{\bfseries Gyroscope\-Resolution\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Gyroscope\-Resolution\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Gyroscope\-Resolution\-\_\-250} = 0u, 
+\\*
+{\bfseries Gyroscope\-Resolution\-\_\-500} = 1u, 
+\\*
+{\bfseries Gyroscope\-Resolution\-\_\-2000} = 2u, 
+\\*
+{\bfseries Gyroscope\-Resolution\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Barometer Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_acc8d89567bd8f2e84e147d51f4810949}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Barometer\-Sample\-Rate\-\_\-100 )
+\item 
+enum \hyperlink{_key_value_8h_aa6e0de966a4f6df51164078c8273971e}{Barometer\-Key\-\_\-t} \{ \\*
+{\bfseries Barometer\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Barometer\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Barometer\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Barometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Barometer\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a4a0f9d137baf4b467ae75d5a200c589f}{Barometer\-Mode\-\_\-t} \{ \\*
+{\bfseries Barometer\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Barometer\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Barometer\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Barometer\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Barometer\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a8c5384539767d61db6adc97aa1c71176}{Barometer\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Barometer\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Barometer\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Barometer\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Barometer\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Barometer\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Barometer\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Barometer\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Microphone Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a1200c5816091d3d0972f3874921d5ab3}{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Microphone\-Sample\-Rate\-\_\-2400 )
+\item 
+enum \hyperlink{_key_value_8h_ab19b2bf996704737a53398156a7110e9}{Microphone\-Key\-\_\-t} \{ \\*
+{\bfseries Microphone\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Microphone\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Microphone\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Microphone\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Microphone\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_af367d2a54d1fe773b83256aba1675afe}{Microphone\-Mode\-\_\-t} \{ \\*
+{\bfseries Microphone\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Microphone\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Microphone\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Microphone\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Microphone\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_abab8c70ab1267b15bcb9b4ce65a7a20c}{Microphone\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-2400} = 7u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-4800} = 8u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-6000} = 9u, 
+\\*
+{\bfseries Microphone\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Ambient Light Sensor Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a2fcb88063aef54d686517024d4093479}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Ambient\-Light\-Sample\-Rate\-\_\-50 )
+\item 
+enum \hyperlink{_key_value_8h_a67a7165c634e0a30907d5d2d3e7a011c}{Ambient\-Light\-Key\-\_\-t} \{ \\*
+{\bfseries Ambient\-Light\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ambient\-Light\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ambient\-Light\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ambient\-Light\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ambient\-Light\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_ae01b73c31311deaa6cb37da59a20112a}{Ambient\-Light\-Mode\-\_\-t} \{ \\*
+{\bfseries Ambient\-Light\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ambient\-Light\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Ambient\-Light\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Ambient\-Light\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Ambient\-Light\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a45712914433680dcbdf3aab8cea5c18d}{Ambient\-Light\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-2400} = 7u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-4800} = 8u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-6000} = 9u, 
+\\*
+{\bfseries Ambient\-Light\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Force\-Gauge Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a205ed01669865dba6f0bc0da19677885}{D\-E\-F\-A\-U\-L\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-G\-A\-U\-G\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Force\-Gauge\-Sample\-Rate\-\_\-100 )
+\item 
+enum \hyperlink{_key_value_8h_aa847708191d5e0b10f1a03c92b9e49b0}{Force\-Gauge\-Key\-\_\-t} \{ \\*
+{\bfseries Force\-Gauge\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Force\-Gauge\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Force\-Gauge\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Force\-Gauge\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Force\-Gauge\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a4f91d384008ef2f6a62dcadc84a81051}{Force\-Gauge\-Mode\-\_\-t} \{ \\*
+{\bfseries Force\-Gauge\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Force\-Gauge\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Force\-Gauge\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Force\-Gauge\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Force\-Gauge\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a6e9ebd57f8d2ab067cfb9c0ff1c71cfe}{Force\-Gauge\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-2400} = 7u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-4800} = 8u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-6000} = 9u, 
+\\*
+{\bfseries Force\-Gauge\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Encoder Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a728b65845b6e9b01ed997c3a3301d3a1}{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Encoder\-Sample\-Rate\-\_\-100 )
+\item 
+enum \hyperlink{_key_value_8h_a4a90da6b85bf87f205c91120d17bd636}{Encoder\-Key\-\_\-t} \{ \\*
+{\bfseries Encoder\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Encoder\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Encoder\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Encoder\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Encoder\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a43a0111f41a9d2717f8ca884133e053e}{Encoder\-Mode\-\_\-t} \{ \\*
+{\bfseries Encoder\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Encoder\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Encoder\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Encoder\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Encoder\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_aa6b30dc7b70a7006ccdfac237e0923a3}{Encoder\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Encoder\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Encoder\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Encoder\-Sample\-Rate\-\_\-50} = 0u, 
+\\*
+{\bfseries Encoder\-Sample\-Rate\-\_\-100} = 1u, 
+\\*
+{\bfseries Encoder\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{E\-C\-G Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a2306d65934a65a7fd1b30e2ac2e24670}{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Ecg\-Sample\-Rate\-\_\-200 )
+\item 
+\#define \hyperlink{_key_value_8h_a98493e757405454b12ebd051c20d0ed8}{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}~( Ecg\-Ref\-Volt\-\_\-3v0 )
+\item 
+enum \hyperlink{_key_value_8h_ad3915ba07141de2873c7087e2783dbe3}{Ecg\-Key\-\_\-t} \{ \\*
+{\bfseries Ecg\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ecg\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ecg\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ecg\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ecg\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ecg\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a1023d312d7fe1efc68ebdde0c321db3c}{Ecg\-Mode\-\_\-t} \{ \\*
+{\bfseries Ecg\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ecg\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Ecg\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Ecg\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Ecg\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a34cce44af7d33f75ed293f2863d9131c}{Ecg\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries Ecg\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a225b7ea7781bf90efa8be1ba8456df6f}{Ecg\-Ref\-Volt\-\_\-t} \{ \\*
+{\bfseries Ecg\-Ref\-Volt\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ecg\-Ref\-Volt\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Ecg\-Ref\-Volt\-\_\-3v0} = 0u, 
+\\*
+{\bfseries Ecg\-Ref\-Volt\-\_\-3v3} = 1u, 
+\\*
+{\bfseries Ecg\-Ref\-Volt\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Battery Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a3ef1386b975314f343fe03fd6639fd28}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Battery\-Sample\-Rate\-\_\-100 )
+\item 
+enum \hyperlink{_key_value_8h_a027c9d5b15b48d336e4087fa45852498}{Battery\-Key\-\_\-t} \{ \\*
+{\bfseries Battery\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Battery\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Battery\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Battery\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Battery\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_ae4e59e404c6f9b34c34449a6a7c0d610}{Battery\-Mode\-\_\-t} \{ \\*
+{\bfseries Battery\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Battery\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Battery\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Battery\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Battery\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_acb9bcebe4ced2c26b6aef57babf56dd7}{Battery\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Battery\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-2400} = 7u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-4800} = 8u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-6000} = 9u, 
+\\*
+{\bfseries Battery\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{High Gain Input Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a25e6261abc68bba750b57aa88c8246fc}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( High\-Gain\-Sample\-Rate\-\_\-100 )
+\item 
+enum \hyperlink{_key_value_8h_a8e1505d233bcb4d2c68a6ed92bef8437}{High\-Gain\-Key\-\_\-t} \{ \\*
+{\bfseries High\-Gain\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries High\-Gain\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries High\-Gain\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries High\-Gain\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries High\-Gain\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a32dd51fdc4dccd45d0fc24546a12dccd}{High\-Gain\-Mode\-\_\-t} \{ \\*
+{\bfseries High\-Gain\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries High\-Gain\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries High\-Gain\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries High\-Gain\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries High\-Gain\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a4dc2c7fef980d44cc0625aaba52b01cb}{High\-Gain\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-2400} = 7u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-4800} = 8u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-6000} = 9u, 
+\\*
+{\bfseries High\-Gain\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header Pin 1 Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a8d420cc5942925a14ba902329a0c9b39}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R1\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}~( Header1\-Output\-Value\-\_\-\-L\-O\-W )
+\item 
+enum \hyperlink{_key_value_8h_ab8d1656c46bf974224c5a46a3719a1bf}{Header1\-Key\-\_\-t} \{ \\*
+{\bfseries Header1\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header1\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header1\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header1\-Key\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header1\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a27e72eeac4729a481ec32072bf841142}{Header1\-Mode\-\_\-t} \{ \\*
+{\bfseries Header1\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header1\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header1\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Header1\-Mode\-\_\-\-I\-N\-P\-U\-T} = 1u, 
+\\*
+{\bfseries Header1\-Mode\-\_\-\-O\-U\-T\-P\-U\-T} = 2u, 
+\\*
+{\bfseries Header1\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_adaa16d2db29ae4e123c5be872571e55f}{Header1\-Output\-Value\-\_\-t} \{ \\*
+{\bfseries Header1\-Output\-Value\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header1\-Output\-Value\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header1\-Output\-Value\-\_\-\-L\-O\-W} = 0u, 
+\\*
+{\bfseries Header1\-Output\-Value\-\_\-\-H\-I\-G\-H} = 1u, 
+\\*
+{\bfseries Header1\-Output\-Value\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header Pin 2 Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_ae172f7c170c633e17c00988e58e48cc6}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R2\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}~( Header2\-Output\-Value\-\_\-\-L\-O\-W )
+\item 
+enum \hyperlink{_key_value_8h_a831bf582dec8cfd94c01b0d3dbd9a19f}{Header2\-Key\-\_\-t} \{ \\*
+{\bfseries Header2\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header2\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header2\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header2\-Key\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header2\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a4c8f437f61806a906bfcad52cc595f7f}{Header2\-Mode\-\_\-t} \{ \\*
+{\bfseries Header2\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header2\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header2\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Header2\-Mode\-\_\-\-I\-N\-P\-U\-T} = 1u, 
+\\*
+{\bfseries Header2\-Mode\-\_\-\-O\-U\-T\-P\-U\-T} = 2u, 
+\\*
+{\bfseries Header2\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a18bd7038d87266572b82595d0e50f91f}{Header2\-Output\-Value\-\_\-t} \{ \\*
+{\bfseries Header2\-Output\-Value\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header2\-Output\-Value\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header2\-Output\-Value\-\_\-\-L\-O\-W} = 0u, 
+\\*
+{\bfseries Header2\-Output\-Value\-\_\-\-H\-I\-G\-H} = 1u, 
+\\*
+{\bfseries Header2\-Output\-Value\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header Pin 3 Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_af177a61809dbe8bc5adbf3b847f6a8b9}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R3\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}~( Header3\-Output\-Value\-\_\-\-L\-O\-W )
+\item 
+enum \hyperlink{_key_value_8h_ada49121d4e04a2aecc2514c3ce4abf7f}{Header3\-Key\-\_\-t} \{ \\*
+{\bfseries Header3\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header3\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header3\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header3\-Key\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header3\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a2921928f2b4dba461ba1f7f929106333}{Header3\-Mode\-\_\-t} \{ \\*
+{\bfseries Header3\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header3\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header3\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Header3\-Mode\-\_\-\-I\-N\-P\-U\-T} = 1u, 
+\\*
+{\bfseries Header3\-Mode\-\_\-\-O\-U\-T\-P\-U\-T} = 2u, 
+\\*
+{\bfseries Header3\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_ad20e16241b63fb80a7d2f2c8d7a2d57c}{Header3\-Output\-Value\-\_\-t} \{ \\*
+{\bfseries Header3\-Output\-Value\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header3\-Output\-Value\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header3\-Output\-Value\-\_\-\-L\-O\-W} = 0u, 
+\\*
+{\bfseries Header3\-Output\-Value\-\_\-\-H\-I\-G\-H} = 1u, 
+\\*
+{\bfseries Header3\-Output\-Value\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header4 Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a6233983b3f0894cec42a998b55a02c7c}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}~( Header4\-Low\-Frequency\-\_\-09 )
+\item 
+\#define \hyperlink{_key_value_8h_a9836c8f85502ae2033c51c0297f1d64a}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}~( Header4\-Mid\-Frequency\-\_\-09 )
+\item 
+\#define \hyperlink{_key_value_8h_afeeeb0e39ea76d5a617b5269940d1161}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}~( Header4\-High\-Frequency\-\_\-09 )
+\item 
+\#define \hyperlink{_key_value_8h_a44eee0c1d7908556373d4c100541baad}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}~( Header4\-Duty\-Cycle\-\_\-16 )
+\item 
+enum \hyperlink{_key_value_8h_a2818f69803d4510fab962a4b6236dd9c}{Header4\-Key\-\_\-t} \{ \\*
+{\bfseries Header4\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header4\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header4\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header4\-Key\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header4\-Key\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header4\-Key\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 3u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header4\-Key\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E} = 4u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header4\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_aa29cc4bdb6b31744c07408e975b45ec3}{Header4\-Mode\-\_\-t} \{ \\*
+{\bfseries Header4\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header4\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header4\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Header4\-Mode\-\_\-\-I\-N\-P\-U\-T} = 1u, 
+\\*
+{\bfseries Header4\-Mode\-\_\-\-O\-U\-T\-P\-U\-T} = 2u, 
+\\*
+{\bfseries Header4\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a629f822e4e944cf725df37bac732896a}{Header4\-Low\-Frequency\-\_\-t} \{ \\*
+{\bfseries Header4\-Low\-Frequency\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-00} = 0u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-01} = 1u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-02} = 2u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-03} = 3u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-04} = 4u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-05} = 5u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-06} = 6u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-07} = 7u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-08} = 8u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-09} = 9u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-10} = 10u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-11} = 11u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-12} = 12u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-13} = 13u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-14} = 14u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-15} = 15u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-16} = 16u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-17} = 17u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-18} = 18u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-19} = 19u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-20} = 20u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-21} = 21u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-22} = 22u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-23} = 23u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-24} = 24u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-25} = 25u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-26} = 26u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-27} = 27u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-28} = 28u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-29} = 29u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-30} = 30u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-31} = 31u, 
+\\*
+{\bfseries Header4\-Low\-Frequency\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a31516509cb91b2346a4f4dd22d0ce36e}{Header4\-Mid\-Frequency\-\_\-t} \{ \\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-00} = 0u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-01} = 1u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-02} = 2u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-03} = 3u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-04} = 4u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-05} = 5u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-06} = 6u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-07} = 7u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-08} = 8u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-09} = 9u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-10} = 10u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-11} = 11u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-12} = 12u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-13} = 13u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-14} = 14u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-15} = 15u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-16} = 16u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-17} = 17u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-18} = 18u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-19} = 19u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-20} = 20u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-21} = 21u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-22} = 22u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-23} = 23u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-24} = 24u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-25} = 25u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-26} = 26u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-27} = 27u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-28} = 28u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-29} = 29u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-30} = 30u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-31} = 31u, 
+\\*
+{\bfseries Header4\-Mid\-Frequency\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_abbf52007078e2e9614f13efdfe33a952}{Header4\-High\-Frequency\-\_\-t} \{ \\*
+{\bfseries Header4\-High\-Frequency\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-00} = 0u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-01} = 1u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-02} = 2u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-03} = 3u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-04} = 4u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-05} = 5u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-06} = 6u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-07} = 7u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-08} = 8u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-09} = 9u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-10} = 10u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-11} = 11u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-12} = 12u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-13} = 13u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-14} = 14u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-15} = 15u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-16} = 16u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-17} = 17u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-18} = 18u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-19} = 19u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-20} = 20u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-21} = 21u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-22} = 22u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-23} = 23u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-24} = 24u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-25} = 25u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-26} = 26u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-27} = 27u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-28} = 28u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-29} = 29u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-30} = 30u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-31} = 31u, 
+\\*
+{\bfseries Header4\-High\-Frequency\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a6058122c36eb6ee978f2ffdfa22ee6c8}{Header4\-Duty\-Cycle\-\_\-t} \{ \\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-00} = 0u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-01} = 1u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-02} = 2u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-03} = 3u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-04} = 4u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-05} = 5u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-06} = 6u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-07} = 7u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-08} = 8u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-09} = 9u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-10} = 10u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-11} = 11u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-12} = 12u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-13} = 13u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-14} = 14u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-15} = 15u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-16} = 16u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-17} = 17u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-18} = 18u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-19} = 19u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-20} = 20u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-21} = 21u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-22} = 22u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-23} = 23u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-24} = 24u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-25} = 25u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-26} = 26u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-27} = 27u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-28} = 28u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-29} = 29u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-30} = 30u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-31} = 31u, 
+\\*
+{\bfseries Header4\-Duty\-Cycle\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header5 Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_aad52b85da25aa357bc4c6bbb8ea622d8}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}~( Header5\-Low\-Frequency\-\_\-09 )
+\item 
+\#define \hyperlink{_key_value_8h_a99721abdee2ed53389490aeba44b1601}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}~( Header5\-Mid\-Frequency\-\_\-09 )
+\item 
+\#define \hyperlink{_key_value_8h_ac7b22bca3a09d44a1dd9eff2b91f401a}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}~( Header5\-High\-Frequency\-\_\-09 )
+\item 
+\#define \hyperlink{_key_value_8h_a26feff859a7223328003ef6e10cb23ca}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}~( Header5\-Duty\-Cycle\-\_\-16 )
+\item 
+enum \hyperlink{_key_value_8h_a90d7fcdb29f11f71081328c479188665}{Header5\-Key\-\_\-t} \{ \\*
+{\bfseries Header5\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header5\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header5\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header5\-Key\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header5\-Key\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header5\-Key\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 3u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header5\-Key\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E} = 4u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header5\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a6b3d4383b41fc10eb3e0225c74d9fcb6}{Header5\-Mode\-\_\-t} \{ \\*
+{\bfseries Header5\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header5\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header5\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Header5\-Mode\-\_\-\-I\-N\-P\-U\-T} = 1u, 
+\\*
+{\bfseries Header5\-Mode\-\_\-\-O\-U\-T\-P\-U\-T} = 2u, 
+\\*
+{\bfseries Header5\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a92d8a91595fb0d3ad6bb2306a9fd3d55}{Header5\-Low\-Frequency\-\_\-t} \{ \\*
+{\bfseries Header5\-Low\-Frequency\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-00} = 0u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-01} = 1u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-02} = 2u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-03} = 3u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-04} = 4u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-05} = 5u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-06} = 6u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-07} = 7u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-08} = 8u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-09} = 9u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-10} = 10u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-11} = 11u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-12} = 12u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-13} = 13u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-14} = 14u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-15} = 15u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-16} = 16u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-17} = 17u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-18} = 18u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-19} = 19u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-20} = 20u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-21} = 21u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-22} = 22u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-23} = 23u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-24} = 24u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-25} = 25u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-26} = 26u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-27} = 27u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-28} = 28u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-29} = 29u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-30} = 30u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-31} = 31u, 
+\\*
+{\bfseries Header5\-Low\-Frequency\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a5ea1c6ad46224285f7949598cafeb4b3}{Header5\-Mid\-Frequency\-\_\-t} \{ \\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-00} = 0u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-01} = 1u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-02} = 2u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-03} = 3u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-04} = 4u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-05} = 5u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-06} = 6u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-07} = 7u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-08} = 8u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-09} = 9u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-10} = 10u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-11} = 11u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-12} = 12u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-13} = 13u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-14} = 14u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-15} = 15u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-16} = 16u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-17} = 17u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-18} = 18u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-19} = 19u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-20} = 20u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-21} = 21u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-22} = 22u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-23} = 23u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-24} = 24u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-25} = 25u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-26} = 26u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-27} = 27u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-28} = 28u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-29} = 29u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-30} = 30u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-31} = 31u, 
+\\*
+{\bfseries Header5\-Mid\-Frequency\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a87cd18f40acbe4d8b364040b36cd44d4}{Header5\-High\-Frequency\-\_\-t} \{ \\*
+{\bfseries Header5\-High\-Frequency\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-00} = 0u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-01} = 1u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-02} = 2u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-03} = 3u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-04} = 4u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-05} = 5u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-06} = 6u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-07} = 7u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-08} = 8u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-09} = 9u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-10} = 10u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-11} = 11u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-12} = 12u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-13} = 13u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-14} = 14u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-15} = 15u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-16} = 16u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-17} = 17u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-18} = 18u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-19} = 19u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-20} = 20u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-21} = 21u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-22} = 22u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-23} = 23u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-24} = 24u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-25} = 25u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-26} = 26u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-27} = 27u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-28} = 28u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-29} = 29u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-30} = 30u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-31} = 31u, 
+\\*
+{\bfseries Header5\-High\-Frequency\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a08bcb870d7eb331adef801a2b81b80d1}{Header5\-Duty\-Cycle\-\_\-t} \{ \\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-00} = 0u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-01} = 1u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-02} = 2u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-03} = 3u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-04} = 4u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-05} = 5u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-06} = 6u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-07} = 7u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-08} = 8u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-09} = 9u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-10} = 10u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-11} = 11u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-12} = 12u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-13} = 13u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-14} = 14u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-15} = 15u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-16} = 16u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-17} = 17u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-18} = 18u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-19} = 19u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-20} = 20u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-21} = 21u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-22} = 22u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-23} = 23u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-24} = 24u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-25} = 25u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-26} = 26u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-27} = 27u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-28} = 28u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-29} = 29u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-30} = 30u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-31} = 31u, 
+\\*
+{\bfseries Header5\-Duty\-Cycle\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header Pin 6 Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a1f82dd674e746bc31ea43fe02cf7b887}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R6\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}~( Header6\-Output\-Value\-\_\-\-L\-O\-W )
+\item 
+enum \hyperlink{_key_value_8h_ac77919123f9ba004729ecb250e9e980f}{Header6\-Key\-\_\-t} \{ \\*
+{\bfseries Header6\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header6\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header6\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header6\-Key\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Header6\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_af7eba701ebfe9450bbbf1e411a8d2fd7}{Header6\-Mode\-\_\-t} \{ \\*
+{\bfseries Header6\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header6\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header6\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Header6\-Mode\-\_\-\-I\-N\-P\-U\-T} = 1u, 
+\\*
+{\bfseries Header6\-Mode\-\_\-\-O\-U\-T\-P\-U\-T} = 2u, 
+\\*
+{\bfseries Header6\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_aa14a314b68530fce3a138712cbd8a1f3}{Header6\-Output\-Value\-\_\-t} \{ \\*
+{\bfseries Header6\-Output\-Value\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Header6\-Output\-Value\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Header6\-Output\-Value\-\_\-\-L\-O\-W} = 0u, 
+\\*
+{\bfseries Header6\-Output\-Value\-\_\-\-H\-I\-G\-H} = 1u, 
+\\*
+{\bfseries Header6\-Output\-Value\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header 7 Input Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a3ca3ecbaa5058e88b107d99c2efe0ec0}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Analog7\-Sample\-Rate\-\_\-100 )
+\item 
+\#define \hyperlink{_key_value_8h_a8508545f9b38cb5f70a6cafb21af1c59}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}~( Analog7\-Ref\-Volt\-\_\-3v0 )
+\item 
+enum \hyperlink{_key_value_8h_af356923c5f29242d84d15726ae6938fe}{Analog7\-Key\-\_\-t} \{ \\*
+{\bfseries Analog7\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog7\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog7\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog7\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog7\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog7\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a56d804cc1cc05a35f7244637287cc752}{Analog7\-Mode\-\_\-t} \{ \\*
+{\bfseries Analog7\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog7\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Analog7\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Analog7\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Analog7\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a4e02ac27f19799adeee507dacb5e88af}{Analog7\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-2400} = 7u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-4800} = 8u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-6000} = 9u, 
+\\*
+{\bfseries Analog7\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a0ed3eef7d4387dfee0bebb0ad1a401a9}{Analog7\-Ref\-Volt\-\_\-t} \{ \\*
+{\bfseries Analog7\-Ref\-Volt\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog7\-Ref\-Volt\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Analog7\-Ref\-Volt\-\_\-3v0} = 0u, 
+\\*
+{\bfseries Analog7\-Ref\-Volt\-\_\-3v3} = 1u, 
+\\*
+{\bfseries Analog7\-Ref\-Volt\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header 8 Input Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a33003a98eb787307ceac28155c39856e}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Analog8\-Sample\-Rate\-\_\-100 )
+\item 
+\#define \hyperlink{_key_value_8h_ada9ee989b6942bd177108bf6a9c2069b}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}~( Analog8\-Ref\-Volt\-\_\-3v0 )
+\item 
+enum \hyperlink{_key_value_8h_aeaeb3b097e11b4499df6f80c73fb50d5}{Analog8\-Key\-\_\-t} \{ \\*
+{\bfseries Analog8\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog8\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog8\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog8\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog8\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog8\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a58ceaeb269c38e7e453be48bfca4dded}{Analog8\-Mode\-\_\-t} \{ \\*
+{\bfseries Analog8\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog8\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Analog8\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Analog8\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Analog8\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a5d2e9e1e6a04f0c158d3c023e8e8bb9a}{Analog8\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-2400} = 7u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-4800} = 8u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-6000} = 9u, 
+\\*
+{\bfseries Analog8\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_afac3e2281ac65637051eb57b6e41e0fe}{Analog8\-Ref\-Volt\-\_\-t} \{ \\*
+{\bfseries Analog8\-Ref\-Volt\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog8\-Ref\-Volt\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Analog8\-Ref\-Volt\-\_\-3v0} = 0u, 
+\\*
+{\bfseries Analog8\-Ref\-Volt\-\_\-3v3} = 1u, 
+\\*
+{\bfseries Analog8\-Ref\-Volt\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header 9 Input Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a7ebd1c07a7adf4b1a4381172c4e70244}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Analog9\-Sample\-Rate\-\_\-100 )
+\item 
+\#define \hyperlink{_key_value_8h_acb6948a825c0f8635872fed2befc2e84}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}~( Analog9\-Ref\-Volt\-\_\-3v0 )
+\item 
+enum \hyperlink{_key_value_8h_a6a46468a48b7197593a383b886314e3c}{Analog9\-Key\-\_\-t} \{ \\*
+{\bfseries Analog9\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog9\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog9\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog9\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog9\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Analog9\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a33302ee27ea76f2d690bb7e25aba5962}{Analog9\-Mode\-\_\-t} \{ \\*
+{\bfseries Analog9\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog9\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Analog9\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Analog9\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Analog9\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_ad4f20f913ec7f8ceb573c54d4bb70a56}{Analog9\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-2400} = 7u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-4800} = 8u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-6000} = 9u, 
+\\*
+{\bfseries Analog9\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_ad4bd44cec6f99a9d52386fc2106a2a28}{Analog9\-Ref\-Volt\-\_\-t} \{ \\*
+{\bfseries Analog9\-Ref\-Volt\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Analog9\-Ref\-Volt\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Analog9\-Ref\-Volt\-\_\-3v0} = 0u, 
+\\*
+{\bfseries Analog9\-Ref\-Volt\-\_\-3v3} = 1u, 
+\\*
+{\bfseries Analog9\-Ref\-Volt\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Header and Button Digital Input Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a8562cc1b3ee16d69e1727be479cd4e9e}{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-G\-I\-T\-A\-L\-I\-N\-P\-U\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Digital\-Input\-Sample\-Rate\-\_\-100 )
+\item 
+enum \hyperlink{_key_value_8h_ab990c57100b14cc1c52019e4906c093e}{Digital\-Input\-Key\-\_\-t} \{ \\*
+{\bfseries Digital\-Input\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Digital\-Input\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Digital\-Input\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Digital\-Input\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Digital\-Input\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a4b2ef8b35cdfe1b839a7ca8bfdffc5b4}{Digital\-Input\-Mode\-\_\-t} \{ \\*
+{\bfseries Digital\-Input\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Digital\-Input\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Digital\-Input\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Digital\-Input\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Digital\-Input\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_af2ddc71bf2c5b02bbf26945e1a88aa95}{Digital\-Input\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Digital\-Input\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Digital\-Input\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Digital\-Input\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Digital\-Input\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Digital\-Input\-Sample\-Rate\-\_\-20} = 2u, 
+\\*
+{\bfseries Digital\-Input\-Sample\-Rate\-\_\-25} = 3u, 
+\\*
+{\bfseries Digital\-Input\-Sample\-Rate\-\_\-50} = 4u, 
+\\*
+{\bfseries Digital\-Input\-Sample\-Rate\-\_\-100} = 5u, 
+\\*
+{\bfseries Digital\-Input\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Dac Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_afa3061fa307a5077f984369b8507ce11}{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-C\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E}~( Dac\-Amplitude\-\_\-17 )
+\item 
+enum \hyperlink{_key_value_8h_ae7b46f216de4ba2734a313ef8993baa5}{Dac\-Key\-\_\-t} \{ \\*
+{\bfseries Dac\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Dac\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Dac\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Dac\-Key\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Dac\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a7ea366ee4dbbd46b8e55b3cbc96c5fc6}{Dac\-Mode\-\_\-t} \{ \\*
+{\bfseries Dac\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Dac\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Dac\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Dac\-Mode\-\_\-\-D\-C} = 1u, 
+\\*
+{\bfseries Dac\-Mode\-\_\-\-S\-Q\-U\-A\-R\-E} = 2u, 
+\\*
+{\bfseries Dac\-Mode\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E} = 3u, 
+\\*
+{\bfseries Dac\-Mode\-\_\-\-S\-A\-W\-T\-O\-O\-T\-H} = 4u, 
+\\*
+{\bfseries Dac\-Mode\-\_\-\-S\-I\-N\-E} = 5u, 
+\\*
+{\bfseries Dac\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a6383b4e00f53aa50d14a3c6b117b5795}{Dac\-Amplitude\-\_\-t} \{ \\*
+{\bfseries Dac\-Amplitude\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-00} = 0u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-01} = 1u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-02} = 2u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-03} = 3u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-04} = 4u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-05} = 5u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-06} = 6u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-07} = 7u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-08} = 8u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-09} = 9u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-10} = 10u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-11} = 11u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-12} = 12u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-13} = 13u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-14} = 14u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-15} = 15u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-16} = 16u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-17} = 17u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-18} = 18u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-19} = 19u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-20} = 20u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-21} = 21u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-22} = 22u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-23} = 23u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-24} = 24u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-25} = 25u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-26} = 26u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-27} = 27u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-28} = 28u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-29} = 29u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-30} = 30u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-31} = 31u, 
+\\*
+{\bfseries Dac\-Amplitude\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Buzzer Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a4311c072375bc8f012a74e57b8d2b2bf}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}~( Buzzer\-Low\-Frequency\-\_\-09 )
+\item 
+\#define \hyperlink{_key_value_8h_aebcf758553730cb3398512714a7b1681}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}~( Buzzer\-High\-Frequency\-\_\-09 )
+\item 
+\#define \hyperlink{_key_value_8h_adef9787dc0cf955fdbd0cedb5c1223c0}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H}~( Buzzer\-Low\-Pitch\-\_\-20)
+\item 
+\#define \hyperlink{_key_value_8h_a9f2ebc2d355e574d02993d6d7a9d364d}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H}~( Buzzer\-Mid\-Pitch\-\_\-12)
+\item 
+\#define \hyperlink{_key_value_8h_a8520ce74756f2ea8cf50cfd07e802672}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H}~( Buzzer\-High\-Pitch\-\_\-04 )
+\item 
+\#define \hyperlink{_key_value_8h_a38ac71904313b996feb7afed17640a0c}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}~( Buzzer\-Duty\-Cycle\-\_\-16 )
+\item 
+enum \hyperlink{_key_value_8h_acb13f2b904b183ef3ad50bec154fcdd8}{Buzzer\-Key\-\_\-t} \{ \\*
+{\bfseries Buzzer\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Buzzer\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Buzzer\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Buzzer\-Key\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Buzzer\-Key\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Buzzer\-Key\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H} = 3u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Buzzer\-Key\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H} = 4u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Buzzer\-Key\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H} = 5u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Buzzer\-Key\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E} = 6u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Buzzer\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a23e46507407c33d9bc6823bc57ce1d0f}{Buzzer\-Mode\-\_\-t} \{ \\*
+{\bfseries Buzzer\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Buzzer\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Buzzer\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Buzzer\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Buzzer\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a51da99af1f4bc119437780de14ebfc92}{Buzzer\-Low\-Frequency\-\_\-t} \{ \\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-00} = 0u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-01} = 1u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-02} = 2u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-03} = 3u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-04} = 4u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-05} = 5u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-06} = 6u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-07} = 7u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-08} = 8u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-09} = 9u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-10} = 10u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-11} = 11u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-12} = 12u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-13} = 13u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-14} = 14u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-15} = 15u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-16} = 16u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-17} = 17u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-18} = 18u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-19} = 19u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-20} = 20u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-21} = 21u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-22} = 22u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-23} = 23u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-24} = 24u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-25} = 25u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-26} = 26u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-27} = 27u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-28} = 28u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-29} = 29u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-30} = 30u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-31} = 31u, 
+\\*
+{\bfseries Buzzer\-Low\-Frequency\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a2e2db3e44cdbf4ae205817d12a52729c}{Buzzer\-High\-Frequency\-\_\-t} \{ \\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-00} = 0u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-01} = 1u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-02} = 2u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-03} = 3u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-04} = 4u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-05} = 5u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-06} = 6u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-07} = 7u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-08} = 8u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-09} = 9u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-10} = 10u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-11} = 11u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-12} = 12u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-13} = 13u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-14} = 14u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-15} = 15u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-16} = 16u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-17} = 17u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-18} = 18u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-19} = 19u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-20} = 20u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-21} = 21u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-22} = 22u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-23} = 23u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-24} = 24u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-25} = 25u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-26} = 26u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-27} = 27u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-28} = 28u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-29} = 29u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-30} = 30u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-31} = 31u, 
+\\*
+{\bfseries Buzzer\-High\-Frequency\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_ad381141dd431b380aac7ea9f175e7b95}{Buzzer\-Low\-Pitch\-\_\-t} \{ \\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-00} = 0u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-01} = 1u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-02} = 2u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-03} = 3u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-04} = 4u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-05} = 5u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-06} = 6u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-07} = 7u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-08} = 8u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-09} = 9u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-10} = 10u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-11} = 11u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-12} = 12u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-13} = 13u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-14} = 14u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-15} = 15u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-16} = 16u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-17} = 17u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-18} = 18u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-19} = 19u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-20} = 20u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-21} = 21u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-22} = 22u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-23} = 23u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-24} = 24u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-25} = 25u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-26} = 26u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-27} = 27u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-28} = 28u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-29} = 29u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-30} = 30u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-31} = 31u, 
+\\*
+{\bfseries Buzzer\-Low\-Pitch\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a6b52c21377975bcbfb8127bd0e606a52}{Buzzer\-Mid\-Pitch\-\_\-t} \{ \\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-00} = 0u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-01} = 1u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-02} = 2u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-03} = 3u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-04} = 4u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-05} = 5u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-06} = 6u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-07} = 7u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-08} = 8u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-09} = 9u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-10} = 10u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-11} = 11u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-12} = 12u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-13} = 13u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-14} = 14u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-15} = 15u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-16} = 16u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-17} = 17u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-18} = 18u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-19} = 19u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-20} = 20u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-21} = 21u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-22} = 22u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-23} = 23u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-24} = 24u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-25} = 25u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-26} = 26u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-27} = 27u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-28} = 28u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-29} = 29u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-30} = 30u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-31} = 31u, 
+\\*
+{\bfseries Buzzer\-Mid\-Pitch\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a8b30a6b0d7b8a984ab77b1b57fb38ca0}{Buzzer\-High\-Pitch\-\_\-t} \{ \\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-00} = 0u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-01} = 1u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-02} = 2u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-03} = 3u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-04} = 4u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-05} = 5u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-06} = 6u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-07} = 7u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-08} = 8u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-09} = 9u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-10} = 10u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-11} = 11u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-12} = 12u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-13} = 13u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-14} = 14u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-15} = 15u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-16} = 16u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-17} = 17u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-18} = 18u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-19} = 19u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-20} = 20u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-21} = 21u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-22} = 22u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-23} = 23u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-24} = 24u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-25} = 25u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-26} = 26u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-27} = 27u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-28} = 28u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-29} = 29u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-30} = 30u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-31} = 31u, 
+\\*
+{\bfseries Buzzer\-High\-Pitch\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_abab8f70116f2a951b05b9f974a7a399b}{Buzzer\-Duty\-Cycle\-\_\-t} \{ \\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-00} = 0u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-01} = 1u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-02} = 2u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-03} = 3u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-04} = 4u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-05} = 5u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-06} = 6u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-07} = 7u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-08} = 8u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-09} = 9u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-10} = 10u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-11} = 11u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-12} = 12u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-13} = 13u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-14} = 14u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-15} = 15u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-16} = 16u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-17} = 17u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-18} = 18u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-19} = 19u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-20} = 20u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-21} = 21u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-22} = 22u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-23} = 23u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-24} = 24u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-25} = 25u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-26} = 26u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-27} = 27u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-28} = 28u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-29} = 29u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-30} = 30u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-31} = 31u, 
+\\*
+{\bfseries Buzzer\-Duty\-Cycle\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Thermometer Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_a537fb0b317f2b9c96e83e4d6ca3e3dae}{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Thermometer\-Sample\-Rate\-\_\-50 )
+\item 
+\#define \hyperlink{_key_value_8h_add328c4e0c4adeb2679b21388f145585}{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E}~( Thermometer\-Oversample\-\_\-\-E\-N\-A\-B\-L\-E )
+\item 
+enum \hyperlink{_key_value_8h_aeafd1fca1b12b937f948ff2a237a8657}{Thermometer\-Key\-\_\-t} \{ \\*
+{\bfseries Thermometer\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Thermometer\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Thermometer\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Thermometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Thermometer\-Key\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Thermometer\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_a59302207aa429518fa81e50c993bfa29}{Thermometer\-Mode\-\_\-t} \{ \\*
+{\bfseries Thermometer\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Thermometer\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Thermometer\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Thermometer\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Thermometer\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_ac88ab7da79e1e59d372c02148e6e15cd}{Thermometer\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Thermometer\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Thermometer\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Thermometer\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Thermometer\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Thermometer\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Thermometer\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Thermometer\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Thermometer\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Thermometer\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_aa639bf330bc31bb7c6d709199f21e783}{Thermometer\-Oversample\-\_\-t} \{ \\*
+{\bfseries Thermometer\-Oversample\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Thermometer\-Oversample\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Thermometer\-Oversample\-\_\-\-E\-N\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Thermometer\-Oversample\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Thermometer\-Oversample\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{E\-C\-G6\-C\-H\-A\-N Key-\/\-Value pairs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8h_afc67db2491b6aefb61a72225ac1eadc2}{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-C\-H\-A\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~( Ecg6\-Chan\-Sample\-Rate\-\_\-400 )
+\item 
+\#define \hyperlink{_key_value_8h_af5a3c19e6c81128e462032131d550748}{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}~( Ecg6\-Ref\-Volt\-\_\-3v0 )
+\item 
+enum \hyperlink{_key_value_8h_aac22e2582b429b6e17755a4ab0b3957a}{Ecg6\-Chan\-Key\-\_\-t} \{ \\*
+{\bfseries Ecg6\-Chan\-Key\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ecg6\-Chan\-Key\-\_\-\-F\-I\-R\-S\-T} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ecg6\-Chan\-Key\-\_\-\-M\-O\-D\-E} = 0u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ecg6\-Chan\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E} = 1u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ecg6\-Chan\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T} = 2u$<$$<$K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T, 
+\\*
+{\bfseries Ecg6\-Chan\-Key\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_af722e376fac6d29a859b4ec08512a7d9}{Ecg6\-Chan\-Mode\-\_\-t} \{ \\*
+{\bfseries Ecg6\-Chan\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ecg6\-Chan\-Mode\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Ecg6\-Chan\-Mode\-\_\-\-D\-I\-S\-A\-B\-L\-E} = 0u, 
+\\*
+{\bfseries Ecg6\-Chan\-Mode\-\_\-\-E\-N\-A\-B\-L\-E} = 1u, 
+\\*
+{\bfseries Ecg6\-Chan\-Mode\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_aa76769fdfd5e2dc93e62b96ce1a5b256}{Ecg6\-Chan\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-1} = 0u, 
+\\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-10} = 1u, 
+\\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-50} = 2u, 
+\\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-100} = 3u, 
+\\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-200} = 4u, 
+\\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-400} = 5u, 
+\\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-800} = 6u, 
+\\*
+{\bfseries Ecg6\-Chan\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_key_value_8h_ac8ac25490a570adfc8ddef1f2be5c54c}{Ecg6\-Ref\-Volt\-\_\-t} \{ \\*
+{\bfseries Ecg6\-Ref\-Volt\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Ecg6\-Ref\-Volt\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Ecg6\-Ref\-Volt\-\_\-3v0} = 0u, 
+\\*
+{\bfseries Ecg6\-Ref\-Volt\-\_\-3v3} = 1u, 
+\\*
+{\bfseries Ecg6\-Ref\-Volt\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the definitions of the Key-\/\-Value pairs. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Contains the definitions of the Key-\/\-Value pairs used for configuring the different sensors in the I\-O\-Lab system. The keys and values defined in this module are based on the document 1814\-F08 Data Protocol Key-\/\-Value table. 
+
+Definition in file \hyperlink{_key_value_8h_source}{Key\-Value.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_key_value_8h_a3be5a5d977ea2d7ad8a8fc796dc848be}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E~( Accelerometer\-Over\-Sample\-\_\-\-N\-O\-R\-M\-A\-L )}}\label{_key_value_8h_a3be5a5d977ea2d7ad8a8fc796dc848be}
+Defines the default accelerometer oversample mode of Accelerometer\-Over\-Sample\-\_\-t 
+
+Definition at line 107 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_af1e7af2b8b1d79938a7c7525d484eed0}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N~( Accelerometer\-Resolution\-\_\-2g )}}\label{_key_value_8h_af1e7af2b8b1d79938a7c7525d484eed0}
+Defines the default accelerometer resolution of Accelerometer\-Resolution\-\_\-t 
+
+Definition at line 92 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ae98966d2b91183880cef5dfad9fe0a30}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Accelerometer\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_ae98966d2b91183880cef5dfad9fe0a30}
+Defines the default accelerometer sample rate of Accelerometer\-Sample\-Rate\-\_\-t 
+
+Definition at line 78 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a2fcb88063aef54d686517024d4093479}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Ambient\-Light\-Sample\-Rate\-\_\-50 )}}\label{_key_value_8h_a2fcb88063aef54d686517024d4093479}
+Defines the default sample rate for the Ambient\-Light key Ambient\-Light\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 337 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a8508545f9b38cb5f70a6cafb21af1c59}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T~( Analog7\-Ref\-Volt\-\_\-3v0 )}}\label{_key_value_8h_a8508545f9b38cb5f70a6cafb21af1c59}
+Defines the default reference voltage for the Analog7\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 1180 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a3ca3ecbaa5058e88b107d99c2efe0ec0}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G7\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Analog7\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_a3ca3ecbaa5058e88b107d99c2efe0ec0}
+Defines the default sample rate for the Analog7 key Analog7\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1167 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ada9ee989b6942bd177108bf6a9c2069b}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T~( Analog8\-Ref\-Volt\-\_\-3v0 )}}\label{_key_value_8h_ada9ee989b6942bd177108bf6a9c2069b}
+Defines the default reference voltage for the Analog8\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 1242 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a33003a98eb787307ceac28155c39856e}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Analog8\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_a33003a98eb787307ceac28155c39856e}
+Defines the default sample rate for the Analog8 key Analog8\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1228 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_acb6948a825c0f8635872fed2befc2e84}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T~( Analog9\-Ref\-Volt\-\_\-3v0 )}}\label{_key_value_8h_acb6948a825c0f8635872fed2befc2e84}
+Defines the default reference voltage for the Analog9\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 1304 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a7ebd1c07a7adf4b1a4381172c4e70244}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G9\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Analog9\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_a7ebd1c07a7adf4b1a4381172c4e70244}
+Defines the default sample rate for the Analog9 key Analog9\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1291 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_acc8d89567bd8f2e84e147d51f4810949}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Barometer\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_acc8d89567bd8f2e84e147d51f4810949}
+Defines the default sample rate for the encoder key Barometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 243 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a3ef1386b975314f343fe03fd6639fd28}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Battery\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_a3ef1386b975314f343fe03fd6639fd28}
+Defines the default sample rate for the battery key Battery\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 521 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a38ac71904313b996feb7afed17640a0c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E~( Buzzer\-Duty\-Cycle\-\_\-16 )}}\label{_key_value_8h_a38ac71904313b996feb7afed17640a0c}
+Defines the default duty cycle for the buzzer key Buzzer\-Key\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E 
+
+Definition at line 1706 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aebcf758553730cb3398512714a7b1681}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y~( Buzzer\-High\-Frequency\-\_\-09 )}}\label{_key_value_8h_aebcf758553730cb3398512714a7b1681}
+Defines the default frequency for the buzzer key Buzzer\-Key\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 1694 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a8520ce74756f2ea8cf50cfd07e802672}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H~( Buzzer\-High\-Pitch\-\_\-04 )}}\label{_key_value_8h_a8520ce74756f2ea8cf50cfd07e802672}
+Defines the default high pitch for the buzzer key Buzzer\-Key\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H 
+
+Definition at line 1703 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a4311c072375bc8f012a74e57b8d2b2bf}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y~( Buzzer\-Low\-Frequency\-\_\-09 )}}\label{_key_value_8h_a4311c072375bc8f012a74e57b8d2b2bf}
+Defines the default frequency for the buzzer key Buzzer\-Key\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 1691 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_adef9787dc0cf955fdbd0cedb5c1223c0}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H~( Buzzer\-Low\-Pitch\-\_\-20)}}\label{_key_value_8h_adef9787dc0cf955fdbd0cedb5c1223c0}
+Defines the default low pitch for the buzzer key Buzzer\-Key\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H 
+
+Definition at line 1697 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a9f2ebc2d355e574d02993d6d7a9d364d}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H@{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H~( Buzzer\-Mid\-Pitch\-\_\-12)}}\label{_key_value_8h_a9f2ebc2d355e574d02993d6d7a9d364d}
+Defines the default low pitch for the buzzer key Buzzer\-Key\-\_\-\-M\-E\-D\-P\-I\-T\-C\-H 
+
+Definition at line 1700 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_afa3061fa307a5077f984369b8507ce11}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-C\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-C\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-C\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-C\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-C\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-C\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E~( Dac\-Amplitude\-\_\-17 )}}\label{_key_value_8h_afa3061fa307a5077f984369b8507ce11}
+Defines the default sample rate for the Dac key Dac\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1419 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a8562cc1b3ee16d69e1727be479cd4e9e}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-G\-I\-T\-A\-L\-I\-N\-P\-U\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-G\-I\-T\-A\-L\-I\-N\-P\-U\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-G\-I\-T\-A\-L\-I\-N\-P\-U\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-G\-I\-T\-A\-L\-I\-N\-P\-U\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-G\-I\-T\-A\-L\-I\-N\-P\-U\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-G\-I\-T\-A\-L\-I\-N\-P\-U\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Digital\-Input\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_a8562cc1b3ee16d69e1727be479cd4e9e}
+Defines the default sample rate for the Digital\-Input key Digital\-Input\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1347 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_af5a3c19e6c81128e462032131d550748}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T~( Ecg6\-Ref\-Volt\-\_\-3v0 )}}\label{_key_value_8h_af5a3c19e6c81128e462032131d550748}
+Defines the default reference voltage for the Ecg6\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 1819 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_afc67db2491b6aefb61a72225ac1eadc2}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-C\-H\-A\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-C\-H\-A\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-C\-H\-A\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-C\-H\-A\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-C\-H\-A\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G6\-C\-H\-A\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Ecg6\-Chan\-Sample\-Rate\-\_\-400 )}}\label{_key_value_8h_afc67db2491b6aefb61a72225ac1eadc2}
+Defines the default sample rate for the Ecg6\-Chan key Ecg6\-Chan\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1806 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a98493e757405454b12ebd051c20d0ed8}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T~( Ecg\-Ref\-Volt\-\_\-3v0 )}}\label{_key_value_8h_a98493e757405454b12ebd051c20d0ed8}
+Defines the default reference voltage for the Ecg\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 476 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a2306d65934a65a7fd1b30e2ac2e24670}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-C\-G\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Ecg\-Sample\-Rate\-\_\-200 )}}\label{_key_value_8h_a2306d65934a65a7fd1b30e2ac2e24670}
+Defines the default sample rate for the Ecg key Ecg\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 463 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a728b65845b6e9b01ed997c3a3301d3a1}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Encoder\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_a728b65845b6e9b01ed997c3a3301d3a1}
+Defines the default sample rate for the encoder key Encoder\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 419 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a205ed01669865dba6f0bc0da19677885}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-G\-A\-U\-G\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-G\-A\-U\-G\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-G\-A\-U\-G\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-G\-A\-U\-G\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-G\-A\-U\-G\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-G\-A\-U\-G\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Force\-Gauge\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_a205ed01669865dba6f0bc0da19677885}
+Defines the default sample rate for the Force\-Gauge key Force\-Gauge\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 382 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a90f19cfe84c45ccb9a44f9c7087a3303}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N@{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N@{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N~( Gyroscope\-Resolution\-\_\-250 )}}\label{_key_value_8h_a90f19cfe84c45ccb9a44f9c7087a3303}
+Defines the default resolution for the gyroscope key Gyroscope\-Resolution\-\_\-t 
+
+Definition at line 204 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a25ac0c1387cc666b0a11b581b6dfee91}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Gyroscope\-Sample\-Rate\-\_\-95 )}}\label{_key_value_8h_a25ac0c1387cc666b0a11b581b6dfee91}
+Defines the default sample rate for the gyroscope key Gyroscope\-Sample\-Rate\-\_\-t 
+
+Definition at line 190 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a8d420cc5942925a14ba902329a0c9b39}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R1\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R1\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R1\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R1\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R1\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R1\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E~( Header1\-Output\-Value\-\_\-\-L\-O\-W )}}\label{_key_value_8h_a8d420cc5942925a14ba902329a0c9b39}
+Defines the default sample rate for header pin 1 key Header1\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 605 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ae172f7c170c633e17c00988e58e48cc6}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R2\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R2\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R2\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R2\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R2\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R2\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E~( Header2\-Output\-Value\-\_\-\-L\-O\-W )}}\label{_key_value_8h_ae172f7c170c633e17c00988e58e48cc6}
+Defines the default sample rate for header pin 2 key Header2\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 644 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_af177a61809dbe8bc5adbf3b847f6a8b9}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R3\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R3\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R3\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R3\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R3\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R3\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E~( Header3\-Output\-Value\-\_\-\-L\-O\-W )}}\label{_key_value_8h_af177a61809dbe8bc5adbf3b847f6a8b9}
+Defines the default sample rate for header pin 3 key Header3\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 682 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a44eee0c1d7908556373d4c100541baad}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E~( Header4\-Duty\-Cycle\-\_\-16 )}}\label{_key_value_8h_a44eee0c1d7908556373d4c100541baad}
+Defines the default duty cycle for header pin 4 key Header4\-Key\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E 
+
+Definition at line 882 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_afeeeb0e39ea76d5a617b5269940d1161}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y~( Header4\-High\-Frequency\-\_\-09 )}}\label{_key_value_8h_afeeeb0e39ea76d5a617b5269940d1161}
+Defines the default high frequency for header pin 4 key Header4\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 879 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a6233983b3f0894cec42a998b55a02c7c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y~( Header4\-Low\-Frequency\-\_\-09 )}}\label{_key_value_8h_a6233983b3f0894cec42a998b55a02c7c}
+Defines the default low frequency for header pin 4 key Header4\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 873 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a9836c8f85502ae2033c51c0297f1d64a}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R4\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y~( Header4\-Mid\-Frequency\-\_\-09 )}}\label{_key_value_8h_a9836c8f85502ae2033c51c0297f1d64a}
+Defines the default mid frequency for header pin 4 key Header4\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 876 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a26feff859a7223328003ef6e10cb23ca}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E~( Header5\-Duty\-Cycle\-\_\-16 )}}\label{_key_value_8h_a26feff859a7223328003ef6e10cb23ca}
+Defines the default duty cycle for header pin 5 key Header5\-Key\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E 
+
+Definition at line 1082 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ac7b22bca3a09d44a1dd9eff2b91f401a}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-H\-I\-G\-H\-F\-R\-E\-Q\-U\-E\-N\-C\-Y~( Header5\-High\-Frequency\-\_\-09 )}}\label{_key_value_8h_ac7b22bca3a09d44a1dd9eff2b91f401a}
+Defines the default high frequency for header pin 5 key Header5\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 1079 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aad52b85da25aa357bc4c6bbb8ea622d8}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-L\-O\-W\-F\-R\-E\-Q\-U\-E\-N\-C\-Y~( Header5\-Low\-Frequency\-\_\-09 )}}\label{_key_value_8h_aad52b85da25aa357bc4c6bbb8ea622d8}
+Defines the default low frequency for header pin 5 key Header5\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 1073 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a99721abdee2ed53389490aeba44b1601}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R5\-\_\-\-M\-I\-D\-F\-R\-E\-Q\-U\-E\-N\-C\-Y~( Header5\-Mid\-Frequency\-\_\-09 )}}\label{_key_value_8h_a99721abdee2ed53389490aeba44b1601}
+Defines the default mid frequency for header pin 5 key Header5\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 1076 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a1f82dd674e746bc31ea43fe02cf7b887}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R6\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R6\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R6\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R6\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R6\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R6\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E~( Header6\-Output\-Value\-\_\-\-L\-O\-W )}}\label{_key_value_8h_a1f82dd674e746bc31ea43fe02cf7b887}
+Defines the default sample rate for header pin 6 key Header6\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1120 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a25e6261abc68bba750b57aa88c8246fc}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( High\-Gain\-Sample\-Rate\-\_\-100 )}}\label{_key_value_8h_a25e6261abc68bba750b57aa88c8246fc}
+Defines the default sample rate for the High\-Gain key High\-Gain\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 567 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ac0ad99d43832f68eeb6599f2d3e96eb4}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-G\-N\-E\-T\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-G\-N\-E\-T\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-G\-N\-E\-T\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-G\-N\-E\-T\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-G\-N\-E\-T\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-G\-N\-E\-T\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Magnetomter\-Sample\-Rate\-\_\-80 )}}\label{_key_value_8h_ac0ad99d43832f68eeb6599f2d3e96eb4}
+Defines the default magnetometer sample rate of Magnetometer\-Sample\-Rate\-\_\-t 
+
+Definition at line 150 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a1200c5816091d3d0972f3874921d5ab3}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Microphone\-Sample\-Rate\-\_\-2400 )}}\label{_key_value_8h_a1200c5816091d3d0972f3874921d5ab3}
+Defines the default sample rate for the Microphone key Microphone\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 291 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_add328c4e0c4adeb2679b21388f145585}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E~( Thermometer\-Oversample\-\_\-\-E\-N\-A\-B\-L\-E )}}\label{_key_value_8h_add328c4e0c4adeb2679b21388f145585}
+Defines the default oversampling mode for the thermometer key Thermometer\-Key\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E 
+
+Definition at line 1762 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a537fb0b317f2b9c96e83e4d6ca3e3dae}{\index{Key\-Value.\-h@{Key\-Value.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-H\-E\-R\-M\-O\-M\-E\-T\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E~( Thermometer\-Sample\-Rate\-\_\-50 )}}\label{_key_value_8h_a537fb0b317f2b9c96e83e4d6ca3e3dae}
+Defines the default sample rate for the thermometer key Thermometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1749 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a41e2f6a6712d78355904fd4e09e36c25}{\index{Key\-Value.\-h@{Key\-Value.\-h}!K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T@{K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T}}
+\index{K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T@{K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-Y\-\_\-\-S\-T\-A\-R\-T\-I\-N\-G\-\_\-\-B\-I\-T~( 5u )}}\label{_key_value_8h_a41e2f6a6712d78355904fd4e09e36c25}
+Defines the starting bit location of the key portion for the key-\/value 
+
+Definition at line 34 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a2300f054a9db411c9bd3145a4797793b}{\index{Key\-Value.\-h@{Key\-Value.\-h}!M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E@{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}}
+\index{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E@{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E~( 8u )}}\label{_key_value_8h_a2300f054a9db411c9bd3145a4797793b}
+Defines the maximum number of Key's possible for a single sensor 
+
+Definition at line 1834 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a2300f054a9db411c9bd3145a4797793b}{\index{Key\-Value.\-h@{Key\-Value.\-h}!M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E@{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}}
+\index{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E@{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-K\-E\-Y\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E~( 8u )}}\label{_key_value_8h_a2300f054a9db411c9bd3145a4797793b}
+Defines the maximum number of Key's possible for a single sensor 
+
+Definition at line 1834 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a9c76fcefd8c73ef94f3a3909d01f0f6c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E@{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}}
+\index{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E@{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E~( 32u )}}\label{_key_value_8h_a9c76fcefd8c73ef94f3a3909d01f0f6c}
+Defines the maximum number of values possible for a single sensor 
+
+Definition at line 1836 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a9c76fcefd8c73ef94f3a3909d01f0f6c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E@{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}}
+\index{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E@{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-S\-\_\-\-P\-O\-S\-S\-I\-B\-L\-E~( 32u )}}\label{_key_value_8h_a9c76fcefd8c73ef94f3a3909d01f0f6c}
+Defines the maximum number of values possible for a single sensor 
+
+Definition at line 1836 of file Key\-Value.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_key_value_8h_ac0021207a3006e2fdee4dd548efb121b}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Key\-\_\-t@{Key\-\_\-t}}
+\index{Key\-\_\-t@{Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf uint8\-\_\-t} {\bf Key\-\_\-t}}}\label{_key_value_8h_ac0021207a3006e2fdee4dd548efb121b}
+Defines a type for the key of a key value pair 
+
+Definition at line 1828 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ab1715655efd8f48a5527cd1c8abcf8c1}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Key\-Value\-\_\-t@{Key\-Value\-\_\-t}}
+\index{Key\-Value\-\_\-t@{Key\-Value\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Key\-Value\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf uint8\-\_\-t} {\bf Key\-Value\-\_\-t}}}\label{_key_value_8h_ab1715655efd8f48a5527cd1c8abcf8c1}
+Defines a type for the key value pair 
+
+Definition at line 1825 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ae4f885993210de8f325613124dbd14a8}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Value\-\_\-t@{Value\-\_\-t}}
+\index{Value\-\_\-t@{Value\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Value\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf uint8\-\_\-t} {\bf Value\-\_\-t}}}\label{_key_value_8h_ae4f885993210de8f325613124dbd14a8}
+Defines a type for the value of a key value pair 
+
+Definition at line 1831 of file Key\-Value.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_key_value_8h_a11758fa997cecf17eec7d057916a0e15}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Accelerometer\-Key\-\_\-t@{Accelerometer\-Key\-\_\-t}}
+\index{Accelerometer\-Key\-\_\-t@{Accelerometer\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Accelerometer\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Accelerometer\-Key\-\_\-t}}}\label{_key_value_8h_a11758fa997cecf17eec7d057916a0e15}
+Defines the keys for the accelerometer 
+
+Definition at line 40 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a84739c7fd423ec94aefeda893ab2e6d4}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Accelerometer\-Mode\-\_\-t@{Accelerometer\-Mode\-\_\-t}}
+\index{Accelerometer\-Mode\-\_\-t@{Accelerometer\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Accelerometer\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Accelerometer\-Mode\-\_\-t}}}\label{_key_value_8h_a84739c7fd423ec94aefeda893ab2e6d4}
+Defines the values for the accelerometer key Accelerometer\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 52 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a64db1606b296809267df9d33053b78a7}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Accelerometer\-Over\-Sample\-\_\-t@{Accelerometer\-Over\-Sample\-\_\-t}}
+\index{Accelerometer\-Over\-Sample\-\_\-t@{Accelerometer\-Over\-Sample\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Accelerometer\-Over\-Sample\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Accelerometer\-Over\-Sample\-\_\-t}}}\label{_key_value_8h_a64db1606b296809267df9d33053b78a7}
+Defines the values for the accelerometer key Accelerometer\-Key\-\_\-\-O\-V\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Accelerometer\-Over\-Sample\-\_\-\-H\-I\-\_\-\-R\-E\-S@{Accelerometer\-Over\-Sample\-\_\-\-H\-I\-\_\-\-R\-E\-S}!Key\-Value.\-h@{Key\-Value.\-h}}\index{Key\-Value.\-h@{Key\-Value.\-h}!Accelerometer\-Over\-Sample\-\_\-\-H\-I\-\_\-\-R\-E\-S@{Accelerometer\-Over\-Sample\-\_\-\-H\-I\-\_\-\-R\-E\-S}}\item[{\em 
+\hypertarget{_key_value_8h_a64db1606b296809267df9d33053b78a7a85eec2cdaf88a2bd93b90b3ee0d03b54}{Accelerometer\-Over\-Sample\-\_\-\-H\-I\-\_\-\-R\-E\-S}\label{_key_value_8h_a64db1606b296809267df9d33053b78a7a85eec2cdaf88a2bd93b90b3ee0d03b54}
+}]Low Noise Low Power \end{description}
+\end{Desc}
+
+
+Definition at line 95 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aba096166c12de4d707afc0893d660ef6}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Accelerometer\-Resolution\-\_\-t@{Accelerometer\-Resolution\-\_\-t}}
+\index{Accelerometer\-Resolution\-\_\-t@{Accelerometer\-Resolution\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Accelerometer\-Resolution\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Accelerometer\-Resolution\-\_\-t}}}\label{_key_value_8h_aba096166c12de4d707afc0893d660ef6}
+Defines the values for the accelerometer key Accelerometer\-Key\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N 
+
+Definition at line 81 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a56c11a67c1e873a2a9be8d6681be6ada}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Accelerometer\-Sample\-Rate\-\_\-t@{Accelerometer\-Sample\-Rate\-\_\-t}}
+\index{Accelerometer\-Sample\-Rate\-\_\-t@{Accelerometer\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Accelerometer\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Accelerometer\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a56c11a67c1e873a2a9be8d6681be6ada}
+Defines the values for the accelerometer key Accelerometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 62 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a67a7165c634e0a30907d5d2d3e7a011c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ambient\-Light\-Key\-\_\-t@{Ambient\-Light\-Key\-\_\-t}}
+\index{Ambient\-Light\-Key\-\_\-t@{Ambient\-Light\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ambient\-Light\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ambient\-Light\-Key\-\_\-t}}}\label{_key_value_8h_a67a7165c634e0a30907d5d2d3e7a011c}
+Defines the keys for the Ambient\-Light 
+
+Definition at line 299 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ae01b73c31311deaa6cb37da59a20112a}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ambient\-Light\-Mode\-\_\-t@{Ambient\-Light\-Mode\-\_\-t}}
+\index{Ambient\-Light\-Mode\-\_\-t@{Ambient\-Light\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ambient\-Light\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ambient\-Light\-Mode\-\_\-t}}}\label{_key_value_8h_ae01b73c31311deaa6cb37da59a20112a}
+Defines the values for the Ambient\-Light key Ambient\-Light\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 309 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a45712914433680dcbdf3aab8cea5c18d}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ambient\-Light\-Sample\-Rate\-\_\-t@{Ambient\-Light\-Sample\-Rate\-\_\-t}}
+\index{Ambient\-Light\-Sample\-Rate\-\_\-t@{Ambient\-Light\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ambient\-Light\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ambient\-Light\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a45712914433680dcbdf3aab8cea5c18d}
+Defines the values for the Ambient\-Light key Ambient\-Light\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 319 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_af356923c5f29242d84d15726ae6938fe}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog7\-Key\-\_\-t@{Analog7\-Key\-\_\-t}}
+\index{Analog7\-Key\-\_\-t@{Analog7\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog7\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog7\-Key\-\_\-t}}}\label{_key_value_8h_af356923c5f29242d84d15726ae6938fe}
+Defines the keys for the Analog7 header pin input 
+
+Definition at line 1128 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a56d804cc1cc05a35f7244637287cc752}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog7\-Mode\-\_\-t@{Analog7\-Mode\-\_\-t}}
+\index{Analog7\-Mode\-\_\-t@{Analog7\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog7\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog7\-Mode\-\_\-t}}}\label{_key_value_8h_a56d804cc1cc05a35f7244637287cc752}
+Defines the values for the Analog7 key Analog7\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 1139 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a0ed3eef7d4387dfee0bebb0ad1a401a9}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog7\-Ref\-Volt\-\_\-t@{Analog7\-Ref\-Volt\-\_\-t}}
+\index{Analog7\-Ref\-Volt\-\_\-t@{Analog7\-Ref\-Volt\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog7\-Ref\-Volt\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog7\-Ref\-Volt\-\_\-t}}}\label{_key_value_8h_a0ed3eef7d4387dfee0bebb0ad1a401a9}
+Defines the analog voltage reference options for the Analog7 key Analog7\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 1170 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a4e02ac27f19799adeee507dacb5e88af}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog7\-Sample\-Rate\-\_\-t@{Analog7\-Sample\-Rate\-\_\-t}}
+\index{Analog7\-Sample\-Rate\-\_\-t@{Analog7\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog7\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog7\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a4e02ac27f19799adeee507dacb5e88af}
+Defines the values for the Analog7 key Analog7\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1149 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aeaeb3b097e11b4499df6f80c73fb50d5}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog8\-Key\-\_\-t@{Analog8\-Key\-\_\-t}}
+\index{Analog8\-Key\-\_\-t@{Analog8\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog8\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog8\-Key\-\_\-t}}}\label{_key_value_8h_aeaeb3b097e11b4499df6f80c73fb50d5}
+Defines the keys for the Analog8 header pin input 
+
+Definition at line 1189 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a58ceaeb269c38e7e453be48bfca4dded}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog8\-Mode\-\_\-t@{Analog8\-Mode\-\_\-t}}
+\index{Analog8\-Mode\-\_\-t@{Analog8\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog8\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog8\-Mode\-\_\-t}}}\label{_key_value_8h_a58ceaeb269c38e7e453be48bfca4dded}
+Defines the values for the Analog8 key Analog8\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 1200 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_afac3e2281ac65637051eb57b6e41e0fe}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog8\-Ref\-Volt\-\_\-t@{Analog8\-Ref\-Volt\-\_\-t}}
+\index{Analog8\-Ref\-Volt\-\_\-t@{Analog8\-Ref\-Volt\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog8\-Ref\-Volt\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog8\-Ref\-Volt\-\_\-t}}}\label{_key_value_8h_afac3e2281ac65637051eb57b6e41e0fe}
+Defines the analog voltage reference options for the Analog8 key Analog8\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 1232 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a5d2e9e1e6a04f0c158d3c023e8e8bb9a}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog8\-Sample\-Rate\-\_\-t@{Analog8\-Sample\-Rate\-\_\-t}}
+\index{Analog8\-Sample\-Rate\-\_\-t@{Analog8\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog8\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog8\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a5d2e9e1e6a04f0c158d3c023e8e8bb9a}
+Defines the values for the Analog8 key Analog8\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1210 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a6a46468a48b7197593a383b886314e3c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog9\-Key\-\_\-t@{Analog9\-Key\-\_\-t}}
+\index{Analog9\-Key\-\_\-t@{Analog9\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog9\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog9\-Key\-\_\-t}}}\label{_key_value_8h_a6a46468a48b7197593a383b886314e3c}
+Defines the keys for the Analog9 header pin input 
+
+Definition at line 1252 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a33302ee27ea76f2d690bb7e25aba5962}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog9\-Mode\-\_\-t@{Analog9\-Mode\-\_\-t}}
+\index{Analog9\-Mode\-\_\-t@{Analog9\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog9\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog9\-Mode\-\_\-t}}}\label{_key_value_8h_a33302ee27ea76f2d690bb7e25aba5962}
+Defines the values for the Analog9 key Analog9\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 1263 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ad4bd44cec6f99a9d52386fc2106a2a28}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog9\-Ref\-Volt\-\_\-t@{Analog9\-Ref\-Volt\-\_\-t}}
+\index{Analog9\-Ref\-Volt\-\_\-t@{Analog9\-Ref\-Volt\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog9\-Ref\-Volt\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog9\-Ref\-Volt\-\_\-t}}}\label{_key_value_8h_ad4bd44cec6f99a9d52386fc2106a2a28}
+Defines the analog voltage reference options for the Analog9 key Analog9\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 1294 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ad4f20f913ec7f8ceb573c54d4bb70a56}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Analog9\-Sample\-Rate\-\_\-t@{Analog9\-Sample\-Rate\-\_\-t}}
+\index{Analog9\-Sample\-Rate\-\_\-t@{Analog9\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Analog9\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analog9\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_ad4f20f913ec7f8ceb573c54d4bb70a56}
+Defines the values for the Analog9 key Analog9\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1273 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aa6e0de966a4f6df51164078c8273971e}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Barometer\-Key\-\_\-t@{Barometer\-Key\-\_\-t}}
+\index{Barometer\-Key\-\_\-t@{Barometer\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Barometer\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Barometer\-Key\-\_\-t}}}\label{_key_value_8h_aa6e0de966a4f6df51164078c8273971e}
+Defines the keys for the barometer 
+
+Definition at line 211 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a4a0f9d137baf4b467ae75d5a200c589f}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Barometer\-Mode\-\_\-t@{Barometer\-Mode\-\_\-t}}
+\index{Barometer\-Mode\-\_\-t@{Barometer\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Barometer\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Barometer\-Mode\-\_\-t}}}\label{_key_value_8h_a4a0f9d137baf4b467ae75d5a200c589f}
+Defines the values for the Barometer key Barometer\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 221 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a8c5384539767d61db6adc97aa1c71176}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Barometer\-Sample\-Rate\-\_\-t@{Barometer\-Sample\-Rate\-\_\-t}}
+\index{Barometer\-Sample\-Rate\-\_\-t@{Barometer\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Barometer\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Barometer\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a8c5384539767d61db6adc97aa1c71176}
+Defines the values for the Barometer key Barometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 231 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a027c9d5b15b48d336e4087fa45852498}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Battery\-Key\-\_\-t@{Battery\-Key\-\_\-t}}
+\index{Battery\-Key\-\_\-t@{Battery\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Battery\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Battery\-Key\-\_\-t}}}\label{_key_value_8h_a027c9d5b15b48d336e4087fa45852498}
+Defines the keys for the battery sensor 
+
+Definition at line 483 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ae4e59e404c6f9b34c34449a6a7c0d610}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Battery\-Mode\-\_\-t@{Battery\-Mode\-\_\-t}}
+\index{Battery\-Mode\-\_\-t@{Battery\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Battery\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Battery\-Mode\-\_\-t}}}\label{_key_value_8h_ae4e59e404c6f9b34c34449a6a7c0d610}
+Defines the values for the Battery key Battery\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 493 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_acb9bcebe4ced2c26b6aef57babf56dd7}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Battery\-Sample\-Rate\-\_\-t@{Battery\-Sample\-Rate\-\_\-t}}
+\index{Battery\-Sample\-Rate\-\_\-t@{Battery\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Battery\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Battery\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_acb9bcebe4ced2c26b6aef57babf56dd7}
+Defines the values for the Battery key Battery\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 503 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_abab8f70116f2a951b05b9f974a7a399b}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Buzzer\-Duty\-Cycle\-\_\-t@{Buzzer\-Duty\-Cycle\-\_\-t}}
+\index{Buzzer\-Duty\-Cycle\-\_\-t@{Buzzer\-Duty\-Cycle\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Buzzer\-Duty\-Cycle\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Buzzer\-Duty\-Cycle\-\_\-t}}}\label{_key_value_8h_abab8f70116f2a951b05b9f974a7a399b}
+Defines the values for the Buzzer key Buzzer\-Key\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E 
+
+Definition at line 1651 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a2e2db3e44cdbf4ae205817d12a52729c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Buzzer\-High\-Frequency\-\_\-t@{Buzzer\-High\-Frequency\-\_\-t}}
+\index{Buzzer\-High\-Frequency\-\_\-t@{Buzzer\-High\-Frequency\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Buzzer\-High\-Frequency\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Buzzer\-High\-Frequency\-\_\-t}}}\label{_key_value_8h_a2e2db3e44cdbf4ae205817d12a52729c}
+Defines the values for the Buzzer key Buzzer\-Key\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 1491 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a8b30a6b0d7b8a984ab77b1b57fb38ca0}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Buzzer\-High\-Pitch\-\_\-t@{Buzzer\-High\-Pitch\-\_\-t}}
+\index{Buzzer\-High\-Pitch\-\_\-t@{Buzzer\-High\-Pitch\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Buzzer\-High\-Pitch\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Buzzer\-High\-Pitch\-\_\-t}}}\label{_key_value_8h_a8b30a6b0d7b8a984ab77b1b57fb38ca0}
+Defines the values for the Buzzer key Buzzer\-Key\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H\-E\-S 
+
+Definition at line 1611 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_acb13f2b904b183ef3ad50bec154fcdd8}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Buzzer\-Key\-\_\-t@{Buzzer\-Key\-\_\-t}}
+\index{Buzzer\-Key\-\_\-t@{Buzzer\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Buzzer\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Buzzer\-Key\-\_\-t}}}\label{_key_value_8h_acb13f2b904b183ef3ad50bec154fcdd8}
+Defines the keys for the Buzzer 
+
+Definition at line 1426 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a51da99af1f4bc119437780de14ebfc92}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Buzzer\-Low\-Frequency\-\_\-t@{Buzzer\-Low\-Frequency\-\_\-t}}
+\index{Buzzer\-Low\-Frequency\-\_\-t@{Buzzer\-Low\-Frequency\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Buzzer\-Low\-Frequency\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Buzzer\-Low\-Frequency\-\_\-t}}}\label{_key_value_8h_a51da99af1f4bc119437780de14ebfc92}
+Defines the values for the Buzzer key Buzzer\-Key\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 1451 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ad381141dd431b380aac7ea9f175e7b95}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Buzzer\-Low\-Pitch\-\_\-t@{Buzzer\-Low\-Pitch\-\_\-t}}
+\index{Buzzer\-Low\-Pitch\-\_\-t@{Buzzer\-Low\-Pitch\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Buzzer\-Low\-Pitch\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Buzzer\-Low\-Pitch\-\_\-t}}}\label{_key_value_8h_ad381141dd431b380aac7ea9f175e7b95}
+Defines the values for the Buzzer key Buzzer\-Key\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H\-E\-S 
+
+Definition at line 1531 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a6b52c21377975bcbfb8127bd0e606a52}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Buzzer\-Mid\-Pitch\-\_\-t@{Buzzer\-Mid\-Pitch\-\_\-t}}
+\index{Buzzer\-Mid\-Pitch\-\_\-t@{Buzzer\-Mid\-Pitch\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Buzzer\-Mid\-Pitch\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Buzzer\-Mid\-Pitch\-\_\-t}}}\label{_key_value_8h_a6b52c21377975bcbfb8127bd0e606a52}
+Defines the values for the Buzzer key Buzzer\-Key\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H\-E\-S 
+
+Definition at line 1571 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a23e46507407c33d9bc6823bc57ce1d0f}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Buzzer\-Mode\-\_\-t@{Buzzer\-Mode\-\_\-t}}
+\index{Buzzer\-Mode\-\_\-t@{Buzzer\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Buzzer\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Buzzer\-Mode\-\_\-t}}}\label{_key_value_8h_a23e46507407c33d9bc6823bc57ce1d0f}
+Defines the values for the Buzzer key Buzzer\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 1441 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a6383b4e00f53aa50d14a3c6b117b5795}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Dac\-Amplitude\-\_\-t@{Dac\-Amplitude\-\_\-t}}
+\index{Dac\-Amplitude\-\_\-t@{Dac\-Amplitude\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Dac\-Amplitude\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Dac\-Amplitude\-\_\-t}}}\label{_key_value_8h_a6383b4e00f53aa50d14a3c6b117b5795}
+Defines the values for the Dac key Dac\-Key\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E 
+
+Definition at line 1379 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ae7b46f216de4ba2734a313ef8993baa5}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Dac\-Key\-\_\-t@{Dac\-Key\-\_\-t}}
+\index{Dac\-Key\-\_\-t@{Dac\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Dac\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Dac\-Key\-\_\-t}}}\label{_key_value_8h_ae7b46f216de4ba2734a313ef8993baa5}
+Defines the keys for the encoder 
+
+Definition at line 1355 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a7ea366ee4dbbd46b8e55b3cbc96c5fc6}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Dac\-Mode\-\_\-t@{Dac\-Mode\-\_\-t}}
+\index{Dac\-Mode\-\_\-t@{Dac\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Dac\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Dac\-Mode\-\_\-t}}}\label{_key_value_8h_a7ea366ee4dbbd46b8e55b3cbc96c5fc6}
+Defines the values for the Dac key Dac\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 1365 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ab990c57100b14cc1c52019e4906c093e}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Digital\-Input\-Key\-\_\-t@{Digital\-Input\-Key\-\_\-t}}
+\index{Digital\-Input\-Key\-\_\-t@{Digital\-Input\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Digital\-Input\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Digital\-Input\-Key\-\_\-t}}}\label{_key_value_8h_ab990c57100b14cc1c52019e4906c093e}
+Defines the keys for the Digital\-Input on the header and buttons 
+
+Definition at line 1313 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a4b2ef8b35cdfe1b839a7ca8bfdffc5b4}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Digital\-Input\-Mode\-\_\-t@{Digital\-Input\-Mode\-\_\-t}}
+\index{Digital\-Input\-Mode\-\_\-t@{Digital\-Input\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Digital\-Input\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Digital\-Input\-Mode\-\_\-t}}}\label{_key_value_8h_a4b2ef8b35cdfe1b839a7ca8bfdffc5b4}
+Defines the values for the Digital\-Input key Digital\-Input\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 1323 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_af2ddc71bf2c5b02bbf26945e1a88aa95}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Digital\-Input\-Sample\-Rate\-\_\-t@{Digital\-Input\-Sample\-Rate\-\_\-t}}
+\index{Digital\-Input\-Sample\-Rate\-\_\-t@{Digital\-Input\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Digital\-Input\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Digital\-Input\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_af2ddc71bf2c5b02bbf26945e1a88aa95}
+Defines the values for the Digital\-Input key Digital\-Input\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1333 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aac22e2582b429b6e17755a4ab0b3957a}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ecg6\-Chan\-Key\-\_\-t@{Ecg6\-Chan\-Key\-\_\-t}}
+\index{Ecg6\-Chan\-Key\-\_\-t@{Ecg6\-Chan\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ecg6\-Chan\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ecg6\-Chan\-Key\-\_\-t}}}\label{_key_value_8h_aac22e2582b429b6e17755a4ab0b3957a}
+Defines the keys for the Ecg6\-Chan 
+
+Definition at line 1770 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_af722e376fac6d29a859b4ec08512a7d9}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ecg6\-Chan\-Mode\-\_\-t@{Ecg6\-Chan\-Mode\-\_\-t}}
+\index{Ecg6\-Chan\-Mode\-\_\-t@{Ecg6\-Chan\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ecg6\-Chan\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ecg6\-Chan\-Mode\-\_\-t}}}\label{_key_value_8h_af722e376fac6d29a859b4ec08512a7d9}
+Defines the values for the Ecg6\-Chan key Ecg6\-Chan\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 1781 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aa76769fdfd5e2dc93e62b96ce1a5b256}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ecg6\-Chan\-Sample\-Rate\-\_\-t@{Ecg6\-Chan\-Sample\-Rate\-\_\-t}}
+\index{Ecg6\-Chan\-Sample\-Rate\-\_\-t@{Ecg6\-Chan\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ecg6\-Chan\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ecg6\-Chan\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_aa76769fdfd5e2dc93e62b96ce1a5b256}
+Defines the values for the Ecg6\-Chan key Ecg6\-Chan\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1791 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ac8ac25490a570adfc8ddef1f2be5c54c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ecg6\-Ref\-Volt\-\_\-t@{Ecg6\-Ref\-Volt\-\_\-t}}
+\index{Ecg6\-Ref\-Volt\-\_\-t@{Ecg6\-Ref\-Volt\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ecg6\-Ref\-Volt\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ecg6\-Ref\-Volt\-\_\-t}}}\label{_key_value_8h_ac8ac25490a570adfc8ddef1f2be5c54c}
+Defines the analog voltage reference options for the Ecg6 key Ecg6\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 1809 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ad3915ba07141de2873c7087e2783dbe3}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ecg\-Key\-\_\-t@{Ecg\-Key\-\_\-t}}
+\index{Ecg\-Key\-\_\-t@{Ecg\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ecg\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ecg\-Key\-\_\-t}}}\label{_key_value_8h_ad3915ba07141de2873c7087e2783dbe3}
+Defines the keys for the Ecg 
+
+Definition at line 427 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a1023d312d7fe1efc68ebdde0c321db3c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ecg\-Mode\-\_\-t@{Ecg\-Mode\-\_\-t}}
+\index{Ecg\-Mode\-\_\-t@{Ecg\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ecg\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ecg\-Mode\-\_\-t}}}\label{_key_value_8h_a1023d312d7fe1efc68ebdde0c321db3c}
+Defines the values for the Ecg key Ecg\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 438 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a225b7ea7781bf90efa8be1ba8456df6f}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ecg\-Ref\-Volt\-\_\-t@{Ecg\-Ref\-Volt\-\_\-t}}
+\index{Ecg\-Ref\-Volt\-\_\-t@{Ecg\-Ref\-Volt\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ecg\-Ref\-Volt\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ecg\-Ref\-Volt\-\_\-t}}}\label{_key_value_8h_a225b7ea7781bf90efa8be1ba8456df6f}
+Defines the analog voltage reference options for the Ecg key Ecg\-Key\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T 
+
+Definition at line 466 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a34cce44af7d33f75ed293f2863d9131c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Ecg\-Sample\-Rate\-\_\-t@{Ecg\-Sample\-Rate\-\_\-t}}
+\index{Ecg\-Sample\-Rate\-\_\-t@{Ecg\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Ecg\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ecg\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a34cce44af7d33f75ed293f2863d9131c}
+Defines the values for the Ecg key Ecg\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 448 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a4a90da6b85bf87f205c91120d17bd636}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Encoder\-Key\-\_\-t@{Encoder\-Key\-\_\-t}}
+\index{Encoder\-Key\-\_\-t@{Encoder\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Encoder\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Encoder\-Key\-\_\-t}}}\label{_key_value_8h_a4a90da6b85bf87f205c91120d17bd636}
+Defines the keys for the encoder 
+
+Definition at line 389 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a43a0111f41a9d2717f8ca884133e053e}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Encoder\-Mode\-\_\-t@{Encoder\-Mode\-\_\-t}}
+\index{Encoder\-Mode\-\_\-t@{Encoder\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Encoder\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Encoder\-Mode\-\_\-t}}}\label{_key_value_8h_a43a0111f41a9d2717f8ca884133e053e}
+Defines the values for the Encoder key Encoder\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 399 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aa6b30dc7b70a7006ccdfac237e0923a3}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Encoder\-Sample\-Rate\-\_\-t@{Encoder\-Sample\-Rate\-\_\-t}}
+\index{Encoder\-Sample\-Rate\-\_\-t@{Encoder\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Encoder\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Encoder\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_aa6b30dc7b70a7006ccdfac237e0923a3}
+Defines the values for the Encoder key Encoder\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 409 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aa847708191d5e0b10f1a03c92b9e49b0}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Force\-Gauge\-Key\-\_\-t@{Force\-Gauge\-Key\-\_\-t}}
+\index{Force\-Gauge\-Key\-\_\-t@{Force\-Gauge\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Force\-Gauge\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Force\-Gauge\-Key\-\_\-t}}}\label{_key_value_8h_aa847708191d5e0b10f1a03c92b9e49b0}
+Defines the keys for the Force\-Gauge 
+
+Definition at line 344 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a4f91d384008ef2f6a62dcadc84a81051}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Force\-Gauge\-Mode\-\_\-t@{Force\-Gauge\-Mode\-\_\-t}}
+\index{Force\-Gauge\-Mode\-\_\-t@{Force\-Gauge\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Force\-Gauge\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Force\-Gauge\-Mode\-\_\-t}}}\label{_key_value_8h_a4f91d384008ef2f6a62dcadc84a81051}
+Defines the values for the Force\-Gauge key Force\-Gauge\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 354 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a6e9ebd57f8d2ab067cfb9c0ff1c71cfe}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Force\-Gauge\-Sample\-Rate\-\_\-t@{Force\-Gauge\-Sample\-Rate\-\_\-t}}
+\index{Force\-Gauge\-Sample\-Rate\-\_\-t@{Force\-Gauge\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Force\-Gauge\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Force\-Gauge\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a6e9ebd57f8d2ab067cfb9c0ff1c71cfe}
+Defines the values for the Force\-Gauge key Force\-Gauge\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 364 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_abee6360441f0fbb3c11a5f2dcd29b307}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Gyroscope\-Key\-\_\-t@{Gyroscope\-Key\-\_\-t}}
+\index{Gyroscope\-Key\-\_\-t@{Gyroscope\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Gyroscope\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Gyroscope\-Key\-\_\-t}}}\label{_key_value_8h_abee6360441f0fbb3c11a5f2dcd29b307}
+Defines the keys for the gyroscope 
+
+Definition at line 157 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a319a17ef9b4b689c3b9854ba47c040e9}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Gyroscope\-Mode\-\_\-t@{Gyroscope\-Mode\-\_\-t}}
+\index{Gyroscope\-Mode\-\_\-t@{Gyroscope\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Gyroscope\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Gyroscope\-Mode\-\_\-t}}}\label{_key_value_8h_a319a17ef9b4b689c3b9854ba47c040e9}
+Defines the values for the Gyroscope key Gyroscope\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 168 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_abe8562113820fb22bf8be69673ce715b}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Gyroscope\-Resolution\-\_\-t@{Gyroscope\-Resolution\-\_\-t}}
+\index{Gyroscope\-Resolution\-\_\-t@{Gyroscope\-Resolution\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Gyroscope\-Resolution\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Gyroscope\-Resolution\-\_\-t}}}\label{_key_value_8h_abe8562113820fb22bf8be69673ce715b}
+Defines the values for the gyroscope key Gyroscope\-Key\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N 
+
+Definition at line 193 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a74db35be20f005c6e6ab0fba85c28468}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Gyroscope\-Sample\-Rate\-\_\-t@{Gyroscope\-Sample\-Rate\-\_\-t}}
+\index{Gyroscope\-Sample\-Rate\-\_\-t@{Gyroscope\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Gyroscope\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Gyroscope\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a74db35be20f005c6e6ab0fba85c28468}
+Defines the values for the Gyroscope key Gyroscope\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 178 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ab8d1656c46bf974224c5a46a3719a1bf}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header1\-Key\-\_\-t@{Header1\-Key\-\_\-t}}
+\index{Header1\-Key\-\_\-t@{Header1\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header1\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header1\-Key\-\_\-t}}}\label{_key_value_8h_ab8d1656c46bf974224c5a46a3719a1bf}
+Defines the keys for header pin 1 
+
+Definition at line 574 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a27e72eeac4729a481ec32072bf841142}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header1\-Mode\-\_\-t@{Header1\-Mode\-\_\-t}}
+\index{Header1\-Mode\-\_\-t@{Header1\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header1\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header1\-Mode\-\_\-t}}}\label{_key_value_8h_a27e72eeac4729a481ec32072bf841142}
+Defines the values for header pin 1 key Header1\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 584 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_adaa16d2db29ae4e123c5be872571e55f}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header1\-Output\-Value\-\_\-t@{Header1\-Output\-Value\-\_\-t}}
+\index{Header1\-Output\-Value\-\_\-t@{Header1\-Output\-Value\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header1\-Output\-Value\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header1\-Output\-Value\-\_\-t}}}\label{_key_value_8h_adaa16d2db29ae4e123c5be872571e55f}
+Defines the values for the Header1 key Header1\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 595 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a831bf582dec8cfd94c01b0d3dbd9a19f}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header2\-Key\-\_\-t@{Header2\-Key\-\_\-t}}
+\index{Header2\-Key\-\_\-t@{Header2\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header2\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header2\-Key\-\_\-t}}}\label{_key_value_8h_a831bf582dec8cfd94c01b0d3dbd9a19f}
+Defines the keys for header pin 2 
+
+Definition at line 613 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a4c8f437f61806a906bfcad52cc595f7f}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header2\-Mode\-\_\-t@{Header2\-Mode\-\_\-t}}
+\index{Header2\-Mode\-\_\-t@{Header2\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header2\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header2\-Mode\-\_\-t}}}\label{_key_value_8h_a4c8f437f61806a906bfcad52cc595f7f}
+Defines the values for header pin 2 key Header2\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 623 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a18bd7038d87266572b82595d0e50f91f}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header2\-Output\-Value\-\_\-t@{Header2\-Output\-Value\-\_\-t}}
+\index{Header2\-Output\-Value\-\_\-t@{Header2\-Output\-Value\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header2\-Output\-Value\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header2\-Output\-Value\-\_\-t}}}\label{_key_value_8h_a18bd7038d87266572b82595d0e50f91f}
+Defines the values for the Header2 key Header2\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 634 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ada49121d4e04a2aecc2514c3ce4abf7f}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header3\-Key\-\_\-t@{Header3\-Key\-\_\-t}}
+\index{Header3\-Key\-\_\-t@{Header3\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header3\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header3\-Key\-\_\-t}}}\label{_key_value_8h_ada49121d4e04a2aecc2514c3ce4abf7f}
+Defines the keys for header pin 3 
+
+Definition at line 651 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a2921928f2b4dba461ba1f7f929106333}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header3\-Mode\-\_\-t@{Header3\-Mode\-\_\-t}}
+\index{Header3\-Mode\-\_\-t@{Header3\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header3\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header3\-Mode\-\_\-t}}}\label{_key_value_8h_a2921928f2b4dba461ba1f7f929106333}
+Defines the values for header pin 3 key Header3\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 661 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ad20e16241b63fb80a7d2f2c8d7a2d57c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header3\-Output\-Value\-\_\-t@{Header3\-Output\-Value\-\_\-t}}
+\index{Header3\-Output\-Value\-\_\-t@{Header3\-Output\-Value\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header3\-Output\-Value\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header3\-Output\-Value\-\_\-t}}}\label{_key_value_8h_ad20e16241b63fb80a7d2f2c8d7a2d57c}
+Defines the values for the Header3 key Header3\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 672 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a6058122c36eb6ee978f2ffdfa22ee6c8}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header4\-Duty\-Cycle\-\_\-t@{Header4\-Duty\-Cycle\-\_\-t}}
+\index{Header4\-Duty\-Cycle\-\_\-t@{Header4\-Duty\-Cycle\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header4\-Duty\-Cycle\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header4\-Duty\-Cycle\-\_\-t}}}\label{_key_value_8h_a6058122c36eb6ee978f2ffdfa22ee6c8}
+Defines the values for the Header 4 pin key Header4\-Key\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E 
+
+Definition at line 833 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_abbf52007078e2e9614f13efdfe33a952}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header4\-High\-Frequency\-\_\-t@{Header4\-High\-Frequency\-\_\-t}}
+\index{Header4\-High\-Frequency\-\_\-t@{Header4\-High\-Frequency\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header4\-High\-Frequency\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header4\-High\-Frequency\-\_\-t}}}\label{_key_value_8h_abbf52007078e2e9614f13efdfe33a952}
+Defines the values for the Header pin 4 key Header4\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 793 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a2818f69803d4510fab962a4b6236dd9c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header4\-Key\-\_\-t@{Header4\-Key\-\_\-t}}
+\index{Header4\-Key\-\_\-t@{Header4\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header4\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header4\-Key\-\_\-t}}}\label{_key_value_8h_a2818f69803d4510fab962a4b6236dd9c}
+Defines the keys for Header4 
+
+Definition at line 689 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a629f822e4e944cf725df37bac732896a}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header4\-Low\-Frequency\-\_\-t@{Header4\-Low\-Frequency\-\_\-t}}
+\index{Header4\-Low\-Frequency\-\_\-t@{Header4\-Low\-Frequency\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header4\-Low\-Frequency\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header4\-Low\-Frequency\-\_\-t}}}\label{_key_value_8h_a629f822e4e944cf725df37bac732896a}
+Defines the values for the Header pin 4 key Header4\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 713 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a31516509cb91b2346a4f4dd22d0ce36e}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header4\-Mid\-Frequency\-\_\-t@{Header4\-Mid\-Frequency\-\_\-t}}
+\index{Header4\-Mid\-Frequency\-\_\-t@{Header4\-Mid\-Frequency\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header4\-Mid\-Frequency\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header4\-Mid\-Frequency\-\_\-t}}}\label{_key_value_8h_a31516509cb91b2346a4f4dd22d0ce36e}
+Defines the values for the Header pin 4 key Header4\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 753 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aa29cc4bdb6b31744c07408e975b45ec3}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header4\-Mode\-\_\-t@{Header4\-Mode\-\_\-t}}
+\index{Header4\-Mode\-\_\-t@{Header4\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header4\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header4\-Mode\-\_\-t}}}\label{_key_value_8h_aa29cc4bdb6b31744c07408e975b45ec3}
+Defines the values for the Header4 key Header4\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 702 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a08bcb870d7eb331adef801a2b81b80d1}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header5\-Duty\-Cycle\-\_\-t@{Header5\-Duty\-Cycle\-\_\-t}}
+\index{Header5\-Duty\-Cycle\-\_\-t@{Header5\-Duty\-Cycle\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header5\-Duty\-Cycle\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header5\-Duty\-Cycle\-\_\-t}}}\label{_key_value_8h_a08bcb870d7eb331adef801a2b81b80d1}
+Defines the values for the Header 5 pin key Header5\-Key\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E 
+
+Definition at line 1033 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a87cd18f40acbe4d8b364040b36cd44d4}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header5\-High\-Frequency\-\_\-t@{Header5\-High\-Frequency\-\_\-t}}
+\index{Header5\-High\-Frequency\-\_\-t@{Header5\-High\-Frequency\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header5\-High\-Frequency\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header5\-High\-Frequency\-\_\-t}}}\label{_key_value_8h_a87cd18f40acbe4d8b364040b36cd44d4}
+Defines the values for the Header pin 5 key Header5\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 993 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a90d7fcdb29f11f71081328c479188665}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header5\-Key\-\_\-t@{Header5\-Key\-\_\-t}}
+\index{Header5\-Key\-\_\-t@{Header5\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header5\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header5\-Key\-\_\-t}}}\label{_key_value_8h_a90d7fcdb29f11f71081328c479188665}
+Defines the keys for Header5 
+
+Definition at line 889 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a92d8a91595fb0d3ad6bb2306a9fd3d55}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header5\-Low\-Frequency\-\_\-t@{Header5\-Low\-Frequency\-\_\-t}}
+\index{Header5\-Low\-Frequency\-\_\-t@{Header5\-Low\-Frequency\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header5\-Low\-Frequency\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header5\-Low\-Frequency\-\_\-t}}}\label{_key_value_8h_a92d8a91595fb0d3ad6bb2306a9fd3d55}
+Defines the values for the Header pin 5 key Header5\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 913 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a5ea1c6ad46224285f7949598cafeb4b3}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header5\-Mid\-Frequency\-\_\-t@{Header5\-Mid\-Frequency\-\_\-t}}
+\index{Header5\-Mid\-Frequency\-\_\-t@{Header5\-Mid\-Frequency\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header5\-Mid\-Frequency\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header5\-Mid\-Frequency\-\_\-t}}}\label{_key_value_8h_a5ea1c6ad46224285f7949598cafeb4b3}
+Defines the values for the Header pin 5 key Header5\-Key\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y 
+
+Definition at line 953 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a6b3d4383b41fc10eb3e0225c74d9fcb6}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header5\-Mode\-\_\-t@{Header5\-Mode\-\_\-t}}
+\index{Header5\-Mode\-\_\-t@{Header5\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header5\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header5\-Mode\-\_\-t}}}\label{_key_value_8h_a6b3d4383b41fc10eb3e0225c74d9fcb6}
+Defines the values for the Header5 key Header5\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 902 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ac77919123f9ba004729ecb250e9e980f}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header6\-Key\-\_\-t@{Header6\-Key\-\_\-t}}
+\index{Header6\-Key\-\_\-t@{Header6\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header6\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header6\-Key\-\_\-t}}}\label{_key_value_8h_ac77919123f9ba004729ecb250e9e980f}
+Defines the keys for header pin 6 
+
+Definition at line 1089 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_af7eba701ebfe9450bbbf1e411a8d2fd7}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header6\-Mode\-\_\-t@{Header6\-Mode\-\_\-t}}
+\index{Header6\-Mode\-\_\-t@{Header6\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header6\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header6\-Mode\-\_\-t}}}\label{_key_value_8h_af7eba701ebfe9450bbbf1e411a8d2fd7}
+Defines the values for header pin 6 key Header6\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 1099 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aa14a314b68530fce3a138712cbd8a1f3}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Header6\-Output\-Value\-\_\-t@{Header6\-Output\-Value\-\_\-t}}
+\index{Header6\-Output\-Value\-\_\-t@{Header6\-Output\-Value\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Header6\-Output\-Value\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Header6\-Output\-Value\-\_\-t}}}\label{_key_value_8h_aa14a314b68530fce3a138712cbd8a1f3}
+Defines the values for the Header6 key Header6\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1110 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a8e1505d233bcb4d2c68a6ed92bef8437}{\index{Key\-Value.\-h@{Key\-Value.\-h}!High\-Gain\-Key\-\_\-t@{High\-Gain\-Key\-\_\-t}}
+\index{High\-Gain\-Key\-\_\-t@{High\-Gain\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{High\-Gain\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf High\-Gain\-Key\-\_\-t}}}\label{_key_value_8h_a8e1505d233bcb4d2c68a6ed92bef8437}
+Defines the keys for the High\-Gain 
+
+Definition at line 529 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a32dd51fdc4dccd45d0fc24546a12dccd}{\index{Key\-Value.\-h@{Key\-Value.\-h}!High\-Gain\-Mode\-\_\-t@{High\-Gain\-Mode\-\_\-t}}
+\index{High\-Gain\-Mode\-\_\-t@{High\-Gain\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{High\-Gain\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf High\-Gain\-Mode\-\_\-t}}}\label{_key_value_8h_a32dd51fdc4dccd45d0fc24546a12dccd}
+Defines the values for the High\-Gain key High\-Gain\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 539 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a4dc2c7fef980d44cc0625aaba52b01cb}{\index{Key\-Value.\-h@{Key\-Value.\-h}!High\-Gain\-Sample\-Rate\-\_\-t@{High\-Gain\-Sample\-Rate\-\_\-t}}
+\index{High\-Gain\-Sample\-Rate\-\_\-t@{High\-Gain\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{High\-Gain\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf High\-Gain\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a4dc2c7fef980d44cc0625aaba52b01cb}
+Defines the values for the High\-Gain key High\-Gain\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 549 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ae40240bfac9f369b794bf19574383a09}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Magnetometer\-Key\-\_\-t@{Magnetometer\-Key\-\_\-t}}
+\index{Magnetometer\-Key\-\_\-t@{Magnetometer\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Magnetometer\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Magnetometer\-Key\-\_\-t}}}\label{_key_value_8h_ae40240bfac9f369b794bf19574383a09}
+Defines the keys for the magnetometer 
+
+Definition at line 114 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a11b8ae425149b8a26456769cc35648a3}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Magnetometer\-Mode\-\_\-t@{Magnetometer\-Mode\-\_\-t}}
+\index{Magnetometer\-Mode\-\_\-t@{Magnetometer\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Magnetometer\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Magnetometer\-Mode\-\_\-t}}}\label{_key_value_8h_a11b8ae425149b8a26456769cc35648a3}
+Defines the values for the magnetometer key Magnetometer\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 124 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a71f76c14a8701562d06824adc1ace584}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Magnetometer\-Sample\-Rate\-\_\-t@{Magnetometer\-Sample\-Rate\-\_\-t}}
+\index{Magnetometer\-Sample\-Rate\-\_\-t@{Magnetometer\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Magnetometer\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Magnetometer\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_a71f76c14a8701562d06824adc1ace584}
+Defines the values for the magnetometer key Magnetometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 134 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ab19b2bf996704737a53398156a7110e9}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Microphone\-Key\-\_\-t@{Microphone\-Key\-\_\-t}}
+\index{Microphone\-Key\-\_\-t@{Microphone\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Microphone\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Microphone\-Key\-\_\-t}}}\label{_key_value_8h_ab19b2bf996704737a53398156a7110e9}
+Defines the keys for the Microphone 
+
+Definition at line 253 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_af367d2a54d1fe773b83256aba1675afe}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Microphone\-Mode\-\_\-t@{Microphone\-Mode\-\_\-t}}
+\index{Microphone\-Mode\-\_\-t@{Microphone\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Microphone\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Microphone\-Mode\-\_\-t}}}\label{_key_value_8h_af367d2a54d1fe773b83256aba1675afe}
+Defines the values for the Microphone key Microphone\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 263 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_abab8c70ab1267b15bcb9b4ce65a7a20c}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Microphone\-Sample\-Rate\-\_\-t@{Microphone\-Sample\-Rate\-\_\-t}}
+\index{Microphone\-Sample\-Rate\-\_\-t@{Microphone\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Microphone\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Microphone\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_abab8c70ab1267b15bcb9b4ce65a7a20c}
+Defines the values for the Microphone key Microphone\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 273 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aeafd1fca1b12b937f948ff2a237a8657}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Thermometer\-Key\-\_\-t@{Thermometer\-Key\-\_\-t}}
+\index{Thermometer\-Key\-\_\-t@{Thermometer\-Key\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Thermometer\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Thermometer\-Key\-\_\-t}}}\label{_key_value_8h_aeafd1fca1b12b937f948ff2a237a8657}
+Defines the keys for the thermometer 
+
+Definition at line 1714 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_a59302207aa429518fa81e50c993bfa29}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Thermometer\-Mode\-\_\-t@{Thermometer\-Mode\-\_\-t}}
+\index{Thermometer\-Mode\-\_\-t@{Thermometer\-Mode\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Thermometer\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Thermometer\-Mode\-\_\-t}}}\label{_key_value_8h_a59302207aa429518fa81e50c993bfa29}
+Defines the values for the Thermometer key Thermometer\-Key\-\_\-\-M\-O\-D\-E 
+
+Definition at line 1725 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_aa639bf330bc31bb7c6d709199f21e783}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Thermometer\-Oversample\-\_\-t@{Thermometer\-Oversample\-\_\-t}}
+\index{Thermometer\-Oversample\-\_\-t@{Thermometer\-Oversample\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Thermometer\-Oversample\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Thermometer\-Oversample\-\_\-t}}}\label{_key_value_8h_aa639bf330bc31bb7c6d709199f21e783}
+Defines the values for the Thermometer key Thermometer\-Key\-\_\-\-O\-V\-E\-R\-S\-A\-M\-P\-L\-E 
+
+Definition at line 1752 of file Key\-Value.\-h.
+
+\hypertarget{_key_value_8h_ac88ab7da79e1e59d372c02148e6e15cd}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Thermometer\-Sample\-Rate\-\_\-t@{Thermometer\-Sample\-Rate\-\_\-t}}
+\index{Thermometer\-Sample\-Rate\-\_\-t@{Thermometer\-Sample\-Rate\-\_\-t}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Thermometer\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Thermometer\-Sample\-Rate\-\_\-t}}}\label{_key_value_8h_ac88ab7da79e1e59d372c02148e6e15cd}
+Defines the values for the Thermometer key Thermometer\-Key\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E 
+
+Definition at line 1735 of file Key\-Value.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_key_value_8h_ab005de5fd051ae974f41254f2ea7a5f9}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Key\-Value\-\_\-\-Combine@{Key\-Value\-\_\-\-Combine}}
+\index{Key\-Value\-\_\-\-Combine@{Key\-Value\-\_\-\-Combine}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Key\-Value\-\_\-\-Combine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Key\-Value\-\_\-t} Key\-Value\-\_\-\-Combine (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\-\_\-t}}]{key, }
+\item[{{\bf Value\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_key_value_8h_ab005de5fd051ae974f41254f2ea7a5f9}
+Combine the key and the value to form the Key\-Value pair.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em key} & -\/ the key from the key value pair \\
+\hline
+\mbox{\tt out}  & {\em value} & -\/ the value from the key value pair\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The key-\/value pair made from the input key and value 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file Key\-Value.\-c.
+
+\hypertarget{_key_value_8h_ad987cb5dca6c5394630668061fac6590}{\index{Key\-Value.\-h@{Key\-Value.\-h}!Key\-Value\-\_\-\-Separate@{Key\-Value\-\_\-\-Separate}}
+\index{Key\-Value\-\_\-\-Separate@{Key\-Value\-\_\-\-Separate}!KeyValue.h@{Key\-Value.\-h}}
+\subsubsection[{Key\-Value\-\_\-\-Separate}]{\setlength{\rightskip}{0pt plus 5cm}void Key\-Value\-\_\-\-Separate (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{key\-Value, }
+\item[{{\bf Key\-\_\-t} $\ast$}]{key, }
+\item[{{\bf Value\-\_\-t} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{_key_value_8h_ad987cb5dca6c5394630668061fac6590}
+Separate the key and the value from the Key\-Value pair.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ The key-\/value pair \\
+\hline
+\mbox{\tt out}  & {\em key} & -\/ the key from the key value pair \\
+\hline
+\mbox{\tt out}  & {\em value} & -\/ the value from the key value pair \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Key\-Value.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Set\-Config(), Ambient\-Light\-Control\-\_\-\-Set\-Config(), Analog7\-Control\-\_\-\-Set\-Config(), Analog8\-Control\-\_\-\-Set\-Config(), Analog9\-Control\-\_\-\-Set\-Config(), Barometer\-Control\-\_\-\-Set\-Config(), Battery\-Control\-\_\-\-Set\-Config(), Buzzer\-Control\-\_\-\-Set\-Config(), Dac\-Control\-\_\-\-Set\-Config(), Digital\-Input\-Control\-\_\-\-Set\-Config(), Ecg\-Control\-\_\-\-Set\-Config(), Enc\-Control\-\_\-\-Set\-Config(), Fg\-Control\-\_\-\-Set\-Config(), Gyro\-Control\-\_\-\-Set\-Config(), Header1\-Control\-\_\-\-Set\-Config(), Header2\-Control\-\_\-\-Set\-Config(), Header3\-Control\-\_\-\-Set\-Config(), Header4\-Control\-\_\-\-Set\-Config(), Header5\-Control\-\_\-\-Set\-Config(), Header6\-Control\-\_\-\-Set\-Config(), High\-Gain\-Control\-\_\-\-Set\-Config(), Mag\-Control\-\_\-\-Set\-Config(), Microphone\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the caller graph for this function\-:
+
+

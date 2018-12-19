@@ -1,0 +1,11 @@
+<map id="CommProtocol_TxHandler" name="CommProtocol_TxHandler">
+<area shape="rect" href="$_spi_slave_8c.html#af8c91183bd4443e434859e8f5ba7668b" title="SpiSlave_UnloadPacket" alt="" coords="235,56,398,83" />
+<area shape="rect" href="$_data_buffer_8c.html#a20cc73afb2cfc749b7ff31f7610eb034" title="DataBuffer_RotateBuffer" alt="" coords="234,107,399,134" />
+<area shape="rect" href="$_spi_slave_8c.html#adbea4d2f3131d24e4216cda35a81d895" title="SpiSlave_LoadPacket" alt="" coords="240,183,392,210" />
+<area shape="rect" href="$_dma_8c.html#ae7c8ff98ddcd86c66c7de8446ea4a5cc" title="Dma_DisableIsr" alt="" coords="450,6,564,32" />
+<area shape="rect" href="$_dma_8c.html#a44dce30248e54529e1210634a4103917" title="Dma_Disable" alt="" coords="456,56,558,83" />
+<area shape="rect" href="$_data_buffer_8c.html#a872304566ea63e10d3634f3f892fdaf1" title="_InitializeData" alt="" coords="455,107,559,134" />
+<area shape="rect" href="$_dma_8c.html#a00be3dd2e9072289f4fdc5ff9e8be464" title="Dma_Arm" alt="" coords="467,158,547,184" />
+<area shape="rect" href="$_dma_8c.html#a6d04ad19261f694c3b6848c805a29d98" title="Dma_EnableIsr" alt="" coords="451,208,563,235" />
+<area shape="rect" href="$_dma_8c.html#ab02da096f284fbc5aca75db83495311c" title="Dma_Enable" alt="" coords="458,259,556,286" />
+</map>

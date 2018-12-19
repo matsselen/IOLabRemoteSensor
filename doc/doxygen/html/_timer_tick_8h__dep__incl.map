@@ -1,0 +1,14 @@
+<map id="TimerTick.h" name="TimerTick.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="6,80,64,107" />
+<area shape="rect" href="$_self_test_8c_source.html" title="SelfTest.c" alt="" coords="88,80,168,107" />
+<area shape="rect" href="$_state_machine_8c.html" title="State logic handling. " alt="" coords="192,80,304,107" />
+<area shape="rect" href="$_barometer_control_8c.html" title="Controls the barometer driver. " alt="" coords="328,80,464,107" />
+<area shape="rect" href="$_comm_protocol_8c.html" title="Communications protocol module. " alt="" coords="488,80,608,107" />
+<area shape="rect" href="$_digital_input_control_8c.html" title="Controls reading digital inputs on the header and buttons. " alt="" coords="632,80,774,107" />
+<area shape="rect" href="$_encoder_control_8c.html" title="Controls the Quadrature Encoder driver. " alt="" coords="798,80,920,107" />
+<area shape="rect" href="$_led_control_8c.html" title="LED Controller. " alt="" coords="944,80,1040,107" />
+<area shape="rect" href="$_push_button_control_8c.html" title="Control for the push buttons. " alt="" coords="1064,80,1208,107" />
+<area shape="rect" href="$_thermometer_control_8c.html" title="Controls the thermometer driver. " alt="" coords="1232,80,1387,107" />
+<area shape="rect" href="$_ui_manager_8c.html" title="Manages Feedback to the user. " alt="" coords="1411,80,1507,107" />
+<area shape="rect" href="$_timer_tick_8c.html" title="The system tick. " alt="" coords="1531,80,1622,107" />
+</map>

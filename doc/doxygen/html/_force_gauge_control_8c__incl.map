@@ -1,0 +1,11 @@
+<map id="ForceGaugeControl.c" name="ForceGaugeControl.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_force_gauge_control_8h.html" title="Controls the force gauge. " alt="" coords="139,80,288,107" />
+<area shape="rect" href="$_sensor_id_8h.html" title="Sensor Id stores the list of Sensor IDs. " alt="" coords="312,80,397,107" />
+<area shape="rect" href="$_data_buffer_8h.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="421,80,517,107" />
+<area shape="rect" href="$_key_value_8h.html" title="Contains the definitions of the Key&#45;Value pairs. " alt="" coords="541,80,629,107" />
+<area shape="rect" href="$_adc_manager_8h.html" title="Analog to digital conversion manager header file. " alt="" coords="653,80,760,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="784,80,853,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="877,80,944,107" />
+<area shape="rect" href="$_adc_8h.html" title="Analog to digital conversion module header file. " alt="" coords="679,155,735,182" />
+</map>

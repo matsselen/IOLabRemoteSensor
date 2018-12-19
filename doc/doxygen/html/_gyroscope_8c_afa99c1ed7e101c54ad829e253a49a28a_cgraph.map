@@ -1,0 +1,4 @@
+<map id="Gyroscope_Stop" name="Gyroscope_Stop">
+<area shape="rect" href="$_gyroscope_8c.html#a19ef56e939e27332ee83eca1a34bc6a8" title="_GyroWriteRegister" alt="" coords="173,5,312,32" />
+<area shape="rect" href="$_spi_master_8c.html#a92f3539ef78eccf3780715b433c04075" title="Spi_WriteRegister" alt="" coords="361,5,489,32" />
+</map>

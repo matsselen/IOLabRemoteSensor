@@ -1,0 +1,1312 @@
+\hypertarget{_gyroscope_8c}{\section{Gyroscope.\-c File Reference}
+\label{_gyroscope_8c}\index{Gyroscope.\-c@{Gyroscope.\-c}}
+}
+
+
+Driver for the gyroscope sensor.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Gyroscope.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Clock.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Spi\-Master.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for Gyroscope.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_gyroscope_8c_a17dc631124ce1539ada580052d919634}{G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}~\hyperlink{_gpio_8h_a2df7dc3f599d820ac15aa68739e1f17a}{G\-P\-I\-O\-\_\-\-C\-L\-E\-A\-R}(C\-S\-\_\-\-G\-Y\-R\-O\-\_\-\-P\-O\-R\-T, C\-S\-\_\-\-G\-Y\-R\-O\-\_\-\-P\-I\-N);
+\item 
+\hypertarget{_gyroscope_8c_a088fa6e8f83c5650922f95efeba12e19}{\#define {\bfseries G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-E\-N\-D\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}~\hyperlink{_gpio_8h_a2e03c55fa0950ef058109fad6b06e368}{G\-P\-I\-O\-\_\-\-S\-E\-T}(C\-S\-\_\-\-G\-Y\-R\-O\-\_\-\-P\-O\-R\-T, C\-S\-\_\-\-G\-Y\-R\-O\-\_\-\-P\-I\-N);}\label{_gyroscope_8c_a088fa6e8f83c5650922f95efeba12e19}
+
+\item 
+\#define \hyperlink{_gyroscope_8c_af0e7ca49f7aa10a6744889efc3744c9e}{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}~1u
+\item 
+\#define \hyperlink{_gyroscope_8c_a25065cd833bcfecfb404093aed3edaca}{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}~6u
+\item 
+\#define \hyperlink{_gyroscope_8c_a9fcb9e460d175bfc7ab4d80bf788b43a}{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}~((\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t})0x\-D4)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2}{Gyroscope\-Reg\-\_\-t} \{ \\*
+{\bfseries Gyroscope\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I} = 0x0\-F, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ac64f49b60d0b7e4b7c8d7efd278a62cc}{Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1} = 0x20, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2} = 0x21, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G3} = 0x22, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G4} = 0x23, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G5} = 0x24, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-R\-E\-F\-E\-R\-E\-N\-C\-E} = 0x25, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ad86c658720732a75004ca58bea1ff8a5}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-T\-E\-M\-P} = 0x26, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a85e723c75e4af41c79ba5dce9109a4b8}{Gyroscope\-Reg\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-G} = 0x27, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L} = 0x28, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2aa2b96b3e2b9e38c47f9a36a853272d89}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-H} = 0x29, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ab5f0641d69d1a186d6869d0842f11355}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L} = 0x2\-A, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ae15652709fbf297ec381ab1f72c0da9e}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-H} = 0x2\-B, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a9b95eb5099debc94726c431121078488}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L} = 0x2\-C, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a5efb3d4372392600233554024e4d0aee}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-H} = 0x2\-D, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a447fbb76bb5488686218743c41aee7d0}{Gyroscope\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G} = 0x2\-E, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-R\-C\-\_\-\-R\-E\-G} = 0x2\-F, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-C\-F\-G} = 0x30, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-S\-R\-C} = 0x31, 
+\\*
+{\bfseries Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-X\-H} = 0x32, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2acdeabdddd1b034263c8303c20fc9d205}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-X\-L} = 0x33, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a649a62c74d22aa6d4ffc229e7032d516}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-H} = 0x34, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ad36e315b44df753ab41cb4c908f84cfb}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-L} = 0x35, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2afd2084acfd8d81d50ee32b2742f14379}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-H} = 0x36, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a17ec284d2faa2e3da48bb9d173d6cc12}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-L} = 0x37, 
+\\*
+\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a4bdbd7493e5336ef7791f5753985320e}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N} = 0x38
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370}{Ctrl\-Reg\-One\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E1} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370adb88e9b1746dc05cfda96b5970feb255}{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a73abcc43ec91cb9b2c79983d6fb6be4b}{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E} = Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E1 $|$ Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a7489fabf8c4c8d87032bc094cca64d0b}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2} = 0x20, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R1} = 0x10, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R0} = 0x08, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aac1433cc7d34b81441277a6b0d6d09dc}{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a019b379fd6b3c2cdc4f478dbb015a8ea}{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aed7e900f4f151aeb85bccb2287185e22}{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370acdd9244c59ca7a58914d84aeb3f52505}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800} = 0x00, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-400} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-200} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-100} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-50} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-12\-\_\-5} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-6\-\_\-25} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R1, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-1\-\_\-56} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R1} = 0x80, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R0} = 0x40, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a538ec2d7e405b767d53d9e877939c13c}{Ctrl\-Reg\-One\-\_\-\-B\-W1} = 0x20, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-B\-W0} = 0x10, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-B\-W} = Ctrl\-Reg\-One\-\_\-\-B\-W1 $|$ Ctrl\-Reg\-One\-\_\-\-B\-W0, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a039c3112ddc78eb37ab15d924b413d3d}{Ctrl\-Reg\-One\-\_\-\-P\-D} = 0x08, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aff3b305765477683c437ffe5ce20e0a8}{Ctrl\-Reg\-One\-\_\-\-Zen} = 0x04, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a22fd8ac984dfbc6b745e5cba208f11a2}{Ctrl\-Reg\-One\-\_\-\-Yen} = 0x02, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a035ca1ae64c0562f41ffa632b8c57c03}{Ctrl\-Reg\-One\-\_\-\-Xen} = 0x01, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a769b8a9a870190f0b67f73262ad647b0}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-380} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-190} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-95} = 0x00
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9e}{Ctrl\-Reg\-Two\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-T\-\_\-\-E\-N} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea13be3979b9873f3bd6f90c9c3086965d}{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea8ce4d738f28ba2685d7dd28da16d0508}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea9cdc7f767bced2ef75ea841fce5a211a}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea6f57cc9b01f414ea341c556836814871}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S} = Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1 $|$ Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea0ac14cb9f12c4565762786994d25339c}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L} = 0x00, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-L\-N\-L\-P} = Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-H\-R\-E\-S} = Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-L\-P\-W\-R} = Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1 $|$ Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-L\-P\-E} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9eaa5ea90013b646da44be35ce56d8b1672}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9eab1c43b792a4a8ac5d92b9ec039034e1d}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea82982c455e20c50d7c2cf07270a3fa29}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S} = Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1 $|$ Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea806f3328704ef68b4bf433fe61a0123d}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L} = 0x00, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-L\-N\-L\-P} = Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-H\-R\-E\-S} = Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-L\-P\-W\-R} = Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1 $|$ Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-M1} = 0x20, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-M0} = 0x10, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-M} = Ctrl\-Reg\-Two\-\_\-\-H\-P\-M1 $|$ Ctrl\-Reg\-Two\-\_\-\-H\-P\-M0, 
+\\*
+\hyperlink{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea102c368479ef1d536f146e4678dc4b3a}{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3} = 0x08, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F2} = 0x04, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F1} = 0x02, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F0} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F} = Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3 $|$ Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3 $|$ Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F1 $|$ Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F0
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165}{Ctrl\-Reg\-Three\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-Three\-\_\-\-F\-I\-F\-O\-\_\-\-G\-A\-T\-E} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a3a1ad6c9a92ff492feb1cbb0bc9728b8}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a536a922d52daf1dd8e733e13c41b527a}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165ad0861e8380ba5fcdd1ef97095c309e9a}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a60c6caf426a40b086975ca2d09623d42}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165adb83e08c04a9bcac9d7acc88e06cd010}{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Int1} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a516f7253e3d4b6c10d22a673261dc5b0}{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a86c0999cb59a4f1b4d7dd945f11a0680}{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive} = 0x20, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D} = 0x10, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a83ceccc6dbc29a2f059eb514f0b6f4b5}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y} = 0x08, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165afa1c0ceb3e736d14f3a7a48a3dbd3327}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M} = 0x04, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a84e6e773af12ca5f6546dce68a3ca15f}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run} = 0x02, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165ac70c75fe75ed7d9a4f48c0120013c86d}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty} = 0x01
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7f}{Ctrl\-Reg\-Four\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-A\-S\-L\-P} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa4f1c431db5082a17e5e8d7bd453567d2}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fabdf7a05e3127ea3ec32a12ae724ecb68}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa7e08e96c572b5db00dd74b53a274d4dd}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa71e39a2081393c105034d86cf4e2c3d7}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa5bdb30c31efae2b6e5df6a0454cfde1b}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fab0da1fc76394c5987d2256872993aca6}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-B\-D\-U} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fad0dc00af62c34a63f94f72d1e7d10a6e}{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa28b8bbd687d2aca8799043ef041f2eb1}{Ctrl\-Reg\-Four\-\_\-\-F\-S1} = 0x20, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-F\-S0} = 0x10, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-F\-S} = Ctrl\-Reg\-Four\-\_\-\-F\-S1 $|$ Ctrl\-Reg\-Four\-\_\-\-F\-S0, 
+\\*
+\hyperlink{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa21559de50369d6295aa9ab79fc346bcc}{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M} = 0x01, 
+\\*
+\hyperlink{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa0ce81dd31daf7b346886a0a4cd818662}{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250} = 0x00, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-500} = Ctrl\-Reg\-Four\-\_\-\-F\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-2000} = Ctrl\-Reg\-Four\-\_\-\-F\-S1
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5}{Ctrl\-Reg\-Five\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-A\-S\-L\-P} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a57383af2f8bb7cc103d17381369688bc}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5adb606d83df0b962cb71d5fb5bd51ae59}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a1fd2a55dab7021da55db32c63316a523}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac104fdd741fbe3b161e055ac9e969d78}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac1417b81276ec0563615130c7ae1eeb0}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a01ac34b134f82cd3535b4d7191781600}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-B\-O\-O\-T} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a5140bf870617e41d41cd03017486e650}{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a2c99dde36ebad9eb86d78598f864340d}{Ctrl\-Reg\-Five\-\_\-\-H\-Pen} = 0x10, 
+\\*
+\hyperlink{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab93e27aded55004856be0ca48205146f}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1} = 0x08, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel0} = 0x04, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel} = Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1 $|$ Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel0, 
+\\*
+\hyperlink{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab023711371db89dc3c94d417881363c6}{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1} = 0x02, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel0} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel} = Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1 $|$ Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel0
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795f}{Status\-Reg\-\_\-t} \{ \\*
+{\bfseries Status\-Reg\-\_\-\-Z\-Y\-X\-O\-R} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa4e56c1f2d930983b49f195972266463b}{Status\-Reg\-\_\-\-Z\-O\-R} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa20364c49cae5c5ab219f9006e751619c}{Status\-Reg\-\_\-\-Y\-O\-R} = 0x20, 
+\\*
+\hyperlink{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fae304c642219f425835d238227865d6c6}{Status\-Reg\-\_\-\-X\-O\-R} = 0x10, 
+\\*
+\hyperlink{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa43d40458a0897cecf18578a22cce8f73}{Status\-Reg\-\_\-\-Z\-Y\-X\-D\-A} = 0x08, 
+\\*
+\hyperlink{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa62c6ef85468b679cebd4ecc8b44b86d6}{Status\-Reg\-\_\-\-Z\-D\-A} = 0x04, 
+\\*
+\hyperlink{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa33f34a2b56e6c97f9da8285ee39cd810}{Status\-Reg\-\_\-\-Y\-D\-A} = 0x02, 
+\\*
+\hyperlink{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa3a0a865fb6b83142af415f3ac0534998}{Status\-Reg\-\_\-\-X\-D\-A} = 0x01
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_afe12241668eee77a6187712397347b1a}{Fifo\-Ctrl\-Reg\-\_\-t} \{ \\*
+{\bfseries Fifo\-Ctrl\-Reg\-\_\-\-F\-M2} = 0x80, 
+\\*
+{\bfseries Fifo\-Ctrl\-Reg\-\_\-\-F\-M1} = 0x40, 
+\\*
+{\bfseries Fifo\-Ctrl\-Reg\-\_\-\-F\-M0} = 0x20, 
+\\*
+{\bfseries Fifo\-Ctrl\-Reg\-\_\-\-F\-M} = Fifo\-Ctrl\-Reg\-\_\-\-F\-M2 $|$ Fifo\-Ctrl\-Reg\-\_\-\-F\-M1 $|$ Fifo\-Ctrl\-Reg\-\_\-\-F\-M0, 
+\\*
+\hyperlink{_gyroscope_8c_afe12241668eee77a6187712397347b1aa1fe0ccf233fb3567d4e346dfe9aa1987}{Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M4} = 0x10, 
+\\*
+{\bfseries Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M3} = 0x08, 
+\\*
+{\bfseries Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M2} = 0x04, 
+\\*
+{\bfseries Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M1} = 0x02, 
+\\*
+{\bfseries Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M0} = 0x01, 
+\\*
+{\bfseries Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M} = Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M4 $|$ Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M3 $|$ Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M2 $|$ Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M1 $|$ Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M0
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eb}{Fifo\-Src\-Reg\-\_\-t} \{ \\*
+{\bfseries Fifo\-Src\-Reg\-\_\-\-W\-T\-M} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eba101efe7684137a15a3457b72ed706fdf}{Fifo\-Src\-Reg\-\_\-\-O\-V\-R\-N} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eba6393be21c3d84570a05dbbe0dbd220f1}{Fifo\-Src\-Reg\-\_\-\-E\-M\-P\-T\-Y} = 0x20, 
+\\*
+\hyperlink{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eba432c0eb80af20041c68f62359b2513ec}{Fifo\-Src\-Reg\-\_\-\-F\-S\-S4} = 0x10, 
+\\*
+{\bfseries Fifo\-Src\-Reg\-\_\-\-F\-S\-S3} = 0x08, 
+\\*
+{\bfseries Fifo\-Src\-Reg\-\_\-\-F\-S\-S2} = 0x04, 
+\\*
+{\bfseries Fifo\-Src\-Reg\-\_\-\-F\-S\-S1} = 0x02, 
+\\*
+{\bfseries Fifo\-Src\-Reg\-\_\-\-F\-S\-S0} = 0x01, 
+\\*
+{\bfseries Fifo\-Src\-Reg\-\_\-\-F\-S\-S} = Fifo\-Src\-Reg\-\_\-\-F\-S\-S4 $|$ Fifo\-Src\-Reg\-\_\-\-F\-S\-S3 $|$ Fifo\-Src\-Reg\-\_\-\-F\-S\-S2 $|$ Fifo\-Src\-Reg\-\_\-\-F\-S\-S1 $|$ Fifo\-Src\-Reg\-\_\-\-F\-S\-S0
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3}{Int1\-Cfg\-\_\-t} \{ \\*
+{\bfseries Int1\-Cfg\-\_\-\-A\-N\-D\-\_\-\-O\-R} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a93abf8a4fdcb0dd381145817a31fcc4d}{Int1\-Cfg\-\_\-\-L\-I\-R} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3aedea1c1a7fd0c3d305d656ede656f8cb}{Int1\-Cfg\-\_\-\-Z\-H\-I\-E} = 0x20, 
+\\*
+\hyperlink{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a25812d0e790d07b50315eda22e8be040}{Int1\-Cfg\-\_\-\-Z\-L\-I\-E} = 0x10, 
+\\*
+\hyperlink{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a96c1c4c40a6de90ec087125b49519c34}{Int1\-Cfg\-\_\-\-Y\-H\-I\-E} = 0x08, 
+\\*
+\hyperlink{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a9cdb231eed5ebb48a490f8187bc998dd}{Int1\-Cfg\-\_\-\-Y\-L\-I\-E} = 0x04, 
+\\*
+\hyperlink{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3ac563690b9bfd94d0015a5a61e64cca17}{Int1\-Cfg\-\_\-\-X\-H\-I\-E} = 0x02, 
+\\*
+\hyperlink{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a92ee861febc8da83402699e070fddc01}{Int1\-Cfg\-\_\-\-X\-L\-I\-E} = 0x01
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2}{Int1\-Src\-\_\-t} \{ \\*
+{\bfseries Int1\-Src\-\_\-\-I\-A} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2adca1b7a3b3c642453a46d2569ba31557}{Int1\-Src\-\_\-\-Z\-H} = 0x20, 
+\\*
+\hyperlink{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2ad529c34fcedce1c404b24a1b8c838ab7}{Int1\-Src\-\_\-\-Z\-L} = 0x10, 
+\\*
+\hyperlink{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2a8f08fb4c9097788c486b935a78faaf15}{Int1\-Src\-\_\-\-Y\-H} = 0x08, 
+\\*
+\hyperlink{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2ae87dc2bb805a1ba60577d0c81d16b1fd}{Int1\-Src\-\_\-\-Y\-L} = 0x04, 
+\\*
+\hyperlink{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2a422b97a74d6d134dbb840e0a85b78e8d}{Int1\-Src\-\_\-\-X\-H} = 0x02, 
+\\*
+\hyperlink{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2a40bd13b627cde33dd4945e8171d9a72c}{Int1\-Src\-\_\-\-X\-L} = 0x01
+ \}
+\item 
+enum \hyperlink{_gyroscope_8c_a79f890a419defba7a5f5c7569b7769f4}{Int1\-Duration\-\_\-t} \{ \\*
+{\bfseries Int1\-Duration\-\_\-\-W\-A\-I\-T} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_a79f890a419defba7a5f5c7569b7769f4a31912de86518d0ab14e1a01dd4de70e9}{Int1\-Duration\-\_\-\-D6} = 0x40, 
+\\*
+{\bfseries Int1\-Duration\-\_\-\-D5} = 0x20, 
+\\*
+{\bfseries Int1\-Duration\-\_\-\-D4} = 0x10, 
+\\*
+{\bfseries Int1\-Duration\-\_\-\-D3} = 0x08, 
+\\*
+{\bfseries Int1\-Duration\-\_\-\-D2} = 0x04, 
+\\*
+{\bfseries Int1\-Duration\-\_\-\-D1} = 0x02, 
+\\*
+{\bfseries Int1\-Duration\-\_\-\-D0} = 0x01, 
+\\*
+{\bfseries Int1\-Duration\-\_\-\-D} = Int1\-Duration\-\_\-\-D6 $|$ Int1\-Duration\-\_\-\-D5 $|$ Int1\-Duration\-\_\-\-D4 $|$ Int1\-Duration\-\_\-\-D3 $|$ Int1\-Duration\-\_\-\-D2 $|$ Int1\-Duration\-\_\-\-D1 $|$ Int1\-Duration\-\_\-\-D0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_gyroscope_8c_a20178cbb7a8152e834a86b64273db9be}{\-\_\-\-Gyro\-Read\-Single\-Register} (\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2}{Gyroscope\-Reg\-\_\-t} reg\-Address)
+\item 
+void \hyperlink{_gyroscope_8c_a19ef56e939e27332ee83eca1a34bc6a8}{\-\_\-\-Gyro\-Write\-Register} (\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2}{Gyroscope\-Reg\-\_\-t} reg\-Address, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} reg\-Value)
+\item 
+void \hyperlink{_gyroscope_8c_a7c3643655affa818995c762203dca652}{\-\_\-\-Gyro\-Read\-Multiple\-Registers} (\hyperlink{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2}{Gyroscope\-Reg\-\_\-t} reg\-Start\-Address, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} number\-Of\-Registers, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} values\mbox{[}$\,$\mbox{]})
+\item 
+static void \hyperlink{_gyroscope_8c_abffbea3ffff0c24e1b68e3fbf6d57e57}{\-\_\-\-Handle\-Data\-Ready\-Interrupt} (void)
+\item 
+void \hyperlink{_gyroscope_8c_a9d2b62e3dd4358e27f614be64cd7283a}{\-\_\-\-Handle\-Other\-Interrupt} (void)
+\item 
+void \hyperlink{_gyroscope_8c_af21c974c68ac43ddcbe29cd0b2e0c84f}{Gyroscope\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_gyroscope_8c_a775cf3c806825e690cdf82ab4023a3e1}{Gyroscope\-\_\-\-Config} (const \hyperlink{_gyroscope_8h_struct_gyro_config__t}{Gyro\-Config\-\_\-t} $\ast$config)
+\item 
+void \hyperlink{_gyroscope_8c_adf8e70db6c91c04de88b89452ce7b9d9}{Gyroscope\-\_\-\-Start} (void)
+\item 
+void \hyperlink{_gyroscope_8c_afa99c1ed7e101c54ad829e253a49a28a}{Gyroscope\-\_\-\-Stop} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_gyroscope_8c_ab65933152860c82db86c5da812e0bf51}{Gyroscope\-\_\-\-Read\-Sample} (\hyperlink{_gyroscope_8h_struct_gyro_sample__t}{Gyro\-Sample\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_gyroscope_8c_a3442d46e2e13980e37951e2196e7e6bb}{Gyroscope\-\_\-\-Read\-Sample\-Array} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_project_types_8h_aef44329758059c91c76d334e8fc09700}{int8\-\_\-t} \hyperlink{_gyroscope_8c_aa4f36bdacf69079c5b83860981bffb8c}{Gyroscope\-\_\-\-Read\-Temperature} (void)
+\item 
+void \hyperlink{_gyroscope_8c_ab69758992330e23b7c1262c44b1b9562}{Gyroscope\-\_\-\-Register\-Isr} (\hyperlink{_gyroscope_8h_a03f1b40a30321e1f606ef80e0d3149d3}{Gyro\-Isr\-Pointer\-\_\-t} isr)
+\item 
+void \hyperlink{_gyroscope_8c_aa75ee4fec5dd8fdddecf94fa975b8043}{Gyroscope\-\_\-\-Unregister\-Isr} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_gyroscope_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_gyroscope_8h_a03f1b40a30321e1f606ef80e0d3149d3}{Gyro\-Isr\-Pointer\-\_\-t} \hyperlink{_gyroscope_8c_aea30cf0df935343ef5f7171ed0a60e0c}{\-\_\-gyro\-Isr\-Pointer} = \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_gyroscope_8c_abfc3e4b112787a4d97990393a64626d4}{\-\_\-ctrl\-Reg\-One} = 0u
+\item 
+\hypertarget{_gyroscope_8c_a040aca61369edef14804d1dda7a1ada5}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-ctrl\-Reg\-Two} = 0u}\label{_gyroscope_8c_a040aca61369edef14804d1dda7a1ada5}
+
+\item 
+\hypertarget{_gyroscope_8c_a999ab60dfe109a3781666db4dda6057d}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-ctrl\-Reg\-Three} = 0u}\label{_gyroscope_8c_a999ab60dfe109a3781666db4dda6057d}
+
+\item 
+\hypertarget{_gyroscope_8c_a5d90df8f4e95b496d582aafaaaad29b1}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-ctrl\-Reg\-Four} = 0u}\label{_gyroscope_8c_a5d90df8f4e95b496d582aafaaaad29b1}
+
+\item 
+\hypertarget{_gyroscope_8c_aed08b5ebcee5eaf18ca5d47463481779}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-ctrl\-Reg\-Five} = 0u}\label{_gyroscope_8c_aed08b5ebcee5eaf18ca5d47463481779}
+
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_gyroscope_8c_a11dbd8006370044a4d0ddadf9cc3e735}{\-\_\-data\-Ready} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Driver for the gyroscope sensor. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This module interfaces to a S\-P\-I gyroscope sensor to read the 3-\/axis data. This driver is designed to work with a S\-T Micro L3\-G\-D20 S\-P\-I Gyroscope. 
+
+Definition in file \hyperlink{_gyroscope_8c_source}{Gyroscope.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_gyroscope_8c_a25065cd833bcfecfb404093aed3edaca}{\index{Gyroscope.\-c@{Gyroscope.\-c}!B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E@{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}}
+\index{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E@{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E~6u}}\label{_gyroscope_8c_a25065cd833bcfecfb404093aed3edaca}
+Defines the number of registers to read a sample 
+
+Definition at line 80 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyroscope\-\_\-\-Read\-Sample(), Gyroscope\-\_\-\-Read\-Sample\-Array(), and Gyroscope\-\_\-\-Start().
+
+\hypertarget{_gyroscope_8c_a17dc631124ce1539ada580052d919634}{\index{Gyroscope.\-c@{Gyroscope.\-c}!G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R@{G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}}
+\index{G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R@{G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R~{\bf G\-P\-I\-O\-\_\-\-C\-L\-E\-A\-R}(C\-S\-\_\-\-G\-Y\-R\-O\-\_\-\-P\-O\-R\-T, C\-S\-\_\-\-G\-Y\-R\-O\-\_\-\-P\-I\-N);}}\label{_gyroscope_8c_a17dc631124ce1539ada580052d919634}
+Defines the chip select enable and disable for the gyroscope 
+
+Definition at line 71 of file Gyroscope.\-c.
+
+
+
+Referenced by \-\_\-\-Gyro\-Read\-Multiple\-Registers(), \-\_\-\-Gyro\-Read\-Single\-Register(), and \-\_\-\-Gyro\-Write\-Register().
+
+\hypertarget{_gyroscope_8c_af0e7ca49f7aa10a6744889efc3744c9e}{\index{Gyroscope.\-c@{Gyroscope.\-c}!S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S@{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}}
+\index{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S@{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S~1u}}\label{_gyroscope_8c_af0e7ca49f7aa10a6744889efc3744c9e}
+Defines the number of microseconds to delay between de/asserting the chip select line and ending/starting the S\-P\-I communication to allow the chip to become ready 
+
+Definition at line 77 of file Gyroscope.\-c.
+
+
+
+Referenced by \-\_\-\-Gyro\-Read\-Multiple\-Registers(), \-\_\-\-Gyro\-Read\-Single\-Register(), and \-\_\-\-Gyro\-Write\-Register().
+
+\hypertarget{_gyroscope_8c_a9fcb9e460d175bfc7ab4d80bf788b43a}{\index{Gyroscope.\-c@{Gyroscope.\-c}!W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}}
+\index{W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-O\-\_\-\-A\-M\-\_\-\-I~(({\bf uint8\-\_\-t})0x\-D4)}}\label{_gyroscope_8c_a9fcb9e460d175bfc7ab4d80bf788b43a}
+Define the expected value of the W\-H\-O\-\_\-\-A\-M\-\_\-\-I query 
+
+Definition at line 83 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyroscope\-\_\-\-Init().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-t@{Ctrl\-Reg\-Five\-\_\-t}}
+\index{Ctrl\-Reg\-Five\-\_\-t@{Ctrl\-Reg\-Five\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Ctrl\-Reg\-Five\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-Five\-\_\-t}}}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5}
+Defines the bitmask for the control register Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G5 of the Gyroscope\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a57383af2f8bb7cc103d17381369688bc}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a57383af2f8bb7cc103d17381369688bc}
+}]auto sleep/wake interrupt routing \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5adb606d83df0b962cb71d5fb5bd51ae59}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5adb606d83df0b962cb71d5fb5bd51ae59}
+}]F\-I\-F\-O interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a1fd2a55dab7021da55db32c63316a523}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a1fd2a55dab7021da55db32c63316a523}
+}]Transient interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac104fdd741fbe3b161e055ac9e969d78}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac104fdd741fbe3b161e055ac9e969d78}
+}]Landscape/portrait interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac1417b81276ec0563615130c7ae1eeb0}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac1417b81276ec0563615130c7ae1eeb0}
+}]Pulse interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a01ac34b134f82cd3535b4d7191781600}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a01ac34b134f82cd3535b4d7191781600}
+}]Freefall/motion interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N@{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N@{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a5140bf870617e41d41cd03017486e650}{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a5140bf870617e41d41cd03017486e650}
+}]reboot memory content \index{Ctrl\-Reg\-Five\-\_\-\-H\-Pen@{Ctrl\-Reg\-Five\-\_\-\-H\-Pen}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-H\-Pen@{Ctrl\-Reg\-Five\-\_\-\-H\-Pen}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a2c99dde36ebad9eb86d78598f864340d}{Ctrl\-Reg\-Five\-\_\-\-H\-Pen}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a2c99dde36ebad9eb86d78598f864340d}
+}]F\-I\-F\-O enable. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab93e27aded55004856be0ca48205146f}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab93e27aded55004856be0ca48205146f}
+}]high-\/pass filter enable \index{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1@{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1@{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1}}\item[{\em 
+\hypertarget{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab023711371db89dc3c94d417881363c6}{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1}\label{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab023711371db89dc3c94d417881363c6}
+}]I\-N\-T1 selection configuration. \end{description}
+\end{Desc}
+
+
+Definition at line 196 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7f}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-t@{Ctrl\-Reg\-Four\-\_\-t}}
+\index{Ctrl\-Reg\-Four\-\_\-t@{Ctrl\-Reg\-Four\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Ctrl\-Reg\-Four\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-Four\-\_\-t}}}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7f}
+Defines the bitmask for the control register Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G4 of the Gyroscope\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa4f1c431db5082a17e5e8d7bd453567d2}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa4f1c431db5082a17e5e8d7bd453567d2}
+}]auto sleep/wake interrupt enable \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fabdf7a05e3127ea3ec32a12ae724ecb68}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fabdf7a05e3127ea3ec32a12ae724ecb68}
+}]F\-I\-F\-O interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa7e08e96c572b5db00dd74b53a274d4dd}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa7e08e96c572b5db00dd74b53a274d4dd}
+}]Transient interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa71e39a2081393c105034d86cf4e2c3d7}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa71e39a2081393c105034d86cf4e2c3d7}
+}]Landscape/portrait interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa5bdb30c31efae2b6e5df6a0454cfde1b}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa5bdb30c31efae2b6e5df6a0454cfde1b}
+}]Pulse detection interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fab0da1fc76394c5987d2256872993aca6}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fab0da1fc76394c5987d2256872993aca6}
+}]Freefall/motion interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E@{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-B\-L\-E@{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fad0dc00af62c34a63f94f72d1e7d10a6e}{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fad0dc00af62c34a63f94f72d1e7d10a6e}
+}]block data update \index{Ctrl\-Reg\-Four\-\_\-\-F\-S1@{Ctrl\-Reg\-Four\-\_\-\-F\-S1}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-F\-S1@{Ctrl\-Reg\-Four\-\_\-\-F\-S1}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa28b8bbd687d2aca8799043ef041f2eb1}{Ctrl\-Reg\-Four\-\_\-\-F\-S1}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa28b8bbd687d2aca8799043ef041f2eb1}
+}]big/little endian data selection \index{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M@{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-S\-I\-M@{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa21559de50369d6295aa9ab79fc346bcc}{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa21559de50369d6295aa9ab79fc346bcc}
+}]full scale selection \index{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250@{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250@{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa0ce81dd31daf7b346886a0a4cd818662}{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250}\label{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa0ce81dd31daf7b346886a0a4cd818662}
+}]S\-P\-I serial interface mode selection. \end{description}
+\end{Desc}
+
+
+Definition at line 180 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-t@{Ctrl\-Reg\-One\-\_\-t}}
+\index{Ctrl\-Reg\-One\-\_\-t@{Ctrl\-Reg\-One\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Ctrl\-Reg\-One\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-One\-\_\-t}}}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370}
+Defines the bitmask for the control register one Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1 of the Gyroscope\-Reg\-\_\-t.
+
+D\-A\-T\-A\-\_\-\-R\-A\-T\-E -\/ 00\-: 95 Hz 01\-: 190 Hz 10\-: 380 Hz 11\-: 760 Hz
+
+O\-D B\-W O\-D\-R(\-Hz) Cut-\/\-Off 00 00 95 12.\-5 00 01 95 25 00 10 95 25 00 11 95 25 01 00 190 12\-\_\-5 01 01 190 25 01 10 190 50 01 11 190 70 10 00 380 20 10 01 380 25 10 10 380 50 10 11 380 100 11 00 760 30 11 01 760 35 11 10 760 50 11 11 760 100 \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0@{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0@{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370adb88e9b1746dc05cfda96b5970feb255}{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370adb88e9b1746dc05cfda96b5970feb255}
+}]bit 1 of the autowake sample frequency \index{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E@{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E@{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a73abcc43ec91cb9b2c79983d6fb6be4b}{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a73abcc43ec91cb9b2c79983d6fb6be4b}
+}]bit 0 of the autowake sample frequency \index{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-O\-D\-R2@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a7489fabf8c4c8d87032bc094cca64d0b}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a7489fabf8c4c8d87032bc094cca64d0b}
+}]Configures the autowake sample frequency. \index{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E@{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E@{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aac1433cc7d34b81441277a6b0d6d09dc}{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aac1433cc7d34b81441277a6b0d6d09dc}
+}]output data rate selection \index{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D@{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D@{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a019b379fd6b3c2cdc4f478dbb015a8ea}{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a019b379fd6b3c2cdc4f478dbb015a8ea}
+}]reduced noise enabled \index{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E@{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E@{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aed7e900f4f151aeb85bccb2287185e22}{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aed7e900f4f151aeb85bccb2287185e22}
+}]fast read mode enable \index{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370acdd9244c59ca7a58914d84aeb3f52505}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370acdd9244c59ca7a58914d84aeb3f52505}
+}]active mode enable \index{Ctrl\-Reg\-One\-\_\-\-B\-W1@{Ctrl\-Reg\-One\-\_\-\-B\-W1}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-B\-W1@{Ctrl\-Reg\-One\-\_\-\-B\-W1}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a538ec2d7e405b767d53d9e877939c13c}{Ctrl\-Reg\-One\-\_\-\-B\-W1}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a538ec2d7e405b767d53d9e877939c13c}
+}]output data rate selection \index{Ctrl\-Reg\-One\-\_\-\-P\-D@{Ctrl\-Reg\-One\-\_\-\-P\-D}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-P\-D@{Ctrl\-Reg\-One\-\_\-\-P\-D}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a039c3112ddc78eb37ab15d924b413d3d}{Ctrl\-Reg\-One\-\_\-\-P\-D}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a039c3112ddc78eb37ab15d924b413d3d}
+}]bandwidth selection \index{Ctrl\-Reg\-One\-\_\-\-Zen@{Ctrl\-Reg\-One\-\_\-\-Zen}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-Zen@{Ctrl\-Reg\-One\-\_\-\-Zen}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aff3b305765477683c437ffe5ce20e0a8}{Ctrl\-Reg\-One\-\_\-\-Zen}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aff3b305765477683c437ffe5ce20e0a8}
+}]power-\/down mode enable \index{Ctrl\-Reg\-One\-\_\-\-Yen@{Ctrl\-Reg\-One\-\_\-\-Yen}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-Yen@{Ctrl\-Reg\-One\-\_\-\-Yen}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a22fd8ac984dfbc6b745e5cba208f11a2}{Ctrl\-Reg\-One\-\_\-\-Yen}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a22fd8ac984dfbc6b745e5cba208f11a2}
+}]Z axis enable. \index{Ctrl\-Reg\-One\-\_\-\-Xen@{Ctrl\-Reg\-One\-\_\-\-Xen}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-Xen@{Ctrl\-Reg\-One\-\_\-\-Xen}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a035ca1ae64c0562f41ffa632b8c57c03}{Ctrl\-Reg\-One\-\_\-\-Xen}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a035ca1ae64c0562f41ffa632b8c57c03}
+}]Y axis enable. \index{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760}}\item[{\em 
+\hypertarget{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a769b8a9a870190f0b67f73262ad647b0}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760}\label{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a769b8a9a870190f0b67f73262ad647b0}
+}]X axis enable. \end{description}
+\end{Desc}
+
+
+Definition at line 110 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-t@{Ctrl\-Reg\-Three\-\_\-t}}
+\index{Ctrl\-Reg\-Three\-\_\-t@{Ctrl\-Reg\-Three\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Ctrl\-Reg\-Three\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-Three\-\_\-t}}}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165}
+Defines the bitmask for the control register Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G3 of the Gyroscope\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a3a1ad6c9a92ff492feb1cbb0bc9728b8}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a3a1ad6c9a92ff492feb1cbb0bc9728b8}
+}]Enable the gate to block the F\-I\-F\-O once full. \index{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a536a922d52daf1dd8e733e13c41b527a}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a536a922d52daf1dd8e733e13c41b527a}
+}]Transient function interrupt can wake up system. \index{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165ad0861e8380ba5fcdd1ef97095c309e9a}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165ad0861e8380ba5fcdd1ef97095c309e9a}
+}]Orientation interrupt can wake system. \index{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a60c6caf426a40b086975ca2d09623d42}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a60c6caf426a40b086975ca2d09623d42}
+}]Pulse interrupt can wake system. \index{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L@{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L@{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165adb83e08c04a9bcac9d7acc88e06cd010}{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165adb83e08c04a9bcac9d7acc88e06cd010}
+}]Freefall/motion interrupt can wake system. \index{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D@{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D@{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}
+}]Interrupt polarity active high enable. \index{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot@{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot@{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a516f7253e3d4b6c10d22a673261dc5b0}{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a516f7253e3d4b6c10d22a673261dc5b0}
+}]interrupt enable on I\-N\-T1 pin \index{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive@{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive@{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a86c0999cb59a4f1b4d7dd945f11a0680}{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a86c0999cb59a4f1b4d7dd945f11a0680}
+}]boot status available on I\-N\-T1 \index{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D@{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D@{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}
+}]interrupt active configuration on I\-N\-T1 \index{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a83ceccc6dbc29a2f059eb514f0b6f4b5}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a83ceccc6dbc29a2f059eb514f0b6f4b5}
+}]push-\/pull/ open drain \index{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165afa1c0ceb3e736d14f3a7a48a3dbd3327}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165afa1c0ceb3e736d14f3a7a48a3dbd3327}
+}]data ready on D\-R\-D\-Y/\-I\-N\-T2 \index{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a84e6e773af12ca5f6546dce68a3ca15f}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a84e6e773af12ca5f6546dce68a3ca15f}
+}]F\-I\-F\-O watermark interrupt on D\-R\-D\-Y/\-I\-N\-T2. \index{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty}}\item[{\em 
+\hypertarget{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165ac70c75fe75ed7d9a4f48c0120013c86d}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty}\label{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165ac70c75fe75ed7d9a4f48c0120013c86d}
+}]F\-I\-F\-O overrun interrupt on D\-R\-D\-Y/\-I\-N\-T2. \end{description}
+\end{Desc}
+
+
+Definition at line 164 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9e}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-t@{Ctrl\-Reg\-Two\-\_\-t}}
+\index{Ctrl\-Reg\-Two\-\_\-t@{Ctrl\-Reg\-Two\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Ctrl\-Reg\-Two\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-Two\-\_\-t}}}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9e}
+Defines the bitmask for the control register Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2 of the Gyroscope\-Reg\-\_\-t.
+
+H\-P\-M\mbox{[}1\-:0\mbox{]} High-\/pass filter mode 00 Normal mode (reset reading H\-P\-\_\-\-R\-E\-S\-E\-T\-\_\-\-F\-I\-L\-T\-E\-R) 01 Reference signal for filtering 10 Normal mode 11 Autoreset on interrupt event
+
+H\-P\-C\-F3-\/0 O\-D\-R=95\-Hz O\-D\-R=190\-Hz O\-D\-R=380\-Hz O\-D\-R=760\-Hz 0000 7.\-2 13.\-5 27 51.\-4 0001 3.\-5 7.\-2 13.\-5 27 0010 1.\-8 3.\-5 7.\-2 13.\-5 0011 0.\-9 1.\-8 3.\-5 7.\-2 0100 0.\-45 0.\-9 1.\-8 3.\-5 0101 0.\-18 0.\-45 0.\-9 1.\-8 0110 0.\-09 0.\-18 0.\-45 0.\-9 0111 0.\-045 0.\-09 0.\-18 0.\-45 1000 0.\-018 0.\-045 0.\-09 0.\-18 1001 0.\-009 0.\-018 0.\-045 0.\-09 \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T@{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-R\-S\-T@{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea13be3979b9873f3bd6f90c9c3086965d}{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea13be3979b9873f3bd6f90c9c3086965d}
+}]Self test enable. \index{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea8ce4d738f28ba2685d7dd28da16d0508}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea8ce4d738f28ba2685d7dd28da16d0508}
+}]Software Reset enable. \index{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea9cdc7f767bced2ef75ea841fce5a211a}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea9cdc7f767bced2ef75ea841fce5a211a}
+}]Sleep mode power scheme bit 1. \index{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea6f57cc9b01f414ea341c556836814871}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea6f57cc9b01f414ea341c556836814871}
+}]Sleep mode power scheme bit 0. \index{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea0ac14cb9f12c4565762786994d25339c}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea0ac14cb9f12c4565762786994d25339c}
+}]Sleep mode power scheme selection. \index{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9eaa5ea90013b646da44be35ce56d8b1672}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9eaa5ea90013b646da44be35ce56d8b1672}
+}]Auto sleep mode enable. \index{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9eab1c43b792a4a8ac5d92b9ec039034e1d}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9eab1c43b792a4a8ac5d92b9ec039034e1d}
+}]Active mode power scheme bit 1. \index{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea82982c455e20c50d7c2cf07270a3fa29}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea82982c455e20c50d7c2cf07270a3fa29}
+}]Active mode power scheme bit 0. \index{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea806f3328704ef68b4bf433fe61a0123d}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea806f3328704ef68b4bf433fe61a0123d}
+}]Active mode power scheme selection. \index{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3@{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3@{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3}}\item[{\em 
+\hypertarget{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea102c368479ef1d536f146e4678dc4b3a}{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3}\label{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea102c368479ef1d536f146e4678dc4b3a}
+}]high-\/pass filter mode selection \end{description}
+\end{Desc}
+
+
+Definition at line 149 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_afe12241668eee77a6187712397347b1a}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Fifo\-Ctrl\-Reg\-\_\-t@{Fifo\-Ctrl\-Reg\-\_\-t}}
+\index{Fifo\-Ctrl\-Reg\-\_\-t@{Fifo\-Ctrl\-Reg\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Fifo\-Ctrl\-Reg\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Fifo\-Ctrl\-Reg\-\_\-t}}}\label{_gyroscope_8c_afe12241668eee77a6187712397347b1a}
+Defines the bitmask for the control register F\-I\-F\-O\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G of the Gyroscope\-Reg\-\_\-t.
+
+F\-M2 F\-M1 F\-M0 F\-I\-F\-O mode 0 0 0 Bypass mode 0 0 1 F\-I\-F\-O mode 0 1 0 Stream mode 0 1 1 Stream-\/to-\/\-F\-I\-F\-O mode 1 0 0 Bypass-\/to-\/\-Stream mode \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M4@{Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M4}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M4@{Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M4}}\item[{\em 
+\hypertarget{_gyroscope_8c_afe12241668eee77a6187712397347b1aa1fe0ccf233fb3567d4e346dfe9aa1987}{Fifo\-Ctrl\-Reg\-\_\-\-W\-T\-M4}\label{_gyroscope_8c_afe12241668eee77a6187712397347b1aa1fe0ccf233fb3567d4e346dfe9aa1987}
+}]F\-I\-F\-O mode selection. \end{description}
+\end{Desc}
+
+
+Definition at line 234 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eb}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Fifo\-Src\-Reg\-\_\-t@{Fifo\-Src\-Reg\-\_\-t}}
+\index{Fifo\-Src\-Reg\-\_\-t@{Fifo\-Src\-Reg\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Fifo\-Src\-Reg\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Fifo\-Src\-Reg\-\_\-t}}}\label{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eb}
+Defines the bitmask for the control register F\-I\-F\-O\-\_\-\-S\-R\-C\-\_\-\-R\-E\-G of the Gyroscope\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Fifo\-Src\-Reg\-\_\-\-O\-V\-R\-N@{Fifo\-Src\-Reg\-\_\-\-O\-V\-R\-N}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Fifo\-Src\-Reg\-\_\-\-O\-V\-R\-N@{Fifo\-Src\-Reg\-\_\-\-O\-V\-R\-N}}\item[{\em 
+\hypertarget{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eba101efe7684137a15a3457b72ed706fdf}{Fifo\-Src\-Reg\-\_\-\-O\-V\-R\-N}\label{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eba101efe7684137a15a3457b72ed706fdf}
+}]Watermark status. (0\-: F\-I\-F\-O filling is lower than W\-T\-M level; 1\-: F\-I\-F\-O filling is equal or higher than W\-T\-M level) \index{Fifo\-Src\-Reg\-\_\-\-E\-M\-P\-T\-Y@{Fifo\-Src\-Reg\-\_\-\-E\-M\-P\-T\-Y}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Fifo\-Src\-Reg\-\_\-\-E\-M\-P\-T\-Y@{Fifo\-Src\-Reg\-\_\-\-E\-M\-P\-T\-Y}}\item[{\em 
+\hypertarget{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eba6393be21c3d84570a05dbbe0dbd220f1}{Fifo\-Src\-Reg\-\_\-\-E\-M\-P\-T\-Y}\label{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eba6393be21c3d84570a05dbbe0dbd220f1}
+}]Overrun bit status. \index{Fifo\-Src\-Reg\-\_\-\-F\-S\-S4@{Fifo\-Src\-Reg\-\_\-\-F\-S\-S4}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Fifo\-Src\-Reg\-\_\-\-F\-S\-S4@{Fifo\-Src\-Reg\-\_\-\-F\-S\-S4}}\item[{\em 
+\hypertarget{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eba432c0eb80af20041c68f62359b2513ec}{Fifo\-Src\-Reg\-\_\-\-F\-S\-S4}\label{_gyroscope_8c_a6c92d21f03f7ee7b5357cce5502942eba432c0eb80af20041c68f62359b2513ec}
+}]F\-I\-F\-O empty bit. \end{description}
+\end{Desc}
+
+
+Definition at line 251 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-t@{Gyroscope\-Reg\-\_\-t}}
+\index{Gyroscope\-Reg\-\_\-t@{Gyroscope\-Reg\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-Reg\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Gyroscope\-Reg\-\_\-t}}}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2}
+Defines the valid register addresses for the gyroscope registers \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1@{Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1@{Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ac64f49b60d0b7e4b7c8d7efd278a62cc}{Gyroscope\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ac64f49b60d0b7e4b7c8d7efd278a62cc}
+}]Device identification register. \index{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-T\-E\-M\-P@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-T\-E\-M\-P}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-T\-E\-M\-P@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-T\-E\-M\-P}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ad86c658720732a75004ca58bea1ff8a5}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-T\-E\-M\-P}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ad86c658720732a75004ca58bea1ff8a5}
+}]Reference/\-Data\-Capture. \index{Gyroscope\-Reg\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-G@{Gyroscope\-Reg\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-G}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-G@{Gyroscope\-Reg\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-G}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a85e723c75e4af41c79ba5dce9109a4b8}{Gyroscope\-Reg\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-G}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a85e723c75e4af41c79ba5dce9109a4b8}
+}]Temperature data. \index{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-H@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-H}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-H@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-H}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2aa2b96b3e2b9e38c47f9a36a853272d89}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-H}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2aa2b96b3e2b9e38c47f9a36a853272d89}
+}]X-\/axis angular rate data, low address. \index{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ab5f0641d69d1a186d6869d0842f11355}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ab5f0641d69d1a186d6869d0842f11355}
+}]X-\/axis angular rate data, high address. \index{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-H@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-H}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-H@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-H}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ae15652709fbf297ec381ab1f72c0da9e}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-H}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ae15652709fbf297ec381ab1f72c0da9e}
+}]Y-\/axis angular rate data, low address. \index{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a9b95eb5099debc94726c431121078488}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a9b95eb5099debc94726c431121078488}
+}]Y-\/axis angular rate data, high address. \index{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-H@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-H}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-H@{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-H}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a5efb3d4372392600233554024e4d0aee}{Gyroscope\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-H}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a5efb3d4372392600233554024e4d0aee}
+}]Z-\/axis angular rate data, low address. \index{Gyroscope\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G@{Gyroscope\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G@{Gyroscope\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a447fbb76bb5488686218743c41aee7d0}{Gyroscope\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a447fbb76bb5488686218743c41aee7d0}
+}]Z-\/axis angular rate data, high address. \index{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-X\-L@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-X\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-X\-L@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-X\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2acdeabdddd1b034263c8303c20fc9d205}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-X\-L}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2acdeabdddd1b034263c8303c20fc9d205}
+}]Interrupt threshold. \index{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-H@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-H}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-H@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-H}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a649a62c74d22aa6d4ffc229e7032d516}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-H}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a649a62c74d22aa6d4ffc229e7032d516}
+}]Interrupt threshold. \index{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-L@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-L@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ad36e315b44df753ab41cb4c908f84cfb}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Y\-L}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2ad36e315b44df753ab41cb4c908f84cfb}
+}]Interrupt threshold. \index{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-H@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-H}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-H@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-H}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2afd2084acfd8d81d50ee32b2742f14379}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-H}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2afd2084acfd8d81d50ee32b2742f14379}
+}]Interrupt threshold. \index{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-L@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-L@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a17ec284d2faa2e3da48bb9d173d6cc12}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-T\-S\-H\-\_\-\-Z\-L}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a17ec284d2faa2e3da48bb9d173d6cc12}
+}]Interrupt threshold. \index{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N@{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a4bdbd7493e5336ef7791f5753985320e}{Gyroscope\-Reg\-\_\-\-I\-N\-T1\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N}\label{_gyroscope_8c_aafd5a37763ffddcfe01eada8806f09c2a4bdbd7493e5336ef7791f5753985320e}
+}]Interrupt threshold. \end{description}
+\end{Desc}
+
+
+Definition at line 38 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Cfg\-\_\-t@{Int1\-Cfg\-\_\-t}}
+\index{Int1\-Cfg\-\_\-t@{Int1\-Cfg\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Int1\-Cfg\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Int1\-Cfg\-\_\-t}}}\label{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3}
+Defines the bitmask for the control register I\-N\-T1\-\_\-\-C\-F\-G of the Gyroscope\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Int1\-Cfg\-\_\-\-L\-I\-R@{Int1\-Cfg\-\_\-\-L\-I\-R}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Cfg\-\_\-\-L\-I\-R@{Int1\-Cfg\-\_\-\-L\-I\-R}}\item[{\em 
+\hypertarget{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a93abf8a4fdcb0dd381145817a31fcc4d}{Int1\-Cfg\-\_\-\-L\-I\-R}\label{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a93abf8a4fdcb0dd381145817a31fcc4d}
+}]A\-N\-D/\-O\-R combination of interrupt events. (0\-: O\-R combination of interrupt events 1\-: A\-N\-D combination of interrupt events) \index{Int1\-Cfg\-\_\-\-Z\-H\-I\-E@{Int1\-Cfg\-\_\-\-Z\-H\-I\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Cfg\-\_\-\-Z\-H\-I\-E@{Int1\-Cfg\-\_\-\-Z\-H\-I\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3aedea1c1a7fd0c3d305d656ede656f8cb}{Int1\-Cfg\-\_\-\-Z\-H\-I\-E}\label{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3aedea1c1a7fd0c3d305d656ede656f8cb}
+}]Latch interrupt request. (0\-: interrupt request not latched; 1\-: interrupt request latched) \index{Int1\-Cfg\-\_\-\-Z\-L\-I\-E@{Int1\-Cfg\-\_\-\-Z\-L\-I\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Cfg\-\_\-\-Z\-L\-I\-E@{Int1\-Cfg\-\_\-\-Z\-L\-I\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a25812d0e790d07b50315eda22e8be040}{Int1\-Cfg\-\_\-\-Z\-L\-I\-E}\label{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a25812d0e790d07b50315eda22e8be040}
+}]Enable interrupt generation on Z high event. \index{Int1\-Cfg\-\_\-\-Y\-H\-I\-E@{Int1\-Cfg\-\_\-\-Y\-H\-I\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Cfg\-\_\-\-Y\-H\-I\-E@{Int1\-Cfg\-\_\-\-Y\-H\-I\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a96c1c4c40a6de90ec087125b49519c34}{Int1\-Cfg\-\_\-\-Y\-H\-I\-E}\label{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a96c1c4c40a6de90ec087125b49519c34}
+}]Enable interrupt generation on Z low event. \index{Int1\-Cfg\-\_\-\-Y\-L\-I\-E@{Int1\-Cfg\-\_\-\-Y\-L\-I\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Cfg\-\_\-\-Y\-L\-I\-E@{Int1\-Cfg\-\_\-\-Y\-L\-I\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a9cdb231eed5ebb48a490f8187bc998dd}{Int1\-Cfg\-\_\-\-Y\-L\-I\-E}\label{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a9cdb231eed5ebb48a490f8187bc998dd}
+}]Enable interrupt generation on Y high event. \index{Int1\-Cfg\-\_\-\-X\-H\-I\-E@{Int1\-Cfg\-\_\-\-X\-H\-I\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Cfg\-\_\-\-X\-H\-I\-E@{Int1\-Cfg\-\_\-\-X\-H\-I\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3ac563690b9bfd94d0015a5a61e64cca17}{Int1\-Cfg\-\_\-\-X\-H\-I\-E}\label{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3ac563690b9bfd94d0015a5a61e64cca17}
+}]Enable interrupt generation on Y low event. \index{Int1\-Cfg\-\_\-\-X\-L\-I\-E@{Int1\-Cfg\-\_\-\-X\-L\-I\-E}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Cfg\-\_\-\-X\-L\-I\-E@{Int1\-Cfg\-\_\-\-X\-L\-I\-E}}\item[{\em 
+\hypertarget{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a92ee861febc8da83402699e070fddc01}{Int1\-Cfg\-\_\-\-X\-L\-I\-E}\label{_gyroscope_8c_a64eb24fd6bdf0fab495ab273032117a3a92ee861febc8da83402699e070fddc01}
+}]Enable interrupt generation on X high event. \end{description}
+\end{Desc}
+
+
+Definition at line 267 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_a79f890a419defba7a5f5c7569b7769f4}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Duration\-\_\-t@{Int1\-Duration\-\_\-t}}
+\index{Int1\-Duration\-\_\-t@{Int1\-Duration\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Int1\-Duration\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Int1\-Duration\-\_\-t}}}\label{_gyroscope_8c_a79f890a419defba7a5f5c7569b7769f4}
+Defines the bitmask for the control register I\-N\-T1\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N of the Gyroscope\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Int1\-Duration\-\_\-\-D6@{Int1\-Duration\-\_\-\-D6}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Duration\-\_\-\-D6@{Int1\-Duration\-\_\-\-D6}}\item[{\em 
+\hypertarget{_gyroscope_8c_a79f890a419defba7a5f5c7569b7769f4a31912de86518d0ab14e1a01dd4de70e9}{Int1\-Duration\-\_\-\-D6}\label{_gyroscope_8c_a79f890a419defba7a5f5c7569b7769f4a31912de86518d0ab14e1a01dd4de70e9}
+}]Wait enable. \end{description}
+\end{Desc}
+
+
+Definition at line 296 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Src\-\_\-t@{Int1\-Src\-\_\-t}}
+\index{Int1\-Src\-\_\-t@{Int1\-Src\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Int1\-Src\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Int1\-Src\-\_\-t}}}\label{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2}
+Defines the bitmask for the control register I\-N\-T1\-\_\-\-S\-R\-C of the Gyroscope\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Int1\-Src\-\_\-\-Z\-H@{Int1\-Src\-\_\-\-Z\-H}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Src\-\_\-\-Z\-H@{Int1\-Src\-\_\-\-Z\-H}}\item[{\em 
+\hypertarget{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2adca1b7a3b3c642453a46d2569ba31557}{Int1\-Src\-\_\-\-Z\-H}\label{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2adca1b7a3b3c642453a46d2569ba31557}
+}]Interrupt active. \index{Int1\-Src\-\_\-\-Z\-L@{Int1\-Src\-\_\-\-Z\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Src\-\_\-\-Z\-L@{Int1\-Src\-\_\-\-Z\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2ad529c34fcedce1c404b24a1b8c838ab7}{Int1\-Src\-\_\-\-Z\-L}\label{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2ad529c34fcedce1c404b24a1b8c838ab7}
+}]Z high. \index{Int1\-Src\-\_\-\-Y\-H@{Int1\-Src\-\_\-\-Y\-H}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Src\-\_\-\-Y\-H@{Int1\-Src\-\_\-\-Y\-H}}\item[{\em 
+\hypertarget{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2a8f08fb4c9097788c486b935a78faaf15}{Int1\-Src\-\_\-\-Y\-H}\label{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2a8f08fb4c9097788c486b935a78faaf15}
+}]Z low. \index{Int1\-Src\-\_\-\-Y\-L@{Int1\-Src\-\_\-\-Y\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Src\-\_\-\-Y\-L@{Int1\-Src\-\_\-\-Y\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2ae87dc2bb805a1ba60577d0c81d16b1fd}{Int1\-Src\-\_\-\-Y\-L}\label{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2ae87dc2bb805a1ba60577d0c81d16b1fd}
+}]Y high. \index{Int1\-Src\-\_\-\-X\-H@{Int1\-Src\-\_\-\-X\-H}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Src\-\_\-\-X\-H@{Int1\-Src\-\_\-\-X\-H}}\item[{\em 
+\hypertarget{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2a422b97a74d6d134dbb840e0a85b78e8d}{Int1\-Src\-\_\-\-X\-H}\label{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2a422b97a74d6d134dbb840e0a85b78e8d}
+}]Y low. \index{Int1\-Src\-\_\-\-X\-L@{Int1\-Src\-\_\-\-X\-L}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Int1\-Src\-\_\-\-X\-L@{Int1\-Src\-\_\-\-X\-L}}\item[{\em 
+\hypertarget{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2a40bd13b627cde33dd4945e8171d9a72c}{Int1\-Src\-\_\-\-X\-L}\label{_gyroscope_8c_a646af9761ecd13096c091fc970d63ee2a40bd13b627cde33dd4945e8171d9a72c}
+}]X high. \end{description}
+\end{Desc}
+
+
+Definition at line 282 of file Gyroscope.\-c.
+
+\hypertarget{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795f}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Status\-Reg\-\_\-t@{Status\-Reg\-\_\-t}}
+\index{Status\-Reg\-\_\-t@{Status\-Reg\-\_\-t}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Status\-Reg\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Status\-Reg\-\_\-t}}}\label{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795f}
+Defines the bitmask for the control register S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-G of the Gyroscope\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Status\-Reg\-\_\-\-Z\-O\-R@{Status\-Reg\-\_\-\-Z\-O\-R}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Status\-Reg\-\_\-\-Z\-O\-R@{Status\-Reg\-\_\-\-Z\-O\-R}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa4e56c1f2d930983b49f195972266463b}{Status\-Reg\-\_\-\-Z\-O\-R}\label{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa4e56c1f2d930983b49f195972266463b}
+}]X, Y, Z -\/axis data overrun. \index{Status\-Reg\-\_\-\-Y\-O\-R@{Status\-Reg\-\_\-\-Y\-O\-R}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Status\-Reg\-\_\-\-Y\-O\-R@{Status\-Reg\-\_\-\-Y\-O\-R}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa20364c49cae5c5ab219f9006e751619c}{Status\-Reg\-\_\-\-Y\-O\-R}\label{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa20364c49cae5c5ab219f9006e751619c}
+}]Z axis data overrun. \index{Status\-Reg\-\_\-\-X\-O\-R@{Status\-Reg\-\_\-\-X\-O\-R}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Status\-Reg\-\_\-\-X\-O\-R@{Status\-Reg\-\_\-\-X\-O\-R}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fae304c642219f425835d238227865d6c6}{Status\-Reg\-\_\-\-X\-O\-R}\label{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fae304c642219f425835d238227865d6c6}
+}]Y axis data overrun. \index{Status\-Reg\-\_\-\-Z\-Y\-X\-D\-A@{Status\-Reg\-\_\-\-Z\-Y\-X\-D\-A}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Status\-Reg\-\_\-\-Z\-Y\-X\-D\-A@{Status\-Reg\-\_\-\-Z\-Y\-X\-D\-A}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa43d40458a0897cecf18578a22cce8f73}{Status\-Reg\-\_\-\-Z\-Y\-X\-D\-A}\label{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa43d40458a0897cecf18578a22cce8f73}
+}]X axis data overrun. \index{Status\-Reg\-\_\-\-Z\-D\-A@{Status\-Reg\-\_\-\-Z\-D\-A}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Status\-Reg\-\_\-\-Z\-D\-A@{Status\-Reg\-\_\-\-Z\-D\-A}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa62c6ef85468b679cebd4ecc8b44b86d6}{Status\-Reg\-\_\-\-Z\-D\-A}\label{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa62c6ef85468b679cebd4ecc8b44b86d6}
+}]X, Y, Z -\/axis new data available. \index{Status\-Reg\-\_\-\-Y\-D\-A@{Status\-Reg\-\_\-\-Y\-D\-A}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Status\-Reg\-\_\-\-Y\-D\-A@{Status\-Reg\-\_\-\-Y\-D\-A}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa33f34a2b56e6c97f9da8285ee39cd810}{Status\-Reg\-\_\-\-Y\-D\-A}\label{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa33f34a2b56e6c97f9da8285ee39cd810}
+}]Z axis new data available. \index{Status\-Reg\-\_\-\-X\-D\-A@{Status\-Reg\-\_\-\-X\-D\-A}!Gyroscope.\-c@{Gyroscope.\-c}}\index{Gyroscope.\-c@{Gyroscope.\-c}!Status\-Reg\-\_\-\-X\-D\-A@{Status\-Reg\-\_\-\-X\-D\-A}}\item[{\em 
+\hypertarget{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa3a0a865fb6b83142af415f3ac0534998}{Status\-Reg\-\_\-\-X\-D\-A}\label{_gyroscope_8c_af6c1f1b591ad257302b48a1c80e1795fa3a0a865fb6b83142af415f3ac0534998}
+}]Y axis new data available. \end{description}
+\end{Desc}
+
+
+Definition at line 212 of file Gyroscope.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_gyroscope_8c_a7c3643655affa818995c762203dca652}{\index{Gyroscope.\-c@{Gyroscope.\-c}!\-\_\-\-Gyro\-Read\-Multiple\-Registers@{\-\_\-\-Gyro\-Read\-Multiple\-Registers}}
+\index{\-\_\-\-Gyro\-Read\-Multiple\-Registers@{\-\_\-\-Gyro\-Read\-Multiple\-Registers}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{\-\_\-\-Gyro\-Read\-Multiple\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Gyro\-Read\-Multiple\-Registers (
+\begin{DoxyParamCaption}
+\item[{{\bf Gyroscope\-Reg\-\_\-t}}]{reg\-Start\-Address, }
+\item[{{\bf uint8\-\_\-t}}]{number\-Of\-Registers, }
+\item[{{\bf uint8\-\_\-t}}]{values\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_a7c3643655affa818995c762203dca652}
+Reads from consecutive registers using the S\-P\-I port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\-Start\-Address} & -\/ the register address to read from the device \\
+\hline
+\mbox{\tt in}  & {\em number\-Of\-Registers} & -\/ the number of consecutive registers to read \\
+\hline
+\mbox{\tt in}  & {\em values\mbox{[}$\,$\mbox{]}} & -\/ the location to store the register values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The length of values $>$= number\-Of\-Registers 
+\end{DoxyNote}
+
+
+Definition at line 640 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyroscope\-\_\-\-Read\-Sample(), Gyroscope\-\_\-\-Read\-Sample\-Array(), and Gyroscope\-\_\-\-Start().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_a20178cbb7a8152e834a86b64273db9be}{\index{Gyroscope.\-c@{Gyroscope.\-c}!\-\_\-\-Gyro\-Read\-Single\-Register@{\-\_\-\-Gyro\-Read\-Single\-Register}}
+\index{\-\_\-\-Gyro\-Read\-Single\-Register@{\-\_\-\-Gyro\-Read\-Single\-Register}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{\-\_\-\-Gyro\-Read\-Single\-Register}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} \-\_\-\-Gyro\-Read\-Single\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf Gyroscope\-Reg\-\_\-t}}]{reg\-Address}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_a20178cbb7a8152e834a86b64273db9be}
+Reads from a specific register using the S\-P\-I port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\-Address} & -\/ the register address to read from the device\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value read from the register. 
+\end{DoxyReturn}
+
+
+Definition at line 602 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyroscope\-\_\-\-Init(), and Gyroscope\-\_\-\-Read\-Temperature().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_a19ef56e939e27332ee83eca1a34bc6a8}{\index{Gyroscope.\-c@{Gyroscope.\-c}!\-\_\-\-Gyro\-Write\-Register@{\-\_\-\-Gyro\-Write\-Register}}
+\index{\-\_\-\-Gyro\-Write\-Register@{\-\_\-\-Gyro\-Write\-Register}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{\-\_\-\-Gyro\-Write\-Register}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Gyro\-Write\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf Gyroscope\-Reg\-\_\-t}}]{reg\-Address, }
+\item[{{\bf uint8\-\_\-t}}]{reg\-Value}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_a19ef56e939e27332ee83eca1a34bc6a8}
+Writes a value to a specific register using the S\-P\-I port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\-Address} & -\/ the register address to write at on device \\
+\hline
+\mbox{\tt in}  & {\em reg\-Value} & -\/ the value at reg\-Address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 621 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyroscope\-\_\-\-Config(), Gyroscope\-\_\-\-Start(), and Gyroscope\-\_\-\-Stop().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_abffbea3ffff0c24e1b68e3fbf6d57e57}{\index{Gyroscope.\-c@{Gyroscope.\-c}!\-\_\-\-Handle\-Data\-Ready\-Interrupt@{\-\_\-\-Handle\-Data\-Ready\-Interrupt}}
+\index{\-\_\-\-Handle\-Data\-Ready\-Interrupt@{\-\_\-\-Handle\-Data\-Ready\-Interrupt}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Data\-Ready\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Data\-Ready\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_gyroscope_8c_abffbea3ffff0c24e1b68e3fbf6d57e57}
+Handles the G\-P\-I\-O event that indicates that data is ready on the gyroscope. 
+
+Definition at line 575 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyroscope\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_a9d2b62e3dd4358e27f614be64cd7283a}{\index{Gyroscope.\-c@{Gyroscope.\-c}!\-\_\-\-Handle\-Other\-Interrupt@{\-\_\-\-Handle\-Other\-Interrupt}}
+\index{\-\_\-\-Handle\-Other\-Interrupt@{\-\_\-\-Handle\-Other\-Interrupt}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Other\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Other\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_a9d2b62e3dd4358e27f614be64cd7283a}
+Handles the G\-P\-I\-O event that indicates that a special event on the gyroscope. 
+
+Definition at line 590 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyroscope\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_a775cf3c806825e690cdf82ab4023a3e1}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-\_\-\-Config@{Gyroscope\-\_\-\-Config}}
+\index{Gyroscope\-\_\-\-Config@{Gyroscope\-\_\-\-Config}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-\_\-\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Config (
+\begin{DoxyParamCaption}
+\item[{const {\bf Gyro\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_a775cf3c806825e690cdf82ab4023a3e1}
+Reads in the value of the data from the gyroscope
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample-\/} & the location to store the sample data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 368 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_af21c974c68ac43ddcbe29cd0b2e0c84f}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-\_\-\-Init@{Gyroscope\-\_\-\-Init}}
+\index{Gyroscope\-\_\-\-Init@{Gyroscope\-\_\-\-Init}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_af21c974c68ac43ddcbe29cd0b2e0c84f}
+Initializes the gyroscope, but does not configure or start sampling 
+
+Definition at line 341 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_ab65933152860c82db86c5da812e0bf51}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-\_\-\-Read\-Sample@{Gyroscope\-\_\-\-Read\-Sample}}
+\index{Gyroscope\-\_\-\-Read\-Sample@{Gyroscope\-\_\-\-Read\-Sample}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-\_\-\-Read\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Gyroscope\-\_\-\-Read\-Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf Gyro\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_ab65933152860c82db86c5da812e0bf51}
+Reads in the value of the data from the gyroscope
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample-\/} & the location to store the sample data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 487 of file Gyroscope.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Gyro\-Command(), and Gyro\-Control\-\_\-\-Read\-Gyro().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_a3442d46e2e13980e37951e2196e7e6bb}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-\_\-\-Read\-Sample\-Array@{Gyroscope\-\_\-\-Read\-Sample\-Array}}
+\index{Gyroscope\-\_\-\-Read\-Sample\-Array@{Gyroscope\-\_\-\-Read\-Sample\-Array}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-\_\-\-Read\-Sample\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Read\-Sample\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_a3442d46e2e13980e37951e2196e7e6bb}
+Reads a sample from the gyroscope if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Length} & -\/ the maximum length of bytes data\mbox{[}\mbox{]} can hold \\
+\hline
+\mbox{\tt out}  & {\em actual\-Length} & -\/ the actual number of bytes written to data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em data} & -\/ an array to hold the data from the accelerometer reading \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 513 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Read\-Gyro().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_aa4f36bdacf69079c5b83860981bffb8c}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-\_\-\-Read\-Temperature@{Gyroscope\-\_\-\-Read\-Temperature}}
+\index{Gyroscope\-\_\-\-Read\-Temperature@{Gyroscope\-\_\-\-Read\-Temperature}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-\_\-\-Read\-Temperature}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int8\-\_\-t} Gyroscope\-\_\-\-Read\-Temperature (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_aa4f36bdacf69079c5b83860981bffb8c}
+Reads a temperature sample from the gyroscope
+
+\begin{DoxyReturn}{Returns}
+Temperature in °\-C as a signed 8-\/bit integer number 
+\end{DoxyReturn}
+
+
+Definition at line 544 of file Gyroscope.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_ab69758992330e23b7c1262c44b1b9562}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-\_\-\-Register\-Isr@{Gyroscope\-\_\-\-Register\-Isr}}
+\index{Gyroscope\-\_\-\-Register\-Isr@{Gyroscope\-\_\-\-Register\-Isr}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-\_\-\-Register\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Register\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Gyro\-Isr\-Pointer\-\_\-t}}]{isr}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_ab69758992330e23b7c1262c44b1b9562}
+Sets a function that will be ran when the data ready interrupt occurs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em isr} & -\/ pointer to the gyroscope data ready I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 557 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_adf8e70db6c91c04de88b89452ce7b9d9}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-\_\-\-Start@{Gyroscope\-\_\-\-Start}}
+\index{Gyroscope\-\_\-\-Start@{Gyroscope\-\_\-\-Start}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-\_\-\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_adf8e70db6c91c04de88b89452ce7b9d9}
+Starts the gyroscope sampling at its configured data rate. 
+
+Definition at line 441 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_afa99c1ed7e101c54ad829e253a49a28a}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-\_\-\-Stop@{Gyroscope\-\_\-\-Stop}}
+\index{Gyroscope\-\_\-\-Stop@{Gyroscope\-\_\-\-Stop}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_afa99c1ed7e101c54ad829e253a49a28a}
+Stops the data collecting of the gyroscope. 
+
+Definition at line 468 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyro\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gyroscope_8c_aa75ee4fec5dd8fdddecf94fa975b8043}{\index{Gyroscope.\-c@{Gyroscope.\-c}!Gyroscope\-\_\-\-Unregister\-Isr@{Gyroscope\-\_\-\-Unregister\-Isr}}
+\index{Gyroscope\-\_\-\-Unregister\-Isr@{Gyroscope\-\_\-\-Unregister\-Isr}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{Gyroscope\-\_\-\-Unregister\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Gyroscope\-\_\-\-Unregister\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gyroscope_8c_aa75ee4fec5dd8fdddecf94fa975b8043}
+Clears the custom I\-S\-R for the gyroscope. 
+
+Definition at line 567 of file Gyroscope.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_gyroscope_8c_abfc3e4b112787a4d97990393a64626d4}{\index{Gyroscope.\-c@{Gyroscope.\-c}!\-\_\-ctrl\-Reg\-One@{\-\_\-ctrl\-Reg\-One}}
+\index{\-\_\-ctrl\-Reg\-One@{\-\_\-ctrl\-Reg\-One}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{\-\_\-ctrl\-Reg\-One}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t} \-\_\-ctrl\-Reg\-One = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_gyroscope_8c_abfc3e4b112787a4d97990393a64626d4}
+Store the values written to the control registers so they don't have to be read back. 
+
+Definition at line 319 of file Gyroscope.\-c.
+
+
+
+Referenced by Gyroscope\-\_\-\-Config(), Gyroscope\-\_\-\-Start(), and Gyroscope\-\_\-\-Stop().
+
+\hypertarget{_gyroscope_8c_a11dbd8006370044a4d0ddadf9cc3e735}{\index{Gyroscope.\-c@{Gyroscope.\-c}!\-\_\-data\-Ready@{\-\_\-data\-Ready}}
+\index{\-\_\-data\-Ready@{\-\_\-data\-Ready}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{\-\_\-data\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-data\-Ready = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gyroscope_8c_a11dbd8006370044a4d0ddadf9cc3e735}
+Tracks if data is ready to be read from the gyroscope 
+
+Definition at line 326 of file Gyroscope.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Data\-Ready\-Interrupt(), and Gyroscope\-\_\-\-Read\-Sample\-Array().
+
+\hypertarget{_gyroscope_8c_aea30cf0df935343ef5f7171ed0a60e0c}{\index{Gyroscope.\-c@{Gyroscope.\-c}!\-\_\-gyro\-Isr\-Pointer@{\-\_\-gyro\-Isr\-Pointer}}
+\index{\-\_\-gyro\-Isr\-Pointer@{\-\_\-gyro\-Isr\-Pointer}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{\-\_\-gyro\-Isr\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gyro\-Isr\-Pointer\-\_\-t} \-\_\-gyro\-Isr\-Pointer = {\bf N\-U\-L\-L}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gyroscope_8c_aea30cf0df935343ef5f7171ed0a60e0c}
+Stores the I\-S\-R pointer 
+
+Definition at line 314 of file Gyroscope.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Data\-Ready\-Interrupt(), Gyroscope\-\_\-\-Register\-Isr(), and Gyroscope\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_gyroscope_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Gyroscope.\-c@{Gyroscope.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!Gyroscope.c@{Gyroscope.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gyroscope_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the gyroscope has been initialized. 
+
+Definition at line 311 of file Gyroscope.\-c.
+

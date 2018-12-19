@@ -1,0 +1,9 @@
+<map id="BuzzerControl.c" name="BuzzerControl.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_buzzer_control_8h.html" title="Controls the settings of the buzzer. " alt="" coords="139,80,256,107" />
+<area shape="rect" href="$_pwm_8h.html" title="Pulse width modulation module. " alt="" coords="280,80,342,107" />
+<area shape="rect" href="$_key_value_8h.html" title="Contains the definitions of the Key&#45;Value pairs. " alt="" coords="366,80,454,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="478,80,547,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="587,155,654,182" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="622,80,694,107" />
+</map>

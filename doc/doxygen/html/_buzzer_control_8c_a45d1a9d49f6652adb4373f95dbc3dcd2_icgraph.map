@@ -1,0 +1,11 @@
+<map id="_BuzzerControl_SetOutput" name="_BuzzerControl_SetOutput">
+<area shape="rect" href="$_buzzer_control_8h.html#a11222160d9edeed9188bfe2b283a7bab" title="BuzzerControl_SetConfig" alt="" coords="236,56,407,83" />
+<area shape="rect" href="$_configuration_manager_8h.html#adbdfea8b605f6178d2e63cfd0eb3723b" title="ConMan_SetOutputConfig" alt="" coords="457,56,633,83" />
+<area shape="rect" href="$_comm_protocol_8c.html#ad5fef6fd66017234708bd9c6b471679f" title="_HandleSetOutputConfigPacket" alt="" coords="683,56,893,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="943,56,1121,83" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1172,56,1356,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1655,56,1852,83" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1429,56,1581,83" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1405,107,1605,134" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1901,56,1952,83" />
+</map>

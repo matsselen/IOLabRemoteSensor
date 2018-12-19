@@ -1,0 +1,35 @@
+var _sensor_id_8h =
+[
+    [ "SensorId_t", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449d", [
+      [ "SensorId_INVALID", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da659a25e9da8cf74c69bb3a442ce6b9ff", null ],
+      [ "SensorId_FIRST", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dafe859d3e81fe53ba8da1bb145a99d363", null ],
+      [ "SensorId_ACCELEROMETER", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da82be07d884d244c581cfe9211698dd97", null ],
+      [ "SensorId_MAGNETOMETER", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da3aea95b25faf586532e093f26a34893d", null ],
+      [ "SensorId_GYROSCOPE", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dac58efe50ff0d865d43f135b14c3b0213", null ],
+      [ "SensorId_BAROMETER", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dad515b90928572a3a857a1514e730decb", null ],
+      [ "SensorId_ULTRASONIC", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dae09aca6c74d358d2278502f434980041", null ],
+      [ "SensorId_MICROPHONE", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dad3afab919b4ca21bca2ca8f92d5ff9ba", null ],
+      [ "SensorId_AMBIENT_LIGHT", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da1ab02cb37bc3e0dbcd4eafc8fcf5afc0", null ],
+      [ "SensorId_FORCE_GAUGE", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dafd3d467f8f209e9f95100ffa4e5b5b26", null ],
+      [ "SensorId_ENCODER", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dabd965f8119d3510d25e533c6593d0ec6", null ],
+      [ "SensorId_ECG", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da66300cd3ba74198ce75a6635984b6d67", null ],
+      [ "SensorId_BATTERY", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da8d1e29956d4803b314a83789a8fd56fa", null ],
+      [ "SensorId_HIGH_GAIN_IN", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dae64399dd31430cfaee87c24f4314e19a", null ],
+      [ "SensorId_DIGITALINPUTS", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dab11217cc8b03ddbaec0eff6dcf9ef999", null ],
+      [ "SensorId_HEADER_0", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449daf766095c2de891e3a29da1314c97131c", null ],
+      [ "SensorId_HEADER_1", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da3b220e82635b277e7d1277c9aa10c638", null ],
+      [ "SensorId_HEADER_2", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da326e31934e9006092fa9d7d9a2b625f2", null ],
+      [ "SensorId_HEADER_3", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dabce24c84dc4d7b816f19e0e83f831539", null ],
+      [ "SensorId_HEADER_4", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449daf7cadb6e81efddd188e747639abcf7fc", null ],
+      [ "SensorId_HEADER_5", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da1a4eb858a949167e54faa98e151de61c", null ],
+      [ "SensorId_HEADER_6", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dab2b814b1f3da57ad16a4318a6aa81b10", null ],
+      [ "SensorId_HEADER_7", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449daf801529bc130995262c11634c261d186", null ],
+      [ "SensorId_HEADER_8", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449daec102eaea3c025ec2e639bc0fc24c7cd", null ],
+      [ "SensorId_HEADER_9", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da298f69f1a043dc9ef58e4562f41d8b7a", null ],
+      [ "SensorId_BUZZER", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dacdf418d74b915f852b3e084554d50093", null ],
+      [ "SensorId_DAC", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da7081c90fb6ab506cde9708c5e8db30c3", null ],
+      [ "SensorId_THERMOMETER", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da67bb809032bb57921662595307dc2215", null ],
+      [ "SensorId_ECG6CHAN", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449da2013f8475fcb4e5adb29910db2a70cd3", null ],
+      [ "SensorId_LAST", "_sensor_id_8h.html#a73a04d6e3fab1e29f7a2933626f2449dafbdda2951766d9e2bf0e8d849207868a", null ]
+    ] ]
+];

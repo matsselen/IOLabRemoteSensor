@@ -1,0 +1,16 @@
+<map id="MagControl_ReadMag" name="MagControl_ReadMag">
+<area shape="rect" href="$_magnetometer_8c.html#a20958a3807b25a8b07da31a385af787a" title="Magnetometer_ReadSampleArray" alt="" coords="211,88,435,115" />
+<area shape="rect" href="$_data_buffer_8c.html#aa05e29733eb661098d83ecf808fb1c40" title="DataBuffer_AddToSubarray8Bit" alt="" coords="219,189,427,216" />
+<area shape="rect" href="$_magnetometer_8c.html#aaddbb66c4df1f1e47afc3cdbe4c1122a" title="Magnetometer_ReadSample" alt="" coords="227,139,419,165" />
+<area shape="rect" href="$_serial_8c.html#aaca97bf3f80cf18c351ef116009e9467" title="Serial_SendString3Numbers" alt="" coords="228,265,417,292" />
+<area shape="rect" href="$_magnetometer_8c.html#a2d8c5304acdfccd9f4cbbd54ff8b493c" title="_ReadMultipleRegisters" alt="" coords="483,107,645,133" />
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="695,5,839,32" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="704,56,829,83" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="704,107,829,133" />
+<area shape="rect" href="$_i2c_8c.html#a6f3a9e8f5dd4856ddf5a891e84ea82ea" title="I2c_ReceiveByte" alt="" coords="707,157,827,184" />
+<area shape="rect" href="$_i2c_8c.html#a0df5e64148fcf1e7c7c1cc90e107db49" title="I2c_ReceiveByteEnd" alt="" coords="695,208,839,235" />
+<area shape="rect" href="$_data_buffer_8c.html#ad726ed4ec48df844bfd5225ccca52117" title="_IndexOfSubarrayId" alt="" coords="495,176,633,203" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="508,227,620,253" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="492,277,636,304" />
+<area shape="rect" href="$_uart_8c.html#aba2063d7e89a1358197b4643996daaed" title="Uart_WriteByteHex" alt="" coords="496,328,632,355" />
+</map>

@@ -1,0 +1,5 @@
+<map id="_MoveSamplesToUserLocation" name="_MoveSamplesToUserLocation">
+<area shape="rect" href="$_adc_8h.html#afe5cd10dd67ef2ad4ade4f71a6ada010" title="Adc_SingleConversionSequence\lBlocking" alt="" coords="261,5,477,48" />
+<area shape="rect" href="$_adc_manager_8h.html#a88658cb06de5461355af4c5dfff1b3ec" title="AdcManager_SingleSampleBlocking" alt="" coords="525,13,763,40" />
+<area shape="rect" href="$_test_protocol_8c.html#a4b5deac7c3ac5591099f8f6aad558cc0" title="_HandleHumanAdc1Command" alt="" coords="811,13,1016,40" />
+</map>

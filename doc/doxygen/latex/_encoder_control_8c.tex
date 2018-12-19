@@ -1,0 +1,220 @@
+\hypertarget{_encoder_control_8c}{\section{Encoder\-Control.\-c File Reference}
+\label{_encoder_control_8c}\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}}
+}
+
+
+Controls the Quadrature Encoder driver.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Encoder\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Encoder.\-h$>$}\\*
+{\ttfamily \#include $<$Timer\-Tick.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for Encoder\-Control.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_encoder_control_8c_ae156f69f4b3b245482342d1a49675706}{N\-U\-M\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-I\-T\-E\-M\-S}~( 2u )
+\item 
+\#define \hyperlink{_encoder_control_8c_a493ae5a7c8d33361064abf8e25b79a58}{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}~( 10u )
+\item 
+\#define \hyperlink{_encoder_control_8c_a3c83bbf741854c4089c289ecef0d65ae}{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}~( 20u )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_encoder_control_8c_a4b6aa9ee6c3a3a93df84184577e4a4f8}{Enc\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_encoder_control_8c_adb39c8747a1af85b65dc901e8f7e667d}{Enc\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} control)
+\item 
+void \hyperlink{_encoder_control_8c_a9506706fabcec54f209a422e9485c49f}{Enc\-Control\-\_\-\-Read\-Enc} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_encoder_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}{Tick\-Timeout\-Handle\-\_\-t} \hyperlink{_encoder_control_8c_a0773a851a16e38753ef7771c2df7676a}{\-\_\-tick\-Handle}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_encoder_control_8c_acbb6232870f7ea042e81804a08d54236}{\-\_\-tick\-In\-Use} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_key_value_8h_aa6b30dc7b70a7006ccdfac237e0923a3}{Encoder\-Sample\-Rate\-\_\-t} \hyperlink{_encoder_control_8c_a0085ec36251f9d3c94702928269dac3e}{\-\_\-sample\-Rate} = \hyperlink{_key_value_8h_a728b65845b6e9b01ed997c3a3301d3a1}{D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the Quadrature Encoder driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the quadrature encoder driver and manages the configuration settings, and timing of the encoder. 
+
+Definition in file \hyperlink{_encoder_control_8c_source}{Encoder\-Control.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_encoder_control_8c_ae156f69f4b3b245482342d1a49675706}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!N\-U\-M\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-I\-T\-E\-M\-S@{N\-U\-M\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-I\-T\-E\-M\-S}}
+\index{N\-U\-M\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-I\-T\-E\-M\-S@{N\-U\-M\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-I\-T\-E\-M\-S}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-I\-T\-E\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-I\-T\-E\-M\-S~( 2u )}}\label{_encoder_control_8c_ae156f69f4b3b245482342d1a49675706}
+Defines how many items are in an encoder sample 
+
+Definition at line 37 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Read\-Enc().
+
+\hypertarget{_encoder_control_8c_a493ae5a7c8d33361064abf8e25b79a58}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z~( 10u )}}\label{_encoder_control_8c_a493ae5a7c8d33361064abf8e25b79a58}
+defines how many milliseconds to wait between samples for a 100 Hz rate 
+
+Definition at line 40 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_encoder_control_8c_a3c83bbf741854c4089c289ecef0d65ae}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z~( 20u )}}\label{_encoder_control_8c_a3c83bbf741854c4089c289ecef0d65ae}
+defines how many milliseconds to wait between samples for a 50 Hz rate 
+
+Definition at line 43 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Set\-Config().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_encoder_control_8c_a4b6aa9ee6c3a3a93df84184577e4a4f8}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!Enc\-Control\-\_\-\-Init@{Enc\-Control\-\_\-\-Init}}
+\index{Enc\-Control\-\_\-\-Init@{Enc\-Control\-\_\-\-Init}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{Enc\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Enc\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_control_8c_a4b6aa9ee6c3a3a93df84184577e4a4f8}
+Initializes the encoder controller. 
+
+Definition at line 62 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_control_8c_a9506706fabcec54f209a422e9485c49f}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!Enc\-Control\-\_\-\-Read\-Enc@{Enc\-Control\-\_\-\-Read\-Enc}}
+\index{Enc\-Control\-\_\-\-Read\-Enc@{Enc\-Control\-\_\-\-Read\-Enc}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{Enc\-Control\-\_\-\-Read\-Enc}]{\setlength{\rightskip}{0pt plus 5cm}void Enc\-Control\-\_\-\-Read\-Enc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_control_8c_a9506706fabcec54f209a422e9485c49f}
+Gets a reading from the accelerometer. 
+
+Definition at line 151 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_control_8c_adb39c8747a1af85b65dc901e8f7e667d}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!Enc\-Control\-\_\-\-Set\-Config@{Enc\-Control\-\_\-\-Set\-Config}}
+\index{Enc\-Control\-\_\-\-Set\-Config@{Enc\-Control\-\_\-\-Set\-Config}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{Enc\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Enc\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{control}
+\end{DoxyParamCaption}
+)}}\label{_encoder_control_8c_adb39c8747a1af85b65dc901e8f7e667d}
+Sets a configuration value to the encoder
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_encoder_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_control_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the module is initialized or not 
+
+Definition at line 47 of file Encoder\-Control.\-c.
+
+\hypertarget{_encoder_control_8c_a0085ec36251f9d3c94702928269dac3e}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!\-\_\-sample\-Rate@{\-\_\-sample\-Rate}}
+\index{\-\_\-sample\-Rate@{\-\_\-sample\-Rate}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{\-\_\-sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoder\-Sample\-Rate\-\_\-t} \-\_\-sample\-Rate = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-N\-C\-O\-D\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_control_8c_a0085ec36251f9d3c94702928269dac3e}
+Stores the encoder sample rate setting 
+
+Definition at line 55 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_encoder_control_8c_a0773a851a16e38753ef7771c2df7676a}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!\-\_\-tick\-Handle@{\-\_\-tick\-Handle}}
+\index{\-\_\-tick\-Handle@{\-\_\-tick\-Handle}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{\-\_\-tick\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tick\-Timeout\-Handle\-\_\-t} \-\_\-tick\-Handle\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_control_8c_a0773a851a16e38753ef7771c2df7676a}
+Handle to the timer tick timeout for the encoder 
+
+Definition at line 50 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_encoder_control_8c_acbb6232870f7ea042e81804a08d54236}{\index{Encoder\-Control.\-c@{Encoder\-Control.\-c}!\-\_\-tick\-In\-Use@{\-\_\-tick\-In\-Use}}
+\index{\-\_\-tick\-In\-Use@{\-\_\-tick\-In\-Use}!EncoderControl.c@{Encoder\-Control.\-c}}
+\subsubsection[{\-\_\-tick\-In\-Use}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-tick\-In\-Use = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_encoder_control_8c_acbb6232870f7ea042e81804a08d54236}
+tracks if the tick handle is in use to make sure not to use an invalid tick handle 
+
+Definition at line 52 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Set\-Config().
+

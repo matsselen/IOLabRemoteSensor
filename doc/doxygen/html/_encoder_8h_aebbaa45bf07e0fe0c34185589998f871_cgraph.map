@@ -1,0 +1,6 @@
+<map id="Encoder_Start" name="Encoder_Start">
+<area shape="rect" href="$_gpio_8c.html#ad54d30c1b01480f97a4d24fd7ef625f9" title="Gpio_SetPortU" alt="" coords="183,31,292,57" />
+<area shape="rect" href="$_encoder_8c.html#ac60cabf6f4e0f21139a909d5d168c578" title="_Encoder_ClearBuffer" alt="" coords="161,81,313,108" />
+<area shape="rect" href="$_gpio_8c.html#afcb987f4ad78e26f735ec3bfcfec083e" title="_UnlockPortU" alt="" coords="363,5,467,32" />
+<area shape="rect" href="$_gpio_8c.html#aa751eb0ce20ef9c79739ced94de232c8" title="_LockPortU" alt="" coords="369,56,460,83" />
+</map>

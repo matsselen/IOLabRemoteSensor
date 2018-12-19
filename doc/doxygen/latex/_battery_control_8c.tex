@@ -1,0 +1,202 @@
+\hypertarget{_battery_control_8c}{\section{Battery\-Control.\-c File Reference}
+\label{_battery_control_8c}\index{Battery\-Control.\-c@{Battery\-Control.\-c}}
+}
+
+
+Controls reading the battery voltage.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Battery\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Adc\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for Battery\-Control.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_battery_control_8c_abc1b132dae13f28ba5e4cc74371a446e}{\#define {\bfseries N\-U\-M\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-B\-Y\-T\-E\-S}~( 4u )}\label{_battery_control_8c_abc1b132dae13f28ba5e4cc74371a446e}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_battery_control_8c_a2c377ab297873c238a794b687541b0fc}{\-\_\-\-Battery\-Voltage\-Data\-Callback} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data)
+\item 
+void \hyperlink{_battery_control_8c_a92466d5030f43b679cb926e5b65e3d2d}{Battery\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_battery_control_8c_a28abd70494fdf139972215bd60606698}{Battery\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\item 
+\hypertarget{_battery_control_8c_aaf04e059244e4ca15babc5f72bc42221}{Battery\-Counts\-\_\-t {\bfseries Battery\-Control\-\_\-\-Get\-Counts} (void)}\label{_battery_control_8c_aaf04e059244e4ca15babc5f72bc42221}
+
+\item 
+void \hyperlink{_battery_control_8c_aa73f0d4496f54547367c417814d67358}{Battery\-Control\-\_\-\-Read\-Calibration} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Calibration\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Calibration\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} calibration\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_battery_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_key_value_8h_acb9bcebe4ced2c26b6aef57babf56dd7}{Battery\-Sample\-Rate\-\_\-t} \hyperlink{_battery_control_8c_a119b09d0f1b46b946d063ec0f00322ec}{\-\_\-sample\-Rate} = \hyperlink{_key_value_8h_a3ef1386b975314f343fe03fd6639fd28}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls reading the battery voltage. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the force gauge and manages the configurations and settings associated with the force gauge. 
+
+Definition in file \hyperlink{_battery_control_8c_source}{Battery\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_battery_control_8c_a2c377ab297873c238a794b687541b0fc}{\index{Battery\-Control.\-c@{Battery\-Control.\-c}!\-\_\-\-Battery\-Voltage\-Data\-Callback@{\-\_\-\-Battery\-Voltage\-Data\-Callback}}
+\index{\-\_\-\-Battery\-Voltage\-Data\-Callback@{\-\_\-\-Battery\-Voltage\-Data\-Callback}!BatteryControl.c@{Battery\-Control.\-c}}
+\subsubsection[{\-\_\-\-Battery\-Voltage\-Data\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Battery\-Voltage\-Data\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_battery_control_8c_a2c377ab297873c238a794b687541b0fc}
+Takes the battery voltage data and stores it in the proper location. This function is designed to be called every time there is data for the battery voltage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & -\/ The sample from the battery that should be stored in the proper location. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 214 of file Battery\-Control.\-c.
+
+
+
+Referenced by Battery\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_battery_control_8c_a92466d5030f43b679cb926e5b65e3d2d}{\index{Battery\-Control.\-c@{Battery\-Control.\-c}!Battery\-Control\-\_\-\-Init@{Battery\-Control\-\_\-\-Init}}
+\index{Battery\-Control\-\_\-\-Init@{Battery\-Control\-\_\-\-Init}!BatteryControl.c@{Battery\-Control.\-c}}
+\subsubsection[{Battery\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Battery\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_battery_control_8c_a92466d5030f43b679cb926e5b65e3d2d}
+Initializes the battery voltage reading control. 
+
+Definition at line 53 of file Battery\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_battery_control_8c_aa73f0d4496f54547367c417814d67358}{\index{Battery\-Control.\-c@{Battery\-Control.\-c}!Battery\-Control\-\_\-\-Read\-Calibration@{Battery\-Control\-\_\-\-Read\-Calibration}}
+\index{Battery\-Control\-\_\-\-Read\-Calibration@{Battery\-Control\-\_\-\-Read\-Calibration}!BatteryControl.c@{Battery\-Control.\-c}}
+\subsubsection[{Battery\-Control\-\_\-\-Read\-Calibration}]{\setlength{\rightskip}{0pt plus 5cm}void Battery\-Control\-\_\-\-Read\-Calibration (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Calibration\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Calibration\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{calibration\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_battery_control_8c_aa73f0d4496f54547367c417814d67358}
+Reads the calibration values from the battery.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Calibration\-Length} & -\/ the maximum number of bytes allocated for calibration\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em actual\-Calibration\-Length} & -\/ the number of bytes of calibration data placed in calibration\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em calibration\mbox{[}$\,$\mbox{]}} & -\/ the calibration data from the battery. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file Battery\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Get\-Calibration().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_battery_control_8c_a28abd70494fdf139972215bd60606698}{\index{Battery\-Control.\-c@{Battery\-Control.\-c}!Battery\-Control\-\_\-\-Set\-Config@{Battery\-Control\-\_\-\-Set\-Config}}
+\index{Battery\-Control\-\_\-\-Set\-Config@{Battery\-Control\-\_\-\-Set\-Config}!BatteryControl.c@{Battery\-Control.\-c}}
+\subsubsection[{Battery\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Battery\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_battery_control_8c_a28abd70494fdf139972215bd60606698}
+Takes a configuration and sets it for the battery voltage reading.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the Key\-Value configuration setting for the battery reading. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Battery\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_battery_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Battery\-Control.\-c@{Battery\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!BatteryControl.c@{Battery\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_battery_control_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the module has been initialized 
+
+Definition at line 41 of file Battery\-Control.\-c.
+
+\hypertarget{_battery_control_8c_a119b09d0f1b46b946d063ec0f00322ec}{\index{Battery\-Control.\-c@{Battery\-Control.\-c}!\-\_\-sample\-Rate@{\-\_\-sample\-Rate}}
+\index{\-\_\-sample\-Rate@{\-\_\-sample\-Rate}!BatteryControl.c@{Battery\-Control.\-c}}
+\subsubsection[{\-\_\-sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Battery\-Sample\-Rate\-\_\-t} \-\_\-sample\-Rate = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-T\-T\-E\-R\-Y\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_battery_control_8c_a119b09d0f1b46b946d063ec0f00322ec}
+Stores the desired sample rate of the battery voltage reading 
+
+Definition at line 44 of file Battery\-Control.\-c.
+
+
+
+Referenced by Battery\-Control\-\_\-\-Set\-Config().
+

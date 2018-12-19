@@ -1,0 +1,13 @@
+<map id="AdcManager_Init" name="AdcManager_Init">
+<area shape="rect" href="$_adc_8c.html#ad5f7fb41187df370fba496edbf10778d" title="Adc_Init" alt="" coords="234,70,303,96" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaa24713515810380e7943554d22b137" title="_SetupAdcForNormalMode" alt="" coords="178,146,359,172" />
+<area shape="rect" href="$_adc_8c.html#aeb038bcf326000ca3a320d29351100a3" title="Adc_Config" alt="" coords="480,107,571,134" />
+<area shape="rect" href="$_adc_8c.html#a5501d5342b5fe5f3e9742e7340cf2b1a" title="_GetAdcCalibrationInfo" alt="" coords="447,6,604,32" />
+<area shape="rect" href="$_adc_8c.html#a85bdfc5285f049b4d00c840fef33af58" title="_GetReferenceCalibrationInfo" alt="" coords="427,56,624,83" />
+<area shape="rect" href="$_adc_manager_8c.html#a52cb89e87f72c24ad896dfc4151724e3" title="AdcManager_AdcManRefToAdcRef" alt="" coords="410,158,642,184" />
+<area shape="rect" href="$_adc_manager_8c.html#a5e91c4affb5c1439c47170585670a2bf" title="_SetupTimerConfig" alt="" coords="458,208,594,235" />
+<area shape="rect" href="$_timer_8c.html#a02f931c9a4a5037b499d531f49ebc3b9" title="Timer_A0_Configure" alt="" coords="706,158,850,184" />
+<area shape="rect" href="$_timer_8c.html#a3b787ac79e251ea6217447ed05be53bb" title="Timer_A0CCX_Configure" alt="" coords="692,208,863,235" />
+<area shape="rect" href="$_adc_manager_8c.html#a9d5382aa474494126282fe96a47dbea1" title="_InitialzeXAdcChannels" alt="" coords="696,259,859,286" />
+<area shape="rect" href="$_adc_8c.html#a8201a8154546752a07f766fa604c77d1" title="Adc_SetChannelSequence" alt="" coords="912,259,1094,286" />
+</map>

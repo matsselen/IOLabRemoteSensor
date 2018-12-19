@@ -1,0 +1,4 @@
+<map id="Gyroscope_ReadTemperature" name="Gyroscope_ReadTemperature">
+<area shape="rect" href="$_gyroscope_8c.html#a20178cbb7a8152e834a86b64273db9be" title="_GyroReadSingleRegister" alt="" coords="256,5,432,32" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="481,5,609,32" />
+</map>

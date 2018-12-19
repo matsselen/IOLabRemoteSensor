@@ -1,0 +1,12 @@
+<map id="Pwm.c" name="Pwm.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_pwm_8h.html" title="Pulse width modulation module. " alt="" coords="139,80,200,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="224,80,293,107" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="317,80,389,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="335,155,401,182" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="565,155,637,182" />
+<area shape="rect" href="$_timer_8h.html" title="Timer module driver. " alt="" coords="515,80,581,107" />
+<area shape="rect" href="$_board_8h.html" title="Board initialization module header file. " alt="" coords="605,80,672,107" />
+<area shape="rect" href="$_gpio_8h.html" title="GPIO configuration and control macros and functions. " alt="" coords="696,80,755,107" />
+<area shape="rect" href="$_clock_8h.html" title="Clock configuration module header file. " alt="" coords="779,80,843,107" />
+</map>

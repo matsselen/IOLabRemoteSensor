@@ -1,0 +1,85 @@
+\hypertarget{_clock_8h}{\section{Clock.\-h File Reference}
+\label{_clock_8h}\index{Clock.\-h@{Clock.\-h}}
+}
+
+
+Clock configuration module header file.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_clock_8h_a3632d97198a1319201115ac135b764d5}{C\-L\-O\-C\-K\-\_\-\-C\-Y\-C\-L\-E\-S\-\_\-\-P\-E\-R\-\_\-\-M\-I\-C\-R\-O\-S\-E\-C\-O\-N\-D}~(24ul)
+\item 
+\#define \hyperlink{_clock_8h_a6d6a49054f6a94918d3cade30def720f}{C\-L\-O\-C\-K\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}(x)~\-\_\-\-\_\-delay\-\_\-cycles(((\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t}) (x)) $\ast$ \hyperlink{_clock_8h_a3632d97198a1319201115ac135b764d5}{C\-L\-O\-C\-K\-\_\-\-C\-Y\-C\-L\-E\-S\-\_\-\-P\-E\-R\-\_\-\-M\-I\-C\-R\-O\-S\-E\-C\-O\-N\-D})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_clock_8h_a4ee5840233644c3821175ec1ea6c265e}{Clock\-\_\-\-Init} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clock configuration module header file. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Header file for the clock configuration module. 
+
+Definition in file \hyperlink{_clock_8h_source}{Clock.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_clock_8h_a3632d97198a1319201115ac135b764d5}{\index{Clock.\-h@{Clock.\-h}!C\-L\-O\-C\-K\-\_\-\-C\-Y\-C\-L\-E\-S\-\_\-\-P\-E\-R\-\_\-\-M\-I\-C\-R\-O\-S\-E\-C\-O\-N\-D@{C\-L\-O\-C\-K\-\_\-\-C\-Y\-C\-L\-E\-S\-\_\-\-P\-E\-R\-\_\-\-M\-I\-C\-R\-O\-S\-E\-C\-O\-N\-D}}
+\index{C\-L\-O\-C\-K\-\_\-\-C\-Y\-C\-L\-E\-S\-\_\-\-P\-E\-R\-\_\-\-M\-I\-C\-R\-O\-S\-E\-C\-O\-N\-D@{C\-L\-O\-C\-K\-\_\-\-C\-Y\-C\-L\-E\-S\-\_\-\-P\-E\-R\-\_\-\-M\-I\-C\-R\-O\-S\-E\-C\-O\-N\-D}!Clock.h@{Clock.\-h}}
+\subsubsection[{C\-L\-O\-C\-K\-\_\-\-C\-Y\-C\-L\-E\-S\-\_\-\-P\-E\-R\-\_\-\-M\-I\-C\-R\-O\-S\-E\-C\-O\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-L\-O\-C\-K\-\_\-\-C\-Y\-C\-L\-E\-S\-\_\-\-P\-E\-R\-\_\-\-M\-I\-C\-R\-O\-S\-E\-C\-O\-N\-D~(24ul)}}\label{_clock_8h_a3632d97198a1319201115ac135b764d5}
+Approx number of clock cycles per microsecond. 
+
+Definition at line 27 of file Clock.\-h.
+
+\hypertarget{_clock_8h_a6d6a49054f6a94918d3cade30def720f}{\index{Clock.\-h@{Clock.\-h}!C\-L\-O\-C\-K\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S@{C\-L\-O\-C\-K\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}}
+\index{C\-L\-O\-C\-K\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S@{C\-L\-O\-C\-K\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}!Clock.h@{Clock.\-h}}
+\subsubsection[{C\-L\-O\-C\-K\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-L\-O\-C\-K\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\-\_\-\-\_\-delay\-\_\-cycles((({\bf uint32\-\_\-t}) (x)) $\ast$ {\bf C\-L\-O\-C\-K\-\_\-\-C\-Y\-C\-L\-E\-S\-\_\-\-P\-E\-R\-\_\-\-M\-I\-C\-R\-O\-S\-E\-C\-O\-N\-D})}}\label{_clock_8h_a6d6a49054f6a94918d3cade30def720f}
+Software delay of x microseconds. 
+
+Definition at line 33 of file Clock.\-h.
+
+
+
+Referenced by \-\_\-\-Bar\-Read\-Multiple\-Registers(), \-\_\-\-Bar\-Read\-Register(), \-\_\-\-Bar\-Write\-Register(), \-\_\-\-Gyro\-Read\-Multiple\-Registers(), \-\_\-\-Gyro\-Read\-Single\-Register(), \-\_\-\-Gyro\-Write\-Register(), Assert(), Barometer\-\_\-\-Trigger\-Sample\-Blocking(), Dac\-Set\-Voltage(), and Ultrasound\-Start\-Transmit().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_clock_8h_a4ee5840233644c3821175ec1ea6c265e}{\index{Clock.\-h@{Clock.\-h}!Clock\-\_\-\-Init@{Clock\-\_\-\-Init}}
+\index{Clock\-\_\-\-Init@{Clock\-\_\-\-Init}!Clock.h@{Clock.\-h}}
+\subsubsection[{Clock\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_clock_8h_a4ee5840233644c3821175ec1ea6c265e}
+Setup the system clocks. An external 24 M\-Hz oscillator is used to source A\-C\-L\-K and S\-M\-C\-L\-K as the reference clock source.
+
+A\-C\-L\-K is sourced by X\-T2 divided by 32 at 750 K\-Hz. S\-M\-C\-L\-K is sourced by X\-T2 divided by 1 at 24 M\-Hz. M\-C\-L\-K is sourced by the X\-T2 divided by 1 at 24 M\-Hz. 
+
+Definition at line 60 of file Clock.\-c.
+
+
+
+Referenced by Board\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

@@ -1,0 +1,198 @@
+\hypertarget{_analog8_control_8c}{\section{Analog8\-Control.\-c File Reference}
+\label{_analog8_control_8c}\index{Analog8\-Control.\-c@{Analog8\-Control.\-c}}
+}
+
+
+Controls reading analog input in header pin 8.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Analog8\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Adc\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for Analog8\-Control.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_adc_manager_8h_af206deec0c553ff1354dab154a2f976e}{Adc\-Man\-Ref\-\_\-t} \hyperlink{_analog8_control_8c_a04c704e90081d0740454d3441265bcf8}{\-\_\-\-Analog8\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref} (\hyperlink{_key_value_8h_afac3e2281ac65637051eb57b6e41e0fe}{Analog8\-Ref\-Volt\-\_\-t} ref\-Volt)
+\item 
+static void \hyperlink{_analog8_control_8c_adc07c645a505b5b1f76a417237e3bb5b}{\-\_\-\-Analog8\-Data\-Callback} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data)
+\item 
+void \hyperlink{_analog8_control_8c_aca07b44b0a811b09888bc81b191548ae}{Analog8\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_analog8_control_8c_adbff1fc45d17c98f6c5235e023114e4b}{Analog8\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_analog8_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_key_value_8h_a5d2e9e1e6a04f0c158d3c023e8e8bb9a}{Analog8\-Sample\-Rate\-\_\-t} \hyperlink{_analog8_control_8c_ae15eeb9644b4e5c7be4c99cc7c713826}{\-\_\-sample\-Rate} = \hyperlink{_key_value_8h_a33003a98eb787307ceac28155c39856e}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}
+\item 
+static \hyperlink{_key_value_8h_afac3e2281ac65637051eb57b6e41e0fe}{Analog8\-Ref\-Volt\-\_\-t} \hyperlink{_analog8_control_8c_a20e1248076251f3c7c6708e92573a8f4}{\-\_\-ref\-Volt} = \hyperlink{_key_value_8h_ada9ee989b6942bd177108bf6a9c2069b}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls reading analog input in header pin 8. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the analog input on header pin 8 and manages the configurations and settings associated with it. 
+
+Definition in file \hyperlink{_analog8_control_8c_source}{Analog8\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_analog8_control_8c_a04c704e90081d0740454d3441265bcf8}{\index{Analog8\-Control.\-c@{Analog8\-Control.\-c}!\-\_\-\-Analog8\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref@{\-\_\-\-Analog8\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref}}
+\index{\-\_\-\-Analog8\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref@{\-\_\-\-Analog8\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref}!Analog8Control.c@{Analog8\-Control.\-c}}
+\subsubsection[{\-\_\-\-Analog8\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Adc\-Man\-Ref\-\_\-t} \-\_\-\-Analog8\-\_\-\-Ref\-Volt\-To\-Adc\-Man\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf Analog8\-Ref\-Volt\-\_\-t}}]{ref\-Volt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_analog8_control_8c_a04c704e90081d0740454d3441265bcf8}
+Converts from an Analog8\-Ref\-Volt\-\_\-t to an Adc\-Man\-Ref\-\_\-t.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref\-Volt} & -\/ the voltage reference selection to match \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Adc\-Man\-Ref\-\_\-t value corresponding to the ref\-Volt value 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file Analog8\-Control.\-c.
+
+
+
+Referenced by Analog8\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_analog8_control_8c_adc07c645a505b5b1f76a417237e3bb5b}{\index{Analog8\-Control.\-c@{Analog8\-Control.\-c}!\-\_\-\-Analog8\-Data\-Callback@{\-\_\-\-Analog8\-Data\-Callback}}
+\index{\-\_\-\-Analog8\-Data\-Callback@{\-\_\-\-Analog8\-Data\-Callback}!Analog8Control.c@{Analog8\-Control.\-c}}
+\subsubsection[{\-\_\-\-Analog8\-Data\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Analog8\-Data\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_analog8_control_8c_adc07c645a505b5b1f76a417237e3bb5b}
+Takes the analog input data from header pin 8 and stores it in the proper location. This function is designed to be called every time there is data for the analog header pin 8.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & -\/ The sample from header pin 8 that should be stored in the proper location. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 208 of file Analog8\-Control.\-c.
+
+
+
+Referenced by Analog8\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_analog8_control_8c_aca07b44b0a811b09888bc81b191548ae}{\index{Analog8\-Control.\-c@{Analog8\-Control.\-c}!Analog8\-Control\-\_\-\-Init@{Analog8\-Control\-\_\-\-Init}}
+\index{Analog8\-Control\-\_\-\-Init@{Analog8\-Control\-\_\-\-Init}!Analog8Control.c@{Analog8\-Control.\-c}}
+\subsubsection[{Analog8\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Analog8\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_analog8_control_8c_aca07b44b0a811b09888bc81b191548ae}
+Initializes the header pin 8 reading control. 
+
+Definition at line 57 of file Analog8\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_analog8_control_8c_adbff1fc45d17c98f6c5235e023114e4b}{\index{Analog8\-Control.\-c@{Analog8\-Control.\-c}!Analog8\-Control\-\_\-\-Set\-Config@{Analog8\-Control\-\_\-\-Set\-Config}}
+\index{Analog8\-Control\-\_\-\-Set\-Config@{Analog8\-Control\-\_\-\-Set\-Config}!Analog8Control.c@{Analog8\-Control.\-c}}
+\subsubsection[{Analog8\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Analog8\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_analog8_control_8c_adbff1fc45d17c98f6c5235e023114e4b}
+Takes a configuration and sets it for the header pin.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the Key\-Value configuration setting for the header pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Analog8\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_analog8_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Analog8\-Control.\-c@{Analog8\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!Analog8Control.c@{Analog8\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_analog8_control_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the module has been initialized 
+
+Definition at line 41 of file Analog8\-Control.\-c.
+
+\hypertarget{_analog8_control_8c_a20e1248076251f3c7c6708e92573a8f4}{\index{Analog8\-Control.\-c@{Analog8\-Control.\-c}!\-\_\-ref\-Volt@{\-\_\-ref\-Volt}}
+\index{\-\_\-ref\-Volt@{\-\_\-ref\-Volt}!Analog8Control.c@{Analog8\-Control.\-c}}
+\subsubsection[{\-\_\-ref\-Volt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Analog8\-Ref\-Volt\-\_\-t} \-\_\-ref\-Volt = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T}\hspace{0.3cm}{\ttfamily [static]}}}\label{_analog8_control_8c_a20e1248076251f3c7c6708e92573a8f4}
+Stores the desired analog reference voltage of the header pin 
+
+Definition at line 47 of file Analog8\-Control.\-c.
+
+
+
+Referenced by Analog8\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_analog8_control_8c_ae15eeb9644b4e5c7be4c99cc7c713826}{\index{Analog8\-Control.\-c@{Analog8\-Control.\-c}!\-\_\-sample\-Rate@{\-\_\-sample\-Rate}}
+\index{\-\_\-sample\-Rate@{\-\_\-sample\-Rate}!Analog8Control.c@{Analog8\-Control.\-c}}
+\subsubsection[{\-\_\-sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Analog8\-Sample\-Rate\-\_\-t} \-\_\-sample\-Rate = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-N\-A\-L\-O\-G8\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_analog8_control_8c_ae15eeb9644b4e5c7be4c99cc7c713826}
+Stores the desired sample rate of the header pin 
+
+Definition at line 44 of file Analog8\-Control.\-c.
+
+
+
+Referenced by Analog8\-Control\-\_\-\-Set\-Config().
+

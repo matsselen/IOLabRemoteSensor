@@ -1,0 +1,172 @@
+\hypertarget{_system_8c}{\section{System.\-c File Reference}
+\label{_system_8c}\index{System.\-c@{System.\-c}}
+}
+
+
+System module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}System.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for System.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_system_8c_a2be9a6cf60f428620b803262f74c7aa0}{D\-I\-S\-A\-B\-L\-E\-\_\-\-B\-S\-L}
+\item 
+\hypertarget{_system_8c_adebfaa83249e67e4e4ec7a8106ae706f}{\#define {\bfseries N\-U\-M\-\_\-\-R\-E\-S\-E\-T\-\_\-\-R\-E\-A\-S\-O\-N\-\_\-\-S\-T\-R\-I\-N\-G\-S}~( 17u )}\label{_system_8c_adebfaa83249e67e4e4ec7a8106ae706f}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_system_8c_a2d83fc2a9b232bc80dde93d2f128d99a}{System\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_system_8c_a1cd0b404698a7a276160bb57f3c1fb96}{System\-\_\-\-Power\-On} (void)
+\item 
+void \hyperlink{_system_8c_ac364386c3e285233c42eb2bdefd2b1de}{System\-\_\-\-Power\-Off} (void)
+\item 
+\hyperlink{_system_8h_ad3db0297e321095f6efefab4d3b6eeed}{System\-Reset\-Reason\-\_\-t} \hyperlink{_system_8c_acfef8fcc542ae576538bc2eda03bee8d}{System\-\_\-\-Get\-Reset\-Reason} (void)
+\item 
+const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$ \hyperlink{_system_8c_a82c6d40b6ce46e60b4ec23df72827f41}{System\-\_\-\-Convert\-Reset\-Reason\-To\-String} (\hyperlink{_system_8h_ad3db0297e321095f6efefab4d3b6eeed}{System\-Reset\-Reason\-\_\-t} reason)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+System module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This file provides functions to configure the system control module on M\-S\-P430x5xx microcontrollers. 
+
+Definition in file \hyperlink{_system_8c_source}{System.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_system_8c_a2be9a6cf60f428620b803262f74c7aa0}{\index{System.\-c@{System.\-c}!D\-I\-S\-A\-B\-L\-E\-\_\-\-B\-S\-L@{D\-I\-S\-A\-B\-L\-E\-\_\-\-B\-S\-L}}
+\index{D\-I\-S\-A\-B\-L\-E\-\_\-\-B\-S\-L@{D\-I\-S\-A\-B\-L\-E\-\_\-\-B\-S\-L}!System.c@{System.\-c}}
+\subsubsection[{D\-I\-S\-A\-B\-L\-E\-\_\-\-B\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-S\-A\-B\-L\-E\-\_\-\-B\-S\-L}}\label{_system_8c_a2be9a6cf60f428620b803262f74c7aa0}
+This will disable the boot strap loader. Some instances might want the bootstrap loader enabled so that the memory can be reprogrammed over the B\-S\-L 
+
+Definition at line 35 of file System.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_system_8c_a82c6d40b6ce46e60b4ec23df72827f41}{\index{System.\-c@{System.\-c}!System\-\_\-\-Convert\-Reset\-Reason\-To\-String@{System\-\_\-\-Convert\-Reset\-Reason\-To\-String}}
+\index{System\-\_\-\-Convert\-Reset\-Reason\-To\-String@{System\-\_\-\-Convert\-Reset\-Reason\-To\-String}!System.c@{System.\-c}}
+\subsubsection[{System\-\_\-\-Convert\-Reset\-Reason\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf char\-\_\-t}$\ast$ System\-\_\-\-Convert\-Reset\-Reason\-To\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf System\-Reset\-Reason\-\_\-t}}]{reason}
+\end{DoxyParamCaption}
+)}}\label{_system_8c_a82c6d40b6ce46e60b4ec23df72827f41}
+Convert a reset reason to a human-\/readable string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reason} & -\/ Reset reason to convert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the string describing the reset reason. 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file System.\-c.
+
+
+
+Referenced by \-\_\-\-Print\-Reset\-Reason().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_system_8c_acfef8fcc542ae576538bc2eda03bee8d}{\index{System.\-c@{System.\-c}!System\-\_\-\-Get\-Reset\-Reason@{System\-\_\-\-Get\-Reset\-Reason}}
+\index{System\-\_\-\-Get\-Reset\-Reason@{System\-\_\-\-Get\-Reset\-Reason}!System.c@{System.\-c}}
+\subsubsection[{System\-\_\-\-Get\-Reset\-Reason}]{\setlength{\rightskip}{0pt plus 5cm}{\bf System\-Reset\-Reason\-\_\-t} System\-\_\-\-Get\-Reset\-Reason (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_system_8c_acfef8fcc542ae576538bc2eda03bee8d}
+\begin{DoxyReturn}{Returns}
+The reason for the most recent reset of the micro. 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file System.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_system_8c_a2d83fc2a9b232bc80dde93d2f128d99a}{\index{System.\-c@{System.\-c}!System\-\_\-\-Init@{System\-\_\-\-Init}}
+\index{System\-\_\-\-Init@{System\-\_\-\-Init}!System.c@{System.\-c}}
+\subsubsection[{System\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void System\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_system_8c_a2d83fc2a9b232bc80dde93d2f128d99a}
+Initializes the system by enabling a few safety features. 
+
+Definition at line 43 of file System.\-c.
+
+
+
+Referenced by Board\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_system_8c_ac364386c3e285233c42eb2bdefd2b1de}{\index{System.\-c@{System.\-c}!System\-\_\-\-Power\-Off@{System\-\_\-\-Power\-Off}}
+\index{System\-\_\-\-Power\-Off@{System\-\_\-\-Power\-Off}!System.c@{System.\-c}}
+\subsubsection[{System\-\_\-\-Power\-Off}]{\setlength{\rightskip}{0pt plus 5cm}void System\-\_\-\-Power\-Off (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_system_8c_ac364386c3e285233c42eb2bdefd2b1de}
+Disables the power latch for the system. 
+
+Definition at line 80 of file System.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_system_8c_a1cd0b404698a7a276160bb57f3c1fb96}{\index{System.\-c@{System.\-c}!System\-\_\-\-Power\-On@{System\-\_\-\-Power\-On}}
+\index{System\-\_\-\-Power\-On@{System\-\_\-\-Power\-On}!System.c@{System.\-c}}
+\subsubsection[{System\-\_\-\-Power\-On}]{\setlength{\rightskip}{0pt plus 5cm}void System\-\_\-\-Power\-On (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_system_8c_a1cd0b404698a7a276160bb57f3c1fb96}
+Enables the power latch for the system. 
+
+Definition at line 72 of file System.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+

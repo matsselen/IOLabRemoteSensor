@@ -1,0 +1,4 @@
+<map id="Uart_Close" name="Uart_Close">
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="160,5,275,32" />
+<area shape="rect" href="$_gpio_8c.html#a5da879081f23fe16fd51c79120290300" title="Gpio_DisableResistor" alt="" coords="143,56,292,83" />
+</map>

@@ -1,0 +1,112 @@
+\hypertarget{_encoder_control_8h}{\section{Encoder\-Control.\-h File Reference}
+\label{_encoder_control_8h}\index{Encoder\-Control.\-h@{Encoder\-Control.\-h}}
+}
+
+
+Controls the driver for the Quadrature Encoder.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_encoder_control_8h_a4b6aa9ee6c3a3a93df84184577e4a4f8}{Enc\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_encoder_control_8h_adb39c8747a1af85b65dc901e8f7e667d}{Enc\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} control)
+\item 
+void \hyperlink{_encoder_control_8h_a9506706fabcec54f209a422e9485c49f}{Enc\-Control\-\_\-\-Read\-Enc} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the driver for the Quadrature Encoder. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the driver for the Quadrature Encoder and manages the settings and configuration. 
+
+Definition in file \hyperlink{_encoder_control_8h_source}{Encoder\-Control.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_encoder_control_8h_a4b6aa9ee6c3a3a93df84184577e4a4f8}{\index{Encoder\-Control.\-h@{Encoder\-Control.\-h}!Enc\-Control\-\_\-\-Init@{Enc\-Control\-\_\-\-Init}}
+\index{Enc\-Control\-\_\-\-Init@{Enc\-Control\-\_\-\-Init}!EncoderControl.h@{Encoder\-Control.\-h}}
+\subsubsection[{Enc\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Enc\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_control_8h_a4b6aa9ee6c3a3a93df84184577e4a4f8}
+Initializes the encoder controller. 
+
+Definition at line 62 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_control_8h_a9506706fabcec54f209a422e9485c49f}{\index{Encoder\-Control.\-h@{Encoder\-Control.\-h}!Enc\-Control\-\_\-\-Read\-Enc@{Enc\-Control\-\_\-\-Read\-Enc}}
+\index{Enc\-Control\-\_\-\-Read\-Enc@{Enc\-Control\-\_\-\-Read\-Enc}!EncoderControl.h@{Encoder\-Control.\-h}}
+\subsubsection[{Enc\-Control\-\_\-\-Read\-Enc}]{\setlength{\rightskip}{0pt plus 5cm}void Enc\-Control\-\_\-\-Read\-Enc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_control_8h_a9506706fabcec54f209a422e9485c49f}
+Gets a reading from the accelerometer. 
+
+Definition at line 151 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_control_8h_adb39c8747a1af85b65dc901e8f7e667d}{\index{Encoder\-Control.\-h@{Encoder\-Control.\-h}!Enc\-Control\-\_\-\-Set\-Config@{Enc\-Control\-\_\-\-Set\-Config}}
+\index{Enc\-Control\-\_\-\-Set\-Config@{Enc\-Control\-\_\-\-Set\-Config}!EncoderControl.h@{Encoder\-Control.\-h}}
+\subsubsection[{Enc\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Enc\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{control}
+\end{DoxyParamCaption}
+)}}\label{_encoder_control_8h_adb39c8747a1af85b65dc901e8f7e667d}
+Sets a configuration value to the encoder
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Encoder\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

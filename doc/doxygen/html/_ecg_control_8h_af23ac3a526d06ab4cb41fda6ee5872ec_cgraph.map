@@ -1,0 +1,31 @@
+<map id="EcgControl_SetConfig" name="EcgControl_SetConfig">
+<area shape="rect" href="$_key_value_8c.html#a30aa66a5e57b84caf453be8ec13a23f8" title="KeyValue_Separate" alt="" coords="239,99,378,126" />
+<area shape="rect" href="$_adc_manager_8c.html#af6718cd4b7d0e37e05766a6920a4ba63" title="AdcManager_DisableChannel" alt="" coords="210,150,407,176" />
+<area shape="rect" href="$_adc_manager_8c.html#a7318da3a09c3c259f7de0f9ce7a9bd90" title="AdcManager_EnableChannel" alt="" coords="211,227,406,254" />
+<area shape="rect" href="$_ecg_control_8c.html#aa7d5d336770482e5171536f07d5184db" title="_Ecg_RefVoltToAdcManRef" alt="" coords="215,279,402,306" />
+<area shape="rect" href="$_ecg_control_8c.html#ac931a84cf3f606bacfa2ed6eb6aa7e92" title="_Ecg1DataCallback" alt="" coords="239,332,378,359" />
+<area shape="rect" href="$_ecg_control_8c.html#a5b80f7b1560b7ab3237aeea0839a1539" title="_Ecg2DataCallback" alt="" coords="239,390,378,416" />
+<area shape="rect" href="$_ecg_control_8c.html#a7a4a22d8bc2224eb6b6831265390fb7b" title="_Ecg3DataCallback" alt="" coords="239,452,378,479" />
+<area shape="rect" href="$_adc_manager_8c.html#af8416f3a8c779a5631aa5335064ed481" title="AdcManager_PoweredChannel\lControl" alt="" coords="458,6,663,48" />
+<area shape="rect" href="$_adc_manager_8c.html#acb5db715bc62a5ddfe2b5cb71e889afa" title="_AllChannelsDisabled" alt="" coords="484,72,636,99" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaff7c685a2d029cb452bb271c369716" title="_AdcStop" alt="" coords="522,123,599,150" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaa24713515810380e7943554d22b137" title="_SetupAdcForNormalMode" alt="" coords="470,224,651,251" />
+<area shape="rect" href="$_adc_8c.html#a48bd94f6c7b5c13bae12ee2ae824145b" title="Adc_StopConversion" alt="" coords="756,123,903,150" />
+<area shape="rect" href="$_adc_8c.html#aeb038bcf326000ca3a320d29351100a3" title="Adc_Config" alt="" coords="784,180,875,207" />
+<area shape="rect" href="$_adc_manager_8c.html#a52cb89e87f72c24ad896dfc4151724e3" title="AdcManager_AdcManRefToAdcRef" alt="" coords="714,243,946,270" />
+<area shape="rect" href="$_adc_manager_8c.html#a5e91c4affb5c1439c47170585670a2bf" title="_SetupTimerConfig" alt="" coords="762,319,898,346" />
+<area shape="rect" href="$_timer_8c.html#a02f931c9a4a5037b499d531f49ebc3b9" title="Timer_A0_Configure" alt="" coords="1010,268,1154,295" />
+<area shape="rect" href="$_timer_8c.html#a3b787ac79e251ea6217447ed05be53bb" title="Timer_A0CCX_Configure" alt="" coords="996,319,1167,346" />
+<area shape="rect" href="$_adc_manager_8c.html#a9d5382aa474494126282fe96a47dbea1" title="_InitialzeXAdcChannels" alt="" coords="1000,370,1163,396" />
+<area shape="rect" href="$_adc_8c.html#a8201a8154546752a07f766fa604c77d1" title="Adc_SetChannelSequence" alt="" coords="1216,370,1398,396" />
+<area shape="rect" href="$_adc_manager_8c.html#a203f0fe862e6ee89e504de5a33f1c61b" title="_GetSamplesToSkip" alt="" coords="488,376,632,403" />
+<area shape="rect" href="$_adc_manager_8c.html#a784154032c1c75450380b319ed845320" title="_AdcStart" alt="" coords="520,427,600,454" />
+<area shape="rect" href="$_adc_8c.html#adc40c1d1983f3470f32d9d2b6f999285" title="Adc_StartConversionSequence\lOfChannels" alt="" coords="727,411,932,454" />
+<area shape="rect" href="$_ecg_control_8c.html#aef223ca6e28c87f0a00fc3beee7d02e7" title="_EcgAddToDataBuffer" alt="" coords="483,478,638,504" />
+<area shape="rect" href="$_data_buffer_8c.html#a3b77682af68cdfbdf4dbcf06f5468008" title="DataBuffer_AddToSubarray16Bit" alt="" coords="722,528,938,555" />
+<area shape="rect" href="$_serial_8c.html#ae3c36491780ee25b86bf0b3ac9e61fa7" title="Serial_SendStringNumber" alt="" coords="742,478,918,504" />
+<area shape="rect" href="$_data_buffer_8c.html#ad726ed4ec48df844bfd5225ccca52117" title="_IndexOfSubarrayId" alt="" coords="1012,575,1151,602" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="1026,524,1138,551" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="1010,423,1154,450" />
+<area shape="rect" href="$_uart_8c.html#aba2063d7e89a1358197b4643996daaed" title="Uart_WriteByteHex" alt="" coords="1014,474,1150,500" />
+</map>

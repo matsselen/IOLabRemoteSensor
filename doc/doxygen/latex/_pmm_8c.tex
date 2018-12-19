@@ -1,0 +1,211 @@
+\hypertarget{_pmm_8c}{\section{Pmm.\-c File Reference}
+\label{_pmm_8c}\index{Pmm.\-c@{Pmm.\-c}}
+}
+
+
+Power management module driver.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Pmm.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+Include dependency graph for Pmm.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_pmm_8c_a8a4493db6b74d060e684bf62c94064f1}{P\-M\-M\-\_\-\-M\-A\-X\-\_\-\-V\-C\-O\-R\-E\-\_\-\-L\-E\-V\-E\-L}~(3u)
+\item 
+\#define \hyperlink{_pmm_8c_a5031293ba220c625fa7c5a1795cb5220}{P\-M\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D}~(0x\-A5u)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_pmm_8c_a66d06d0c2ca3d3b1da39251004f091aa}{Pmm\-Status\-\_\-t} \{ \\*
+{\bfseries Pmm\-Status\-\_\-\-O\-K\-A\-Y}, 
+\\*
+{\bfseries Pmm\-Status\-\_\-\-E\-R\-R\-O\-R}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_pmm_8c_a66d06d0c2ca3d3b1da39251004f091aa}{Pmm\-Status\-\_\-t} \hyperlink{_pmm_8c_a379bc13f25c3722052caa0aa2084baba}{\-\_\-\-Set\-V\-Core} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} level)
+\item 
+static \hyperlink{_pmm_8c_a66d06d0c2ca3d3b1da39251004f091aa}{Pmm\-Status\-\_\-t} \hyperlink{_pmm_8c_a7a5f8864a43fd504c1771fa2d1ea89d0}{\-\_\-\-Set\-V\-Core\-Up} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} level)
+\item 
+static \hyperlink{_pmm_8c_a66d06d0c2ca3d3b1da39251004f091aa}{Pmm\-Status\-\_\-t} \hyperlink{_pmm_8c_aed1b0b979515495fa5a5e3159b205a73}{\-\_\-\-Set\-V\-Core\-Down} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} level)
+\item 
+void \hyperlink{_pmm_8c_aa8fb224458270c38abc8dadb405f8e3e}{Pmm\-\_\-\-Init} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Power management module driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The power management module driver will interact with the microcontroller registers that control the power modes of the micro and peripherals. 
+
+Definition in file \hyperlink{_pmm_8c_source}{Pmm.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_pmm_8c_a8a4493db6b74d060e684bf62c94064f1}{\index{Pmm.\-c@{Pmm.\-c}!P\-M\-M\-\_\-\-M\-A\-X\-\_\-\-V\-C\-O\-R\-E\-\_\-\-L\-E\-V\-E\-L@{P\-M\-M\-\_\-\-M\-A\-X\-\_\-\-V\-C\-O\-R\-E\-\_\-\-L\-E\-V\-E\-L}}
+\index{P\-M\-M\-\_\-\-M\-A\-X\-\_\-\-V\-C\-O\-R\-E\-\_\-\-L\-E\-V\-E\-L@{P\-M\-M\-\_\-\-M\-A\-X\-\_\-\-V\-C\-O\-R\-E\-\_\-\-L\-E\-V\-E\-L}!Pmm.c@{Pmm.\-c}}
+\subsubsection[{P\-M\-M\-\_\-\-M\-A\-X\-\_\-\-V\-C\-O\-R\-E\-\_\-\-L\-E\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-M\-M\-\_\-\-M\-A\-X\-\_\-\-V\-C\-O\-R\-E\-\_\-\-L\-E\-V\-E\-L~(3u)}}\label{_pmm_8c_a8a4493db6b74d060e684bf62c94064f1}
+Maximum level that Vcore can be set to 
+
+Definition at line 36 of file Pmm.\-c.
+
+
+
+Referenced by \-\_\-\-Set\-V\-Core(), \-\_\-\-Set\-V\-Core\-Down(), and \-\_\-\-Set\-V\-Core\-Up().
+
+\hypertarget{_pmm_8c_a5031293ba220c625fa7c5a1795cb5220}{\index{Pmm.\-c@{Pmm.\-c}!P\-M\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D@{P\-M\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D}}
+\index{P\-M\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D@{P\-M\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D}!Pmm.c@{Pmm.\-c}}
+\subsubsection[{P\-M\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-M\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D~(0x\-A5u)}}\label{_pmm_8c_a5031293ba220c625fa7c5a1795cb5220}
+Password required to access P\-M\-M registers 
+
+Definition at line 39 of file Pmm.\-c.
+
+
+
+Referenced by \-\_\-\-Set\-V\-Core\-Down(), \-\_\-\-Set\-V\-Core\-Up(), and Pmm\-\_\-\-Init().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_pmm_8c_a66d06d0c2ca3d3b1da39251004f091aa}{\index{Pmm.\-c@{Pmm.\-c}!Pmm\-Status\-\_\-t@{Pmm\-Status\-\_\-t}}
+\index{Pmm\-Status\-\_\-t@{Pmm\-Status\-\_\-t}!Pmm.c@{Pmm.\-c}}
+\subsubsection[{Pmm\-Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Pmm\-Status\-\_\-t}}}\label{_pmm_8c_a66d06d0c2ca3d3b1da39251004f091aa}
+Possible results of setting Vcore 
+
+Definition at line 42 of file Pmm.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_pmm_8c_a379bc13f25c3722052caa0aa2084baba}{\index{Pmm.\-c@{Pmm.\-c}!\-\_\-\-Set\-V\-Core@{\-\_\-\-Set\-V\-Core}}
+\index{\-\_\-\-Set\-V\-Core@{\-\_\-\-Set\-V\-Core}!Pmm.c@{Pmm.\-c}}
+\subsubsection[{\-\_\-\-Set\-V\-Core}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Pmm\-Status\-\_\-t} \-\_\-\-Set\-V\-Core (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_pmm_8c_a379bc13f25c3722052caa0aa2084baba}
+Set Vcore to given level.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em level} & -\/ Level to which Vcore needs to be set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pmm\-Status\-\_\-\-O\-K\-A\-Y if successful, otherwise Pmm\-Status\-\_\-\-E\-R\-R\-O\-R 
+\end{DoxyReturn}
+
+
+Definition at line 120 of file Pmm.\-c.
+
+
+
+Referenced by Pmm\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_pmm_8c_aed1b0b979515495fa5a5e3159b205a73}{\index{Pmm.\-c@{Pmm.\-c}!\-\_\-\-Set\-V\-Core\-Down@{\-\_\-\-Set\-V\-Core\-Down}}
+\index{\-\_\-\-Set\-V\-Core\-Down@{\-\_\-\-Set\-V\-Core\-Down}!Pmm.c@{Pmm.\-c}}
+\subsubsection[{\-\_\-\-Set\-V\-Core\-Down}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Pmm\-Status\-\_\-t} \-\_\-\-Set\-V\-Core\-Down (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_pmm_8c_aed1b0b979515495fa5a5e3159b205a73}
+Decrease Vcore by one level
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em level} & -\/ Level to which Vcore needs to be decreased\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pmm\-Status\-\_\-\-O\-K\-A\-Y if successful, otherwise Pmm\-Status\-\_\-\-E\-R\-R\-O\-R 
+\end{DoxyReturn}
+
+
+Definition at line 298 of file Pmm.\-c.
+
+
+
+Referenced by \-\_\-\-Set\-V\-Core().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_pmm_8c_a7a5f8864a43fd504c1771fa2d1ea89d0}{\index{Pmm.\-c@{Pmm.\-c}!\-\_\-\-Set\-V\-Core\-Up@{\-\_\-\-Set\-V\-Core\-Up}}
+\index{\-\_\-\-Set\-V\-Core\-Up@{\-\_\-\-Set\-V\-Core\-Up}!Pmm.c@{Pmm.\-c}}
+\subsubsection[{\-\_\-\-Set\-V\-Core\-Up}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Pmm\-Status\-\_\-t} \-\_\-\-Set\-V\-Core\-Up (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_pmm_8c_a7a5f8864a43fd504c1771fa2d1ea89d0}
+Increase Vcore by one level
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em level} & -\/ Level to which Vcore needs to be increased\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pmm\-Status\-\_\-\-O\-K\-A\-Y if successful, otherwise Pmm\-Status\-\_\-\-E\-R\-R\-O\-R 
+\end{DoxyReturn}
+
+
+Definition at line 155 of file Pmm.\-c.
+
+
+
+Referenced by \-\_\-\-Set\-V\-Core().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_pmm_8c_aa8fb224458270c38abc8dadb405f8e3e}{\index{Pmm.\-c@{Pmm.\-c}!Pmm\-\_\-\-Init@{Pmm\-\_\-\-Init}}
+\index{Pmm\-\_\-\-Init@{Pmm\-\_\-\-Init}!Pmm.c@{Pmm.\-c}}
+\subsubsection[{Pmm\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Pmm\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_pmm_8c_aa8fb224458270c38abc8dadb405f8e3e}
+Initialize the power management module.
+
+Note that high-\/side refers to Vcc and low-\/side refers to Vcore. 
+
+Definition at line 59 of file Pmm.\-c.
+
+
+
+Referenced by Board\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

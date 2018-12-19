@@ -1,0 +1,355 @@
+\hypertarget{_project_types_8h}{\section{Project\-Types.\-h File Reference}
+\label{_project_types_8h}\index{Project\-Types.\-h@{Project\-Types.\-h}}
+}
+
+
+Definitions for portable types.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H}(x)~(sizeof(x) / sizeof((x)\mbox{[}0\mbox{]}))
+\item 
+\#define \hyperlink{_project_types_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}~((\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool})(1==1))
+\item 
+\#define \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}~((\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool})(0==1))
+\item 
+\#define \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}~((void$\ast$)0)
+\item 
+\#define \hyperlink{_project_types_8h_a9b46fe26faa19c0e9b04bc12691c8f92}{I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T}~(8)
+\item 
+\#define \hyperlink{_project_types_8h_a79bb4ef50644c4b06e6bcc23d9c34fd2}{I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N}~((-\/0x7\-F) -\/ 1)
+\item 
+\#define \hyperlink{_project_types_8h_a47013d5e074dd5270b0ecc40bcd7101d}{I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X}~(0x7\-F)
+\item 
+\#define \hyperlink{_project_types_8h_a3533999f68397634c69a197a32bf715b}{I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T}~(16)
+\item 
+\#define \hyperlink{_project_types_8h_aa8cc2815a2cc7e8a6bacdbc127428d1e}{I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N}~((-\/0x7\-F\-F\-F) -\/ 1)
+\item 
+\#define \hyperlink{_project_types_8h_a76d5b67082385e755461da6d4f2b4df9}{I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X}~(0x7\-F\-F\-F)
+\item 
+\#define \hyperlink{_project_types_8h_a95a8262fd150b3f6f98246aa84254df9}{I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T}~(32)
+\item 
+\#define \hyperlink{_project_types_8h_a7e9ffec07931051f0f2c21ea916b5437}{I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N}~((-\/0x7\-F\-F\-F\-F\-F\-F\-F) -\/ 1)
+\item 
+\#define \hyperlink{_project_types_8h_af8ae7db05ce20501d7ad44d1d29c44f6}{I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X}~(0x7\-F\-F\-F\-F\-F\-F\-F)
+\item 
+\#define \hyperlink{_project_types_8h_af8b4af8c5e86de25885146c023a40a2b}{U\-I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T}~(8)
+\item 
+\#define \hyperlink{_project_types_8h_ab6b7e3a8b42175a83a3359a8677f74e0}{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N}~(0u)
+\item 
+\#define \hyperlink{_project_types_8h_addbff75a73b23fde38653616d08811c5}{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X}~(0x\-F\-Fu)
+\item 
+\#define \hyperlink{_project_types_8h_a6069867f6d34df71507ab16963ffd4e8}{U\-I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T}~(16)
+\item 
+\#define \hyperlink{_project_types_8h_a1cc0e5366f8e513a0c5a21709f1cb024}{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N}~(0u)
+\item 
+\#define \hyperlink{_project_types_8h_a32e95b73430fc2d097ee0d23e1d3d4f4}{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X}~(0x\-F\-F\-F\-Fu)
+\item 
+\#define \hyperlink{_project_types_8h_a628650d555dcb236abf6244ac60543dd}{U\-I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T}~(32)
+\item 
+\#define \hyperlink{_project_types_8h_aab9de9034e5f02101af4c7b85342e72c}{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N}~(0u)
+\item 
+\#define \hyperlink{_project_types_8h_ab509b6cc423089910a2fada70697eb2c}{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X}~(0x\-F\-F\-F\-F\-F\-F\-F\-Fu)
+\item 
+\#define \hyperlink{_project_types_8h_a75eeaa7e33b3fa2eb1759620ee57aa3a}{F\-L\-O\-A\-T\-\_\-\-T\-\_\-\-B\-I\-T}~(32)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \-\_\-\-\_\-\-P\-T\-R\-D\-I\-F\-F\-\_\-\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-\_\- \hyperlink{_project_types_8h_a7e79321321d77ad6e34f8ab4d2d7af20}{ptrdiff\-\_\-t}
+\item 
+typedef unsigned int \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool}
+\item 
+typedef char \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t}
+\item 
+typedef signed char \hyperlink{_project_types_8h_aef44329758059c91c76d334e8fc09700}{int8\-\_\-t}
+\item 
+typedef signed int \hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t}
+\item 
+typedef signed long int \hyperlink{_project_types_8h_adb828ef50c2dbb783109824e94cf6c47}{int32\-\_\-t}
+\item 
+typedef unsigned char \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t}
+\item 
+typedef unsigned int \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}
+\item 
+typedef unsigned long int \hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t}
+\item 
+typedef float \hyperlink{_project_types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\-\_\-t}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definitions for portable types. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Defined types for primitives to allow for portability across architectures. 
+
+Definition in file \hyperlink{_project_types_8h_source}{Project\-Types.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{\index{Project\-Types.\-h@{Project\-Types.\-h}!A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H@{A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H@{A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(sizeof(x) / sizeof((x)\mbox{[}0\mbox{]}))}}\label{_project_types_8h_a4a21612c647552b916d9de1f911995ad}
+Macro for determining the number of elements in an array. Only valid in context where array is defined. 
+
+Definition at line 30 of file Project\-Types.\-h.
+
+
+
+Referenced by \-\_\-\-Barometer\-Array\-Glitched(), and Pwm\-\_\-\-Get\-Duty().
+
+\hypertarget{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{\index{Project\-Types.\-h@{Project\-Types.\-h}!false@{false}}
+\index{false@{false}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{false}]{\setlength{\rightskip}{0pt plus 5cm}\#define false~(({\bf bool})(0==1))}}\label{_project_types_8h_a65e9886d74aaee76545e83dd09011727}
+Boolean false value. 
+
+Definition at line 40 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a75eeaa7e33b3fa2eb1759620ee57aa3a}{\index{Project\-Types.\-h@{Project\-Types.\-h}!F\-L\-O\-A\-T\-\_\-\-T\-\_\-\-B\-I\-T@{F\-L\-O\-A\-T\-\_\-\-T\-\_\-\-B\-I\-T}}
+\index{F\-L\-O\-A\-T\-\_\-\-T\-\_\-\-B\-I\-T@{F\-L\-O\-A\-T\-\_\-\-T\-\_\-\-B\-I\-T}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{F\-L\-O\-A\-T\-\_\-\-T\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-L\-O\-A\-T\-\_\-\-T\-\_\-\-B\-I\-T~(32)}}\label{_project_types_8h_a75eeaa7e33b3fa2eb1759620ee57aa3a}
+Number of bits in a float32\-\_\-t 
+
+Definition at line 145 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a3533999f68397634c69a197a32bf715b}{\index{Project\-Types.\-h@{Project\-Types.\-h}!I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T@{I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T}}
+\index{I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T@{I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T~(16)}}\label{_project_types_8h_a3533999f68397634c69a197a32bf715b}
+Number of bits in an int16\-\_\-t 
+
+Definition at line 80 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a76d5b67082385e755461da6d4f2b4df9}{\index{Project\-Types.\-h@{Project\-Types.\-h}!I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X@{I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X}}
+\index{I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X@{I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X~(0x7\-F\-F\-F)}}\label{_project_types_8h_a76d5b67082385e755461da6d4f2b4df9}
+Maximum int16\-\_\-t value 
+
+Definition at line 84 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_aa8cc2815a2cc7e8a6bacdbc127428d1e}{\index{Project\-Types.\-h@{Project\-Types.\-h}!I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N@{I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N}}
+\index{I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N@{I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N~((-\/0x7\-F\-F\-F) -\/ 1)}}\label{_project_types_8h_aa8cc2815a2cc7e8a6bacdbc127428d1e}
+Minimum int16\-\_\-t value 
+
+Definition at line 82 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a95a8262fd150b3f6f98246aa84254df9}{\index{Project\-Types.\-h@{Project\-Types.\-h}!I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T@{I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T}}
+\index{I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T@{I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T~(32)}}\label{_project_types_8h_a95a8262fd150b3f6f98246aa84254df9}
+Number of bits in a long 
+
+Definition at line 91 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_af8ae7db05ce20501d7ad44d1d29c44f6}{\index{Project\-Types.\-h@{Project\-Types.\-h}!I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X@{I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X}}
+\index{I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X@{I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X~(0x7\-F\-F\-F\-F\-F\-F\-F)}}\label{_project_types_8h_af8ae7db05ce20501d7ad44d1d29c44f6}
+Maximum (signed) long value 
+
+Definition at line 95 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a7e9ffec07931051f0f2c21ea916b5437}{\index{Project\-Types.\-h@{Project\-Types.\-h}!I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N@{I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N}}
+\index{I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N@{I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N~((-\/0x7\-F\-F\-F\-F\-F\-F\-F) -\/ 1)}}\label{_project_types_8h_a7e9ffec07931051f0f2c21ea916b5437}
+Minimum (signed) long value 
+
+Definition at line 93 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a9b46fe26faa19c0e9b04bc12691c8f92}{\index{Project\-Types.\-h@{Project\-Types.\-h}!I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T@{I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T}}
+\index{I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T@{I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T~(8)}}\label{_project_types_8h_a9b46fe26faa19c0e9b04bc12691c8f92}
+Number of bits in a int8\-\_\-t. 
+
+Definition at line 69 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a47013d5e074dd5270b0ecc40bcd7101d}{\index{Project\-Types.\-h@{Project\-Types.\-h}!I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X@{I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X}}
+\index{I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X@{I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X~(0x7\-F)}}\label{_project_types_8h_a47013d5e074dd5270b0ecc40bcd7101d}
+Maximum int8\-\_\-t value 
+
+Definition at line 73 of file Project\-Types.\-h.
+
+
+
+Referenced by \-\_\-\-Check\-For\-Overflow\-Signed().
+
+\hypertarget{_project_types_8h_a79bb4ef50644c4b06e6bcc23d9c34fd2}{\index{Project\-Types.\-h@{Project\-Types.\-h}!I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N@{I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N}}
+\index{I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N@{I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N~((-\/0x7\-F) -\/ 1)}}\label{_project_types_8h_a79bb4ef50644c4b06e6bcc23d9c34fd2}
+Minimum int8\-\_\-t value 
+
+Definition at line 71 of file Project\-Types.\-h.
+
+
+
+Referenced by \-\_\-\-Check\-For\-Overflow\-Signed().
+
+\hypertarget{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{\index{Project\-Types.\-h@{Project\-Types.\-h}!N\-U\-L\-L@{N\-U\-L\-L}}
+\index{N\-U\-L\-L@{N\-U\-L\-L}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{N\-U\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-L\-L~((void$\ast$)0)}}\label{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}
+The N\-U\-L\-L pointer. 
+
+Definition at line 46 of file Project\-Types.\-h.
+
+
+
+Referenced by \-\_\-\-Acc\-Read\-Multiple\-Registers(), \-\_\-\-All\-Channels\-Disabled(), \-\_\-\-Bar\-Read\-Multiple\-Registers(), \-\_\-\-Con\-Man\-\_\-\-Allocate\-Buffer(), \-\_\-\-Dma\-Isr(), \-\_\-\-Encoder\-\_\-\-Add\-Sample(), \-\_\-\-Error\-Mode\-To\-String(), \-\_\-\-Gpio\-Port\-One\-Isr(), \-\_\-\-Gpio\-Port\-Two\-Isr(), \-\_\-\-Gyro\-Read\-Multiple\-Registers(), \-\_\-\-Handle\-Data\-Ready\-Interrupt(), \-\_\-\-Handle\-Get\-Packet\-Config\-Packet(), \-\_\-\-Handle\-Human\-Adc1\-Command(), \-\_\-\-Handle\-Human\-Dac\-Command(), \-\_\-\-Handle\-Human\-Gpi\-Command(), \-\_\-\-Handle\-Human\-Gpo\-Command(), \-\_\-\-Handle\-Human\-Packets(), \-\_\-\-Handle\-Human\-Pwm\-Command(), \-\_\-\-Handle\-Status\-Packet(), \-\_\-\-Index\-Of\-Subarray\-Id(), \-\_\-\-Insert\-Timeout(), \-\_\-\-Play\-Sequence(), \-\_\-\-Read\-Multiple\-Registers(), \-\_\-\-Timer\-A1\-C\-C0\-Isr(), Accelerometer\-\_\-\-Config(), Accelerometer\-\_\-\-Read\-Sample(), Accelerometer\-\_\-\-Read\-Sample\-Array(), Accelerometer\-\_\-\-Register\-Isr(), Accelerometer\-\_\-\-Trigger\-Sample\-Blocking(), Accelerometer\-\_\-\-Unregister\-Isr(), Adc\-\_\-\-Get\-Temp\-Calib(), Adc\-\_\-\-Set\-Channel\-Sequence(), Adc\-Manager\-\_\-\-Disable\-Channel(), Adc\-Manager\-\_\-\-Enable\-Channel(), Adc\-Manager\-\_\-\-Process\-Conversion(), Assert(), Barometer\-\_\-\-Read\-Coeff\-Array(), Barometer\-\_\-\-Read\-Coefficients(), Barometer\-\_\-\-Read\-Sample(), Barometer\-\_\-\-Read\-Sample\-Array(), Barometer\-\_\-\-Trigger\-Sample\-Blocking(), Barometer\-Control\-\_\-\-Read\-Calibration(), Battery\-Control\-\_\-\-Read\-Calibration(), Con\-Man\-\_\-\-Get\-Calibration(), Con\-Man\-\_\-\-Get\-Packet\-Config(), Con\-Man\-\_\-\-Set\-Fixed\-Config(), Con\-Man\-\_\-\-Set\-Output\-Config(), Con\-Man\-\_\-\-Set\-Sensor\-Config(), Data\-Buffer\-\_\-\-Create\-Subarray(), Data\-Buffer\-\_\-\-Get\-Idle\-Buffer(), Data\-Buffer\-\_\-\-Set\-Data(), Dma\-\_\-\-Arm(), Dma\-\_\-\-Configure(), Dma\-\_\-\-Register\-Isr(), Dma\-\_\-\-Unregister\-Isr(), Encoder\-\_\-\-Read(), Gpio\-\_\-\-Configure(), Gpio\-\_\-\-Register\-Isr(), Gpio\-\_\-\-Unregister\-Isr(), Gyroscope\-\_\-\-Config(), Gyroscope\-\_\-\-Read\-Sample(), Gyroscope\-\_\-\-Read\-Sample\-Array(), Gyroscope\-\_\-\-Register\-Isr(), Gyroscope\-\_\-\-Unregister\-Isr(), I2c\-\_\-\-Receive\-Byte(), I2c\-\_\-\-Receive\-Byte\-End(), Key\-Value\-\_\-\-Separate(), Magnetometer\-\_\-\-Config(), Magnetometer\-\_\-\-Read\-Sample(), Magnetometer\-\_\-\-Read\-Sample\-Array(), Magnetometer\-\_\-\-Register\-Isr(), Magnetometer\-\_\-\-Set\-Calibration(), Magnetometer\-\_\-\-Trigger\-Sample\-Blocking(), Magnetomter\-\_\-\-Unregister\-Isr(), Self\-Test\-\_\-\-Process(), Serial\-\_\-\-Get\-Packet(), Serial\-\_\-\-Send\-Packet(), Serial\-\_\-\-Send\-String(), Serial\-\_\-\-Send\-String3\-Numbers(), Serial\-\_\-\-Send\-String\-Blocking(), Serial\-\_\-\-Send\-String\-Number(), Serial\-\_\-\-Send\-String\-Number\-U32(), Spi\-\_\-\-Read\-Register(), Spi\-Slave\-\_\-\-Load\-Packet(), Spi\-Slave\-\_\-\-Read\-Packet(), Test\-Protocol\-\_\-\-Handle\-Received\-Packet(), Thermometer\-Control\-\_\-\-Read\-Calibration(), Timer\-Tick\-\_\-\-Cancel\-Timeout(), Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback(), Timer\-Tick\-\_\-\-Process\-Timeouts(), Timer\-Tick\-\_\-\-Register\-Tick\-Isr(), Timer\-Tick\-\_\-\-Request\-Timeout(), Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr(), Uart\-\_\-\-Read\-Byte(), Uart\-\_\-\-Read\-Byte\-Array(), Uart\-\_\-\-Write\-Byte\-Array(), Uart\-\_\-\-Write\-Byte\-Array\-Blocking(), Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert(), Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking(), Uart\-\_\-\-Write\-String(), Uart\-\_\-\-Write\-String\-Blocking(), and Ui\-Manager\-\_\-\-Stop\-Sequence().
+
+\hypertarget{_project_types_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{\index{Project\-Types.\-h@{Project\-Types.\-h}!true@{true}}
+\index{true@{true}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{true}]{\setlength{\rightskip}{0pt plus 5cm}\#define true~(({\bf bool})(1==1))}}\label{_project_types_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}
+Boolean true value. 
+
+Definition at line 35 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a6069867f6d34df71507ab16963ffd4e8}{\index{Project\-Types.\-h@{Project\-Types.\-h}!U\-I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T@{U\-I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T}}
+\index{U\-I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T@{U\-I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{U\-I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T16\-\_\-\-T\-\_\-\-B\-I\-T~(16)}}\label{_project_types_8h_a6069867f6d34df71507ab16963ffd4e8}
+Number of bits in uint16\-\_\-t 
+
+Definition at line 123 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a32e95b73430fc2d097ee0d23e1d3d4f4}{\index{Project\-Types.\-h@{Project\-Types.\-h}!U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X@{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X}}
+\index{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X@{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-A\-X~(0x\-F\-F\-F\-Fu)}}\label{_project_types_8h_a32e95b73430fc2d097ee0d23e1d3d4f4}
+Maximum uint16\-\_\-t value 
+
+Definition at line 127 of file Project\-Types.\-h.
+
+
+
+Referenced by Adc\-\_\-\-Single\-Conversion\-Sequence\-Blocking(), I2c\-\_\-\-Receive\-Byte(), I2c\-\_\-\-Receive\-Byte\-End(), I2c\-\_\-\-Transmit\-Byte(), I2c\-\_\-\-Transmit\-Byte\-End(), I2c\-\_\-\-Transmit\-Start(), and Magnetometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+\hypertarget{_project_types_8h_a1cc0e5366f8e513a0c5a21709f1cb024}{\index{Project\-Types.\-h@{Project\-Types.\-h}!U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N@{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N}}
+\index{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N@{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T16\-\_\-\-T\-\_\-\-M\-I\-N~(0u)}}\label{_project_types_8h_a1cc0e5366f8e513a0c5a21709f1cb024}
+Minimum uint16\-\_\-t value 
+
+Definition at line 125 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a628650d555dcb236abf6244ac60543dd}{\index{Project\-Types.\-h@{Project\-Types.\-h}!U\-I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T@{U\-I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T}}
+\index{U\-I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T@{U\-I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{U\-I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T32\-\_\-\-T\-\_\-\-B\-I\-T~(32)}}\label{_project_types_8h_a628650d555dcb236abf6244ac60543dd}
+Number of bits in a uint32\-\_\-t 
+
+Definition at line 134 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_ab509b6cc423089910a2fada70697eb2c}{\index{Project\-Types.\-h@{Project\-Types.\-h}!U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X@{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X}}
+\index{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X@{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-A\-X~(0x\-F\-F\-F\-F\-F\-F\-F\-Fu)}}\label{_project_types_8h_ab509b6cc423089910a2fada70697eb2c}
+Maximum uint32\-\_\-t value 
+
+Definition at line 138 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_aab9de9034e5f02101af4c7b85342e72c}{\index{Project\-Types.\-h@{Project\-Types.\-h}!U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N@{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N}}
+\index{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N@{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T32\-\_\-\-T\-\_\-\-M\-I\-N~(0u)}}\label{_project_types_8h_aab9de9034e5f02101af4c7b85342e72c}
+Minimum uint32\-\_\-t value 
+
+Definition at line 136 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_af8b4af8c5e86de25885146c023a40a2b}{\index{Project\-Types.\-h@{Project\-Types.\-h}!U\-I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T@{U\-I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T}}
+\index{U\-I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T@{U\-I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{U\-I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T8\-\_\-\-T\-\_\-\-B\-I\-T~(8)}}\label{_project_types_8h_af8b4af8c5e86de25885146c023a40a2b}
+Number of bits in a uint8\-\_\-t 
+
+Definition at line 112 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_addbff75a73b23fde38653616d08811c5}{\index{Project\-Types.\-h@{Project\-Types.\-h}!U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X@{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X}}
+\index{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X@{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-A\-X~(0x\-F\-Fu)}}\label{_project_types_8h_addbff75a73b23fde38653616d08811c5}
+Maximum uint8\-\_\-t value 
+
+Definition at line 116 of file Project\-Types.\-h.
+
+
+
+Referenced by \-\_\-\-Check\-For\-Overflow\-Unsigned(), \-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude(), and \-\_\-\-Handle\-Get\-Calibration\-Packet().
+
+\hypertarget{_project_types_8h_ab6b7e3a8b42175a83a3359a8677f74e0}{\index{Project\-Types.\-h@{Project\-Types.\-h}!U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N@{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N}}
+\index{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N@{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T8\-\_\-\-T\-\_\-\-M\-I\-N~(0u)}}\label{_project_types_8h_ab6b7e3a8b42175a83a3359a8677f74e0}
+Maximum uint8\-\_\-t value 
+
+Definition at line 114 of file Project\-Types.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{\index{Project\-Types.\-h@{Project\-Types.\-h}!bool@{bool}}
+\index{bool@{bool}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{bool}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf bool}}}\label{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}
+Definition of the boolean type. 
+
+Definition at line 57 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{\index{Project\-Types.\-h@{Project\-Types.\-h}!char\-\_\-t@{char\-\_\-t}}
+\index{char\-\_\-t@{char\-\_\-t}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{char\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef char {\bf char\-\_\-t}}}\label{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}
+Definition of the character type for use with character values 
+
+Definition at line 62 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a4611b605e45ab401f02cab15c5e38715}{\index{Project\-Types.\-h@{Project\-Types.\-h}!float32\-\_\-t@{float32\-\_\-t}}
+\index{float32\-\_\-t@{float32\-\_\-t}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{float32\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef float {\bf float32\-\_\-t}}}\label{_project_types_8h_a4611b605e45ab401f02cab15c5e38715}
+32-\/bit float type. 
+
+Definition at line 143 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{\index{Project\-Types.\-h@{Project\-Types.\-h}!int16\-\_\-t@{int16\-\_\-t}}
+\index{int16\-\_\-t@{int16\-\_\-t}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{int16\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef signed int {\bf int16\-\_\-t}}}\label{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}
+16-\/bit signed integer type. 
+
+Definition at line 78 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_adb828ef50c2dbb783109824e94cf6c47}{\index{Project\-Types.\-h@{Project\-Types.\-h}!int32\-\_\-t@{int32\-\_\-t}}
+\index{int32\-\_\-t@{int32\-\_\-t}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{int32\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef signed long int {\bf int32\-\_\-t}}}\label{_project_types_8h_adb828ef50c2dbb783109824e94cf6c47}
+32-\/bit signed integer type. 
+
+Definition at line 89 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_aef44329758059c91c76d334e8fc09700}{\index{Project\-Types.\-h@{Project\-Types.\-h}!int8\-\_\-t@{int8\-\_\-t}}
+\index{int8\-\_\-t@{int8\-\_\-t}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{int8\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef signed char {\bf int8\-\_\-t}}}\label{_project_types_8h_aef44329758059c91c76d334e8fc09700}
+8-\/bit signed integer type. 
+
+Definition at line 67 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a7e79321321d77ad6e34f8ab4d2d7af20}{\index{Project\-Types.\-h@{Project\-Types.\-h}!ptrdiff\-\_\-t@{ptrdiff\-\_\-t}}
+\index{ptrdiff\-\_\-t@{ptrdiff\-\_\-t}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{ptrdiff\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-\_\-\-\_\-\-P\-T\-R\-D\-I\-F\-F\-\_\-\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-\_\- {\bf ptrdiff\-\_\-t}}}\label{_project_types_8h_a7e79321321d77ad6e34f8ab4d2d7af20}
+Pointer difference type 
+
+Definition at line 51 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{\index{Project\-Types.\-h@{Project\-Types.\-h}!uint16\-\_\-t@{uint16\-\_\-t}}
+\index{uint16\-\_\-t@{uint16\-\_\-t}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{uint16\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf uint16\-\_\-t}}}\label{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}
+16-\/bit unsigned integer type. 
+
+Definition at line 121 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_a33594304e786b158f3fb30289278f5af}{\index{Project\-Types.\-h@{Project\-Types.\-h}!uint32\-\_\-t@{uint32\-\_\-t}}
+\index{uint32\-\_\-t@{uint32\-\_\-t}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{uint32\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long int {\bf uint32\-\_\-t}}}\label{_project_types_8h_a33594304e786b158f3fb30289278f5af}
+32-\/bit unsigned integer type. 
+
+Definition at line 132 of file Project\-Types.\-h.
+
+\hypertarget{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{\index{Project\-Types.\-h@{Project\-Types.\-h}!uint8\-\_\-t@{uint8\-\_\-t}}
+\index{uint8\-\_\-t@{uint8\-\_\-t}!ProjectTypes.h@{Project\-Types.\-h}}
+\subsubsection[{uint8\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf uint8\-\_\-t}}}\label{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}
+8-\/bit unsigned integer type. 
+
+Definition at line 109 of file Project\-Types.\-h.
+

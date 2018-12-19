@@ -1,0 +1,7 @@
+<map id="Gyroscope_Init" name="Gyroscope_Init">
+<area shape="rect" href="$_gyroscope_8c.html#a20178cbb7a8152e834a86b64273db9be" title="_GyroReadSingleRegister" alt="" coords="171,5,347,32" />
+<area shape="rect" href="$_gpio_8c.html#a56f194230a70ea64fd0b563c90b6d2d0" title="Gpio_RegisterIsr" alt="" coords="199,56,319,83" />
+<area shape="rect" href="$_gyroscope_8c.html#abffbea3ffff0c24e1b68e3fbf6d57e57" title="_HandleDataReadyInterrupt" alt="" coords="165,107,352,133" />
+<area shape="rect" href="$_gyroscope_8c.html#a9d2b62e3dd4358e27f614be64cd7283a" title="_HandleOtherInterrupt" alt="" coords="183,157,335,184" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="401,5,529,32" />
+</map>

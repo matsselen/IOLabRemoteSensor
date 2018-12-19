@@ -1,0 +1,17 @@
+<map id="MagControl_Init" name="MagControl_Init">
+<area shape="rect" href="$_magnetometer_8c.html#a24236d83f8ad5a94c17e6414904ea6f6" title="Magnetometer_Init" alt="" coords="195,157,326,184" />
+<area shape="rect" href="$_magnetometer_8c.html#aa39b22c63f0f6fda46569d535070334e" title="Magnetometer_RegisterIsr" alt="" coords="171,208,350,235" />
+<area shape="rect" href="$_magnetometer_control_8c.html#a6a19e4b78994ea9c53d714be2357e89d" title="_MagDataReadyIsr" alt="" coords="192,259,328,285" />
+<area shape="rect" href="$_magnetometer_8c.html#a10389d45bccf31b7fa39dbd26f851803" title="_ReadSingleRegister" alt="" coords="418,56,564,83" />
+<area shape="rect" href="$_magnetometer_8c.html#a61f3794e7c618ee6443c8ec9436e26ad" title="_WriteSingleRegister" alt="" coords="418,208,564,235" />
+<area shape="rect" href="$_gpio_8c.html#a56f194230a70ea64fd0b563c90b6d2d0" title="Gpio_RegisterIsr" alt="" coords="431,107,551,133" />
+<area shape="rect" href="$_magnetometer_8c.html#abffbea3ffff0c24e1b68e3fbf6d57e57" title="_HandleDataReadyInterrupt" alt="" coords="398,157,584,184" />
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="635,157,779,184" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="644,56,770,83" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="644,107,770,133" />
+<area shape="rect" href="$_i2c_8c.html#a0df5e64148fcf1e7c7c1cc90e107db49" title="I2c_ReceiveByteEnd" alt="" coords="635,5,779,32" />
+<area shape="rect" href="$_i2c_8c.html#afbfb0c0fbc0025ced1d88290aa899fa9" title="I2c_TransmitByteEnd" alt="" coords="632,208,782,235" />
+<area shape="rect" href="$_event_queue_8c.html#afd41d1979b21c13ff21bab60d9c57c27" title="EventQueue_Add" alt="" coords="428,259,554,285" />
+<area shape="rect" href="$_interrupt_8c.html#a0e5431ce2b9097e2a21c245e7c75e953" title="Interrupt_Lock" alt="" coords="654,309,760,336" />
+<area shape="rect" href="$_interrupt_8c.html#a4f840d0ee81cd63fc8ab0c938a6e755b" title="Interrupt_Unlock" alt="" coords="648,259,766,285" />
+</map>

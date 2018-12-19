@@ -1,0 +1,31 @@
+<map id="_InitialzeXAdcChannels" name="_InitialzeXAdcChannels">
+<area shape="rect" href="$_adc_manager_8c.html#a5e91c4affb5c1439c47170585670a2bf" title="_SetupTimerConfig" alt="" coords="216,316,352,343" />
+<area shape="rect" href="$_adc_manager_8h.html#a7318da3a09c3c259f7de0f9ce7a9bd90" title="AdcManager_EnableChannel" alt="" coords="691,266,885,292" />
+<area shape="rect" href="$_adc_manager_8h.html#a88658cb06de5461355af4c5dfff1b3ec" title="AdcManager_SingleSampleBlocking" alt="" coords="400,468,637,495" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaa24713515810380e7943554d22b137" title="_SetupAdcForNormalMode" alt="" coords="428,316,609,343" />
+<area shape="rect" href="$_ambient_light_control_8h.html#aa498cb345e57a444bc154ed18c85843e" title="AmbientLightControl\l_SetConfig" alt="" coords="968,123,1109,166" />
+<area shape="rect" href="$_analog7_control_8h.html#a5182ee8301561e4dc211a66c51ff4e77" title="Analog7Control_SetConfig" alt="" coords="949,190,1128,216" />
+<area shape="rect" href="$_analog8_control_8h.html#adbff1fc45d17c98f6c5235e023114e4b" title="Analog8Control_SetConfig" alt="" coords="949,240,1128,267" />
+<area shape="rect" href="$_analog9_control_8h.html#ae71cc8586b3113337d65e9987bda14ff" title="Analog9Control_SetConfig" alt="" coords="949,291,1128,318" />
+<area shape="rect" href="$_battery_control_8h.html#a28abd70494fdf139972215bd60606698" title="BatteryControl_SetConfig" alt="" coords="953,342,1124,368" />
+<area shape="rect" href="$_ecg_control_8h.html#af23ac3a526d06ab4cb41fda6ee5872ec" title="EcgControl_SetConfig" alt="" coords="963,392,1115,419" />
+<area shape="rect" href="$_force_gauge_control_8h.html#a9321d9e7031e7db50ebfe60e5a8ac7bb" title="FgControl_SetConfig" alt="" coords="967,443,1111,470" />
+<area shape="rect" href="$_high_gain_control_8h.html#ad418efb991a502d179523b3f9a6eabde" title="HighGainControl_SetConfig" alt="" coords="947,494,1131,520" />
+<area shape="rect" href="$_microphone_control_8h.html#a5ca19e88fae90de2777d203448eefc79" title="MicrophoneControl_SetConfig" alt="" coords="939,6,1139,32" />
+<area shape="rect" href="$_thermometer_control_8h.html#a66bc07257860cca63270cdbab132e418" title="ThermometerControl\l_SetConfig" alt="" coords="967,56,1111,99" />
+<area shape="rect" href="$_configuration_manager_8h.html#a183e4b53a492c32bbe799d7e209b8b4f" title="ConMan_SetSensorConfig" alt="" coords="1188,291,1367,318" />
+<area shape="rect" href="$_configuration_manager_8h.html#a4af394c25a5c58205d8832071eae3b0b" title="ConMan_StartData" alt="" coords="1416,291,1552,318" />
+<area shape="rect" href="$_configuration_manager_8h.html#a7e20b92732fc46ab8a1937e144066938" title="ConMan_StopData" alt="" coords="1417,350,1551,376" />
+<area shape="rect" href="$_comm_protocol_8h.html#a11fcf3a095c467e5da58a75e746059f1" title="CommProtocol_HandleStart\lDataPacket" alt="" coords="1615,283,1801,326" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="1865,307,2044,334" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="1892,358,2017,384" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="2095,307,2279,334" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="2577,332,2775,359" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="2352,307,2504,334" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="2328,358,2528,384" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="2824,407,2875,434" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1f65077f8bed3f077ec2a561f20bf4b5" title="CommProtocol_HandleStopData\lPacket" alt="" coords="1601,350,1815,392" />
+<area shape="rect" href="$_test_protocol_8c.html#a4b5deac7c3ac5591099f8f6aad558cc0" title="_HandleHumanAdc1Command" alt="" coords="685,595,891,622" />
+<area shape="rect" href="$_adc_manager_8h.html#a7c1eae1a0032493e8ae2a5ffc47a38a5" title="AdcManager_Init" alt="" coords="1216,512,1339,539" />
+<area shape="rect" href="$_adc_manager_8h.html#af6718cd4b7d0e37e05766a6920a4ba63" title="AdcManager_DisableChannel" alt="" coords="689,316,887,343" />
+</map>

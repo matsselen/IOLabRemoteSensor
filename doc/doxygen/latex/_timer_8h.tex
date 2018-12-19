@@ -1,0 +1,1355 @@
+\hypertarget{_timer_8h}{\section{Timer.\-h File Reference}
+\label{_timer_8h}\index{Timer.\-h@{Timer.\-h}}
+}
+
+
+Timer module driver.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{Indent}{\bf Timer A0 control macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_timer_8h_a9b3499ea4c696e1b91b095e83bce86c8}{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-A\-R\-T}(mode)~(T\-A0\-C\-T\-L = T\-A0\-C\-T\-L $|$ ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) mode) $|$ T\-A\-C\-L\-R)
+\begin{DoxyCompactList}\small\item\em Start timer A0 counting from zero. \end{DoxyCompactList}\item 
+\#define \hyperlink{_timer_8h_a5cc51bb1313ec02ea5743fdffad0aadb}{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-O\-P}()~(T\-A0\-C\-T\-L = T\-A0\-C\-T\-L \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(M\-C\-\_\-3)))
+\item 
+\#define \hyperlink{_timer_8h_a151d597fbe7911196beddd2c72b3bd49}{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-R\-E\-S\-E\-T}()~(T\-A0\-C\-T\-L = T\-A0\-C\-T\-L $|$ T\-A\-C\-L\-R)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A0 C\-Cx register set macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a3ad763a5332b9807d2f92e6eb8b8d397}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-S\-E\-T}(value)~(T\-A0\-C\-C\-R0 = (value))}\label{_timer_8h_a3ad763a5332b9807d2f92e6eb8b8d397}
+
+\item 
+\hypertarget{_timer_8h_a88408d5246b96aaa7982b4f3e5c3ac4e}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T}(value)~(T\-A0\-C\-C\-R0 += (value))}\label{_timer_8h_a88408d5246b96aaa7982b4f3e5c3ac4e}
+
+\item 
+\hypertarget{_timer_8h_ac93a5f8190d4001bb6eddd76a195cfd7}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-S\-E\-T}(value)~(T\-A0\-C\-C\-R1 = (value))}\label{_timer_8h_ac93a5f8190d4001bb6eddd76a195cfd7}
+
+\item 
+\hypertarget{_timer_8h_a6da9a41c1118f52c357382299315f34d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-S\-E\-T}(value)~(T\-A0\-C\-C\-R2 = (value))}\label{_timer_8h_a6da9a41c1118f52c357382299315f34d}
+
+\item 
+\hypertarget{_timer_8h_af6fce2ef84b424a95988583a15690eb3}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C3\-\_\-\-S\-E\-T}(value)~(T\-A0\-C\-C\-R3 = (value))}\label{_timer_8h_af6fce2ef84b424a95988583a15690eb3}
+
+\item 
+\hypertarget{_timer_8h_aef7284ae87c86687d9498d5c9913be2d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C4\-\_\-\-S\-E\-T}(value)~(T\-A0\-C\-C\-R4 = (value))}\label{_timer_8h_aef7284ae87c86687d9498d5c9913be2d}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A0 C\-Cx register get macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a65cc014ac9ad431c6430271f32f3a226}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-G\-E\-T}~( T\-A0\-C\-C\-R0 )}\label{_timer_8h_a65cc014ac9ad431c6430271f32f3a226}
+
+\item 
+\hypertarget{_timer_8h_a3d0ab5e14a82746df06feb40169a9fbd}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-E\-D}~((T\-A0\-C\-C\-T\-L0 \& C\-O\-V) $>$ 0)}\label{_timer_8h_a3d0ab5e14a82746df06feb40169a9fbd}
+
+\item 
+\hypertarget{_timer_8h_a76e5c09fd26887d71c79a7d5932afbde}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-H\-I\-G\-H}~((T\-A0\-C\-C\-T\-L0 \& C\-C\-I) $>$ 0)}\label{_timer_8h_a76e5c09fd26887d71c79a7d5932afbde}
+
+\item 
+\hypertarget{_timer_8h_a1c8443fb5d440856fb5265c1e01fa3d4}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-L\-O\-W}~((T\-A0\-C\-C\-T\-L0 \& C\-C\-I) == 0)}\label{_timer_8h_a1c8443fb5d440856fb5265c1e01fa3d4}
+
+\item 
+\hypertarget{_timer_8h_a48cdbf5d50a073ac470fd4576ed02145}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-G\-E\-T}~( T\-A0\-C\-C\-R1 )}\label{_timer_8h_a48cdbf5d50a073ac470fd4576ed02145}
+
+\item 
+\hypertarget{_timer_8h_a030dde32130f4cfeedc4b8cc3a310bc7}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-E\-D}~((T\-A0\-C\-C\-T\-L1 \& C\-O\-V) $>$ 0)}\label{_timer_8h_a030dde32130f4cfeedc4b8cc3a310bc7}
+
+\item 
+\hypertarget{_timer_8h_a9273109c24a8c1b92a6e47486328caad}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-H\-I\-G\-H}~((T\-A0\-C\-C\-T\-L1 \& C\-C\-I) $>$ 0)}\label{_timer_8h_a9273109c24a8c1b92a6e47486328caad}
+
+\item 
+\hypertarget{_timer_8h_a496120c79d00a80d066a8ef1bb962fb2}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-L\-O\-W}~((T\-A0\-C\-C\-T\-L1 \& C\-C\-I) == 0)}\label{_timer_8h_a496120c79d00a80d066a8ef1bb962fb2}
+
+\item 
+\hypertarget{_timer_8h_ab7ba1491e7093d220f444451dcb7f2b3}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-G\-E\-T}~( T\-A0\-C\-C\-R2 )}\label{_timer_8h_ab7ba1491e7093d220f444451dcb7f2b3}
+
+\item 
+\hypertarget{_timer_8h_aa2352e862a7b2c8339dad031bdf52738}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-E\-D}~((T\-A0\-C\-C\-T\-L2 \& C\-O\-V) $>$ 0)}\label{_timer_8h_aa2352e862a7b2c8339dad031bdf52738}
+
+\item 
+\hypertarget{_timer_8h_a3103531f127baa6c6e4bc51cf4572e56}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-H\-I\-G\-H}~((T\-A0\-C\-C\-T\-L2 \& C\-C\-I) $>$ 0)}\label{_timer_8h_a3103531f127baa6c6e4bc51cf4572e56}
+
+\item 
+\hypertarget{_timer_8h_a59ccb3436d29378b40ecacc0bac5db76}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-L\-O\-W}~((T\-A0\-C\-C\-T\-L2 \& C\-C\-I) == 0)}\label{_timer_8h_a59ccb3436d29378b40ecacc0bac5db76}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A0 enable interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a38ed94f3d390707ef20a6aff23a9522a}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L0 = T\-A0\-C\-C\-T\-L0 $|$ (C\-C\-I\-E))}\label{_timer_8h_a38ed94f3d390707ef20a6aff23a9522a}
+
+\item 
+\hypertarget{_timer_8h_a1e558c77ea993bcf481e3b436761d25b}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L1 = T\-A0\-C\-C\-T\-L1 $|$ (C\-C\-I\-E))}\label{_timer_8h_a1e558c77ea993bcf481e3b436761d25b}
+
+\item 
+\hypertarget{_timer_8h_aaf2b466d2e5625dcc05bd8e0b9678994}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L2 = T\-A0\-C\-C\-T\-L2 $|$ (C\-C\-I\-E))}\label{_timer_8h_aaf2b466d2e5625dcc05bd8e0b9678994}
+
+\item 
+\hypertarget{_timer_8h_a08ce5577ffd5ab7bf8b72c8f8d383512}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L3 = T\-A0\-C\-C\-T\-L3 $|$ (C\-C\-I\-E))}\label{_timer_8h_a08ce5577ffd5ab7bf8b72c8f8d383512}
+
+\item 
+\hypertarget{_timer_8h_aac43387939be7fb39efdec3f4f3ec35b}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L4 = T\-A0\-C\-C\-T\-L4 $|$ (C\-C\-I\-E))}\label{_timer_8h_aac43387939be7fb39efdec3f4f3ec35b}
+
+\item 
+\hypertarget{_timer_8h_ab9aa8d6aefc276857594b488e58f4b25}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A0\-C\-T\-L   = T\-A0\-C\-T\-L   $|$ (T\-A\-I\-E))}\label{_timer_8h_ab9aa8d6aefc276857594b488e58f4b25}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A0 disable interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_aa7d8cedbcb25e406888d43061332b772}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L0 = T\-A0\-C\-C\-T\-L0 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_aa7d8cedbcb25e406888d43061332b772}
+
+\item 
+\hypertarget{_timer_8h_ac217318311390d908b12b182e2844d9a}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L1 = T\-A0\-C\-C\-T\-L1 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_ac217318311390d908b12b182e2844d9a}
+
+\item 
+\hypertarget{_timer_8h_a897c3355f7afc9b2916cd90ec2e7f504}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L2 = T\-A0\-C\-C\-T\-L2 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_a897c3355f7afc9b2916cd90ec2e7f504}
+
+\item 
+\hypertarget{_timer_8h_a0854f9a239ea482bcad272dd0beb4246}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L3 = T\-A0\-C\-C\-T\-L3 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_a0854f9a239ea482bcad272dd0beb4246}
+
+\item 
+\hypertarget{_timer_8h_a1aeae54f423188bebfafe7314eba076d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A0\-C\-C\-T\-L4 = T\-A0\-C\-C\-T\-L4 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_a1aeae54f423188bebfafe7314eba076d}
+
+\item 
+\hypertarget{_timer_8h_a5f2a26a7e6869c5ff071351dafa5f161}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A0\-C\-T\-L   = T\-A0\-C\-T\-L   \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(T\-A\-I\-E)))}\label{_timer_8h_a5f2a26a7e6869c5ff071351dafa5f161}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A0 enable interrupt status macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_ae07f8fdf458c9d028e0f53661e608820}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A0\-C\-C\-T\-L0 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_ae07f8fdf458c9d028e0f53661e608820}
+
+\item 
+\hypertarget{_timer_8h_aace6b965bfdd6dfd3431046a1f6a27d3}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A0\-C\-C\-T\-L1 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_aace6b965bfdd6dfd3431046a1f6a27d3}
+
+\item 
+\hypertarget{_timer_8h_aaa71bbe654c60d7de707b9a8f4944f77}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A0\-C\-C\-T\-L2 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_aaa71bbe654c60d7de707b9a8f4944f77}
+
+\item 
+\hypertarget{_timer_8h_a4cc673b22b405be1cc0f6bc5a031e389}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A0\-C\-C\-T\-L3 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_a4cc673b22b405be1cc0f6bc5a031e389}
+
+\item 
+\hypertarget{_timer_8h_a43f325afd7d7929a45dac2e71efd19ab}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A0\-C\-C\-T\-L4 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_a43f325afd7d7929a45dac2e71efd19ab}
+
+\item 
+\hypertarget{_timer_8h_ab0f1022b5fb0987495ae7cc2c53cb5a8}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A0\-C\-T\-L   \& (T\-A\-I\-E)) $>$ 0u)}\label{_timer_8h_ab0f1022b5fb0987495ae7cc2c53cb5a8}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A0 clear interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_aebdd55ec1c324054f0dcc670ec73b442}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A0\-C\-C\-T\-L0 = T\-A0\-C\-C\-T\-L0 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_aebdd55ec1c324054f0dcc670ec73b442}
+
+\item 
+\hypertarget{_timer_8h_a0d99a31d9c92e43f0b5b78cae5421de6}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A0\-C\-C\-T\-L1 = T\-A0\-C\-C\-T\-L1 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a0d99a31d9c92e43f0b5b78cae5421de6}
+
+\item 
+\hypertarget{_timer_8h_a3f169e448f73e06a4ab9060e2a793fb4}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A0\-C\-C\-T\-L2 = T\-A0\-C\-C\-T\-L2 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a3f169e448f73e06a4ab9060e2a793fb4}
+
+\item 
+\hypertarget{_timer_8h_a8c06450dc15377183297a71eac0d695a}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A0\-C\-C\-T\-L3 = T\-A0\-C\-C\-T\-L3 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a8c06450dc15377183297a71eac0d695a}
+
+\item 
+\hypertarget{_timer_8h_a2263720673435f56a94b36ce500dfd48}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A0\-C\-C\-T\-L4 = T\-A0\-C\-C\-T\-L4 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a2263720673435f56a94b36ce500dfd48}
+
+\item 
+\hypertarget{_timer_8h_ab72a3ed158ec3ac9801b55357f7a1015}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A0\-C\-T\-L   = T\-A0\-C\-T\-L \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(T\-A\-I\-F\-G)))}\label{_timer_8h_ab72a3ed158ec3ac9801b55357f7a1015}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A0 get interrupt flag macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a442b00913cf83e3b1ce1cde9ed95c9b4}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A0\-C\-C\-T\-L0 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a442b00913cf83e3b1ce1cde9ed95c9b4}
+
+\item 
+\hypertarget{_timer_8h_ac3794030c7875942f249c816a40b5c7d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A0\-C\-C\-T\-L1 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_ac3794030c7875942f249c816a40b5c7d}
+
+\item 
+\hypertarget{_timer_8h_ad2f0854eafbfc46a64fd7154546d0cd3}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A0\-C\-C\-T\-L2 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_ad2f0854eafbfc46a64fd7154546d0cd3}
+
+\item 
+\hypertarget{_timer_8h_a0162292022824fe2c2f38bc35aef84e1}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A0\-C\-C\-T\-L3 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a0162292022824fe2c2f38bc35aef84e1}
+
+\item 
+\hypertarget{_timer_8h_abf29f2a344434b71af7e6f3ca3ebe796}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A0\-C\-C\-T\-L4 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_abf29f2a344434b71af7e6f3ca3ebe796}
+
+\item 
+\hypertarget{_timer_8h_abac0a07fc060826e5c430396762f3efd}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A0\-C\-T\-L   \& (T\-A\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_abac0a07fc060826e5c430396762f3efd}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A1 control macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_timer_8h_a7430e4633667ea8c7db3db69ec4a8f93}{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-A\-R\-T}(mode)~(T\-A1\-C\-T\-L = T\-A1\-C\-T\-L $|$ ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) mode) $|$ T\-A\-C\-L\-R)
+\begin{DoxyCompactList}\small\item\em Start timer A1 counting from zero. \end{DoxyCompactList}\item 
+\#define \hyperlink{_timer_8h_a36a75b7352be89dd6d93ce5afd92e1f4}{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-O\-P}()~(T\-A1\-C\-T\-L = T\-A1\-C\-T\-L \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(M\-C\-\_\-3)))
+\item 
+\#define \hyperlink{_timer_8h_a52038d2938916afd0a997434b7b13425}{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-R\-E\-S\-E\-T}()~(T\-A1\-C\-T\-L = T\-A1\-C\-T\-L $|$ T\-A\-C\-L\-R)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A1 C\-Cx register set macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a37954df85ed04e47a74d79ca4adf6d61}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C0\-\_\-\-S\-E\-T}(value)~(T\-A1\-C\-C\-R0 = (value))}\label{_timer_8h_a37954df85ed04e47a74d79ca4adf6d61}
+
+\item 
+\hypertarget{_timer_8h_a21b005da97c23b06d812296ff6f860bc}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C0\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T}(value)~(T\-A1\-C\-C\-R0 += (value))}\label{_timer_8h_a21b005da97c23b06d812296ff6f860bc}
+
+\item 
+\hypertarget{_timer_8h_a7fd96a41ba91ed532da562765ec0f146}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C1\-\_\-\-S\-E\-T}(value)~(T\-A1\-C\-C\-R1 = (value))}\label{_timer_8h_a7fd96a41ba91ed532da562765ec0f146}
+
+\item 
+\hypertarget{_timer_8h_ab924b3956edf76f54848066a509cd2c6}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C2\-\_\-\-S\-E\-T}(value)~(T\-A1\-C\-C\-R2 = (value))}\label{_timer_8h_ab924b3956edf76f54848066a509cd2c6}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A1 enable interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_aa230c238d6a6d8f0e7fc13d369eab3e7}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A1\-C\-C\-T\-L0 = T\-A1\-C\-C\-T\-L0 $|$ (C\-C\-I\-E))}\label{_timer_8h_aa230c238d6a6d8f0e7fc13d369eab3e7}
+
+\item 
+\hypertarget{_timer_8h_a8de281adc9d6ef7d3d3a652a8655ae2f}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A1\-C\-C\-T\-L1 = T\-A1\-C\-C\-T\-L1 $|$ (C\-C\-I\-E))}\label{_timer_8h_a8de281adc9d6ef7d3d3a652a8655ae2f}
+
+\item 
+\hypertarget{_timer_8h_a940b96f81b60dae6fda7b25db2992f32}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A1\-C\-C\-T\-L2 = T\-A1\-C\-C\-T\-L2 $|$ (C\-C\-I\-E))}\label{_timer_8h_a940b96f81b60dae6fda7b25db2992f32}
+
+\item 
+\hypertarget{_timer_8h_ac0193f1178dac9ecacd5d6d653f6aab4}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A1\-C\-T\-L   = T\-A1\-C\-T\-L   $|$ (T\-A\-I\-E))}\label{_timer_8h_ac0193f1178dac9ecacd5d6d653f6aab4}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A1 disable interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_adf5961a591bae7e87dd256448dea5840}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A1\-C\-C\-T\-L0 = T\-A1\-C\-C\-T\-L0 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_adf5961a591bae7e87dd256448dea5840}
+
+\item 
+\hypertarget{_timer_8h_afbeaa9ddd81669eb7b45db342dc77f8a}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A1\-C\-C\-T\-L1 = T\-A1\-C\-C\-T\-L1 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_afbeaa9ddd81669eb7b45db342dc77f8a}
+
+\item 
+\hypertarget{_timer_8h_aeef8e6b8ef16d7413cf2e8dbe237d778}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A1\-C\-C\-T\-L2 = T\-A1\-C\-C\-T\-L2 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_aeef8e6b8ef16d7413cf2e8dbe237d778}
+
+\item 
+\hypertarget{_timer_8h_a1cf4ca727489ed175a8462bdda064a0c}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A1\-C\-T\-L   = T\-A1\-C\-T\-L   \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(T\-A\-I\-E)))}\label{_timer_8h_a1cf4ca727489ed175a8462bdda064a0c}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A1 enable interrupt status macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a3649a98a1845963a6a6877a61d5d2a26}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A1\-C\-C\-T\-L0 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_a3649a98a1845963a6a6877a61d5d2a26}
+
+\item 
+\hypertarget{_timer_8h_ad70374f4a7322256b7b2fb452b63ce58}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A1\-C\-C\-T\-L1 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_ad70374f4a7322256b7b2fb452b63ce58}
+
+\item 
+\hypertarget{_timer_8h_af138e570c767a7aabacf50b951e01b9a}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A1\-C\-C\-T\-L2 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_af138e570c767a7aabacf50b951e01b9a}
+
+\item 
+\hypertarget{_timer_8h_a9466f3aa03cee4005ba60bc082bd2f0d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A1\-C\-T\-L   \& (T\-A\-I\-E)) $>$ 0u)}\label{_timer_8h_a9466f3aa03cee4005ba60bc082bd2f0d}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A1 clear interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_ab4c335acb9ea2fe2cae0960d0b6d7e7b}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A1\-C\-C\-T\-L0 = T\-A1\-C\-C\-T\-L0 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_ab4c335acb9ea2fe2cae0960d0b6d7e7b}
+
+\item 
+\hypertarget{_timer_8h_abe6de4673b23115cf7711677fb5d97f9}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A1\-C\-C\-T\-L1 = T\-A1\-C\-C\-T\-L1 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_abe6de4673b23115cf7711677fb5d97f9}
+
+\item 
+\hypertarget{_timer_8h_ab0921bac1457f771ef091a4c87de3e9d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A1\-C\-C\-T\-L2 = T\-A1\-C\-C\-T\-L2 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_ab0921bac1457f771ef091a4c87de3e9d}
+
+\item 
+\hypertarget{_timer_8h_a754c47473c6e23d59271c376d2f4dec1}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A1\-C\-T\-L   = T\-A1\-C\-T\-L \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(T\-A\-I\-F\-G)))}\label{_timer_8h_a754c47473c6e23d59271c376d2f4dec1}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A1 get interrupt flag macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a24a285820104449bc85d6c6f159f4d99}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A1\-C\-C\-T\-L0 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a24a285820104449bc85d6c6f159f4d99}
+
+\item 
+\hypertarget{_timer_8h_acdb5b46c7edaca4e3c9bf3cd20971e74}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A1\-C\-C\-T\-L1 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_acdb5b46c7edaca4e3c9bf3cd20971e74}
+
+\item 
+\hypertarget{_timer_8h_ab099ecc2efb0fa892e86a5b0bf76ddf5}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A1\-C\-C\-T\-L2 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_ab099ecc2efb0fa892e86a5b0bf76ddf5}
+
+\item 
+\hypertarget{_timer_8h_a7e4d03dd49496f157c83809b9cefa0cd}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A1\-C\-T\-L   \& (T\-A\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a7e4d03dd49496f157c83809b9cefa0cd}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A2 control macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_timer_8h_a7e91d0622a9a7d077406a24728183be9}{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-A\-R\-T}(mode)~(T\-A2\-C\-T\-L = T\-A2\-C\-T\-L $|$ ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) mode) $|$ T\-A\-C\-L\-R)
+\begin{DoxyCompactList}\small\item\em Start timer A2 counting from zero. \end{DoxyCompactList}\item 
+\#define \hyperlink{_timer_8h_a85d83c1bf42a29f09abac00e25d345b7}{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-O\-P}()~(T\-A2\-C\-T\-L = T\-A2\-C\-T\-L \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(M\-C\-\_\-3)))
+\item 
+\#define \hyperlink{_timer_8h_a1f9e16b62db44c27229fde4c8d1dbfbd}{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-R\-E\-S\-E\-T}()~(T\-A2\-C\-T\-L = T\-A2\-C\-T\-L $|$ T\-A\-C\-L\-R)
+\item 
+\#define \hyperlink{_timer_8h_a6673ef962cfeec169bb9b0f8e18c2e2c}{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-T\-R\-I\-G\-G\-E\-R}~(T\-A2\-C\-C\-T\-L1 = T\-A2\-C\-C\-T\-L1 $^\wedge$ C\-C\-I\-S0)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A2 C\-Cx register set macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_abe81f6e8d96e95f45fff5f214855b39f}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-S\-E\-T}(value)~(T\-A2\-C\-C\-R0 = (value))}\label{_timer_8h_abe81f6e8d96e95f45fff5f214855b39f}
+
+\item 
+\hypertarget{_timer_8h_a2592b7b75e384c7941e342d9e52f96a1}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T}(value)~(T\-A2\-C\-C\-R0 += (value))}\label{_timer_8h_a2592b7b75e384c7941e342d9e52f96a1}
+
+\item 
+\hypertarget{_timer_8h_a5bed9f1542e067d3e2b9e827819609b9}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-S\-E\-T}(value)~(T\-A2\-C\-C\-R1 = (value))}\label{_timer_8h_a5bed9f1542e067d3e2b9e827819609b9}
+
+\item 
+\hypertarget{_timer_8h_a7e1d3fdf2b161edf87be6ddc6d09572f}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-S\-E\-T}(value)~(T\-A2\-C\-C\-R2 = (value))}\label{_timer_8h_a7e1d3fdf2b161edf87be6ddc6d09572f}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A2 C\-Cx register get macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a1c927cf013799e601ff304aca738f37e}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-G\-E\-T}~(T\-A2\-C\-C\-R0)}\label{_timer_8h_a1c927cf013799e601ff304aca738f37e}
+
+\item 
+\hypertarget{_timer_8h_a6ef24a54f5199a2601f58a6b99f7746d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-E\-D}~((T\-A2\-C\-C\-T\-L0 \& C\-O\-V) $>$ 0)}\label{_timer_8h_a6ef24a54f5199a2601f58a6b99f7746d}
+
+\item 
+\hypertarget{_timer_8h_a246f9bad9cbb976dd778960515c3b0e4}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-H\-I\-G\-H}~((T\-A2\-C\-C\-T\-L0 \& C\-C\-I) $>$ 0)}\label{_timer_8h_a246f9bad9cbb976dd778960515c3b0e4}
+
+\item 
+\hypertarget{_timer_8h_a5cd459651a2c88ba395d52acb0b21347}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-L\-O\-W}~((T\-A2\-C\-C\-T\-L0 \& C\-C\-I) == 0)}\label{_timer_8h_a5cd459651a2c88ba395d52acb0b21347}
+
+\item 
+\hypertarget{_timer_8h_a6f2ba63aed93139211e2a5af7d07eb83}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-G\-E\-T}~(T\-A2\-C\-C\-R1)}\label{_timer_8h_a6f2ba63aed93139211e2a5af7d07eb83}
+
+\item 
+\hypertarget{_timer_8h_ac26c8a9553460535aa8e35b5ac06ce65}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-E\-D}~((T\-A2\-C\-C\-T\-L1 \& C\-O\-V) $>$ 0)}\label{_timer_8h_ac26c8a9553460535aa8e35b5ac06ce65}
+
+\item 
+\hypertarget{_timer_8h_ae81d71655c6084a206c20c7254f3347b}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-H\-I\-G\-H}~((T\-A2\-C\-C\-T\-L1 \& C\-C\-I) $>$ 0)}\label{_timer_8h_ae81d71655c6084a206c20c7254f3347b}
+
+\item 
+\hypertarget{_timer_8h_a386908355b7064662573f271f1da6705}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-L\-O\-W}~((T\-A2\-C\-C\-T\-L1 \& C\-C\-I) == 0)}\label{_timer_8h_a386908355b7064662573f271f1da6705}
+
+\item 
+\hypertarget{_timer_8h_a2cd93e4c4c30e289d5653c99aba7239c}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-G\-E\-T}~(T\-A2\-C\-C\-R2)}\label{_timer_8h_a2cd93e4c4c30e289d5653c99aba7239c}
+
+\item 
+\hypertarget{_timer_8h_afdc2fbe8a6082b986c778e2c829d2f32}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-E\-D}~((T\-A2\-C\-C\-T\-L2 \& C\-O\-V) $>$ 0)}\label{_timer_8h_afdc2fbe8a6082b986c778e2c829d2f32}
+
+\item 
+\hypertarget{_timer_8h_a8517845c14a41e4cc8b6230ba3de400f}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-H\-I\-G\-H}~((T\-A2\-C\-C\-T\-L2 \& C\-C\-I) $>$ 0)}\label{_timer_8h_a8517845c14a41e4cc8b6230ba3de400f}
+
+\item 
+\hypertarget{_timer_8h_a70c1a1d4b411f18e8d0a42529cb438bd}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-P\-I\-N\-\_\-\-I\-S\-\_\-\-L\-O\-W}~((T\-A2\-C\-C\-T\-L2 \& C\-C\-I) == 0)}\label{_timer_8h_a70c1a1d4b411f18e8d0a42529cb438bd}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A2 enable interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_aa2489a034b97ee6d05dd214cddd4261b}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A2\-C\-C\-T\-L0 = T\-A2\-C\-C\-T\-L0 $|$ (C\-C\-I\-E))}\label{_timer_8h_aa2489a034b97ee6d05dd214cddd4261b}
+
+\item 
+\hypertarget{_timer_8h_a62d45b555c0792080b980dcc8cdc0a23}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A2\-C\-C\-T\-L1 = T\-A2\-C\-C\-T\-L1 $|$ (C\-C\-I\-E))}\label{_timer_8h_a62d45b555c0792080b980dcc8cdc0a23}
+
+\item 
+\hypertarget{_timer_8h_a6f19e9d0df0e5e997bcba25ac95dc987}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A2\-C\-C\-T\-L2 = T\-A2\-C\-C\-T\-L2 $|$ (C\-C\-I\-E))}\label{_timer_8h_a6f19e9d0df0e5e997bcba25ac95dc987}
+
+\item 
+\hypertarget{_timer_8h_ab143ac8389e76641732397cd4b3c0a72}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-A2\-C\-T\-L   = T\-A2\-C\-T\-L   $|$ (T\-A\-I\-E))}\label{_timer_8h_ab143ac8389e76641732397cd4b3c0a72}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A2 disable interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a7b00a948b847c34855a0fb24e0619758}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A2\-C\-C\-T\-L0 = T\-A2\-C\-C\-T\-L0 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_a7b00a948b847c34855a0fb24e0619758}
+
+\item 
+\hypertarget{_timer_8h_a1e85454fa38743ec4c6badf94413e5f5}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A2\-C\-C\-T\-L1 = T\-A2\-C\-C\-T\-L1 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_a1e85454fa38743ec4c6badf94413e5f5}
+
+\item 
+\hypertarget{_timer_8h_a24119d0007b72ce9b14da54ebde4e31f}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A2\-C\-C\-T\-L2 = T\-A2\-C\-C\-T\-L2 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_a24119d0007b72ce9b14da54ebde4e31f}
+
+\item 
+\hypertarget{_timer_8h_afceaaf1e22b8a7cba220b6dbbcf3be0d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-A2\-C\-T\-L   = T\-A2\-C\-T\-L   \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(T\-A\-I\-E)))}\label{_timer_8h_afceaaf1e22b8a7cba220b6dbbcf3be0d}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A2 enable interrupt status macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a18e906d3d8973244523b39d518609f3c}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A2\-C\-C\-T\-L0 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_a18e906d3d8973244523b39d518609f3c}
+
+\item 
+\hypertarget{_timer_8h_a64bbc3f862f93da7452489a127a153ba}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A2\-C\-C\-T\-L1 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_a64bbc3f862f93da7452489a127a153ba}
+
+\item 
+\hypertarget{_timer_8h_a95a12d9e8b3d977b85471991e7e9e043}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A2\-C\-C\-T\-L2 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_a95a12d9e8b3d977b85471991e7e9e043}
+
+\item 
+\hypertarget{_timer_8h_a28c63159273d8456a79353f0b6930609}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-A2\-C\-T\-L   \& (T\-A\-I\-E)) $>$ 0u)}\label{_timer_8h_a28c63159273d8456a79353f0b6930609}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A2 clear macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a06ffa2c77abe903d2ad2a2efadc2125b}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A2\-C\-C\-T\-L0 = T\-A2\-C\-C\-T\-L0 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a06ffa2c77abe903d2ad2a2efadc2125b}
+
+\item 
+\hypertarget{_timer_8h_a0ee0eea3b7bd5767917a90cd7eda4125}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-C\-L\-E\-A\-R\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W}~(T\-A2\-C\-C\-T\-L0 = T\-A2\-C\-C\-T\-L0 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-O\-V)))}\label{_timer_8h_a0ee0eea3b7bd5767917a90cd7eda4125}
+
+\item 
+\hypertarget{_timer_8h_a0ac0dee7771ba09886b2c1db78e5733a}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A2\-C\-C\-T\-L1 = T\-A2\-C\-C\-T\-L1 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a0ac0dee7771ba09886b2c1db78e5733a}
+
+\item 
+\hypertarget{_timer_8h_a777c30f3ca3e06375666308f1ddc9634}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-C\-L\-E\-A\-R\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W}~(T\-A2\-C\-C\-T\-L1 = T\-A2\-C\-C\-T\-L1 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-O\-V)))}\label{_timer_8h_a777c30f3ca3e06375666308f1ddc9634}
+
+\item 
+\hypertarget{_timer_8h_adfbbb15141bdcf20a296d508a42818b0}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A2\-C\-C\-T\-L2 = T\-A2\-C\-C\-T\-L2 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_adfbbb15141bdcf20a296d508a42818b0}
+
+\item 
+\hypertarget{_timer_8h_a977818190680da1f4d7b15698ae159b2}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-C\-L\-E\-A\-R\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W}~(T\-A2\-C\-C\-T\-L0 = T\-A2\-C\-C\-T\-L2 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-O\-V)))}\label{_timer_8h_a977818190680da1f4d7b15698ae159b2}
+
+\item 
+\hypertarget{_timer_8h_a2d7006d015e8475ec29e79a8a38a13e6}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-A2\-C\-T\-L   = T\-A2\-C\-T\-L \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(T\-A\-I\-F\-G)))}\label{_timer_8h_a2d7006d015e8475ec29e79a8a38a13e6}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer A2 get interrupt flag macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a0bf2b520f698f72e60a67f6c0295e7be}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A2\-C\-C\-T\-L0 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a0bf2b520f698f72e60a67f6c0295e7be}
+
+\item 
+\hypertarget{_timer_8h_afc961b84d5b02edfca5b907fa3194cb3}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A2\-C\-C\-T\-L1 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_afc961b84d5b02edfca5b907fa3194cb3}
+
+\item 
+\hypertarget{_timer_8h_ae5df985689d08bdd7bd451e4e9e0beb5}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A2\-C\-C\-T\-L2 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_ae5df985689d08bdd7bd451e4e9e0beb5}
+
+\item 
+\hypertarget{_timer_8h_a36149484d6afa9ebae95e38598e279f6}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-A2\-C\-T\-L   \& (T\-A\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a36149484d6afa9ebae95e38598e279f6}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer B0 control macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_timer_8h_a2e6f4a57b50478cb64959c4564a7c8a6}{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-A\-R\-T}(mode)~(T\-B0\-C\-T\-L = T\-B0\-C\-T\-L $|$ ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) mode) $|$ T\-B\-C\-L\-R)
+\begin{DoxyCompactList}\small\item\em Start timer B0 counting from zero. \end{DoxyCompactList}\item 
+\#define \hyperlink{_timer_8h_aa5db00d3d51a98a8d2a0de23486b93ce}{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-O\-P}()~(T\-B0\-C\-T\-L = T\-B0\-C\-T\-L \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(M\-C\-\_\-3)))
+\item 
+\#define \hyperlink{_timer_8h_ae4507083b8c6a295a87308276df20616}{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-R\-E\-S\-E\-T}()~(T\-B0\-C\-T\-L = T\-B0\-C\-T\-L $|$ T\-A\-C\-L\-R)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer B0 C\-Cx register get macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_adf2bbdf8415930d3cd933e3776e45b8d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C0\-\_\-\-G\-E\-T}()~(T\-B0\-C\-C\-R0)}\label{_timer_8h_adf2bbdf8415930d3cd933e3776e45b8d}
+
+\item 
+\hypertarget{_timer_8h_afc29e34f2530c8a351cf633644e3c016}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C1\-\_\-\-G\-E\-T}()~(T\-B0\-C\-C\-R1)}\label{_timer_8h_afc29e34f2530c8a351cf633644e3c016}
+
+\item 
+\hypertarget{_timer_8h_a8bcc4f27c5e2f24b7dd7ffc409eb1b1f}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C2\-\_\-\-G\-E\-T}()~(T\-B0\-C\-C\-R2)}\label{_timer_8h_a8bcc4f27c5e2f24b7dd7ffc409eb1b1f}
+
+\item 
+\hypertarget{_timer_8h_a088741e6d7b64c02c512a5d72986cfa8}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C3\-\_\-\-G\-E\-T}()~(T\-B0\-C\-C\-R3)}\label{_timer_8h_a088741e6d7b64c02c512a5d72986cfa8}
+
+\item 
+\hypertarget{_timer_8h_ac3fce0879732c11c8c006187e14758a6}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C4\-\_\-\-G\-E\-T}()~(T\-B0\-C\-C\-R4)}\label{_timer_8h_ac3fce0879732c11c8c006187e14758a6}
+
+\item 
+\hypertarget{_timer_8h_ad3b5562ffe4e3df3d14a9ea02f3bb171}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C5\-\_\-\-G\-E\-T}()~(T\-B0\-C\-C\-R5)}\label{_timer_8h_ad3b5562ffe4e3df3d14a9ea02f3bb171}
+
+\item 
+\hypertarget{_timer_8h_a634d10eb6f83eb01917188c48ad1f11b}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C6\-\_\-\-G\-E\-T}()~(T\-B0\-C\-C\-R6)}\label{_timer_8h_a634d10eb6f83eb01917188c48ad1f11b}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer B0 C\-Cx register set macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a028cd854303d2e24c9d80bb0ae12142e}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C0\-\_\-\-S\-E\-T}(value)~(T\-B0\-C\-C\-R0 = (value))}\label{_timer_8h_a028cd854303d2e24c9d80bb0ae12142e}
+
+\item 
+\hypertarget{_timer_8h_a48551e49522786cf512f6364a78d11dc}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C0\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T}(value)~(T\-B0\-C\-C\-R0 += (value))}\label{_timer_8h_a48551e49522786cf512f6364a78d11dc}
+
+\item 
+\hypertarget{_timer_8h_a1951cb8e05cf0a01b755d05acf533437}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C1\-\_\-\-S\-E\-T}(value)~(T\-B0\-C\-C\-R1 = (value))}\label{_timer_8h_a1951cb8e05cf0a01b755d05acf533437}
+
+\item 
+\hypertarget{_timer_8h_a1baf91c61e0c67fe1f928aa0ffea8817}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C2\-\_\-\-S\-E\-T}(value)~(T\-B0\-C\-C\-R2 = (value))}\label{_timer_8h_a1baf91c61e0c67fe1f928aa0ffea8817}
+
+\item 
+\hypertarget{_timer_8h_a47ee408b53fa99c26a78169c0fb22662}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C3\-\_\-\-S\-E\-T}(value)~(T\-B0\-C\-C\-R3 = (value))}\label{_timer_8h_a47ee408b53fa99c26a78169c0fb22662}
+
+\item 
+\hypertarget{_timer_8h_afa34c5d19e7ee26d65b53ef5862f1771}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C4\-\_\-\-S\-E\-T}(value)~(T\-B0\-C\-C\-R4 = (value))}\label{_timer_8h_afa34c5d19e7ee26d65b53ef5862f1771}
+
+\item 
+\hypertarget{_timer_8h_a2cbf673b12186f9a77aab041d7a97674}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C5\-\_\-\-S\-E\-T}(value)~(T\-B0\-C\-C\-R5 = (value))}\label{_timer_8h_a2cbf673b12186f9a77aab041d7a97674}
+
+\item 
+\hypertarget{_timer_8h_ab811742ef0770ee9532ad605e044b01c}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C6\-\_\-\-S\-E\-T}(value)~(T\-B0\-C\-C\-R6 = (value))}\label{_timer_8h_ab811742ef0770ee9532ad605e044b01c}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer B0 enable interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a15f312d049876834cd44587e24e48817}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L0 = T\-B0\-C\-C\-T\-L0 $|$ (C\-C\-I\-E))}\label{_timer_8h_a15f312d049876834cd44587e24e48817}
+
+\item 
+\hypertarget{_timer_8h_a88ea9c0bafd1dbdb72ae72550ca0814a}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L1 = T\-B0\-C\-C\-T\-L1 $|$ (C\-C\-I\-E))}\label{_timer_8h_a88ea9c0bafd1dbdb72ae72550ca0814a}
+
+\item 
+\hypertarget{_timer_8h_aa679073a0b925ff2e51fe9aee99f309a}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L2 = T\-B0\-C\-C\-T\-L2 $|$ (C\-C\-I\-E))}\label{_timer_8h_aa679073a0b925ff2e51fe9aee99f309a}
+
+\item 
+\hypertarget{_timer_8h_a06d02338f698b4e9e29073c1bbfed8f5}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L3 = T\-B0\-C\-C\-T\-L3 $|$ (C\-C\-I\-E))}\label{_timer_8h_a06d02338f698b4e9e29073c1bbfed8f5}
+
+\item 
+\hypertarget{_timer_8h_a97b5be10f5dcac760931b120d19d4fb1}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L4 = T\-B0\-C\-C\-T\-L4 $|$ (C\-C\-I\-E))}\label{_timer_8h_a97b5be10f5dcac760931b120d19d4fb1}
+
+\item 
+\hypertarget{_timer_8h_a56e618626d6ccb31f4047c0d82895dc4}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C5\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L5 = T\-B0\-C\-C\-T\-L5 $|$ (C\-C\-I\-E))}\label{_timer_8h_a56e618626d6ccb31f4047c0d82895dc4}
+
+\item 
+\hypertarget{_timer_8h_aa50715bfcbc29d0274e3240027dc92b1}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C6\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L6 = T\-B0\-C\-C\-T\-L6 $|$ (C\-C\-I\-E))}\label{_timer_8h_aa50715bfcbc29d0274e3240027dc92b1}
+
+\item 
+\hypertarget{_timer_8h_ae71f92b4a4c106ae097182686c9d8771}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~(T\-B0\-C\-T\-L   = T\-B0\-C\-T\-L   $|$ (T\-A\-I\-E))}\label{_timer_8h_ae71f92b4a4c106ae097182686c9d8771}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer B0 disable interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_ae403bed079e80a4b028103964cfa7449}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L0 = T\-B0\-C\-C\-T\-L0 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_ae403bed079e80a4b028103964cfa7449}
+
+\item 
+\hypertarget{_timer_8h_acb90c736e4f14eddd4beca1a82e1c7d2}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L1 = T\-B0\-C\-C\-T\-L1 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_acb90c736e4f14eddd4beca1a82e1c7d2}
+
+\item 
+\hypertarget{_timer_8h_a2b53027a3da29b24942dffe27436a613}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L2 = T\-B0\-C\-C\-T\-L2 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_a2b53027a3da29b24942dffe27436a613}
+
+\item 
+\hypertarget{_timer_8h_a27d36c6aad8a4606958395a38cc861bc}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L3 = T\-B0\-C\-C\-T\-L3 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_a27d36c6aad8a4606958395a38cc861bc}
+
+\item 
+\hypertarget{_timer_8h_abd1dcc1595c8cdd5891f9393468e1aca}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L4 = T\-B0\-C\-C\-T\-L4 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_abd1dcc1595c8cdd5891f9393468e1aca}
+
+\item 
+\hypertarget{_timer_8h_a491e61879ffd7ad72bd292c1791a2e90}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C5\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L5 = T\-B0\-C\-C\-T\-L5 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_a491e61879ffd7ad72bd292c1791a2e90}
+
+\item 
+\hypertarget{_timer_8h_af92a0b7631cbdae8ddc4b1d8f79bcc6f}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C6\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-B0\-C\-C\-T\-L6 = T\-B0\-C\-C\-T\-L6 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-E)))}\label{_timer_8h_af92a0b7631cbdae8ddc4b1d8f79bcc6f}
+
+\item 
+\hypertarget{_timer_8h_a78d6e6c6afaf17041d7a71ad6541df98}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~(T\-B0\-C\-T\-L   = T\-B0\-C\-T\-L   \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(T\-A\-I\-E)))}\label{_timer_8h_a78d6e6c6afaf17041d7a71ad6541df98}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer B0 enable interrupt status macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_aec840b71583068c2288c26fb69b4bdef}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-B0\-C\-C\-T\-L0 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_aec840b71583068c2288c26fb69b4bdef}
+
+\item 
+\hypertarget{_timer_8h_acdc7ae128ee471127abd285a07bd8a50}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-B0\-C\-C\-T\-L1 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_acdc7ae128ee471127abd285a07bd8a50}
+
+\item 
+\hypertarget{_timer_8h_afc78382f3324ee599d26aeb953180b11}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-B0\-C\-C\-T\-L2 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_afc78382f3324ee599d26aeb953180b11}
+
+\item 
+\hypertarget{_timer_8h_a44f8a400624db75805772664105faf93}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-B0\-C\-C\-T\-L3 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_a44f8a400624db75805772664105faf93}
+
+\item 
+\hypertarget{_timer_8h_ac1c5b63906657f128a8aae40205e3199}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-B0\-C\-C\-T\-L4 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_ac1c5b63906657f128a8aae40205e3199}
+
+\item 
+\hypertarget{_timer_8h_a641b0b3ba2772704a61bafc99b593da5}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C5\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-B0\-C\-C\-T\-L5 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_a641b0b3ba2772704a61bafc99b593da5}
+
+\item 
+\hypertarget{_timer_8h_a5a7ef778f38be88bfd0a840838ac383d}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C6\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-B0\-C\-C\-T\-L6 \& (C\-C\-I\-E)) $>$ 0u)}\label{_timer_8h_a5a7ef778f38be88bfd0a840838ac383d}
+
+\item 
+\hypertarget{_timer_8h_a7bd7676e9558a40ce1cf766c10e66fd5}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D}()~((T\-B0\-C\-T\-L   \& (T\-A\-I\-E)) $>$ 0u)}\label{_timer_8h_a7bd7676e9558a40ce1cf766c10e66fd5}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer B0 clear interrupt macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a555eeb29406067aa76252a4c62954bc8}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-B0\-C\-C\-T\-L0 = T\-B0\-C\-C\-T\-L0 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a555eeb29406067aa76252a4c62954bc8}
+
+\item 
+\hypertarget{_timer_8h_aefbad410265457576df1831c597d3b61}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-B0\-C\-C\-T\-L1 = T\-B0\-C\-C\-T\-L1 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_aefbad410265457576df1831c597d3b61}
+
+\item 
+\hypertarget{_timer_8h_a4397a3bc78766b7320bcf55c04b5a0e0}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-B0\-C\-C\-T\-L2 = T\-B0\-C\-C\-T\-L2 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a4397a3bc78766b7320bcf55c04b5a0e0}
+
+\item 
+\hypertarget{_timer_8h_a88b6dee37bf937ab1ee70aad73c0f47a}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-B0\-C\-C\-T\-L3 = T\-B0\-C\-C\-T\-L3 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a88b6dee37bf937ab1ee70aad73c0f47a}
+
+\item 
+\hypertarget{_timer_8h_a5f461739f3d981e7191cf8148b377a43}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-B0\-C\-C\-T\-L4 = T\-B0\-C\-C\-T\-L4 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_a5f461739f3d981e7191cf8148b377a43}
+
+\item 
+\hypertarget{_timer_8h_af7a6d32edced830f0dd2519026a0be8e}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C5\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-B0\-C\-C\-T\-L5 = T\-B0\-C\-C\-T\-L5 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_af7a6d32edced830f0dd2519026a0be8e}
+
+\item 
+\hypertarget{_timer_8h_ad9d2223afe4a9af99647ddc5fb9acc26}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C6\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-B0\-C\-C\-T\-L6 = T\-B0\-C\-C\-T\-L6 \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(C\-C\-I\-F\-G)))}\label{_timer_8h_ad9d2223afe4a9af99647ddc5fb9acc26}
+
+\item 
+\hypertarget{_timer_8h_a18cf1c26b00289879fa886bef78142ab}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-C\-L\-E\-A\-R}()~(T\-B0\-C\-T\-L   = T\-B0\-C\-T\-L \& ((\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}) $\sim$(T\-A\-I\-F\-G)))}\label{_timer_8h_a18cf1c26b00289879fa886bef78142ab}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Timer B0 get interrupt flag macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_timer_8h_a7bdc1ec4a318cdbd73c498f7b28080ec}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C0\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-B0\-C\-C\-T\-L0 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a7bdc1ec4a318cdbd73c498f7b28080ec}
+
+\item 
+\hypertarget{_timer_8h_a7bea19580692815b21245bb775c45189}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C1\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-B0\-C\-C\-T\-L1 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a7bea19580692815b21245bb775c45189}
+
+\item 
+\hypertarget{_timer_8h_a261ffc5923d74bb58db6c232ab5f73ac}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C2\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-B0\-C\-C\-T\-L2 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a261ffc5923d74bb58db6c232ab5f73ac}
+
+\item 
+\hypertarget{_timer_8h_a8fd003ce253b46c7eee7d5958f7e8ef0}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C3\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-B0\-C\-C\-T\-L3 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a8fd003ce253b46c7eee7d5958f7e8ef0}
+
+\item 
+\hypertarget{_timer_8h_a8c3b263f48245843952bef94400b9d62}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C4\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-B0\-C\-C\-T\-L4 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a8c3b263f48245843952bef94400b9d62}
+
+\item 
+\hypertarget{_timer_8h_a388ce0be299840d730174574ebcd8314}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C5\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-B0\-C\-C\-T\-L5 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a388ce0be299840d730174574ebcd8314}
+
+\item 
+\hypertarget{_timer_8h_a65ea0d09930f441d82385af5a7d72dae}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-C\-C6\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-B0\-C\-C\-T\-L6 \& (C\-C\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a65ea0d09930f441d82385af5a7d72dae}
+
+\item 
+\hypertarget{_timer_8h_a8ce62cffc448f1cffdc79390838654ef}{\#define {\bfseries T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-T\-A\-\_\-\-I\-N\-T\-\_\-\-I\-S\-\_\-\-F\-L\-A\-G\-\_\-\-S\-E\-T}()~((T\-B0\-C\-T\-L   \& (T\-A\-I\-F\-G)) $>$ 0u)}\label{_timer_8h_a8ce62cffc448f1cffdc79390838654ef}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{Timer\-Source\-\_\-t} \{ \\*
+{\bfseries Timer\-Source\-\_\-\-S\-M\-C\-L\-K}, 
+\\*
+{\bfseries Timer\-Source\-\_\-\-A\-C\-L\-K}, 
+\\*
+{\bfseries Timer\-Source\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}
+ \}
+\item 
+enum \hyperlink{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{Timer\-Divider\-\_\-t} \{ \\*
+{\bfseries Timer\-Divider\-\_\-1} = 1u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-2} = 2u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-3} = 3u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-4} = 4u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-5} = 5u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-6} = 6u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-7} = 7u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-8} = 8u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-10} = 10u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-12} = 12u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-14} = 14u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-16} = 16u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-20} = 20u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-24} = 24u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-28} = 28u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-32} = 32u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-40} = 40u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-48} = 48u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-56} = 56u, 
+\\*
+{\bfseries Timer\-Divider\-\_\-64} = 64u
+ \}
+\item 
+enum \hyperlink{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{Timer\-Run\-Mode\-\_\-t} \{ \\*
+{\bfseries Timer\-Run\-Mode\-\_\-\-U\-P} = M\-C\-\_\-\-\_\-\-U\-P, 
+\\*
+{\bfseries Timer\-Run\-Mode\-\_\-\-C\-O\-N\-T\-I\-N\-U\-O\-U\-S} = M\-C\-\_\-\-\_\-\-C\-O\-N\-T\-I\-N\-U\-O\-U\-S, 
+\\*
+{\bfseries Timer\-Run\-Mode\-\_\-\-U\-P\-\_\-\-D\-O\-W\-N} = M\-C\-\_\-\-\_\-\-U\-P\-D\-O\-W\-N
+ \}
+\item 
+enum \hyperlink{_timer_8h_a124e2c52a033b7f176ad9eaf36c7b91a}{Timer\-Counter\-Length\-\_\-t} \{ \\*
+{\bfseries Timer\-Counter\-Length\-\_\-16\-B\-I\-T\-S} = C\-N\-T\-L\-\_\-\-\_\-16, 
+\\*
+{\bfseries Timer\-Counter\-Length\-\_\-12\-B\-I\-T\-S} = C\-N\-T\-L\-\_\-\-\_\-12, 
+\\*
+{\bfseries Timer\-Counter\-Length\-\_\-10\-B\-I\-T\-S} = C\-N\-T\-L\-\_\-\-\_\-10, 
+\\*
+{\bfseries Timer\-Counter\-Length\-\_\-8\-B\-I\-T\-S} = C\-N\-T\-L\-\_\-\-\_\-8
+ \}
+\item 
+enum \hyperlink{_timer_8h_ad4295b0fbc2aaed508b7a16cdfa55112}{Timer\-A0\-C\-C\-\_\-t} \{ \\*
+{\bfseries Timer\-A0\-C\-C\-\_\-0} = 0, 
+\\*
+{\bfseries Timer\-A0\-C\-C\-\_\-1} = 1, 
+\\*
+{\bfseries Timer\-A0\-C\-C\-\_\-2} = 2, 
+\\*
+{\bfseries Timer\-A0\-C\-C\-\_\-3} = 3, 
+\\*
+{\bfseries Timer\-A0\-C\-C\-\_\-4} = 4
+ \}
+\item 
+enum \hyperlink{_timer_8h_ad2a4d94ac9c9637565210368ca11f654}{Timer\-A1\-C\-C\-\_\-t} \{ \\*
+{\bfseries Timer\-A1\-C\-C\-\_\-0} = 0, 
+\\*
+{\bfseries Timer\-A1\-C\-C\-\_\-1} = 1, 
+\\*
+{\bfseries Timer\-A1\-C\-C\-\_\-2} = 2
+ \}
+\item 
+enum \hyperlink{_timer_8h_af4799ee4a995ac39e238e8cf6117d2b0}{Timer\-A2\-C\-C\-\_\-t} \{ \\*
+{\bfseries Timer\-A2\-C\-C\-\_\-0} = 0, 
+\\*
+{\bfseries Timer\-A2\-C\-C\-\_\-1} = 1, 
+\\*
+{\bfseries Timer\-A2\-C\-C\-\_\-2} = 2
+ \}
+\item 
+enum \hyperlink{_timer_8h_a2d8c984959809cc4ad4447896226521a}{Timer\-B0\-C\-C\-\_\-t} \{ \\*
+{\bfseries Timer\-B0\-C\-C\-\_\-0} = 0, 
+\\*
+{\bfseries Timer\-B0\-C\-C\-\_\-1} = 1, 
+\\*
+{\bfseries Timer\-B0\-C\-C\-\_\-2} = 2, 
+\\*
+{\bfseries Timer\-B0\-C\-C\-\_\-3} = 3, 
+\\*
+{\bfseries Timer\-B0\-C\-C\-\_\-4} = 4, 
+\\*
+{\bfseries Timer\-B0\-C\-C\-\_\-5} = 5, 
+\\*
+{\bfseries Timer\-B0\-C\-C\-\_\-6} = 6
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_timer_8h_a02f931c9a4a5037b499d531f49ebc3b9}{Timer\-\_\-\-A0\-\_\-\-Configure} (\hyperlink{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{Timer\-Source\-\_\-t} source, \hyperlink{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{Timer\-Divider\-\_\-t} divider, \hyperlink{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{Timer\-Run\-Mode\-\_\-t} run\-Mode, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8h_a3b787ac79e251ea6217447ed05be53bb}{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure} (\hyperlink{_timer_8h_ad4295b0fbc2aaed508b7a16cdfa55112}{Timer\-A0\-C\-C\-\_\-t} module, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8h_ade533e0f813484fc2c427f9d5d0297f2}{Timer\-\_\-\-A1\-\_\-\-Configure} (\hyperlink{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{Timer\-Source\-\_\-t} source, \hyperlink{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{Timer\-Divider\-\_\-t} divider, \hyperlink{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{Timer\-Run\-Mode\-\_\-t} run\-Mode, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8h_afb3862d95c76b43ac62e67852bbf9bfc}{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure} (\hyperlink{_timer_8h_ad2a4d94ac9c9637565210368ca11f654}{Timer\-A1\-C\-C\-\_\-t} module, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8h_a80a6a3058ed404d5fe9f247424d1b32f}{Timer\-\_\-\-A2\-\_\-\-Configure} (\hyperlink{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{Timer\-Source\-\_\-t} source, \hyperlink{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{Timer\-Divider\-\_\-t} divider, \hyperlink{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{Timer\-Run\-Mode\-\_\-t} run\-Mode, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8h_a41f12d88c0d6062ad6161df56c9ad074}{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure} (\hyperlink{_timer_8h_af4799ee4a995ac39e238e8cf6117d2b0}{Timer\-A2\-C\-C\-\_\-t} module, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8h_a9c2492c1b5bfb4de29379c4ab7881d9c}{Timer\-\_\-\-B0\-\_\-\-Configure} (\hyperlink{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{Timer\-Source\-\_\-t} source, \hyperlink{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{Timer\-Divider\-\_\-t} divider, \hyperlink{_timer_8h_a124e2c52a033b7f176ad9eaf36c7b91a}{Timer\-Counter\-Length\-\_\-t} counter\-Length, \hyperlink{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{Timer\-Run\-Mode\-\_\-t} run\-Mode, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8h_a6590a26eceba06333f451e69d6ea3987}{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure} (\hyperlink{_timer_8h_a2d8c984959809cc4ad4447896226521a}{Timer\-B0\-C\-C\-\_\-t} module, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Timer module driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The header file for the timer module. This file contains macros and functions that start and stop the hardware timers and control the timer interrupts. 
+
+Definition in file \hyperlink{_timer_8h_source}{Timer.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_timer_8h_a151d597fbe7911196beddd2c72b3bd49}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-R\-E\-S\-E\-T@{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-R\-E\-S\-E\-T}}
+\index{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-R\-E\-S\-E\-T@{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-R\-E\-S\-E\-T}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-R\-E\-S\-E\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(T\-A0\-C\-T\-L = T\-A0\-C\-T\-L $|$ T\-A\-C\-L\-R)}}\label{_timer_8h_a151d597fbe7911196beddd2c72b3bd49}
+Timer A reset 
+
+Definition at line 43 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a9b3499ea4c696e1b91b095e83bce86c8}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-A\-R\-T@{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-A\-R\-T}}
+\index{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-A\-R\-T@{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-A\-R\-T}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-A\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{mode}
+\end{DoxyParamCaption}
+)~(T\-A0\-C\-T\-L = T\-A0\-C\-T\-L $|$ (({\bf uint16\-\_\-t}) mode) $|$ T\-A\-C\-L\-R)}}\label{_timer_8h_a9b3499ea4c696e1b91b095e83bce86c8}
+
+
+Start timer A0 counting from zero. 
+
+\begin{DoxyNote}{Note}
+Timer A0 is not stopped first.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & -\/ Timer run mode \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file Timer.\-h.
+
+
+
+Referenced by \-\_\-\-Adc\-Start().
+
+\hypertarget{_timer_8h_a5cc51bb1313ec02ea5743fdffad0aadb}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-O\-P@{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-O\-P}}
+\index{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-O\-P@{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-O\-P}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-S\-T\-O\-P(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(T\-A0\-C\-T\-L = T\-A0\-C\-T\-L \& (({\bf uint16\-\_\-t}) $\sim$(M\-C\-\_\-3)))}}\label{_timer_8h_a5cc51bb1313ec02ea5743fdffad0aadb}
+Timer A0 stop 
+
+Definition at line 40 of file Timer.\-h.
+
+
+
+Referenced by \-\_\-\-Adc\-Stop(), and \-\_\-\-Setup\-Timer\-Config().
+
+\hypertarget{_timer_8h_a52038d2938916afd0a997434b7b13425}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-R\-E\-S\-E\-T@{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-R\-E\-S\-E\-T}}
+\index{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-R\-E\-S\-E\-T@{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-R\-E\-S\-E\-T}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-R\-E\-S\-E\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(T\-A1\-C\-T\-L = T\-A1\-C\-T\-L $|$ T\-A\-C\-L\-R)}}\label{_timer_8h_a52038d2938916afd0a997434b7b13425}
+Timer A1 reset 
+
+Definition at line 147 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a7430e4633667ea8c7db3db69ec4a8f93}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-A\-R\-T@{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-A\-R\-T}}
+\index{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-A\-R\-T@{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-A\-R\-T}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-A\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{mode}
+\end{DoxyParamCaption}
+)~(T\-A1\-C\-T\-L = T\-A1\-C\-T\-L $|$ (({\bf uint16\-\_\-t}) mode) $|$ T\-A\-C\-L\-R)}}\label{_timer_8h_a7430e4633667ea8c7db3db69ec4a8f93}
+
+
+Start timer A1 counting from zero. 
+
+\begin{DoxyNote}{Note}
+Timer A1 is not stopped first.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & -\/ Timer run mode \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file Timer.\-h.
+
+
+
+Referenced by Timer\-Tick\-\_\-\-Init().
+
+\hypertarget{_timer_8h_a36a75b7352be89dd6d93ce5afd92e1f4}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-O\-P@{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-O\-P}}
+\index{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-O\-P@{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-O\-P}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-S\-T\-O\-P(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(T\-A1\-C\-T\-L = T\-A1\-C\-T\-L \& (({\bf uint16\-\_\-t}) $\sim$(M\-C\-\_\-3)))}}\label{_timer_8h_a36a75b7352be89dd6d93ce5afd92e1f4}
+Timer A1 stop 
+
+Definition at line 144 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a6673ef962cfeec169bb9b0f8e18c2e2c}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-T\-R\-I\-G\-G\-E\-R@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-T\-R\-I\-G\-G\-E\-R}}
+\index{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-T\-R\-I\-G\-G\-E\-R@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-T\-R\-I\-G\-G\-E\-R}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-T\-R\-I\-G\-G\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-C\-C1\-\_\-\-T\-R\-I\-G\-G\-E\-R~(T\-A2\-C\-C\-T\-L1 = T\-A2\-C\-C\-T\-L1 $^\wedge$ C\-C\-I\-S0)}}\label{_timer_8h_a6673ef962cfeec169bb9b0f8e18c2e2c}
+Timer A2 C\-C1 trigger software capture. Assumes both rising and falling edge 
+
+Definition at line 225 of file Timer.\-h.
+
+
+
+Referenced by Encoder\-\_\-\-Read().
+
+\hypertarget{_timer_8h_a1f9e16b62db44c27229fde4c8d1dbfbd}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-R\-E\-S\-E\-T@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-R\-E\-S\-E\-T}}
+\index{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-R\-E\-S\-E\-T@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-R\-E\-S\-E\-T}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-R\-E\-S\-E\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(T\-A2\-C\-T\-L = T\-A2\-C\-T\-L $|$ T\-A\-C\-L\-R)}}\label{_timer_8h_a1f9e16b62db44c27229fde4c8d1dbfbd}
+Timer A2 reset 
+
+Definition at line 222 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a7e91d0622a9a7d077406a24728183be9}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-A\-R\-T@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-A\-R\-T}}
+\index{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-A\-R\-T@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-A\-R\-T}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-A\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{mode}
+\end{DoxyParamCaption}
+)~(T\-A2\-C\-T\-L = T\-A2\-C\-T\-L $|$ (({\bf uint16\-\_\-t}) mode) $|$ T\-A\-C\-L\-R)}}\label{_timer_8h_a7e91d0622a9a7d077406a24728183be9}
+
+
+Start timer A2 counting from zero. 
+
+\begin{DoxyNote}{Note}
+Timer A2 is not stopped first.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & -\/ Timer run mode \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 216 of file Timer.\-h.
+
+
+
+Referenced by Encoder\-\_\-\-Start().
+
+\hypertarget{_timer_8h_a85d83c1bf42a29f09abac00e25d345b7}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-O\-P@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-O\-P}}
+\index{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-O\-P@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-O\-P}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-S\-T\-O\-P(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(T\-A2\-C\-T\-L = T\-A2\-C\-T\-L \& (({\bf uint16\-\_\-t}) $\sim$(M\-C\-\_\-3)))}}\label{_timer_8h_a85d83c1bf42a29f09abac00e25d345b7}
+Timer A2 stop 
+
+Definition at line 219 of file Timer.\-h.
+
+
+
+Referenced by Encoder\-\_\-\-Stop().
+
+\hypertarget{_timer_8h_ae4507083b8c6a295a87308276df20616}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-R\-E\-S\-E\-T@{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-R\-E\-S\-E\-T}}
+\index{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-R\-E\-S\-E\-T@{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-R\-E\-S\-E\-T}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-R\-E\-S\-E\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(T\-B0\-C\-T\-L = T\-B0\-C\-T\-L $|$ T\-A\-C\-L\-R)}}\label{_timer_8h_ae4507083b8c6a295a87308276df20616}
+Timer B reset 
+
+Definition at line 321 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a2e6f4a57b50478cb64959c4564a7c8a6}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-A\-R\-T@{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-A\-R\-T}}
+\index{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-A\-R\-T@{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-A\-R\-T}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-A\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{mode}
+\end{DoxyParamCaption}
+)~(T\-B0\-C\-T\-L = T\-B0\-C\-T\-L $|$ (({\bf uint16\-\_\-t}) mode) $|$ T\-B\-C\-L\-R)}}\label{_timer_8h_a2e6f4a57b50478cb64959c4564a7c8a6}
+
+
+Start timer B0 counting from zero. 
+
+\begin{DoxyNote}{Note}
+Timer B0 is not stopped first.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & -\/ Timer run mode \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 315 of file Timer.\-h.
+
+
+
+Referenced by Pwm\-\_\-\-Enable(), and Pwm\-\_\-\-Set\-Frequency().
+
+\hypertarget{_timer_8h_aa5db00d3d51a98a8d2a0de23486b93ce}{\index{Timer.\-h@{Timer.\-h}!T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-O\-P@{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-O\-P}}
+\index{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-O\-P@{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-O\-P}!Timer.h@{Timer.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-S\-T\-O\-P(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(T\-B0\-C\-T\-L = T\-B0\-C\-T\-L \& (({\bf uint16\-\_\-t}) $\sim$(M\-C\-\_\-3)))}}\label{_timer_8h_aa5db00d3d51a98a8d2a0de23486b93ce}
+Timer B0 stop 
+
+Definition at line 318 of file Timer.\-h.
+
+
+
+Referenced by Pwm\-\_\-\-Disable().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_timer_8h_ad4295b0fbc2aaed508b7a16cdfa55112}{\index{Timer.\-h@{Timer.\-h}!Timer\-A0\-C\-C\-\_\-t@{Timer\-A0\-C\-C\-\_\-t}}
+\index{Timer\-A0\-C\-C\-\_\-t@{Timer\-A0\-C\-C\-\_\-t}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-A0\-C\-C\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Timer\-A0\-C\-C\-\_\-t}}}\label{_timer_8h_ad4295b0fbc2aaed508b7a16cdfa55112}
+Timer A0 compare/capture (C\-C) modules 
+
+Definition at line 469 of file Timer.\-h.
+
+\hypertarget{_timer_8h_ad2a4d94ac9c9637565210368ca11f654}{\index{Timer.\-h@{Timer.\-h}!Timer\-A1\-C\-C\-\_\-t@{Timer\-A1\-C\-C\-\_\-t}}
+\index{Timer\-A1\-C\-C\-\_\-t@{Timer\-A1\-C\-C\-\_\-t}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-A1\-C\-C\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Timer\-A1\-C\-C\-\_\-t}}}\label{_timer_8h_ad2a4d94ac9c9637565210368ca11f654}
+Timer A1 compare/capture (C\-C) modules 
+
+Definition at line 479 of file Timer.\-h.
+
+\hypertarget{_timer_8h_af4799ee4a995ac39e238e8cf6117d2b0}{\index{Timer.\-h@{Timer.\-h}!Timer\-A2\-C\-C\-\_\-t@{Timer\-A2\-C\-C\-\_\-t}}
+\index{Timer\-A2\-C\-C\-\_\-t@{Timer\-A2\-C\-C\-\_\-t}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-A2\-C\-C\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Timer\-A2\-C\-C\-\_\-t}}}\label{_timer_8h_af4799ee4a995ac39e238e8cf6117d2b0}
+Timer A2 compare/capture (C\-C) modules 
+
+Definition at line 487 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a2d8c984959809cc4ad4447896226521a}{\index{Timer.\-h@{Timer.\-h}!Timer\-B0\-C\-C\-\_\-t@{Timer\-B0\-C\-C\-\_\-t}}
+\index{Timer\-B0\-C\-C\-\_\-t@{Timer\-B0\-C\-C\-\_\-t}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-B0\-C\-C\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Timer\-B0\-C\-C\-\_\-t}}}\label{_timer_8h_a2d8c984959809cc4ad4447896226521a}
+Timer B0 compare/capture (C\-C) modules 
+
+Definition at line 495 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a124e2c52a033b7f176ad9eaf36c7b91a}{\index{Timer.\-h@{Timer.\-h}!Timer\-Counter\-Length\-\_\-t@{Timer\-Counter\-Length\-\_\-t}}
+\index{Timer\-Counter\-Length\-\_\-t@{Timer\-Counter\-Length\-\_\-t}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-Counter\-Length\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Timer\-Counter\-Length\-\_\-t}}}\label{_timer_8h_a124e2c52a033b7f176ad9eaf36c7b91a}
+Timer counter lengths 
+
+Definition at line 460 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{\index{Timer.\-h@{Timer.\-h}!Timer\-Divider\-\_\-t@{Timer\-Divider\-\_\-t}}
+\index{Timer\-Divider\-\_\-t@{Timer\-Divider\-\_\-t}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-Divider\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Timer\-Divider\-\_\-t}}}\label{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}
+Timer clock dividers 
+
+Definition at line 424 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{\index{Timer.\-h@{Timer.\-h}!Timer\-Run\-Mode\-\_\-t@{Timer\-Run\-Mode\-\_\-t}}
+\index{Timer\-Run\-Mode\-\_\-t@{Timer\-Run\-Mode\-\_\-t}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-Run\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Timer\-Run\-Mode\-\_\-t}}}\label{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}
+Timer run modes 
+
+Definition at line 452 of file Timer.\-h.
+
+\hypertarget{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{\index{Timer.\-h@{Timer.\-h}!Timer\-Source\-\_\-t@{Timer\-Source\-\_\-t}}
+\index{Timer\-Source\-\_\-t@{Timer\-Source\-\_\-t}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-Source\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Timer\-Source\-\_\-t}}}\label{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}
+Timer sources 
+
+Definition at line 416 of file Timer.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_timer_8h_a02f931c9a4a5037b499d531f49ebc3b9}{\index{Timer.\-h@{Timer.\-h}!Timer\-\_\-\-A0\-\_\-\-Configure@{Timer\-\_\-\-A0\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A0\-\_\-\-Configure@{Timer\-\_\-\-A0\-\_\-\-Configure}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-\_\-\-A0\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A0\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-Source\-\_\-t}}]{source, }
+\item[{{\bf Timer\-Divider\-\_\-t}}]{divider, }
+\item[{{\bf Timer\-Run\-Mode\-\_\-t}}]{run\-Mode, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8h_a02f931c9a4a5037b499d531f49ebc3b9}
+Configure timer A0 using the given parameters. If the selected run mode is either Up or Up/\-Down, the compare/capture 0 module is also configured and the timer counts to {\ttfamily value}. If the selected run mode is Continuous, the timer counts up to 2$^\wedge$16-\/1. The timer is not started.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em source} & -\/ Timer source \\
+\hline
+\mbox{\tt in}  & {\em divider} & -\/ Timer divider \\
+\hline
+\mbox{\tt in}  & {\em run\-Mode} & -\/ Timer mode \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value for timer to count up to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Timer.\-c.
+
+
+
+Referenced by \-\_\-\-Setup\-Timer\-Config().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8h_a3b787ac79e251ea6217447ed05be53bb}{\index{Timer.\-h@{Timer.\-h}!Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-A0\-C\-C\-\_\-t}}]{module, }
+\item[{{\bf uint16\-\_\-t}}]{config, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8h_a3b787ac79e251ea6217447ed05be53bb}
+Configure a timer A0 compare/capture (C\-C) module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em module} & -\/ Compare/capture module to configure \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Configuration value to set control register to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Initial compare/capture value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file Timer.\-c.
+
+
+
+Referenced by \-\_\-\-Setup\-Timer\-Config().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8h_ade533e0f813484fc2c427f9d5d0297f2}{\index{Timer.\-h@{Timer.\-h}!Timer\-\_\-\-A1\-\_\-\-Configure@{Timer\-\_\-\-A1\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A1\-\_\-\-Configure@{Timer\-\_\-\-A1\-\_\-\-Configure}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-\_\-\-A1\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A1\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-Source\-\_\-t}}]{source, }
+\item[{{\bf Timer\-Divider\-\_\-t}}]{divider, }
+\item[{{\bf Timer\-Run\-Mode\-\_\-t}}]{run\-Mode, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8h_ade533e0f813484fc2c427f9d5d0297f2}
+Configure timer A1 using the given parameters. If the selected run mode is either Up or Up/\-Down, the compare/capture 0 module is also configured and the timer counts to {\ttfamily value}. If the selected run mode is Continuous, the timer counts up to 2$^\wedge$16-\/1. The timer is not started.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em source} & -\/ Timer source \\
+\hline
+\mbox{\tt in}  & {\em divider} & -\/ Timer divider \\
+\hline
+\mbox{\tt in}  & {\em run\-Mode} & -\/ Timer mode \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value for timer to count up to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file Timer.\-c.
+
+
+
+Referenced by Timer\-Tick\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8h_afb3862d95c76b43ac62e67852bbf9bfc}{\index{Timer.\-h@{Timer.\-h}!Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-A1\-C\-C\-\_\-t}}]{module, }
+\item[{{\bf uint16\-\_\-t}}]{config, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8h_afb3862d95c76b43ac62e67852bbf9bfc}
+Configure a timer A1 compare/capture (C\-C) module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em module} & -\/ Compare/capture module to configure \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Configuration value to set control register to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Initial compare/capture value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file Timer.\-c.
+
+\hypertarget{_timer_8h_a80a6a3058ed404d5fe9f247424d1b32f}{\index{Timer.\-h@{Timer.\-h}!Timer\-\_\-\-A2\-\_\-\-Configure@{Timer\-\_\-\-A2\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A2\-\_\-\-Configure@{Timer\-\_\-\-A2\-\_\-\-Configure}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-\_\-\-A2\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A2\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-Source\-\_\-t}}]{source, }
+\item[{{\bf Timer\-Divider\-\_\-t}}]{divider, }
+\item[{{\bf Timer\-Run\-Mode\-\_\-t}}]{run\-Mode, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8h_a80a6a3058ed404d5fe9f247424d1b32f}
+Configure timer A2 using the given parameters. If the selected run mode is either Up or Up/\-Down, the compare/capture 0 module is also configured and the timer counts to {\ttfamily value}. If the selected run mode is Continuous, the timer counts up to 2$^\wedge$16-\/1. The timer is not started.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em source} & -\/ Timer source \\
+\hline
+\mbox{\tt in}  & {\em divider} & -\/ Timer divider \\
+\hline
+\mbox{\tt in}  & {\em run\-Mode} & -\/ Timer mode \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value for timer to count up to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 273 of file Timer.\-c.
+
+
+
+Referenced by Encoder\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8h_a41f12d88c0d6062ad6161df56c9ad074}{\index{Timer.\-h@{Timer.\-h}!Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-A2\-C\-C\-\_\-t}}]{module, }
+\item[{{\bf uint16\-\_\-t}}]{config, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8h_a41f12d88c0d6062ad6161df56c9ad074}
+Configure a timer A2 compare/capture (C\-C) module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em module} & -\/ Compare/capture module to configure \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Configuration value to set control register to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Initial compare/capture value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 341 of file Timer.\-c.
+
+
+
+Referenced by Encoder\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8h_a9c2492c1b5bfb4de29379c4ab7881d9c}{\index{Timer.\-h@{Timer.\-h}!Timer\-\_\-\-B0\-\_\-\-Configure@{Timer\-\_\-\-B0\-\_\-\-Configure}}
+\index{Timer\-\_\-\-B0\-\_\-\-Configure@{Timer\-\_\-\-B0\-\_\-\-Configure}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-\_\-\-B0\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-B0\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-Source\-\_\-t}}]{source, }
+\item[{{\bf Timer\-Divider\-\_\-t}}]{divider, }
+\item[{{\bf Timer\-Counter\-Length\-\_\-t}}]{counter\-Length, }
+\item[{{\bf Timer\-Run\-Mode\-\_\-t}}]{run\-Mode, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8h_a9c2492c1b5bfb4de29379c4ab7881d9c}
+Configure timer B0 using the given parameters. If the selected run mode is either Up or Up/\-Down, the compare/capture 0 module is also configured and the timer counts to {\ttfamily value}. If the selected run mode is Continuous, a range of either 16, 12, 10, or 8 bits is selected. The timer is not started.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em source} & -\/ Timer source \\
+\hline
+\mbox{\tt in}  & {\em divider} & -\/ Timer divider \\
+\hline
+\mbox{\tt in}  & {\em counter\-Length} & -\/ Length of timer counter \\
+\hline
+\mbox{\tt in}  & {\em run\-Mode} & -\/ Timer mode \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value for timer to count up to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 381 of file Timer.\-c.
+
+
+
+Referenced by Pwm\-\_\-\-Init(), and Pwm\-\_\-\-Set\-Frequency().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8h_a6590a26eceba06333f451e69d6ea3987}{\index{Timer.\-h@{Timer.\-h}!Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure}}
+\index{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure}!Timer.h@{Timer.\-h}}
+\subsubsection[{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-B0\-C\-C\-\_\-t}}]{module, }
+\item[{{\bf uint16\-\_\-t}}]{config, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8h_a6590a26eceba06333f451e69d6ea3987}
+Configure a timer B0 compare/capture (C\-C) module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em module} & -\/ Compare/capture module to configure \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Configuration value to set control register to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Initial compare/capture value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 453 of file Timer.\-c.
+
+
+
+Referenced by Pwm\-\_\-\-Enable(), and Pwm\-\_\-\-Set\-Duty().
+
+
+
+Here is the caller graph for this function\-:
+
+

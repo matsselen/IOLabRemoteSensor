@@ -1,0 +1,204 @@
+\hypertarget{_led_control_8c}{\section{Led\-Control.\-c File Reference}
+\label{_led_control_8c}\index{Led\-Control.\-c@{Led\-Control.\-c}}
+}
+
+
+L\-E\-D Controller.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Led\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Timer\-Tick.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for Led\-Control.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_led_control_8c_a2c3d7cfcbf9ca337b3658cc8c3591e3e}{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T}~( 0x0001u )
+\item 
+\#define \hyperlink{_led_control_8c_a2be438a6c5f0f620cc09f19a27e3c511}{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-E\-N\-D}~( 0x0200u )
+\item 
+\#define \hyperlink{_led_control_8c_aea14e3bad9aa6c1606c90739ed312c4a}{L\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C}~( 100u )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_led_control_8c_a4eb9122cd6f4e0696085bffc13f7b54d}{\-\_\-\-Led\-\_\-\-Process\-States} (void)
+\item 
+void \hyperlink{_led_control_8c_a81f6a8ba5391e5d336fe66ee41ae627d}{Led\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_led_control_8c_a15c78074311de3071ee99c4905d1c87e}{Led\-Control\-\_\-\-Set\-Led} (\hyperlink{_led_control_8h_a5dd59cdecd8f52d5454fd3905619026c}{Led\-\_\-t} led, \hyperlink{_led_control_8h_a1a58ff6a65f9680b7d3e265772dce1e5}{Led\-State\-\_\-t} state)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_led_control_8c_a8312126a2bffbfa2d9076e8cfe054289}{\-\_\-led\-Counter} = \hyperlink{_led_control_8c_a2c3d7cfcbf9ca337b3658cc8c3591e3e}{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_led_control_8c_afd00d4c4e8a2e8e8cac78b59941fa7b3}{\-\_\-led\-State} \mbox{[}Led\-\_\-\-L\-A\-S\-T\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+L\-E\-D Controller. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} L\-E\-D controller that manages the L\-E\-Ds and their state 
+
+Definition in file \hyperlink{_led_control_8c_source}{Led\-Control.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_led_control_8c_a2be438a6c5f0f620cc09f19a27e3c511}{\index{Led\-Control.\-c@{Led\-Control.\-c}!L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-E\-N\-D@{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-E\-N\-D}}
+\index{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-E\-N\-D@{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-E\-N\-D}!LedControl.c@{Led\-Control.\-c}}
+\subsubsection[{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-E\-N\-D~( 0x0200u )}}\label{_led_control_8c_a2be438a6c5f0f620cc09f19a27e3c511}
+Led counter ending value 
+
+Definition at line 34 of file Led\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Led\-\_\-\-Process\-States().
+
+\hypertarget{_led_control_8c_a2c3d7cfcbf9ca337b3658cc8c3591e3e}{\index{Led\-Control.\-c@{Led\-Control.\-c}!L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T@{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T}}
+\index{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T@{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T}!LedControl.c@{Led\-Control.\-c}}
+\subsubsection[{L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T~( 0x0001u )}}\label{_led_control_8c_a2c3d7cfcbf9ca337b3658cc8c3591e3e}
+Led counter starting value 
+
+Definition at line 32 of file Led\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Led\-\_\-\-Process\-States().
+
+\hypertarget{_led_control_8c_aea14e3bad9aa6c1606c90739ed312c4a}{\index{Led\-Control.\-c@{Led\-Control.\-c}!L\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C@{L\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C}}
+\index{L\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C@{L\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C}!LedControl.c@{Led\-Control.\-c}}
+\subsubsection[{L\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-M\-S\-E\-C~( 100u )}}\label{_led_control_8c_aea14e3bad9aa6c1606c90739ed312c4a}
+Time between Led states 
+
+Definition at line 36 of file Led\-Control.\-c.
+
+
+
+Referenced by Led\-Control\-\_\-\-Init().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_led_control_8c_a4eb9122cd6f4e0696085bffc13f7b54d}{\index{Led\-Control.\-c@{Led\-Control.\-c}!\-\_\-\-Led\-\_\-\-Process\-States@{\-\_\-\-Led\-\_\-\-Process\-States}}
+\index{\-\_\-\-Led\-\_\-\-Process\-States@{\-\_\-\-Led\-\_\-\-Process\-States}!LedControl.c@{Led\-Control.\-c}}
+\subsubsection[{\-\_\-\-Led\-\_\-\-Process\-States}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Led\-\_\-\-Process\-States (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_led_control_8c_a4eb9122cd6f4e0696085bffc13f7b54d}
+Increments the led state counter and sets the state of the leds. 
+
+Definition at line 87 of file Led\-Control.\-c.
+
+
+
+Referenced by Led\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_led_control_8c_a81f6a8ba5391e5d336fe66ee41ae627d}{\index{Led\-Control.\-c@{Led\-Control.\-c}!Led\-Control\-\_\-\-Init@{Led\-Control\-\_\-\-Init}}
+\index{Led\-Control\-\_\-\-Init@{Led\-Control\-\_\-\-Init}!LedControl.c@{Led\-Control.\-c}}
+\subsubsection[{Led\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Led\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_led_control_8c_a81f6a8ba5391e5d336fe66ee41ae627d}
+Initializes the Led Controller and sets up the timeout and callback for controlling the Led state. 
+
+Definition at line 61 of file Led\-Control.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_led_control_8c_a15c78074311de3071ee99c4905d1c87e}{\index{Led\-Control.\-c@{Led\-Control.\-c}!Led\-Control\-\_\-\-Set\-Led@{Led\-Control\-\_\-\-Set\-Led}}
+\index{Led\-Control\-\_\-\-Set\-Led@{Led\-Control\-\_\-\-Set\-Led}!LedControl.c@{Led\-Control.\-c}}
+\subsubsection[{Led\-Control\-\_\-\-Set\-Led}]{\setlength{\rightskip}{0pt plus 5cm}void Led\-Control\-\_\-\-Set\-Led (
+\begin{DoxyParamCaption}
+\item[{{\bf Led\-\_\-t}}]{led, }
+\item[{{\bf Led\-State\-\_\-t}}]{state}
+\end{DoxyParamCaption}
+)}}\label{_led_control_8c_a15c78074311de3071ee99c4905d1c87e}
+Sets the specified Led to blink for the appropriate state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em led} & -\/ which led to set \\
+\hline
+\mbox{\tt in}  & {\em state} & -\/ the state to set led to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file Led\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Clear\-Startup(), \-\_\-\-Handle\-Power\-Off\-Request(), \-\_\-\-Handle\-Status\-Packet(), main(), and Self\-Test\-\_\-\-Start().
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_led_control_8c_a8312126a2bffbfa2d9076e8cfe054289}{\index{Led\-Control.\-c@{Led\-Control.\-c}!\-\_\-led\-Counter@{\-\_\-led\-Counter}}
+\index{\-\_\-led\-Counter@{\-\_\-led\-Counter}!LedControl.c@{Led\-Control.\-c}}
+\subsubsection[{\-\_\-led\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-led\-Counter = {\bf L\-E\-D\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T}\hspace{0.3cm}{\ttfamily [static]}}}\label{_led_control_8c_a8312126a2bffbfa2d9076e8cfe054289}
+The counter for the led state. 
+
+Definition at line 42 of file Led\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Led\-\_\-\-Process\-States().
+
+\hypertarget{_led_control_8c_afd00d4c4e8a2e8e8cac78b59941fa7b3}{\index{Led\-Control.\-c@{Led\-Control.\-c}!\-\_\-led\-State@{\-\_\-led\-State}}
+\index{\-\_\-led\-State@{\-\_\-led\-State}!LedControl.c@{Led\-Control.\-c}}
+\subsubsection[{\-\_\-led\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-led\-State\mbox{[}Led\-\_\-\-L\-A\-S\-T\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_led_control_8c_afd00d4c4e8a2e8e8cac78b59941fa7b3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    LedState\_OFF,
+    LedState\_OFF,
+    LedState\_OFF,
+    LedState\_OFF
+
+\}
+\end{DoxyCode}
+Stores the setting for each led 
+
+Definition at line 45 of file Led\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Led\-\_\-\-Process\-States(), and Led\-Control\-\_\-\-Set\-Led().
+

@@ -1,0 +1,333 @@
+\hypertarget{_state_machine_8c}{\section{State\-Machine.\-c File Reference}
+\label{_state_machine_8c}\index{State\-Machine.\-c@{State\-Machine.\-c}}
+}
+
+
+State logic handling.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}State\-Machine.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Event\-Queue.\-h$>$}\\*
+{\ttfamily \#include $<$Comm\-Protocol.\-h$>$}\\*
+{\ttfamily \#include $<$Test\-Protocol.\-h$>$}\\*
+{\ttfamily \#include $<$Accelerometer\-Control.\-h$>$}\\*
+{\ttfamily \#include $<$Magnetometer\-Control.\-h$>$}\\*
+{\ttfamily \#include $<$Gyroscope\-Control.\-h$>$}\\*
+{\ttfamily \#include $<$Push\-Button\-Control.\-h$>$}\\*
+{\ttfamily \#include $<$Led\-Control.\-h$>$}\\*
+{\ttfamily \#include $<$Timer\-Tick.\-h$>$}\\*
+{\ttfamily \#include $<$Adc\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Self\-Test.\-h$>$}\\*
+{\ttfamily \#include $<$System.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+Include dependency graph for State\-Machine.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_state_machine_8c_a7cf230ffe4aa28191772f49d2f3b883c}{P\-O\-W\-E\-R\-\_\-\-O\-F\-F\-\_\-\-M\-S\-E\-C}~( 1000u )
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_state_machine_8c_ae2946618e700f814e6147195c808f4c8}{State\-\_\-t} \{ \\*
+{\bfseries State\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries State\-\_\-\-F\-I\-R\-S\-T} = 0, 
+\\*
+{\bfseries State\-\_\-\-R\-U\-N} = State\-\_\-\-F\-I\-R\-S\-T, 
+\\*
+{\bfseries State\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T}, 
+\\*
+{\bfseries State\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_state_machine_8c_a260232d8362a0678d13436b492aa485b}{\-\_\-\-Process\-Events\-\_\-\-R\-U\-N} (\hyperlink{_event_queue_8h_a284681cc05ddc650984c328563b5fc7f}{Event\-\_\-t} event)
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_state_machine_8c_af9ef2eb2c4780d1d53f04624ff8cab73}{\-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T} (\hyperlink{_event_queue_8h_a284681cc05ddc650984c328563b5fc7f}{Event\-\_\-t} event)
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_state_machine_8c_ad7bd6065bce5082e3a9b485202c74035}{\-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T} (\hyperlink{_event_queue_8h_a284681cc05ddc650984c328563b5fc7f}{Event\-\_\-t} event)
+\item 
+static \-\_\-\-\_\-inline void \hyperlink{_state_machine_8c_af48ba6585e6b7d8b1ea4d6fe2c198913}{\-\_\-\-Unlatch\-Power} (void)
+\item 
+static void \hyperlink{_state_machine_8c_a4999feb5cd4d41edea833a218eda4fe0}{\-\_\-\-Handle\-Power\-Off\-Request} (void)
+\item 
+void \hyperlink{_state_machine_8c_a77e9c7c153d9badecbcfdfa49475617b}{State\-Machine\-\_\-\-Process\-Events} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_state_machine_8c_ae2946618e700f814e6147195c808f4c8}{State\-\_\-t} \hyperlink{_state_machine_8c_ab19e6ac86687c1b6735a617a381ea695}{\-\_\-current\-State} = State\-\_\-\-R\-U\-N
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_state_machine_8c_a97d9227075973db76e2c1358563964c0}{\-\_\-button\-One\-Pressed} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}{Tick\-Timeout\-Handle\-\_\-t} \hyperlink{_state_machine_8c_af1573825c8278126faa93bbc4b136eef}{\-\_\-power\-Off\-Timeout\-Handle}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_state_machine_8c_afa03ea3ba5985ba9b1d44f51a3c9eab6}{\-\_\-power\-Off\-Timeout\-In\-Use} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+State logic handling. {\bfseries Project} I\-O\-Lab\-Remote\-Sensor\-Application
+
+{\bfseries Description} Handles the state logic and transition between states. 
+
+Definition in file \hyperlink{_state_machine_8c_source}{State\-Machine.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_state_machine_8c_a7cf230ffe4aa28191772f49d2f3b883c}{\index{State\-Machine.\-c@{State\-Machine.\-c}!P\-O\-W\-E\-R\-\_\-\-O\-F\-F\-\_\-\-M\-S\-E\-C@{P\-O\-W\-E\-R\-\_\-\-O\-F\-F\-\_\-\-M\-S\-E\-C}}
+\index{P\-O\-W\-E\-R\-\_\-\-O\-F\-F\-\_\-\-M\-S\-E\-C@{P\-O\-W\-E\-R\-\_\-\-O\-F\-F\-\_\-\-M\-S\-E\-C}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{P\-O\-W\-E\-R\-\_\-\-O\-F\-F\-\_\-\-M\-S\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-W\-E\-R\-\_\-\-O\-F\-F\-\_\-\-M\-S\-E\-C~( 1000u )}}\label{_state_machine_8c_a7cf230ffe4aa28191772f49d2f3b883c}
+The number of milliseconds that the button must be pressed before the power will be shut off. 
+
+Definition at line 53 of file State\-Machine.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_state_machine_8c_ae2946618e700f814e6147195c808f4c8}{\index{State\-Machine.\-c@{State\-Machine.\-c}!State\-\_\-t@{State\-\_\-t}}
+\index{State\-\_\-t@{State\-\_\-t}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{State\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf State\-\_\-t}}}\label{_state_machine_8c_ae2946618e700f814e6147195c808f4c8}
+Possible states for the sensor micro to be in 
+
+Definition at line 41 of file State\-Machine.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_state_machine_8c_a4999feb5cd4d41edea833a218eda4fe0}{\index{State\-Machine.\-c@{State\-Machine.\-c}!\-\_\-\-Handle\-Power\-Off\-Request@{\-\_\-\-Handle\-Power\-Off\-Request}}
+\index{\-\_\-\-Handle\-Power\-Off\-Request@{\-\_\-\-Handle\-Power\-Off\-Request}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Power\-Off\-Request}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Power\-Off\-Request (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_state_machine_8c_a4999feb5cd4d41edea833a218eda4fe0}
+Handles the request for power off based on the power button. 
+
+Definition at line 282 of file State\-Machine.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_state_machine_8c_ad7bd6065bce5082e3a9b485202c74035}{\index{State\-Machine.\-c@{State\-Machine.\-c}!\-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T@{\-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T}}
+\index{\-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T@{\-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{\-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf bool} \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\-\_\-t}}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_state_machine_8c_ad7bd6065bce5082e3a9b485202c74035}
+Process events default handler. Processes events the same, regardless of state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event} & -\/ Pending event\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the event should be further processed, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 191 of file State\-Machine.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-R\-U\-N(), \-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T(), and State\-Machine\-\_\-\-Process\-Events().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_state_machine_8c_a260232d8362a0678d13436b492aa485b}{\index{State\-Machine.\-c@{State\-Machine.\-c}!\-\_\-\-Process\-Events\-\_\-\-R\-U\-N@{\-\_\-\-Process\-Events\-\_\-\-R\-U\-N}}
+\index{\-\_\-\-Process\-Events\-\_\-\-R\-U\-N@{\-\_\-\-Process\-Events\-\_\-\-R\-U\-N}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{\-\_\-\-Process\-Events\-\_\-\-R\-U\-N}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf bool} \-\_\-\-Process\-Events\-\_\-\-R\-U\-N (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\-\_\-t}}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_state_machine_8c_a260232d8362a0678d13436b492aa485b}
+Process events while in R\-U\-N state
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event} & -\/ Pending event\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the event should be further processed, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file State\-Machine.\-c.
+
+
+
+Referenced by State\-Machine\-\_\-\-Process\-Events().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_state_machine_8c_af9ef2eb2c4780d1d53f04624ff8cab73}{\index{State\-Machine.\-c@{State\-Machine.\-c}!\-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T@{\-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T}}
+\index{\-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T@{\-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{\-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf bool} \-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\-\_\-t}}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_state_machine_8c_af9ef2eb2c4780d1d53f04624ff8cab73}
+Process events while in S\-E\-L\-F\-\_\-\-T\-E\-S\-T state
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event} & -\/ Pending event\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the event should be further processed, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 156 of file State\-Machine.\-c.
+
+
+
+Referenced by State\-Machine\-\_\-\-Process\-Events().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_state_machine_8c_af48ba6585e6b7d8b1ea4d6fe2c198913}{\index{State\-Machine.\-c@{State\-Machine.\-c}!\-\_\-\-Unlatch\-Power@{\-\_\-\-Unlatch\-Power}}
+\index{\-\_\-\-Unlatch\-Power@{\-\_\-\-Unlatch\-Power}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{\-\_\-\-Unlatch\-Power}]{\setlength{\rightskip}{0pt plus 5cm}static \-\_\-\-\_\-inline void \-\_\-\-Unlatch\-Power (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_state_machine_8c_af48ba6585e6b7d8b1ea4d6fe2c198913}
+Should be called to turn the system off. Turns power off by unlatching the power supply. The system might still remain on after this is called if the user continues holding the power button. 
+
+Definition at line 273 of file State\-Machine.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Power\-Off\-Request(), \-\_\-\-Process\-Events\-\_\-\-R\-U\-N(), and \-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_state_machine_8c_a77e9c7c153d9badecbcfdfa49475617b}{\index{State\-Machine.\-c@{State\-Machine.\-c}!State\-Machine\-\_\-\-Process\-Events@{State\-Machine\-\_\-\-Process\-Events}}
+\index{State\-Machine\-\_\-\-Process\-Events@{State\-Machine\-\_\-\-Process\-Events}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{State\-Machine\-\_\-\-Process\-Events}]{\setlength{\rightskip}{0pt plus 5cm}void State\-Machine\-\_\-\-Process\-Events (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_state_machine_8c_a77e9c7c153d9badecbcfdfa49475617b}
+State machine logic that will process all the events from the event queue and manage the states of the system 
+
+Definition at line 79 of file State\-Machine.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_state_machine_8c_a97d9227075973db76e2c1358563964c0}{\index{State\-Machine.\-c@{State\-Machine.\-c}!\-\_\-button\-One\-Pressed@{\-\_\-button\-One\-Pressed}}
+\index{\-\_\-button\-One\-Pressed@{\-\_\-button\-One\-Pressed}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{\-\_\-button\-One\-Pressed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-button\-One\-Pressed = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_state_machine_8c_a97d9227075973db76e2c1358563964c0}
+Stores if button one has been pressed or not. This makes sure that the button has been pressed before it was released, and was not pressed before power on (in which case the firmware wouldn't see the press event) then released. 
+
+Definition at line 61 of file State\-Machine.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T(), and \-\_\-\-Process\-Events\-\_\-\-R\-U\-N().
+
+\hypertarget{_state_machine_8c_ab19e6ac86687c1b6735a617a381ea695}{\index{State\-Machine.\-c@{State\-Machine.\-c}!\-\_\-current\-State@{\-\_\-current\-State}}
+\index{\-\_\-current\-State@{\-\_\-current\-State}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{\-\_\-current\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State\-\_\-t} \-\_\-current\-State = State\-\_\-\-R\-U\-N\hspace{0.3cm}{\ttfamily [static]}}}\label{_state_machine_8c_ab19e6ac86687c1b6735a617a381ea695}
+Current system state 
+
+Definition at line 56 of file State\-Machine.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-R\-U\-N(), and State\-Machine\-\_\-\-Process\-Events().
+
+\hypertarget{_state_machine_8c_af1573825c8278126faa93bbc4b136eef}{\index{State\-Machine.\-c@{State\-Machine.\-c}!\-\_\-power\-Off\-Timeout\-Handle@{\-\_\-power\-Off\-Timeout\-Handle}}
+\index{\-\_\-power\-Off\-Timeout\-Handle@{\-\_\-power\-Off\-Timeout\-Handle}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{\-\_\-power\-Off\-Timeout\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tick\-Timeout\-Handle\-\_\-t} \-\_\-power\-Off\-Timeout\-Handle\hspace{0.3cm}{\ttfamily [static]}}}\label{_state_machine_8c_af1573825c8278126faa93bbc4b136eef}
+Handle for the system power off timeout 
+
+Definition at line 64 of file State\-Machine.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+\hypertarget{_state_machine_8c_afa03ea3ba5985ba9b1d44f51a3c9eab6}{\index{State\-Machine.\-c@{State\-Machine.\-c}!\-\_\-power\-Off\-Timeout\-In\-Use@{\-\_\-power\-Off\-Timeout\-In\-Use}}
+\index{\-\_\-power\-Off\-Timeout\-In\-Use@{\-\_\-power\-Off\-Timeout\-In\-Use}!StateMachine.c@{State\-Machine.\-c}}
+\subsubsection[{\-\_\-power\-Off\-Timeout\-In\-Use}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-power\-Off\-Timeout\-In\-Use = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_state_machine_8c_afa03ea3ba5985ba9b1d44f51a3c9eab6}
+Tracks if the power off timeout is in use 
+
+Definition at line 66 of file State\-Machine.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+

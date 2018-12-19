@@ -1,0 +1,11 @@
+<map id="MicrophoneControl.c" name="MicrophoneControl.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_microphone_control_8h.html" title="Controls the microphone readings. " alt="" coords="139,80,283,107" />
+<area shape="rect" href="$_sensor_id_8h.html" title="Sensor Id stores the list of Sensor IDs. " alt="" coords="307,80,392,107" />
+<area shape="rect" href="$_data_buffer_8h.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="416,80,512,107" />
+<area shape="rect" href="$_key_value_8h.html" title="Contains the definitions of the Key&#45;Value pairs. " alt="" coords="536,80,624,107" />
+<area shape="rect" href="$_adc_manager_8h.html" title="Analog to digital conversion manager header file. " alt="" coords="648,80,755,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="779,80,848,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="872,80,939,107" />
+<area shape="rect" href="$_adc_8h.html" title="Analog to digital conversion module header file. " alt="" coords="673,155,729,182" />
+</map>

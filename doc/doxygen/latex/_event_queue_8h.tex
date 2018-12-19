@@ -1,0 +1,266 @@
+\hypertarget{_event_queue_8h}{\section{Event\-Queue.\-h File Reference}
+\label{_event_queue_8h}\index{Event\-Queue.\-h@{Event\-Queue.\-h}}
+}
+
+
+Event queue module header file.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_event_queue_8h_a284681cc05ddc650984c328563b5fc7f}{Event\-\_\-t} \{ \\*
+{\bfseries Event\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Event\-\_\-\-F\-I\-R\-S\-T} = 0, 
+\\*
+{\bfseries Event\-\_\-\-T\-I\-M\-E\-O\-U\-T} = Event\-\_\-\-F\-I\-R\-S\-T, 
+\\*
+{\bfseries Event\-\_\-\-A\-D\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-C\-O\-M\-P\-L\-E\-T\-E}, 
+\\*
+{\bfseries Event\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D\-\_\-\-P\-A\-C\-K\-E\-T}, 
+\\*
+{\bfseries Event\-\_\-\-L\-E\-D\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T}, 
+\\*
+{\bfseries Event\-\_\-\-S\-T\-A\-T\-E\-\_\-\-M\-A\-C\-H\-I\-N\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}, 
+\\*
+{\bfseries Event\-\_\-\-S\-P\-I\-\_\-\-S\-L\-A\-V\-E\-\_\-\-T\-X\-\_\-\-C\-O\-M\-P\-L\-E\-T\-E}, 
+\\*
+{\bfseries Event\-\_\-\-S\-P\-I\-\_\-\-S\-L\-A\-V\-E\-\_\-\-R\-X\-\_\-\-C\-O\-M\-P\-L\-E\-T\-E}, 
+\\*
+{\bfseries Event\-\_\-\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-D\-A\-T\-A\-\_\-\-R\-E\-A\-D\-Y}, 
+\\*
+{\bfseries Event\-\_\-\-M\-A\-G\-N\-E\-T\-O\-M\-E\-T\-E\-R\-\_\-\-D\-A\-T\-A\-\_\-\-R\-E\-A\-D\-Y}, 
+\\*
+{\bfseries Event\-\_\-\-G\-Y\-R\-O\-S\-C\-O\-P\-E\-\_\-\-D\-A\-T\-A\-\_\-\-R\-E\-A\-D\-Y}, 
+\\*
+{\bfseries Event\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-D\-A\-T\-A\-\_\-\-R\-E\-A\-D\-Y}, 
+\\*
+{\bfseries Event\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-T\-I\-C\-K}, 
+\\*
+{\bfseries Event\-\_\-\-S\-H\-U\-T\-D\-O\-W\-N}, 
+\\*
+{\bfseries Event\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-0\-\_\-\-P\-R\-E\-S\-S\-E\-D}, 
+\\*
+{\bfseries Event\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-0\-\_\-\-R\-E\-L\-E\-A\-S\-E\-D}, 
+\\*
+{\bfseries Event\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-1\-\_\-\-P\-R\-E\-S\-S\-E\-D}, 
+\\*
+{\bfseries Event\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-1\-\_\-\-R\-E\-L\-E\-A\-S\-E\-D}, 
+\\*
+{\bfseries Event\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T}, 
+\\*
+{\bfseries Event\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T}, 
+\\*
+{\bfseries Event\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T\-\_\-\-C\-O\-M\-P\-L\-E\-T\-E}, 
+\\*
+{\bfseries Event\-Application\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-C\-O\-M\-P\-L\-E\-T\-E}, 
+\\*
+{\bfseries Event\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4d}{Event\-Priority\-\_\-t} \{ \\*
+{\bfseries Event\-Priority\-\_\-\-L\-O\-W\-E\-S\-T} = 0, 
+\\*
+\hyperlink{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4da72cf8a0be9a2ca1ddbb46db82f9ffab8}{Event\-Priority\-\_\-\-N\-O\-R\-M\-A\-L}, 
+\\*
+\hyperlink{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4dac500df0426cb4fcc96d64267b63eb2d4}{Event\-Priority\-\_\-\-H\-I\-G\-H}, 
+\\*
+\hyperlink{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4da79f799c9e0c07475e24055095557d131}{Event\-Priority\-\_\-\-H\-I\-G\-H\-E\-S\-T} = Event\-Priority\-\_\-\-H\-I\-G\-H
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_event_queue_8h_a52d09212e16b4296e5866df9268cf82c}{Event\-Queue\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_event_queue_8h_afd41d1979b21c13ff21bab60d9c57c27}{Event\-Queue\-\_\-\-Add} (\hyperlink{_event_queue_8h_a284681cc05ddc650984c328563b5fc7f}{Event\-\_\-t} new\-Event, \hyperlink{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4d}{Event\-Priority\-\_\-t} priority)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_event_queue_8h_aac7fecbd15c99e2d946d411e3fdf7623}{Event\-Queue\-\_\-\-Get\-Next} (\hyperlink{_event_queue_8h_a284681cc05ddc650984c328563b5fc7f}{Event\-\_\-t} $\ast$next\-Event)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_event_queue_8h_a76f5d79c63571c56652d3f8e80101387}{Event\-Queue\-\_\-\-Is\-Empty} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_event_queue_8h_a03bbcf77cd745ad986da2687b14e06a6}{Event\-Queue\-\_\-\-Get\-Max\-Length} (\hyperlink{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4d}{Event\-Priority\-\_\-t} priority)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Event queue module header file. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The event queue module provides a F\-I\-F\-O buffer for enqueueing events in the system. 
+
+Definition in file \hyperlink{_event_queue_8h_source}{Event\-Queue.\-h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_event_queue_8h_a284681cc05ddc650984c328563b5fc7f}{\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-\_\-t@{Event\-\_\-t}}
+\index{Event\-\_\-t@{Event\-\_\-t}!EventQueue.h@{Event\-Queue.\-h}}
+\subsubsection[{Event\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Event\-\_\-t}}}\label{_event_queue_8h_a284681cc05ddc650984c328563b5fc7f}
+List of all possible events 
+
+Definition at line 27 of file Event\-Queue.\-h.
+
+\hypertarget{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4d}{\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-Priority\-\_\-t@{Event\-Priority\-\_\-t}}
+\index{Event\-Priority\-\_\-t@{Event\-Priority\-\_\-t}!EventQueue.h@{Event\-Queue.\-h}}
+\subsubsection[{Event\-Priority\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Event\-Priority\-\_\-t}}}\label{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4d}
+The possible event priorities \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Event\-Priority\-\_\-\-N\-O\-R\-M\-A\-L@{Event\-Priority\-\_\-\-N\-O\-R\-M\-A\-L}!Event\-Queue.\-h@{Event\-Queue.\-h}}\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-Priority\-\_\-\-N\-O\-R\-M\-A\-L@{Event\-Priority\-\_\-\-N\-O\-R\-M\-A\-L}}\item[{\em 
+\hypertarget{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4da72cf8a0be9a2ca1ddbb46db82f9ffab8}{Event\-Priority\-\_\-\-N\-O\-R\-M\-A\-L}\label{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4da72cf8a0be9a2ca1ddbb46db82f9ffab8}
+}]Lowest priority should be used by most events \index{Event\-Priority\-\_\-\-H\-I\-G\-H@{Event\-Priority\-\_\-\-H\-I\-G\-H}!Event\-Queue.\-h@{Event\-Queue.\-h}}\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-Priority\-\_\-\-H\-I\-G\-H@{Event\-Priority\-\_\-\-H\-I\-G\-H}}\item[{\em 
+\hypertarget{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4dac500df0426cb4fcc96d64267b63eb2d4}{Event\-Priority\-\_\-\-H\-I\-G\-H}\label{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4dac500df0426cb4fcc96d64267b63eb2d4}
+}]\begin{quotation}
+Lowest priority. \end{quotation}
+\index{Event\-Priority\-\_\-\-H\-I\-G\-H\-E\-S\-T@{Event\-Priority\-\_\-\-H\-I\-G\-H\-E\-S\-T}!Event\-Queue.\-h@{Event\-Queue.\-h}}\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-Priority\-\_\-\-H\-I\-G\-H\-E\-S\-T@{Event\-Priority\-\_\-\-H\-I\-G\-H\-E\-S\-T}}\item[{\em 
+\hypertarget{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4da79f799c9e0c07475e24055095557d131}{Event\-Priority\-\_\-\-H\-I\-G\-H\-E\-S\-T}\label{_event_queue_8h_a4c15db6926009d3ba26f97bb25423a4da79f799c9e0c07475e24055095557d131}
+}]High priority events should only be used by a Serial Messages \end{description}
+\end{Desc}
+
+
+Definition at line 56 of file Event\-Queue.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_event_queue_8h_afd41d1979b21c13ff21bab60d9c57c27}{\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-Queue\-\_\-\-Add@{Event\-Queue\-\_\-\-Add}}
+\index{Event\-Queue\-\_\-\-Add@{Event\-Queue\-\_\-\-Add}!EventQueue.h@{Event\-Queue.\-h}}
+\subsubsection[{Event\-Queue\-\_\-\-Add}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Queue\-\_\-\-Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\-\_\-t}}]{new\-Event, }
+\item[{{\bf Event\-Priority\-\_\-t}}]{priority}
+\end{DoxyParamCaption}
+)}}\label{_event_queue_8h_afd41d1979b21c13ff21bab60d9c57c27}
+Adds an event to the queue at a given priority.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em new\-Event} & -\/ Event to add to the queue. \\
+\hline
+\mbox{\tt in}  & {\em priority} & -\/ Priority of the event.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This does disable interrupts so that if it events are added in interrupt context and general application context then there won't be a race condition. 
+\end{DoxyNote}
+
+
+Definition at line 78 of file Event\-Queue.\-c.
+
+
+
+Referenced by \-\_\-\-Acc\-Data\-Ready\-Isr(), \-\_\-\-Adc\-Isr(), \-\_\-\-Gyro\-Data\-Ready\-Isr(), \-\_\-\-Handle\-Dma\-Rx\-Isr(), \-\_\-\-Handle\-Dma\-Tx\-Isr(), \-\_\-\-Handle\-Power\-Down\-Packet(), \-\_\-\-Handle\-Rf\-Status\-I\-S\-R(), \-\_\-\-Mag\-Data\-Ready\-Isr(), \-\_\-\-Play\-Sequence(), \-\_\-\-Process\-Events\-\_\-\-R\-U\-N(), \-\_\-\-Process\-Push\-Buttons(), \-\_\-\-Timer\-A1\-C\-C0\-Isr(), \-\_\-\-Unlatch\-Power(), Self\-Test\-\_\-\-Process(), Self\-Test\-\_\-\-Start(), and Serial\-\_\-\-Process\-Received\-Bytes().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_event_queue_8h_a03bbcf77cd745ad986da2687b14e06a6}{\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-Queue\-\_\-\-Get\-Max\-Length@{Event\-Queue\-\_\-\-Get\-Max\-Length}}
+\index{Event\-Queue\-\_\-\-Get\-Max\-Length@{Event\-Queue\-\_\-\-Get\-Max\-Length}!EventQueue.h@{Event\-Queue.\-h}}
+\subsubsection[{Event\-Queue\-\_\-\-Get\-Max\-Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Event\-Queue\-\_\-\-Get\-Max\-Length (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\-Priority\-\_\-t}}]{priority}
+\end{DoxyParamCaption}
+)}}\label{_event_queue_8h_a03bbcf77cd745ad986da2687b14e06a6}
+Get the maximum length of the queue at the given priority level.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em priority} & -\/ Selected priority level.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The maximum length of the queue. 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file Event\-Queue.\-c.
+
+\hypertarget{_event_queue_8h_aac7fecbd15c99e2d946d411e3fdf7623}{\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-Queue\-\_\-\-Get\-Next@{Event\-Queue\-\_\-\-Get\-Next}}
+\index{Event\-Queue\-\_\-\-Get\-Next@{Event\-Queue\-\_\-\-Get\-Next}!EventQueue.h@{Event\-Queue.\-h}}
+\subsubsection[{Event\-Queue\-\_\-\-Get\-Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Event\-Queue\-\_\-\-Get\-Next (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\-\_\-t} $\ast$}]{next\-Event}
+\end{DoxyParamCaption}
+)}}\label{_event_queue_8h_aac7fecbd15c99e2d946d411e3fdf7623}
+Gets the next event on the queue.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em next\-Event} & -\/ The event removed from the queue.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if an event was retrieved. False if the entire queue was empty. 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file Event\-Queue.\-c.
+
+
+
+Referenced by State\-Machine\-\_\-\-Process\-Events().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_event_queue_8h_a52d09212e16b4296e5866df9268cf82c}{\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-Queue\-\_\-\-Init@{Event\-Queue\-\_\-\-Init}}
+\index{Event\-Queue\-\_\-\-Init@{Event\-Queue\-\_\-\-Init}!EventQueue.h@{Event\-Queue.\-h}}
+\subsubsection[{Event\-Queue\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Queue\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_event_queue_8h_a52d09212e16b4296e5866df9268cf82c}
+Initializes the queue. 
+
+Definition at line 57 of file Event\-Queue.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_event_queue_8h_a76f5d79c63571c56652d3f8e80101387}{\index{Event\-Queue.\-h@{Event\-Queue.\-h}!Event\-Queue\-\_\-\-Is\-Empty@{Event\-Queue\-\_\-\-Is\-Empty}}
+\index{Event\-Queue\-\_\-\-Is\-Empty@{Event\-Queue\-\_\-\-Is\-Empty}!EventQueue.h@{Event\-Queue.\-h}}
+\subsubsection[{Event\-Queue\-\_\-\-Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Event\-Queue\-\_\-\-Is\-Empty (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_event_queue_8h_a76f5d79c63571c56652d3f8e80101387}
+Determines if the event queue is empty.
+
+\begin{DoxyReturn}{Returns}
+True if the entire event queue is empty. Otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line 168 of file Event\-Queue.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+
+

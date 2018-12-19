@@ -1,0 +1,6 @@
+<map id="_HandleDataReadyInterrupt" name="_HandleDataReadyInterrupt">
+<area shape="rect" href="$_magnetometer_8h.html#a24236d83f8ad5a94c17e6414904ea6f6" title="Magnetometer_Init" alt="" coords="241,5,372,32" />
+<area shape="rect" href="$_magnetometer_control_8h.html#a68beb1d94ceabab1ebab02ec5ef4e13b" title="MagControl_Init" alt="" coords="423,5,537,32" />
+<area shape="rect" href="$_configuration_manager_8h.html#ac8b698cc609b8b41fe3ff823b2046b85" title="ConMan_Init" alt="" coords="588,5,684,32" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="733,5,784,32" />
+</map>

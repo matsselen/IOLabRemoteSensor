@@ -1,0 +1,8 @@
+<map id="Serial.c" name="Serial.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="267,155,334,182" />
+<area shape="rect" href="$_event_queue_8h.html" title="Event queue module header file. " alt="" coords="190,80,296,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="320,80,390,107" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="414,80,486,107" />
+<area shape="rect" href="$_uart_8h.html" title="UART module header. " alt="" coords="510,80,566,107" />
+</map>

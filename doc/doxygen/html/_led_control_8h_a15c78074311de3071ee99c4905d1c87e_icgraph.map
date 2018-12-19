@@ -1,0 +1,12 @@
+<map id="LedControl_SetLed" name="LedControl_SetLed">
+<area shape="rect" href="$_main_8c.html#a683ad5b1dadeef16388083d819af7e77" title="_ClearStartup" alt="" coords="452,5,556,32" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1373,56,1424,83" />
+<area shape="rect" href="$_state_machine_8c.html#a4999feb5cd4d41edea833a218eda4fe0" title="_HandlePowerOffRequest" alt="" coords="189,107,365,133" />
+<area shape="rect" href="$_comm_protocol_8c.html#abc8625ef2a7c7423feb07820b122653c" title="_HandleStatusPacket" alt="" coords="203,157,352,184" />
+<area shape="rect" href="$_self_test_8h.html#a282b024bc0ec38174285fce7402142c9" title="SelfTest_Start" alt="" coords="684,208,788,235" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="644,157,828,184" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1127,132,1324,159" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="901,157,1053,184" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="877,208,1077,235" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="415,157,593,184" />
+</map>

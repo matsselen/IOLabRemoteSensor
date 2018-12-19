@@ -1,0 +1,186 @@
+\hypertarget{_spi_master_8c}{\section{Spi\-Master.\-c File Reference}
+\label{_spi_master_8c}\index{Spi\-Master.\-c@{Spi\-Master.\-c}}
+}
+
+
+S\-P\-I Master Module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Spi\-Master.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+Include dependency graph for Spi\-Master.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_spi_master_8c_a2f493ed233e66342493f155ebda5c183}{R\-E\-A\-D\-\_\-\-B\-I\-T}~(0x80u)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_spi_master_8c_ad1973d97bbf71fbf31b82d5cedb01427}{Spi\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_spi_master_8c_a92f3539ef78eccf3780715b433c04075}{Spi\-\_\-\-Write\-Register} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} write\-Register, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\-Byte)
+\item 
+void \hyperlink{_spi_master_8c_a64368c42de0bf348078be3cc001e7fe4}{Spi\-\_\-\-Read\-Register} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} read\-Register, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$data\-Byte)
+\item 
+void \hyperlink{_spi_master_8c_a77dac8d70655f0b711a13787359f723e}{Spi\-\_\-\-Write\-Byte} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} byte)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_spi_master_8c_a92eaaf19cc914d995fb9c256861d5af6}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\-P\-I Master Module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The S\-P\-I master module controls the S\-P\-I port and interfaces to other S\-P\-I slave devices. 
+
+Definition in file \hyperlink{_spi_master_8c_source}{Spi\-Master.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_spi_master_8c_a2f493ed233e66342493f155ebda5c183}{\index{Spi\-Master.\-c@{Spi\-Master.\-c}!R\-E\-A\-D\-\_\-\-B\-I\-T@{R\-E\-A\-D\-\_\-\-B\-I\-T}}
+\index{R\-E\-A\-D\-\_\-\-B\-I\-T@{R\-E\-A\-D\-\_\-\-B\-I\-T}!SpiMaster.c@{Spi\-Master.\-c}}
+\subsubsection[{R\-E\-A\-D\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-A\-D\-\_\-\-B\-I\-T~(0x80u)}}\label{_spi_master_8c_a2f493ed233e66342493f155ebda5c183}
+Bit assignment in the transmit register for reading a byte 
+
+Definition at line 37 of file Spi\-Master.\-c.
+
+
+
+Referenced by Spi\-\_\-\-Read\-Register().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_spi_master_8c_ad1973d97bbf71fbf31b82d5cedb01427}{\index{Spi\-Master.\-c@{Spi\-Master.\-c}!Spi\-\_\-\-Init@{Spi\-\_\-\-Init}}
+\index{Spi\-\_\-\-Init@{Spi\-\_\-\-Init}!SpiMaster.c@{Spi\-Master.\-c}}
+\subsubsection[{Spi\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Spi\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_spi_master_8c_ad1973d97bbf71fbf31b82d5cedb01427}
+Initialize the S\-P\-I hardware. 
+
+Definition at line 47 of file Spi\-Master.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_spi_master_8c_a64368c42de0bf348078be3cc001e7fe4}{\index{Spi\-Master.\-c@{Spi\-Master.\-c}!Spi\-\_\-\-Read\-Register@{Spi\-\_\-\-Read\-Register}}
+\index{Spi\-\_\-\-Read\-Register@{Spi\-\_\-\-Read\-Register}!SpiMaster.c@{Spi\-Master.\-c}}
+\subsubsection[{Spi\-\_\-\-Read\-Register}]{\setlength{\rightskip}{0pt plus 5cm}void Spi\-\_\-\-Read\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{read\-Register, }
+\item[{{\bf uint8\-\_\-t} $\ast$}]{data\-Byte}
+\end{DoxyParamCaption}
+)}}\label{_spi_master_8c_a64368c42de0bf348078be3cc001e7fe4}
+Reads a register via S\-P\-I.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em read\-Register} & -\/ Selected control register. \\
+\hline
+\mbox{\tt in}  & {\em data\-Byte} & -\/ Pointer to where received byte should be stored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file Spi\-Master.\-c.
+
+
+
+Referenced by \-\_\-\-Bar\-Read\-Multiple\-Registers(), \-\_\-\-Bar\-Read\-Register(), \-\_\-\-Gyro\-Read\-Multiple\-Registers(), and \-\_\-\-Gyro\-Read\-Single\-Register().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_spi_master_8c_a77dac8d70655f0b711a13787359f723e}{\index{Spi\-Master.\-c@{Spi\-Master.\-c}!Spi\-\_\-\-Write\-Byte@{Spi\-\_\-\-Write\-Byte}}
+\index{Spi\-\_\-\-Write\-Byte@{Spi\-\_\-\-Write\-Byte}!SpiMaster.c@{Spi\-Master.\-c}}
+\subsubsection[{Spi\-\_\-\-Write\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}void Spi\-\_\-\-Write\-Byte (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_spi_master_8c_a77dac8d70655f0b711a13787359f723e}
+Reads a byte via S\-P\-I.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em byte} & -\/ The value written out the spi port \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file Spi\-Master.\-c.
+
+
+
+Referenced by \-\_\-\-Bar\-Read\-Multiple\-Registers(), and Dac\-Set\-Voltage().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_spi_master_8c_a92f3539ef78eccf3780715b433c04075}{\index{Spi\-Master.\-c@{Spi\-Master.\-c}!Spi\-\_\-\-Write\-Register@{Spi\-\_\-\-Write\-Register}}
+\index{Spi\-\_\-\-Write\-Register@{Spi\-\_\-\-Write\-Register}!SpiMaster.c@{Spi\-Master.\-c}}
+\subsubsection[{Spi\-\_\-\-Write\-Register}]{\setlength{\rightskip}{0pt plus 5cm}void Spi\-\_\-\-Write\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{write\-Register, }
+\item[{{\bf uint8\-\_\-t}}]{data\-Byte}
+\end{DoxyParamCaption}
+)}}\label{_spi_master_8c_a92f3539ef78eccf3780715b433c04075}
+Transmits a register address and value via S\-P\-I.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em write\-Register} & -\/ Selected control register. \\
+\hline
+\mbox{\tt in}  & {\em data\-Byte} & -\/ Data byte to send out over S\-P\-I.\\
+\hline
+\end{DoxyParams}
+Note\-: This assumes that the S\-P\-I port has been configured as a M\-A\-S\-T\-E\-R device. 
+
+Definition at line 96 of file Spi\-Master.\-c.
+
+
+
+Referenced by \-\_\-\-Bar\-Write\-Register(), and \-\_\-\-Gyro\-Write\-Register().
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_spi_master_8c_a92eaaf19cc914d995fb9c256861d5af6}{\index{Spi\-Master.\-c@{Spi\-Master.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!SpiMaster.c@{Spi\-Master.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_spi_master_8c_a92eaaf19cc914d995fb9c256861d5af6}
+Tracks if the module is initialized 
+
+Definition at line 41 of file Spi\-Master.\-c.
+

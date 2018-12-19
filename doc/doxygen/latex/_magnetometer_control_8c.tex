@@ -1,0 +1,185 @@
+\hypertarget{_magnetometer_control_8c}{\section{Magnetometer\-Control.\-c File Reference}
+\label{_magnetometer_control_8c}\index{Magnetometer\-Control.\-c@{Magnetometer\-Control.\-c}}
+}
+
+
+Magnetometer control module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Magnetometer\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Magnetometer.\-h$>$}\\*
+{\ttfamily \#include $<$Event\-Queue.\-h$>$}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+Include dependency graph for Magnetometer\-Control.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_magnetometer_control_8c_a6a19e4b78994ea9c53d714be2357e89d}{\-\_\-\-Mag\-Data\-Ready\-Isr} (void)
+\item 
+void \hyperlink{_magnetometer_control_8c_a68beb1d94ceabab1ebab02ec5ef4e13b}{Mag\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_magnetometer_control_8c_ae2ec2e58a5b9a1c6e5c83e3dee47e1b3}{Mag\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} key\-Value)
+\item 
+void \hyperlink{_magnetometer_control_8c_ad749af8babba2a3ca08af61ffdb4fb10}{Mag\-Control\-\_\-\-Read\-Mag} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_magnetometer_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_magnetometer_8h_struct_mag_config__t}{Mag\-Config\-\_\-t} \hyperlink{_magnetometer_control_8c_ac1cf1b6540d4143bab15d68c4777ee4d}{\-\_\-mag\-Config}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Magnetometer control module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Interfaces to the magnetometer driver to control and configure the magnetometer with the proper settings and handle the data coming from the magnetometer. 
+
+Definition in file \hyperlink{_magnetometer_control_8c_source}{Magnetometer\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_magnetometer_control_8c_a6a19e4b78994ea9c53d714be2357e89d}{\index{Magnetometer\-Control.\-c@{Magnetometer\-Control.\-c}!\-\_\-\-Mag\-Data\-Ready\-Isr@{\-\_\-\-Mag\-Data\-Ready\-Isr}}
+\index{\-\_\-\-Mag\-Data\-Ready\-Isr@{\-\_\-\-Mag\-Data\-Ready\-Isr}!MagnetometerControl.c@{Magnetometer\-Control.\-c}}
+\subsubsection[{\-\_\-\-Mag\-Data\-Ready\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Mag\-Data\-Ready\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_control_8c_a6a19e4b78994ea9c53d714be2357e89d}
+The data ready I\-S\-R handles the magnetometer data ready interrupt and will add an event to the event queue to notify the system to read the magnetometer. 
+
+Definition at line 195 of file Magnetometer\-Control.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_control_8c_a68beb1d94ceabab1ebab02ec5ef4e13b}{\index{Magnetometer\-Control.\-c@{Magnetometer\-Control.\-c}!Mag\-Control\-\_\-\-Init@{Mag\-Control\-\_\-\-Init}}
+\index{Mag\-Control\-\_\-\-Init@{Mag\-Control\-\_\-\-Init}!MagnetometerControl.c@{Magnetometer\-Control.\-c}}
+\subsubsection[{Mag\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Mag\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_control_8c_a68beb1d94ceabab1ebab02ec5ef4e13b}
+Initializes the magnetometer controller. 
+
+Definition at line 60 of file Magnetometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_control_8c_ad749af8babba2a3ca08af61ffdb4fb10}{\index{Magnetometer\-Control.\-c@{Magnetometer\-Control.\-c}!Mag\-Control\-\_\-\-Read\-Mag@{Mag\-Control\-\_\-\-Read\-Mag}}
+\index{Mag\-Control\-\_\-\-Read\-Mag@{Mag\-Control\-\_\-\-Read\-Mag}!MagnetometerControl.c@{Magnetometer\-Control.\-c}}
+\subsubsection[{Mag\-Control\-\_\-\-Read\-Mag}]{\setlength{\rightskip}{0pt plus 5cm}void Mag\-Control\-\_\-\-Read\-Mag (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_control_8c_ad749af8babba2a3ca08af61ffdb4fb10}
+Gets a reading from the magnetometer. 
+
+Definition at line 163 of file Magnetometer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_control_8c_ae2ec2e58a5b9a1c6e5c83e3dee47e1b3}{\index{Magnetometer\-Control.\-c@{Magnetometer\-Control.\-c}!Mag\-Control\-\_\-\-Set\-Config@{Mag\-Control\-\_\-\-Set\-Config}}
+\index{Mag\-Control\-\_\-\-Set\-Config@{Mag\-Control\-\_\-\-Set\-Config}!MagnetometerControl.c@{Magnetometer\-Control.\-c}}
+\subsubsection[{Mag\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Mag\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{key\-Value}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_control_8c_ae2ec2e58a5b9a1c6e5c83e3dee47e1b3}
+Sets a configuration value to the accelerometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Magnetometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_magnetometer_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Magnetometer\-Control.\-c@{Magnetometer\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!MagnetometerControl.c@{Magnetometer\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_control_8c_a4eb99285a0129893d3f48de7de237df5}
+tracks if the controller has been initialized 
+
+Definition at line 41 of file Magnetometer\-Control.\-c.
+
+\hypertarget{_magnetometer_control_8c_ac1cf1b6540d4143bab15d68c4777ee4d}{\index{Magnetometer\-Control.\-c@{Magnetometer\-Control.\-c}!\-\_\-mag\-Config@{\-\_\-mag\-Config}}
+\index{\-\_\-mag\-Config@{\-\_\-mag\-Config}!MagnetometerControl.c@{Magnetometer\-Control.\-c}}
+\subsubsection[{\-\_\-mag\-Config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mag\-Config\-\_\-t} \-\_\-mag\-Config\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_control_8c_ac1cf1b6540d4143bab15d68c4777ee4d}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        MagSampleRate\_1280,
+        MagOverSampleRatio\_16,
+        MagDataScaling\_RAW,
+        MagAutoReset\_ENABLED,
+        MagSampling\_Auto,
+        MagResolution\_16BIT
+\}
+\end{DoxyCode}
+Stores the configuration settings for the magnetometer 
+
+Definition at line 44 of file Magnetometer\-Control.\-c.
+

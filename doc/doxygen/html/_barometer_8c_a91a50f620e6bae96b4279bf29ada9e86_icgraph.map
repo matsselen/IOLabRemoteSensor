@@ -1,0 +1,18 @@
+<map id="Barometer_ReadSample" name="Barometer_ReadSample">
+<area shape="rect" href="$_barometer_8h.html#a6648002e5620f2482d65aebc9fb74a87" title="Barometer_TriggerSampleBlocking" alt="" coords="221,30,451,56" />
+<area shape="rect" href="$_barometer_control_8h.html#ae701fa38d333d53c59f78c09902f806b" title="BarometerControl_ReadBar" alt="" coords="243,80,429,107" />
+<area shape="rect" href="$_test_protocol_8c.html#a03a46700129b81db8e5cc680816a3860" title="_HandleHumanBarCommand" alt="" coords="500,30,695,56" />
+<area shape="rect" href="$_barometer_control_8h.html#a26fa8a3b7bce475950cc2b3d1096c05e" title="BarometerControl_SetConfig" alt="" coords="501,80,693,107" />
+<area shape="rect" href="$_configuration_manager_8h.html#a183e4b53a492c32bbe799d7e209b8b4f" title="ConMan_SetSensorConfig" alt="" coords="745,80,924,107" />
+<area shape="rect" href="$_configuration_manager_8h.html#a4af394c25a5c58205d8832071eae3b0b" title="ConMan_StartData" alt="" coords="973,52,1109,79" />
+<area shape="rect" href="$_configuration_manager_8h.html#a7e20b92732fc46ab8a1937e144066938" title="ConMan_StopData" alt="" coords="975,107,1108,134" />
+<area shape="rect" href="$_comm_protocol_8h.html#a11fcf3a095c467e5da58a75e746059f1" title="CommProtocol_HandleStart\lDataPacket" alt="" coords="1172,40,1359,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="1423,56,1601,83" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="1449,107,1575,134" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1652,56,1836,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="2135,56,2332,83" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1909,6,2061,32" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1885,107,2085,134" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="2381,56,2432,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1f65077f8bed3f077ec2a561f20bf4b5" title="CommProtocol_HandleStopData\lPacket" alt="" coords="1159,107,1372,150" />
+</map>

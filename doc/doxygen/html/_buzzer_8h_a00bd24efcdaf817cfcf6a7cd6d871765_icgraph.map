@@ -1,0 +1,9 @@
+<map id="Buzzer_Enable" name="Buzzer_Enable">
+<area shape="rect" href="$_ui_manager_8c.html#a4aabb887cd84641062375402ec60026b" title="_PlaySequence" alt="" coords="165,31,280,57" />
+<area shape="rect" href="$_ui_manager_8h.html#a64c0bf6dac5078278c785307c7e2befe" title="UiManager_PlaySequence" alt="" coords="497,31,676,57" />
+<area shape="rect" href="$_ui_manager_8c.html#ac066839b7cc3e3b90ae5bdd7f629b3c4" title="_UiTickCallBack" alt="" coords="329,56,447,83" />
+<area shape="rect" href="$_self_test_8h.html#a282b024bc0ec38174285fce7402142c9" title="SelfTest_Start" alt="" coords="727,31,831,57" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="880,31,1080,57" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1129,31,1327,57" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1376,31,1427,57" />
+</map>

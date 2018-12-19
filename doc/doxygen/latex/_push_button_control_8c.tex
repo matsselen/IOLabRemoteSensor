@@ -1,0 +1,222 @@
+\hypertarget{_push_button_control_8c}{\section{Push\-Button\-Control.\-c File Reference}
+\label{_push_button_control_8c}\index{Push\-Button\-Control.\-c@{Push\-Button\-Control.\-c}}
+}
+
+
+Control for the push buttons.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Push\-Button\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Event\-Queue.\-h$>$}\\*
+{\ttfamily \#include $<$Timer\-Tick.\-h$>$}\\*
+Include dependency graph for Push\-Button\-Control.\-c\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_push_button_control_8c_struct_push_button_info__t}{Push\-Button\-Info\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_push_button_control_8c_a6954510507da9fee0d980bb85da3e819}{B\-U\-T\-T\-O\-N\-\_\-\-D\-E\-B\-O\-U\-N\-C\-E\-\_\-\-M\-S}~( 80u )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_push_button_control_8c_a04e5b9e23b30301cda0e98c334707c5e}{\-\_\-\-Process\-Push\-Buttons} (void)
+\item 
+void \hyperlink{_push_button_control_8c_a44e02d417d493e9ea8d35373dd094aeb}{Push\-Button\-Control\-\_\-\-Init} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_push_button_control_8c_a4b2eb3f9dae1ee2c7fd5fbf4e4d52f2f}{Push\-Button\-Control\-\_\-is\-Button\-Pressed} (\hyperlink{_push_button_control_8h_acbb88bd3323f270f3194f726029c44f0}{Push\-Buttons\-\_\-t} button)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_push_button_control_8c_af497e195090530cccb1c96d1d11e91f3}{Push\-Button\-Control\-\_\-\-Button\-Pressed\-Duration} (\hyperlink{_push_button_control_8h_acbb88bd3323f270f3194f726029c44f0}{Push\-Buttons\-\_\-t} button)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_timer_tick_8h_a48ccbb693b97bdf50ea2a032c4a9673f}{Tick\-Isr\-Handle\-\_\-t} \hyperlink{_push_button_control_8c_aa6c7b646d99b3ca86718c26e612e33ce}{\-\_\-process\-Buttons\-Isr\-Handle}
+\item 
+static \hyperlink{_push_button_control_8c_struct_push_button_info__t}{Push\-Button\-Info\-\_\-t} \hyperlink{_push_button_control_8c_af50e8bb2bf7c738de9ab6e94c339558c}{\-\_\-button\-Info} \mbox{[}Push\-Button\-\_\-\-L\-A\-S\-T\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Control for the push buttons. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The push button control will control the push buttons and manage the debouncing of them. 
+
+Definition in file \hyperlink{_push_button_control_8c_source}{Push\-Button\-Control.\-c}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Push\-Button\-Info\-\_\-t@{Push\-Button\-Info\-\_\-t}}\label{struct_push_button_info__t}
+\hypertarget{_push_button_control_8c_struct_push_button_info__t}{}
+\subsubsection{struct Push\-Button\-Info\-\_\-t}
+
+
+Definition at line 37 of file Push\-Button\-Control.\-c.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_push_button_control_8c_a4fad56326982550250283bcd7d11fbe3}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_push_button_control_8c_a4fad56326982550250283bcd7d11fbe3}
+&
+button\-Pressed\-Duration&
+\\
+\hline
+
+\hypertarget{_push_button_control_8c_a0b6505a975855ab4309a0ca34b6e8930}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_push_button_control_8c_a0b6505a975855ab4309a0ca34b6e8930}
+&
+previous\-Button\-Pressed\-Duration&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_push_button_control_8c_a6954510507da9fee0d980bb85da3e819}{\index{Push\-Button\-Control.\-c@{Push\-Button\-Control.\-c}!B\-U\-T\-T\-O\-N\-\_\-\-D\-E\-B\-O\-U\-N\-C\-E\-\_\-\-M\-S@{B\-U\-T\-T\-O\-N\-\_\-\-D\-E\-B\-O\-U\-N\-C\-E\-\_\-\-M\-S}}
+\index{B\-U\-T\-T\-O\-N\-\_\-\-D\-E\-B\-O\-U\-N\-C\-E\-\_\-\-M\-S@{B\-U\-T\-T\-O\-N\-\_\-\-D\-E\-B\-O\-U\-N\-C\-E\-\_\-\-M\-S}!PushButtonControl.c@{Push\-Button\-Control.\-c}}
+\subsubsection[{B\-U\-T\-T\-O\-N\-\_\-\-D\-E\-B\-O\-U\-N\-C\-E\-\_\-\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-U\-T\-T\-O\-N\-\_\-\-D\-E\-B\-O\-U\-N\-C\-E\-\_\-\-M\-S~( 80u )}}\label{_push_button_control_8c_a6954510507da9fee0d980bb85da3e819}
+The number of milliseconds that must have elapsed for the button to be debounced. 
+
+Definition at line 35 of file Push\-Button\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Push\-Buttons(), Push\-Button\-Control\-\_\-\-Init(), and Push\-Button\-Control\-\_\-is\-Button\-Pressed().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_push_button_control_8c_a04e5b9e23b30301cda0e98c334707c5e}{\index{Push\-Button\-Control.\-c@{Push\-Button\-Control.\-c}!\-\_\-\-Process\-Push\-Buttons@{\-\_\-\-Process\-Push\-Buttons}}
+\index{\-\_\-\-Process\-Push\-Buttons@{\-\_\-\-Process\-Push\-Buttons}!PushButtonControl.c@{Push\-Button\-Control.\-c}}
+\subsubsection[{\-\_\-\-Process\-Push\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Process\-Push\-Buttons (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_push_button_control_8c_a04e5b9e23b30301cda0e98c334707c5e}
+Processes the push buttons by looking at the state of the buttons and generating the appropriate events based on the button state and how long the button has been in that state.
+
+Debounce the press only. This sort of debounces the release as well (i.\-e. press won't happen from a bounce on release).
+
+\begin{DoxyNote}{Note}
+function assumes it is called every system timer tick. 
+\end{DoxyNote}
+
+
+Definition at line 145 of file Push\-Button\-Control.\-c.
+
+
+
+Referenced by Push\-Button\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_push_button_control_8c_af497e195090530cccb1c96d1d11e91f3}{\index{Push\-Button\-Control.\-c@{Push\-Button\-Control.\-c}!Push\-Button\-Control\-\_\-\-Button\-Pressed\-Duration@{Push\-Button\-Control\-\_\-\-Button\-Pressed\-Duration}}
+\index{Push\-Button\-Control\-\_\-\-Button\-Pressed\-Duration@{Push\-Button\-Control\-\_\-\-Button\-Pressed\-Duration}!PushButtonControl.c@{Push\-Button\-Control.\-c}}
+\subsubsection[{Push\-Button\-Control\-\_\-\-Button\-Pressed\-Duration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Push\-Button\-Control\-\_\-\-Button\-Pressed\-Duration (
+\begin{DoxyParamCaption}
+\item[{{\bf Push\-Buttons\-\_\-t}}]{button}
+\end{DoxyParamCaption}
+)}}\label{_push_button_control_8c_af497e195090530cccb1c96d1d11e91f3}
+Gets the duration (in ms) that the button has been pressed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em button} & -\/ The button enum value for the button of interest\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of milliseconds which the button has been depressed.
+\end{DoxyReturn}
+The resolution of the duration depends on the period of the system tick.\-The pressed duration does not account for the debounce time. Example, if the button debounce time is 50 ms and the button has been pressed for 40 ms, this function will still return that the button has been \char`\"{}pressed\char`\"{} for 40 ms even though the debounce time hasn't occured. 
+
+Definition at line 119 of file Push\-Button\-Control.\-c.
+
+\hypertarget{_push_button_control_8c_a44e02d417d493e9ea8d35373dd094aeb}{\index{Push\-Button\-Control.\-c@{Push\-Button\-Control.\-c}!Push\-Button\-Control\-\_\-\-Init@{Push\-Button\-Control\-\_\-\-Init}}
+\index{Push\-Button\-Control\-\_\-\-Init@{Push\-Button\-Control\-\_\-\-Init}!PushButtonControl.c@{Push\-Button\-Control.\-c}}
+\subsubsection[{Push\-Button\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Push\-Button\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_push_button_control_8c_a44e02d417d493e9ea8d35373dd094aeb}
+Initializes the push button controller and regisisters the push button callback. 
+
+Definition at line 59 of file Push\-Button\-Control.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_push_button_control_8c_a4b2eb3f9dae1ee2c7fd5fbf4e4d52f2f}{\index{Push\-Button\-Control.\-c@{Push\-Button\-Control.\-c}!Push\-Button\-Control\-\_\-is\-Button\-Pressed@{Push\-Button\-Control\-\_\-is\-Button\-Pressed}}
+\index{Push\-Button\-Control\-\_\-is\-Button\-Pressed@{Push\-Button\-Control\-\_\-is\-Button\-Pressed}!PushButtonControl.c@{Push\-Button\-Control.\-c}}
+\subsubsection[{Push\-Button\-Control\-\_\-is\-Button\-Pressed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Push\-Button\-Control\-\_\-is\-Button\-Pressed (
+\begin{DoxyParamCaption}
+\item[{{\bf Push\-Buttons\-\_\-t}}]{button}
+\end{DoxyParamCaption}
+)}}\label{_push_button_control_8c_a4b2eb3f9dae1ee2c7fd5fbf4e4d52f2f}
+Returns true if the button is pressed, false otherwise. This takes into account the button debounce time.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em button} & -\/ The button enum value for the button of interest\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button is pressed, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file Push\-Button\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-R\-U\-N().
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_push_button_control_8c_af50e8bb2bf7c738de9ab6e94c339558c}{\index{Push\-Button\-Control.\-c@{Push\-Button\-Control.\-c}!\-\_\-button\-Info@{\-\_\-button\-Info}}
+\index{\-\_\-button\-Info@{\-\_\-button\-Info}!PushButtonControl.c@{Push\-Button\-Control.\-c}}
+\subsubsection[{\-\_\-button\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Push\-Button\-Info\-\_\-t} \-\_\-button\-Info\mbox{[}Push\-Button\-\_\-\-L\-A\-S\-T\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_push_button_control_8c_af50e8bb2bf7c738de9ab6e94c339558c}
+Stores how long the push buttons have been pressed 
+
+Definition at line 50 of file Push\-Button\-Control.\-c.
+
+\hypertarget{_push_button_control_8c_aa6c7b646d99b3ca86718c26e612e33ce}{\index{Push\-Button\-Control.\-c@{Push\-Button\-Control.\-c}!\-\_\-process\-Buttons\-Isr\-Handle@{\-\_\-process\-Buttons\-Isr\-Handle}}
+\index{\-\_\-process\-Buttons\-Isr\-Handle@{\-\_\-process\-Buttons\-Isr\-Handle}!PushButtonControl.c@{Push\-Button\-Control.\-c}}
+\subsubsection[{\-\_\-process\-Buttons\-Isr\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tick\-Isr\-Handle\-\_\-t} \-\_\-process\-Buttons\-Isr\-Handle\hspace{0.3cm}{\ttfamily [static]}}}\label{_push_button_control_8c_aa6c7b646d99b3ca86718c26e612e33ce}
+Define a variable to store the handle to the I\-S\-R to process the push buttons. 
+
+Definition at line 47 of file Push\-Button\-Control.\-c.
+
+
+
+Referenced by Push\-Button\-Control\-\_\-\-Init().
+

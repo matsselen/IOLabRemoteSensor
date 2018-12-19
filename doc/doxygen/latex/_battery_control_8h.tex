@@ -1,0 +1,129 @@
+\hypertarget{_battery_control_8h}{\section{Battery\-Control.\-h File Reference}
+\label{_battery_control_8h}\index{Battery\-Control.\-h@{Battery\-Control.\-h}}
+}
+
+
+Controls the battery voltage readings.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_battery_control_8h_aabe7c48bb241fb50cb6ec10940a4d990}{typedef \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} {\bfseries Battery\-Counts\-\_\-t}}\label{_battery_control_8h_aabe7c48bb241fb50cb6ec10940a4d990}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_battery_control_8h_a92466d5030f43b679cb926e5b65e3d2d}{Battery\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_battery_control_8h_a28abd70494fdf139972215bd60606698}{Battery\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\item 
+\hypertarget{_battery_control_8h_aaf04e059244e4ca15babc5f72bc42221}{Battery\-Counts\-\_\-t {\bfseries Battery\-Control\-\_\-\-Get\-Counts} (void)}\label{_battery_control_8h_aaf04e059244e4ca15babc5f72bc42221}
+
+\item 
+void \hyperlink{_battery_control_8h_aa73f0d4496f54547367c417814d67358}{Battery\-Control\-\_\-\-Read\-Calibration} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Calibration\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Calibration\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} calibration\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the battery voltage readings. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls reading the battery voltage. 
+
+Definition in file \hyperlink{_battery_control_8h_source}{Battery\-Control.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_battery_control_8h_a92466d5030f43b679cb926e5b65e3d2d}{\index{Battery\-Control.\-h@{Battery\-Control.\-h}!Battery\-Control\-\_\-\-Init@{Battery\-Control\-\_\-\-Init}}
+\index{Battery\-Control\-\_\-\-Init@{Battery\-Control\-\_\-\-Init}!BatteryControl.h@{Battery\-Control.\-h}}
+\subsubsection[{Battery\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Battery\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_battery_control_8h_a92466d5030f43b679cb926e5b65e3d2d}
+Initializes the battery voltage reading control. 
+
+Definition at line 53 of file Battery\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_battery_control_8h_aa73f0d4496f54547367c417814d67358}{\index{Battery\-Control.\-h@{Battery\-Control.\-h}!Battery\-Control\-\_\-\-Read\-Calibration@{Battery\-Control\-\_\-\-Read\-Calibration}}
+\index{Battery\-Control\-\_\-\-Read\-Calibration@{Battery\-Control\-\_\-\-Read\-Calibration}!BatteryControl.h@{Battery\-Control.\-h}}
+\subsubsection[{Battery\-Control\-\_\-\-Read\-Calibration}]{\setlength{\rightskip}{0pt plus 5cm}void Battery\-Control\-\_\-\-Read\-Calibration (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Calibration\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Calibration\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{calibration\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_battery_control_8h_aa73f0d4496f54547367c417814d67358}
+Reads the calibration values from the battery.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Calibration\-Length} & -\/ the maximum number of bytes allocated for calibration\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em actual\-Calibration\-Length} & -\/ the number of bytes of calibration data placed in calibration\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em calibration\mbox{[}$\,$\mbox{]}} & -\/ the calibration data from the battery. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file Battery\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Get\-Calibration().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_battery_control_8h_a28abd70494fdf139972215bd60606698}{\index{Battery\-Control.\-h@{Battery\-Control.\-h}!Battery\-Control\-\_\-\-Set\-Config@{Battery\-Control\-\_\-\-Set\-Config}}
+\index{Battery\-Control\-\_\-\-Set\-Config@{Battery\-Control\-\_\-\-Set\-Config}!BatteryControl.h@{Battery\-Control.\-h}}
+\subsubsection[{Battery\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Battery\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_battery_control_8h_a28abd70494fdf139972215bd60606698}
+Takes a configuration and sets it for the battery voltage reading.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the Key\-Value configuration setting for the battery reading. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Battery\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

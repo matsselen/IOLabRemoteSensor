@@ -1,0 +1,33 @@
+<map id="EventQueue_Add" name="EventQueue_Add">
+<area shape="rect" href="$_accelerometer_control_8c.html#a7c69937db815f51c340e3ead3314cda0" title="_AccDataReadyIsr" alt="" coords="185,101,316,128" />
+<area shape="rect" href="$_adc_8c.html#a349938431b6c84cf2227ad3d102c5e08" title="_AdcIsr" alt="" coords="217,811,284,837" />
+<area shape="rect" href="$_gyroscope_control_8c.html#a510950fd6e1a53eaddd48feb7f6e6251" title="_GyroDataReadyIsr" alt="" coords="181,152,320,179" />
+<area shape="rect" href="$_spi_slave_8c.html#a366c0a75d1f233fbd263825dc0fe7907" title="_HandleDmaRxIsr" alt="" coords="185,203,316,229" />
+<area shape="rect" href="$_spi_slave_8c.html#a56e510a9f87c444daed7ffcc5f5479bd" title="_HandleDmaTxIsr" alt="" coords="187,253,315,280" />
+<area shape="rect" href="$_comm_protocol_8c.html#a625a34a41751da66d4cc2a34c6dd6522" title="_HandlePowerDownPacket" alt="" coords="368,532,552,559" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1088,507,1240,533" />
+<area shape="rect" href="$_comm_protocol_8c.html#a86d2766ab8f82592b15dc9077a2ae287" title="_HandleRfStatusISR" alt="" coords="1092,608,1236,635" />
+<area shape="rect" href="$_magnetometer_control_8c.html#a6a19e4b78994ea9c53d714be2357e89d" title="_MagDataReadyIsr" alt="" coords="183,51,319,77" />
+<area shape="rect" href="$_ui_manager_8c.html#a4aabb887cd84641062375402ec60026b" title="_PlaySequence" alt="" coords="193,355,308,381" />
+<area shape="rect" href="$_self_test_8h.html#a282b024bc0ec38174285fce7402142c9" title="SelfTest_Start" alt="" coords="871,355,975,381" />
+<area shape="rect" href="$_push_button_control_8c.html#a04e5b9e23b30301cda0e98c334707c5e" title="_ProcessPushButtons" alt="" coords="847,709,999,736" />
+<area shape="rect" href="$_timer_tick_8c.html#a4f8f8d8e03710d63b5178690f28a17d3" title="_TimerA1CC0Isr" alt="" coords="191,861,311,888" />
+<area shape="rect" href="$_state_machine_8c.html#af48ba6585e6b7d8b1ea4d6fe2c198913" title="_UnlatchPower" alt="" coords="404,456,516,483" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="860,279,985,305" />
+<area shape="rect" href="$_serial_8h.html#ae8310ebb5f185ea925ec201785915f80" title="Serial_ProcessReceivedBytes" alt="" coords="1064,747,1264,773" />
+<area shape="rect" href="$_accelerometer_control_8h.html#a090131a757bc4b516c5c6d816485f721" title="AccControl_Init" alt="" coords="404,101,516,128" />
+<area shape="rect" href="$_configuration_manager_8h.html#ac8b698cc609b8b41fe3ff823b2046b85" title="ConMan_Init" alt="" coords="643,115,739,141" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1560,527,1611,553" />
+<area shape="rect" href="$_gyroscope_control_8h.html#a62c5033ca6c32f4b11a24dcba13e43e5" title="GyroControl_Init" alt="" coords="401,152,519,179" />
+<area shape="rect" href="$_spi_slave_8h.html#a5732ce1f835b266db99c3aaa6bab7d28" title="SpiSlave_Init" alt="" coords="411,203,509,229" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="601,557,780,584" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="831,456,1015,483" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1313,481,1511,508" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1064,405,1264,432" />
+<area shape="rect" href="$_comm_protocol_8h.html#af530adc2e8aa195eeebc30a5c16626c7" title="CommProtocol_Init" alt="" coords="1345,571,1479,597" />
+<area shape="rect" href="$_magnetometer_control_8h.html#a68beb1d94ceabab1ebab02ec5ef4e13b" title="MagControl_Init" alt="" coords="403,51,517,77" />
+<area shape="rect" href="$_ui_manager_8h.html#a64c0bf6dac5078278c785307c7e2befe" title="UiManager_PlaySequence" alt="" coords="601,304,780,331" />
+<area shape="rect" href="$_ui_manager_8c.html#ac066839b7cc3e3b90ae5bdd7f629b3c4" title="_UiTickCallBack" alt="" coords="401,304,519,331" />
+<area shape="rect" href="$_push_button_control_8h.html#a44e02d417d493e9ea8d35373dd094aeb" title="PushButtonControl_Init" alt="" coords="1333,631,1491,657" />
+<area shape="rect" href="$_state_machine_8c.html#a4999feb5cd4d41edea833a218eda4fe0" title="_HandlePowerOffRequest" alt="" coords="603,456,779,483" />
+</map>

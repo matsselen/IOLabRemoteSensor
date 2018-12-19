@@ -1,0 +1,11 @@
+<map id="Accelerometer.c" name="Accelerometer.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_accelerometer_8h.html" title="Accelerometer interface header. " alt="" coords="139,80,256,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="280,80,349,107" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="373,80,445,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="412,155,479,182" />
+<area shape="rect" href="$_i2c_8h.html" title="I2C Module header file. " alt="" coords="520,80,571,107" />
+<area shape="rect" href="$_gpio_8h.html" title="GPIO configuration and control macros and functions. " alt="" coords="595,80,653,107" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="621,155,693,182" />
+<area shape="rect" href="$_board_8h.html" title="Board initialization module header file. " alt="" coords="728,80,795,107" />
+</map>

@@ -1,0 +1,4 @@
+<map id="Gyroscope_ReadSample" name="Gyroscope_ReadSample">
+<area shape="rect" href="$_gyroscope_8c.html#a7c3643655affa818995c762203dca652" title="_GyroReadMultipleRegisters" alt="" coords="224,5,416,32" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="465,5,593,32" />
+</map>

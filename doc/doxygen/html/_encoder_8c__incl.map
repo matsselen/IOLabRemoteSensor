@@ -1,0 +1,9 @@
+<map id="Encoder.c" name="Encoder.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_encoder_8h.html" title="Hardware driver for the Quadrature Encoder. " alt="" coords="139,80,222,107" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="302,155,374,182" />
+<area shape="rect" href="$_board_8h.html" title="Board initialization module header file. " alt="" coords="296,80,363,107" />
+<area shape="rect" href="$_gpio_8h.html" title="GPIO configuration and control macros and functions. " alt="" coords="387,80,446,107" />
+<area shape="rect" href="$_timer_8h.html" title="Timer module driver. " alt="" coords="470,80,536,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="560,80,630,107" />
+</map>

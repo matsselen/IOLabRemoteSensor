@@ -1,0 +1,257 @@
+\hypertarget{_pwm_8h}{\section{Pwm.\-h File Reference}
+\label{_pwm_8h}\index{Pwm.\-h@{Pwm.\-h}}
+}
+
+
+Pulse width modulation module.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_pwm_8h_a178fe2cce76e090c80656901ef8d252d}{Pwm\-Channel\-\_\-t} \{ \\*
+{\bfseries Pwm\-Channel\-\_\-0} = 0, 
+\\*
+{\bfseries Pwm\-Channel\-\_\-1} = 1, 
+\\*
+{\bfseries Pwm\-Channel\-\_\-2} = 2, 
+\\*
+{\bfseries Pwm\-Channel\-\_\-3} = 3, 
+\\*
+{\bfseries Pwm\-Channel\-\_\-4} = 4, 
+\\*
+{\bfseries Pwm\-Channel\-\_\-5} = 5, 
+\\*
+{\bfseries Pwm\-Channel\-\_\-6} = 6
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_pwm_8h_ad446fe4f34c49868e778a20d4f6dbe06}{Pwm\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_pwm_8h_a3bcc133bd11de8cdebe6cca148a86697}{Pwm\-\_\-\-Set\-Frequency} (\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} freq)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_pwm_8h_a0b1227ceeeff83336f29d8b94d6ef238}{Pwm\-\_\-\-Set\-Duty} (\hyperlink{_pwm_8h_a178fe2cce76e090c80656901ef8d252d}{Pwm\-Channel\-\_\-t} channel, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} duty)
+\item 
+\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_pwm_8h_af615c07bb1843dbc746ddfa848592b8b}{Pwm\-\_\-\-Get\-Duty} (\hyperlink{_pwm_8h_a178fe2cce76e090c80656901ef8d252d}{Pwm\-Channel\-\_\-t} channel)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_pwm_8h_aeeb64145d199ec26bf1529408072857e}{Pwm\-\_\-\-Enable} (\hyperlink{_pwm_8h_a178fe2cce76e090c80656901ef8d252d}{Pwm\-Channel\-\_\-t} channel, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} duty)
+\item 
+void \hyperlink{_pwm_8h_a7371820ffd6164c6fe538095708d2190}{Pwm\-\_\-\-Disable} (\hyperlink{_pwm_8h_a178fe2cce76e090c80656901ef8d252d}{Pwm\-Channel\-\_\-t} channel)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Pulse width modulation module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Contains functions and macros for the pulse width modulation module. 
+
+Definition in file \hyperlink{_pwm_8h_source}{Pwm.\-h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_pwm_8h_a178fe2cce76e090c80656901ef8d252d}{\index{Pwm.\-h@{Pwm.\-h}!Pwm\-Channel\-\_\-t@{Pwm\-Channel\-\_\-t}}
+\index{Pwm\-Channel\-\_\-t@{Pwm\-Channel\-\_\-t}!Pwm.h@{Pwm.\-h}}
+\subsubsection[{Pwm\-Channel\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Pwm\-Channel\-\_\-t}}}\label{_pwm_8h_a178fe2cce76e090c80656901ef8d252d}
+P\-W\-M channels 
+
+Definition at line 27 of file Pwm.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_pwm_8h_a7371820ffd6164c6fe538095708d2190}{\index{Pwm.\-h@{Pwm.\-h}!Pwm\-\_\-\-Disable@{Pwm\-\_\-\-Disable}}
+\index{Pwm\-\_\-\-Disable@{Pwm\-\_\-\-Disable}!Pwm.h@{Pwm.\-h}}
+\subsubsection[{Pwm\-\_\-\-Disable}]{\setlength{\rightskip}{0pt plus 5cm}void Pwm\-\_\-\-Disable (
+\begin{DoxyParamCaption}
+\item[{{\bf Pwm\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_pwm_8h_a7371820ffd6164c6fe538095708d2190}
+Disable a channel of the P\-W\-M.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ P\-W\-M channel to disable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 259 of file Pwm.\-c.
+
+
+
+Referenced by Buzzer\-\_\-\-Disable(), Buzzer\-Control\-\_\-\-Set\-Config(), Header4\-Control\-\_\-\-Set\-Config(), and Header5\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_pwm_8h_aeeb64145d199ec26bf1529408072857e}{\index{Pwm.\-h@{Pwm.\-h}!Pwm\-\_\-\-Enable@{Pwm\-\_\-\-Enable}}
+\index{Pwm\-\_\-\-Enable@{Pwm\-\_\-\-Enable}!Pwm.h@{Pwm.\-h}}
+\subsubsection[{Pwm\-\_\-\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Pwm\-\_\-\-Enable (
+\begin{DoxyParamCaption}
+\item[{{\bf Pwm\-Channel\-\_\-t}}]{channel, }
+\item[{{\bf uint8\-\_\-t}}]{duty}
+\end{DoxyParamCaption}
+)}}\label{_pwm_8h_aeeb64145d199ec26bf1529408072857e}
+Enable a channel of the P\-W\-M.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ P\-W\-M channel to enable \\
+\hline
+\mbox{\tt in}  & {\em duty} & -\/ duty cycle for specified channel, should be between 0 and 100 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 185 of file Pwm.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), \-\_\-\-Handle\-Human\-Pwm\-Command(), and Buzzer\-\_\-\-Enable().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_pwm_8h_af615c07bb1843dbc746ddfa848592b8b}{\index{Pwm.\-h@{Pwm.\-h}!Pwm\-\_\-\-Get\-Duty@{Pwm\-\_\-\-Get\-Duty}}
+\index{Pwm\-\_\-\-Get\-Duty@{Pwm\-\_\-\-Get\-Duty}!Pwm.h@{Pwm.\-h}}
+\subsubsection[{Pwm\-\_\-\-Get\-Duty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} Pwm\-\_\-\-Get\-Duty (
+\begin{DoxyParamCaption}
+\item[{{\bf Pwm\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_pwm_8h_af615c07bb1843dbc746ddfa848592b8b}
+Gets the duty cycle for a specific channel of the P\-W\-M.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ Channel to get the duty cycle of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The duty cycle setting of that P\-W\-M channel 
+\end{DoxyReturn}
+
+
+Definition at line 167 of file Pwm.\-c.
+
+
+
+Referenced by Buzzer\-\_\-\-Enable().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_pwm_8h_ad446fe4f34c49868e778a20d4f6dbe06}{\index{Pwm.\-h@{Pwm.\-h}!Pwm\-\_\-\-Init@{Pwm\-\_\-\-Init}}
+\index{Pwm\-\_\-\-Init@{Pwm\-\_\-\-Init}!Pwm.h@{Pwm.\-h}}
+\subsubsection[{Pwm\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Pwm\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_pwm_8h_ad446fe4f34c49868e778a20d4f6dbe06}
+Initialize the P\-W\-M with default settings\-: 
+
+Definition at line 92 of file Pwm.\-c.
+
+
+
+Referenced by Buzzer\-\_\-\-Init(), Buzzer\-Control\-\_\-\-Init(), Header5\-Control\-\_\-\-Init(), and main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_pwm_8h_a0b1227ceeeff83336f29d8b94d6ef238}{\index{Pwm.\-h@{Pwm.\-h}!Pwm\-\_\-\-Set\-Duty@{Pwm\-\_\-\-Set\-Duty}}
+\index{Pwm\-\_\-\-Set\-Duty@{Pwm\-\_\-\-Set\-Duty}!Pwm.h@{Pwm.\-h}}
+\subsubsection[{Pwm\-\_\-\-Set\-Duty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Pwm\-\_\-\-Set\-Duty (
+\begin{DoxyParamCaption}
+\item[{{\bf Pwm\-Channel\-\_\-t}}]{channel, }
+\item[{{\bf uint8\-\_\-t}}]{duty}
+\end{DoxyParamCaption}
+)}}\label{_pwm_8h_a0b1227ceeeff83336f29d8b94d6ef238}
+Set the duty cycle for a specific channel of the P\-W\-M.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ Channel to configure \\
+\hline
+\mbox{\tt in}  & {\em duty} & -\/ Duty cycle to set the channel to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file Pwm.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Duty\-Cycle(), Buzzer\-\_\-\-Init(), Buzzer\-\_\-\-Set\-Duty(), and Pwm\-\_\-\-Set\-Frequency().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_pwm_8h_a3bcc133bd11de8cdebe6cca148a86697}{\index{Pwm.\-h@{Pwm.\-h}!Pwm\-\_\-\-Set\-Frequency@{Pwm\-\_\-\-Set\-Frequency}}
+\index{Pwm\-\_\-\-Set\-Frequency@{Pwm\-\_\-\-Set\-Frequency}!Pwm.h@{Pwm.\-h}}
+\subsubsection[{Pwm\-\_\-\-Set\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}void Pwm\-\_\-\-Set\-Frequency (
+\begin{DoxyParamCaption}
+\item[{{\bf uint32\-\_\-t}}]{freq}
+\end{DoxyParamCaption}
+)}}\label{_pwm_8h_a3bcc133bd11de8cdebe6cca148a86697}
+Set the frequency of the P\-W\-M in fixed point tenths of Hertz.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em freq} & -\/ Fixed point frequency at which to set the P\-W\-M. Uses a x10 fixed point, so 123.\-4\-Hz = 1234.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+With Timer\-Source = S\-M\-C\-L\-K = 24\-M\-Hz, and Timer\-Divider = 20, the frequency range is 18 to 37500 Hz 
+\end{DoxyNote}
+
+
+Definition at line 110 of file Pwm.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), \-\_\-\-Handle\-Human\-Pwm\-Command(), Buzzer\-\_\-\-Init(), and Buzzer\-\_\-\-Set\-Frequency().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

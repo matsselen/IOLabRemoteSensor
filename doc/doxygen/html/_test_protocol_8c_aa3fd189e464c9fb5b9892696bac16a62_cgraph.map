@@ -1,0 +1,10 @@
+<map id="_HandleHumanBarcCommand" name="_HandleHumanBarcCommand">
+<area shape="rect" href="$_barometer_8c.html#a10764bee54c53faa6e0a2c5deff5dd52" title="Barometer_ReadCoefficients" alt="" coords="256,44,448,71" />
+<area shape="rect" href="$_serial_8c.html#a88d9cf267de40eaeac599d0fa554908f" title="Serial_SendPacket" alt="" coords="521,120,655,147" />
+<area shape="rect" href="$_test_protocol_8c.html#a9a6c77304d30771f67961c7100ad749a" title="_SendAckHuman" alt="" coords="289,145,415,172" />
+<area shape="rect" href="$_barometer_8c.html#a68205b78d3fed44531eb4d88f5df60dc" title="_BarReadMultipleRegisters" alt="" coords="496,44,680,71" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="736,5,864,32" />
+<area shape="rect" href="$_spi_master_8c.html#a77dac8d70655f0b711a13787359f723e" title="Spi_WriteByte" alt="" coords="748,56,852,83" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="744,113,856,140" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="728,164,872,191" />
+</map>

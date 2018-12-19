@@ -1,0 +1,15 @@
+<map id="_HandleHumanAdc1Command" name="_HandleHumanAdc1Command">
+<area shape="rect" href="$_adc_manager_8c.html#a88658cb06de5461355af4c5dfff1b3ec" title="AdcManager_SingleSampleBlocking" alt="" coords="259,120,496,147" />
+<area shape="rect" href="$_serial_8c.html#a88d9cf267de40eaeac599d0fa554908f" title="Serial_SendPacket" alt="" coords="586,272,719,299" />
+<area shape="rect" href="$_test_protocol_8c.html#a9a6c77304d30771f67961c7100ad749a" title="_SendAckHuman" alt="" coords="315,247,440,274" />
+<area shape="rect" href="$_test_protocol_8c.html#a1d3faf9e9f7a628cd5d12fea2cee234a" title="_SendNakHuman" alt="" coords="315,298,440,324" />
+<area shape="rect" href="$_adc_8c.html#a8201a8154546752a07f766fa604c77d1" title="Adc_SetChannelSequence" alt="" coords="1064,120,1246,147" />
+<area shape="rect" href="$_adc_8c.html#afe5cd10dd67ef2ad4ade4f71a6ada010" title="Adc_SingleConversionSequence\lBlocking" alt="" coords="544,87,760,130" />
+<area shape="rect" href="$_adc_manager_8c.html#a5e91c4affb5c1439c47170585670a2bf" title="_SetupTimerConfig" alt="" coords="584,163,720,190" />
+<area shape="rect" href="$_adc_8c.html#ad41a7943b5c26fbe607328388a72bfa3" title="_MoveSamplesToUserLocation" alt="" coords="810,70,1015,96" />
+<area shape="rect" href="$_timer_8c.html#a02f931c9a4a5037b499d531f49ebc3b9" title="Timer_A0_Configure" alt="" coords="840,120,984,147" />
+<area shape="rect" href="$_timer_8c.html#a3b787ac79e251ea6217447ed05be53bb" title="Timer_A0CCX_Configure" alt="" coords="827,171,998,198" />
+<area shape="rect" href="$_adc_manager_8c.html#a9d5382aa474494126282fe96a47dbea1" title="_InitialzeXAdcChannels" alt="" coords="831,222,994,248" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="856,272,968,299" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="840,323,984,350" />
+</map>

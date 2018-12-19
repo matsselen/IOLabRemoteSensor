@@ -1,0 +1,82 @@
+\hypertarget{_fail_sequence_data_8h}{\section{Fail\-Sequence\-Data.\-h File Reference}
+\label{_fail_sequence_data_8h}\index{Fail\-Sequence\-Data.\-h@{Fail\-Sequence\-Data.\-h}}
+}
+
+
+Contains the sequence data information for the star wars U\-I sequence.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Ui\-Manager\-Sequence\-Data.\-h$>$}\\*
+{\ttfamily \#include $<$Note\-Duration\-To\-Ms.\-h$>$}\\*
+Include dependency graph for Fail\-Sequence\-Data.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_fail_sequence_data_8h_aac7f568a9a1fe51603fb09d32a8237f6}{static const \hyperlink{_ui_manager_sequence_data_8h_struct_buzzer_sequence_step__t}{Buzzer\-Sequence\-Step\-\_\-t} {\bfseries fail\-Buzzer\-Steps} \mbox{[}$\,$\mbox{]}}\label{_fail_sequence_data_8h_aac7f568a9a1fe51603fb09d32a8237f6}
+
+\item 
+static const \\*
+\hyperlink{_ui_manager_sequence_data_8h_struct_back_light_sequence_step__t}{Back\-Light\-Sequence\-Step\-\_\-t} {\bfseries fail\-Backlight\-Steps} \mbox{[}$\,$\mbox{]}
+\item 
+static const \hyperlink{_ui_manager_sequence_data_8h_struct_ui_sequence_data__t}{Ui\-Sequence\-Data\-\_\-t} {\bfseries fail\-Sequence}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the sequence data information for the star wars U\-I sequence. {\bfseries Description} Contains the sequence data information for the star wars \char`\"{}special\char`\"{} U\-I sequence. 
+
+Definition in file \hyperlink{_fail_sequence_data_8h_source}{Fail\-Sequence\-Data.\-h}.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_fail_sequence_data_8h_a9aac8ca82fedfbe1518bc869fb064e5b}{\index{Fail\-Sequence\-Data.\-h@{Fail\-Sequence\-Data.\-h}!fail\-Backlight\-Steps@{fail\-Backlight\-Steps}}
+\index{fail\-Backlight\-Steps@{fail\-Backlight\-Steps}!FailSequenceData.h@{Fail\-Sequence\-Data.\-h}}
+\subsubsection[{fail\-Backlight\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Back\-Light\-Sequence\-Step\-\_\-t} fail\-Backlight\-Steps\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_fail_sequence_data_8h_a9aac8ca82fedfbe1518bc869fb064e5b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        \{ 
+                .backlightOn = \textcolor{keyword}{false},
+                .durationMs = 100,
+        \},
+        \{ 
+                .backlightOn = \textcolor{keyword}{true},
+                .durationMs = 100,
+        \},
+        \{ 
+                .backlightOn = \textcolor{keyword}{false},
+                .durationMs = 100,
+        \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 201 of file Fail\-Sequence\-Data.\-h.
+
+\hypertarget{_fail_sequence_data_8h_a3e0bf0d2e768bc0614f8ac5ed164a564}{\index{Fail\-Sequence\-Data.\-h@{Fail\-Sequence\-Data.\-h}!fail\-Sequence@{fail\-Sequence}}
+\index{fail\-Sequence@{fail\-Sequence}!FailSequenceData.h@{Fail\-Sequence\-Data.\-h}}
+\subsubsection[{fail\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ui\-Sequence\-Data\-\_\-t} fail\-Sequence\hspace{0.3cm}{\ttfamily [static]}}}\label{_fail_sequence_data_8h_a3e0bf0d2e768bc0614f8ac5ed164a564}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    .buzzerSequence =
+    \{
+        .stepsInSequence = \hyperlink{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{ARRAY\_LENGTH}(failBuzzerSteps),
+        .stepList = failBuzzerSteps,
+    \},
+    .backLightSequence =
+    \{
+        .stepsInSequence = \hyperlink{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{ARRAY\_LENGTH}(failBacklightSteps),
+        .stepList = failBacklightSteps,
+    \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 217 of file Fail\-Sequence\-Data.\-h.
+

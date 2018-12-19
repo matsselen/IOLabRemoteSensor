@@ -1,0 +1,11 @@
+<map id="AdcManager_GetOffset" name="AdcManager_GetOffset">
+<area shape="rect" href="$_battery_control_8h.html#aa73f0d4496f54547367c417814d67358" title="BatteryControl_ReadCalibration" alt="" coords="217,56,425,83" />
+<area shape="rect" href="$_configuration_manager_8h.html#a8f284af259f31d10135d4cb98fc2e474" title="ConMan_GetCalibration" alt="" coords="476,56,639,83" />
+<area shape="rect" href="$_comm_protocol_8c.html#ac034c3f9caa94012ccf6ebdfe63ac98c" title="_HandleGetCalibrationPacket" alt="" coords="688,56,885,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="935,56,1113,83" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1164,56,1348,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1647,56,1844,83" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1421,56,1573,83" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1397,107,1597,134" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1893,56,1944,83" />
+</map>

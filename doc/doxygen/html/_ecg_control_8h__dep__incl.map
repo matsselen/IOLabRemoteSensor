@@ -1,0 +1,4 @@
+<map id="EcgControl.h" name="EcgControl.h">
+<area shape="rect" href="$_configuration_manager_8c.html" title="The configuration manager keeps track of all the sensor configurations. " alt="" coords="5,80,168,107" />
+<area shape="rect" href="$_ecg_control_8c.html" title="Controls reading the 6&#45;channel ECG. " alt="" coords="192,80,288,107" />
+</map>

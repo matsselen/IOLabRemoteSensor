@@ -1,0 +1,12 @@
+<map id="Dma_EnableIsr" name="Dma_EnableIsr">
+<area shape="rect" href="$_spi_slave_8h.html#adbea4d2f3131d24e4216cda35a81d895" title="SpiSlave_LoadPacket" alt="" coords="170,31,322,58" />
+<area shape="rect" href="$_spi_slave_8h.html#a467e927cefcef069f8475274521c3b22" title="SpiSlave_ReadPacket" alt="" coords="170,82,322,108" />
+<area shape="rect" href="$_comm_protocol_8h.html#af530adc2e8aa195eeebc30a5c16626c7" title="CommProtocol_Init" alt="" coords="395,56,528,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a0591f11adf0d52b4fd5fa913498e9dd9" title="CommProtocol_TxHandler" alt="" coords="372,6,551,32" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1331,56,1382,83" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="602,107,786,134" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1084,107,1282,134" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="859,132,1011,159" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="835,183,1035,210" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="372,107,551,134" />
+</map>

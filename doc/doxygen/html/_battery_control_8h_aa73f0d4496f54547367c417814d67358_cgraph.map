@@ -1,0 +1,6 @@
+<map id="BatteryControl_ReadCalibration" name="BatteryControl_ReadCalibration">
+<area shape="rect" href="$_adc_manager_8c.html#a0df4026e1d37dd4f723f43d3e9ee467c" title="AdcManager_GetGainFactor" alt="" coords="264,5,456,32" />
+<area shape="rect" href="$_adc_manager_8c.html#a5544660c514f863363f4c4e0763c8561" title="AdcManager_GetOffset" alt="" coords="280,56,440,83" />
+<area shape="rect" href="$_adc_8c.html#a0842a80966234b58516235a957b58083" title="Adc_GetGainFactor" alt="" coords="504,5,643,32" />
+<area shape="rect" href="$_adc_8c.html#ada428cf10ffb15cbb03e1ea5daa36786" title="Adc_GetOffset" alt="" coords="519,56,628,83" />
+</map>

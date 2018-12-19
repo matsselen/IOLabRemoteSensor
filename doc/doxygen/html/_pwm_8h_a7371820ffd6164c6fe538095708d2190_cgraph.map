@@ -1,0 +1,4 @@
+<map id="Pwm_Disable" name="Pwm_Disable">
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="179,5,293,32" />
+<area shape="rect" href="$_pwm_8c.html#a4cde0daf6b044c1a1fc69b618509c8d6" title="_AnyChannelsEnabled" alt="" coords="157,56,315,83" />
+</map>

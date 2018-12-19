@@ -1,0 +1,21 @@
+<map id="_PlaySequence" name="_PlaySequence">
+<area shape="rect" href="$_buzzer_8h.html#a82cbbadfc4f17ae9a96d34230aea2a5c" title="Buzzer_SetFrequency" alt="" coords="196,107,348,133" />
+<area shape="rect" href="$_buzzer_8h.html#a00bd24efcdaf817cfcf6a7cd6d871765" title="Buzzer_Enable" alt="" coords="216,183,328,209" />
+<area shape="rect" href="$_buzzer_8h.html#a32beb337abd6ef07b2e0a1be1785fc05" title="Buzzer_Disable" alt="" coords="215,233,329,260" />
+<area shape="rect" href="$_timer_tick_8c.html#ab3e7e710e30409b5e98b715960bacf39" title="TimerTick_CancelTimeoutFrom\lCallback" alt="" coords="168,284,376,327" />
+<area shape="rect" href="$_timer_tick_8c.html#a2e533e7d0f92d79186280f85476710be" title="TimerTick_CancelTimeout" alt="" coords="184,351,360,377" />
+<area shape="rect" href="$_event_queue_8c.html#afd41d1979b21c13ff21bab60d9c57c27" title="EventQueue_Add" alt="" coords="209,401,335,428" />
+<area shape="rect" href="$_ui_manager_8c.html#a6219944d11ab23283bb8b21a2f8ce9aa" title="_ZeroCurrentSequence" alt="" coords="192,452,352,479" />
+<area shape="rect" href="$_pwm_8c.html#a3bcc133bd11de8cdebe6cca148a86697" title="Pwm_SetFrequency" alt="" coords="424,81,565,108" />
+<area shape="rect" href="$_timer_8c.html#a9c2492c1b5bfb4de29379c4ab7881d9c" title="Timer_B0_Configure" alt="" coords="620,5,764,32" />
+<area shape="rect" href="$_pwm_8c.html#a0b1227ceeeff83336f29d8b94d6ef238" title="Pwm_SetDuty" alt="" coords="640,56,744,83" />
+<area shape="rect" href="$_pwm_8c.html#a4cde0daf6b044c1a1fc69b618509c8d6" title="_AnyChannelsEnabled" alt="" coords="613,157,771,184" />
+<area shape="rect" href="$_pwm_8c.html#a44f8de75f3f084d05fff0a54dc0b7df5" title="_DutyToCount" alt="" coords="852,157,959,184" />
+<area shape="rect" href="$_timer_8c.html#a6590a26eceba06333f451e69d6ea3987" title="Timer_B0CCX_Configure" alt="" coords="820,81,991,108" />
+<area shape="rect" href="$_pwm_8c.html#aeeb64145d199ec26bf1529408072857e" title="Pwm_Enable" alt="" coords="445,157,544,184" />
+<area shape="rect" href="$_pwm_8c.html#af615c07bb1843dbc746ddfa848592b8b" title="Pwm_GetDuty" alt="" coords="441,208,548,235" />
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="635,259,749,285" />
+<area shape="rect" href="$_pwm_8c.html#a7371820ffd6164c6fe538095708d2190" title="Pwm_Disable" alt="" coords="444,259,545,285" />
+<area shape="rect" href="$_interrupt_8c.html#a0e5431ce2b9097e2a21c245e7c75e953" title="Interrupt_Lock" alt="" coords="441,376,548,403" />
+<area shape="rect" href="$_interrupt_8c.html#a4f840d0ee81cd63fc8ab0c938a6e755b" title="Interrupt_Unlock" alt="" coords="436,427,553,453" />
+</map>

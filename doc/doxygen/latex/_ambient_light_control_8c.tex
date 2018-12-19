@@ -1,0 +1,150 @@
+\hypertarget{_ambient_light_control_8c}{\section{Ambient\-Light\-Control.\-c File Reference}
+\label{_ambient_light_control_8c}\index{Ambient\-Light\-Control.\-c@{Ambient\-Light\-Control.\-c}}
+}
+
+
+Controls reading the ambient light sensor.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Ambient\-Light\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Adc\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for Ambient\-Light\-Control.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_ambient_light_control_8c_a8b8053c6d07a30530c4d2b453e62666e}{\-\_\-\-Ambient\-Light\-Data\-Callback} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data)
+\item 
+void \hyperlink{_ambient_light_control_8c_a99c6ff3da08c573a39e8409ed4dba8b5}{Ambient\-Light\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_ambient_light_control_8c_aa498cb345e57a444bc154ed18c85843e}{Ambient\-Light\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_ambient_light_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_key_value_8h_a45712914433680dcbdf3aab8cea5c18d}{Ambient\-Light\-Sample\-Rate\-\_\-t} \hyperlink{_ambient_light_control_8c_a2bec491283d2369e1f2fd676f9ad29b5}{\-\_\-sample\-Rate} = \hyperlink{_key_value_8h_a2fcb88063aef54d686517024d4093479}{D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls reading the ambient light sensor. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the ambient light sensor and manages the configurations and settings associated with the ambient light sensor. 
+
+Definition in file \hyperlink{_ambient_light_control_8c_source}{Ambient\-Light\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_ambient_light_control_8c_a8b8053c6d07a30530c4d2b453e62666e}{\index{Ambient\-Light\-Control.\-c@{Ambient\-Light\-Control.\-c}!\-\_\-\-Ambient\-Light\-Data\-Callback@{\-\_\-\-Ambient\-Light\-Data\-Callback}}
+\index{\-\_\-\-Ambient\-Light\-Data\-Callback@{\-\_\-\-Ambient\-Light\-Data\-Callback}!AmbientLightControl.c@{Ambient\-Light\-Control.\-c}}
+\subsubsection[{\-\_\-\-Ambient\-Light\-Data\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Ambient\-Light\-Data\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_ambient_light_control_8c_a8b8053c6d07a30530c4d2b453e62666e}
+Takes the ambient light sensor data and stores it in the proper location. This function is designed to be called every time there is data for the ambient light sensor.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & -\/ The sample from the ambient light sensor that should be stored in the proper location. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file Ambient\-Light\-Control.\-c.
+
+
+
+Referenced by Ambient\-Light\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ambient_light_control_8c_a99c6ff3da08c573a39e8409ed4dba8b5}{\index{Ambient\-Light\-Control.\-c@{Ambient\-Light\-Control.\-c}!Ambient\-Light\-Control\-\_\-\-Init@{Ambient\-Light\-Control\-\_\-\-Init}}
+\index{Ambient\-Light\-Control\-\_\-\-Init@{Ambient\-Light\-Control\-\_\-\-Init}!AmbientLightControl.c@{Ambient\-Light\-Control.\-c}}
+\subsubsection[{Ambient\-Light\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Ambient\-Light\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_ambient_light_control_8c_a99c6ff3da08c573a39e8409ed4dba8b5}
+Initializes the ambient light sensor reading control. 
+
+Definition at line 51 of file Ambient\-Light\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ambient_light_control_8c_aa498cb345e57a444bc154ed18c85843e}{\index{Ambient\-Light\-Control.\-c@{Ambient\-Light\-Control.\-c}!Ambient\-Light\-Control\-\_\-\-Set\-Config@{Ambient\-Light\-Control\-\_\-\-Set\-Config}}
+\index{Ambient\-Light\-Control\-\_\-\-Set\-Config@{Ambient\-Light\-Control\-\_\-\-Set\-Config}!AmbientLightControl.c@{Ambient\-Light\-Control.\-c}}
+\subsubsection[{Ambient\-Light\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Ambient\-Light\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_ambient_light_control_8c_aa498cb345e57a444bc154ed18c85843e}
+Takes a configuration and sets it for the ambient light sensor reading.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the Key\-Value configuration setting for the ambient light sensor reading. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Ambient\-Light\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_ambient_light_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Ambient\-Light\-Control.\-c@{Ambient\-Light\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!AmbientLightControl.c@{Ambient\-Light\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_ambient_light_control_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the module has been initialized 
+
+Definition at line 39 of file Ambient\-Light\-Control.\-c.
+
+\hypertarget{_ambient_light_control_8c_a2bec491283d2369e1f2fd676f9ad29b5}{\index{Ambient\-Light\-Control.\-c@{Ambient\-Light\-Control.\-c}!\-\_\-sample\-Rate@{\-\_\-sample\-Rate}}
+\index{\-\_\-sample\-Rate@{\-\_\-sample\-Rate}!AmbientLightControl.c@{Ambient\-Light\-Control.\-c}}
+\subsubsection[{\-\_\-sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ambient\-Light\-Sample\-Rate\-\_\-t} \-\_\-sample\-Rate = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_ambient_light_control_8c_a2bec491283d2369e1f2fd676f9ad29b5}
+Stores the desired sample rate of the ambient light sensor voltage reading 
+
+Definition at line 42 of file Ambient\-Light\-Control.\-c.
+
+
+
+Referenced by Ambient\-Light\-Control\-\_\-\-Set\-Config().
+

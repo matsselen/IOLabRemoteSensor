@@ -1,0 +1,12 @@
+<map id="Clock.h" name="Clock.h">
+<area shape="rect" href="$_self_test_8c_source.html" title="SelfTest.c" alt="" coords="5,80,85,107" />
+<area shape="rect" href="$_test_protocol_8c.html" title="Manages the self&#45;test protocol. " alt="" coords="109,80,216,107" />
+<area shape="rect" href="$_barometer_8c.html" title="Driver for the barometer sensor. " alt="" coords="240,80,333,107" />
+<area shape="rect" href="$_dac_8c.html" title="Driver for the DAC. " alt="" coords="357,80,413,107" />
+<area shape="rect" href="$_gyroscope_8c.html" title="Driver for the gyroscope sensor. " alt="" coords="437,80,533,107" />
+<area shape="rect" href="$_pwm_8c.html" title="Pulse width modulation module driver. " alt="" coords="557,80,619,107" />
+<area shape="rect" href="$_ultrasound_8c.html" title="Driver for the Ultrasonic Transducer Circuit. " alt="" coords="643,80,739,107" />
+<area shape="rect" href="$_board_8c.html" title="Board initialization module. " alt="" coords="763,80,829,107" />
+<area shape="rect" href="$_clock_8c.html" title="Clock configuration module. " alt="" coords="853,80,917,107" />
+<area shape="rect" href="$_assert_8c.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="941,80,1011,107" />
+</map>

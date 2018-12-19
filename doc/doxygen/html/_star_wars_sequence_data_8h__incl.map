@@ -1,0 +1,6 @@
+<map id="StarWarsSequenceData.h" name="StarWarsSequenceData.h">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_ui_manager_sequence_data_8h.html" title="Stores the data for the different sequences in the UI. " alt="" coords="139,80,323,107" />
+<area shape="rect" href="$_note_duration_to_ms_8h.html" title="Converts note durations to milliseconds. " alt="" coords="347,80,491,107" />
+<area shape="rect" href="$_pitch_to_frequency_8h.html" title="Converts named pitches to their frequencies. " alt="" coords="161,155,300,182" />
+</map>

@@ -1,0 +1,312 @@
+\hypertarget{_buzzer_control_8c}{\section{Buzzer\-Control.\-c File Reference}
+\label{_buzzer_control_8c}\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}}
+}
+
+
+Controls the buzzer.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Buzzer\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Pwm.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+Include dependency graph for Buzzer\-Control.\-c\-:
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_buzzer_control_8c_a39e39264125f3f2f8c2a3fdb617192da}{Buzzer\-Output\-\_\-t} \{ \\*
+{\bfseries Buzzer\-Output\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}, 
+\\*
+{\bfseries Buzzer\-Output\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}, 
+\\*
+{\bfseries Buzzer\-Output\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H}, 
+\\*
+{\bfseries Buzzer\-Output\-\_\-\-M\-E\-D\-P\-I\-T\-C\-H}, 
+\\*
+{\bfseries Buzzer\-Output\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_buzzer_control_8c_a4dfe5ad09d15147959640a9c365cd02a}{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Duty\-Cycle} (void)
+\item 
+static void \hyperlink{_buzzer_control_8c_a45d1a9d49f6652adb4373f95dbc3dcd2}{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output} (void)
+\item 
+void \hyperlink{_buzzer_control_8c_a3b6991a46219affd721e0ca21edbda78}{Buzzer\-Control\-\_\-\-Init} ()
+\item 
+void \hyperlink{_buzzer_control_8c_a11222160d9edeed9188bfe2b283a7bab}{Buzzer\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_buzzer_control_8c_aba2f97cc27d393f1c35509c45e9491cf}{static \hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} const {\bfseries \-\_\-low\-Frequencies} \mbox{[}Buzzer\-Low\-Frequency\-\_\-\-L\-A\-S\-T\mbox{]}}\label{_buzzer_control_8c_aba2f97cc27d393f1c35509c45e9491cf}
+
+\item 
+\hypertarget{_buzzer_control_8c_a35eb123d92c50f988413d788e9d68827}{static \hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} const {\bfseries \-\_\-high\-Frequencies} \mbox{[}Buzzer\-High\-Frequency\-\_\-\-L\-A\-S\-T\mbox{]}}\label{_buzzer_control_8c_a35eb123d92c50f988413d788e9d68827}
+
+\item 
+\hypertarget{_buzzer_control_8c_ab979ea831af5cfe407fa234fa9d42e4b}{static \hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} const {\bfseries \-\_\-low\-Pitches} \mbox{[}Buzzer\-Low\-Pitch\-\_\-\-L\-A\-S\-T\mbox{]}}\label{_buzzer_control_8c_ab979ea831af5cfe407fa234fa9d42e4b}
+
+\item 
+\hypertarget{_buzzer_control_8c_aecd7e421d7945b7799460b7dc00c96bf}{static \hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} const {\bfseries \-\_\-med\-Pitches} \mbox{[}Buzzer\-Mid\-Pitch\-\_\-\-L\-A\-S\-T\mbox{]}}\label{_buzzer_control_8c_aecd7e421d7945b7799460b7dc00c96bf}
+
+\item 
+\hypertarget{_buzzer_control_8c_a0a5cb36330bd63b78ded1891f938b332}{static \hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} const {\bfseries \-\_\-high\-Pitches} \mbox{[}Buzzer\-High\-Pitch\-\_\-\-L\-A\-S\-T\mbox{]}}\label{_buzzer_control_8c_a0a5cb36330bd63b78ded1891f938b332}
+
+\item 
+\hypertarget{_buzzer_control_8c_ab5ebae457582678f03604c38bdcba7bc}{static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} const {\bfseries \-\_\-duty\-Cycles} \mbox{[}Buzzer\-Duty\-Cycle\-\_\-\-L\-A\-S\-T\mbox{]}}\label{_buzzer_control_8c_ab5ebae457582678f03604c38bdcba7bc}
+
+\item 
+static \hyperlink{_key_value_8h_a23e46507407c33d9bc6823bc57ce1d0f}{Buzzer\-Mode\-\_\-t} \hyperlink{_buzzer_control_8c_a05662961f9299b38986ab56ac970ac35}{\-\_\-buzzer\-Mode} = Buzzer\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D
+\item 
+static \hyperlink{_buzzer_control_8c_a39e39264125f3f2f8c2a3fdb617192da}{Buzzer\-Output\-\_\-t} \hyperlink{_buzzer_control_8c_ac6e498d0e6dffa51e3976ab1d87c4661}{\-\_\-buzzer\-Output\-Type} = Buzzer\-Output\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y
+\item 
+static \hyperlink{_key_value_8h_a51da99af1f4bc119437780de14ebfc92}{Buzzer\-Low\-Frequency\-\_\-t} \hyperlink{_buzzer_control_8c_a56bc4488536b5661de0be0deaa12cfe3}{\-\_\-buzzer\-Low\-Frequency} = \hyperlink{_key_value_8h_a4311c072375bc8f012a74e57b8d2b2bf}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}
+\item 
+static \hyperlink{_key_value_8h_a2e2db3e44cdbf4ae205817d12a52729c}{Buzzer\-High\-Frequency\-\_\-t} \hyperlink{_buzzer_control_8c_ad90169e1bb5afa16d51e07bc7d1bb0ef}{\-\_\-buzzer\-High\-Frequency} = \hyperlink{_key_value_8h_aebcf758553730cb3398512714a7b1681}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}
+\item 
+static \hyperlink{_key_value_8h_ad381141dd431b380aac7ea9f175e7b95}{Buzzer\-Low\-Pitch\-\_\-t} \hyperlink{_buzzer_control_8c_a1668e784453cfcc92d5d839ddd2c1e12}{\-\_\-buzzer\-Low\-Pitch} = \hyperlink{_key_value_8h_adef9787dc0cf955fdbd0cedb5c1223c0}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H}
+\item 
+static \hyperlink{_key_value_8h_a6b52c21377975bcbfb8127bd0e606a52}{Buzzer\-Mid\-Pitch\-\_\-t} \hyperlink{_buzzer_control_8c_a308e49ad3b7db8b4a45e7745c36217d8}{\-\_\-buzzer\-Med\-Pitch} = \hyperlink{_key_value_8h_a9f2ebc2d355e574d02993d6d7a9d364d}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H}
+\item 
+static \hyperlink{_key_value_8h_a8b30a6b0d7b8a984ab77b1b57fb38ca0}{Buzzer\-High\-Pitch\-\_\-t} \hyperlink{_buzzer_control_8c_a2a85d4cc822068ecc8a8956bc7ab8d68}{\-\_\-buzzer\-High\-Pitch} = \hyperlink{_key_value_8h_a8520ce74756f2ea8cf50cfd07e802672}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H}
+\item 
+static \hyperlink{_key_value_8h_abab8f70116f2a951b05b9f974a7a399b}{Buzzer\-Duty\-Cycle\-\_\-t} \hyperlink{_buzzer_control_8c_a0d12175dfe136f4b841edb1719224617}{\-\_\-buzzer\-Duty} = \hyperlink{_key_value_8h_a38ac71904313b996feb7afed17640a0c}{D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_buzzer_control_8c_ae475367aa0f3975d3e84adee9674fc6f}{\-\_\-buzzer\-Enabled} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the buzzer. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls and manages the settings for the buzzer. 
+
+Definition in file \hyperlink{_buzzer_control_8c_source}{Buzzer\-Control.\-c}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_buzzer_control_8c_a39e39264125f3f2f8c2a3fdb617192da}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!Buzzer\-Output\-\_\-t@{Buzzer\-Output\-\_\-t}}
+\index{Buzzer\-Output\-\_\-t@{Buzzer\-Output\-\_\-t}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{Buzzer\-Output\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Buzzer\-Output\-\_\-t}}}\label{_buzzer_control_8c_a39e39264125f3f2f8c2a3fdb617192da}
+Possible output types for the buzzer 
+
+Definition at line 252 of file Buzzer\-Control.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_buzzer_control_8c_a4dfe5ad09d15147959640a9c365cd02a}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Duty\-Cycle@{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Duty\-Cycle}}
+\index{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Duty\-Cycle@{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Duty\-Cycle}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Duty\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Duty\-Cycle (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_a4dfe5ad09d15147959640a9c365cd02a}
+Sets the output of the D\-A\-C to the amplitude stored in \-\_\-dac\-Amplitude. 
+
+Definition at line 427 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by Buzzer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_buzzer_control_8c_a45d1a9d49f6652adb4373f95dbc3dcd2}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output@{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output}}
+\index{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output@{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_a45d1a9d49f6652adb4373f95dbc3dcd2}
+Sets the output of the buzzer 
+
+Definition at line 439 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by Buzzer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_buzzer_control_8c_a3b6991a46219affd721e0ca21edbda78}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!Buzzer\-Control\-\_\-\-Init@{Buzzer\-Control\-\_\-\-Init}}
+\index{Buzzer\-Control\-\_\-\-Init@{Buzzer\-Control\-\_\-\-Init}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{Buzzer\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Buzzer\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_buzzer_control_8c_a3b6991a46219affd721e0ca21edbda78}
+Initialized the Buzzer and P\-W\-M driver. 
+
+Definition at line 295 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_buzzer_control_8c_a11222160d9edeed9188bfe2b283a7bab}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!Buzzer\-Control\-\_\-\-Set\-Config@{Buzzer\-Control\-\_\-\-Set\-Config}}
+\index{Buzzer\-Control\-\_\-\-Set\-Config@{Buzzer\-Control\-\_\-\-Set\-Config}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{Buzzer\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Buzzer\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_buzzer_control_8c_a11222160d9edeed9188bfe2b283a7bab}
+Sets a configuration value to the buzzer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 306 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Output\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_buzzer_control_8c_a0d12175dfe136f4b841edb1719224617}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-buzzer\-Duty@{\-\_\-buzzer\-Duty}}
+\index{\-\_\-buzzer\-Duty@{\-\_\-buzzer\-Duty}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-buzzer\-Duty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buzzer\-Duty\-Cycle\-\_\-t} \-\_\-buzzer\-Duty = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-C\-Y\-C\-L\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_a0d12175dfe136f4b841edb1719224617}
+Tracks what duty cycle the buzzer is set to 
+
+Definition at line 284 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Duty\-Cycle(), \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), and Buzzer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_buzzer_control_8c_ae475367aa0f3975d3e84adee9674fc6f}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-buzzer\-Enabled@{\-\_\-buzzer\-Enabled}}
+\index{\-\_\-buzzer\-Enabled@{\-\_\-buzzer\-Enabled}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-buzzer\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-buzzer\-Enabled = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_ae475367aa0f3975d3e84adee9674fc6f}
+Tracks what duty cycle the buzzer is set to 
+
+Definition at line 287 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), and Buzzer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_buzzer_control_8c_ad90169e1bb5afa16d51e07bc7d1bb0ef}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-buzzer\-High\-Frequency@{\-\_\-buzzer\-High\-Frequency}}
+\index{\-\_\-buzzer\-High\-Frequency@{\-\_\-buzzer\-High\-Frequency}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-buzzer\-High\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buzzer\-High\-Frequency\-\_\-t} \-\_\-buzzer\-High\-Frequency = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_ad90169e1bb5afa16d51e07bc7d1bb0ef}
+Tracks what high frequency the buzzer is set to 
+
+Definition at line 272 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), and Buzzer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_buzzer_control_8c_a2a85d4cc822068ecc8a8956bc7ab8d68}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-buzzer\-High\-Pitch@{\-\_\-buzzer\-High\-Pitch}}
+\index{\-\_\-buzzer\-High\-Pitch@{\-\_\-buzzer\-High\-Pitch}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-buzzer\-High\-Pitch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buzzer\-High\-Pitch\-\_\-t} \-\_\-buzzer\-High\-Pitch = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-H\-I\-G\-H\-P\-I\-T\-C\-H}\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_a2a85d4cc822068ecc8a8956bc7ab8d68}
+Tracks what high pitch the buzzer was last set to 
+
+Definition at line 281 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), and Buzzer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_buzzer_control_8c_a56bc4488536b5661de0be0deaa12cfe3}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-buzzer\-Low\-Frequency@{\-\_\-buzzer\-Low\-Frequency}}
+\index{\-\_\-buzzer\-Low\-Frequency@{\-\_\-buzzer\-Low\-Frequency}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-buzzer\-Low\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buzzer\-Low\-Frequency\-\_\-t} \-\_\-buzzer\-Low\-Frequency = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_a56bc4488536b5661de0be0deaa12cfe3}
+Tracks what low frequency the buzzer is set to 
+
+Definition at line 269 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), and Buzzer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_buzzer_control_8c_a1668e784453cfcc92d5d839ddd2c1e12}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-buzzer\-Low\-Pitch@{\-\_\-buzzer\-Low\-Pitch}}
+\index{\-\_\-buzzer\-Low\-Pitch@{\-\_\-buzzer\-Low\-Pitch}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-buzzer\-Low\-Pitch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buzzer\-Low\-Pitch\-\_\-t} \-\_\-buzzer\-Low\-Pitch = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-L\-O\-W\-P\-I\-T\-C\-H}\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_a1668e784453cfcc92d5d839ddd2c1e12}
+Tracks what low pitch the buzzer was last set to 
+
+Definition at line 275 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), and Buzzer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_buzzer_control_8c_a308e49ad3b7db8b4a45e7745c36217d8}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-buzzer\-Med\-Pitch@{\-\_\-buzzer\-Med\-Pitch}}
+\index{\-\_\-buzzer\-Med\-Pitch@{\-\_\-buzzer\-Med\-Pitch}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-buzzer\-Med\-Pitch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buzzer\-Mid\-Pitch\-\_\-t} \-\_\-buzzer\-Med\-Pitch = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-Z\-Z\-E\-R\-\_\-\-M\-I\-D\-P\-I\-T\-C\-H}\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_a308e49ad3b7db8b4a45e7745c36217d8}
+Tracks what med pitch the buzzer was last set to 
+
+Definition at line 278 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), and Buzzer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_buzzer_control_8c_a05662961f9299b38986ab56ac970ac35}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-buzzer\-Mode@{\-\_\-buzzer\-Mode}}
+\index{\-\_\-buzzer\-Mode@{\-\_\-buzzer\-Mode}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-buzzer\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buzzer\-Mode\-\_\-t} \-\_\-buzzer\-Mode = Buzzer\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_a05662961f9299b38986ab56ac970ac35}
+Tracks what mode the buzzer is in 
+
+Definition at line 263 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), and Buzzer\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_buzzer_control_8c_ac6e498d0e6dffa51e3976ab1d87c4661}{\index{Buzzer\-Control.\-c@{Buzzer\-Control.\-c}!\-\_\-buzzer\-Output\-Type@{\-\_\-buzzer\-Output\-Type}}
+\index{\-\_\-buzzer\-Output\-Type@{\-\_\-buzzer\-Output\-Type}!BuzzerControl.c@{Buzzer\-Control.\-c}}
+\subsubsection[{\-\_\-buzzer\-Output\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buzzer\-Output\-\_\-t} \-\_\-buzzer\-Output\-Type = Buzzer\-Output\-\_\-\-H\-I\-G\-H\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y\hspace{0.3cm}{\ttfamily [static]}}}\label{_buzzer_control_8c_ac6e498d0e6dffa51e3976ab1d87c4661}
+Tracks the output type for the buzzer 
+
+Definition at line 266 of file Buzzer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Buzzer\-Control\-\_\-\-Set\-Output(), and Buzzer\-Control\-\_\-\-Set\-Config().
+

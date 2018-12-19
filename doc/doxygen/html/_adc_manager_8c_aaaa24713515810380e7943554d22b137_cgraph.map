@@ -1,0 +1,9 @@
+<map id="_SetupAdcForNormalMode" name="_SetupAdcForNormalMode">
+<area shape="rect" href="$_adc_8c.html#aeb038bcf326000ca3a320d29351100a3" title="Adc_Config" alt="" coords="309,5,400,32" />
+<area shape="rect" href="$_adc_manager_8c.html#a52cb89e87f72c24ad896dfc4151724e3" title="AdcManager_AdcManRefToAdcRef" alt="" coords="239,56,471,83" />
+<area shape="rect" href="$_adc_manager_8c.html#a5e91c4affb5c1439c47170585670a2bf" title="_SetupTimerConfig" alt="" coords="287,107,423,133" />
+<area shape="rect" href="$_timer_8c.html#a02f931c9a4a5037b499d531f49ebc3b9" title="Timer_A0_Configure" alt="" coords="535,56,679,83" />
+<area shape="rect" href="$_timer_8c.html#a3b787ac79e251ea6217447ed05be53bb" title="Timer_A0CCX_Configure" alt="" coords="521,107,692,133" />
+<area shape="rect" href="$_adc_manager_8c.html#a9d5382aa474494126282fe96a47dbea1" title="_InitialzeXAdcChannels" alt="" coords="525,157,688,184" />
+<area shape="rect" href="$_adc_8c.html#a8201a8154546752a07f766fa604c77d1" title="Adc_SetChannelSequence" alt="" coords="741,157,923,184" />
+</map>

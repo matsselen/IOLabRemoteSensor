@@ -1,0 +1,112 @@
+\hypertarget{_accelerometer_control_8h}{\section{Accelerometer\-Control.\-h File Reference}
+\label{_accelerometer_control_8h}\index{Accelerometer\-Control.\-h@{Accelerometer\-Control.\-h}}
+}
+
+
+Controls the accelerometer driver.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_accelerometer_control_8h_a090131a757bc4b516c5c6d816485f721}{Acc\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_accelerometer_control_8h_adf3f26f825cd0d8225f95864c4ea80dc}{Acc\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} value)
+\item 
+void \hyperlink{_accelerometer_control_8h_ae2f3f44a125f53254293fad30727ad71}{Acc\-Control\-\_\-\-Read\-Acc} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the accelerometer driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the accelerometer driver and controls the configuration for it. 
+
+Definition in file \hyperlink{_accelerometer_control_8h_source}{Accelerometer\-Control.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_accelerometer_control_8h_a090131a757bc4b516c5c6d816485f721}{\index{Accelerometer\-Control.\-h@{Accelerometer\-Control.\-h}!Acc\-Control\-\_\-\-Init@{Acc\-Control\-\_\-\-Init}}
+\index{Acc\-Control\-\_\-\-Init@{Acc\-Control\-\_\-\-Init}!AccelerometerControl.h@{Accelerometer\-Control.\-h}}
+\subsubsection[{Acc\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Acc\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_control_8h_a090131a757bc4b516c5c6d816485f721}
+Initializes the accelerometer controller. 
+
+Definition at line 58 of file Accelerometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_control_8h_ae2f3f44a125f53254293fad30727ad71}{\index{Accelerometer\-Control.\-h@{Accelerometer\-Control.\-h}!Acc\-Control\-\_\-\-Read\-Acc@{Acc\-Control\-\_\-\-Read\-Acc}}
+\index{Acc\-Control\-\_\-\-Read\-Acc@{Acc\-Control\-\_\-\-Read\-Acc}!AccelerometerControl.h@{Accelerometer\-Control.\-h}}
+\subsubsection[{Acc\-Control\-\_\-\-Read\-Acc}]{\setlength{\rightskip}{0pt plus 5cm}void Acc\-Control\-\_\-\-Read\-Acc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_control_8h_ae2f3f44a125f53254293fad30727ad71}
+Gets a reading from the accelerometer. 
+
+Definition at line 195 of file Accelerometer\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_control_8h_adf3f26f825cd0d8225f95864c4ea80dc}{\index{Accelerometer\-Control.\-h@{Accelerometer\-Control.\-h}!Acc\-Control\-\_\-\-Set\-Config@{Acc\-Control\-\_\-\-Set\-Config}}
+\index{Acc\-Control\-\_\-\-Set\-Config@{Acc\-Control\-\_\-\-Set\-Config}!AccelerometerControl.h@{Accelerometer\-Control.\-h}}
+\subsubsection[{Acc\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Acc\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{key\-Value}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_control_8h_adf3f26f825cd0d8225f95864c4ea80dc}
+Sets a configuration value to the accelerometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file Accelerometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

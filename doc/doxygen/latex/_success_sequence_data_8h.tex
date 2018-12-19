@@ -1,0 +1,82 @@
+\hypertarget{_success_sequence_data_8h}{\section{Success\-Sequence\-Data.\-h File Reference}
+\label{_success_sequence_data_8h}\index{Success\-Sequence\-Data.\-h@{Success\-Sequence\-Data.\-h}}
+}
+
+
+Contains the sequence data information for the star wars U\-I sequence.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Ui\-Manager\-Sequence\-Data.\-h$>$}\\*
+{\ttfamily \#include $<$Note\-Duration\-To\-Ms.\-h$>$}\\*
+Include dependency graph for Success\-Sequence\-Data.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_success_sequence_data_8h_a7aeb5ccb1ad0ce75c96fe94f1a7ccbb2}{static const \hyperlink{_ui_manager_sequence_data_8h_struct_buzzer_sequence_step__t}{Buzzer\-Sequence\-Step\-\_\-t} {\bfseries success\-Buzzer\-Steps} \mbox{[}$\,$\mbox{]}}\label{_success_sequence_data_8h_a7aeb5ccb1ad0ce75c96fe94f1a7ccbb2}
+
+\item 
+static const \\*
+\hyperlink{_ui_manager_sequence_data_8h_struct_back_light_sequence_step__t}{Back\-Light\-Sequence\-Step\-\_\-t} {\bfseries success\-Backlight\-Steps} \mbox{[}$\,$\mbox{]}
+\item 
+static const \hyperlink{_ui_manager_sequence_data_8h_struct_ui_sequence_data__t}{Ui\-Sequence\-Data\-\_\-t} {\bfseries success\-Sequence}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the sequence data information for the star wars U\-I sequence. {\bfseries Description} Contains the sequence data information for the star wars \char`\"{}special\char`\"{} U\-I sequence. 
+
+Definition in file \hyperlink{_success_sequence_data_8h_source}{Success\-Sequence\-Data.\-h}.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_success_sequence_data_8h_a2251ebfc0b0afa5e22ce9718464bee1c}{\index{Success\-Sequence\-Data.\-h@{Success\-Sequence\-Data.\-h}!success\-Backlight\-Steps@{success\-Backlight\-Steps}}
+\index{success\-Backlight\-Steps@{success\-Backlight\-Steps}!SuccessSequenceData.h@{Success\-Sequence\-Data.\-h}}
+\subsubsection[{success\-Backlight\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Back\-Light\-Sequence\-Step\-\_\-t} success\-Backlight\-Steps\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_success_sequence_data_8h_a2251ebfc0b0afa5e22ce9718464bee1c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        \{ 
+                .backlightOn = \textcolor{keyword}{false},
+                .durationMs = 100,
+        \},
+        \{ 
+                .backlightOn = \textcolor{keyword}{true},
+                .durationMs = 100,
+        \},
+        \{ 
+                .backlightOn = \textcolor{keyword}{false},
+                .durationMs = 100,
+        \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 96 of file Success\-Sequence\-Data.\-h.
+
+\hypertarget{_success_sequence_data_8h_a912da420ce11e5eb2e631954c4f798b4}{\index{Success\-Sequence\-Data.\-h@{Success\-Sequence\-Data.\-h}!success\-Sequence@{success\-Sequence}}
+\index{success\-Sequence@{success\-Sequence}!SuccessSequenceData.h@{Success\-Sequence\-Data.\-h}}
+\subsubsection[{success\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ui\-Sequence\-Data\-\_\-t} success\-Sequence\hspace{0.3cm}{\ttfamily [static]}}}\label{_success_sequence_data_8h_a912da420ce11e5eb2e631954c4f798b4}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    .buzzerSequence =
+    \{
+        .stepsInSequence = \hyperlink{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{ARRAY\_LENGTH}(successBuzzerSteps),
+        .stepList = successBuzzerSteps,
+    \},
+    .backLightSequence =
+    \{
+        .stepsInSequence = \hyperlink{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{ARRAY\_LENGTH}(successBacklightSteps),
+        .stepList = successBacklightSteps,
+    \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 112 of file Success\-Sequence\-Data.\-h.
+

@@ -1,0 +1,13 @@
+<map id="MagControl_SetConfig" name="MagControl_SetConfig">
+<area shape="rect" href="$_key_value_8c.html#a30aa66a5e57b84caf453be8ec13a23f8" title="KeyValue_Separate" alt="" coords="219,5,358,32" />
+<area shape="rect" href="$_magnetometer_8c.html#ab1c7f61cf144d63503818c735afe6834" title="Magnetometer_Start" alt="" coords="218,107,359,133" />
+<area shape="rect" href="$_magnetometer_8c.html#aa859a7cf895fd5118acfcb44fc596517" title="Magnetometer_Stop" alt="" coords="218,56,359,83" />
+<area shape="rect" href="$_magnetometer_8c.html#ae85c6dbba68d26df7855b25d8979f9ce" title="Magnetometer_Config" alt="" coords="212,157,364,184" />
+<area shape="rect" href="$_magnetometer_8c.html#a61f3794e7c618ee6443c8ec9436e26ad" title="_WriteSingleRegister" alt="" coords="414,107,560,133" />
+<area shape="rect" href="$_magnetometer_8c.html#a10389d45bccf31b7fa39dbd26f851803" title="_ReadSingleRegister" alt="" coords="414,157,560,184" />
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="611,81,755,108" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="620,132,746,159" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="620,183,746,209" />
+<area shape="rect" href="$_i2c_8c.html#afbfb0c0fbc0025ced1d88290aa899fa9" title="I2c_TransmitByteEnd" alt="" coords="608,31,758,57" />
+<area shape="rect" href="$_i2c_8c.html#a0df5e64148fcf1e7c7c1cc90e107db49" title="I2c_ReceiveByteEnd" alt="" coords="611,233,755,260" />
+</map>

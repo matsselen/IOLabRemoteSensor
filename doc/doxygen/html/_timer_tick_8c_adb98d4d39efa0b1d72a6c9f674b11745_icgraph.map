@@ -1,0 +1,7 @@
+<map id="TimerTick_DisableTickIsr" name="TimerTick_DisableTickIsr">
+<area shape="rect" href="$_timer_tick_8h.html#a1d5b6997b1a4455234bd5e5482615cf5" title="TimerTick_RegisterTickIsr" alt="" coords="231,31,407,57" />
+<area shape="rect" href="$_timer_tick_8h.html#a9d0d76021db28e792e2ae483fd32de3c" title="TimerTick_UnregisterTickIsr" alt="" coords="225,81,412,108" />
+<area shape="rect" href="$_comm_protocol_8h.html#af530adc2e8aa195eeebc30a5c16626c7" title="CommProtocol_Init" alt="" coords="475,5,608,32" />
+<area shape="rect" href="$_push_button_control_8h.html#a44e02d417d493e9ea8d35373dd094aeb" title="PushButtonControl_Init" alt="" coords="463,56,620,83" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="669,31,720,57" />
+</map>

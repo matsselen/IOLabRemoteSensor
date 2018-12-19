@@ -1,0 +1,8 @@
+<map id="Buzzer_SetFrequency" name="Buzzer_SetFrequency">
+<area shape="rect" href="$_pwm_8c.html#a3bcc133bd11de8cdebe6cca148a86697" title="Pwm_SetFrequency" alt="" coords="208,56,349,83" />
+<area shape="rect" href="$_timer_8c.html#a9c2492c1b5bfb4de29379c4ab7881d9c" title="Timer_B0_Configure" alt="" coords="404,6,548,32" />
+<area shape="rect" href="$_pwm_8c.html#a0b1227ceeeff83336f29d8b94d6ef238" title="Pwm_SetDuty" alt="" coords="424,56,528,83" />
+<area shape="rect" href="$_pwm_8c.html#a4cde0daf6b044c1a1fc69b618509c8d6" title="_AnyChannelsEnabled" alt="" coords="397,107,555,134" />
+<area shape="rect" href="$_pwm_8c.html#a44f8de75f3f084d05fff0a54dc0b7df5" title="_DutyToCount" alt="" coords="636,31,743,58" />
+<area shape="rect" href="$_timer_8c.html#a6590a26eceba06333f451e69d6ea3987" title="Timer_B0CCX_Configure" alt="" coords="604,82,775,108" />
+</map>

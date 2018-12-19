@@ -1,0 +1,19 @@
+<map id="StateMachine.c" name="StateMachine.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_state_machine_8h.html" title="Sensor State machine logic. " alt="" coords="139,80,251,107" />
+<area shape="rect" href="$_event_queue_8h.html" title="Event queue module header file. " alt="" coords="275,80,382,107" />
+<area shape="rect" href="$_comm_protocol_8h.html" title="Header for the communications protocol module. " alt="" coords="406,80,526,107" />
+<area shape="rect" href="$_test_protocol_8h.html" title="Test Protocol header file. " alt="" coords="550,80,656,107" />
+<area shape="rect" href="$_accelerometer_control_8h.html" title="Controls the accelerometer driver. " alt="" coords="680,80,840,107" />
+<area shape="rect" href="$_magnetometer_control_8h.html" title="Header for the magnetometer control module. " alt="" coords="864,80,1024,107" />
+<area shape="rect" href="$_gyroscope_control_8h.html" title="Controls the gyroscope driver. " alt="" coords="1048,80,1187,107" />
+<area shape="rect" href="$_push_button_control_8h.html" title="Control for the push buttons. " alt="" coords="1211,80,1355,107" />
+<area shape="rect" href="$_led_control_8h.html" title="LED Controller header. " alt="" coords="1379,80,1475,107" />
+<area shape="rect" href="$_timer_tick_8h.html" title="Timer Tick utility header file. " alt="" coords="1499,80,1590,107" />
+<area shape="rect" href="$_adc_manager_8h.html" title="Analog to digital conversion manager header file. " alt="" coords="1614,80,1720,107" />
+<area shape="rect" href="$_self_test_8h.html" title="Manages the self test mode. " alt="" coords="1744,80,1824,107" />
+<area shape="rect" href="$_system_8h.html" title="System module driver. " alt="" coords="1848,80,1926,107" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="1950,80,2022,107" />
+<area shape="rect" href="$_adc_8h.html" title="Analog to digital conversion module header file. " alt="" coords="1639,155,1695,182" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="1952,155,2019,182" />
+</map>

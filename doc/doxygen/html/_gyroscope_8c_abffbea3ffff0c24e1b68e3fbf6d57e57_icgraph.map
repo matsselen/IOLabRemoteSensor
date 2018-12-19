@@ -1,0 +1,6 @@
+<map id="_HandleDataReadyInterrupt" name="_HandleDataReadyInterrupt">
+<area shape="rect" href="$_gyroscope_8h.html#af21c974c68ac43ddcbe29cd0b2e0c84f" title="Gyroscope_Init" alt="" coords="242,5,351,32" />
+<area shape="rect" href="$_gyroscope_control_8h.html#a62c5033ca6c32f4b11a24dcba13e43e5" title="GyroControl_Init" alt="" coords="402,5,519,32" />
+<area shape="rect" href="$_configuration_manager_8h.html#ac8b698cc609b8b41fe3ff823b2046b85" title="ConMan_Init" alt="" coords="570,5,666,32" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="715,5,766,32" />
+</map>

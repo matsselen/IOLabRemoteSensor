@@ -1,0 +1,26 @@
+<map id="_WriteSingleRegister" name="_WriteSingleRegister">
+<area shape="rect" href="$_magnetometer_8h.html#ae85c6dbba68d26df7855b25d8979f9ce" title="Magnetometer_Config" alt="" coords="226,9,378,36" />
+<area shape="rect" href="$_magnetometer_8h.html#a24236d83f8ad5a94c17e6414904ea6f6" title="Magnetometer_Init" alt="" coords="487,165,618,192" />
+<area shape="rect" href="$_magnetometer_8h.html#a2f8aa103b7db96d01167f9dfa83bb053" title="Magnetometer_ResetSensor\lBlocking" alt="" coords="206,212,398,255" />
+<area shape="rect" href="$_magnetometer_8h.html#abf9639cb901b8a88043c1a73e4fad906" title="Magnetometer_SetCalibration" alt="" coords="203,279,400,305" />
+<area shape="rect" href="$_magnetometer_8h.html#ab1c7f61cf144d63503818c735afe6834" title="Magnetometer_Start" alt="" coords="231,111,372,137" />
+<area shape="rect" href="$_magnetometer_8h.html#aa859a7cf895fd5118acfcb44fc596517" title="Magnetometer_Stop" alt="" coords="231,60,372,87" />
+<area shape="rect" href="$_magnetometer_8h.html#a74a9a63d349b4532ea66269102cb9768" title="Magnetometer_TriggerSample\lBlocking" alt="" coords="200,329,403,372" />
+<area shape="rect" href="$_magnetometer_control_8h.html#ae2ec2e58a5b9a1c6e5c83e3dee47e1b3" title="MagControl_SetConfig" alt="" coords="475,48,630,75" />
+<area shape="rect" href="$_configuration_manager_8h.html#a183e4b53a492c32bbe799d7e209b8b4f" title="ConMan_SetSensorConfig" alt="" coords="703,77,882,104" />
+<area shape="rect" href="$_configuration_manager_8h.html#a4af394c25a5c58205d8832071eae3b0b" title="ConMan_StartData" alt="" coords="931,44,1067,71" />
+<area shape="rect" href="$_configuration_manager_8h.html#a7e20b92732fc46ab8a1937e144066938" title="ConMan_StopData" alt="" coords="932,103,1066,129" />
+<area shape="rect" href="$_comm_protocol_8h.html#a11fcf3a095c467e5da58a75e746059f1" title="CommProtocol_HandleStart\lDataPacket" alt="" coords="1130,32,1316,75" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="1380,56,1559,83" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="1407,107,1532,133" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1610,56,1794,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="2092,107,2290,133" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1867,56,2019,83" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1843,107,2043,133" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="2339,135,2390,161" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1f65077f8bed3f077ec2a561f20bf4b5" title="CommProtocol_HandleStopData\lPacket" alt="" coords="1116,99,1330,141" />
+<area shape="rect" href="$_magnetometer_control_8h.html#a68beb1d94ceabab1ebab02ec5ef4e13b" title="MagControl_Init" alt="" coords="735,165,850,192" />
+<area shape="rect" href="$_configuration_manager_8h.html#ac8b698cc609b8b41fe3ff823b2046b85" title="ConMan_Init" alt="" coords="1654,164,1750,191" />
+<area shape="rect" href="$_thermometer_control_8h.html#a66bc07257860cca63270cdbab132e418" title="ThermometerControl\l_SetConfig" alt="" coords="480,99,624,141" />
+<area shape="rect" href="$_test_protocol_8c.html#ac199ffeaa6cfb4ea2d155d22b06f98b9" title="_HandleHumanMagCommand" alt="" coords="452,337,652,364" />
+</map>

@@ -1,0 +1,26 @@
+var _dma_8c =
+[
+    [ "DMA_CHANNELS_PER_TRIG_REG", "_dma_8c.html#ae9d0148dd4475144b78eeaa123a30ab5", null ],
+    [ "DMA_NUM_CHANNELS", "_dma_8c.html#a9a0d4125e898eac7ebc6130adacb8f2d", null ],
+    [ "DMA_NUM_TRIGGER_REGISTERS", "_dma_8c.html#a8a1661d2e29ed7bf965c7e12f07693b1", null ],
+    [ "_DmaIsr", "_dma_8c.html#a44e9864026a65cc077f1cd1312e2c89a", null ],
+    [ "Dma_Arm", "_dma_8c.html#a00be3dd2e9072289f4fdc5ff9e8be464", null ],
+    [ "Dma_Configure", "_dma_8c.html#a0bd08908753ae9ae69f9502bad4229fa", null ],
+    [ "Dma_Disable", "_dma_8c.html#a44dce30248e54529e1210634a4103917", null ],
+    [ "Dma_DisableIsr", "_dma_8c.html#ae7c8ff98ddcd86c66c7de8446ea4a5cc", null ],
+    [ "Dma_Enable", "_dma_8c.html#ab02da096f284fbc5aca75db83495311c", null ],
+    [ "Dma_EnableIsr", "_dma_8c.html#a6d04ad19261f694c3b6848c805a29d98", null ],
+    [ "Dma_Init", "_dma_8c.html#ae7d076d2088825a148065075892f58dc", null ],
+    [ "Dma_RegisterIsr", "_dma_8c.html#ab10a2a28e0516ad46de214ade58839f7", null ],
+    [ "Dma_Trigger", "_dma_8c.html#ace1b64b414579f027067eaead7040ad8", null ],
+    [ "Dma_UnregisterIsr", "_dma_8c.html#abefa73b4d88b5681595f89b5d48a051b", null ],
+    [ "_dmaArmed", "_dma_8c.html#a4e78b2f48f93bfdac7f13a2970cd01a6", null ],
+    [ "_dmaConfigured", "_dma_8c.html#adbbbb2f151821148396acd96848e299a", null ],
+    [ "_dmaControlRegisters", "_dma_8c.html#a4a9b1f8838bd5ad3e1a59d52638d067e", null ],
+    [ "_dmaDestinationAddressRegisters", "_dma_8c.html#a3249e1163059e0c47fab2002d0e04344", null ],
+    [ "_dmaInitialized", "_dma_8c.html#a85a4e3c46edd2a71bd0a666aadd6492a", null ],
+    [ "_dmaIsrList", "_dma_8c.html#a426ec943c7023df102265cb6e4ff68bb", null ],
+    [ "_dmaSizeRegisters", "_dma_8c.html#a5e51d36a23849c9cee36eb685d2b401a", null ],
+    [ "_dmaSourceAddressRegisters", "_dma_8c.html#af524cbd1456f47b5e4eaf4013556ec40", null ],
+    [ "_dmaTriggerRegisters", "_dma_8c.html#a68754801db316f2699f7a79e7b135694", null ]
+];

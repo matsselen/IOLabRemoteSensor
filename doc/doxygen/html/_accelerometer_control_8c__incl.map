@@ -1,0 +1,12 @@
+<map id="AccelerometerControl.c" name="AccelerometerControl.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_accelerometer_control_8h.html" title="Controls the accelerometer driver. " alt="" coords="139,80,299,107" />
+<area shape="rect" href="$_accelerometer_8h.html" title="Accelerometer interface header. " alt="" coords="323,80,440,107" />
+<area shape="rect" href="$_event_queue_8h.html" title="Event queue module header file. " alt="" coords="464,80,571,107" />
+<area shape="rect" href="$_data_buffer_8h.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="595,80,691,107" />
+<area shape="rect" href="$_sensor_id_8h.html" title="Sensor Id stores the list of Sensor IDs. " alt="" coords="715,80,800,107" />
+<area shape="rect" href="$_key_value_8h.html" title="Contains the definitions of the Key&#45;Value pairs. " alt="" coords="824,80,912,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="936,80,1005,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="1045,155,1112,182" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="1080,80,1152,107" />
+</map>

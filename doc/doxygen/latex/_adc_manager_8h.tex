@@ -1,0 +1,452 @@
+\hypertarget{_adc_manager_8h}{\section{Adc\-Manager.\-h File Reference}
+\label{_adc_manager_8h}\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}}
+}
+
+
+Analog to digital conversion manager header file.  
+
+
+{\ttfamily \#include $<$Adc.\-h$>$}\\*
+Include dependency graph for Adc\-Manager.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_adc_manager_8h_abb38807e767cbe246faa37614feb3999}{Adc\-Data\-Callback\-\_\-t} )(\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t})
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_adc_manager_8h_ac4b85e65ab9203aab1910e83e18e28fa}{Adc\-Man\-Channel\-\_\-t} \{ \\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-F\-I\-R\-S\-T} = Adc\-Input\-Channel\-\_\-\-A0, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-06} = Adc\-Input\-Channel\-\_\-\-A0, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-07} = Adc\-Input\-Channel\-\_\-\-A1, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-08} = Adc\-Input\-Channel\-\_\-\-A2, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-F\-O\-R\-C\-E\-\_\-\-G\-A\-U\-G\-E} = Adc\-Input\-Channel\-\_\-\-A4, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-E\-C\-G\-\_\-1} = Adc\-Input\-Channel\-\_\-\-A5, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-E\-C\-G\-\_\-2} = Adc\-Input\-Channel\-\_\-\-A6, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-E\-C\-G\-\_\-3} = Adc\-Input\-Channel\-\_\-\-A7, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-E} = Adc\-Input\-Channel\-\_\-\-T\-E\-M\-P, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-A\-M\-B\-I\-E\-N\-T\-\_\-\-L\-I\-G\-H\-T} = Adc\-Input\-Channel\-\_\-\-A12, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-H\-I\-G\-H\-\_\-\-G\-A\-I\-N} = Adc\-Input\-Channel\-\_\-\-A13, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E} = Adc\-Input\-Channel\-\_\-\-A14, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-B\-A\-T\-T\-E\-R\-Y} = Adc\-Input\-Channel\-\_\-\-A15, 
+\\*
+{\bfseries Adc\-Man\-Channel\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_adc_manager_8h_a63dde70acac9d69e9f2cc7a2687f3760}{Adc\-Man\-Sample\-Rate\-\_\-t} \{ \\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-0001\-H\-Z} = 0u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-0010\-H\-Z} = 1u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-0050\-H\-Z} = 2u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-0100\-H\-Z} = 3u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-0200\-H\-Z} = 4u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-0400\-H\-Z} = 5u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-0800\-H\-Z} = 6u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-2400\-H\-Z} = 7u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-4800\-H\-Z} = 8u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-6000\-H\-Z} = 9u, 
+\\*
+{\bfseries Adc\-Man\-Sample\-Rate\-\_\-\-L\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{_adc_manager_8h_af206deec0c553ff1354dab154a2f976e}{Adc\-Man\-Ref\-\_\-t} \{ \\*
+{\bfseries Adc\-Man\-Ref\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/1, 
+\\*
+{\bfseries Adc\-Man\-Ref\-\_\-\-F\-I\-R\-S\-T} = 0u, 
+\\*
+{\bfseries Adc\-Man\-Ref\-\_\-\-D\-E\-F\-A\-U\-L\-T} = Adc\-Man\-Ref\-\_\-\-F\-I\-R\-S\-T, 
+\\*
+{\bfseries Adc\-Man\-Ref\-\_\-\-V\-R\-E\-F} = Adc\-Man\-Ref\-\_\-\-D\-E\-F\-A\-U\-L\-T, 
+\\*
+{\bfseries Adc\-Man\-Ref\-\_\-\-V\-C\-C}, 
+\\*
+{\bfseries Adc\-Man\-Ref\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_adc_manager_8h_a7c1eae1a0032493e8ae2a5ffc47a38a5}{Adc\-Manager\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_adc_manager_8h_a7318da3a09c3c259f7de0f9ce7a9bd90}{Adc\-Manager\-\_\-\-Enable\-Channel} (\hyperlink{_adc_manager_8h_ac4b85e65ab9203aab1910e83e18e28fa}{Adc\-Man\-Channel\-\_\-t} channel, \hyperlink{_adc_manager_8h_a63dde70acac9d69e9f2cc7a2687f3760}{Adc\-Man\-Sample\-Rate\-\_\-t} rate, \hyperlink{_adc_manager_8h_af206deec0c553ff1354dab154a2f976e}{Adc\-Man\-Ref\-\_\-t} reference, \hyperlink{_adc_manager_8h_abb38807e767cbe246faa37614feb3999}{Adc\-Data\-Callback\-\_\-t} callback)
+\item 
+void \hyperlink{_adc_manager_8h_af6718cd4b7d0e37e05766a6920a4ba63}{Adc\-Manager\-\_\-\-Disable\-Channel} (\hyperlink{_adc_manager_8h_ac4b85e65ab9203aab1910e83e18e28fa}{Adc\-Man\-Channel\-\_\-t} channel)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_manager_8h_a88658cb06de5461355af4c5dfff1b3ec}{Adc\-Manager\-\_\-\-Single\-Sample\-Blocking} (\hyperlink{_adc_manager_8h_ac4b85e65ab9203aab1910e83e18e28fa}{Adc\-Man\-Channel\-\_\-t} channel)
+\item 
+void \hyperlink{_adc_manager_8h_a7dfde93e644d831743adc7b611763072}{Adc\-Manager\-\_\-\-Process\-Conversion} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_manager_8h_a0df4026e1d37dd4f723f43d3e9ee467c}{Adc\-Manager\-\_\-\-Get\-Gain\-Factor} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_adc_manager_8h_a5544660c514f863363f4c4e0763c8561}{Adc\-Manager\-\_\-\-Get\-Offset} (void)
+\item 
+void \hyperlink{_adc_manager_8h_af8416f3a8c779a5631aa5335064ed481}{Adc\-Manager\-\_\-\-Powered\-Channel\-Control} (\hyperlink{_adc_manager_8h_ac4b85e65ab9203aab1910e83e18e28fa}{Adc\-Man\-Channel\-\_\-t} channel, \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} enable)
+\item 
+\hyperlink{_adc_8h_ae45d33fe1e5c2f5c4e2070fde716fc60}{Adc\-Reference\-\_\-t} \hyperlink{_adc_manager_8h_a52cb89e87f72c24ad896dfc4151724e3}{Adc\-Manager\-\_\-\-Adc\-Man\-Ref\-To\-Adc\-Ref} (\hyperlink{_adc_manager_8h_af206deec0c553ff1354dab154a2f976e}{Adc\-Man\-Ref\-\_\-t} adc\-Man\-Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Analog to digital conversion manager header file. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The analog to digital conversion manager will provide configuration functions and macros for accessing analog conversion samples. 
+
+Definition in file \hyperlink{_adc_manager_8h_source}{Adc\-Manager.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_adc_manager_8h_abb38807e767cbe246faa37614feb3999}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Data\-Callback\-\_\-t@{Adc\-Data\-Callback\-\_\-t}}
+\index{Adc\-Data\-Callback\-\_\-t@{Adc\-Data\-Callback\-\_\-t}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Data\-Callback\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Adc\-Data\-Callback\-\_\-t)({\bf uint16\-\_\-t})}}\label{_adc_manager_8h_abb38807e767cbe246faa37614feb3999}
+Defines a callback for function pointer for handling the conversion data.
+
+\begin{DoxyNote}{Note}
+The callback must be in the form of\-:
+\end{DoxyNote}
+void callback(uint16\-\_\-t sample);
+
+Where sample with be the A\-D\-C value that was sampled. 
+
+Definition at line 92 of file Adc\-Manager.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_adc_manager_8h_ac4b85e65ab9203aab1910e83e18e28fa}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Man\-Channel\-\_\-t@{Adc\-Man\-Channel\-\_\-t}}
+\index{Adc\-Man\-Channel\-\_\-t@{Adc\-Man\-Channel\-\_\-t}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Man\-Channel\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Adc\-Man\-Channel\-\_\-t}}}\label{_adc_manager_8h_ac4b85e65ab9203aab1910e83e18e28fa}
+Defines the available A\-D\-C Channels by their purpose
+
+\begin{DoxyNote}{Note}
+The enum value for the Adc\-Man\-Channel must match the Adc\-Input\-Channel value for the particular input channel 
+\end{DoxyNote}
+
+
+Definition at line 33 of file Adc\-Manager.\-h.
+
+\hypertarget{_adc_manager_8h_af206deec0c553ff1354dab154a2f976e}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Man\-Ref\-\_\-t@{Adc\-Man\-Ref\-\_\-t}}
+\index{Adc\-Man\-Ref\-\_\-t@{Adc\-Man\-Ref\-\_\-t}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Man\-Ref\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Adc\-Man\-Ref\-\_\-t}}}\label{_adc_manager_8h_af206deec0c553ff1354dab154a2f976e}
+Defines the analog reference options 
+
+Definition at line 74 of file Adc\-Manager.\-h.
+
+\hypertarget{_adc_manager_8h_a63dde70acac9d69e9f2cc7a2687f3760}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Man\-Sample\-Rate\-\_\-t@{Adc\-Man\-Sample\-Rate\-\_\-t}}
+\index{Adc\-Man\-Sample\-Rate\-\_\-t@{Adc\-Man\-Sample\-Rate\-\_\-t}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Man\-Sample\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Adc\-Man\-Sample\-Rate\-\_\-t}}}\label{_adc_manager_8h_a63dde70acac9d69e9f2cc7a2687f3760}
+Defines the A\-D\-C sample rate options 
+
+Definition at line 56 of file Adc\-Manager.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_adc_manager_8h_a52cb89e87f72c24ad896dfc4151724e3}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Manager\-\_\-\-Adc\-Man\-Ref\-To\-Adc\-Ref@{Adc\-Manager\-\_\-\-Adc\-Man\-Ref\-To\-Adc\-Ref}}
+\index{Adc\-Manager\-\_\-\-Adc\-Man\-Ref\-To\-Adc\-Ref@{Adc\-Manager\-\_\-\-Adc\-Man\-Ref\-To\-Adc\-Ref}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Manager\-\_\-\-Adc\-Man\-Ref\-To\-Adc\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Adc\-Reference\-\_\-t} Adc\-Manager\-\_\-\-Adc\-Man\-Ref\-To\-Adc\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf Adc\-Man\-Ref\-\_\-t}}]{adc\-Man\-Ref}
+\end{DoxyParamCaption}
+)}}\label{_adc_manager_8h_a52cb89e87f72c24ad896dfc4151724e3}
+Takes an A\-D\-C manager reference and converts it to an A\-D\-C reference
+
+This function should only be used internally to the A\-D\-C manager, except for board level test and debugging purposes.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em adc\-Man\-Ref} & -\/ the Adc\-Man\-Ref\-\_\-t A\-D\-C Manager analog reference selection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Adc\-Reference\-\_\-t reference for the A\-D\-C driver 
+\end{DoxyReturn}
+
+
+Definition at line 844 of file Adc\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Setup\-Adc\-For\-Normal\-Mode(), and Adc\-Manager\-\_\-\-Enable\-Channel().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_manager_8h_af6718cd4b7d0e37e05766a6920a4ba63}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Manager\-\_\-\-Disable\-Channel@{Adc\-Manager\-\_\-\-Disable\-Channel}}
+\index{Adc\-Manager\-\_\-\-Disable\-Channel@{Adc\-Manager\-\_\-\-Disable\-Channel}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Manager\-\_\-\-Disable\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-Manager\-\_\-\-Disable\-Channel (
+\begin{DoxyParamCaption}
+\item[{{\bf Adc\-Man\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_adc_manager_8h_af6718cd4b7d0e37e05766a6920a4ba63}
+Disables an A\-D\-C channel and clears its callback pointer. Also disables the A\-D\-C module if this was the last/only active channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the desired sample channel to stop \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 455 of file Adc\-Manager.\-c.
+
+
+
+Referenced by Ambient\-Light\-Control\-\_\-\-Set\-Config(), Analog7\-Control\-\_\-\-Set\-Config(), Analog8\-Control\-\_\-\-Set\-Config(), Analog9\-Control\-\_\-\-Set\-Config(), Battery\-Control\-\_\-\-Set\-Config(), Ecg\-Control\-\_\-\-Set\-Config(), Fg\-Control\-\_\-\-Set\-Config(), High\-Gain\-Control\-\_\-\-Set\-Config(), Microphone\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_manager_8h_a7318da3a09c3c259f7de0f9ce7a9bd90}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Manager\-\_\-\-Enable\-Channel@{Adc\-Manager\-\_\-\-Enable\-Channel}}
+\index{Adc\-Manager\-\_\-\-Enable\-Channel@{Adc\-Manager\-\_\-\-Enable\-Channel}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Manager\-\_\-\-Enable\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-Manager\-\_\-\-Enable\-Channel (
+\begin{DoxyParamCaption}
+\item[{{\bf Adc\-Man\-Channel\-\_\-t}}]{channel, }
+\item[{{\bf Adc\-Man\-Sample\-Rate\-\_\-t}}]{rate, }
+\item[{{\bf Adc\-Man\-Ref\-\_\-t}}]{reference, }
+\item[{{\bf Adc\-Data\-Callback\-\_\-t}}]{callback}
+\end{DoxyParamCaption}
+)}}\label{_adc_manager_8h_a7318da3a09c3c259f7de0f9ce7a9bd90}
+Enables an A\-D\-C channel and starts sampling it at the given rate. The data from each sample will be passed into the callback function. Also enables the A\-D\-C module if this was the first/only active channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the desired sample channel \\
+\hline
+\mbox{\tt in}  & {\em rate} & -\/ the rate at which to pass a sample into the callback function \\
+\hline
+\mbox{\tt in}  & {\em callback} & -\/ the function to call to pass the A\-D\-C sample data to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 300 of file Adc\-Manager.\-c.
+
+
+
+Referenced by Ambient\-Light\-Control\-\_\-\-Set\-Config(), Analog7\-Control\-\_\-\-Set\-Config(), Analog8\-Control\-\_\-\-Set\-Config(), Analog9\-Control\-\_\-\-Set\-Config(), Battery\-Control\-\_\-\-Set\-Config(), Ecg\-Control\-\_\-\-Set\-Config(), Fg\-Control\-\_\-\-Set\-Config(), High\-Gain\-Control\-\_\-\-Set\-Config(), Microphone\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_manager_8h_a0df4026e1d37dd4f723f43d3e9ee467c}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Manager\-\_\-\-Get\-Gain\-Factor@{Adc\-Manager\-\_\-\-Get\-Gain\-Factor}}
+\index{Adc\-Manager\-\_\-\-Get\-Gain\-Factor@{Adc\-Manager\-\_\-\-Get\-Gain\-Factor}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Manager\-\_\-\-Get\-Gain\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Adc\-Manager\-\_\-\-Get\-Gain\-Factor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_manager_8h_a0df4026e1d37dd4f723f43d3e9ee467c}
+Gets the A\-D\-C gain factor that can be used to scale the A\-D\-C readings for higher accuracy.
+
+\begin{DoxyReturn}{Returns}
+The A\-D\-C gain factor 
+\end{DoxyReturn}
+
+
+Definition at line 594 of file Adc\-Manager.\-c.
+
+
+
+Referenced by Battery\-Control\-\_\-\-Read\-Calibration().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_manager_8h_a5544660c514f863363f4c4e0763c8561}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Manager\-\_\-\-Get\-Offset@{Adc\-Manager\-\_\-\-Get\-Offset}}
+\index{Adc\-Manager\-\_\-\-Get\-Offset@{Adc\-Manager\-\_\-\-Get\-Offset}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Manager\-\_\-\-Get\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Adc\-Manager\-\_\-\-Get\-Offset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_manager_8h_a5544660c514f863363f4c4e0763c8561}
+Gets the A\-D\-C offset that can be used to shift the A\-D\-C readings for higher accuracy.
+
+\begin{DoxyReturn}{Returns}
+The A\-D\-C offset 
+\end{DoxyReturn}
+
+
+Definition at line 606 of file Adc\-Manager.\-c.
+
+
+
+Referenced by Battery\-Control\-\_\-\-Read\-Calibration().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_manager_8h_a7c1eae1a0032493e8ae2a5ffc47a38a5}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Manager\-\_\-\-Init@{Adc\-Manager\-\_\-\-Init}}
+\index{Adc\-Manager\-\_\-\-Init@{Adc\-Manager\-\_\-\-Init}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Manager\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-Manager\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_manager_8h_a7c1eae1a0032493e8ae2a5ffc47a38a5}
+Initializes the A\-D\-C manager 
+
+Definition at line 265 of file Adc\-Manager.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_manager_8h_af8416f3a8c779a5631aa5335064ed481}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Manager\-\_\-\-Powered\-Channel\-Control@{Adc\-Manager\-\_\-\-Powered\-Channel\-Control}}
+\index{Adc\-Manager\-\_\-\-Powered\-Channel\-Control@{Adc\-Manager\-\_\-\-Powered\-Channel\-Control}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Manager\-\_\-\-Powered\-Channel\-Control}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-Manager\-\_\-\-Powered\-Channel\-Control (
+\begin{DoxyParamCaption}
+\item[{{\bf Adc\-Man\-Channel\-\_\-t}}]{channel, }
+\item[{{\bf bool}}]{enable}
+\end{DoxyParamCaption}
+)}}\label{_adc_manager_8h_af8416f3a8c779a5631aa5335064ed481}
+Takes an A\-D\-C channel and if it is a powered channel will enable or disable the power rail for the channel.
+
+This function should only be used internally to the A\-D\-C manager, except for board level test and debugging purposes.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the channel that should be enabled or disabled \\
+\hline
+\mbox{\tt in}  & {\em enable} & -\/ true to enable, false to disable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 788 of file Adc\-Manager.\-c.
+
+
+
+Referenced by Adc\-Manager\-\_\-\-Disable\-Channel(), Adc\-Manager\-\_\-\-Enable\-Channel(), and Self\-Test\-\_\-\-Process().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_manager_8h_a7dfde93e644d831743adc7b611763072}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Manager\-\_\-\-Process\-Conversion@{Adc\-Manager\-\_\-\-Process\-Conversion}}
+\index{Adc\-Manager\-\_\-\-Process\-Conversion@{Adc\-Manager\-\_\-\-Process\-Conversion}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Manager\-\_\-\-Process\-Conversion}]{\setlength{\rightskip}{0pt plus 5cm}void Adc\-Manager\-\_\-\-Process\-Conversion (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_adc_manager_8h_a7dfde93e644d831743adc7b611763072}
+Should be called by the event handler for processing the A\-D\-C conversion complete event. This function will take the converted A\-D\-C data from the buffer and call the A\-D\-C sample callback functions at the desired rate. 
+
+Definition at line 559 of file Adc\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_adc_manager_8h_a88658cb06de5461355af4c5dfff1b3ec}{\index{Adc\-Manager.\-h@{Adc\-Manager.\-h}!Adc\-Manager\-\_\-\-Single\-Sample\-Blocking@{Adc\-Manager\-\_\-\-Single\-Sample\-Blocking}}
+\index{Adc\-Manager\-\_\-\-Single\-Sample\-Blocking@{Adc\-Manager\-\_\-\-Single\-Sample\-Blocking}!AdcManager.h@{Adc\-Manager.\-h}}
+\subsubsection[{Adc\-Manager\-\_\-\-Single\-Sample\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Adc\-Manager\-\_\-\-Single\-Sample\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Adc\-Man\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_adc_manager_8h_a88658cb06de5461355af4c5dfff1b3ec}
+Takes a single sample of an A\-D\-C channel and returns the raw A\-D\-C counts
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the A\-D\-C channel which to sample\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value in raw A\-D\-C counts of the A\-D\-C channel. 
+\end{DoxyReturn}
+
+
+Definition at line 509 of file Adc\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Adc1\-Command().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

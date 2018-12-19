@@ -1,0 +1,8 @@
+SCMBranch=Macmillan_1814_IOLab
+SCMRepository=Macmillan_1814_IOLab/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor/src/Components/UiSequenceData
+SCMMainlineUUID={6b77b1ac-5ed9-4911-998b-1ee71966676c}
+SCMBranchRepositoryID=2788
+FailSequenceData.h;177101624;2;1414174233;|635|3067
+GirlILeftBehindSequenceData.h;2027258137;1;1414106613;|636|3030
+StarWarsSequenceData.h;2559125584;1;1410977991;|633|3011
+SuccessSequenceData.h;2663703982;1;1414007828;|634|3013

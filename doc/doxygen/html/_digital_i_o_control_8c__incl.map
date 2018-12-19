@@ -1,0 +1,7 @@
+<map id="DigitalIOControl.c" name="DigitalIOControl.c">
+<area shape="rect" href="$_digital_i_o_control_8h.html" title="Controller for the digital IO. " alt="" coords="5,80,131,107" />
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="155,80,264,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="288,80,357,107" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="381,80,453,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="420,155,487,182" />
+</map>

@@ -1,0 +1,1114 @@
+\hypertarget{_uart_8c}{\section{Uart.\-c File Reference}
+\label{_uart_8c}\index{Uart.\-c@{Uart.\-c}}
+}
+
+
+U\-A\-R\-T driver module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Uart.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+Include dependency graph for Uart.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}~(2)
+\item 
+\#define \hyperlink{_uart_8c_ad435b28a3317ecb8e99eda409bd1222f}{U\-A\-R\-T\-\_\-\-M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}~(50u)
+\item 
+\#define \hyperlink{_uart_8c_a05f5d709605c6317c97e4974bec3402a}{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~(512u)
+\item 
+\#define \hyperlink{_uart_8c_a5bdd6772c246436bb14377095de79b31}{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~(128u)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_uart_8c_a98c2dd875b3ecd74fc6ecc861533aa13}{\-\_\-\-Handle\-Uart\-Transmit\-Interrupt} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port)
+\item 
+static void \hyperlink{_uart_8c_ac2c96b8501e5eb0921cf71a6657925fd}{\-\_\-\-Handle\-Uart\-Receive\-Interrupt} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port)
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{_uart_8c_a5c6de5c7e87f38d135f29b76aa83c13e}{\-\_\-\-Uart\-A0\-Isr} (void)
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{_uart_8c_a4f7987c0849c8ee1e88f093c45b5b68b}{\-\_\-\-Uart\-A1\-Isr} (void)
+\item 
+void \hyperlink{_uart_8c_aa1c7a4a5b2c8cbf118c1f968a93d0500}{Uart\-\_\-\-Init} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, const \hyperlink{_uart_8h_struct_uart_port_config__t}{Uart\-Port\-Config\-\_\-t} $\ast$config)
+\item 
+void \hyperlink{_uart_8c_a252869e6cee7ef3942be68689ece02c0}{Uart\-\_\-\-Open} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port)
+\item 
+void \hyperlink{_uart_8c_abfa544964989736fedb8810eb3331dcf}{Uart\-\_\-\-Close} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_uart_8c_a0b9c4685e6253e011299c1b6cc99f4db}{Uart\-\_\-\-Is\-Port\-Open} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port)
+\item 
+void \hyperlink{_uart_8c_a30ac62a37ea5f8d50c1663c4537fc25a}{Uart\-\_\-\-Enable\-Receive} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port)
+\item 
+void \hyperlink{_uart_8c_a499c885a16a136b6f76200a8665ce888}{Uart\-\_\-\-Disable\-Receive} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port)
+\item 
+void \hyperlink{_uart_8c_aecff1bef3eae6e217e23890f957630d3}{Uart\-\_\-\-Write\-Byte\-Blocking} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} byte)
+\item 
+void \hyperlink{_uart_8c_a480fb21e7345adaff49b089fb11378cb}{Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} byte)
+\item 
+void \hyperlink{_uart_8c_a15f807abcf91df85422e45aa27c3d0b4}{Uart\-\_\-\-Write\-Byte\-Array\-Blocking} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} num\-To\-Write, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} source\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_uart_8c_a0d4d2f39b96d09fca824ccf131ae79e7}{Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} num\-To\-Write, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} source\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_uart_8c_a7db7fb7787629d02f3653e9c9b7e036a}{Uart\-\_\-\-Write\-Byte\-Hex\-Blocking} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} byte)
+\item 
+void \hyperlink{_uart_8c_a8a952af339025e857fc986cc828b859f}{Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} num\-To\-Write, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} source\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_uart_8c_ad50f4d958b6a79367eab4de061588b2a}{Uart\-\_\-\-Write\-String\-Blocking} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} string\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_uart_8h_a800f7a82532118018a4f466b27190ec1}{Uart\-Error\-\_\-t} \hyperlink{_uart_8c_a2bfb989e50deb61ce964159a673c5060}{Uart\-\_\-\-Write\-Byte} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} byte)
+\item 
+\hyperlink{_uart_8h_a800f7a82532118018a4f466b27190ec1}{Uart\-Error\-\_\-t} \hyperlink{_uart_8c_a6eaac6b6bedf1229c0f1727e012195e4}{Uart\-\_\-\-Write\-Byte\-Array} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} num\-To\-Write, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} source\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_uart_8h_a800f7a82532118018a4f466b27190ec1}{Uart\-Error\-\_\-t} \hyperlink{_uart_8c_aba2063d7e89a1358197b4643996daaed}{Uart\-\_\-\-Write\-Byte\-Hex} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} byte)
+\item 
+void \hyperlink{_uart_8c_a4fe1e6c824f617e9e9284e92fa73f638}{Uart\-\_\-\-Write\-String} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} string\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_uart_8h_a800f7a82532118018a4f466b27190ec1}{Uart\-Error\-\_\-t} \hyperlink{_uart_8c_a1cd54566e01de8c3b1f7e65bcb02ca9e}{Uart\-\_\-\-Read\-Byte} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$destination\-Byte)
+\item 
+\hyperlink{_uart_8h_a800f7a82532118018a4f466b27190ec1}{Uart\-Error\-\_\-t} \hyperlink{_uart_8c_a98a4b500d64c6e8bafb484bde5f02b1f}{Uart\-\_\-\-Read\-Byte\-Array} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} num\-To\-Read, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} destination\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$num\-Read)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_uart_8c_a4233f12d31dbf4b459f4ebf91812b9aa}{Uart\-\_\-\-Are\-Bytes\-Available} (\hyperlink{_uart_8h_aedae5518800bfeaa6cac5ae2a7483040}{Uart\-Port\-\_\-t} port)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_uart_8c_a822ff5f566dddf00af874260c87645a9}{Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$const \hyperlink{_uart_8c_a2f67b672e9610bad9fd1646351bb903d}{\-\_\-uart\-Control\-One\-Registers} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$const \hyperlink{_uart_8c_a9dd2e279ea3e701ed231bb9230a96227}{\-\_\-uart\-Transmit\-Buffer\-Registers} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}
+\item 
+static volatile const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \\*
+$\ast$const \hyperlink{_uart_8c_a59df6bad0c50e761e0cc02b03cc8fbc7}{\-\_\-uart\-Receive\-Buffer\-Registers} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$const \hyperlink{_uart_8c_a0a2082aa78b520befc2e3f1d043a391f}{\-\_\-uart\-Interrupt\-Enable\-Registers} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}
+\item 
+static volatile const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \\*
+$\ast$const \hyperlink{_uart_8c_a95c226dd47e5daf35e1a2b3ca26b5ec1}{\-\_\-uart\-Interrupt\-Flag\-Registers} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}
+\item 
+static const \hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} \hyperlink{_uart_8c_a113d58dc0b2532478d07304b042f3abc}{\-\_\-uart\-Gpio\-Ports} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{3, 4\}
+\item 
+static const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_uart_8c_afaa9431004949b82a8628f550055f5c7}{\-\_\-uart\-Gpio\-Transmit\-Pinmasks} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}
+\item 
+static const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_uart_8c_aaab569bfcdeb13b3158d6494ea0ebd5b}{\-\_\-uart\-Gpio\-Receive\-Pinmasks} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_uart_8c_a10293331d543cab57ee248a99a86f0ca}{\-\_\-uart\-Port\-Is\-Open} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{\hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}, \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}\}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_uart_8c_a5cf0e8100dff0cc090c89287c4b893ad}{\-\_\-uart\-Buffer\-Tx} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\mbox{[}\hyperlink{_uart_8c_a05f5d709605c6317c97e4974bec3402a}{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}\mbox{]}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_uart_8c_a36b23d8aa6cf7ab9742fcb933598c0e2}{\-\_\-uart\-Buffer\-Rx} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\mbox{[}\hyperlink{_uart_8c_a5bdd6772c246436bb14377095de79b31}{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_uart_8c_a858f4768e4ed284844945a476f25986f}{\-\_\-uart\-Buffer\-Tx\-Head} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{0u, 0u\}
+\item 
+static volatile \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_uart_8c_a33280e281acec7bfef0fa84461651f75}{\-\_\-uart\-Buffer\-Tx\-Tail} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{0u, 0u\}
+\item 
+static volatile \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_uart_8c_a52629ead8bfd91347b9d23c2777df3a3}{\-\_\-uart\-Buffer\-Rx\-Head} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{0u, 0u\}
+\item 
+static volatile \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_uart_8c_aeeff8bb4bfd7fb760c010f169ea7193b}{\-\_\-uart\-Buffer\-Rx\-Tail} \mbox{[}\hyperlink{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{0u, 0u\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\-A\-R\-T driver module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This module provides functions and macros for configuring the U\-A\-R\-T and transmitting and receiving data over that port. 
+
+Definition in file \hyperlink{_uart_8c_source}{Uart.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_uart_8c_ad435b28a3317ecb8e99eda409bd1222f}{\index{Uart.\-c@{Uart.\-c}!U\-A\-R\-T\-\_\-\-M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H@{U\-A\-R\-T\-\_\-\-M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{U\-A\-R\-T\-\_\-\-M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H@{U\-A\-R\-T\-\_\-\-M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}!Uart.c@{Uart.\-c}}
+\subsubsection[{U\-A\-R\-T\-\_\-\-M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-A\-R\-T\-\_\-\-M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H~(50u)}}\label{_uart_8c_ad435b28a3317ecb8e99eda409bd1222f}
+Maximum length of a string that can be sent during one U\-A\-R\-T function call. Prevents infinite loops from non-\/null-\/terminated strings. 
+
+Definition at line 41 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Write\-String(), and Uart\-\_\-\-Write\-String\-Blocking().
+
+\hypertarget{_uart_8c_a7213ba982a081fe87cf4b1f536627069}{\index{Uart.\-c@{Uart.\-c}!U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S@{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}}
+\index{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S@{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}!Uart.c@{Uart.\-c}}
+\subsubsection[{U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S~(2)}}\label{_uart_8c_a7213ba982a081fe87cf4b1f536627069}
+Number of possible U\-A\-R\-T ports 
+
+Definition at line 36 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port(), and Uart\-\_\-\-Init().
+
+\hypertarget{_uart_8c_a5bdd6772c246436bb14377095de79b31}{\index{Uart.\-c@{Uart.\-c}!U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!Uart.c@{Uart.\-c}}
+\subsubsection[{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~(128u)}}\label{_uart_8c_a5bdd6772c246436bb14377095de79b31}
+Number of bytes that can be stored in the U\-A\-R\-T receive buffer. Must be a power of 2. 
+
+Definition at line 50 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Receive\-Interrupt(), Uart\-\_\-\-Read\-Byte(), and Uart\-\_\-\-Read\-Byte\-Array().
+
+\hypertarget{_uart_8c_a05f5d709605c6317c97e4974bec3402a}{\index{Uart.\-c@{Uart.\-c}!U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!Uart.c@{Uart.\-c}}
+\subsubsection[{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~(512u)}}\label{_uart_8c_a05f5d709605c6317c97e4974bec3402a}
+Number of bytes that can be stored in the U\-A\-R\-T transmit buffer. Must be a power of 2. 
+
+Definition at line 46 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Transmit\-Interrupt(), Uart\-\_\-\-Write\-Byte(), Uart\-\_\-\-Write\-Byte\-Array(), Uart\-\_\-\-Write\-Byte\-Hex(), and Uart\-\_\-\-Write\-String().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_uart_8c_ac2c96b8501e5eb0921cf71a6657925fd}{\index{Uart.\-c@{Uart.\-c}!\-\_\-\-Handle\-Uart\-Receive\-Interrupt@{\-\_\-\-Handle\-Uart\-Receive\-Interrupt}}
+\index{\-\_\-\-Handle\-Uart\-Receive\-Interrupt@{\-\_\-\-Handle\-Uart\-Receive\-Interrupt}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Uart\-Receive\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Uart\-Receive\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_ac2c96b8501e5eb0921cf71a6657925fd}
+Handles all U\-A\-R\-T receive interrupts. Called from an interrupt service routine, so must complete quickly.
+
+The received byte is read into the receive buffer if the buffer is not full. Note that U\-A\-R\-T overrun errors are ignored. Framing and parity errors will not overwrite the U\-A\-R\-T Rx buffer if not enabled.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ U\-A\-R\-T port on which the interrupt occurred \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1240 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Uart\-A0\-Isr(), and \-\_\-\-Uart\-A1\-Isr().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a98c2dd875b3ecd74fc6ecc861533aa13}{\index{Uart.\-c@{Uart.\-c}!\-\_\-\-Handle\-Uart\-Transmit\-Interrupt@{\-\_\-\-Handle\-Uart\-Transmit\-Interrupt}}
+\index{\-\_\-\-Handle\-Uart\-Transmit\-Interrupt@{\-\_\-\-Handle\-Uart\-Transmit\-Interrupt}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Uart\-Transmit\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Uart\-Transmit\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a98c2dd875b3ecd74fc6ecc861533aa13}
+Handles all U\-A\-R\-T transmit interrupts. Called from an interrupt service routine, so must complete quickly.
+
+The next byte in the transmit buffer (if available) is written. If no bytes are available, the transmit interrupt is disabled.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ U\-A\-R\-T port on which the interrupt occurred \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1211 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Uart\-A0\-Isr(), and \-\_\-\-Uart\-A1\-Isr().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a5c6de5c7e87f38d135f29b76aa83c13e}{\index{Uart.\-c@{Uart.\-c}!\-\_\-\-Uart\-A0\-Isr@{\-\_\-\-Uart\-A0\-Isr}}
+\index{\-\_\-\-Uart\-A0\-Isr@{\-\_\-\-Uart\-A0\-Isr}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-\-Uart\-A0\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void \-\_\-\-Uart\-A0\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a5c6de5c7e87f38d135f29b76aa83c13e}
+Interrupt service routine for U\-A\-R\-T port 0. 
+
+Definition at line 1264 of file Uart.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_uart_8c_a4f7987c0849c8ee1e88f093c45b5b68b}{\index{Uart.\-c@{Uart.\-c}!\-\_\-\-Uart\-A1\-Isr@{\-\_\-\-Uart\-A1\-Isr}}
+\index{\-\_\-\-Uart\-A1\-Isr@{\-\_\-\-Uart\-A1\-Isr}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-\-Uart\-A1\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void \-\_\-\-Uart\-A1\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a4f7987c0849c8ee1e88f093c45b5b68b}
+Interrupt service routine for U\-A\-R\-T port 1. 
+
+Definition at line 1292 of file Uart.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_uart_8c_a4233f12d31dbf4b459f4ebf91812b9aa}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Are\-Bytes\-Available@{Uart\-\_\-\-Are\-Bytes\-Available}}
+\index{Uart\-\_\-\-Are\-Bytes\-Available@{Uart\-\_\-\-Are\-Bytes\-Available}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Are\-Bytes\-Available}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Uart\-\_\-\-Are\-Bytes\-Available (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a4233f12d31dbf4b459f4ebf91812b9aa}
+Determines if bytes are available in the U\-A\-R\-T receive buffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if bytes are available, False is the receive buffer is empty. 
+\end{DoxyReturn}
+
+
+Definition at line 1161 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Process\-Received\-Bytes().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a822ff5f566dddf00af874260c87645a9}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port@{Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port}}
+\index{Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port@{Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a822ff5f566dddf00af874260c87645a9}
+Determines if bytes are available in the U\-A\-R\-T receive buffer for any of the open U\-A\-R\-T ports.
+
+\begin{DoxyReturn}{Returns}
+True if bytes are available, False is the receive buffers are empty. 
+\end{DoxyReturn}
+
+
+Definition at line 1185 of file Uart.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_abfa544964989736fedb8810eb3331dcf}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Close@{Uart\-\_\-\-Close}}
+\index{Uart\-\_\-\-Close@{Uart\-\_\-\-Close}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Close}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Close (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_abfa544964989736fedb8810eb3331dcf}
+Close the U\-A\-R\-T port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 364 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Close().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a499c885a16a136b6f76200a8665ce888}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Disable\-Receive@{Uart\-\_\-\-Disable\-Receive}}
+\index{Uart\-\_\-\-Disable\-Receive@{Uart\-\_\-\-Disable\-Receive}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Disable\-Receive}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Disable\-Receive (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a499c885a16a136b6f76200a8665ce888}
+Disable the receive interrupt for the U\-A\-R\-T port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Port must be open before disabling the receives. 
+\end{DoxyNote}
+
+
+Definition at line 424 of file Uart.\-c.
+
+\hypertarget{_uart_8c_a30ac62a37ea5f8d50c1663c4537fc25a}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Enable\-Receive@{Uart\-\_\-\-Enable\-Receive}}
+\index{Uart\-\_\-\-Enable\-Receive@{Uart\-\_\-\-Enable\-Receive}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Enable\-Receive}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Enable\-Receive (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a30ac62a37ea5f8d50c1663c4537fc25a}
+Enable the receive interrupt for the U\-A\-R\-T port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Port must be open before enabling the receives. 
+\end{DoxyNote}
+
+
+Definition at line 400 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Open().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_aa1c7a4a5b2c8cbf118c1f968a93d0500}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Init@{Uart\-\_\-\-Init}}
+\index{Uart\-\_\-\-Init@{Uart\-\_\-\-Init}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{const {\bf Uart\-Port\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_aa1c7a4a5b2c8cbf118c1f968a93d0500}
+Initialize the selected U\-A\-R\-T module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Pointer to the configuration information for the port. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 140 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a0b9c4685e6253e011299c1b6cc99f4db}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Is\-Port\-Open@{Uart\-\_\-\-Is\-Port\-Open}}
+\index{Uart\-\_\-\-Is\-Port\-Open@{Uart\-\_\-\-Is\-Port\-Open}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Is\-Port\-Open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Uart\-\_\-\-Is\-Port\-Open (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a0b9c4685e6253e011299c1b6cc99f4db}
+Determines if a U\-A\-R\-T port is open.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the port is open. Otherwise, false. 
+\end{DoxyReturn}
+
+
+Definition at line 388 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Open().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a252869e6cee7ef3942be68689ece02c0}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Open@{Uart\-\_\-\-Open}}
+\index{Uart\-\_\-\-Open@{Uart\-\_\-\-Open}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Open}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Open (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a252869e6cee7ef3942be68689ece02c0}
+Open the U\-A\-R\-T port. You should not open the same U\-A\-R\-T port more than once.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 329 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Open().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a1cd54566e01de8c3b1f7e65bcb02ca9e}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Read\-Byte@{Uart\-\_\-\-Read\-Byte}}
+\index{Uart\-\_\-\-Read\-Byte@{Uart\-\_\-\-Read\-Byte}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Read\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uart\-Error\-\_\-t} Uart\-\_\-\-Read\-Byte (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t} $\ast$}]{destination\-Byte}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a1cd54566e01de8c3b1f7e65bcb02ca9e}
+Reads one byte out of the receive buffer if available.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt out}  & {\em destination\-Byte} & -\/ Pointer to where the read byte should be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If no bytes are available, Uart\-Error\-\_\-\-N\-O\-\_\-\-D\-A\-T\-A. Otherwise, Uart\-Error\-\_\-\-O\-K. 
+\end{DoxyReturn}
+
+
+Definition at line 1073 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Process\-Received\-Bytes().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a98a4b500d64c6e8bafb484bde5f02b1f}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Read\-Byte\-Array@{Uart\-\_\-\-Read\-Byte\-Array}}
+\index{Uart\-\_\-\-Read\-Byte\-Array@{Uart\-\_\-\-Read\-Byte\-Array}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Read\-Byte\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uart\-Error\-\_\-t} Uart\-\_\-\-Read\-Byte\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint16\-\_\-t}}]{num\-To\-Read, }
+\item[{{\bf uint8\-\_\-t}}]{destination\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{num\-Read}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a98a4b500d64c6e8bafb484bde5f02b1f}
+Read bytes out of the receive buffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em num\-To\-Read} & -\/ Number of bytes to read if available. \\
+\hline
+\mbox{\tt out}  & {\em destination} & -\/ Pointer to where the read bytes should be stored. \\
+\hline
+\mbox{\tt out}  & {\em num\-Read} & -\/ Pointer where the number of bytes read out of the receive buffer should be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If no bytes are available, Uart\-Error\-\_\-\-N\-O\-\_\-\-D\-A\-T\-A. Otherwise, Uart\-Error\-\_\-\-O\-K. 
+\end{DoxyReturn}
+
+
+Definition at line 1111 of file Uart.\-c.
+
+\hypertarget{_uart_8c_a2bfb989e50deb61ce964159a673c5060}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-Byte@{Uart\-\_\-\-Write\-Byte}}
+\index{Uart\-\_\-\-Write\-Byte@{Uart\-\_\-\-Write\-Byte}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uart\-Error\-\_\-t} Uart\-\_\-\-Write\-Byte (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a2bfb989e50deb61ce964159a673c5060}
+Transmit a byte via the U\-A\-R\-T. The byte is loaded into the transmit buffer to be transmitted using the U\-A\-R\-T Tx interrupt.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em byte} & -\/ Byte to transmit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the buffer does not have enough space available, Uart\-Error\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-F\-U\-L\-L. Otherwise, Uart\-Error\-\_\-\-O\-K. 
+\end{DoxyReturn}
+
+
+Definition at line 817 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Send\-Packet(), Serial\-\_\-\-Send\-String(), Serial\-\_\-\-Send\-String3\-Numbers(), Serial\-\_\-\-Send\-String\-Number(), and Serial\-\_\-\-Send\-String\-Number\-U32().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a6eaac6b6bedf1229c0f1727e012195e4}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-Byte\-Array@{Uart\-\_\-\-Write\-Byte\-Array}}
+\index{Uart\-\_\-\-Write\-Byte\-Array@{Uart\-\_\-\-Write\-Byte\-Array}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-Byte\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uart\-Error\-\_\-t} Uart\-\_\-\-Write\-Byte\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint16\-\_\-t}}]{num\-To\-Write, }
+\item[{const {\bf uint8\-\_\-t}}]{source\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a6eaac6b6bedf1229c0f1727e012195e4}
+Transmit a byte array via the U\-A\-R\-T. The byte array is loaded into the transmit buffer to be transmitted using the U\-A\-R\-T Tx interrupt.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em num\-To\-Write} & -\/ Number of bytes to transmit. \\
+\hline
+\mbox{\tt in}  & {\em source} & -\/ Pointer to byte array to transmit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the buffer does not have enough space available, Uart\-Error\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-F\-U\-L\-L. Otherwise, Uart\-Error\-\_\-\-O\-K. 
+\end{DoxyReturn}
+
+
+Definition at line 861 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Send\-Packet(), Serial\-\_\-\-Send\-String(), Serial\-\_\-\-Send\-String3\-Numbers(), Serial\-\_\-\-Send\-String\-Number(), and Serial\-\_\-\-Send\-String\-Number\-U32().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a15f807abcf91df85422e45aa27c3d0b4}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-Byte\-Array\-Blocking@{Uart\-\_\-\-Write\-Byte\-Array\-Blocking}}
+\index{Uart\-\_\-\-Write\-Byte\-Array\-Blocking@{Uart\-\_\-\-Write\-Byte\-Array\-Blocking}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-Byte\-Array\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Write\-Byte\-Array\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint16\-\_\-t}}]{num\-To\-Write, }
+\item[{const {\bf uint8\-\_\-t}}]{source\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a15f807abcf91df85422e45aa27c3d0b4}
+Transmit a byte array via the U\-A\-R\-T. This function blocks until the entire buffer has been written to the U\-A\-R\-T.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em num\-To\-Write} & -\/ Number of bytes to transmit. \\
+\hline
+\mbox{\tt in}  & {\em source} & -\/ Pointer to byte array to transmit. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 510 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Send\-String\-Blocking(), and Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a0d4d2f39b96d09fca824ccf131ae79e7}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert@{Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert}}
+\index{Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert@{Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint16\-\_\-t}}]{num\-To\-Write, }
+\item[{const {\bf uint8\-\_\-t}}]{source\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a0d4d2f39b96d09fca824ccf131ae79e7}
+Transmit a byte array via the U\-A\-R\-T. This function blocks until the entire buffer has been written to the U\-A\-R\-T.
+
+\begin{DoxyNote}{Note}
+No asserts are used.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em num\-To\-Write} & -\/ Number of bytes to transmit. \\
+\hline
+\mbox{\tt in}  & {\em source} & -\/ Pointer to byte array to transmit. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 533 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Write\-Byte\-Array\-Blocking().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a8a952af339025e857fc986cc828b859f}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking@{Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking}}
+\index{Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking@{Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint16\-\_\-t}}]{num\-To\-Write, }
+\item[{const {\bf uint8\-\_\-t}}]{source\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a8a952af339025e857fc986cc828b859f}
+Transmit a byte array via the U\-A\-R\-T as a hex string. A hyphen is inserted between each byte. This function blocks until the entire hex string has been written to the U\-A\-R\-T.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em num\-To\-Write} & -\/ Number of bytes to transmit. \\
+\hline
+\mbox{\tt in}  & {\em source} & -\/ Pointer to byte array to transmit as a hex string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 661 of file Uart.\-c.
+
+\hypertarget{_uart_8c_aecff1bef3eae6e217e23890f957630d3}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-Byte\-Blocking@{Uart\-\_\-\-Write\-Byte\-Blocking}}
+\index{Uart\-\_\-\-Write\-Byte\-Blocking@{Uart\-\_\-\-Write\-Byte\-Blocking}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-Byte\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Write\-Byte\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_aecff1bef3eae6e217e23890f957630d3}
+Transmit a byte via the U\-A\-R\-T. This function blocks until the byte has been written to the U\-A\-R\-T.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em byte} & -\/ Byte to transmit. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 441 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Send\-String\-Blocking(), and Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a480fb21e7345adaff49b089fb11378cb}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert@{Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert}}
+\index{Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert@{Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a480fb21e7345adaff49b089fb11378cb}
+Transmit a byte via the U\-A\-R\-T. This function blocks until the byte has been written to the U\-A\-R\-T.
+
+\begin{DoxyNote}{Note}
+No asserts are used.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em byte} & -\/ Byte to transmit. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 461 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Write\-Byte\-Blocking().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_aba2063d7e89a1358197b4643996daaed}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-Byte\-Hex@{Uart\-\_\-\-Write\-Byte\-Hex}}
+\index{Uart\-\_\-\-Write\-Byte\-Hex@{Uart\-\_\-\-Write\-Byte\-Hex}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-Byte\-Hex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uart\-Error\-\_\-t} Uart\-\_\-\-Write\-Byte\-Hex (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_aba2063d7e89a1358197b4643996daaed}
+Transmit a byte via the U\-A\-R\-T in hex format. The byte (in hex format) is loaded into the transmit buffer to be transmitted using the U\-A\-R\-T Tx interrupt.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em byte} & -\/ Byte to transmit in hex.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the buffer does not have enough space available, Uart\-Error\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-F\-U\-L\-L. Otherwise, Uart\-Error\-\_\-\-O\-K. 
+\end{DoxyReturn}
+
+
+Definition at line 923 of file Uart.\-c.
+
+
+
+Referenced by Serial\-\_\-\-Send\-String3\-Numbers(), Serial\-\_\-\-Send\-String\-Number(), and Serial\-\_\-\-Send\-String\-Number\-U32().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_uart_8c_a7db7fb7787629d02f3653e9c9b7e036a}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-Byte\-Hex\-Blocking@{Uart\-\_\-\-Write\-Byte\-Hex\-Blocking}}
+\index{Uart\-\_\-\-Write\-Byte\-Hex\-Blocking@{Uart\-\_\-\-Write\-Byte\-Hex\-Blocking}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-Byte\-Hex\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Write\-Byte\-Hex\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a7db7fb7787629d02f3653e9c9b7e036a}
+Transmit a byte via the U\-A\-R\-T as a hex string. This function blocks until the entire hex string has been written to the U\-A\-R\-T.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em byte} & -\/ Byte to transmit as a hex string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 586 of file Uart.\-c.
+
+\hypertarget{_uart_8c_a4fe1e6c824f617e9e9284e92fa73f638}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-String@{Uart\-\_\-\-Write\-String}}
+\index{Uart\-\_\-\-Write\-String@{Uart\-\_\-\-Write\-String}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-String}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Write\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{const {\bf char\-\_\-t}}]{string\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_a4fe1e6c824f617e9e9284e92fa73f638}
+Transmit a null-\/terminated string via the U\-A\-R\-T. The string is loaded into the transmit buffer to be transmitted using the U\-A\-R\-T Tx interrupt.
+
+Only the number of characters that will fit into the buffer will be loaded. All other characters in the string will be discarded. This means that the string may not be sent if the buffer is full.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em string} & -\/ String to transmit \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1004 of file Uart.\-c.
+
+\hypertarget{_uart_8c_ad50f4d958b6a79367eab4de061588b2a}{\index{Uart.\-c@{Uart.\-c}!Uart\-\_\-\-Write\-String\-Blocking@{Uart\-\_\-\-Write\-String\-Blocking}}
+\index{Uart\-\_\-\-Write\-String\-Blocking@{Uart\-\_\-\-Write\-String\-Blocking}!Uart.c@{Uart.\-c}}
+\subsubsection[{Uart\-\_\-\-Write\-String\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Uart\-\_\-\-Write\-String\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Uart\-Port\-\_\-t}}]{port, }
+\item[{const {\bf char\-\_\-t}}]{string\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_uart_8c_ad50f4d958b6a79367eab4de061588b2a}
+Transmit a null-\/terminated string via the U\-A\-R\-T. This function blocks until the entire string has been written to the U\-A\-R\-T.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected U\-A\-R\-T port. \\
+\hline
+\mbox{\tt in}  & {\em string} & -\/ String to transmit. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 755 of file Uart.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_uart_8c_a36b23d8aa6cf7ab9742fcb933598c0e2}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Buffer\-Rx@{\-\_\-uart\-Buffer\-Rx}}
+\index{\-\_\-uart\-Buffer\-Rx@{\-\_\-uart\-Buffer\-Rx}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Buffer\-Rx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} \-\_\-uart\-Buffer\-Rx\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\mbox{[}{\bf U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a36b23d8aa6cf7ab9742fcb933598c0e2}
+Stores the bytes received over the U\-A\-R\-T for each port. 
+
+Definition at line 114 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Receive\-Interrupt(), Uart\-\_\-\-Read\-Byte(), and Uart\-\_\-\-Read\-Byte\-Array().
+
+\hypertarget{_uart_8c_a52629ead8bfd91347b9d23c2777df3a3}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Buffer\-Rx\-Head@{\-\_\-uart\-Buffer\-Rx\-Head}}
+\index{\-\_\-uart\-Buffer\-Rx\-Head@{\-\_\-uart\-Buffer\-Rx\-Head}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Buffer\-Rx\-Head}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint16\-\_\-t} \-\_\-uart\-Buffer\-Rx\-Head\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{0u, 0u\}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a52629ead8bfd91347b9d23c2777df3a3}
+Tracks the head of the receive buffer. 
+
+Definition at line 121 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Receive\-Interrupt(), Uart\-\_\-\-Are\-Bytes\-Available(), Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port(), Uart\-\_\-\-Open(), Uart\-\_\-\-Read\-Byte(), and Uart\-\_\-\-Read\-Byte\-Array().
+
+\hypertarget{_uart_8c_aeeff8bb4bfd7fb760c010f169ea7193b}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Buffer\-Rx\-Tail@{\-\_\-uart\-Buffer\-Rx\-Tail}}
+\index{\-\_\-uart\-Buffer\-Rx\-Tail@{\-\_\-uart\-Buffer\-Rx\-Tail}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Buffer\-Rx\-Tail}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint16\-\_\-t} \-\_\-uart\-Buffer\-Rx\-Tail\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{0u, 0u\}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_aeeff8bb4bfd7fb760c010f169ea7193b}
+Tracks the tail of the receive buffer. 
+
+Definition at line 123 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Receive\-Interrupt(), Uart\-\_\-\-Are\-Bytes\-Available(), Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port(), Uart\-\_\-\-Open(), Uart\-\_\-\-Read\-Byte(), and Uart\-\_\-\-Read\-Byte\-Array().
+
+\hypertarget{_uart_8c_a5cf0e8100dff0cc090c89287c4b893ad}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Buffer\-Tx@{\-\_\-uart\-Buffer\-Tx}}
+\index{\-\_\-uart\-Buffer\-Tx@{\-\_\-uart\-Buffer\-Tx}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Buffer\-Tx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} \-\_\-uart\-Buffer\-Tx\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\mbox{[}{\bf U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a5cf0e8100dff0cc090c89287c4b893ad}
+Stores the bytes to transmit over the U\-A\-R\-T for each port. 
+
+Definition at line 112 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Transmit\-Interrupt(), Uart\-\_\-\-Write\-Byte(), Uart\-\_\-\-Write\-Byte\-Array(), Uart\-\_\-\-Write\-Byte\-Hex(), and Uart\-\_\-\-Write\-String().
+
+\hypertarget{_uart_8c_a858f4768e4ed284844945a476f25986f}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Buffer\-Tx\-Head@{\-\_\-uart\-Buffer\-Tx\-Head}}
+\index{\-\_\-uart\-Buffer\-Tx\-Head@{\-\_\-uart\-Buffer\-Tx\-Head}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Buffer\-Tx\-Head}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint16\-\_\-t} \-\_\-uart\-Buffer\-Tx\-Head\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{0u, 0u\}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a858f4768e4ed284844945a476f25986f}
+Tracks the head of the transmit buffer. 
+
+Definition at line 117 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Transmit\-Interrupt(), Uart\-\_\-\-Open(), Uart\-\_\-\-Write\-Byte(), Uart\-\_\-\-Write\-Byte\-Array(), Uart\-\_\-\-Write\-Byte\-Hex(), and Uart\-\_\-\-Write\-String().
+
+\hypertarget{_uart_8c_a33280e281acec7bfef0fa84461651f75}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Buffer\-Tx\-Tail@{\-\_\-uart\-Buffer\-Tx\-Tail}}
+\index{\-\_\-uart\-Buffer\-Tx\-Tail@{\-\_\-uart\-Buffer\-Tx\-Tail}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Buffer\-Tx\-Tail}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint16\-\_\-t} \-\_\-uart\-Buffer\-Tx\-Tail\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{0u, 0u\}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a33280e281acec7bfef0fa84461651f75}
+Tracks the tail of the transmit buffer. 
+
+Definition at line 119 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Transmit\-Interrupt(), Uart\-\_\-\-Open(), Uart\-\_\-\-Write\-Byte(), Uart\-\_\-\-Write\-Byte\-Array(), Uart\-\_\-\-Write\-Byte\-Hex(), and Uart\-\_\-\-Write\-String().
+
+\hypertarget{_uart_8c_a2f67b672e9610bad9fd1646351bb903d}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Control\-One\-Registers@{\-\_\-uart\-Control\-One\-Registers}}
+\index{\-\_\-uart\-Control\-One\-Registers@{\-\_\-uart\-Control\-One\-Registers}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Control\-One\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t}$\ast$ const \-\_\-uart\-Control\-One\-Registers\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a2f67b672e9610bad9fd1646351bb903d}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    &UCA0CTL1,
+    &UCA1CTL1
+\}
+\end{DoxyCode}
+Look-\/up table for U\-A\-R\-T control 1 registers. 
+
+Definition at line 54 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Close(), Uart\-\_\-\-Init(), and Uart\-\_\-\-Open().
+
+\hypertarget{_uart_8c_a113d58dc0b2532478d07304b042f3abc}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Gpio\-Ports@{\-\_\-uart\-Gpio\-Ports}}
+\index{\-\_\-uart\-Gpio\-Ports@{\-\_\-uart\-Gpio\-Ports}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Gpio\-Ports}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int16\-\_\-t} \-\_\-uart\-Gpio\-Ports\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{3, 4\}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a113d58dc0b2532478d07304b042f3abc}
+Look-\/up table for G\-P\-I\-O port number of U\-A\-R\-T ports. 
+
+Definition at line 93 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Close(), and Uart\-\_\-\-Open().
+
+\hypertarget{_uart_8c_aaab569bfcdeb13b3158d6494ea0ebd5b}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Gpio\-Receive\-Pinmasks@{\-\_\-uart\-Gpio\-Receive\-Pinmasks}}
+\index{\-\_\-uart\-Gpio\-Receive\-Pinmasks@{\-\_\-uart\-Gpio\-Receive\-Pinmasks}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Gpio\-Receive\-Pinmasks}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint8\-\_\-t} \-\_\-uart\-Gpio\-Receive\-Pinmasks\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_aaab569bfcdeb13b3158d6494ea0ebd5b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t})(1u << 4),
+    (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t})(1u << 5)
+\}
+\end{DoxyCode}
+Look-\/up table for G\-P\-I\-O pinmask of receive line for U\-A\-R\-T ports. 
+
+Definition at line 101 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Close(), and Uart\-\_\-\-Open().
+
+\hypertarget{_uart_8c_afaa9431004949b82a8628f550055f5c7}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Gpio\-Transmit\-Pinmasks@{\-\_\-uart\-Gpio\-Transmit\-Pinmasks}}
+\index{\-\_\-uart\-Gpio\-Transmit\-Pinmasks@{\-\_\-uart\-Gpio\-Transmit\-Pinmasks}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Gpio\-Transmit\-Pinmasks}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint8\-\_\-t} \-\_\-uart\-Gpio\-Transmit\-Pinmasks\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_afaa9431004949b82a8628f550055f5c7}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t})(1u << 3),
+    (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t})(1u << 4)
+\}
+\end{DoxyCode}
+Look-\/up table for G\-P\-I\-O pinmask of transmit line for U\-A\-R\-T ports. 
+
+Definition at line 95 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Close(), and Uart\-\_\-\-Open().
+
+\hypertarget{_uart_8c_a0a2082aa78b520befc2e3f1d043a391f}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Interrupt\-Enable\-Registers@{\-\_\-uart\-Interrupt\-Enable\-Registers}}
+\index{\-\_\-uart\-Interrupt\-Enable\-Registers@{\-\_\-uart\-Interrupt\-Enable\-Registers}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Interrupt\-Enable\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t}$\ast$ const \-\_\-uart\-Interrupt\-Enable\-Registers\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a0a2082aa78b520befc2e3f1d043a391f}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    &UCA0IE,
+    &UCA1IE
+\}
+\end{DoxyCode}
+Look-\/up table for U\-A\-R\-T interrupt enable registers. 
+
+Definition at line 72 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Transmit\-Interrupt(), Uart\-\_\-\-Disable\-Receive(), Uart\-\_\-\-Enable\-Receive(), Uart\-\_\-\-Write\-Byte(), Uart\-\_\-\-Write\-Byte\-Array(), Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert(), Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking(), Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert(), Uart\-\_\-\-Write\-Byte\-Hex(), Uart\-\_\-\-Write\-Byte\-Hex\-Blocking(), Uart\-\_\-\-Write\-String(), and Uart\-\_\-\-Write\-String\-Blocking().
+
+\hypertarget{_uart_8c_a95c226dd47e5daf35e1a2b3ca26b5ec1}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Interrupt\-Flag\-Registers@{\-\_\-uart\-Interrupt\-Flag\-Registers}}
+\index{\-\_\-uart\-Interrupt\-Flag\-Registers@{\-\_\-uart\-Interrupt\-Flag\-Registers}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Interrupt\-Flag\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile const {\bf uint8\-\_\-t}$\ast$ const \-\_\-uart\-Interrupt\-Flag\-Registers\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a95c226dd47e5daf35e1a2b3ca26b5ec1}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    &UCA0IFG,
+    &UCA1IFG
+\}
+\end{DoxyCode}
+Look-\/up table for U\-A\-R\-T interrupt flag registers. 
+
+Definition at line 78 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert(), Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking(), Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert(), Uart\-\_\-\-Write\-Byte\-Hex\-Blocking(), and Uart\-\_\-\-Write\-String\-Blocking().
+
+\hypertarget{_uart_8c_a10293331d543cab57ee248a99a86f0ca}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Port\-Is\-Open@{\-\_\-uart\-Port\-Is\-Open}}
+\index{\-\_\-uart\-Port\-Is\-Open@{\-\_\-uart\-Port\-Is\-Open}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Port\-Is\-Open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-uart\-Port\-Is\-Open\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]} = \{{\bf false}, {\bf false}\}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a10293331d543cab57ee248a99a86f0ca}
+Tracks if a U\-A\-R\-T port is open. 
+
+Definition at line 109 of file Uart.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Are\-Bytes\-Available\-Any\-Open\-Port(), Uart\-\_\-\-Close(), Uart\-\_\-\-Disable\-Receive(), Uart\-\_\-\-Enable\-Receive(), Uart\-\_\-\-Is\-Port\-Open(), Uart\-\_\-\-Open(), Uart\-\_\-\-Write\-Byte(), Uart\-\_\-\-Write\-Byte\-Array(), Uart\-\_\-\-Write\-Byte\-Array\-Blocking(), Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert(), Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking(), Uart\-\_\-\-Write\-Byte\-Blocking(), Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert(), Uart\-\_\-\-Write\-Byte\-Hex(), Uart\-\_\-\-Write\-Byte\-Hex\-Blocking(), Uart\-\_\-\-Write\-String(), and Uart\-\_\-\-Write\-String\-Blocking().
+
+\hypertarget{_uart_8c_a59df6bad0c50e761e0cc02b03cc8fbc7}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Receive\-Buffer\-Registers@{\-\_\-uart\-Receive\-Buffer\-Registers}}
+\index{\-\_\-uart\-Receive\-Buffer\-Registers@{\-\_\-uart\-Receive\-Buffer\-Registers}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Receive\-Buffer\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile const {\bf uint8\-\_\-t}$\ast$ const \-\_\-uart\-Receive\-Buffer\-Registers\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a59df6bad0c50e761e0cc02b03cc8fbc7}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    &UCA0RXBUF,
+    &UCA1RXBUF
+\}
+\end{DoxyCode}
+Look-\/up table for U\-A\-R\-T receive buffer registers 
+
+Definition at line 66 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Receive\-Interrupt(), and Uart\-\_\-\-Enable\-Receive().
+
+\hypertarget{_uart_8c_a9dd2e279ea3e701ed231bb9230a96227}{\index{Uart.\-c@{Uart.\-c}!\-\_\-uart\-Transmit\-Buffer\-Registers@{\-\_\-uart\-Transmit\-Buffer\-Registers}}
+\index{\-\_\-uart\-Transmit\-Buffer\-Registers@{\-\_\-uart\-Transmit\-Buffer\-Registers}!Uart.c@{Uart.\-c}}
+\subsubsection[{\-\_\-uart\-Transmit\-Buffer\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t}$\ast$ const \-\_\-uart\-Transmit\-Buffer\-Registers\mbox{[}{\bf U\-A\-R\-T\-\_\-\-N\-U\-M\-\_\-\-P\-O\-R\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_uart_8c_a9dd2e279ea3e701ed231bb9230a96227}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    &UCA0TXBUF,
+    &UCA1TXBUF
+\}
+\end{DoxyCode}
+Look-\/up table for U\-A\-R\-T transmit buffer registers. 
+
+Definition at line 60 of file Uart.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Uart\-Transmit\-Interrupt(), Uart\-\_\-\-Write\-Byte\-Array\-Blocking\-No\-Assert(), Uart\-\_\-\-Write\-Byte\-Array\-Hex\-Blocking(), Uart\-\_\-\-Write\-Byte\-Blocking\-No\-Assert(), Uart\-\_\-\-Write\-Byte\-Hex\-Blocking(), and Uart\-\_\-\-Write\-String\-Blocking().
+

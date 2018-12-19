@@ -1,0 +1,6 @@
+<map id="Dma.c" name="Dma.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="139,80,211,107" />
+<area shape="rect" href="$_dma_8h.html" title="Configuration and control functions and macros for the DMA. " alt="" coords="235,80,293,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="317,80,387,107" />
+</map>

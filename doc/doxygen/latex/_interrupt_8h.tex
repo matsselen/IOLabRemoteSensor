@@ -1,0 +1,159 @@
+\hypertarget{_interrupt_8h}{\section{Interrupt.\-h File Reference}
+\label{_interrupt_8h}\index{Interrupt.\-h@{Interrupt.\-h}}
+}
+
+
+Global interrupt control.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_interrupt_8h_a0e969b1c25994e57c7732f1af111cf55}{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-E\-N\-A\-B\-L\-E}()~\-\_\-enable\-\_\-interrupts()
+\item 
+\#define \hyperlink{_interrupt_8h_a84709aa16a36822a3a5f3aa737d4ca02}{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}()~\-\_\-disable\-\_\-interrupts()
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_interrupt_8h_ad6c14ef103eed1cd16996443f230d7c6}{Int\-State\-\_\-t} \{ \\*
+{\bfseries Int\-State\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D}, 
+\\*
+{\bfseries Int\-State\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_interrupt_8h_ad6c14ef103eed1cd16996443f230d7c6}{Int\-State\-\_\-t} \hyperlink{_interrupt_8h_a0e5431ce2b9097e2a21c245e7c75e953}{Interrupt\-\_\-\-Lock} (void)
+\item 
+void \hyperlink{_interrupt_8h_a4f840d0ee81cd63fc8ab0c938a6e755b}{Interrupt\-\_\-\-Unlock} (\hyperlink{_interrupt_8h_ad6c14ef103eed1cd16996443f230d7c6}{Int\-State\-\_\-t} prev\-State)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Global interrupt control. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The macros defined in this file provide global control of the M\-C\-U's interrupts. The global interrupt enable (G\-I\-E) bit must be set for any interrupt to fire. If the G\-I\-E bit is clear, all interrupts (except the non-\/maskable interrupts) are suppressed. 
+
+Definition in file \hyperlink{_interrupt_8h_source}{Interrupt.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_interrupt_8h_a84709aa16a36822a3a5f3aa737d4ca02}{\index{Interrupt.\-h@{Interrupt.\-h}!I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E@{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}}
+\index{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E@{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}!Interrupt.h@{Interrupt.\-h}}
+\subsubsection[{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\-\_\-disable\-\_\-interrupts()}}\label{_interrupt_8h_a84709aa16a36822a3a5f3aa737d4ca02}
+Disable global interrupts (clear G\-I\-E). 
+
+Definition at line 39 of file Interrupt.\-h.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Bsl\-Command(), Assert(), Interrupt\-\_\-\-Lock(), main(), and Ultrasound\-Start\-Transmit().
+
+\hypertarget{_interrupt_8h_a0e969b1c25994e57c7732f1af111cf55}{\index{Interrupt.\-h@{Interrupt.\-h}!I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-E\-N\-A\-B\-L\-E@{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-E\-N\-A\-B\-L\-E}}
+\index{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-E\-N\-A\-B\-L\-E@{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-E\-N\-A\-B\-L\-E}!Interrupt.h@{Interrupt.\-h}}
+\subsubsection[{I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-E\-N\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-E\-N\-A\-B\-L\-E(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\-\_\-enable\-\_\-interrupts()}}\label{_interrupt_8h_a0e969b1c25994e57c7732f1af111cf55}
+Enable global interrupts (set G\-I\-E). 
+
+Definition at line 36 of file Interrupt.\-h.
+
+
+
+Referenced by Interrupt\-\_\-\-Unlock(), and main().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_interrupt_8h_ad6c14ef103eed1cd16996443f230d7c6}{\index{Interrupt.\-h@{Interrupt.\-h}!Int\-State\-\_\-t@{Int\-State\-\_\-t}}
+\index{Int\-State\-\_\-t@{Int\-State\-\_\-t}!Interrupt.h@{Interrupt.\-h}}
+\subsubsection[{Int\-State\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Int\-State\-\_\-t}}}\label{_interrupt_8h_ad6c14ef103eed1cd16996443f230d7c6}
+Type used when saving the interrupt state. 
+
+Definition at line 29 of file Interrupt.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_interrupt_8h_a0e5431ce2b9097e2a21c245e7c75e953}{\index{Interrupt.\-h@{Interrupt.\-h}!Interrupt\-\_\-\-Lock@{Interrupt\-\_\-\-Lock}}
+\index{Interrupt\-\_\-\-Lock@{Interrupt\-\_\-\-Lock}!Interrupt.h@{Interrupt.\-h}}
+\subsubsection[{Interrupt\-\_\-\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Int\-State\-\_\-t} Interrupt\-\_\-\-Lock (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_interrupt_8h_a0e5431ce2b9097e2a21c245e7c75e953}
+Get the current global interrupt state and then disable global interrupts.
+
+Usage\-: 
+\begin{DoxyCode}
+\hyperlink{_interrupt_8h_ad6c14ef103eed1cd16996443f230d7c6}{IntState\_t} originalState = \hyperlink{_interrupt_8c_a0e5431ce2b9097e2a21c245e7c75e953}{Interrupt\_Lock}();
+
+    (Critical section, all maskable interrupts disabled)
+
+\hyperlink{_interrupt_8c_a4f840d0ee81cd63fc8ab0c938a6e755b}{Interrupt\_Unlock}(originalState);
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Original interrupt state. 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file Interrupt.\-c.
+
+
+
+Referenced by Event\-Queue\-\_\-\-Add().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_interrupt_8h_a4f840d0ee81cd63fc8ab0c938a6e755b}{\index{Interrupt.\-h@{Interrupt.\-h}!Interrupt\-\_\-\-Unlock@{Interrupt\-\_\-\-Unlock}}
+\index{Interrupt\-\_\-\-Unlock@{Interrupt\-\_\-\-Unlock}!Interrupt.h@{Interrupt.\-h}}
+\subsubsection[{Interrupt\-\_\-\-Unlock}]{\setlength{\rightskip}{0pt plus 5cm}void Interrupt\-\_\-\-Unlock (
+\begin{DoxyParamCaption}
+\item[{{\bf Int\-State\-\_\-t}}]{prev\-State}
+\end{DoxyParamCaption}
+)}}\label{_interrupt_8h_a4f840d0ee81cd63fc8ab0c938a6e755b}
+Restore previous global interrupt state.
+
+Usage\-: 
+\begin{DoxyCode}
+\hyperlink{_interrupt_8h_ad6c14ef103eed1cd16996443f230d7c6}{IntState\_t} originalState = \hyperlink{_interrupt_8c_a0e5431ce2b9097e2a21c245e7c75e953}{Interrupt\_Lock}();
+
+    (Critical section, all maskable interrupts disabled)
+
+\hyperlink{_interrupt_8c_a4f840d0ee81cd63fc8ab0c938a6e755b}{Interrupt\_Unlock}(originalState);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em prev\-State} & -\/ Previous interrupt state \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file Interrupt.\-c.
+
+
+
+Referenced by Event\-Queue\-\_\-\-Add().
+
+
+
+Here is the caller graph for this function\-:
+
+

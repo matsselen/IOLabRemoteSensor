@@ -1,0 +1,84 @@
+\hypertarget{_note_duration_to_ms_8h}{\section{Note\-Duration\-To\-Ms.\-h File Reference}
+\label{_note_duration_to_ms_8h}\index{Note\-Duration\-To\-Ms.\-h@{Note\-Duration\-To\-Ms.\-h}}
+}
+
+
+Converts note durations to milliseconds.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_note_duration_to_ms_8h_add8def051a1ee0753dbeeaad9231a056}{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-T\-O\-\_\-\-M\-S\-\_\-\-T\-E\-M\-P\-O}~( 190ul )
+\item 
+\#define \hyperlink{_note_duration_to_ms_8h_ad537285515e8e32414101e18dcad18f2}{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}~( 10000ul )
+\item 
+\hypertarget{_note_duration_to_ms_8h_ab917930812c033db1a373ce3a580ddbe}{\#define {\bfseries Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S}~((1000ul $\ast$ N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R) / ((\-N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-T\-O\-\_\-\-M\-S\-\_\-\-T\-E\-M\-P\-O $\ast$ N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R)/60ul))}\label{_note_duration_to_ms_8h_ab917930812c033db1a373ce3a580ddbe}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_note_duration_to_ms_8h_a645320dc0f1a489f589adf6acd02c38e}{Note\-Dur\-To\-Ms\-\_\-t} \{ \\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-W\-H\-O\-L\-E} = Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S $\ast$ 4ul, 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-D\-O\-T\-T\-E\-D\-\_\-\-H\-A\-L\-F} = Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S $\ast$ 3ul, 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-H\-A\-L\-F} = Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S $\ast$ 2ul, 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-D\-O\-T\-T\-E\-D\-\_\-\-Q\-U\-A\-R\-T\-E\-R} = (Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S + (Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 2ul)), 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-Q\-U\-A\-R\-T\-E\-R} = Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S, 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-D\-O\-T\-T\-E\-D\-\_\-\-E\-I\-G\-H\-T\-H} = ((Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 2ul) + (Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 4ul)), 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-E\-I\-G\-H\-T\-H} = (Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 2ul), 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-T\-R\-I\-P\-L\-E\-T} = (Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 3ul), 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-D\-O\-T\-T\-E\-D\-\_\-\-S\-I\-X\-T\-E\-E\-N\-T\-H} = ((Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S/ 4ul) + (Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 8ul)), 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-S\-I\-X\-T\-E\-E\-N\-T\-H} = (Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 4ul), 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-D\-O\-T\-T\-E\-D\-\_\-32} = ((Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 8ul) + (Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 16ul)), 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-T\-H\-I\-R\-T\-Y\-S\-E\-C\-O\-N\-D} = (Q\-U\-A\-R\-T\-E\-R\-\_\-\-N\-O\-T\-E\-\_\-\-M\-S / 8ul), 
+\\*
+{\bfseries Note\-Dur\-To\-Ms\-\_\-\-S\-A\-M\-E\-\_\-\-N\-O\-T\-E\-\_\-\-G\-A\-P} = 60ul
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Converts note durations to milliseconds. {\bfseries Description} Converts note durations (e.\-g. quarter, eighth) to milliseconds. 
+
+Definition in file \hyperlink{_note_duration_to_ms_8h_source}{Note\-Duration\-To\-Ms.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_note_duration_to_ms_8h_ad537285515e8e32414101e18dcad18f2}{\index{Note\-Duration\-To\-Ms.\-h@{Note\-Duration\-To\-Ms.\-h}!N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R@{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}}
+\index{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R@{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}!NoteDurationToMs.h@{Note\-Duration\-To\-Ms.\-h}}
+\subsubsection[{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R~( 10000ul )}}\label{_note_duration_to_ms_8h_ad537285515e8e32414101e18dcad18f2}
+Define a constant scaling factor so the integer math doesn't truncate too many significant digits 
+
+Definition at line 31 of file Note\-Duration\-To\-Ms.\-h.
+
+\hypertarget{_note_duration_to_ms_8h_add8def051a1ee0753dbeeaad9231a056}{\index{Note\-Duration\-To\-Ms.\-h@{Note\-Duration\-To\-Ms.\-h}!N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-T\-O\-\_\-\-M\-S\-\_\-\-T\-E\-M\-P\-O@{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-T\-O\-\_\-\-M\-S\-\_\-\-T\-E\-M\-P\-O}}
+\index{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-T\-O\-\_\-\-M\-S\-\_\-\-T\-E\-M\-P\-O@{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-T\-O\-\_\-\-M\-S\-\_\-\-T\-E\-M\-P\-O}!NoteDurationToMs.h@{Note\-Duration\-To\-Ms.\-h}}
+\subsubsection[{N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-T\-O\-\_\-\-M\-S\-\_\-\-T\-E\-M\-P\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-T\-E\-\_\-\-D\-U\-R\-\_\-\-T\-O\-\_\-\-M\-S\-\_\-\-T\-E\-M\-P\-O~( 190ul )}}\label{_note_duration_to_ms_8h_add8def051a1ee0753dbeeaad9231a056}
+Defines the tempo, in beats per minute (B\-P\-M), that is used to calculate the number of milliseconds in a note duration 
+
+Definition at line 27 of file Note\-Duration\-To\-Ms.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_note_duration_to_ms_8h_a645320dc0f1a489f589adf6acd02c38e}{\index{Note\-Duration\-To\-Ms.\-h@{Note\-Duration\-To\-Ms.\-h}!Note\-Dur\-To\-Ms\-\_\-t@{Note\-Dur\-To\-Ms\-\_\-t}}
+\index{Note\-Dur\-To\-Ms\-\_\-t@{Note\-Dur\-To\-Ms\-\_\-t}!NoteDurationToMs.h@{Note\-Duration\-To\-Ms.\-h}}
+\subsubsection[{Note\-Dur\-To\-Ms\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Note\-Dur\-To\-Ms\-\_\-t}}}\label{_note_duration_to_ms_8h_a645320dc0f1a489f589adf6acd02c38e}
+Defines an enumeration to convert note durations to milliseconds. It assumes a tempo of 120 B\-P\-M. 
+
+Definition at line 37 of file Note\-Duration\-To\-Ms.\-h.
+

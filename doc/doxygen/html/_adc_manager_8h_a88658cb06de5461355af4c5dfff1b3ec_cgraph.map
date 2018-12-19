@@ -1,0 +1,9 @@
+<map id="AdcManager_SingleSampleBlocking" name="AdcManager_SingleSampleBlocking">
+<area shape="rect" href="$_adc_8c.html#a8201a8154546752a07f766fa604c77d1" title="Adc_SetChannelSequence" alt="" coords="811,122,992,148" />
+<area shape="rect" href="$_adc_8c.html#afe5cd10dd67ef2ad4ade4f71a6ada010" title="Adc_SingleConversionSequence\lBlocking" alt="" coords="291,71,507,114" />
+<area shape="rect" href="$_adc_manager_8c.html#a5e91c4affb5c1439c47170585670a2bf" title="_SetupTimerConfig" alt="" coords="331,155,467,182" />
+<area shape="rect" href="$_adc_8c.html#ad41a7943b5c26fbe607328388a72bfa3" title="_MoveSamplesToUserLocation" alt="" coords="556,71,761,98" />
+<area shape="rect" href="$_timer_8c.html#a02f931c9a4a5037b499d531f49ebc3b9" title="Timer_A0_Configure" alt="" coords="587,122,731,148" />
+<area shape="rect" href="$_timer_8c.html#a3b787ac79e251ea6217447ed05be53bb" title="Timer_A0CCX_Configure" alt="" coords="573,172,744,199" />
+<area shape="rect" href="$_adc_manager_8c.html#a9d5382aa474494126282fe96a47dbea1" title="_InitialzeXAdcChannels" alt="" coords="577,223,740,250" />
+</map>

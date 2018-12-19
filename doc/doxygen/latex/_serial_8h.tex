@@ -1,0 +1,531 @@
+\hypertarget{_serial_8h}{\section{Serial.\-h File Reference}
+\label{_serial_8h}\index{Serial.\-h@{Serial.\-h}}
+}
+
+
+Serial interface module header.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_serial_8h_struct_serial_buffer__t}{Serial\-Buffer\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_serial_8h_a8e60534e34e59b6e2ea41155be751664}{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}~(50u)
+\item 
+\#define \hyperlink{_serial_8h_af5a39d9727da9cdc351da12dc8d70d68}{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-H\-U\-M\-A\-N}~(\hyperlink{_serial_8h_a8e60534e34e59b6e2ea41155be751664}{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H} -\/ 1u)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_serial_8h_aca0170c86b9fad810c286b1bd62a8928}{Serial\-Status\-\_\-t} \{ \\*
+{\bfseries Serial\-Status\-\_\-\-S\-U\-C\-C\-E\-S\-S}, 
+\\*
+{\bfseries Serial\-Status\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D}, 
+\\*
+{\bfseries Serial\-Status\-\_\-\-N\-O\-\_\-\-P\-A\-C\-K\-E\-T}, 
+\\*
+{\bfseries Serial\-Status\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-F\-U\-L\-L}
+ \}
+\item 
+enum \hyperlink{_serial_8h_a8628d76fbf2be3254ddcaa87be4af1c3}{Serial\-Mode\-\_\-t} \{ \\*
+{\bfseries Serial\-Mode\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-O\-N\-L\-Y}, 
+\\*
+{\bfseries Serial\-Mode\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-A\-N\-D\-\_\-\-R\-E\-C\-E\-I\-V\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_serial_8h_a0a3e7218f6019b8c0041e13e29ed302f}{Serial\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_serial_8h_a465b1ece4bb577d1fd27ad542ac012f8}{Serial\-\_\-\-Open} (\hyperlink{_serial_8h_a8628d76fbf2be3254ddcaa87be4af1c3}{Serial\-Mode\-\_\-t} mode)
+\item 
+void \hyperlink{_serial_8h_afa3d6c3e356f618e58a41ecd08832b5d}{Serial\-\_\-\-Close} (void)
+\item 
+void \hyperlink{_serial_8h_ae8310ebb5f185ea925ec201785915f80}{Serial\-\_\-\-Process\-Received\-Bytes} (void)
+\item 
+\hyperlink{_serial_8h_aca0170c86b9fad810c286b1bd62a8928}{Serial\-Status\-\_\-t} \hyperlink{_serial_8h_a1ccba1b7133b100ac9c783404fb3aba8}{Serial\-\_\-\-Get\-Packet} (\hyperlink{_serial_8h_struct_serial_buffer__t}{Serial\-Buffer\-\_\-t} $\ast$$\ast$payload\-Received)
+\item 
+\hyperlink{_serial_8h_aca0170c86b9fad810c286b1bd62a8928}{Serial\-Status\-\_\-t} \hyperlink{_serial_8h_a88d9cf267de40eaeac599d0fa554908f}{Serial\-\_\-\-Send\-Packet} (const \hyperlink{_serial_8h_struct_serial_buffer__t}{Serial\-Buffer\-\_\-t} $\ast$payload\-To\-Transmit)
+\item 
+void \hyperlink{_serial_8h_a7bea63da00a48ff6a233658e1bffb244}{Serial\-\_\-\-Send\-String} (const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$string)
+\item 
+void \hyperlink{_serial_8h_ae3c36491780ee25b86bf0b3ac9e61fa7}{Serial\-\_\-\-Send\-String\-Number} (const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$string, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} number)
+\item 
+void \hyperlink{_serial_8h_a5e7e86dca0d6419be74d7960b29c8715}{Serial\-\_\-\-Send\-String\-Number\-U32} (const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$string, \hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} number)
+\item 
+void \hyperlink{_serial_8h_aaca97bf3f80cf18c351ef116009e9467}{Serial\-\_\-\-Send\-String3\-Numbers} (const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$string, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} number1, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} number2, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} number3)
+\item 
+void \hyperlink{_serial_8h_ac42fec93789a72c41438effc634fa9f1}{Serial\-\_\-\-Send\-String\-Blocking} (const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$string)
+\item 
+void \hyperlink{_serial_8h_a72d18e03708f4f74b6a128aa3d2fce71}{Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert} (const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$string)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Serial interface module header. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The serial interface is used to transmit serial data over a serial port. 
+
+Definition in file \hyperlink{_serial_8h_source}{Serial.\-h}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Serial\-Buffer\-\_\-t@{Serial\-Buffer\-\_\-t}}\label{struct_serial_buffer__t}
+\hypertarget{_serial_8h_struct_serial_buffer__t}{}
+\subsubsection{struct Serial\-Buffer\-\_\-t}
+Defines a struct used to store serial payloads. 
+
+Definition at line 54 of file Serial.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_serial_8h_a6afa2b08507ccdb095698db840b0e3d6}{\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t}}\label{_serial_8h_a6afa2b08507ccdb095698db840b0e3d6}
+&
+buffer\mbox{[}\hyperlink{_serial_8h_a8e60534e34e59b6e2ea41155be751664}{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}&
+Stores the serial payload. \\
+\hline
+
+\hypertarget{_serial_8h_a0937b653999b14c16d75fc408f4dce05}{\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool}}\label{_serial_8h_a0937b653999b14c16d75fc408f4dce05}
+&
+in\-Use&
+Tracks if the buffer is currently in use. \\
+\hline
+
+\hypertarget{_serial_8h_a6071e27bc307a640161edbfdb4ae8698}{\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool}}\label{_serial_8h_a6071e27bc307a640161edbfdb4ae8698}
+&
+is\-Binary&
+Specifies if the buffer contains a binary payload. \\
+\hline
+
+\hypertarget{_serial_8h_a1892eba2086d12ac2b09005aeb09ea3b}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_serial_8h_a1892eba2086d12ac2b09005aeb09ea3b}
+&
+length&
+Specifies the length of the payload in the buffer. \\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_serial_8h_a8e60534e34e59b6e2ea41155be751664}{\index{Serial.\-h@{Serial.\-h}!S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H@{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H@{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}!Serial.h@{Serial.\-h}}
+\subsubsection[{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H~(50u)}}\label{_serial_8h_a8e60534e34e59b6e2ea41155be751664}
+The maximum length in bytes of the payload field. 
+
+Definition at line 30 of file Serial.\-h.
+
+
+
+Referenced by Assert(), and Serial\-\_\-\-Send\-Packet().
+
+\hypertarget{_serial_8h_af5a39d9727da9cdc351da12dc8d70d68}{\index{Serial.\-h@{Serial.\-h}!S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-H\-U\-M\-A\-N@{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-H\-U\-M\-A\-N}}
+\index{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-H\-U\-M\-A\-N@{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-H\-U\-M\-A\-N}!Serial.h@{Serial.\-h}}
+\subsubsection[{S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-H\-U\-M\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-H\-U\-M\-A\-N~({\bf S\-E\-R\-I\-A\-L\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H} -\/ 1u)}}\label{_serial_8h_af5a39d9727da9cdc351da12dc8d70d68}
+The maximum length in bytes of the payload field for a human readable packet. The length is reduced by one to make space for a N\-U\-L\-L character at the end of the payload, making it a valid string. 
+
+Definition at line 35 of file Serial.\-h.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Acc\-Command(), \-\_\-\-Handle\-Human\-Adc1\-Command(), \-\_\-\-Handle\-Human\-Barc\-Command(), \-\_\-\-Handle\-Human\-Bar\-Command(), \-\_\-\-Handle\-Human\-Encoder\-Command(), \-\_\-\-Handle\-Human\-Gpi\-Command(), \-\_\-\-Handle\-Human\-Gyro\-Command(), \-\_\-\-Handle\-Human\-Mag\-Command(), \-\_\-\-Handle\-Human\-Rf\-Command(), \-\_\-\-Handle\-Human\-Ver\-Command(), \-\_\-\-Send\-Ack\-Human(), \-\_\-\-Send\-Nak\-Human(), Assert(), Serial\-\_\-\-Process\-Received\-Bytes(), Serial\-\_\-\-Send\-String(), Serial\-\_\-\-Send\-String3\-Numbers(), Serial\-\_\-\-Send\-String\-Blocking(), Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert(), Serial\-\_\-\-Send\-String\-Number(), and Serial\-\_\-\-Send\-String\-Number\-U32().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_serial_8h_a8628d76fbf2be3254ddcaa87be4af1c3}{\index{Serial.\-h@{Serial.\-h}!Serial\-Mode\-\_\-t@{Serial\-Mode\-\_\-t}}
+\index{Serial\-Mode\-\_\-t@{Serial\-Mode\-\_\-t}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Serial\-Mode\-\_\-t}}}\label{_serial_8h_a8628d76fbf2be3254ddcaa87be4af1c3}
+Possible serial interface modes. 
+
+Definition at line 47 of file Serial.\-h.
+
+\hypertarget{_serial_8h_aca0170c86b9fad810c286b1bd62a8928}{\index{Serial.\-h@{Serial.\-h}!Serial\-Status\-\_\-t@{Serial\-Status\-\_\-t}}
+\index{Serial\-Status\-\_\-t@{Serial\-Status\-\_\-t}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Serial\-Status\-\_\-t}}}\label{_serial_8h_aca0170c86b9fad810c286b1bd62a8928}
+Possible results of serial operations. 
+
+Definition at line 38 of file Serial.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_serial_8h_afa3d6c3e356f618e58a41ecd08832b5d}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Close@{Serial\-\_\-\-Close}}
+\index{Serial\-\_\-\-Close@{Serial\-\_\-\-Close}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Close}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Close (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_afa3d6c3e356f618e58a41ecd08832b5d}
+Closes the serial interface. 
+
+Definition at line 172 of file Serial.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_serial_8h_a1ccba1b7133b100ac9c783404fb3aba8}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Get\-Packet@{Serial\-\_\-\-Get\-Packet}}
+\index{Serial\-\_\-\-Get\-Packet@{Serial\-\_\-\-Get\-Packet}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Get\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Serial\-Status\-\_\-t} Serial\-\_\-\-Get\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf Serial\-Buffer\-\_\-t} $\ast$$\ast$}]{payload\-Received}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_a1ccba1b7133b100ac9c783404fb3aba8}
+Attempts to get a serial packet.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em payload\-Received} & -\/ Pointer to the received serial payload.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Serial\-Status\-\_\-\-S\-U\-C\-C\-E\-S\-S} & if a valid packet was received. \\
+\hline
+{\em Serial\-Status\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D} & if not in receive mode. \\
+\hline
+{\em Serial\-Status\-\_\-\-N\-O\-\_\-\-P\-A\-C\-K\-E\-T} & if no packet was available. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 310 of file Serial.\-c.
+
+
+
+Referenced by Test\-Protocol\-\_\-\-Handle\-Received\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_serial_8h_a0a3e7218f6019b8c0041e13e29ed302f}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Init@{Serial\-\_\-\-Init}}
+\index{Serial\-\_\-\-Init@{Serial\-\_\-\-Init}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_a0a3e7218f6019b8c0041e13e29ed302f}
+Initializes the received serial payload buffer and the U\-A\-R\-T. 
+
+Definition at line 132 of file Serial.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_serial_8h_a465b1ece4bb577d1fd27ad542ac012f8}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Open@{Serial\-\_\-\-Open}}
+\index{Serial\-\_\-\-Open@{Serial\-\_\-\-Open}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Open}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Open (
+\begin{DoxyParamCaption}
+\item[{{\bf Serial\-Mode\-\_\-t}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_a465b1ece4bb577d1fd27ad542ac012f8}
+Opens the serial interface.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & -\/ Selected mode for the serial interface. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 146 of file Serial.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_serial_8h_ae8310ebb5f185ea925ec201785915f80}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Process\-Received\-Bytes@{Serial\-\_\-\-Process\-Received\-Bytes}}
+\index{Serial\-\_\-\-Process\-Received\-Bytes@{Serial\-\_\-\-Process\-Received\-Bytes}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Process\-Received\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Process\-Received\-Bytes (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_ae8310ebb5f185ea925ec201785915f80}
+Processes bytes received from the U\-A\-R\-T, searching for a valid packet. 
+
+Definition at line 182 of file Serial.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_serial_8h_a88d9cf267de40eaeac599d0fa554908f}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Send\-Packet@{Serial\-\_\-\-Send\-Packet}}
+\index{Serial\-\_\-\-Send\-Packet@{Serial\-\_\-\-Send\-Packet}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Send\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Serial\-Status\-\_\-t} Serial\-\_\-\-Send\-Packet (
+\begin{DoxyParamCaption}
+\item[{const {\bf Serial\-Buffer\-\_\-t} $\ast$}]{payload\-To\-Transmit}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_a88d9cf267de40eaeac599d0fa554908f}
+Attempts to send a serial packet.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em payload\-To\-Transmit} & -\/ Pointer to the serial payload to transmit.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Serial\-Status\-\_\-\-S\-U\-C\-C\-E\-S\-S} & if packet sent successfully. \\
+\hline
+{\em Serial\-Status\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-F\-U\-L\-L} & if transmit buffer is full. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 345 of file Serial.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Acc\-Command(), \-\_\-\-Handle\-Human\-Adc1\-Command(), \-\_\-\-Handle\-Human\-Barc\-Command(), \-\_\-\-Handle\-Human\-Bar\-Command(), \-\_\-\-Handle\-Human\-Encoder\-Command(), \-\_\-\-Handle\-Human\-Gpi\-Command(), \-\_\-\-Handle\-Human\-Gyro\-Command(), \-\_\-\-Handle\-Human\-Mag\-Command(), \-\_\-\-Handle\-Human\-Rf\-Command(), \-\_\-\-Handle\-Human\-Ver\-Command(), \-\_\-\-Send\-Ack\-Human(), and \-\_\-\-Send\-Nak\-Human().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_serial_8h_a7bea63da00a48ff6a233658e1bffb244}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Send\-String@{Serial\-\_\-\-Send\-String}}
+\index{Serial\-\_\-\-Send\-String@{Serial\-\_\-\-Send\-String}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Send\-String}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Send\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_a7bea63da00a48ff6a233658e1bffb244}
+Attempts to send a string as a human-\/readable serial packet. If a U\-A\-R\-T error occurs, the entire packet may not be written.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string} & -\/ Pointer to the string to transmit. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 415 of file Serial.\-c.
+
+
+
+Referenced by \-\_\-\-Print\-Reset\-Reason(), Enc\-Control\-\_\-\-Read\-Enc(), and Gyro\-Control\-\_\-\-Read\-Gyro().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_serial_8h_aaca97bf3f80cf18c351ef116009e9467}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Send\-String3\-Numbers@{Serial\-\_\-\-Send\-String3\-Numbers}}
+\index{Serial\-\_\-\-Send\-String3\-Numbers@{Serial\-\_\-\-Send\-String3\-Numbers}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Send\-String3\-Numbers}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Send\-String3\-Numbers (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{string, }
+\item[{{\bf uint16\-\_\-t}}]{number1, }
+\item[{{\bf uint16\-\_\-t}}]{number2, }
+\item[{{\bf uint16\-\_\-t}}]{number3}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_aaca97bf3f80cf18c351ef116009e9467}
+Attempts to send a string and number as a human-\/readable serial packet. If a U\-A\-R\-T error occurs, the entire packet may not be written. The number will always be printed at the end of the string in hex format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string} & -\/ Pointer to the string to transmit. \\
+\hline
+\mbox{\tt in}  & {\em number1} & -\/ number to print at the end of the string. \\
+\hline
+\mbox{\tt in}  & {\em number2} & -\/ number to print at the end of the string. \\
+\hline
+\mbox{\tt in}  & {\em number3} & -\/ number to print at the end of the string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 572 of file Serial.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Read\-Acc(), Barometer\-Control\-\_\-\-Read\-Bar(), Gyro\-Control\-\_\-\-Read\-Gyro(), and Mag\-Control\-\_\-\-Read\-Mag().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_serial_8h_ac42fec93789a72c41438effc634fa9f1}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Send\-String\-Blocking@{Serial\-\_\-\-Send\-String\-Blocking}}
+\index{Serial\-\_\-\-Send\-String\-Blocking@{Serial\-\_\-\-Send\-String\-Blocking}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Send\-String\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Send\-String\-Blocking (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_ac42fec93789a72c41438effc634fa9f1}
+Attempts to send a string as a human-\/readable serial packet and blocks until the send is complete.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string} & -\/ Pointer to the string to transmit. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 679 of file Serial.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_serial_8h_a72d18e03708f4f74b6a128aa3d2fce71}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert@{Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert}}
+\index{Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert@{Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Send\-String\-Blocking\-No\-Assert (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_a72d18e03708f4f74b6a128aa3d2fce71}
+Attempts to send a string as a human-\/readable serial packet and blocks until the send is complete.
+
+\begin{DoxyNote}{Note}
+This function does not use an assert for safety checking so that it can be used in the assert handler.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string} & -\/ Pointer to the string to transmit. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 708 of file Serial.\-c.
+
+
+
+Referenced by Assert().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_serial_8h_ae3c36491780ee25b86bf0b3ac9e61fa7}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Send\-String\-Number@{Serial\-\_\-\-Send\-String\-Number}}
+\index{Serial\-\_\-\-Send\-String\-Number@{Serial\-\_\-\-Send\-String\-Number}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Send\-String\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Send\-String\-Number (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{string, }
+\item[{{\bf uint16\-\_\-t}}]{number}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_ae3c36491780ee25b86bf0b3ac9e61fa7}
+Attempts to send a string and number as a human-\/readable serial packet. If a U\-A\-R\-T error occurs, the entire packet may not be written. The number will always be printed at the end of the string in hex format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string} & -\/ Pointer to the string to transmit. \\
+\hline
+\mbox{\tt in}  & {\em number} & -\/ number to print at the end of the string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 456 of file Serial.\-c.
+
+
+
+Referenced by \-\_\-\-Ambient\-Light\-Data\-Callback(), \-\_\-\-Analog7\-Data\-Callback(), \-\_\-\-Analog8\-Data\-Callback(), \-\_\-\-Analog9\-Data\-Callback(), \-\_\-\-Battery\-Voltage\-Data\-Callback(), \-\_\-\-Ecg\-Add\-To\-Data\-Buffer(), \-\_\-\-Force\-Gauge\-Data\-Callback(), \-\_\-\-High\-Gain\-Data\-Callback(), \-\_\-\-Microphone\-Data\-Callback(), \-\_\-\-Read\-Pins(), \-\_\-thermometer\-Data\-Call\-Back(), Adc\-Manager\-\_\-\-Process\-Conversion(), Comm\-Protocol\-\_\-\-Rx\-Handler(), Con\-Man\-\_\-\-Set\-Fixed\-Config(), Enc\-Control\-\_\-\-Read\-Enc(), Self\-Test\-\_\-\-Process(), and Ui\-Manager\-\_\-\-Play\-Sequence().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_serial_8h_a5e7e86dca0d6419be74d7960b29c8715}{\index{Serial.\-h@{Serial.\-h}!Serial\-\_\-\-Send\-String\-Number\-U32@{Serial\-\_\-\-Send\-String\-Number\-U32}}
+\index{Serial\-\_\-\-Send\-String\-Number\-U32@{Serial\-\_\-\-Send\-String\-Number\-U32}!Serial.h@{Serial.\-h}}
+\subsubsection[{Serial\-\_\-\-Send\-String\-Number\-U32}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-\_\-\-Send\-String\-Number\-U32 (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{string, }
+\item[{{\bf uint32\-\_\-t}}]{number}
+\end{DoxyParamCaption}
+)}}\label{_serial_8h_a5e7e86dca0d6419be74d7960b29c8715}
+Attempts to send a string and number as a human-\/readable serial packet. If a U\-A\-R\-T error occurs, the entire packet may not be written. The number will always be printed at the end of the string in hex format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string} & -\/ Pointer to the string to transmit. \\
+\hline
+\mbox{\tt in}  & {\em number} & -\/ number to print at the end of the string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 508 of file Serial.\-c.
+
+
+
+Referenced by \-\_\-thermometer\-Data\-Call\-Back().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

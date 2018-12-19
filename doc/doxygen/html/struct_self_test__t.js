@@ -1,0 +1,26 @@
+var struct_self_test__t =
+[
+    [ "accelerometerData", "struct_self_test__t.html#a9e42aa177a6110ea7aa64266ef4e79b6", null ],
+    [ "accelerometerId", "struct_self_test__t.html#a4bdf449bf55ad41d91a2df5d1594ba54", null ],
+    [ "accelerometerLength", "struct_self_test__t.html#a1e44737d2ef5b56f2b1c4461d7f2eb32", null ],
+    [ "ambientLightData", "struct_self_test__t.html#a592fffa5817ff2437ee5e1bd77caea10", null ],
+    [ "ambientLightId", "struct_self_test__t.html#a8937ce95ddc8f07332b6028ab7a76366", null ],
+    [ "ambientLightLength", "struct_self_test__t.html#ac10d2cf9aa950f32baa04e36fdb94296", null ],
+    [ "encoderData", "struct_self_test__t.html#a55afa5c7c7ed433dd6f1ea46ce694420", null ],
+    [ "encoderId", "struct_self_test__t.html#afee16f9c3f2558462f8ed3e526491815", null ],
+    [ "encoderLength", "struct_self_test__t.html#adbe62359e69e368ba7fc06aa112587e5", null ],
+    [ "forceGaugeData", "struct_self_test__t.html#a142a69045fd41b09f0a0445b92eb2bff", null ],
+    [ "forceGaugeId", "struct_self_test__t.html#a7f7a48a3a3914eda4b54907291a6ccb8", null ],
+    [ "forceGaugeLength", "struct_self_test__t.html#ab8b3563c09163e7ba112dada0cbd56c0", null ],
+    [ "gyroscopeData", "struct_self_test__t.html#ac443a7d4c21d67ed85b1cee552148d53", null ],
+    [ "gyroscopeId", "struct_self_test__t.html#ae06a41a008cf5ebebd97191886578a1d", null ],
+    [ "gyroscopeLength", "struct_self_test__t.html#aeb7d7440b959164de250705f2013e2a1", null ],
+    [ "magnetometerData", "struct_self_test__t.html#a32f214a35689cce4c69771e0aaf483ef", null ],
+    [ "magnetometerId", "struct_self_test__t.html#a316dbc1ab1f7e0ea807ef55aa4d4196f", null ],
+    [ "magnetometerLength", "struct_self_test__t.html#ad32270566a159ba922711a98eef3ce36", null ],
+    [ "microphoneData", "struct_self_test__t.html#a97adf065616bfb889c709f88b38b05e3", null ],
+    [ "microphoneId", "struct_self_test__t.html#a7345af3b7738b2b5c96c5bfd21179e0d", null ],
+    [ "microphoneLength", "struct_self_test__t.html#a63534aaab709975bb5a4dfd0a930f887", null ],
+    [ "numberOfBytes", "struct_self_test__t.html#a85447c46a40fabe0e6eb5497cc76e2fd", null ],
+    [ "numberOfSensors", "struct_self_test__t.html#aea8fb034bd4664a4d6dc9150a53df40f", null ]
+];

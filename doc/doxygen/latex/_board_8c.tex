@@ -1,0 +1,64 @@
+\hypertarget{_board_8c}{\section{Board.\-c File Reference}
+\label{_board_8c}\index{Board.\-c@{Board.\-c}}
+}
+
+
+Board initialization module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Board.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Watchdog.\-h$>$}\\*
+{\ttfamily \#include $<$System.\-h$>$}\\*
+{\ttfamily \#include $<$Pmm.\-h$>$}\\*
+{\ttfamily \#include $<$Clock.\-h$>$}\\*
+Include dependency graph for Board.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_board_8c_ae8d2d761b984f48c3dbb27dd32a8c119}{Board\-\_\-\-Init} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Board initialization module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This file contains the board initialization function. This function must be called immediately after start-\/up to configure the system clocks, the G\-P\-I\-O pins, and the analog input pins. 
+
+Definition in file \hyperlink{_board_8c_source}{Board.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_board_8c_ae8d2d761b984f48c3dbb27dd32a8c119}{\index{Board.\-c@{Board.\-c}!Board\-\_\-\-Init@{Board\-\_\-\-Init}}
+\index{Board\-\_\-\-Init@{Board\-\_\-\-Init}!Board.c@{Board.\-c}}
+\subsubsection[{Board\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Board\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_board_8c_ae8d2d761b984f48c3dbb27dd32a8c119}
+Initializes the board to a good default state. This includes configuring the G\-P\-I\-O pins, system clocks, power management module (P\-M\-M), system interrupts, and the watchdog timer.
+
+This should be one of the first Init functions called so that the board (in particular, the G\-P\-I\-O pins) are put in a good state A\-S\-A\-P. 
+
+Definition at line 53 of file Board.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

@@ -1,0 +1,5 @@
+<map id="SpiSlave.h" name="SpiSlave.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="5,80,64,107" />
+<area shape="rect" href="$_comm_protocol_8c.html" title="Communications protocol module. " alt="" coords="88,80,208,107" />
+<area shape="rect" href="$_spi_slave_8c.html" title="SPI Slave Module. " alt="" coords="232,80,315,107" />
+</map>

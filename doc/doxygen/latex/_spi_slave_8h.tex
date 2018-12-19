@@ -1,0 +1,252 @@
+\hypertarget{_spi_slave_8h}{\section{Spi\-Slave.\-h File Reference}
+\label{_spi_slave_8h}\index{Spi\-Slave.\-h@{Spi\-Slave.\-h}}
+}
+
+
+S\-P\-I module using this device as a S\-P\-I slave.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_spi_slave_8h_ab105fb6a44f1936f13e6233dcfe41e19}{Spi\-Slave\-Error\-\_\-t} \{ \\*
+{\bfseries Spi\-Slave\-Error\-\_\-\-O\-K}, 
+\\*
+{\bfseries Spi\-Slave\-Error\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-I\-N\-\_\-\-U\-S\-E}, 
+\\*
+{\bfseries Spi\-Slave\-Error\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-T\-O\-O\-\_\-\-L\-O\-N\-G}, 
+\\*
+{\bfseries Spi\-Slave\-Error\-\_\-\-N\-O\-\_\-\-P\-A\-C\-K\-E\-T}, 
+\\*
+{\bfseries Spi\-Slave\-Error\-\_\-\-W\-R\-I\-T\-E\-\_\-\-I\-N\-\_\-\-P\-R\-O\-G\-R\-E\-S\-S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_spi_slave_8h_a5732ce1f835b266db99c3aaa6bab7d28}{Spi\-Slave\-\_\-\-Init} (void)
+\item 
+\hyperlink{_spi_slave_8h_ab105fb6a44f1936f13e6233dcfe41e19}{Spi\-Slave\-Error\-\_\-t} \hyperlink{_spi_slave_8h_adbea4d2f3131d24e4216cda35a81d895}{Spi\-Slave\-\_\-\-Load\-Packet} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} packet\-Length, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} packet\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_spi_slave_8h_af8c91183bd4443e434859e8f5ba7668b}{Spi\-Slave\-\_\-\-Unload\-Packet} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_spi_slave_8h_a65a1563c5325b80a7a831e0342492f1b}{Spi\-Slave\-\_\-\-Packet\-Loaded} (void)
+\item 
+\hyperlink{_spi_slave_8h_ab105fb6a44f1936f13e6233dcfe41e19}{Spi\-Slave\-Error\-\_\-t} \hyperlink{_spi_slave_8h_a467e927cefcef069f8475274521c3b22}{Spi\-Slave\-\_\-\-Read\-Packet} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} packet\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} packet\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_spi_slave_8h_a3ec7e5d551d7ce8fd1e83974bcaea9bf}{Spi\-Slave\-\_\-\-Flush\-Read} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_spi_slave_8h_a85d0836f67db5eb3aef73baa88f60991}{Spi\-Slave\-\_\-\-Packet\-Available} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\-P\-I module using this device as a S\-P\-I slave. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This module provides functions to configure the S\-P\-I port to be a S\-P\-I slave device. 
+
+Definition in file \hyperlink{_spi_slave_8h_source}{Spi\-Slave.\-h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_spi_slave_8h_ab105fb6a44f1936f13e6233dcfe41e19}{\index{Spi\-Slave.\-h@{Spi\-Slave.\-h}!Spi\-Slave\-Error\-\_\-t@{Spi\-Slave\-Error\-\_\-t}}
+\index{Spi\-Slave\-Error\-\_\-t@{Spi\-Slave\-Error\-\_\-t}!SpiSlave.h@{Spi\-Slave.\-h}}
+\subsubsection[{Spi\-Slave\-Error\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Spi\-Slave\-Error\-\_\-t}}}\label{_spi_slave_8h_ab105fb6a44f1936f13e6233dcfe41e19}
+Enumeration type for S\-P\-I slave module errors. 
+
+Definition at line 27 of file Spi\-Slave.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_spi_slave_8h_a3ec7e5d551d7ce8fd1e83974bcaea9bf}{\index{Spi\-Slave.\-h@{Spi\-Slave.\-h}!Spi\-Slave\-\_\-\-Flush\-Read@{Spi\-Slave\-\_\-\-Flush\-Read}}
+\index{Spi\-Slave\-\_\-\-Flush\-Read@{Spi\-Slave\-\_\-\-Flush\-Read}!SpiSlave.h@{Spi\-Slave.\-h}}
+\subsubsection[{Spi\-Slave\-\_\-\-Flush\-Read}]{\setlength{\rightskip}{0pt plus 5cm}void Spi\-Slave\-\_\-\-Flush\-Read (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_spi_slave_8h_a3ec7e5d551d7ce8fd1e83974bcaea9bf}
+Disarms the S\-P\-I port from accepting new data. Disables the D\-M\-A so that received bytes won't be transferred into the memory. 
+
+Definition at line 223 of file Spi\-Slave.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_spi_slave_8h_a5732ce1f835b266db99c3aaa6bab7d28}{\index{Spi\-Slave.\-h@{Spi\-Slave.\-h}!Spi\-Slave\-\_\-\-Init@{Spi\-Slave\-\_\-\-Init}}
+\index{Spi\-Slave\-\_\-\-Init@{Spi\-Slave\-\_\-\-Init}!SpiSlave.h@{Spi\-Slave.\-h}}
+\subsubsection[{Spi\-Slave\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Spi\-Slave\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_spi_slave_8h_a5732ce1f835b266db99c3aaa6bab7d28}
+Initialize the S\-P\-I slave module. 
+
+Definition at line 79 of file Spi\-Slave.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_spi_slave_8h_adbea4d2f3131d24e4216cda35a81d895}{\index{Spi\-Slave.\-h@{Spi\-Slave.\-h}!Spi\-Slave\-\_\-\-Load\-Packet@{Spi\-Slave\-\_\-\-Load\-Packet}}
+\index{Spi\-Slave\-\_\-\-Load\-Packet@{Spi\-Slave\-\_\-\-Load\-Packet}!SpiSlave.h@{Spi\-Slave.\-h}}
+\subsubsection[{Spi\-Slave\-\_\-\-Load\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Spi\-Slave\-Error\-\_\-t} Spi\-Slave\-\_\-\-Load\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{packet\-Length, }
+\item[{const {\bf uint8\-\_\-t}}]{packet\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_spi_slave_8h_adbea4d2f3131d24e4216cda35a81d895}
+Transmit a packet over the S\-P\-I slave port. The data will not be transmitted until the S\-P\-I master device clocks the data out. This function will store the pointer and size of the packet to be transmitted when the master asks for the data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em packet\-Length} & -\/ number of bytes in packet. \\
+\hline
+\mbox{\tt in}  & {\em packet} & -\/ packet to transmit.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Spi\-Slave\-Error\-\_\-\-O\-K} & -\/ Success \\
+\hline
+{\em Spi\-Slave\-Error\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-I\-N\-\_\-\-U\-S\-E} & -\/ a packet is already waiting to be transmitted.\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+The packet must be $>$ 1 bytes (at least 2 bytes) to transmit. 
+\end{DoxyNote}
+
+
+Definition at line 129 of file Spi\-Slave.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init(), and Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_spi_slave_8h_a85d0836f67db5eb3aef73baa88f60991}{\index{Spi\-Slave.\-h@{Spi\-Slave.\-h}!Spi\-Slave\-\_\-\-Packet\-Available@{Spi\-Slave\-\_\-\-Packet\-Available}}
+\index{Spi\-Slave\-\_\-\-Packet\-Available@{Spi\-Slave\-\_\-\-Packet\-Available}!SpiSlave.h@{Spi\-Slave.\-h}}
+\subsubsection[{Spi\-Slave\-\_\-\-Packet\-Available}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Spi\-Slave\-\_\-\-Packet\-Available (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_spi_slave_8h_a85d0836f67db5eb3aef73baa88f60991}
+Determine if a packet is available.
+
+\begin{DoxyReturn}{Returns}
+True if a packet is available, otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line 235 of file Spi\-Slave.\-c.
+
+\hypertarget{_spi_slave_8h_a65a1563c5325b80a7a831e0342492f1b}{\index{Spi\-Slave.\-h@{Spi\-Slave.\-h}!Spi\-Slave\-\_\-\-Packet\-Loaded@{Spi\-Slave\-\_\-\-Packet\-Loaded}}
+\index{Spi\-Slave\-\_\-\-Packet\-Loaded@{Spi\-Slave\-\_\-\-Packet\-Loaded}!SpiSlave.h@{Spi\-Slave.\-h}}
+\subsubsection[{Spi\-Slave\-\_\-\-Packet\-Loaded}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Spi\-Slave\-\_\-\-Packet\-Loaded (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_spi_slave_8h_a65a1563c5325b80a7a831e0342492f1b}
+Disarms the S\-P\-I port transmit by disabling the D\-M\-A 
+
+Definition at line 174 of file Spi\-Slave.\-c.
+
+\hypertarget{_spi_slave_8h_a467e927cefcef069f8475274521c3b22}{\index{Spi\-Slave.\-h@{Spi\-Slave.\-h}!Spi\-Slave\-\_\-\-Read\-Packet@{Spi\-Slave\-\_\-\-Read\-Packet}}
+\index{Spi\-Slave\-\_\-\-Read\-Packet@{Spi\-Slave\-\_\-\-Read\-Packet}!SpiSlave.h@{Spi\-Slave.\-h}}
+\subsubsection[{Spi\-Slave\-\_\-\-Read\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Spi\-Slave\-Error\-\_\-t} Spi\-Slave\-\_\-\-Read\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{packet\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{packet\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_spi_slave_8h_a467e927cefcef069f8475274521c3b22}
+Read a packet received over the S\-P\-I slave port into a buffer when it arrives. The buffer will be used to store the received S\-P\-I information after it arrives. The function will store the pointer and size to the buffer and return but the Spi\-Slave\-\_\-\-Packet\-Available will tell when the data in the buffer becomes valid.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em packet\-Length} & -\/ number of bytes in packet to receive. \\
+\hline
+\mbox{\tt out}  & {\em packet} & -\/ Received packet.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Spi\-Slave\-Error\-\_\-\-O\-K} & -\/ Success \\
+\hline
+{\em Spi\-Slave\-Error\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-I\-N\-\_\-\-U\-S\-E} & -\/ There is already a read buffer waiting to be filled. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 192 of file Spi\-Slave.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init(), and Comm\-Protocol\-\_\-\-Rx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_spi_slave_8h_af8c91183bd4443e434859e8f5ba7668b}{\index{Spi\-Slave.\-h@{Spi\-Slave.\-h}!Spi\-Slave\-\_\-\-Unload\-Packet@{Spi\-Slave\-\_\-\-Unload\-Packet}}
+\index{Spi\-Slave\-\_\-\-Unload\-Packet@{Spi\-Slave\-\_\-\-Unload\-Packet}!SpiSlave.h@{Spi\-Slave.\-h}}
+\subsubsection[{Spi\-Slave\-\_\-\-Unload\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void Spi\-Slave\-\_\-\-Unload\-Packet (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_spi_slave_8h_af8c91183bd4443e434859e8f5ba7668b}
+Disarms the S\-P\-I port transmit by disabling the D\-M\-A 
+
+Definition at line 163 of file Spi\-Slave.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

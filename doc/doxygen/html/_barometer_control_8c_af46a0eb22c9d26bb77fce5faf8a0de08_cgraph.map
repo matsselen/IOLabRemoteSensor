@@ -1,0 +1,6 @@
+<map id="BarometerControl_ReadCalibration" name="BarometerControl_ReadCalibration">
+<area shape="rect" href="$_barometer_8c.html#a8ba8dee3537ee8605d8a17a906fc594d" title="Barometer_ReadCoeffArray" alt="" coords="283,31,469,57" />
+<area shape="rect" href="$_barometer_8c.html#a68205b78d3fed44531eb4d88f5df60dc" title="_BarReadMultipleRegisters" alt="" coords="517,31,701,57" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="751,5,879,32" />
+<area shape="rect" href="$_spi_master_8c.html#a77dac8d70655f0b711a13787359f723e" title="Spi_WriteByte" alt="" coords="763,56,867,83" />
+</map>

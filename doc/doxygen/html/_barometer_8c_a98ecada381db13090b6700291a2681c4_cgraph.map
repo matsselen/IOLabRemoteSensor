@@ -1,0 +1,4 @@
+<map id="Barometer_StartSampleConversion" name="Barometer_StartSampleConversion">
+<area shape="rect" href="$_barometer_8c.html#a0e23021916eeffe45a8b5ee622d45bc5" title="_BarWriteRegister" alt="" coords="285,5,416,32" />
+<area shape="rect" href="$_spi_master_8c.html#a92f3539ef78eccf3780715b433c04075" title="Spi_WriteRegister" alt="" coords="465,5,593,32" />
+</map>

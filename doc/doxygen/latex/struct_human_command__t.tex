@@ -1,0 +1,52 @@
+\hypertarget{struct_human_command__t}{\section{Human\-Command\-\_\-t Struct Reference}
+\label{struct_human_command__t}\index{Human\-Command\-\_\-t@{Human\-Command\-\_\-t}}
+}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$ \hyperlink{struct_human_command__t_a808a3de0e57fcebda65290ff933391c9}{command\-String}
+\item 
+const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$ \hyperlink{struct_human_command__t_a66b03d84bdbad5159adaa74f6bd89c17}{help\-String}
+\item 
+void($\ast$ \hyperlink{struct_human_command__t_aada4fa790805e28d3885209a6d22daf2}{handler\-Function} )(void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure used to store a human command 
+
+Definition at line 66 of file Test\-Protocol.\-c.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_human_command__t_a808a3de0e57fcebda65290ff933391c9}{\index{Human\-Command\-\_\-t@{Human\-Command\-\_\-t}!command\-String@{command\-String}}
+\index{command\-String@{command\-String}!HumanCommand_t@{Human\-Command\-\_\-t}}
+\subsubsection[{command\-String}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf char\-\_\-t}$\ast$ command\-String}}\label{struct_human_command__t_a808a3de0e57fcebda65290ff933391c9}
+String used indicate the type of command 
+
+Definition at line 69 of file Test\-Protocol.\-c.
+
+\hypertarget{struct_human_command__t_aada4fa790805e28d3885209a6d22daf2}{\index{Human\-Command\-\_\-t@{Human\-Command\-\_\-t}!handler\-Function@{handler\-Function}}
+\index{handler\-Function@{handler\-Function}!HumanCommand_t@{Human\-Command\-\_\-t}}
+\subsubsection[{handler\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ handler\-Function)(void)}}\label{struct_human_command__t_aada4fa790805e28d3885209a6d22daf2}
+Pointer to the function that handles the command 
+
+Definition at line 75 of file Test\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Packets().
+
+\hypertarget{struct_human_command__t_a66b03d84bdbad5159adaa74f6bd89c17}{\index{Human\-Command\-\_\-t@{Human\-Command\-\_\-t}!help\-String@{help\-String}}
+\index{help\-String@{help\-String}!HumanCommand_t@{Human\-Command\-\_\-t}}
+\subsubsection[{help\-String}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf char\-\_\-t}$\ast$ help\-String}}\label{struct_human_command__t_a66b03d84bdbad5159adaa74f6bd89c17}
+String printed by the help command that contains the command and its possible parameters. Format\-: \char`\"{} cmd param1 param2\char`\"{} 
+
+Definition at line 73 of file Test\-Protocol.\-c.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_test_protocol_8c}{Test\-Protocol.\-c}\end{DoxyCompactItemize}

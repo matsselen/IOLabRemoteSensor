@@ -1,0 +1,6 @@
+<map id="CommProtocol_GetRfStatus" name="CommProtocol_GetRfStatus">
+<area shape="rect" href="$_test_protocol_8c.html#af0191e2b517192cafcf36ae2140acd97" title="_HandleHumanRfCommand" alt="" coords="243,5,432,32" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="261,56,413,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="481,56,679,83" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="728,56,779,83" />
+</map>

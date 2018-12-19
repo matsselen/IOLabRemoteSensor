@@ -1,0 +1,20 @@
+<map id="_AccWriteSingleRegister" name="_AccWriteSingleRegister">
+<area shape="rect" href="$_accelerometer_8h.html#a7e17ec73aec4e5e30c29c770600c8bbb" title="Accelerometer_Config" alt="" coords="226,6,378,32" />
+<area shape="rect" href="$_accelerometer_8h.html#a50c3ab0bd7821b6522abfe15d809d340" title="Accelerometer_Start" alt="" coords="231,56,372,83" />
+<area shape="rect" href="$_accelerometer_8h.html#ac8a2ae0e168a1a611f846d6c8e3eaa63" title="Accelerometer_Stop" alt="" coords="231,107,372,134" />
+<area shape="rect" href="$_accelerometer_8h.html#a2daa1344e52ddb15175faf6fa207a4ab" title="Accelerometer_TriggerSample\lBlocking" alt="" coords="427,19,630,62" />
+<area shape="rect" href="$_accelerometer_control_8h.html#adf3f26f825cd0d8225f95864c4ea80dc" title="AccControl_SetConfig" alt="" coords="452,86,604,112" />
+<area shape="rect" href="$_test_protocol_8c.html#aeb99f4a37f3a85763ed4d59a5212741c" title="_HandleHumanAccCommand" alt="" coords="678,27,875,54" />
+<area shape="rect" href="$_configuration_manager_8h.html#a183e4b53a492c32bbe799d7e209b8b4f" title="ConMan_SetSensorConfig" alt="" coords="687,86,866,112" />
+<area shape="rect" href="$_configuration_manager_8h.html#a4af394c25a5c58205d8832071eae3b0b" title="ConMan_StartData" alt="" coords="923,52,1059,79" />
+<area shape="rect" href="$_configuration_manager_8h.html#a7e20b92732fc46ab8a1937e144066938" title="ConMan_StopData" alt="" coords="924,111,1058,138" />
+<area shape="rect" href="$_comm_protocol_8h.html#a11fcf3a095c467e5da58a75e746059f1" title="CommProtocol_HandleStart\lDataPacket" alt="" coords="1122,40,1308,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="1372,56,1551,83" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="1399,107,1524,134" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1602,56,1786,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="2084,56,2282,83" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1859,6,2011,32" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1835,107,2035,134" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="2331,56,2382,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1f65077f8bed3f077ec2a561f20bf4b5" title="CommProtocol_HandleStopData\lPacket" alt="" coords="1108,107,1322,150" />
+</map>

@@ -1,0 +1,4 @@
+<map id="Pwm_SetDuty" name="Pwm_SetDuty">
+<area shape="rect" href="$_pwm_8c.html#a44f8de75f3f084d05fff0a54dc0b7df5" title="_DutyToCount" alt="" coords="194,5,300,32" />
+<area shape="rect" href="$_timer_8c.html#a6590a26eceba06333f451e69d6ea3987" title="Timer_B0CCX_Configure" alt="" coords="162,56,332,83" />
+</map>

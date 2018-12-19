@@ -1,0 +1,12 @@
+<map id="GyroscopeControl.c" name="GyroscopeControl.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_gyroscope_control_8h.html" title="Controls the gyroscope driver. " alt="" coords="139,80,278,107" />
+<area shape="rect" href="$_gyroscope_8h.html" title="Header file for Gyroscope sensor driver. " alt="" coords="302,80,398,107" />
+<area shape="rect" href="$_event_queue_8h.html" title="Event queue module header file. " alt="" coords="422,80,528,107" />
+<area shape="rect" href="$_data_buffer_8h.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="552,80,648,107" />
+<area shape="rect" href="$_sensor_id_8h.html" title="Sensor Id stores the list of Sensor IDs. " alt="" coords="672,80,758,107" />
+<area shape="rect" href="$_key_value_8h.html" title="Contains the definitions of the Key&#45;Value pairs. " alt="" coords="782,80,870,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="894,80,963,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="1003,155,1070,182" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="1038,80,1110,107" />
+</map>

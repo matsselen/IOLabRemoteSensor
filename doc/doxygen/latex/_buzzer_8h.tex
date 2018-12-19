@@ -1,0 +1,192 @@
+\hypertarget{_buzzer_8h}{\section{Buzzer.\-h File Reference}
+\label{_buzzer_8h}\index{Buzzer.\-h@{Buzzer.\-h}}
+}
+
+
+Driver for the buzzer.  
+
+
+{\ttfamily \#include $<$Pitch\-To\-Frequency.\-h$>$}\\*
+Include dependency graph for Buzzer.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_buzzer_8h_a5a9b94d7f0db5b50357551f03ff7b44e}{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-A\-X\-\_\-\-V\-O\-L\-U\-M\-E}~( 50u )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_buzzer_8h_a6b75e04c90a3c65be473f9eba13031cd}{Buzzer\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_buzzer_8h_a00bd24efcdaf817cfcf6a7cd6d871765}{Buzzer\-\_\-\-Enable} (void)
+\item 
+void \hyperlink{_buzzer_8h_a32beb337abd6ef07b2e0a1be1785fc05}{Buzzer\-\_\-\-Disable} (void)
+\item 
+void \hyperlink{_buzzer_8h_a82cbbadfc4f17ae9a96d34230aea2a5c}{Buzzer\-\_\-\-Set\-Frequency} (\hyperlink{_pitch_to_frequency_8h_a63c4ff9f68016392f5e3897c6661a900}{Pitch\-Frequency\-\_\-t} freq)
+\item 
+void \hyperlink{_buzzer_8h_a4559e9aaf84818b843b06ebc825c8ae6}{Buzzer\-\_\-\-Set\-Duty} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} duty)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Driver for the buzzer. {\bfseries Description} Driver for the buzzer. 
+
+Definition in file \hyperlink{_buzzer_8h_source}{Buzzer.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_buzzer_8h_a5a9b94d7f0db5b50357551f03ff7b44e}{\index{Buzzer.\-h@{Buzzer.\-h}!B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-A\-X\-\_\-\-V\-O\-L\-U\-M\-E@{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-A\-X\-\_\-\-V\-O\-L\-U\-M\-E}}
+\index{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-A\-X\-\_\-\-V\-O\-L\-U\-M\-E@{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-A\-X\-\_\-\-V\-O\-L\-U\-M\-E}!Buzzer.h@{Buzzer.\-h}}
+\subsubsection[{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-A\-X\-\_\-\-V\-O\-L\-U\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-A\-X\-\_\-\-V\-O\-L\-U\-M\-E~( 50u )}}\label{_buzzer_8h_a5a9b94d7f0db5b50357551f03ff7b44e}
+Define the duty setting that gives maximum buzzer volume. 50\% gives the maximum volume because the sounder is moving the maximum amount in both directions. The duty cycle is represented in percent (\%). 
+
+Definition at line 28 of file Buzzer.\-h.
+
+
+
+Referenced by Ui\-Manager\-\_\-\-Play\-Sequence().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_buzzer_8h_a32beb337abd6ef07b2e0a1be1785fc05}{\index{Buzzer.\-h@{Buzzer.\-h}!Buzzer\-\_\-\-Disable@{Buzzer\-\_\-\-Disable}}
+\index{Buzzer\-\_\-\-Disable@{Buzzer\-\_\-\-Disable}!Buzzer.h@{Buzzer.\-h}}
+\subsubsection[{Buzzer\-\_\-\-Disable}]{\setlength{\rightskip}{0pt plus 5cm}void Buzzer\-\_\-\-Disable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_buzzer_8h_a32beb337abd6ef07b2e0a1be1785fc05}
+Disables the Buzzer 
+
+Definition at line 70 of file Buzzer.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence(), and Ui\-Manager\-\_\-\-Stop\-Sequence().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_buzzer_8h_a00bd24efcdaf817cfcf6a7cd6d871765}{\index{Buzzer.\-h@{Buzzer.\-h}!Buzzer\-\_\-\-Enable@{Buzzer\-\_\-\-Enable}}
+\index{Buzzer\-\_\-\-Enable@{Buzzer\-\_\-\-Enable}!Buzzer.h@{Buzzer.\-h}}
+\subsubsection[{Buzzer\-\_\-\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}void Buzzer\-\_\-\-Enable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_buzzer_8h_a00bd24efcdaf817cfcf6a7cd6d871765}
+Enables the Buzzer 
+
+Definition at line 62 of file Buzzer.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_buzzer_8h_a6b75e04c90a3c65be473f9eba13031cd}{\index{Buzzer.\-h@{Buzzer.\-h}!Buzzer\-\_\-\-Init@{Buzzer\-\_\-\-Init}}
+\index{Buzzer\-\_\-\-Init@{Buzzer\-\_\-\-Init}!Buzzer.h@{Buzzer.\-h}}
+\subsubsection[{Buzzer\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Buzzer\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_buzzer_8h_a6b75e04c90a3c65be473f9eba13031cd}
+Initialized the Buzzer and P\-W\-M driver. 
+
+Definition at line 52 of file Buzzer.\-c.
+
+
+
+Referenced by Ui\-Manager\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_buzzer_8h_a4559e9aaf84818b843b06ebc825c8ae6}{\index{Buzzer.\-h@{Buzzer.\-h}!Buzzer\-\_\-\-Set\-Duty@{Buzzer\-\_\-\-Set\-Duty}}
+\index{Buzzer\-\_\-\-Set\-Duty@{Buzzer\-\_\-\-Set\-Duty}!Buzzer.h@{Buzzer.\-h}}
+\subsubsection[{Buzzer\-\_\-\-Set\-Duty}]{\setlength{\rightskip}{0pt plus 5cm}void Buzzer\-\_\-\-Set\-Duty (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{duty}
+\end{DoxyParamCaption}
+)}}\label{_buzzer_8h_a4559e9aaf84818b843b06ebc825c8ae6}
+Sets the duty cycle of the buzzer of the buzzer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em duty} & -\/ Duty cycle for the buzzer in percent (0 to 100) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file Buzzer.\-c.
+
+
+
+Referenced by Ui\-Manager\-\_\-\-Play\-Sequence().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_buzzer_8h_a82cbbadfc4f17ae9a96d34230aea2a5c}{\index{Buzzer.\-h@{Buzzer.\-h}!Buzzer\-\_\-\-Set\-Frequency@{Buzzer\-\_\-\-Set\-Frequency}}
+\index{Buzzer\-\_\-\-Set\-Frequency@{Buzzer\-\_\-\-Set\-Frequency}!Buzzer.h@{Buzzer.\-h}}
+\subsubsection[{Buzzer\-\_\-\-Set\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}void Buzzer\-\_\-\-Set\-Frequency (
+\begin{DoxyParamCaption}
+\item[{{\bf Pitch\-Frequency\-\_\-t}}]{freq}
+\end{DoxyParamCaption}
+)}}\label{_buzzer_8h_a82cbbadfc4f17ae9a96d34230aea2a5c}
+Sets the frequency of the buzzer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em freq} & -\/ Frequency in Hz\-X10 (37.\-6 Hz = 376) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file Buzzer.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

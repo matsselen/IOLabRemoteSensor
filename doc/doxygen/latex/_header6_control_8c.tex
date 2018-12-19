@@ -1,0 +1,124 @@
+\hypertarget{_header6_control_8c}{\section{Header6\-Control.\-c File Reference}
+\label{_header6_control_8c}\index{Header6\-Control.\-c@{Header6\-Control.\-c}}
+}
+
+
+Controls header pin 6.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Header6\-Control.\-h$>$}\\*
+Include dependency graph for Header6\-Control.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_header6_control_8c_a2b260225d476cdc5d962024eca73fb64}{static void {\bfseries \-\_\-\-Header6\-Control\-\_\-\-Set\-Pin\-Output} (void)}\label{_header6_control_8c_a2b260225d476cdc5d962024eca73fb64}
+
+\item 
+void \hyperlink{_header6_control_8c_a59c72901e3299ab545a7ff82d5da031d}{Header6\-Control\-\_\-\-Init} ()
+\item 
+void \hyperlink{_header6_control_8c_a81ddcb8ade7ca25a5cebf573432f4673}{Header6\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_key_value_8h_af7eba701ebfe9450bbbf1e411a8d2fd7}{Header6\-Mode\-\_\-t} \hyperlink{_header6_control_8c_a5c5362c606e9c5f18ec2d30439a1caec}{\-\_\-header6\-Mode} = Header6\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D
+\item 
+static \hyperlink{_key_value_8h_aa14a314b68530fce3a138712cbd8a1f3}{Header6\-Output\-Value\-\_\-t} \hyperlink{_header6_control_8c_a5179b352b9f01d421690f0d245a0cf38}{\-\_\-header\-Output\-Value} = \hyperlink{_key_value_8h_a1f82dd674e746bc31ea43fe02cf7b887}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R6\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls header pin 6. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls and manages the settings for header pin 6. 
+
+Definition in file \hyperlink{_header6_control_8c_source}{Header6\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_header6_control_8c_a59c72901e3299ab545a7ff82d5da031d}{\index{Header6\-Control.\-c@{Header6\-Control.\-c}!Header6\-Control\-\_\-\-Init@{Header6\-Control\-\_\-\-Init}}
+\index{Header6\-Control\-\_\-\-Init@{Header6\-Control\-\_\-\-Init}!Header6Control.c@{Header6\-Control.\-c}}
+\subsubsection[{Header6\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Header6\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_header6_control_8c_a59c72901e3299ab545a7ff82d5da031d}
+Initialize header pin 6. 
+
+Definition at line 50 of file Header6\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_header6_control_8c_a81ddcb8ade7ca25a5cebf573432f4673}{\index{Header6\-Control.\-c@{Header6\-Control.\-c}!Header6\-Control\-\_\-\-Set\-Config@{Header6\-Control\-\_\-\-Set\-Config}}
+\index{Header6\-Control\-\_\-\-Set\-Config@{Header6\-Control\-\_\-\-Set\-Config}!Header6Control.c@{Header6\-Control.\-c}}
+\subsubsection[{Header6\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Header6\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_header6_control_8c_a81ddcb8ade7ca25a5cebf573432f4673}
+Sets a configuration value to header pin 6
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Header6\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Output\-Config(), and Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_header6_control_8c_a5c5362c606e9c5f18ec2d30439a1caec}{\index{Header6\-Control.\-c@{Header6\-Control.\-c}!\-\_\-header6\-Mode@{\-\_\-header6\-Mode}}
+\index{\-\_\-header6\-Mode@{\-\_\-header6\-Mode}!Header6Control.c@{Header6\-Control.\-c}}
+\subsubsection[{\-\_\-header6\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Header6\-Mode\-\_\-t} \-\_\-header6\-Mode = Header6\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D\hspace{0.3cm}{\ttfamily [static]}}}\label{_header6_control_8c_a5c5362c606e9c5f18ec2d30439a1caec}
+Tracks what mode header pin 6 is in 
+
+Definition at line 39 of file Header6\-Control.\-c.
+
+
+
+Referenced by Header6\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_header6_control_8c_a5179b352b9f01d421690f0d245a0cf38}{\index{Header6\-Control.\-c@{Header6\-Control.\-c}!\-\_\-header\-Output\-Value@{\-\_\-header\-Output\-Value}}
+\index{\-\_\-header\-Output\-Value@{\-\_\-header\-Output\-Value}!Header6Control.c@{Header6\-Control.\-c}}
+\subsubsection[{\-\_\-header\-Output\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Header6\-Output\-Value\-\_\-t} \-\_\-header\-Output\-Value = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R6\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_header6_control_8c_a5179b352b9f01d421690f0d245a0cf38}
+Tracks what output value header pin 6 was last set to 
+
+Definition at line 42 of file Header6\-Control.\-c.
+
+
+
+Referenced by Header6\-Control\-\_\-\-Set\-Config().
+

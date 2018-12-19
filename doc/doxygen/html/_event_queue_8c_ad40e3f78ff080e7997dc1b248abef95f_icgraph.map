@@ -1,0 +1,5 @@
+<map id="_CheckQueueLength" name="_CheckQueueLength">
+<area shape="rect" href="$_event_queue_8h.html#aac7fecbd15c99e2d946d411e3fdf7623" title="EventQueue_GetNext" alt="" coords="200,5,352,32" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="401,5,599,32" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="648,5,699,32" />
+</map>

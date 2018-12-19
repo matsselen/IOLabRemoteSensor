@@ -1,0 +1,7 @@
+<map id="AdcManager_ProcessConversion" name="AdcManager_ProcessConversion">
+<area shape="rect" href="$_adc_8c.html#ae5b5233dec820cd89c8ee46ad8266cde" title="Adc_GetNumberOfConversions" alt="" coords="276,6,484,32" />
+<area shape="rect" href="$_serial_8c.html#ae3c36491780ee25b86bf0b3ac9e61fa7" title="Serial_SendStringNumber" alt="" coords="292,56,468,83" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="550,6,662,32" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="534,56,678,83" />
+<area shape="rect" href="$_uart_8c.html#aba2063d7e89a1358197b4643996daaed" title="Uart_WriteByteHex" alt="" coords="538,107,674,134" />
+</map>

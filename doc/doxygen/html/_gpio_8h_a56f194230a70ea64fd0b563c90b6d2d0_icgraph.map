@@ -1,0 +1,10 @@
+<map id="Gpio_RegisterIsr" name="Gpio_RegisterIsr">
+<area shape="rect" href="$_accelerometer_8h.html#aab95b4004ca553f62854d5ef981d83f3" title="Accelerometer_Init" alt="" coords="177,6,308,32" />
+<area shape="rect" href="$_gyroscope_8h.html#af21c974c68ac43ddcbe29cd0b2e0c84f" title="Gyroscope_Init" alt="" coords="188,56,297,83" />
+<area shape="rect" href="$_magnetometer_8h.html#a24236d83f8ad5a94c17e6414904ea6f6" title="Magnetometer_Init" alt="" coords="177,107,308,134" />
+<area shape="rect" href="$_accelerometer_control_8h.html#a090131a757bc4b516c5c6d816485f721" title="AccControl_Init" alt="" coords="361,6,473,32" />
+<area shape="rect" href="$_configuration_manager_8h.html#ac8b698cc609b8b41fe3ff823b2046b85" title="ConMan_Init" alt="" coords="527,56,623,83" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="672,56,723,83" />
+<area shape="rect" href="$_gyroscope_control_8h.html#a62c5033ca6c32f4b11a24dcba13e43e5" title="GyroControl_Init" alt="" coords="359,56,476,83" />
+<area shape="rect" href="$_magnetometer_control_8h.html#a68beb1d94ceabab1ebab02ec5ef4e13b" title="MagControl_Init" alt="" coords="360,107,475,134" />
+</map>

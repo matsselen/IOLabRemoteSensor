@@ -1,0 +1,12 @@
+<map id="BarometerControl.c" name="BarometerControl.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_barometer_control_8h.html" title="Controls the barometer driver. " alt="" coords="139,80,275,107" />
+<area shape="rect" href="$_barometer_8h.html" title="Header file for Barometer (and temperature)sensor driver. " alt="" coords="299,80,392,107" />
+<area shape="rect" href="$_timer_tick_8h.html" title="Timer Tick utility header file. " alt="" coords="416,80,507,107" />
+<area shape="rect" href="$_data_buffer_8h.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="531,80,627,107" />
+<area shape="rect" href="$_sensor_id_8h.html" title="Sensor Id stores the list of Sensor IDs. " alt="" coords="651,80,736,107" />
+<area shape="rect" href="$_key_value_8h.html" title="Contains the definitions of the Key&#45;Value pairs. " alt="" coords="760,80,848,107" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="872,80,944,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="911,155,977,182" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="1019,80,1088,107" />
+</map>

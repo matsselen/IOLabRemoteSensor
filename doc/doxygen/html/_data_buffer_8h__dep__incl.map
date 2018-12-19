@@ -1,0 +1,23 @@
+<map id="DataBuffer.h" name="DataBuffer.h">
+<area shape="rect" href="$_configuration_manager_8c.html" title="The configuration manager keeps track of all the sensor configurations. " alt="" coords="5,80,168,107" />
+<area shape="rect" href="$_data_buffer_8c.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="192,80,288,107" />
+<area shape="rect" href="$_self_test_8c_source.html" title="SelfTest.c" alt="" coords="312,80,392,107" />
+<area shape="rect" href="$_accelerometer_control_8c.html" title="Controls the accelerometer driver. " alt="" coords="416,80,576,107" />
+<area shape="rect" href="$_ambient_light_control_8c.html" title="Controls reading the ambient light sensor. " alt="" coords="600,80,752,107" />
+<area shape="rect" href="$_analog7_control_8c.html" title="Controls reading analog input in header pin 7. " alt="" coords="776,80,899,107" />
+<area shape="rect" href="$_analog8_control_8c.html" title="Controls reading analog input in header pin 8. " alt="" coords="923,80,1045,107" />
+<area shape="rect" href="$_analog9_control_8c.html" title="Controls reading analog input in header pin 9. " alt="" coords="1069,80,1192,107" />
+<area shape="rect" href="$_barometer_control_8c.html" title="Controls the barometer driver. " alt="" coords="1216,80,1352,107" />
+<area shape="rect" href="$_battery_control_8c.html" title="Controls reading the battery voltage. " alt="" coords="1376,80,1493,107" />
+<area shape="rect" href="$_comm_protocol_8c.html" title="Communications protocol module. " alt="" coords="1517,80,1637,107" />
+<area shape="rect" href="$_digital_input_control_8c.html" title="Controls reading digital inputs on the header and buttons. " alt="" coords="1661,80,1803,107" />
+<area shape="rect" href="$_ecg6_chan_control_8c_source.html" title="Ecg6ChanControl.c" alt="" coords="1827,80,1963,107" />
+<area shape="rect" href="$_ecg_control_8c.html" title="Controls reading the 6&#45;channel ECG. " alt="" coords="1987,80,2083,107" />
+<area shape="rect" href="$_encoder_control_8c.html" title="Controls the Quadrature Encoder driver. " alt="" coords="2107,80,2229,107" />
+<area shape="rect" href="$_force_gauge_control_8c.html" title="Controls the force gauge. " alt="" coords="2253,80,2403,107" />
+<area shape="rect" href="$_gyroscope_control_8c.html" title="Controls the gyroscope driver. " alt="" coords="2427,80,2565,107" />
+<area shape="rect" href="$_high_gain_control_8c.html" title="Controls reading the high gain input. " alt="" coords="2589,80,2720,107" />
+<area shape="rect" href="$_magnetometer_control_8c.html" title="Magnetometer control module. " alt="" coords="2744,80,2904,107" />
+<area shape="rect" href="$_microphone_control_8c.html" title="Controls reading the microphone. " alt="" coords="2928,80,3072,107" />
+<area shape="rect" href="$_thermometer_control_8c.html" title="Controls the thermometer driver. " alt="" coords="3096,80,3251,107" />
+</map>

@@ -1,0 +1,10 @@
+<map id="Accelerometer_Init" name="Accelerometer_Init">
+<area shape="rect" href="$_accelerometer_8c.html#a0699e7afdbf83edc44f0800ad5cc65f7" title="_AccReadSingleRegister" alt="" coords="196,81,364,108" />
+<area shape="rect" href="$_gpio_8c.html#a56f194230a70ea64fd0b563c90b6d2d0" title="Gpio_RegisterIsr" alt="" coords="220,132,340,159" />
+<area shape="rect" href="$_accelerometer_8c.html#abffbea3ffff0c24e1b68e3fbf6d57e57" title="_HandleDataReadyInterrupt" alt="" coords="187,183,373,209" />
+<area shape="rect" href="$_accelerometer_8c.html#a9d2b62e3dd4358e27f614be64cd7283a" title="_HandleOtherInterrupt" alt="" coords="204,233,356,260" />
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="423,5,567,32" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="432,56,557,83" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="432,107,557,133" />
+<area shape="rect" href="$_i2c_8c.html#a0df5e64148fcf1e7c7c1cc90e107db49" title="I2c_ReceiveByteEnd" alt="" coords="423,157,567,184" />
+</map>

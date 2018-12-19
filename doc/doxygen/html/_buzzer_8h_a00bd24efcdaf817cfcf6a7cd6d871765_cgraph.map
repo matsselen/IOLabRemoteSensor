@@ -1,0 +1,8 @@
+<map id="Buzzer_Enable" name="Buzzer_Enable">
+<area shape="rect" href="$_pwm_8c.html#aeeb64145d199ec26bf1529408072857e" title="Pwm_Enable" alt="" coords="170,81,268,108" />
+<area shape="rect" href="$_pwm_8c.html#af615c07bb1843dbc746ddfa848592b8b" title="Pwm_GetDuty" alt="" coords="166,132,272,159" />
+<area shape="rect" href="$_pwm_8c.html#a4cde0daf6b044c1a1fc69b618509c8d6" title="_AnyChannelsEnabled" alt="" coords="328,5,486,32" />
+<area shape="rect" href="$_pwm_8c.html#a44f8de75f3f084d05fff0a54dc0b7df5" title="_DutyToCount" alt="" coords="354,56,460,83" />
+<area shape="rect" href="$_timer_8c.html#a6590a26eceba06333f451e69d6ea3987" title="Timer_B0CCX_Configure" alt="" coords="322,107,492,133" />
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="350,157,464,184" />
+</map>

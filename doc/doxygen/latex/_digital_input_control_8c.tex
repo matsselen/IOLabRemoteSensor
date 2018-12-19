@@ -1,0 +1,371 @@
+\hypertarget{_digital_input_control_8c}{\section{Digital\-Input\-Control.\-c File Reference}
+\label{_digital_input_control_8c}\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}}
+}
+
+
+Controls reading digital inputs on the header and buttons.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Digital\-Input\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Timer\-Tick.\-h$>$}\\*
+Include dependency graph for Digital\-Input\-Control.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_digital_input_control_8c_a493ae5a7c8d33361064abf8e25b79a58}{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}~( 10u )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a3c83bbf741854c4089c289ecef0d65ae}{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}~( 20u )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a3df3ddfff4ff75d1f226a11fee9d1d08}{T\-I\-M\-E\-O\-U\-T\-\_\-25\-H\-Z}~( 40u )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a26e81fbdad98edae6bdb1c4957df05aa}{T\-I\-M\-E\-O\-U\-T\-\_\-20\-H\-Z}~( 50u )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a9937cbda6211a3b2325149d7ce42bbf0}{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z}~( 100u )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a0af6efee8263ca7ffc5ed2a50f5fd515}{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z}~( 1000u )
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Mask for digital inputs}\par
+{\em mask for digital inputs }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_digital_input_control_8c_a943aa23622e05d4b656e2db2678f9585}{B\-U\-T\-T\-O\-N1\-\_\-\-M\-A\-S\-K}~( 0x80 )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a28ca176938173ae654a387903a38f72b}{B\-U\-T\-T\-O\-N0\-\_\-\-M\-A\-S\-K}~( 0x40 )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a7ae30c3eff4857f1a56d44e9324b94c6}{H\-E\-A\-D\-E\-R6\-\_\-\-M\-A\-S\-K}~( 0x20 )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a3faf0c469ef09efcad3e4df78b455775}{H\-E\-A\-D\-E\-R5\-\_\-\-M\-A\-S\-K}~( 0x10 )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a8ff6a5fee8120f2fcb2afc0e5a32f821}{H\-E\-A\-D\-E\-R4\-\_\-\-M\-A\-S\-K}~( 0x08 )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a4244781b79056a8088fdccb7431f6098}{H\-E\-A\-D\-E\-R3\-\_\-\-M\-A\-S\-K}~( 0x04 )
+\item 
+\#define \hyperlink{_digital_input_control_8c_a1e7a6932db202615b178e0c6c423ae5d}{H\-E\-A\-D\-E\-R2\-\_\-\-M\-A\-S\-K}~( 0x02 )
+\item 
+\#define \hyperlink{_digital_input_control_8c_aa95a8793669df3fceb36d36ec40cbcbc}{H\-E\-A\-D\-E\-R1\-\_\-\-M\-A\-S\-K}~( 0x01 )
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_digital_input_control_8c_ab60a1549ef29d84f956765d466e3ef3d}{\-\_\-\-Read\-Pins} (void)
+\item 
+void \hyperlink{_digital_input_control_8c_ae3bc5df2e6cd3d2dba5ee33f120de40e}{Digital\-Input\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_digital_input_control_8c_a7683dde04bce1ad9c79e2cb2052b8e07}{Digital\-Input\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_digital_input_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}{Tick\-Timeout\-Handle\-\_\-t} \hyperlink{_digital_input_control_8c_a0773a851a16e38753ef7771c2df7676a}{\-\_\-tick\-Handle}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_digital_input_control_8c_acbb6232870f7ea042e81804a08d54236}{\-\_\-tick\-In\-Use} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_key_value_8h_af2ddc71bf2c5b02bbf26945e1a88aa95}{Digital\-Input\-Sample\-Rate\-\_\-t} \hyperlink{_digital_input_control_8c_a20aee3d452338690b406fc7cf7e0e9fc}{\-\_\-sample\-Rate} = \hyperlink{_key_value_8h_a8562cc1b3ee16d69e1727be479cd4e9e}{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-G\-I\-T\-A\-L\-I\-N\-P\-U\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls reading digital inputs on the header and buttons. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the digital input on the header and buttons and manages the configurations and settings associated with them. 
+
+Definition in file \hyperlink{_digital_input_control_8c_source}{Digital\-Input\-Control.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_digital_input_control_8c_a28ca176938173ae654a387903a38f72b}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!B\-U\-T\-T\-O\-N0\-\_\-\-M\-A\-S\-K@{B\-U\-T\-T\-O\-N0\-\_\-\-M\-A\-S\-K}}
+\index{B\-U\-T\-T\-O\-N0\-\_\-\-M\-A\-S\-K@{B\-U\-T\-T\-O\-N0\-\_\-\-M\-A\-S\-K}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{B\-U\-T\-T\-O\-N0\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-U\-T\-T\-O\-N0\-\_\-\-M\-A\-S\-K~( 0x40 )}}\label{_digital_input_control_8c_a28ca176938173ae654a387903a38f72b}
+Button 0 
+
+Definition at line 66 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins().
+
+\hypertarget{_digital_input_control_8c_a943aa23622e05d4b656e2db2678f9585}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!B\-U\-T\-T\-O\-N1\-\_\-\-M\-A\-S\-K@{B\-U\-T\-T\-O\-N1\-\_\-\-M\-A\-S\-K}}
+\index{B\-U\-T\-T\-O\-N1\-\_\-\-M\-A\-S\-K@{B\-U\-T\-T\-O\-N1\-\_\-\-M\-A\-S\-K}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{B\-U\-T\-T\-O\-N1\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-U\-T\-T\-O\-N1\-\_\-\-M\-A\-S\-K~( 0x80 )}}\label{_digital_input_control_8c_a943aa23622e05d4b656e2db2678f9585}
+Button 1 
+
+Definition at line 63 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins().
+
+\hypertarget{_digital_input_control_8c_aa95a8793669df3fceb36d36ec40cbcbc}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!H\-E\-A\-D\-E\-R1\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R1\-\_\-\-M\-A\-S\-K}}
+\index{H\-E\-A\-D\-E\-R1\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R1\-\_\-\-M\-A\-S\-K}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{H\-E\-A\-D\-E\-R1\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-E\-A\-D\-E\-R1\-\_\-\-M\-A\-S\-K~( 0x01 )}}\label{_digital_input_control_8c_aa95a8793669df3fceb36d36ec40cbcbc}
+Header Pin 1 
+
+Definition at line 84 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins().
+
+\hypertarget{_digital_input_control_8c_a1e7a6932db202615b178e0c6c423ae5d}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!H\-E\-A\-D\-E\-R2\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R2\-\_\-\-M\-A\-S\-K}}
+\index{H\-E\-A\-D\-E\-R2\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R2\-\_\-\-M\-A\-S\-K}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{H\-E\-A\-D\-E\-R2\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-E\-A\-D\-E\-R2\-\_\-\-M\-A\-S\-K~( 0x02 )}}\label{_digital_input_control_8c_a1e7a6932db202615b178e0c6c423ae5d}
+Header Pin 2 
+
+Definition at line 81 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins().
+
+\hypertarget{_digital_input_control_8c_a4244781b79056a8088fdccb7431f6098}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!H\-E\-A\-D\-E\-R3\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R3\-\_\-\-M\-A\-S\-K}}
+\index{H\-E\-A\-D\-E\-R3\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R3\-\_\-\-M\-A\-S\-K}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{H\-E\-A\-D\-E\-R3\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-E\-A\-D\-E\-R3\-\_\-\-M\-A\-S\-K~( 0x04 )}}\label{_digital_input_control_8c_a4244781b79056a8088fdccb7431f6098}
+Header Pin 3 
+
+Definition at line 78 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins().
+
+\hypertarget{_digital_input_control_8c_a8ff6a5fee8120f2fcb2afc0e5a32f821}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!H\-E\-A\-D\-E\-R4\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R4\-\_\-\-M\-A\-S\-K}}
+\index{H\-E\-A\-D\-E\-R4\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R4\-\_\-\-M\-A\-S\-K}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{H\-E\-A\-D\-E\-R4\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-E\-A\-D\-E\-R4\-\_\-\-M\-A\-S\-K~( 0x08 )}}\label{_digital_input_control_8c_a8ff6a5fee8120f2fcb2afc0e5a32f821}
+Header Pin 4 
+
+Definition at line 75 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins().
+
+\hypertarget{_digital_input_control_8c_a3faf0c469ef09efcad3e4df78b455775}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!H\-E\-A\-D\-E\-R5\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R5\-\_\-\-M\-A\-S\-K}}
+\index{H\-E\-A\-D\-E\-R5\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R5\-\_\-\-M\-A\-S\-K}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{H\-E\-A\-D\-E\-R5\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-E\-A\-D\-E\-R5\-\_\-\-M\-A\-S\-K~( 0x10 )}}\label{_digital_input_control_8c_a3faf0c469ef09efcad3e4df78b455775}
+Header Pin 5 
+
+Definition at line 72 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins().
+
+\hypertarget{_digital_input_control_8c_a7ae30c3eff4857f1a56d44e9324b94c6}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!H\-E\-A\-D\-E\-R6\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R6\-\_\-\-M\-A\-S\-K}}
+\index{H\-E\-A\-D\-E\-R6\-\_\-\-M\-A\-S\-K@{H\-E\-A\-D\-E\-R6\-\_\-\-M\-A\-S\-K}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{H\-E\-A\-D\-E\-R6\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-E\-A\-D\-E\-R6\-\_\-\-M\-A\-S\-K~( 0x20 )}}\label{_digital_input_control_8c_a7ae30c3eff4857f1a56d44e9324b94c6}
+Header Pin 6 
+
+Definition at line 69 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins().
+
+\hypertarget{_digital_input_control_8c_a493ae5a7c8d33361064abf8e25b79a58}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-100\-H\-Z~( 10u )}}\label{_digital_input_control_8c_a493ae5a7c8d33361064abf8e25b79a58}
+defines how many milliseconds to wait between samples for a 100 Hz rate 
+
+Definition at line 39 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_digital_input_control_8c_a9937cbda6211a3b2325149d7ce42bbf0}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-10\-H\-Z~( 100u )}}\label{_digital_input_control_8c_a9937cbda6211a3b2325149d7ce42bbf0}
+defines how many milliseconds to wait between samples for a 10 Hz rate 
+
+Definition at line 51 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_digital_input_control_8c_a0af6efee8263ca7ffc5ed2a50f5fd515}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-1\-H\-Z~( 1000u )}}\label{_digital_input_control_8c_a0af6efee8263ca7ffc5ed2a50f5fd515}
+defines how many milliseconds to wait between samples for a 1 Hz rate 
+
+Definition at line 54 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_digital_input_control_8c_a26e81fbdad98edae6bdb1c4957df05aa}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-20\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-20\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-20\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-20\-H\-Z}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-20\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-20\-H\-Z~( 50u )}}\label{_digital_input_control_8c_a26e81fbdad98edae6bdb1c4957df05aa}
+defines how many milliseconds to wait between samples for a 20 Hz rate 
+
+Definition at line 48 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_digital_input_control_8c_a3df3ddfff4ff75d1f226a11fee9d1d08}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-25\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-25\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-25\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-25\-H\-Z}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-25\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-25\-H\-Z~( 40u )}}\label{_digital_input_control_8c_a3df3ddfff4ff75d1f226a11fee9d1d08}
+defines how many milliseconds to wait between samples for a 25 Hz rate 
+
+Definition at line 45 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_digital_input_control_8c_a3c83bbf741854c4089c289ecef0d65ae}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}}
+\index{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z@{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-O\-U\-T\-\_\-50\-H\-Z~( 20u )}}\label{_digital_input_control_8c_a3c83bbf741854c4089c289ecef0d65ae}
+defines how many milliseconds to wait between samples for a 50 Hz rate 
+
+Definition at line 42 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_digital_input_control_8c_ab60a1549ef29d84f956765d466e3ef3d}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!\-\_\-\-Read\-Pins@{\-\_\-\-Read\-Pins}}
+\index{\-\_\-\-Read\-Pins@{\-\_\-\-Read\-Pins}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{\-\_\-\-Read\-Pins}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Read\-Pins (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_digital_input_control_8c_ab60a1549ef29d84f956765d466e3ef3d}
+Takes the digital input data from the header and buttons and stores it in the proper location. This function is designed to be called every time the timer times out.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & -\/ The sample from the header and the pushbuttons that should be stored in the proper location. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_digital_input_control_8c_ae3bc5df2e6cd3d2dba5ee33f120de40e}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!Digital\-Input\-Control\-\_\-\-Init@{Digital\-Input\-Control\-\_\-\-Init}}
+\index{Digital\-Input\-Control\-\_\-\-Init@{Digital\-Input\-Control\-\_\-\-Init}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{Digital\-Input\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Digital\-Input\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_digital_input_control_8c_ae3bc5df2e6cd3d2dba5ee33f120de40e}
+Initializes the the digital input control. 
+
+Definition at line 107 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_digital_input_control_8c_a7683dde04bce1ad9c79e2cb2052b8e07}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!Digital\-Input\-Control\-\_\-\-Set\-Config@{Digital\-Input\-Control\-\_\-\-Set\-Config}}
+\index{Digital\-Input\-Control\-\_\-\-Set\-Config@{Digital\-Input\-Control\-\_\-\-Set\-Config}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{Digital\-Input\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Digital\-Input\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_digital_input_control_8c_a7683dde04bce1ad9c79e2cb2052b8e07}
+Takes a configuration and sets it for the digital inputs on the header and pushbuttons.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the Key\-Value configuration setting for the digital inputs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_digital_input_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_digital_input_control_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the module has been initialized 
+
+Definition at line 90 of file Digital\-Input\-Control.\-c.
+
+\hypertarget{_digital_input_control_8c_a20aee3d452338690b406fc7cf7e0e9fc}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!\-\_\-sample\-Rate@{\-\_\-sample\-Rate}}
+\index{\-\_\-sample\-Rate@{\-\_\-sample\-Rate}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{\-\_\-sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Digital\-Input\-Sample\-Rate\-\_\-t} \-\_\-sample\-Rate = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-G\-I\-T\-A\-L\-I\-N\-P\-U\-T\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_digital_input_control_8c_a20aee3d452338690b406fc7cf7e0e9fc}
+Stores the desired sample rate of the header pin 
+
+Definition at line 99 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_digital_input_control_8c_a0773a851a16e38753ef7771c2df7676a}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!\-\_\-tick\-Handle@{\-\_\-tick\-Handle}}
+\index{\-\_\-tick\-Handle@{\-\_\-tick\-Handle}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{\-\_\-tick\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tick\-Timeout\-Handle\-\_\-t} \-\_\-tick\-Handle\hspace{0.3cm}{\ttfamily [static]}}}\label{_digital_input_control_8c_a0773a851a16e38753ef7771c2df7676a}
+Handle to the timer tick timeout for the digital inputs 
+
+Definition at line 93 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_digital_input_control_8c_acbb6232870f7ea042e81804a08d54236}{\index{Digital\-Input\-Control.\-c@{Digital\-Input\-Control.\-c}!\-\_\-tick\-In\-Use@{\-\_\-tick\-In\-Use}}
+\index{\-\_\-tick\-In\-Use@{\-\_\-tick\-In\-Use}!DigitalInputControl.c@{Digital\-Input\-Control.\-c}}
+\subsubsection[{\-\_\-tick\-In\-Use}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-tick\-In\-Use = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_digital_input_control_8c_acbb6232870f7ea042e81804a08d54236}
+tracks if the tick handle is in use to make sure not to use an invalid tick handle 
+
+Definition at line 96 of file Digital\-Input\-Control.\-c.
+
+
+
+Referenced by Digital\-Input\-Control\-\_\-\-Set\-Config().
+

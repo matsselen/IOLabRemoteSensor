@@ -1,0 +1,150 @@
+\hypertarget{_microphone_control_8c}{\section{Microphone\-Control.\-c File Reference}
+\label{_microphone_control_8c}\index{Microphone\-Control.\-c@{Microphone\-Control.\-c}}
+}
+
+
+Controls reading the microphone.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Microphone\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Data\-Buffer.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Adc\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for Microphone\-Control.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_microphone_control_8c_a9b2fb9820b967b823132834fc017134b}{\-\_\-\-Microphone\-Data\-Callback} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data)
+\item 
+void \hyperlink{_microphone_control_8c_ad8007b4366d23d2b6acb2d2430d3ba74}{Microphone\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_microphone_control_8c_a5ca19e88fae90de2777d203448eefc79}{Microphone\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_microphone_control_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_key_value_8h_abab8c70ab1267b15bcb9b4ce65a7a20c}{Microphone\-Sample\-Rate\-\_\-t} \hyperlink{_microphone_control_8c_a87dc2016c75940d95cea2a2052869703}{\-\_\-sample\-Rate} = \hyperlink{_key_value_8h_a1200c5816091d3d0972f3874921d5ab3}{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls reading the microphone. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the microphone and manages the configurations and settings associated with the microphone 
+
+Definition in file \hyperlink{_microphone_control_8c_source}{Microphone\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_microphone_control_8c_a9b2fb9820b967b823132834fc017134b}{\index{Microphone\-Control.\-c@{Microphone\-Control.\-c}!\-\_\-\-Microphone\-Data\-Callback@{\-\_\-\-Microphone\-Data\-Callback}}
+\index{\-\_\-\-Microphone\-Data\-Callback@{\-\_\-\-Microphone\-Data\-Callback}!MicrophoneControl.c@{Microphone\-Control.\-c}}
+\subsubsection[{\-\_\-\-Microphone\-Data\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Microphone\-Data\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_microphone_control_8c_a9b2fb9820b967b823132834fc017134b}
+Takes the microphone data and stores it in the proper location. This function is designed to be called every time there is data for the microphone.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & -\/ The sample from the microphone that should be stored in the proper location. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 162 of file Microphone\-Control.\-c.
+
+
+
+Referenced by Microphone\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_microphone_control_8c_ad8007b4366d23d2b6acb2d2430d3ba74}{\index{Microphone\-Control.\-c@{Microphone\-Control.\-c}!Microphone\-Control\-\_\-\-Init@{Microphone\-Control\-\_\-\-Init}}
+\index{Microphone\-Control\-\_\-\-Init@{Microphone\-Control\-\_\-\-Init}!MicrophoneControl.c@{Microphone\-Control.\-c}}
+\subsubsection[{Microphone\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Microphone\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_microphone_control_8c_ad8007b4366d23d2b6acb2d2430d3ba74}
+Initializes the ambient light sensor reading control. 
+
+Definition at line 50 of file Microphone\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_microphone_control_8c_a5ca19e88fae90de2777d203448eefc79}{\index{Microphone\-Control.\-c@{Microphone\-Control.\-c}!Microphone\-Control\-\_\-\-Set\-Config@{Microphone\-Control\-\_\-\-Set\-Config}}
+\index{Microphone\-Control\-\_\-\-Set\-Config@{Microphone\-Control\-\_\-\-Set\-Config}!MicrophoneControl.c@{Microphone\-Control.\-c}}
+\subsubsection[{Microphone\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Microphone\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_microphone_control_8c_a5ca19e88fae90de2777d203448eefc79}
+Takes a configuration and sets it for the microphone.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the Key\-Value configuration setting for the microphone. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Microphone\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_microphone_control_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Microphone\-Control.\-c@{Microphone\-Control.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!MicrophoneControl.c@{Microphone\-Control.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_microphone_control_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the module has been initialized 
+
+Definition at line 38 of file Microphone\-Control.\-c.
+
+\hypertarget{_microphone_control_8c_a87dc2016c75940d95cea2a2052869703}{\index{Microphone\-Control.\-c@{Microphone\-Control.\-c}!\-\_\-sample\-Rate@{\-\_\-sample\-Rate}}
+\index{\-\_\-sample\-Rate@{\-\_\-sample\-Rate}!MicrophoneControl.c@{Microphone\-Control.\-c}}
+\subsubsection[{\-\_\-sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Microphone\-Sample\-Rate\-\_\-t} \-\_\-sample\-Rate = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-C\-R\-O\-P\-H\-O\-N\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_microphone_control_8c_a87dc2016c75940d95cea2a2052869703}
+Stores the desired sample rate of the microphone 
+
+Definition at line 41 of file Microphone\-Control.\-c.
+
+
+
+Referenced by Microphone\-Control\-\_\-\-Set\-Config().
+

@@ -1,0 +1,388 @@
+\hypertarget{_ui_manager_8c}{\section{Ui\-Manager.\-c File Reference}
+\label{_ui_manager_8c}\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}}
+}
+
+
+Manages Feedback to the user.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Timer\-Tick.\-h$>$}\\*
+{\ttfamily \#include $<$Buzzer.\-h$>$}\\*
+{\ttfamily \#include $<$Ui\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Event\-Queue.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Ui\-Manager\-Sequence\-Data.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Ui\-Sequence\-Data/\-Star\-Wars\-Sequence\-Data.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Ui\-Sequence\-Data/\-Success\-Sequence\-Data.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Ui\-Sequence\-Data/\-Fail\-Sequence\-Data.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Ui\-Sequence\-Data/\-Girl\-I\-Left\-Behind\-Sequence\-Data.\-h\char`\"{}}\\*
+Include dependency graph for Ui\-Manager.\-c\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_ui_manager_8c_struct_current_sequence__t}{Current\-Sequence\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_ui_manager_8c_a79b04f8e1133709cb28f8e34c6e8efe3}{\#define {\bfseries \-\_\-\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-B\-A\-C\-K\-L\-I\-G\-H\-T}}\label{_ui_manager_8c_a79b04f8e1133709cb28f8e34c6e8efe3}
+
+\item 
+\#define \hyperlink{_ui_manager_8c_a5383e15f0bf6379af82f0022531819e6}{S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S}~(20u)
+\item 
+\#define \hyperlink{_ui_manager_8c_a429bf30d6feb9fc8dba1a03a3bd821d8}{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-E\-D\-I\-U\-M\-\_\-\-V\-O\-L\-U\-M\-E}~( \hyperlink{_buzzer_8h_a5a9b94d7f0db5b50357551f03ff7b44e}{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-A\-X\-\_\-\-V\-O\-L\-U\-M\-E} / 10u )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_ui_manager_8c_ac066839b7cc3e3b90ae5bdd7f629b3c4}{\-\_\-\-Ui\-Tick\-Call\-Back} (void)
+\item 
+static void \hyperlink{_ui_manager_8c_a4aabb887cd84641062375402ec60026b}{\-\_\-\-Play\-Sequence} (void)
+\item 
+static void \hyperlink{_ui_manager_8c_a6219944d11ab23283bb8b21a2f8ce9aa}{\-\_\-\-Zero\-Current\-Sequence} (\hyperlink{_ui_manager_8c_struct_current_sequence__t}{Current\-Sequence\-\_\-t} $\ast$sequence)
+\item 
+void \hyperlink{_ui_manager_8c_adee285ad94e23c403c0be6bf499813f4}{Ui\-Manager\-\_\-\-Init} ()
+\item 
+\hyperlink{_ui_manager_8h_a92ca95ba4a3280fad2afbee99c3a5aeb}{Play\-Sequence\-Status\-\_\-t} \hyperlink{_ui_manager_8c_a64c0bf6dac5078278c785307c7e2befe}{Ui\-Manager\-\_\-\-Play\-Sequence} (\hyperlink{_ui_manager_8h_a58d2f9d08c52a00df235b4ea090106d4}{Ui\-Sequence\-\_\-t} sequence, \hyperlink{_ui_manager_8h_ad784f2ee281b3069b1d8e39da48b2b10}{Play\-Mode\-\_\-t} mode)
+\item 
+void \hyperlink{_ui_manager_8c_a05ab7e85f5f6b42ad24038d9deb45b0f}{Ui\-Manager\-\_\-\-Stop\-Sequence} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_ui_manager_8c_aa7694ddb3bf5ff0dbf3a8cd51f350c16}{Ui\-Manager\-\_\-\-Sequence\-In\-Progress} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}{Tick\-Timeout\-Handle\-\_\-t} \hyperlink{_ui_manager_8c_ae23552406b9f285c147ffaf6c5f9a325}{\-\_\-ui\-Timer\-Handle}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_ui_manager_8c_a2755a2e5ce0bc9265b46fb70269c4c28}{\-\_\-ui\-Timer\-Active} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+\hyperlink{_ui_manager_8c_struct_current_sequence__t}{Current\-Sequence\-\_\-t} \hyperlink{_ui_manager_8c_af3b5f54475520cabe4703099c17e70c2}{\-\_\-active\-Sequence}
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_ui_manager_8c_ad94293df45e43de3e35a2d341f61d778}{\-\_\-callback\-Running} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_ui_manager_8h_ad784f2ee281b3069b1d8e39da48b2b10}{Play\-Mode\-\_\-t} \hyperlink{_ui_manager_8c_a33d8188b04ad48cf700d9fa7a84687db}{\-\_\-play\-Mode} = Play\-Mode\-\_\-\-S\-I\-N\-G\-L\-E
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages Feedback to the user. {\bfseries Description} Manages feedback to the user controlling the buzzer and the backlight L\-E\-Ds. 
+
+Definition in file \hyperlink{_ui_manager_8c_source}{Ui\-Manager.\-c}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Current\-Sequence\-\_\-t@{Current\-Sequence\-\_\-t}}\label{struct_current_sequence__t}
+\hypertarget{_ui_manager_8c_struct_current_sequence__t}{}
+\subsubsection{struct Current\-Sequence\-\_\-t}
+Define a structure that keeps track of the location in the current sequence 
+
+Definition at line 41 of file Ui\-Manager.\-c.
+
+
+
+Collaboration diagram for Current\-Sequence\-\_\-t\-:
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_ui_manager_8c_a4bc8217fb3e24a4defde61330b030ee3}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_ui_manager_8c_a4bc8217fb3e24a4defde61330b030ee3}
+&
+backlight\-Index&
+Pointer to the sequence data of the current sequence \\
+\hline
+
+\hypertarget{_ui_manager_8c_a37dd30babc09c2078921929a84dc65f8}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_ui_manager_8c_a37dd30babc09c2078921929a84dc65f8}
+&
+buzzer\-Index&
+The time (in ms) since the start of the sequence when the current backlight step is over \\
+\hline
+
+\hypertarget{_ui_manager_8c_af495ed7c9c0fc87403f9c80fc9f85c55}{const \hyperlink{_ui_manager_sequence_data_8h_struct_ui_sequence_data__t}{Ui\-Sequence\-Data\-\_\-t} $\ast$}\label{_ui_manager_8c_af495ed7c9c0fc87403f9c80fc9f85c55}
+&
+current\-Sequence&
+\\
+\hline
+
+\hypertarget{_ui_manager_8c_aecdf5b8f528312342e2092395bb3a896}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_ui_manager_8c_aecdf5b8f528312342e2092395bb3a896}
+&
+elapsed\-Ms&
+The time (in ms) since the start of hte sequence when the current buzzer step is over \\
+\hline
+
+\hypertarget{_ui_manager_8c_a566ea718c0548c4292519c741f2d5125}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_ui_manager_8c_a566ea718c0548c4292519c741f2d5125}
+&
+end\-Of\-Backlight\-Step&
+The index into the backlight array of the the current sequence \\
+\hline
+
+\hypertarget{_ui_manager_8c_a625b9aa1afa355525ff8369926cd8412}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_ui_manager_8c_a625b9aa1afa355525ff8369926cd8412}
+&
+end\-Of\-Buzzer\-Step&
+The index into the buzzer array of the current sequence \\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_ui_manager_8c_a429bf30d6feb9fc8dba1a03a3bd821d8}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-E\-D\-I\-U\-M\-\_\-\-V\-O\-L\-U\-M\-E@{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-E\-D\-I\-U\-M\-\_\-\-V\-O\-L\-U\-M\-E}}
+\index{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-E\-D\-I\-U\-M\-\_\-\-V\-O\-L\-U\-M\-E@{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-E\-D\-I\-U\-M\-\_\-\-V\-O\-L\-U\-M\-E}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-E\-D\-I\-U\-M\-\_\-\-V\-O\-L\-U\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-E\-D\-I\-U\-M\-\_\-\-V\-O\-L\-U\-M\-E~( {\bf B\-U\-Z\-Z\-E\-R\-\_\-\-D\-U\-T\-Y\-\_\-\-M\-A\-X\-\_\-\-V\-O\-L\-U\-M\-E} / 10u )}}\label{_ui_manager_8c_a429bf30d6feb9fc8dba1a03a3bd821d8}
+Define a buzzer duty that is not quiet, but not loud, remembering the S\-P\-L is logarithmic 
+
+Definition at line 59 of file Ui\-Manager.\-c.
+
+
+
+Referenced by Ui\-Manager\-\_\-\-Play\-Sequence().
+
+\hypertarget{_ui_manager_8c_a5383e15f0bf6379af82f0022531819e6}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S@{S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S}}
+\index{S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S@{S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S~(20u)}}\label{_ui_manager_8c_a5383e15f0bf6379af82f0022531819e6}
+Defines how often the sequence callback should run which determines the resolution of the sequence generator. 
+
+Definition at line 56 of file Ui\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence(), and Ui\-Manager\-\_\-\-Play\-Sequence().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_ui_manager_8c_a4aabb887cd84641062375402ec60026b}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!\-\_\-\-Play\-Sequence@{\-\_\-\-Play\-Sequence}}
+\index{\-\_\-\-Play\-Sequence@{\-\_\-\-Play\-Sequence}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{\-\_\-\-Play\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Play\-Sequence (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_ui_manager_8c_a4aabb887cd84641062375402ec60026b}
+Handles the playing of a sequence. Turns on and off the appropriate outputs and sets the outputs to their proper values. 
+
+Definition at line 210 of file Ui\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Ui\-Tick\-Call\-Back(), and Ui\-Manager\-\_\-\-Play\-Sequence().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ui_manager_8c_ac066839b7cc3e3b90ae5bdd7f629b3c4}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!\-\_\-\-Ui\-Tick\-Call\-Back@{\-\_\-\-Ui\-Tick\-Call\-Back}}
+\index{\-\_\-\-Ui\-Tick\-Call\-Back@{\-\_\-\-Ui\-Tick\-Call\-Back}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{\-\_\-\-Ui\-Tick\-Call\-Back}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Ui\-Tick\-Call\-Back (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_ui_manager_8c_ac066839b7cc3e3b90ae5bdd7f629b3c4}
+Handles the tick and processing needed to generate U\-I sequences. 
+
+Definition at line 199 of file Ui\-Manager.\-c.
+
+
+
+Referenced by Ui\-Manager\-\_\-\-Play\-Sequence().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ui_manager_8c_a6219944d11ab23283bb8b21a2f8ce9aa}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!\-\_\-\-Zero\-Current\-Sequence@{\-\_\-\-Zero\-Current\-Sequence}}
+\index{\-\_\-\-Zero\-Current\-Sequence@{\-\_\-\-Zero\-Current\-Sequence}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{\-\_\-\-Zero\-Current\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Zero\-Current\-Sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf Current\-Sequence\-\_\-t} $\ast$}]{sequence}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_ui_manager_8c_a6219944d11ab23283bb8b21a2f8ce9aa}
+Zeros the elements of the current sequence.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in/out\mbox{]}} & sequence -\/ the \hyperlink{_ui_manager_8c_struct_current_sequence__t}{Current\-Sequence\-\_\-t} to be zeroed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 333 of file Ui\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence(), and Ui\-Manager\-\_\-\-Play\-Sequence().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ui_manager_8c_adee285ad94e23c403c0be6bf499813f4}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!Ui\-Manager\-\_\-\-Init@{Ui\-Manager\-\_\-\-Init}}
+\index{Ui\-Manager\-\_\-\-Init@{Ui\-Manager\-\_\-\-Init}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{Ui\-Manager\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Ui\-Manager\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_ui_manager_8c_adee285ad94e23c403c0be6bf499813f4}
+Initializes the U\-I manager and the dependancies that the U\-I manager controls 
+
+Definition at line 94 of file Ui\-Manager.\-c.
+
+
+
+Referenced by Self\-Test\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ui_manager_8c_a64c0bf6dac5078278c785307c7e2befe}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!Ui\-Manager\-\_\-\-Play\-Sequence@{Ui\-Manager\-\_\-\-Play\-Sequence}}
+\index{Ui\-Manager\-\_\-\-Play\-Sequence@{Ui\-Manager\-\_\-\-Play\-Sequence}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{Ui\-Manager\-\_\-\-Play\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Play\-Sequence\-Status\-\_\-t} Ui\-Manager\-\_\-\-Play\-Sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf Ui\-Sequence\-\_\-t}}]{sequence, }
+\item[{{\bf Play\-Mode\-\_\-t}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{_ui_manager_8c_a64c0bf6dac5078278c785307c7e2befe}
+Plays a preset sequence that the U\-I manager can indicate an event to the user. The U\-I Manager can only play one sequence at a time, so it will not play another sequence if one is currently in progress. It does post an event to the event queue when the sequence is finished playing so that another sequence can be played if needed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sequence} & -\/ sequence to play to the user \\
+\hline
+\mbox{\tt in}  & {\em mode} & -\/ the play mode to play the sequence with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status if the sequence was played and the reason if it wasn't. 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file Ui\-Manager.\-c.
+
+
+
+Referenced by Self\-Test\-\_\-\-Start().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_ui_manager_8c_aa7694ddb3bf5ff0dbf3a8cd51f350c16}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!Ui\-Manager\-\_\-\-Sequence\-In\-Progress@{Ui\-Manager\-\_\-\-Sequence\-In\-Progress}}
+\index{Ui\-Manager\-\_\-\-Sequence\-In\-Progress@{Ui\-Manager\-\_\-\-Sequence\-In\-Progress}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{Ui\-Manager\-\_\-\-Sequence\-In\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Ui\-Manager\-\_\-\-Sequence\-In\-Progress (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_ui_manager_8c_aa7694ddb3bf5ff0dbf3a8cd51f350c16}
+Queries the Ui\-Manager to check if a sequence is currently in progress.
+
+\begin{DoxyReturn}{Returns}
+True if a sequence is in progress. False otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 191 of file Ui\-Manager.\-c.
+
+\hypertarget{_ui_manager_8c_a05ab7e85f5f6b42ad24038d9deb45b0f}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!Ui\-Manager\-\_\-\-Stop\-Sequence@{Ui\-Manager\-\_\-\-Stop\-Sequence}}
+\index{Ui\-Manager\-\_\-\-Stop\-Sequence@{Ui\-Manager\-\_\-\-Stop\-Sequence}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{Ui\-Manager\-\_\-\-Stop\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}void Ui\-Manager\-\_\-\-Stop\-Sequence (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_ui_manager_8c_a05ab7e85f5f6b42ad24038d9deb45b0f}
+Commands the U\-I manager to stop playing the current sequence. 
+
+Definition at line 169 of file Ui\-Manager.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_ui_manager_8c_af3b5f54475520cabe4703099c17e70c2}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!\-\_\-active\-Sequence@{\-\_\-active\-Sequence}}
+\index{\-\_\-active\-Sequence@{\-\_\-active\-Sequence}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{\-\_\-active\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Current\-Sequence\-\_\-t} \-\_\-active\-Sequence}}\label{_ui_manager_8c_af3b5f54475520cabe4703099c17e70c2}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{
+            .currentSequence = \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL},
+            .backlightIndex = 0u,
+            .buzzerIndex = 0u,
+            .elapsedMs = 0u,
+    \}
+\end{DoxyCode}
+Maintains a pointer to the active sequence 
+
+Definition at line 71 of file Ui\-Manager.\-c.
+
+\hypertarget{_ui_manager_8c_ad94293df45e43de3e35a2d341f61d778}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!\-\_\-callback\-Running@{\-\_\-callback\-Running}}
+\index{\-\_\-callback\-Running@{\-\_\-callback\-Running}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{\-\_\-callback\-Running}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-callback\-Running = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_ui_manager_8c_ad94293df45e43de3e35a2d341f61d778}
+Tracks if the callback currently running 
+
+Definition at line 80 of file Ui\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence(), \-\_\-\-Ui\-Tick\-Call\-Back(), and Ui\-Manager\-\_\-\-Stop\-Sequence().
+
+\hypertarget{_ui_manager_8c_a33d8188b04ad48cf700d9fa7a84687db}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!\-\_\-play\-Mode@{\-\_\-play\-Mode}}
+\index{\-\_\-play\-Mode@{\-\_\-play\-Mode}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{\-\_\-play\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Play\-Mode\-\_\-t} \-\_\-play\-Mode = Play\-Mode\-\_\-\-S\-I\-N\-G\-L\-E\hspace{0.3cm}{\ttfamily [static]}}}\label{_ui_manager_8c_a33d8188b04ad48cf700d9fa7a84687db}
+Tracks the current playback mode 
+
+Definition at line 83 of file Ui\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence(), and Ui\-Manager\-\_\-\-Play\-Sequence().
+
+\hypertarget{_ui_manager_8c_a2755a2e5ce0bc9265b46fb70269c4c28}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!\-\_\-ui\-Timer\-Active@{\-\_\-ui\-Timer\-Active}}
+\index{\-\_\-ui\-Timer\-Active@{\-\_\-ui\-Timer\-Active}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{\-\_\-ui\-Timer\-Active}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-ui\-Timer\-Active = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_ui_manager_8c_a2755a2e5ce0bc9265b46fb70269c4c28}
+Tracks if the U\-I tick is in use 
+
+Definition at line 68 of file Ui\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence(), Ui\-Manager\-\_\-\-Play\-Sequence(), Ui\-Manager\-\_\-\-Sequence\-In\-Progress(), and Ui\-Manager\-\_\-\-Stop\-Sequence().
+
+\hypertarget{_ui_manager_8c_ae23552406b9f285c147ffaf6c5f9a325}{\index{Ui\-Manager.\-c@{Ui\-Manager.\-c}!\-\_\-ui\-Timer\-Handle@{\-\_\-ui\-Timer\-Handle}}
+\index{\-\_\-ui\-Timer\-Handle@{\-\_\-ui\-Timer\-Handle}!UiManager.c@{Ui\-Manager.\-c}}
+\subsubsection[{\-\_\-ui\-Timer\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tick\-Timeout\-Handle\-\_\-t} \-\_\-ui\-Timer\-Handle\hspace{0.3cm}{\ttfamily [static]}}}\label{_ui_manager_8c_ae23552406b9f285c147ffaf6c5f9a325}
+Stores the handle to the tick timer 
+
+Definition at line 66 of file Ui\-Manager.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence(), Ui\-Manager\-\_\-\-Play\-Sequence(), and Ui\-Manager\-\_\-\-Stop\-Sequence().
+

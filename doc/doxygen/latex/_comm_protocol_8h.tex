@@ -1,0 +1,274 @@
+\hypertarget{_comm_protocol_8h}{\section{Comm\-Protocol.\-h File Reference}
+\label{_comm_protocol_8h}\index{Comm\-Protocol.\-h@{Comm\-Protocol.\-h}}
+}
+
+
+Header for the communications protocol module.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_comm_protocol_8h_struct_rf_status__t}{Rf\-Status\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_comm_protocol_8h_a09da3f97e60606e3db6e1d012fd0b43a}{Rf\-Connection\-Status\-\_\-t} \{ \\*
+{\bfseries Rf\-Connection\-Status\-\_\-\-I\-N\-V\-L\-A\-L\-I\-D} = 0u, 
+\\*
+{\bfseries Rf\-Connection\-Status\-\_\-\-N\-O\-T\-\_\-\-P\-A\-I\-R\-E\-D} = 0x20u, 
+\\*
+{\bfseries Rf\-Connection\-Status\-\_\-\-F\-I\-R\-S\-T} = Rf\-Connection\-Status\-\_\-\-N\-O\-T\-\_\-\-P\-A\-I\-R\-E\-D, 
+\\*
+{\bfseries Rf\-Connection\-Status\-\_\-\-P\-A\-I\-R\-I\-N\-G} = 0x21u, 
+\\*
+{\bfseries Rf\-Connection\-Status\-\_\-\-P\-A\-I\-R\-E\-D\-\_\-\-N\-O\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D} = 0x22u, 
+\\*
+{\bfseries Rf\-Connection\-Status\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D} = 0x23u, 
+\\*
+{\bfseries Rf\-Connection\-Status\-\_\-\-D\-A\-T\-A} = 0x24u, 
+\\*
+{\bfseries Rf\-Connection\-Status\-\_\-\-L\-A\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_comm_protocol_8h_af530adc2e8aa195eeebc30a5c16626c7}{Comm\-Protocol\-\_\-\-Init} ()
+\item 
+void \hyperlink{_comm_protocol_8h_a1601bc62252475a299e517b13e49766d}{Comm\-Protocol\-\_\-\-Rx\-Handler} (void)
+\item 
+void \hyperlink{_comm_protocol_8h_a0591f11adf0d52b4fd5fa913498e9dd9}{Comm\-Protocol\-\_\-\-Tx\-Handler} (void)
+\item 
+void \hyperlink{_comm_protocol_8h_ac8a28eff6efb38ab48e5becd361757e9}{Comm\-Protocol\-\_\-\-Get\-Rf\-Status} (\hyperlink{_comm_protocol_8h_struct_rf_status__t}{Rf\-Status\-\_\-t} $\ast$status)
+\item 
+void \hyperlink{_comm_protocol_8h_a11fcf3a095c467e5da58a75e746059f1}{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\item 
+void \hyperlink{_comm_protocol_8h_a1f65077f8bed3f077ec2a561f20bf4b5}{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Data\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} message\-Length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header for the communications protocol module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Header for the communications protocol module that will manage the protocol and data for the communications to the other micro. 
+
+Definition in file \hyperlink{_comm_protocol_8h_source}{Comm\-Protocol.\-h}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Rf\-Status\-\_\-t@{Rf\-Status\-\_\-t}}\label{struct_rf_status__t}
+\hypertarget{_comm_protocol_8h_struct_rf_status__t}{}
+\subsubsection{struct Rf\-Status\-\_\-t}
+Defines a structure to hold the R\-F Status information in 
+
+Definition at line 40 of file Comm\-Protocol.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_comm_protocol_8h_aeabd9b954514e72012545cb48161b9eb}{\hyperlink{_comm_protocol_8h_a09da3f97e60606e3db6e1d012fd0b43a}{Rf\-Connection\-Status\-\_\-t}}\label{_comm_protocol_8h_aeabd9b954514e72012545cb48161b9eb}
+&
+connection\-Status&
+\\
+\hline
+
+\hypertarget{_comm_protocol_8h_ac14b44a7515b2c5aeea3742edc6f5a5a}{\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t}}\label{_comm_protocol_8h_ac14b44a7515b2c5aeea3742edc6f5a5a}
+&
+fw\-Major&
+\\
+\hline
+
+\hypertarget{_comm_protocol_8h_a589097f454790dfae911b82bb0f2c6a2}{\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t}}\label{_comm_protocol_8h_a589097f454790dfae911b82bb0f2c6a2}
+&
+fw\-Minor&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_comm_protocol_8h_a09da3f97e60606e3db6e1d012fd0b43a}{\index{Comm\-Protocol.\-h@{Comm\-Protocol.\-h}!Rf\-Connection\-Status\-\_\-t@{Rf\-Connection\-Status\-\_\-t}}
+\index{Rf\-Connection\-Status\-\_\-t@{Rf\-Connection\-Status\-\_\-t}!CommProtocol.h@{Comm\-Protocol.\-h}}
+\subsubsection[{Rf\-Connection\-Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Rf\-Connection\-Status\-\_\-t}}}\label{_comm_protocol_8h_a09da3f97e60606e3db6e1d012fd0b43a}
+Defines the valid states for the R\-F Connection Status 
+
+Definition at line 27 of file Comm\-Protocol.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_comm_protocol_8h_ac8a28eff6efb38ab48e5becd361757e9}{\index{Comm\-Protocol.\-h@{Comm\-Protocol.\-h}!Comm\-Protocol\-\_\-\-Get\-Rf\-Status@{Comm\-Protocol\-\_\-\-Get\-Rf\-Status}}
+\index{Comm\-Protocol\-\_\-\-Get\-Rf\-Status@{Comm\-Protocol\-\_\-\-Get\-Rf\-Status}!CommProtocol.h@{Comm\-Protocol.\-h}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Get\-Rf\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Get\-Rf\-Status (
+\begin{DoxyParamCaption}
+\item[{{\bf Rf\-Status\-\_\-t} $\ast$}]{status}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8h_ac8a28eff6efb38ab48e5becd361757e9}
+Gets the R\-F Status information.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em status} & -\/ structure to hold the R\-F status in \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 342 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Rf\-Command(), and \-\_\-\-Process\-Events\-\_\-\-R\-U\-N().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8h_a11fcf3a095c467e5da58a75e746059f1}{\index{Comm\-Protocol.\-h@{Comm\-Protocol.\-h}!Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet@{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet}}
+\index{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet@{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet}!CommProtocol.h@{Comm\-Protocol.\-h}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8h_a11fcf3a095c467e5da58a75e746059f1}
+Handles the packet data for the Start Data Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 424 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler(), and Self\-Test\-\_\-\-Process().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8h_a1f65077f8bed3f077ec2a561f20bf4b5}{\index{Comm\-Protocol.\-h@{Comm\-Protocol.\-h}!Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet@{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet}}
+\index{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet@{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet}!CommProtocol.h@{Comm\-Protocol.\-h}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{message\-Data\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{message\-Length}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8h_a1f65077f8bed3f077ec2a561f20bf4b5}
+Handles the packet data for the Stop Data Command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message\-Data\mbox{[}$\,$\mbox{]}} & -\/ array of the data contained in the message \\
+\hline
+\mbox{\tt in}  & {\em message\-Length} & -\/ the number of valid bytes in the message data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 458 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Rx\-Handler(), and Self\-Test\-\_\-\-Process().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8h_af530adc2e8aa195eeebc30a5c16626c7}{\index{Comm\-Protocol.\-h@{Comm\-Protocol.\-h}!Comm\-Protocol\-\_\-\-Init@{Comm\-Protocol\-\_\-\-Init}}
+\index{Comm\-Protocol\-\_\-\-Init@{Comm\-Protocol\-\_\-\-Init}!CommProtocol.h@{Comm\-Protocol.\-h}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8h_af530adc2e8aa195eeebc30a5c16626c7}
+Initialized the comm protocol. 
+
+Definition at line 198 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8h_a1601bc62252475a299e517b13e49766d}{\index{Comm\-Protocol.\-h@{Comm\-Protocol.\-h}!Comm\-Protocol\-\_\-\-Rx\-Handler@{Comm\-Protocol\-\_\-\-Rx\-Handler}}
+\index{Comm\-Protocol\-\_\-\-Rx\-Handler@{Comm\-Protocol\-\_\-\-Rx\-Handler}!CommProtocol.h@{Comm\-Protocol.\-h}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Rx\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Rx\-Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8h_a1601bc62252475a299e517b13e49766d}
+Handles the events related to the received events for the Comm Protocol. 
+
+Definition at line 228 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_comm_protocol_8h_a0591f11adf0d52b4fd5fa913498e9dd9}{\index{Comm\-Protocol.\-h@{Comm\-Protocol.\-h}!Comm\-Protocol\-\_\-\-Tx\-Handler@{Comm\-Protocol\-\_\-\-Tx\-Handler}}
+\index{Comm\-Protocol\-\_\-\-Tx\-Handler@{Comm\-Protocol\-\_\-\-Tx\-Handler}!CommProtocol.h@{Comm\-Protocol.\-h}}
+\subsubsection[{Comm\-Protocol\-\_\-\-Tx\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void Comm\-Protocol\-\_\-\-Tx\-Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_comm_protocol_8h_a0591f11adf0d52b4fd5fa913498e9dd9}
+Handles the events related to the transmitted events for the Comm Protocol. 
+
+Definition at line 307 of file Comm\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

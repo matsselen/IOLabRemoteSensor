@@ -1,0 +1,14 @@
+<map id="BuzzerControl_SetConfig" name="BuzzerControl_SetConfig">
+<area shape="rect" href="$_key_value_8c.html#a30aa66a5e57b84caf453be8ec13a23f8" title="KeyValue_Separate" alt="" coords="259,44,398,71" />
+<area shape="rect" href="$_pwm_8c.html#a7371820ffd6164c6fe538095708d2190" title="Pwm_Disable" alt="" coords="498,82,599,108" />
+<area shape="rect" href="$_buzzer_control_8c.html#a45d1a9d49f6652adb4373f95dbc3dcd2" title="_BuzzerControl_SetOutput" alt="" coords="239,146,418,172" />
+<area shape="rect" href="$_buzzer_control_8c.html#a4dfe5ad09d15147959640a9c365cd02a" title="_BuzzerControl_SetDutyCycle" alt="" coords="228,222,428,248" />
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="688,6,803,32" />
+<area shape="rect" href="$_pwm_8c.html#a4cde0daf6b044c1a1fc69b618509c8d6" title="_AnyChannelsEnabled" alt="" coords="667,107,824,134" />
+<area shape="rect" href="$_pwm_8c.html#a3bcc133bd11de8cdebe6cca148a86697" title="Pwm_SetFrequency" alt="" coords="478,183,619,210" />
+<area shape="rect" href="$_pwm_8c.html#aeeb64145d199ec26bf1529408072857e" title="Pwm_Enable" alt="" coords="499,132,598,159" />
+<area shape="rect" href="$_timer_8c.html#a9c2492c1b5bfb4de29379c4ab7881d9c" title="Timer_B0_Configure" alt="" coords="674,208,818,235" />
+<area shape="rect" href="$_pwm_8c.html#a0b1227ceeeff83336f29d8b94d6ef238" title="Pwm_SetDuty" alt="" coords="694,259,798,286" />
+<area shape="rect" href="$_pwm_8c.html#a44f8de75f3f084d05fff0a54dc0b7df5" title="_DutyToCount" alt="" coords="906,107,1012,134" />
+<area shape="rect" href="$_timer_8c.html#a6590a26eceba06333f451e69d6ea3987" title="Timer_B0CCX_Configure" alt="" coords="874,208,1044,235" />
+</map>

@@ -1,0 +1,8 @@
+<map id="System.c" name="System.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="246,155,318,182" />
+<area shape="rect" href="$_system_8h.html" title="System module driver. " alt="" coords="190,80,267,107" />
+<area shape="rect" href="$_board_8h.html" title="Board initialization module header file. " alt="" coords="291,80,358,107" />
+<area shape="rect" href="$_gpio_8h.html" title="GPIO configuration and control macros and functions. " alt="" coords="382,80,440,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="464,80,534,107" />
+</map>

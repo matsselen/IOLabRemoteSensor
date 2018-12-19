@@ -1,0 +1,12 @@
+<map id="_HandleHumanEncoderCommand" name="_HandleHumanEncoderCommand">
+<area shape="rect" href="$_encoder_8c.html#aebbaa45bf07e0fe0c34185589998f871" title="Encoder_Start" alt="" coords="289,37,396,64" />
+<area shape="rect" href="$_encoder_8c.html#a433dcdf1689d78f0710da855c15f2aa4" title="Encoder_Read" alt="" coords="288,88,397,115" />
+<area shape="rect" href="$_serial_8c.html#a88d9cf267de40eaeac599d0fa554908f" title="Serial_SendPacket" alt="" coords="464,151,597,177" />
+<area shape="rect" href="$_test_protocol_8c.html#a9a6c77304d30771f67961c7100ad749a" title="_SendAckHuman" alt="" coords="280,189,405,216" />
+<area shape="rect" href="$_gpio_8c.html#ad54d30c1b01480f97a4d24fd7ef625f9" title="Gpio_SetPortU" alt="" coords="476,37,585,64" />
+<area shape="rect" href="$_encoder_8c.html#ac60cabf6f4e0f21139a909d5d168c578" title="_Encoder_ClearBuffer" alt="" coords="455,88,607,115" />
+<area shape="rect" href="$_gpio_8c.html#afcb987f4ad78e26f735ec3bfcfec083e" title="_UnlockPortU" alt="" coords="676,5,780,32" />
+<area shape="rect" href="$_gpio_8c.html#aa751eb0ce20ef9c79739ced94de232c8" title="_LockPortU" alt="" coords="683,56,773,83" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="672,125,784,152" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="656,176,800,203" />
+</map>

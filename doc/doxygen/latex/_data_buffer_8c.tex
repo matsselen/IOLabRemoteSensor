@@ -1,0 +1,632 @@
+\hypertarget{_data_buffer_8c}{\section{Data\-Buffer.\-c File Reference}
+\label{_data_buffer_8c}\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}}
+}
+
+
+Data buffer is the memory space reserved to store sensor data.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Data\-Buffer.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for Data\-Buffer.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_data_buffer_8c_a3a6df99d015de5826a3cfa645b161b8a}{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}~( 2u )
+\item 
+\#define \hyperlink{_data_buffer_8c_aa2ea658762e3a3ca1b18e340e91d6569}{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}~( 1u )
+\item 
+\#define \hyperlink{_data_buffer_8c_a6eb2ced06851e69acd91f81482c65de2}{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-I\-D\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}~( 0u )
+\item 
+\#define \hyperlink{_data_buffer_8c_a2841d30bacc01f557e67fd7b48fd2370}{N\-U\-M\-\_\-\-S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-O\-F\-F\-S\-E\-T}~( 1u )
+\item 
+\#define \hyperlink{_data_buffer_8c_a1612dc8eaffb09cd525bf35d1fefb483}{N\-U\-M\-\_\-\-U\-S\-E\-F\-U\-L\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-F\-F\-S\-E\-T}~( 0u )
+\item 
+\#define \hyperlink{_data_buffer_8c_a7a16665ced747679772d662540002377}{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}~( 2u )
+\item 
+\#define \hyperlink{_data_buffer_8c_afe1d543784e47d34bf1636c2c6b2c191}{A\-R\-R\-A\-Y\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}~( 2u )
+\item 
+\#define \hyperlink{_data_buffer_8c_aa96cda3dc4327fc103977fd4483aefb2}{I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-D\-E\-X}~( -\/1 )
+\item 
+\#define \hyperlink{_data_buffer_8c_a2baae4b5182987882940b18f9ef45e24}{O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-B\-I\-T}~((\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t})(1$<$$<$7u ))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_data_buffer_8c_a872304566ea63e10d3634f3f892fdaf1}{\-\_\-\-Initialize\-Data} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} array\mbox{[}$\,$\mbox{]})
+\item 
+static \hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} \hyperlink{_data_buffer_8c_ad726ed4ec48df844bfd5225ccca52117}{\-\_\-\-Index\-Of\-Subarray\-Id} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} subarray\-Id)
+\item 
+void \hyperlink{_data_buffer_8c_a8108e383cde1958a0bbfbdffc5068858}{Data\-Buffer\-\_\-\-Init} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} array0\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} array1\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} array\-Size)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8c_adb6f152c38817dfbb87000bf1b9c58ac}{Data\-Buffer\-\_\-\-Set\-Data} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} start\-Index, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} length, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_data_buffer_8c_ad42e09510e8b4c7ffeb89e1641a3d96d}{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$buffer\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$$\ast$buffer)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_data_buffer_8c_a20cc73afb2cfc749b7ff31f7610eb034}{Data\-Buffer\-\_\-\-Rotate\-Buffer} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8c_a1076e54100ff8b0b70400da353c838d2}{Data\-Buffer\-\_\-\-Create\-Subarray} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} sub\-Array\-Id, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} length)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8c_aa05e29733eb661098d83ecf808fb1c40}{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} sub\-Array\-Id, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} length, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8c_a3b77682af68cdfbdf4dbcf06f5468008}{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} sub\-Array\-Id, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} length, const \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_data_buffer_8c_a850d89976bc47e7b042b147550929713}{Data\-Buffer\-\_\-\-Clear\-Subarrays} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8c_a402d58a4c760b0dbba6f51dab2efa11b}{Data\-Buffer\-\_\-\-Subarray\-Exists} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} sub\-Array\-Id)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$ \hyperlink{_data_buffer_8c_a2b96d86ba5bc17dbd85b765f4f28dfd6}{\-\_\-array0} = \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$ \hyperlink{_data_buffer_8c_a03b6a117765d4d114456097b1eb29cf2}{\-\_\-array1} = \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$ \hyperlink{_data_buffer_8c_abcfa00c4e494f055ea9a420550c89d45}{\-\_\-write\-Array} = \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_data_buffer_8c_ac4adbbd8ef2287b18f3af3ac72dc4a07}{\-\_\-array\-Size} = 0u
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_data_buffer_8c_a0da63495aab278a3200ebf7ff9965d18}{\-\_\-allocated\-Bytes\-Size} = 0u
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_data_buffer_8c_a59607b94216175ca9532cec389208074}{\-\_\-sub\-Array\-Start\-Index} \mbox{[}\hyperlink{_data_buffer_8h_ab5946581a35b97466ba9abf5ca217528}{M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S}\mbox{]} = \{ 0u \}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_data_buffer_8c_acf8563fbcb5f6609744b4330f52cb0ce}{\-\_\-sub\-Array\-End\-Index} \mbox{[}\hyperlink{_data_buffer_8h_ab5946581a35b97466ba9abf5ca217528}{M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S}\mbox{]} = \{ 0u \}
+\item 
+static \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_data_buffer_8c_a7dab33c92419a928329aa9b3939fe4d0}{\-\_\-num\-Active\-Subs} = 0u
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data buffer is the memory space reserved to store sensor data. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The data buffer contains memory space to store sensor data and can be written to and read from. The buffer contains locking mechanisms to ensure that data is not compromised and is valid. 
+
+Definition in file \hyperlink{_data_buffer_8c_source}{Data\-Buffer.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_data_buffer_8c_afe1d543784e47d34bf1636c2c6b2c191}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!A\-R\-R\-A\-Y\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{A\-R\-R\-A\-Y\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}}
+\index{A\-R\-R\-A\-Y\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{A\-R\-R\-A\-Y\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{A\-R\-R\-A\-Y\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-R\-A\-Y\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D~( 2u )}}\label{_data_buffer_8c_afe1d543784e47d34bf1636c2c6b2c191}
+The number of bytes of the array that are used for overhead 
+
+Definition at line 58 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Create\-Subarray().
+
+\hypertarget{_data_buffer_8c_aa96cda3dc4327fc103977fd4483aefb2}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-D\-E\-X@{I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-D\-E\-X}}
+\index{I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-D\-E\-X@{I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-D\-E\-X}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-D\-E\-X~( -\/1 )}}\label{_data_buffer_8c_aa96cda3dc4327fc103977fd4483aefb2}
+The value of an invalid subarray Index 
+
+Definition at line 61 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Index\-Of\-Subarray\-Id(), Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit(), Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit(), Data\-Buffer\-\_\-\-Create\-Subarray(), and Data\-Buffer\-\_\-\-Subarray\-Exists().
+
+\hypertarget{_data_buffer_8c_a2841d30bacc01f557e67fd7b48fd2370}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!N\-U\-M\-\_\-\-S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-O\-F\-F\-S\-E\-T@{N\-U\-M\-\_\-\-S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{N\-U\-M\-\_\-\-S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-O\-F\-F\-S\-E\-T@{N\-U\-M\-\_\-\-S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-O\-F\-F\-S\-E\-T}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-O\-F\-F\-S\-E\-T~( 1u )}}\label{_data_buffer_8c_a2841d30bacc01f557e67fd7b48fd2370}
+The number of subarrays byte offset is how far into the array the number of subarrays are stored. 
+
+Definition at line 46 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Clear\-Subarrays(), and Data\-Buffer\-\_\-\-Create\-Subarray().
+
+\hypertarget{_data_buffer_8c_a1612dc8eaffb09cd525bf35d1fefb483}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!N\-U\-M\-\_\-\-U\-S\-E\-F\-U\-L\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-F\-F\-S\-E\-T@{N\-U\-M\-\_\-\-U\-S\-E\-F\-U\-L\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{N\-U\-M\-\_\-\-U\-S\-E\-F\-U\-L\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-F\-F\-S\-E\-T@{N\-U\-M\-\_\-\-U\-S\-E\-F\-U\-L\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-F\-F\-S\-E\-T}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-U\-S\-E\-F\-U\-L\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-U\-S\-E\-F\-U\-L\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-F\-F\-S\-E\-T~( 0u )}}\label{_data_buffer_8c_a1612dc8eaffb09cd525bf35d1fefb483}
+The number of useful bytes offset is how many bytes of the array can store useful data based on the subarray configuration. The number of useful bytes byte itself is not included in the count of useful bytes. 
+
+Definition at line 52 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Initialize\-Data(), Data\-Buffer\-\_\-\-Clear\-Subarrays(), and Data\-Buffer\-\_\-\-Create\-Subarray().
+
+\hypertarget{_data_buffer_8c_a2baae4b5182987882940b18f9ef45e24}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-B\-I\-T@{O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-B\-I\-T}}
+\index{O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-B\-I\-T@{O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-B\-I\-T}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-B\-I\-T~(({\bf uint8\-\_\-t})(1$<$$<$7u ))}}\label{_data_buffer_8c_a2baae4b5182987882940b18f9ef45e24}
+Defines the overflow bit as msb of Byte 
+
+Definition at line 64 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Initialize\-Data(), Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit(), and Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit().
+
+\hypertarget{_data_buffer_8c_a7a16665ced747679772d662540002377}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}}
+\index{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D~( 2u )}}\label{_data_buffer_8c_a7a16665ced747679772d662540002377}
+The number of bytes of overhead each subarray generates 
+
+Definition at line 55 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Create\-Subarray().
+
+\hypertarget{_data_buffer_8c_a3a6df99d015de5826a3cfa645b161b8a}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T@{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T@{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-D\-A\-T\-A\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T~( 2u )}}\label{_data_buffer_8c_a3a6df99d015de5826a3cfa645b161b8a}
+The number of bytes offset from the start of the subarray to the start of data 
+
+Definition at line 32 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit(), and Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit().
+
+\hypertarget{_data_buffer_8c_a6eb2ced06851e69acd91f81482c65de2}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-I\-D\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T@{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-I\-D\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-I\-D\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T@{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-I\-D\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-I\-D\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-I\-D\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T~( 0u )}}\label{_data_buffer_8c_a6eb2ced06851e69acd91f81482c65de2}
+The subarray I\-D byte offset is how many places to look after the subarray starting index. 
+
+Definition at line 41 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Index\-Of\-Subarray\-Id(), \-\_\-\-Initialize\-Data(), Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit(), and Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit().
+
+\hypertarget{_data_buffer_8c_aa2ea658762e3a3ca1b18e340e91d6569}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T@{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T@{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-B\-A\-R\-R\-A\-Y\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-Y\-T\-E\-\_\-\-O\-F\-F\-S\-E\-T~( 1u )}}\label{_data_buffer_8c_aa2ea658762e3a3ca1b18e340e91d6569}
+The subarray length byte offset is how many places to look after the subarray I\-D to find the length byte of that subarray. 
+
+Definition at line 37 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Initialize\-Data(), Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit(), and Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_data_buffer_8c_ad726ed4ec48df844bfd5225ccca52117}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-\-Index\-Of\-Subarray\-Id@{\-\_\-\-Index\-Of\-Subarray\-Id}}
+\index{\-\_\-\-Index\-Of\-Subarray\-Id@{\-\_\-\-Index\-Of\-Subarray\-Id}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-\-Index\-Of\-Subarray\-Id}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int16\-\_\-t} \-\_\-\-Index\-Of\-Subarray\-Id (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{subarray\-Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_ad726ed4ec48df844bfd5225ccca52117}
+Locates the subarray index for a specified subarray I\-D. If the I\-D is not found, returns I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-D\-E\-X.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em subarray\-Id-\/} & the identifier for the subarray.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & The index of the subarray I\-D. Returns I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-D\-E\-X if I\-D is not found. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 451 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit(), Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit(), Data\-Buffer\-\_\-\-Create\-Subarray(), and Data\-Buffer\-\_\-\-Subarray\-Exists().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8c_a872304566ea63e10d3634f3f892fdaf1}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-\-Initialize\-Data@{\-\_\-\-Initialize\-Data}}
+\index{\-\_\-\-Initialize\-Data@{\-\_\-\-Initialize\-Data}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-\-Initialize\-Data}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Initialize\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{array\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_a872304566ea63e10d3634f3f892fdaf1}
+Clears the length bytes of the data stored in the buffer to \char`\"{}zero\char`\"{} it out.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em array} & -\/ the array to get initialized. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 426 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Create\-Subarray(), and Data\-Buffer\-\_\-\-Rotate\-Buffer().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8c_a3b77682af68cdfbdf4dbcf06f5468008}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit@{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit}}
+\index{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit@{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{sub\-Array\-Id, }
+\item[{{\bf uint16\-\_\-t}}]{length, }
+\item[{const {\bf uint16\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8c_a3b77682af68cdfbdf4dbcf06f5468008}
+If there is room, it adds length of data to subarray\-Id.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em subarray\-Id-\/} & the identifier for the subarray. \\
+\hline
+\mbox{\tt in}  & {\em length} & -\/ the actual number of pieces of data to add to the subarray.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the data could be added and would fit. False otherwise. Will return false if the length would cause an out of bounds array access. Or if the subarray Id is not found. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 343 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Ambient\-Light\-Data\-Callback(), \-\_\-\-Analog7\-Data\-Callback(), \-\_\-\-Analog8\-Data\-Callback(), \-\_\-\-Analog9\-Data\-Callback(), \-\_\-\-Battery\-Voltage\-Data\-Callback(), \-\_\-\-Ecg\-Add\-To\-Data\-Buffer(), \-\_\-\-Force\-Gauge\-Data\-Callback(), \-\_\-\-High\-Gain\-Data\-Callback(), \-\_\-\-Microphone\-Data\-Callback(), \-\_\-thermometer\-Data\-Call\-Back(), and Enc\-Control\-\_\-\-Read\-Enc().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8c_aa05e29733eb661098d83ecf808fb1c40}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit@{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit}}
+\index{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit@{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{sub\-Array\-Id, }
+\item[{{\bf uint16\-\_\-t}}]{length, }
+\item[{const {\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8c_aa05e29733eb661098d83ecf808fb1c40}
+If there is room, it adds length of data to subarray\-Id.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em subarray\-Id-\/} & the identifier for the subarray. \\
+\hline
+\mbox{\tt in}  & {\em length} & -\/ the actual number of pieces of data to add to the subarray.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the data could be added and would fit. False otherwise. Will return false if the length would cause an out of bounds array access. Or if the subarray Id is not found. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 289 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins(), Acc\-Control\-\_\-\-Read\-Acc(), Barometer\-Control\-\_\-\-Read\-Bar(), Gyro\-Control\-\_\-\-Read\-Gyro(), and Mag\-Control\-\_\-\-Read\-Mag().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8c_a850d89976bc47e7b042b147550929713}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!Data\-Buffer\-\_\-\-Clear\-Subarrays@{Data\-Buffer\-\_\-\-Clear\-Subarrays}}
+\index{Data\-Buffer\-\_\-\-Clear\-Subarrays@{Data\-Buffer\-\_\-\-Clear\-Subarrays}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{Data\-Buffer\-\_\-\-Clear\-Subarrays}]{\setlength{\rightskip}{0pt plus 5cm}void Data\-Buffer\-\_\-\-Clear\-Subarrays (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8c_a850d89976bc47e7b042b147550929713}
+Deletes all the subarrays from the data arrays. 
+
+Definition at line 394 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Start\-Data(), and Con\-Man\-\_\-\-Stop\-Data().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8c_a1076e54100ff8b0b70400da353c838d2}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!Data\-Buffer\-\_\-\-Create\-Subarray@{Data\-Buffer\-\_\-\-Create\-Subarray}}
+\index{Data\-Buffer\-\_\-\-Create\-Subarray@{Data\-Buffer\-\_\-\-Create\-Subarray}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{Data\-Buffer\-\_\-\-Create\-Subarray}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Create\-Subarray (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{sub\-Array\-Id, }
+\item[{{\bf uint16\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8c_a1076e54100ff8b0b70400da353c838d2}
+If there is room, it creates a subarray of length spaces. The subarray will always be appended to the end of the active subarrays.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em subarray\-Id-\/} & the identifier for the subarray. \\
+\hline
+\mbox{\tt in}  & {\em length} & -\/ the maximum number of pieces of data to store in the subarray.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the subarray could be created. False otherwise. Will return false if the length would cause an out of bounds array access. Or if the subarray Id is already used. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 220 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Con\-Man\-\_\-\-Allocate\-Buffer().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8c_ad42e09510e8b4c7ffeb89e1641a3d96d}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!Data\-Buffer\-\_\-\-Get\-Idle\-Buffer@{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer}}
+\index{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer@{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Data\-Buffer\-\_\-\-Get\-Idle\-Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t} $\ast$}]{buffer\-Length, }
+\item[{{\bf uint8\-\_\-t} $\ast$$\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8c_ad42e09510e8b4c7ffeb89e1641a3d96d}
+Gets a reference to the idle buffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buffer\-Length} & -\/ the length of the returned buffer \\
+\hline
+\mbox{\tt out}  & {\em buffer} & -\/ the pointer to the array of data in the buffer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file Data\-Buffer.\-c.
+
+\hypertarget{_data_buffer_8c_a8108e383cde1958a0bbfbdffc5068858}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!Data\-Buffer\-\_\-\-Init@{Data\-Buffer\-\_\-\-Init}}
+\index{Data\-Buffer\-\_\-\-Init@{Data\-Buffer\-\_\-\-Init}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{Data\-Buffer\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Data\-Buffer\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{array0\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{array1\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint16\-\_\-t}}]{array\-Size}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8c_a8108e383cde1958a0bbfbdffc5068858}
+Initialized the data buffer and points this module to the memory to use as the data buffers.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em array0} & -\/ the first array to be used to pingpong between. \\
+\hline
+\mbox{\tt in}  & {\em array1} & -\/ the second array to be used to pingpong between. \\
+\hline
+\mbox{\tt in}  & {\em array\-Size} & -\/ the size of the array0 and array1 in bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+array0 and array1 must be the same size. 
+\end{DoxyNote}
+
+
+Definition at line 104 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8c_a20cc73afb2cfc749b7ff31f7610eb034}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!Data\-Buffer\-\_\-\-Rotate\-Buffer@{Data\-Buffer\-\_\-\-Rotate\-Buffer}}
+\index{Data\-Buffer\-\_\-\-Rotate\-Buffer@{Data\-Buffer\-\_\-\-Rotate\-Buffer}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{Data\-Buffer\-\_\-\-Rotate\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Data\-Buffer\-\_\-\-Rotate\-Buffer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8c_a20cc73afb2cfc749b7ff31f7610eb034}
+Rotates which buffer the new data is going to and resets the old buffer.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & value of the now active buffer, 0 or 1.\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+D\-O N\-O\-T C\-A\-L\-L F\-R\-O\-M I\-N\-T\-E\-R\-R\-U\-P\-T C\-O\-N\-T\-E\-X\-T!!! There is currently no way to rotate the buffers from interrupt context and guarantee data integrity of the data within the buffers. 
+\end{DoxyNote}
+
+
+Definition at line 187 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8c_adb6f152c38817dfbb87000bf1b9c58ac}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!Data\-Buffer\-\_\-\-Set\-Data@{Data\-Buffer\-\_\-\-Set\-Data}}
+\index{Data\-Buffer\-\_\-\-Set\-Data@{Data\-Buffer\-\_\-\-Set\-Data}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{Data\-Buffer\-\_\-\-Set\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Set\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{start\-Index, }
+\item[{{\bf uint16\-\_\-t}}]{length, }
+\item[{const {\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8c_adb6f152c38817dfbb87000bf1b9c58ac}
+Sets the memory to the values in data starting at start\-Index and ending at start\-Index+length.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\-Index-\/} & the index of the array to start inserting data at. \\
+\hline
+\mbox{\tt in}  & {\em length} & -\/ the number of pieces of data in data\mbox{[}\mbox{]}. \\
+\hline
+\mbox{\tt in}  & {\em data} & -\/ the array of data to set in the data buffer array.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the data could be set. False otherwise. Will return false if the index or length would cause an out of bounds array access. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 129 of file Data\-Buffer.\-c.
+
+\hypertarget{_data_buffer_8c_a402d58a4c760b0dbba6f51dab2efa11b}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!Data\-Buffer\-\_\-\-Subarray\-Exists@{Data\-Buffer\-\_\-\-Subarray\-Exists}}
+\index{Data\-Buffer\-\_\-\-Subarray\-Exists@{Data\-Buffer\-\_\-\-Subarray\-Exists}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{Data\-Buffer\-\_\-\-Subarray\-Exists}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Subarray\-Exists (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{sub\-Array\-Id}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8c_a402d58a4c760b0dbba6f51dab2efa11b}
+Checks if a subarray by the name of sub\-Array\-Id exists.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em subarray\-Id-\/} & the identifier for the subarray.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the subarray I\-D exists. False otherwise. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 412 of file Data\-Buffer.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_data_buffer_8c_a0da63495aab278a3200ebf7ff9965d18}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-allocated\-Bytes\-Size@{\-\_\-allocated\-Bytes\-Size}}
+\index{\-\_\-allocated\-Bytes\-Size@{\-\_\-allocated\-Bytes\-Size}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-allocated\-Bytes\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-allocated\-Bytes\-Size = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_a0da63495aab278a3200ebf7ff9965d18}
+Stores the size of the allocated bytes of the arrays 
+
+Definition at line 80 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Initialize\-Data(), Data\-Buffer\-\_\-\-Clear\-Subarrays(), and Data\-Buffer\-\_\-\-Create\-Subarray().
+
+\hypertarget{_data_buffer_8c_a2b96d86ba5bc17dbd85b765f4f28dfd6}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-array0@{\-\_\-array0}}
+\index{\-\_\-array0@{\-\_\-array0}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-array0}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t}$\ast$ \-\_\-array0 = {\bf N\-U\-L\-L}\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_a2b96d86ba5bc17dbd85b765f4f28dfd6}
+Stores the pointer to one of the two data arrays to store data into. 
+
+Definition at line 70 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Clear\-Subarrays(), Data\-Buffer\-\_\-\-Create\-Subarray(), Data\-Buffer\-\_\-\-Get\-Idle\-Buffer(), Data\-Buffer\-\_\-\-Init(), and Data\-Buffer\-\_\-\-Rotate\-Buffer().
+
+\hypertarget{_data_buffer_8c_a03b6a117765d4d114456097b1eb29cf2}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-array1@{\-\_\-array1}}
+\index{\-\_\-array1@{\-\_\-array1}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-array1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t}$\ast$ \-\_\-array1 = {\bf N\-U\-L\-L}\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_a03b6a117765d4d114456097b1eb29cf2}
+Stores the pointer to one of the two data arrays to store data into. 
+
+Definition at line 72 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Clear\-Subarrays(), Data\-Buffer\-\_\-\-Create\-Subarray(), Data\-Buffer\-\_\-\-Get\-Idle\-Buffer(), Data\-Buffer\-\_\-\-Init(), and Data\-Buffer\-\_\-\-Rotate\-Buffer().
+
+\hypertarget{_data_buffer_8c_ac4adbbd8ef2287b18f3af3ac72dc4a07}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-array\-Size@{\-\_\-array\-Size}}
+\index{\-\_\-array\-Size@{\-\_\-array\-Size}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-array\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-array\-Size = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_ac4adbbd8ef2287b18f3af3ac72dc4a07}
+Stores the size of the data arrays 
+
+Definition at line 77 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Create\-Subarray(), Data\-Buffer\-\_\-\-Get\-Idle\-Buffer(), Data\-Buffer\-\_\-\-Init(), and Data\-Buffer\-\_\-\-Set\-Data().
+
+\hypertarget{_data_buffer_8c_a7dab33c92419a928329aa9b3939fe4d0}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-num\-Active\-Subs@{\-\_\-num\-Active\-Subs}}
+\index{\-\_\-num\-Active\-Subs@{\-\_\-num\-Active\-Subs}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-num\-Active\-Subs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-num\-Active\-Subs = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_a7dab33c92419a928329aa9b3939fe4d0}
+Stores the number of active subarrays that are in use 
+
+Definition at line 87 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Index\-Of\-Subarray\-Id(), \-\_\-\-Initialize\-Data(), Data\-Buffer\-\_\-\-Clear\-Subarrays(), and Data\-Buffer\-\_\-\-Create\-Subarray().
+
+\hypertarget{_data_buffer_8c_acf8563fbcb5f6609744b4330f52cb0ce}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-sub\-Array\-End\-Index@{\-\_\-sub\-Array\-End\-Index}}
+\index{\-\_\-sub\-Array\-End\-Index@{\-\_\-sub\-Array\-End\-Index}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-sub\-Array\-End\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-sub\-Array\-End\-Index\mbox{[}{\bf M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S}\mbox{]} = \{ 0u \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_acf8563fbcb5f6609744b4330f52cb0ce}
+Stores the length of each subarray 
+
+Definition at line 85 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit(), Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit(), and Data\-Buffer\-\_\-\-Create\-Subarray().
+
+\hypertarget{_data_buffer_8c_a59607b94216175ca9532cec389208074}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-sub\-Array\-Start\-Index@{\-\_\-sub\-Array\-Start\-Index}}
+\index{\-\_\-sub\-Array\-Start\-Index@{\-\_\-sub\-Array\-Start\-Index}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-sub\-Array\-Start\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} \-\_\-sub\-Array\-Start\-Index\mbox{[}{\bf M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S}\mbox{]} = \{ 0u \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_a59607b94216175ca9532cec389208074}
+Stores the starting index of each subarray within the larger array 
+
+Definition at line 83 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Index\-Of\-Subarray\-Id(), \-\_\-\-Initialize\-Data(), Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit(), Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit(), and Data\-Buffer\-\_\-\-Create\-Subarray().
+
+\hypertarget{_data_buffer_8c_abcfa00c4e494f055ea9a420550c89d45}{\index{Data\-Buffer.\-c@{Data\-Buffer.\-c}!\-\_\-write\-Array@{\-\_\-write\-Array}}
+\index{\-\_\-write\-Array@{\-\_\-write\-Array}!DataBuffer.c@{Data\-Buffer.\-c}}
+\subsubsection[{\-\_\-write\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t}$\ast$ \-\_\-write\-Array = {\bf N\-U\-L\-L}\hspace{0.3cm}{\ttfamily [static]}}}\label{_data_buffer_8c_abcfa00c4e494f055ea9a420550c89d45}
+Keeps the pointer to the array that is actively getting data written to it 
+
+Definition at line 74 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Index\-Of\-Subarray\-Id(), Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit(), Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit(), Data\-Buffer\-\_\-\-Get\-Idle\-Buffer(), Data\-Buffer\-\_\-\-Init(), Data\-Buffer\-\_\-\-Rotate\-Buffer(), and Data\-Buffer\-\_\-\-Set\-Data().
+

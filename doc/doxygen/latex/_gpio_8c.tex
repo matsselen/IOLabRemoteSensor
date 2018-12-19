@@ -1,0 +1,938 @@
+\hypertarget{_gpio_8c}{\section{Gpio.\-c File Reference}
+\label{_gpio_8c}\index{Gpio.\-c@{Gpio.\-c}}
+}
+
+
+G\-P\-I\-O configuration and control macros and functions.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Gpio.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+Include dependency graph for Gpio.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_gpio_8c_a3f17f4aa2d0c58c9e5fcb731b340df76}{P\-O\-R\-T\-\_\-\-M\-I\-N}~(1)
+\item 
+\#define \hyperlink{_gpio_8c_a1a22c8aea5fa6c6834bc64756d239ae4}{P\-O\-R\-T\-\_\-\-M\-A\-X}~(8)
+\item 
+\#define \hyperlink{_gpio_8c_a61fc8dc2ff65f27852dc28ad5436a5b6}{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-I\-N}~(1)
+\item 
+\#define \hyperlink{_gpio_8c_abef77f3fee31302730530910a73e7311}{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X}~(2)
+\item 
+\#define \hyperlink{_gpio_8c_adb312c6a2d8064fb21620d1e141111d6}{P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T}~(8u)
+\item 
+\hypertarget{_gpio_8c_a15906311d27c7eeefc427903e190c696}{\#define {\bfseries I\-N\-P\-U\-T\-\_\-\-B\-I\-T\-\_\-\-S\-H\-I\-F\-T}~2}\label{_gpio_8c_a15906311d27c7eeefc427903e190c696}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{_gpio_8c_ac30d18b8402f5d9801ad71bad6792db0}{\-\_\-\-Gpio\-Port\-One\-Isr} (void)
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{_gpio_8c_a065aaa698cdd2f63babf400fb2bdda00}{\-\_\-\-Gpio\-Port\-Two\-Isr} (void)
+\item 
+static void \hyperlink{_gpio_8c_afcb987f4ad78e26f735ec3bfcfec083e}{\-\_\-\-Unlock\-Port\-U} (void)
+\item 
+static void \hyperlink{_gpio_8c_aa751eb0ce20ef9c79739ced94de232c8}{\-\_\-\-Lock\-Port\-U} (void)
+\item 
+void \hyperlink{_gpio_8c_aec6c2e01969e7a086f7dc11853dad378}{Gpio\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_gpio_8c_a2b292615af2329f2e90ecc791ac3c161}{Gpio\-\_\-\-Configure} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask, \hyperlink{_gpio_8h_aca915eb391de335fd3a7913b5e6d7bf6}{Gpio\-Type\-\_\-t} type, \hyperlink{_gpio_8h_ac44b16d593fdaa06b6a6034e49b1c85b}{Gpio\-Value\-\_\-t} value, \hyperlink{_gpio_8h_a35ba5547467635d8034011082e0cb4f9}{Gpio\-Drive\-Strength\-\_\-t} drive\-Strength)
+\item 
+void \hyperlink{_gpio_8c_a55f7cb7792ab2d92777002b2eea18753}{Gpio\-\_\-\-Configure\-Port\-J} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask, \hyperlink{_gpio_8h_aca915eb391de335fd3a7913b5e6d7bf6}{Gpio\-Type\-\_\-t} type, \hyperlink{_gpio_8h_ac44b16d593fdaa06b6a6034e49b1c85b}{Gpio\-Value\-\_\-t} value, \hyperlink{_gpio_8h_a35ba5547467635d8034011082e0cb4f9}{Gpio\-Drive\-Strength\-\_\-t} drive\-Strength)
+\item 
+void \hyperlink{_gpio_8c_abc265c23bd04304f28525bd29da4c42e}{Gpio\-\_\-\-Configure\-Port\-U} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask, \hyperlink{_gpio_8h_aca915eb391de335fd3a7913b5e6d7bf6}{Gpio\-Type\-\_\-t} type, \hyperlink{_gpio_8h_ac44b16d593fdaa06b6a6034e49b1c85b}{Gpio\-Value\-\_\-t} value)
+\item 
+void \hyperlink{_gpio_8c_a07fdff112775345cdaf7696ba3a7d01c}{Gpio\-\_\-\-Enable\-Resistor} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask, \hyperlink{_gpio_8h_a76d6cdc0be5046235f03da2bc0dd0df6}{Gpio\-Resistor\-Type\-\_\-t} resistor\-Type)
+\item 
+void \hyperlink{_gpio_8c_a5da879081f23fe16fd51c79120290300}{Gpio\-\_\-\-Disable\-Resistor} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+void \hyperlink{_gpio_8c_a27c157c0ad7dc9371c0fe54c2af95e78}{Gpio\-\_\-\-Set} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+void \hyperlink{_gpio_8c_ad54d30c1b01480f97a4d24fd7ef625f9}{Gpio\-\_\-\-Set\-Port\-U} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+void \hyperlink{_gpio_8c_a0b56c3870353904ad5689e970bcc9bae}{Gpio\-\_\-\-Set\-Port\-J} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+void \hyperlink{_gpio_8c_a7c90d1047a70e2b5ceff1d35a2b152d7}{Gpio\-\_\-\-Clear} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+void \hyperlink{_gpio_8c_a702acc0a1b5485271411e6f779209bb0}{Gpio\-\_\-\-Clear\-Port\-U} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+void \hyperlink{_gpio_8c_a3e625a3b0748cb944e02cf57ae629f05}{Gpio\-\_\-\-Clear\-Port\-J} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_gpio_8c_ae9cbfca5fde2692c17805a0c12f09872}{Gpio\-\_\-\-Get\-Value} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_gpio_8c_a2b39c3e315d6df23db769418e84198b5}{Gpio\-\_\-\-Get\-Value\-Port\-U} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_gpio_8c_af483d8394ba32c0c3ac835152815cb30}{Gpio\-\_\-\-Get\-Value\-Port\-J} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+void \hyperlink{_gpio_8c_a56f194230a70ea64fd0b563c90b6d2d0}{Gpio\-\_\-\-Register\-Isr} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask, \hyperlink{_gpio_8h_a611a7309f92b9ac199920b5e0d7a074b}{Gpio\-Isr\-Pointer\-\_\-t} isr, \hyperlink{_gpio_8h_ab9297792b987613d00dd5d7e378426c1}{Gpio\-Edge\-\_\-t} edge)
+\item 
+void \hyperlink{_gpio_8c_ac49a996b5adc95981c5301f8b6e20574}{Gpio\-\_\-\-Unregister\-Isr} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\item 
+void \hyperlink{_gpio_8c_a937fca98a181cc24facfee3b6f3e7fc5}{Gpio\-\_\-\-Select\-Interrupt\-Edge} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask, \hyperlink{_gpio_8h_ab9297792b987613d00dd5d7e378426c1}{Gpio\-Edge\-\_\-t} edge)
+\item 
+\hyperlink{_gpio_8h_ab9297792b987613d00dd5d7e378426c1}{Gpio\-Edge\-\_\-t} \hyperlink{_gpio_8c_ae6b1834526a71e2e5bc2389eec5eade7}{Gpio\-\_\-\-Get\-Interrupt\-Edge} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} pin\-Mask)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$const \hyperlink{_gpio_8c_ab331dea7c8ed5d61b28561006fd584a9}{\-\_\-gpio\-Output\-Registers} \mbox{[}\hyperlink{_gpio_8c_a1a22c8aea5fa6c6834bc64756d239ae4}{P\-O\-R\-T\-\_\-\-M\-A\-X}+1\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$const \hyperlink{_gpio_8c_aac2617f9efecfd4a5ee3233e8fb91617}{\-\_\-gpio\-Input\-Registers} \mbox{[}\hyperlink{_gpio_8c_a1a22c8aea5fa6c6834bc64756d239ae4}{P\-O\-R\-T\-\_\-\-M\-A\-X}+1\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$const \hyperlink{_gpio_8c_aa7bfa5f6bea5f1db3706478c0b58d937}{\-\_\-gpio\-Resistor\-Enable\-Registers} \mbox{[}\hyperlink{_gpio_8c_a1a22c8aea5fa6c6834bc64756d239ae4}{P\-O\-R\-T\-\_\-\-M\-A\-X}+1\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$const \hyperlink{_gpio_8c_ae5b69fa822b5b6a4824b6edddfa88505}{\-\_\-gpio\-Interrupt\-Enable\-Registers} \mbox{[}\hyperlink{_gpio_8c_abef77f3fee31302730530910a73e7311}{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X}+1\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$const \hyperlink{_gpio_8c_a72811a81a047020ff86048dddd29330e}{\-\_\-gpio\-Interrupt\-Edge\-Select\-Registers} \mbox{[}\hyperlink{_gpio_8c_abef77f3fee31302730530910a73e7311}{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X}+1\mbox{]}
+\item 
+static \hyperlink{_gpio_8h_a611a7309f92b9ac199920b5e0d7a074b}{Gpio\-Isr\-Pointer\-\_\-t} \hyperlink{_gpio_8c_ab5224419618186e1a8e6f6e24454f61b}{\-\_\-gpio\-Isr\-List\-Port\-One} \mbox{[}\hyperlink{_gpio_8c_adb312c6a2d8064fb21620d1e141111d6}{P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T}\mbox{]} = \{\hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}\}
+\item 
+static \hyperlink{_gpio_8h_a611a7309f92b9ac199920b5e0d7a074b}{Gpio\-Isr\-Pointer\-\_\-t} \hyperlink{_gpio_8c_afd7bff104153bbf3a6d749a8fb6e23da}{\-\_\-gpio\-Isr\-List\-Port\-Two} \mbox{[}\hyperlink{_gpio_8c_adb312c6a2d8064fb21620d1e141111d6}{P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T}\mbox{]} = \{\hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+G\-P\-I\-O configuration and control macros and functions. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The routines in this file are used to initialize or configure the G\-P\-I\-O pins on the M\-S\-P430. 
+
+Definition in file \hyperlink{_gpio_8c_source}{Gpio.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_gpio_8c_adb312c6a2d8064fb21620d1e141111d6}{\index{Gpio.\-c@{Gpio.\-c}!P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T@{P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T}}
+\index{P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T@{P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T~(8u)}}\label{_gpio_8c_adb312c6a2d8064fb21620d1e141111d6}
+Number of pins per port 
+
+Definition at line 42 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Register\-Isr(), and Gpio\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_gpio_8c_abef77f3fee31302730530910a73e7311}{\index{Gpio.\-c@{Gpio.\-c}!P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X@{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X}}
+\index{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X@{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X~(2)}}\label{_gpio_8c_abef77f3fee31302730530910a73e7311}
+Maximum port number that supports interrupts. 
+
+Definition at line 39 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Get\-Interrupt\-Edge(), Gpio\-\_\-\-Register\-Isr(), Gpio\-\_\-\-Select\-Interrupt\-Edge(), and Gpio\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_gpio_8c_a61fc8dc2ff65f27852dc28ad5436a5b6}{\index{Gpio.\-c@{Gpio.\-c}!P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-I\-N@{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-I\-N}}
+\index{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-I\-N@{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-I\-N}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-I\-N~(1)}}\label{_gpio_8c_a61fc8dc2ff65f27852dc28ad5436a5b6}
+Minimum port number that supports interrupts. 
+
+Definition at line 37 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Get\-Interrupt\-Edge(), Gpio\-\_\-\-Register\-Isr(), Gpio\-\_\-\-Select\-Interrupt\-Edge(), and Gpio\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_gpio_8c_a1a22c8aea5fa6c6834bc64756d239ae4}{\index{Gpio.\-c@{Gpio.\-c}!P\-O\-R\-T\-\_\-\-M\-A\-X@{P\-O\-R\-T\-\_\-\-M\-A\-X}}
+\index{P\-O\-R\-T\-\_\-\-M\-A\-X@{P\-O\-R\-T\-\_\-\-M\-A\-X}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{P\-O\-R\-T\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-R\-T\-\_\-\-M\-A\-X~(8)}}\label{_gpio_8c_a1a22c8aea5fa6c6834bc64756d239ae4}
+Maximum port number. 
+
+Definition at line 34 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Clear(), Gpio\-\_\-\-Configure(), Gpio\-\_\-\-Disable\-Resistor(), Gpio\-\_\-\-Enable\-Resistor(), Gpio\-\_\-\-Get\-Value(), and Gpio\-\_\-\-Set().
+
+\hypertarget{_gpio_8c_a3f17f4aa2d0c58c9e5fcb731b340df76}{\index{Gpio.\-c@{Gpio.\-c}!P\-O\-R\-T\-\_\-\-M\-I\-N@{P\-O\-R\-T\-\_\-\-M\-I\-N}}
+\index{P\-O\-R\-T\-\_\-\-M\-I\-N@{P\-O\-R\-T\-\_\-\-M\-I\-N}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{P\-O\-R\-T\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-R\-T\-\_\-\-M\-I\-N~(1)}}\label{_gpio_8c_a3f17f4aa2d0c58c9e5fcb731b340df76}
+Minimum port number. 
+
+Definition at line 32 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Clear(), Gpio\-\_\-\-Configure(), Gpio\-\_\-\-Disable\-Resistor(), Gpio\-\_\-\-Enable\-Resistor(), Gpio\-\_\-\-Get\-Value(), and Gpio\-\_\-\-Set().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_gpio_8c_ac30d18b8402f5d9801ad71bad6792db0}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-\-Gpio\-Port\-One\-Isr@{\-\_\-\-Gpio\-Port\-One\-Isr}}
+\index{\-\_\-\-Gpio\-Port\-One\-Isr@{\-\_\-\-Gpio\-Port\-One\-Isr}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-\-Gpio\-Port\-One\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void \-\_\-\-Gpio\-Port\-One\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_ac30d18b8402f5d9801ad71bad6792db0}
+Interrupt service routine for the port 1 G\-P\-I\-O interrupts. The interrupt flag of the interrupt specified in P1\-I\-V is cleared when P1\-I\-V is read. 
+
+Definition at line 938 of file Gpio.\-c.
+
+\hypertarget{_gpio_8c_a065aaa698cdd2f63babf400fb2bdda00}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-\-Gpio\-Port\-Two\-Isr@{\-\_\-\-Gpio\-Port\-Two\-Isr}}
+\index{\-\_\-\-Gpio\-Port\-Two\-Isr@{\-\_\-\-Gpio\-Port\-Two\-Isr}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-\-Gpio\-Port\-Two\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void \-\_\-\-Gpio\-Port\-Two\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a065aaa698cdd2f63babf400fb2bdda00}
+Interrupt service routine for the port 2 G\-P\-I\-O interrupts. The interrupt flag of the interrupt specified in P2\-I\-V is cleared when P2\-I\-V is read. 
+
+Definition at line 1020 of file Gpio.\-c.
+
+\hypertarget{_gpio_8c_aa751eb0ce20ef9c79739ced94de232c8}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-\-Lock\-Port\-U@{\-\_\-\-Lock\-Port\-U}}
+\index{\-\_\-\-Lock\-Port\-U@{\-\_\-\-Lock\-Port\-U}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-\-Lock\-Port\-U}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Lock\-Port\-U (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_gpio_8c_aa751eb0ce20ef9c79739ced94de232c8}
+Relocks the port U registers to prevent changing them. 
+
+Definition at line 1108 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Clear\-Port\-U(), Gpio\-\_\-\-Configure\-Port\-U(), and Gpio\-\_\-\-Set\-Port\-U().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_afcb987f4ad78e26f735ec3bfcfec083e}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-\-Unlock\-Port\-U@{\-\_\-\-Unlock\-Port\-U}}
+\index{\-\_\-\-Unlock\-Port\-U@{\-\_\-\-Unlock\-Port\-U}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-\-Unlock\-Port\-U}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Unlock\-Port\-U (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_gpio_8c_afcb987f4ad78e26f735ec3bfcfec083e}
+Unlocks the port U registers for for changing 
+
+Definition at line 1100 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Clear\-Port\-U(), Gpio\-\_\-\-Configure\-Port\-U(), and Gpio\-\_\-\-Set\-Port\-U().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a7c90d1047a70e2b5ceff1d35a2b152d7}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Clear@{Gpio\-\_\-\-Clear}}
+\index{Gpio\-\_\-\-Clear@{Gpio\-\_\-\-Clear}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Clear}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Clear (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a7c90d1047a70e2b5ceff1d35a2b152d7}
+Clear a G\-P\-I\-O pin to low. Allows the port parameter to be a variable, as compared to the G\-P\-I\-O\-\_\-\-C\-L\-E\-A\-R macro that does not.
+
+\begin{DoxyNote}{Note}
+Use the G\-P\-I\-O\-\_\-\-C\-L\-E\-A\-R macro if possible for better performance.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pin. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 632 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Led\-\_\-\-Process\-States().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a3e625a3b0748cb944e02cf57ae629f05}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Clear\-Port\-J@{Gpio\-\_\-\-Clear\-Port\-J}}
+\index{Gpio\-\_\-\-Clear\-Port\-J@{Gpio\-\_\-\-Clear\-Port\-J}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Clear\-Port\-J}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Clear\-Port\-J (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a3e625a3b0748cb944e02cf57ae629f05}
+Clear a Port J G\-P\-I\-O pin to low.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 668 of file Gpio.\-c.
+
+\hypertarget{_gpio_8c_a702acc0a1b5485271411e6f779209bb0}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Clear\-Port\-U@{Gpio\-\_\-\-Clear\-Port\-U}}
+\index{Gpio\-\_\-\-Clear\-Port\-U@{Gpio\-\_\-\-Clear\-Port\-U}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Clear\-Port\-U}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Clear\-Port\-U (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a702acc0a1b5485271411e6f779209bb0}
+Clear a Port U G\-P\-I\-O pin to low.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 650 of file Gpio.\-c.
+
+
+
+Referenced by Encoder\-\_\-\-Stop(), and System\-\_\-\-Power\-Off().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a2b292615af2329f2e90ecc791ac3c161}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Configure@{Gpio\-\_\-\-Configure}}
+\index{Gpio\-\_\-\-Configure@{Gpio\-\_\-\-Configure}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask, }
+\item[{{\bf Gpio\-Type\-\_\-t}}]{type, }
+\item[{{\bf Gpio\-Value\-\_\-t}}]{value, }
+\item[{{\bf Gpio\-Drive\-Strength\-\_\-t}}]{drive\-Strength}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a2b292615af2329f2e90ecc791ac3c161}
+Configures G\-P\-I\-O pins.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pins. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pins. \\
+\hline
+\mbox{\tt in}  & {\em type} & -\/ Type to set the G\-P\-I\-O to. \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value to set the G\-P\-I\-O to. \\
+\hline
+\mbox{\tt in}  & {\em drive\-Strength} & -\/ Drive strength to set the G\-P\-I\-O to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 289 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Bsl\-Command(), \-\_\-\-Handle\-Human\-Gpi\-Command(), \-\_\-\-Handle\-Human\-Gpo\-Command(), Clock\-\_\-\-Init(), Gpio\-\_\-\-Init(), Header1\-Control\-\_\-\-Set\-Config(), Header2\-Control\-\_\-\-Set\-Config(), Header3\-Control\-\_\-\-Set\-Config(), Header4\-Control\-\_\-\-Set\-Config(), Header5\-Control\-\_\-\-Set\-Config(), Header6\-Control\-\_\-\-Set\-Config(), I2c\-\_\-\-Close(), I2c\-\_\-\-Open(), Pwm\-\_\-\-Disable(), Pwm\-\_\-\-Enable(), Spi\-\_\-\-Init(), Spi\-Slave\-\_\-\-Init(), Uart\-\_\-\-Close(), and Uart\-\_\-\-Open().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a55f7cb7792ab2d92777002b2eea18753}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Configure\-Port\-J@{Gpio\-\_\-\-Configure\-Port\-J}}
+\index{Gpio\-\_\-\-Configure\-Port\-J@{Gpio\-\_\-\-Configure\-Port\-J}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Configure\-Port\-J}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Configure\-Port\-J (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask, }
+\item[{{\bf Gpio\-Type\-\_\-t}}]{type, }
+\item[{{\bf Gpio\-Value\-\_\-t}}]{value, }
+\item[{{\bf Gpio\-Drive\-Strength\-\_\-t}}]{drive\-Strength}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a55f7cb7792ab2d92777002b2eea18753}
+Configures G\-P\-I\-O pins for Port J.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pins. \\
+\hline
+\mbox{\tt in}  & {\em type} & -\/ Type to set the G\-P\-I\-O to. \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value to set the G\-P\-I\-O to. \\
+\hline
+\mbox{\tt in}  & {\em drive\-Strength} & -\/ Drive strength to set the G\-P\-I\-O to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 407 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Gpi\-Command(), and \-\_\-\-Handle\-Human\-Gpo\-Command().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_abc265c23bd04304f28525bd29da4c42e}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Configure\-Port\-U@{Gpio\-\_\-\-Configure\-Port\-U}}
+\index{Gpio\-\_\-\-Configure\-Port\-U@{Gpio\-\_\-\-Configure\-Port\-U}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Configure\-Port\-U}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Configure\-Port\-U (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask, }
+\item[{{\bf Gpio\-Type\-\_\-t}}]{type, }
+\item[{{\bf Gpio\-Value\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_abc265c23bd04304f28525bd29da4c42e}
+Configures G\-P\-I\-O pins for Port U.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pins. \\
+\hline
+\mbox{\tt in}  & {\em type} & -\/ Type to set the G\-P\-I\-O to. \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value to set the G\-P\-I\-O to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 469 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Gpi\-Command(), \-\_\-\-Handle\-Human\-Gpo\-Command(), and Gpio\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a5da879081f23fe16fd51c79120290300}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Disable\-Resistor@{Gpio\-\_\-\-Disable\-Resistor}}
+\index{Gpio\-\_\-\-Disable\-Resistor@{Gpio\-\_\-\-Disable\-Resistor}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Disable\-Resistor}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Disable\-Resistor (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a5da879081f23fe16fd51c79120290300}
+Disable the pull-\/up/pull-\/down resistor of G\-P\-I\-O pins.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pins. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pins. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 559 of file Gpio.\-c.
+
+
+
+Referenced by Uart\-\_\-\-Close().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a07fdff112775345cdaf7696ba3a7d01c}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Enable\-Resistor@{Gpio\-\_\-\-Enable\-Resistor}}
+\index{Gpio\-\_\-\-Enable\-Resistor@{Gpio\-\_\-\-Enable\-Resistor}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Enable\-Resistor}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Enable\-Resistor (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask, }
+\item[{{\bf Gpio\-Resistor\-Type\-\_\-t}}]{resistor\-Type}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a07fdff112775345cdaf7696ba3a7d01c}
+Enable the pull-\/up/pull-\/down resistor of G\-P\-I\-O pins.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pins. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pins. \\
+\hline
+\mbox{\tt in}  & {\em resistor\-Type} & -\/ Type of resistor to enable. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 528 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Init(), and Uart\-\_\-\-Open().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_ae6b1834526a71e2e5bc2389eec5eade7}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Get\-Interrupt\-Edge@{Gpio\-\_\-\-Get\-Interrupt\-Edge}}
+\index{Gpio\-\_\-\-Get\-Interrupt\-Edge@{Gpio\-\_\-\-Get\-Interrupt\-Edge}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Get\-Interrupt\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gpio\-Edge\-\_\-t} Gpio\-\_\-\-Get\-Interrupt\-Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_ae6b1834526a71e2e5bc2389eec5eade7}
+Get the selected interrupt edge for a G\-P\-I\-O pin.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pin. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The selected interrupt edge. 
+\end{DoxyReturn}
+
+
+Definition at line 910 of file Gpio.\-c.
+
+\hypertarget{_gpio_8c_ae9cbfca5fde2692c17805a0c12f09872}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Get\-Value@{Gpio\-\_\-\-Get\-Value}}
+\index{Gpio\-\_\-\-Get\-Value@{Gpio\-\_\-\-Get\-Value}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Gpio\-\_\-\-Get\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_ae9cbfca5fde2692c17805a0c12f09872}
+Read the value of a G\-P\-I\-O pin. Allows the port parameter to be a variable, as compared to the G\-P\-I\-O\-\_\-\-I\-S\-\_\-\-H\-I\-G\-H macro that does not.
+
+\begin{DoxyNote}{Note}
+Use the G\-P\-I\-O\-\_\-\-I\-S\-\_\-\-H\-I\-G\-H macro if possible for better performance.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pin. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 683 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Gpi\-Command().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_af483d8394ba32c0c3ac835152815cb30}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Get\-Value\-Port\-J@{Gpio\-\_\-\-Get\-Value\-Port\-J}}
+\index{Gpio\-\_\-\-Get\-Value\-Port\-J@{Gpio\-\_\-\-Get\-Value\-Port\-J}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Get\-Value\-Port\-J}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Gpio\-\_\-\-Get\-Value\-Port\-J (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_af483d8394ba32c0c3ac835152815cb30}
+Read the value of a G\-P\-I\-O pin on Port J.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 743 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Gpi\-Command().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a2b39c3e315d6df23db769418e84198b5}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Get\-Value\-Port\-U@{Gpio\-\_\-\-Get\-Value\-Port\-U}}
+\index{Gpio\-\_\-\-Get\-Value\-Port\-U@{Gpio\-\_\-\-Get\-Value\-Port\-U}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Get\-Value\-Port\-U}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Gpio\-\_\-\-Get\-Value\-Port\-U (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a2b39c3e315d6df23db769418e84198b5}
+Read the value of a G\-P\-I\-O pin on Port U.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 711 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Gpi\-Command().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_aec6c2e01969e7a086f7dc11853dad378}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Init@{Gpio\-\_\-\-Init}}
+\index{Gpio\-\_\-\-Init@{Gpio\-\_\-\-Init}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_aec6c2e01969e7a086f7dc11853dad378}
+Initializes the digital I/\-O pins. 
+
+Definition at line 124 of file Gpio.\-c.
+
+
+
+Referenced by Board\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a56f194230a70ea64fd0b563c90b6d2d0}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Register\-Isr@{Gpio\-\_\-\-Register\-Isr}}
+\index{Gpio\-\_\-\-Register\-Isr@{Gpio\-\_\-\-Register\-Isr}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Register\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Register\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask, }
+\item[{{\bf Gpio\-Isr\-Pointer\-\_\-t}}]{isr, }
+\item[{{\bf Gpio\-Edge\-\_\-t}}]{edge}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a56f194230a70ea64fd0b563c90b6d2d0}
+Register an I\-S\-R for the given G\-P\-I\-O pin.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pin. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\mbox{\tt in}  & {\em isr} & -\/ Pointer to G\-P\-I\-O I\-S\-R. \\
+\hline
+\mbox{\tt in}  & {\em edge} & -\/ Edge to select. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 768 of file Gpio.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Init(), Gyroscope\-\_\-\-Init(), and Magnetometer\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a937fca98a181cc24facfee3b6f3e7fc5}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Select\-Interrupt\-Edge@{Gpio\-\_\-\-Select\-Interrupt\-Edge}}
+\index{Gpio\-\_\-\-Select\-Interrupt\-Edge@{Gpio\-\_\-\-Select\-Interrupt\-Edge}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Select\-Interrupt\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Select\-Interrupt\-Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask, }
+\item[{{\bf Gpio\-Edge\-\_\-t}}]{edge}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a937fca98a181cc24facfee3b6f3e7fc5}
+Select the interrupt edge for G\-P\-I\-O pins.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pins. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pins. \\
+\hline
+\mbox{\tt in}  & {\em edge} & -\/ Edge to select. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 881 of file Gpio.\-c.
+
+\hypertarget{_gpio_8c_a27c157c0ad7dc9371c0fe54c2af95e78}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Set@{Gpio\-\_\-\-Set}}
+\index{Gpio\-\_\-\-Set@{Gpio\-\_\-\-Set}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Set (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a27c157c0ad7dc9371c0fe54c2af95e78}
+Set a G\-P\-I\-O pin to high. Allows the port parameter to be a variable, as compared to the G\-P\-I\-O\-\_\-\-S\-E\-T macro that does not.
+
+\begin{DoxyNote}{Note}
+Use the G\-P\-I\-O\-\_\-\-S\-E\-T macro if possible for better performance.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pin. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 581 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Led\-\_\-\-Process\-States().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_a0b56c3870353904ad5689e970bcc9bae}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Set\-Port\-J@{Gpio\-\_\-\-Set\-Port\-J}}
+\index{Gpio\-\_\-\-Set\-Port\-J@{Gpio\-\_\-\-Set\-Port\-J}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Set\-Port\-J}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Set\-Port\-J (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_a0b56c3870353904ad5689e970bcc9bae}
+Set a G\-P\-I\-O pin On port J to high.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 617 of file Gpio.\-c.
+
+\hypertarget{_gpio_8c_ad54d30c1b01480f97a4d24fd7ef625f9}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Set\-Port\-U@{Gpio\-\_\-\-Set\-Port\-U}}
+\index{Gpio\-\_\-\-Set\-Port\-U@{Gpio\-\_\-\-Set\-Port\-U}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Set\-Port\-U}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Set\-Port\-U (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_ad54d30c1b01480f97a4d24fd7ef625f9}
+Set a G\-P\-I\-O pin On port U to high.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 599 of file Gpio.\-c.
+
+
+
+Referenced by Encoder\-\_\-\-Start(), and System\-\_\-\-Power\-On().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_gpio_8c_ac49a996b5adc95981c5301f8b6e20574}{\index{Gpio.\-c@{Gpio.\-c}!Gpio\-\_\-\-Unregister\-Isr@{Gpio\-\_\-\-Unregister\-Isr}}
+\index{Gpio\-\_\-\-Unregister\-Isr@{Gpio\-\_\-\-Unregister\-Isr}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{Gpio\-\_\-\-Unregister\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Gpio\-\_\-\-Unregister\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{pin\-Mask}
+\end{DoxyParamCaption}
+)}}\label{_gpio_8c_ac49a996b5adc95981c5301f8b6e20574}
+Unregister an I\-S\-R for the given G\-P\-I\-O pin.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Port number of pin. \\
+\hline
+\mbox{\tt in}  & {\em pin\-Mask} & -\/ Mask of pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 833 of file Gpio.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_gpio_8c_aac2617f9efecfd4a5ee3233e8fb91617}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-gpio\-Input\-Registers@{\-\_\-gpio\-Input\-Registers}}
+\index{\-\_\-gpio\-Input\-Registers@{\-\_\-gpio\-Input\-Registers}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-gpio\-Input\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t}$\ast$ const \-\_\-gpio\-Input\-Registers\mbox{[}{\bf P\-O\-R\-T\-\_\-\-M\-A\-X}+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gpio_8c_aac2617f9efecfd4a5ee3233e8fb91617}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL},
+    &P1IN,
+    &P2IN,
+    &P3IN,
+    &P4IN,
+    &P5IN,
+    &P6IN,
+    &P7IN,
+    &P8IN,
+
+
+\}
+\end{DoxyCode}
+Pointers to the G\-P\-I\-O input registers 
+
+Definition at line 62 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Get\-Value().
+
+\hypertarget{_gpio_8c_a72811a81a047020ff86048dddd29330e}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-gpio\-Interrupt\-Edge\-Select\-Registers@{\-\_\-gpio\-Interrupt\-Edge\-Select\-Registers}}
+\index{\-\_\-gpio\-Interrupt\-Edge\-Select\-Registers@{\-\_\-gpio\-Interrupt\-Edge\-Select\-Registers}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-gpio\-Interrupt\-Edge\-Select\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t}$\ast$ const \-\_\-gpio\-Interrupt\-Edge\-Select\-Registers\mbox{[}{\bf P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X}+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gpio_8c_a72811a81a047020ff86048dddd29330e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL},
+    &P1IES,
+    &P2IES
+\}
+\end{DoxyCode}
+Pointers to G\-P\-I\-O interrupt edge select registers. 
+
+Definition at line 102 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Get\-Interrupt\-Edge(), Gpio\-\_\-\-Register\-Isr(), and Gpio\-\_\-\-Select\-Interrupt\-Edge().
+
+\hypertarget{_gpio_8c_ae5b69fa822b5b6a4824b6edddfa88505}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-gpio\-Interrupt\-Enable\-Registers@{\-\_\-gpio\-Interrupt\-Enable\-Registers}}
+\index{\-\_\-gpio\-Interrupt\-Enable\-Registers@{\-\_\-gpio\-Interrupt\-Enable\-Registers}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-gpio\-Interrupt\-Enable\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t}$\ast$ const \-\_\-gpio\-Interrupt\-Enable\-Registers\mbox{[}{\bf P\-O\-R\-T\-\_\-\-I\-N\-T\-\_\-\-M\-A\-X}+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gpio_8c_ae5b69fa822b5b6a4824b6edddfa88505}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL},
+    &P1IE,
+    &P2IE
+\}
+\end{DoxyCode}
+Pointers to G\-P\-I\-O interrupt enable registers. 
+
+Definition at line 94 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Register\-Isr(), and Gpio\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_gpio_8c_ab5224419618186e1a8e6f6e24454f61b}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-gpio\-Isr\-List\-Port\-One@{\-\_\-gpio\-Isr\-List\-Port\-One}}
+\index{\-\_\-gpio\-Isr\-List\-Port\-One@{\-\_\-gpio\-Isr\-List\-Port\-One}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-gpio\-Isr\-List\-Port\-One}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gpio\-Isr\-Pointer\-\_\-t} \-\_\-gpio\-Isr\-List\-Port\-One\mbox{[}{\bf P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T}\mbox{]} = \{{\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}\}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gpio_8c_ab5224419618186e1a8e6f6e24454f61b}
+Stores the port one G\-P\-I\-O I\-S\-R pointers 
+
+Definition at line 111 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Gpio\-Port\-One\-Isr(), Gpio\-\_\-\-Register\-Isr(), and Gpio\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_gpio_8c_afd7bff104153bbf3a6d749a8fb6e23da}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-gpio\-Isr\-List\-Port\-Two@{\-\_\-gpio\-Isr\-List\-Port\-Two}}
+\index{\-\_\-gpio\-Isr\-List\-Port\-Two@{\-\_\-gpio\-Isr\-List\-Port\-Two}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-gpio\-Isr\-List\-Port\-Two}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gpio\-Isr\-Pointer\-\_\-t} \-\_\-gpio\-Isr\-List\-Port\-Two\mbox{[}{\bf P\-I\-N\-S\-\_\-\-P\-E\-R\-\_\-\-P\-O\-R\-T}\mbox{]} = \{{\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}\}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gpio_8c_afd7bff104153bbf3a6d749a8fb6e23da}
+Stores the port two G\-P\-I\-O I\-S\-R pointers 
+
+Definition at line 113 of file Gpio.\-c.
+
+
+
+Referenced by \-\_\-\-Gpio\-Port\-Two\-Isr(), Gpio\-\_\-\-Register\-Isr(), and Gpio\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_gpio_8c_ab331dea7c8ed5d61b28561006fd584a9}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-gpio\-Output\-Registers@{\-\_\-gpio\-Output\-Registers}}
+\index{\-\_\-gpio\-Output\-Registers@{\-\_\-gpio\-Output\-Registers}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-gpio\-Output\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t}$\ast$ const \-\_\-gpio\-Output\-Registers\mbox{[}{\bf P\-O\-R\-T\-\_\-\-M\-A\-X}+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gpio_8c_ab331dea7c8ed5d61b28561006fd584a9}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL},
+    &P1OUT,
+    &P2OUT,
+    &P3OUT,
+    &P4OUT,
+    &P5OUT,
+    &P6OUT,
+    &P7OUT,
+    &P8OUT,
+
+
+\}
+\end{DoxyCode}
+Pointers to G\-P\-I\-O output registers. 
+
+Definition at line 46 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Clear(), Gpio\-\_\-\-Configure(), Gpio\-\_\-\-Enable\-Resistor(), and Gpio\-\_\-\-Set().
+
+\hypertarget{_gpio_8c_aa7bfa5f6bea5f1db3706478c0b58d937}{\index{Gpio.\-c@{Gpio.\-c}!\-\_\-gpio\-Resistor\-Enable\-Registers@{\-\_\-gpio\-Resistor\-Enable\-Registers}}
+\index{\-\_\-gpio\-Resistor\-Enable\-Registers@{\-\_\-gpio\-Resistor\-Enable\-Registers}!Gpio.c@{Gpio.\-c}}
+\subsubsection[{\-\_\-gpio\-Resistor\-Enable\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t}$\ast$ const \-\_\-gpio\-Resistor\-Enable\-Registers\mbox{[}{\bf P\-O\-R\-T\-\_\-\-M\-A\-X}+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_gpio_8c_aa7bfa5f6bea5f1db3706478c0b58d937}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL},
+    &P1REN,
+    &P2REN,
+    &P3REN,
+    &P4REN,
+    &P5REN,
+    &P6REN,
+    &P7REN,
+    &P8REN,
+
+
+\}
+\end{DoxyCode}
+Pointers to G\-P\-I\-O resistor enable registers. 
+
+Definition at line 78 of file Gpio.\-c.
+
+
+
+Referenced by Gpio\-\_\-\-Disable\-Resistor(), and Gpio\-\_\-\-Enable\-Resistor().
+

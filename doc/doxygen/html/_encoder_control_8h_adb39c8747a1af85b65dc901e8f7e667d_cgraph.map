@@ -1,0 +1,22 @@
+<map id="EncControl_SetConfig" name="EncControl_SetConfig">
+<area shape="rect" href="$_key_value_8c.html#a30aa66a5e57b84caf453be8ec13a23f8" title="KeyValue_Separate" alt="" coords="232,6,371,32" />
+<area shape="rect" href="$_timer_tick_8c.html#a2e533e7d0f92d79186280f85476710be" title="TimerTick_CancelTimeout" alt="" coords="214,56,390,83" />
+<area shape="rect" href="$_encoder_8c.html#a70d889a12cdee37e168987ba50cc02f6" title="Encoder_Stop" alt="" coords="250,107,354,134" />
+<area shape="rect" href="$_encoder_8c.html#aebbaa45bf07e0fe0c34185589998f871" title="Encoder_Start" alt="" coords="248,158,355,184" />
+<area shape="rect" href="$_timer_tick_8c.html#a2bd17b27521b73890cadba2767679193" title="TimerTick_RequestTimeout" alt="" coords="210,360,394,387" />
+<area shape="rect" href="$_encoder_control_8c.html#a9506706fabcec54f209a422e9485c49f" title="EncControl_ReadEnc" alt="" coords="227,259,376,286" />
+<area shape="rect" href="$_gpio_8c.html#a702acc0a1b5485271411e6f779209bb0" title="Gpio_ClearPortU" alt="" coords="490,56,612,83" />
+<area shape="rect" href="$_gpio_8c.html#afcb987f4ad78e26f735ec3bfcfec083e" title="_UnlockPortU" alt="" coords="732,107,836,134" />
+<area shape="rect" href="$_gpio_8c.html#aa751eb0ce20ef9c79739ced94de232c8" title="_LockPortU" alt="" coords="739,56,830,83" />
+<area shape="rect" href="$_gpio_8c.html#ad54d30c1b01480f97a4d24fd7ef625f9" title="Gpio_SetPortU" alt="" coords="496,107,606,134" />
+<area shape="rect" href="$_encoder_8c.html#ac60cabf6f4e0f21139a909d5d168c578" title="_Encoder_ClearBuffer" alt="" coords="708,183,860,210" />
+<area shape="rect" href="$_timer_tick_8c.html#a5d2a66cec0fe5f6d8554c05bfeacfd2c" title="_InsertTimeout" alt="" coords="496,411,606,438" />
+<area shape="rect" href="$_encoder_8c.html#a433dcdf1689d78f0710da855c15f2aa4" title="Encoder_Read" alt="" coords="496,208,606,235" />
+<area shape="rect" href="$_data_buffer_8c.html#a3b77682af68cdfbdf4dbcf06f5468008" title="DataBuffer_AddToSubarray16Bit" alt="" coords="443,259,659,286" />
+<area shape="rect" href="$_serial_8c.html#ae3c36491780ee25b86bf0b3ac9e61fa7" title="Serial_SendStringNumber" alt="" coords="463,360,639,387" />
+<area shape="rect" href="$_serial_8c.html#a7bea63da00a48ff6a233658e1bffb244" title="Serial_SendString" alt="" coords="487,310,615,336" />
+<area shape="rect" href="$_data_buffer_8c.html#ad726ed4ec48df844bfd5225ccca52117" title="_IndexOfSubarrayId" alt="" coords="715,259,854,286" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="728,360,840,387" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="712,310,856,336" />
+<area shape="rect" href="$_uart_8c.html#aba2063d7e89a1358197b4643996daaed" title="Uart_WriteByteHex" alt="" coords="716,411,852,438" />
+</map>

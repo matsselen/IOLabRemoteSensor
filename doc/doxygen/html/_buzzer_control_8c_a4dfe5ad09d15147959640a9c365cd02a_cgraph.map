@@ -1,0 +1,5 @@
+<map id="_BuzzerControl_SetDutyCycle" name="_BuzzerControl_SetDutyCycle">
+<area shape="rect" href="$_pwm_8c.html#a0b1227ceeeff83336f29d8b94d6ef238" title="Pwm_SetDuty" alt="" coords="257,31,361,57" />
+<area shape="rect" href="$_pwm_8c.html#a44f8de75f3f084d05fff0a54dc0b7df5" title="_DutyToCount" alt="" coords="444,5,551,32" />
+<area shape="rect" href="$_timer_8c.html#a6590a26eceba06333f451e69d6ea3987" title="Timer_B0CCX_Configure" alt="" coords="412,56,583,83" />
+</map>

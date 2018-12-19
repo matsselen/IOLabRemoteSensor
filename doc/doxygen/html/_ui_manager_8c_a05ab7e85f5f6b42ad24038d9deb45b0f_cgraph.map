@@ -1,0 +1,8 @@
+<map id="UiManager_StopSequence" name="UiManager_StopSequence">
+<area shape="rect" href="$_timer_tick_8c.html#ab3e7e710e30409b5e98b715960bacf39" title="TimerTick_CancelTimeoutFrom\lCallback" alt="" coords="235,5,443,48" />
+<area shape="rect" href="$_timer_tick_8c.html#a2e533e7d0f92d79186280f85476710be" title="TimerTick_CancelTimeout" alt="" coords="251,72,427,99" />
+<area shape="rect" href="$_buzzer_8h.html#a32beb337abd6ef07b2e0a1be1785fc05" title="Buzzer_Disable" alt="" coords="281,123,396,149" />
+<area shape="rect" href="$_pwm_8c.html#a7371820ffd6164c6fe538095708d2190" title="Pwm_Disable" alt="" coords="492,123,593,149" />
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="664,97,779,124" />
+<area shape="rect" href="$_pwm_8c.html#a4cde0daf6b044c1a1fc69b618509c8d6" title="_AnyChannelsEnabled" alt="" coords="643,148,800,175" />
+</map>

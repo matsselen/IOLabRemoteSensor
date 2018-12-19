@@ -1,0 +1,18 @@
+<map id="AdcManager.h" name="AdcManager.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="6,80,64,107" />
+<area shape="rect" href="$_self_test_8c_source.html" title="SelfTest.c" alt="" coords="88,80,168,107" />
+<area shape="rect" href="$_state_machine_8c.html" title="State logic handling. " alt="" coords="192,80,304,107" />
+<area shape="rect" href="$_ambient_light_control_8c.html" title="Controls reading the ambient light sensor. " alt="" coords="328,80,480,107" />
+<area shape="rect" href="$_analog7_control_8c.html" title="Controls reading analog input in header pin 7. " alt="" coords="504,80,627,107" />
+<area shape="rect" href="$_analog8_control_8c.html" title="Controls reading analog input in header pin 8. " alt="" coords="651,80,774,107" />
+<area shape="rect" href="$_analog9_control_8c.html" title="Controls reading analog input in header pin 9. " alt="" coords="798,80,920,107" />
+<area shape="rect" href="$_battery_control_8c.html" title="Controls reading the battery voltage. " alt="" coords="944,80,1062,107" />
+<area shape="rect" href="$_ecg6_chan_control_8c_source.html" title="Ecg6ChanControl.c" alt="" coords="1086,80,1222,107" />
+<area shape="rect" href="$_ecg_control_8c.html" title="Controls reading the 6&#45;channel ECG. " alt="" coords="1246,80,1342,107" />
+<area shape="rect" href="$_force_gauge_control_8c.html" title="Controls the force gauge. " alt="" coords="1366,80,1515,107" />
+<area shape="rect" href="$_high_gain_control_8c.html" title="Controls reading the high gain input. " alt="" coords="1539,80,1670,107" />
+<area shape="rect" href="$_microphone_control_8c.html" title="Controls reading the microphone. " alt="" coords="1694,80,1838,107" />
+<area shape="rect" href="$_test_protocol_8c.html" title="Manages the self&#45;test protocol. " alt="" coords="1862,80,1968,107" />
+<area shape="rect" href="$_thermometer_control_8c.html" title="Controls the thermometer driver. " alt="" coords="1992,80,2147,107" />
+<area shape="rect" href="$_adc_manager_8c.html" title="Analog to digital conversion manager. " alt="" coords="2171,80,2278,107" />
+</map>

@@ -1,0 +1,10 @@
+<map id="Accelerometer_ReadSample" name="Accelerometer_ReadSample">
+<area shape="rect" href="$_accelerometer_control_8h.html#ae2f3f44a125f53254293fad30727ad71" title="AccControl_ReadAcc" alt="" coords="273,56,420,83" />
+<area shape="rect" href="$_accelerometer_8h.html#a2daa1344e52ddb15175faf6fa207a4ab" title="Accelerometer_TriggerSample\lBlocking" alt="" coords="245,107,448,150" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="503,56,687,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="991,56,1188,83" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="765,56,917,83" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="741,107,941,134" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1237,56,1288,83" />
+<area shape="rect" href="$_test_protocol_8c.html#aeb99f4a37f3a85763ed4d59a5212741c" title="_HandleHumanAccCommand" alt="" coords="496,115,693,142" />
+</map>

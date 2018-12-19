@@ -1,0 +1,7 @@
+<map id="_ReadMultipleRegisters" name="_ReadMultipleRegisters">
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="217,5,361,32" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="227,56,352,83" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="227,107,352,133" />
+<area shape="rect" href="$_i2c_8c.html#a6f3a9e8f5dd4856ddf5a891e84ea82ea" title="I2c_ReceiveByte" alt="" coords="229,157,349,184" />
+<area shape="rect" href="$_i2c_8c.html#a0df5e64148fcf1e7c7c1cc90e107db49" title="I2c_ReceiveByteEnd" alt="" coords="217,208,361,235" />
+</map>

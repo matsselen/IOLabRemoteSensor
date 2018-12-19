@@ -1,0 +1,82 @@
+\hypertarget{_girl_i_left_behind_sequence_data_8h}{\section{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h File Reference}
+\label{_girl_i_left_behind_sequence_data_8h}\index{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h@{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h}}
+}
+
+
+Contains the sequence data information for the Girl I Left Behind U\-I sequence.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Ui\-Manager\-Sequence\-Data.\-h$>$}\\*
+{\ttfamily \#include $<$Note\-Duration\-To\-Ms.\-h$>$}\\*
+Include dependency graph for Girl\-I\-Left\-Behind\-Sequence\-Data.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_girl_i_left_behind_sequence_data_8h_ae80613631508124d9a740055ebc9fc5c}{static const \hyperlink{_ui_manager_sequence_data_8h_struct_buzzer_sequence_step__t}{Buzzer\-Sequence\-Step\-\_\-t} {\bfseries girl\-I\-Left\-Behind\-Buzzer\-Steps} \mbox{[}$\,$\mbox{]}}\label{_girl_i_left_behind_sequence_data_8h_ae80613631508124d9a740055ebc9fc5c}
+
+\item 
+static const \\*
+\hyperlink{_ui_manager_sequence_data_8h_struct_back_light_sequence_step__t}{Back\-Light\-Sequence\-Step\-\_\-t} {\bfseries girl\-I\-Left\-Behind\-Backlight\-Steps} \mbox{[}$\,$\mbox{]}
+\item 
+static const \hyperlink{_ui_manager_sequence_data_8h_struct_ui_sequence_data__t}{Ui\-Sequence\-Data\-\_\-t} {\bfseries girl\-I\-Left\-Behind\-Sequence}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the sequence data information for the Girl I Left Behind U\-I sequence. {\bfseries Description} Contains the sequence data information for the Girl I Left Behind \char`\"{}special\char`\"{} U\-I sequence. The song is a public domain Irish/\-British folk tune. 
+
+Definition in file \hyperlink{_girl_i_left_behind_sequence_data_8h_source}{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h}.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_girl_i_left_behind_sequence_data_8h_a39a42f3718f8023e320e6b3cc96ebd75}{\index{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h@{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h}!girl\-I\-Left\-Behind\-Backlight\-Steps@{girl\-I\-Left\-Behind\-Backlight\-Steps}}
+\index{girl\-I\-Left\-Behind\-Backlight\-Steps@{girl\-I\-Left\-Behind\-Backlight\-Steps}!GirlILeftBehindSequenceData.h@{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h}}
+\subsubsection[{girl\-I\-Left\-Behind\-Backlight\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Back\-Light\-Sequence\-Step\-\_\-t} girl\-I\-Left\-Behind\-Backlight\-Steps\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_girl_i_left_behind_sequence_data_8h_a39a42f3718f8023e320e6b3cc96ebd75}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        \{ 
+                .backlightOn = \textcolor{keyword}{false},
+                .durationMs = 100,
+        \},
+        \{ 
+                .backlightOn = \textcolor{keyword}{true},
+                .durationMs = 100,
+        \},
+        \{ 
+                .backlightOn = \textcolor{keyword}{false},
+                .durationMs = 100,
+        \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 248 of file Girl\-I\-Left\-Behind\-Sequence\-Data.\-h.
+
+\hypertarget{_girl_i_left_behind_sequence_data_8h_a6f1bec5aed1742c16336fa8e18424bfe}{\index{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h@{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h}!girl\-I\-Left\-Behind\-Sequence@{girl\-I\-Left\-Behind\-Sequence}}
+\index{girl\-I\-Left\-Behind\-Sequence@{girl\-I\-Left\-Behind\-Sequence}!GirlILeftBehindSequenceData.h@{Girl\-I\-Left\-Behind\-Sequence\-Data.\-h}}
+\subsubsection[{girl\-I\-Left\-Behind\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ui\-Sequence\-Data\-\_\-t} girl\-I\-Left\-Behind\-Sequence\hspace{0.3cm}{\ttfamily [static]}}}\label{_girl_i_left_behind_sequence_data_8h_a6f1bec5aed1742c16336fa8e18424bfe}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    .buzzerSequence =
+    \{
+        .stepsInSequence = \hyperlink{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{ARRAY\_LENGTH}(girlILeftBehindBuzzerSteps),
+        .stepList = girlILeftBehindBuzzerSteps,
+    \},
+    .backLightSequence =
+    \{
+        .stepsInSequence = \hyperlink{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{ARRAY\_LENGTH}(girlILeftBehindBacklightSteps),
+        .stepList = girlILeftBehindBacklightSteps,
+    \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 264 of file Girl\-I\-Left\-Behind\-Sequence\-Data.\-h.
+

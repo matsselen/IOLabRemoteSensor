@@ -1,0 +1,17 @@
+<map id="UiManager.c" name="UiManager.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="316,171,425,197" />
+<area shape="rect" href="$_timer_tick_8h.html" title="Timer Tick utility header file. " alt="" coords="1104,88,1195,115" />
+<area shape="rect" href="$_buzzer_8h.html" title="Driver for the buzzer. " alt="" coords="1004,171,1076,197" />
+<area shape="rect" href="$_ui_manager_8h.html" title="Manages Feedback to the user. " alt="" coords="1219,88,1315,115" />
+<area shape="rect" href="$_event_queue_8h.html" title="Event queue module header file. " alt="" coords="1339,88,1445,115" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="1469,88,1539,115" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="1563,88,1635,115" />
+<area shape="rect" href="$_ui_manager_sequence_data_8h.html" title="Stores the data for the different sequences in the UI. " alt="" coords="693,171,877,197" />
+<area shape="rect" href="$_star_wars_sequence_data_8h.html" title="Contains the sequence data information for the star wars UI sequence. " alt="" coords="480,80,720,123" />
+<area shape="rect" href="$_success_sequence_data_8h.html" title="Contains the sequence data information for the star wars UI sequence. " alt="" coords="744,80,979,123" />
+<area shape="rect" href="$_fail_sequence_data_8h.html" title="Contains the sequence data information for the star wars UI sequence. " alt="" coords="56,80,261,123" />
+<area shape="rect" href="$_girl_i_left_behind_sequence_data_8h.html" title="Contains the sequence data information for the Girl I Left Behind UI sequence. " alt="" coords="285,80,456,123" />
+<area shape="rect" href="$_pitch_to_frequency_8h.html" title="Converts named pitches to their frequencies. " alt="" coords="843,245,981,272" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="1565,171,1632,197" />
+<area shape="rect" href="$_note_duration_to_ms_8h.html" title="Converts note durations to milliseconds. " alt="" coords="475,171,619,197" />
+</map>

@@ -1,0 +1,10 @@
+<map id="Buzzer_Disable" name="Buzzer_Disable">
+<area shape="rect" href="$_ui_manager_8c.html#a4aabb887cd84641062375402ec60026b" title="_PlaySequence" alt="" coords="201,31,316,57" />
+<area shape="rect" href="$_ui_manager_8h.html#a05ab7e85f5f6b42ad24038d9deb45b0f" title="UiManager_StopSequence" alt="" coords="168,81,349,108" />
+<area shape="rect" href="$_ui_manager_8h.html#a64c0bf6dac5078278c785307c7e2befe" title="UiManager_PlaySequence" alt="" coords="567,31,745,57" />
+<area shape="rect" href="$_ui_manager_8c.html#ac066839b7cc3e3b90ae5bdd7f629b3c4" title="_UiTickCallBack" alt="" coords="399,56,516,83" />
+<area shape="rect" href="$_self_test_8h.html#a282b024bc0ec38174285fce7402142c9" title="SelfTest_Start" alt="" coords="796,31,900,57" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="949,31,1149,57" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1199,31,1396,57" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1445,31,1496,57" />
+</map>

@@ -1,0 +1,434 @@
+\hypertarget{_timer_tick_8h}{\section{Timer\-Tick.\-h File Reference}
+\label{_timer_tick_8h}\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}}
+}
+
+
+Timer Tick utility header file.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_timer_tick_8h_afd22beacf245527c17ee6430f3d93672}{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-M\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K}~(10u)
+\item 
+\#define \hyperlink{_timer_tick_8h_aeef353299620e86a001c37e63835bd94}{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S\-E\-C}~(\hyperlink{_timer_tick_8h_afd22beacf245527c17ee6430f3d93672}{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-M\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K})
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}{Tick\-Timeout\-Handle\-\_\-t}
+\item 
+typedef void($\ast$ \hyperlink{_timer_tick_8h_a4836868f7b27490126f100ab6f222015}{Tick\-Timeout\-Callback\-\_\-t} )(void)
+\item 
+typedef \hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} \hyperlink{_timer_tick_8h_a48ccbb693b97bdf50ea2a032c4a9673f}{Tick\-Isr\-Handle\-\_\-t}
+\item 
+typedef void($\ast$ \hyperlink{_timer_tick_8h_ac916277ab32eb81234ae976b2d95b0bc}{Tick\-Isr\-Pointer\-\_\-t} )(void)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_timer_tick_8h_a054594a4339617f3ab1db2d5168c6ce7}{Tick\-Timeout\-Type\-\_\-t} \{ \\*
+{\bfseries Tick\-Timeout\-Type\-\_\-\-S\-I\-N\-G\-L\-E}, 
+\\*
+{\bfseries Tick\-Timeout\-Type\-\_\-\-R\-E\-P\-E\-A\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_timer_tick_8h_ac51da30062b458baf53226328f414dea}{Timer\-Tick\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_timer_tick_8h_a1b3457c5f6b3c3d931971588f479fb39}{Timer\-Tick\-\_\-\-Process\-Timeouts} (void)
+\item 
+\hyperlink{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}{Tick\-Timeout\-Handle\-\_\-t} \hyperlink{_timer_tick_8h_a2bd17b27521b73890cadba2767679193}{Timer\-Tick\-\_\-\-Request\-Timeout} (\hyperlink{_timer_tick_8h_a054594a4339617f3ab1db2d5168c6ce7}{Tick\-Timeout\-Type\-\_\-t} type, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} milliseconds, \hyperlink{_timer_tick_8h_a4836868f7b27490126f100ab6f222015}{Tick\-Timeout\-Callback\-\_\-t} callback)
+\item 
+void \hyperlink{_timer_tick_8h_a2e533e7d0f92d79186280f85476710be}{Timer\-Tick\-\_\-\-Cancel\-Timeout} (\hyperlink{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}{Tick\-Timeout\-Handle\-\_\-t} handle)
+\item 
+void \hyperlink{_timer_tick_8h_ab3e7e710e30409b5e98b715960bacf39}{Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_timer_tick_8h_a941a359873731d53d2dd29d9fc7d97e7}{Timer\-Tick\-\_\-\-Is\-Timer\-Active} (void)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_timer_tick_8h_a90cc5aa0c45b59b5ac949121c2e0f76e}{Timer\-Tick\-\_\-\-Get\-Max\-Active\-Timeouts} (void)
+\item 
+\hyperlink{_timer_tick_8h_a48ccbb693b97bdf50ea2a032c4a9673f}{Tick\-Isr\-Handle\-\_\-t} \hyperlink{_timer_tick_8h_a1d5b6997b1a4455234bd5e5482615cf5}{Timer\-Tick\-\_\-\-Register\-Tick\-Isr} (\hyperlink{_timer_tick_8h_ac916277ab32eb81234ae976b2d95b0bc}{Tick\-Isr\-Pointer\-\_\-t} tick\-Isr)
+\item 
+void \hyperlink{_timer_tick_8h_a9d0d76021db28e792e2ae483fd32de3c}{Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr} (\hyperlink{_timer_tick_8h_a48ccbb693b97bdf50ea2a032c4a9673f}{Tick\-Isr\-Handle\-\_\-t} handle)
+\item 
+void \hyperlink{_timer_tick_8h_a6bedf032273a75ee5e6c5017caa9c959}{Timer\-Tick\-\_\-\-Enable\-Tick\-Isr} (\hyperlink{_timer_tick_8h_a48ccbb693b97bdf50ea2a032c4a9673f}{Tick\-Isr\-Handle\-\_\-t} handle)
+\item 
+void \hyperlink{_timer_tick_8h_adb98d4d39efa0b1d72a6c9f674b11745}{Timer\-Tick\-\_\-\-Disable\-Tick\-Isr} (\hyperlink{_timer_tick_8h_a48ccbb693b97bdf50ea2a032c4a9673f}{Tick\-Isr\-Handle\-\_\-t} handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Timer Tick utility header file. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The timer tick will provide a system tick for triggering periodic events. 
+
+Definition in file \hyperlink{_timer_tick_8h_source}{Timer\-Tick.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_timer_tick_8h_afd22beacf245527c17ee6430f3d93672}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-M\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K@{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-M\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K}}
+\index{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-M\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K@{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-M\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-M\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-M\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K~(10u)}}\label{_timer_tick_8h_afd22beacf245527c17ee6430f3d93672}
+Defines the number of milliseconds per timer tick. Value based on timer setup. Must be greater than 2 to convert from milliseconds to ticks without overflowing. 
+
+Definition at line 30 of file Timer\-Tick.\-h.
+
+
+
+Referenced by \-\_\-\-Handle\-Rf\-Status\-I\-S\-R(), \-\_\-\-Process\-Push\-Buttons(), and Timer\-Tick\-\_\-\-Request\-Timeout().
+
+\hypertarget{_timer_tick_8h_aeef353299620e86a001c37e63835bd94}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S\-E\-C@{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S\-E\-C}}
+\index{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S\-E\-C@{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S\-E\-C}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S\-E\-C~({\bf T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-M\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K})}}\label{_timer_tick_8h_aeef353299620e86a001c37e63835bd94}
+Defines the resolution (in milliseconds) of the timer tick timeout values. 
+
+Definition at line 32 of file Timer\-Tick.\-h.
+
+
+
+Referenced by Timer\-Tick\-\_\-\-Request\-Timeout().
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_timer_tick_8h_a48ccbb693b97bdf50ea2a032c4a9673f}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Tick\-Isr\-Handle\-\_\-t@{Tick\-Isr\-Handle\-\_\-t}}
+\index{Tick\-Isr\-Handle\-\_\-t@{Tick\-Isr\-Handle\-\_\-t}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Tick\-Isr\-Handle\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int16\-\_\-t} {\bf Tick\-Isr\-Handle\-\_\-t}}}\label{_timer_tick_8h_a48ccbb693b97bdf50ea2a032c4a9673f}
+Definition of a tick I\-S\-R handle 
+
+Definition at line 47 of file Timer\-Tick.\-h.
+
+\hypertarget{_timer_tick_8h_ac916277ab32eb81234ae976b2d95b0bc}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Tick\-Isr\-Pointer\-\_\-t@{Tick\-Isr\-Pointer\-\_\-t}}
+\index{Tick\-Isr\-Pointer\-\_\-t@{Tick\-Isr\-Pointer\-\_\-t}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Tick\-Isr\-Pointer\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Tick\-Isr\-Pointer\-\_\-t)(void)}}\label{_timer_tick_8h_ac916277ab32eb81234ae976b2d95b0bc}
+Defines a tick I\-S\-R function pointer 
+
+Definition at line 49 of file Timer\-Tick.\-h.
+
+\hypertarget{_timer_tick_8h_a4836868f7b27490126f100ab6f222015}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Tick\-Timeout\-Callback\-\_\-t@{Tick\-Timeout\-Callback\-\_\-t}}
+\index{Tick\-Timeout\-Callback\-\_\-t@{Tick\-Timeout\-Callback\-\_\-t}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Tick\-Timeout\-Callback\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Tick\-Timeout\-Callback\-\_\-t)(void)}}\label{_timer_tick_8h_a4836868f7b27490126f100ab6f222015}
+Defines a tick timeout callback function pointer 
+
+Definition at line 44 of file Timer\-Tick.\-h.
+
+\hypertarget{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Tick\-Timeout\-Handle\-\_\-t@{Tick\-Timeout\-Handle\-\_\-t}}
+\index{Tick\-Timeout\-Handle\-\_\-t@{Tick\-Timeout\-Handle\-\_\-t}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Tick\-Timeout\-Handle\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf uint16\-\_\-t} {\bf Tick\-Timeout\-Handle\-\_\-t}}}\label{_timer_tick_8h_a0bdb7b15ecad42f2860f1745747ee4cf}
+Definition of a tick timeout handle 
+
+Definition at line 42 of file Timer\-Tick.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_timer_tick_8h_a054594a4339617f3ab1db2d5168c6ce7}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Tick\-Timeout\-Type\-\_\-t@{Tick\-Timeout\-Type\-\_\-t}}
+\index{Tick\-Timeout\-Type\-\_\-t@{Tick\-Timeout\-Type\-\_\-t}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Tick\-Timeout\-Type\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Tick\-Timeout\-Type\-\_\-t}}}\label{_timer_tick_8h_a054594a4339617f3ab1db2d5168c6ce7}
+Defines the possible types of timeouts 
+
+Definition at line 35 of file Timer\-Tick.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_timer_tick_8h_a2e533e7d0f92d79186280f85476710be}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Cancel\-Timeout@{Timer\-Tick\-\_\-\-Cancel\-Timeout}}
+\index{Timer\-Tick\-\_\-\-Cancel\-Timeout@{Timer\-Tick\-\_\-\-Cancel\-Timeout}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Cancel\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-Tick\-\_\-\-Cancel\-Timeout (
+\begin{DoxyParamCaption}
+\item[{{\bf Tick\-Timeout\-Handle\-\_\-t}}]{handle}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_a2e533e7d0f92d79186280f85476710be}
+Cancel the given timeout. The timeout structure is deleted from the list.
+
+\begin{DoxyNote}{Note}
+This function should not be called from within a timeout's callback function, as this could cause erros in the timeout list. Use \hyperlink{_timer_tick_8c_ab3e7e710e30409b5e98b715960bacf39}{Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback()} instead.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & -\/ Handle of timeout to cancel \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 246 of file Timer\-Tick.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence(), \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T(), Barometer\-Control\-\_\-\-Set\-Config(), Digital\-Input\-Control\-\_\-\-Set\-Config(), Enc\-Control\-\_\-\-Set\-Config(), Thermometer\-Control\-\_\-\-Set\-Config(), and Ui\-Manager\-\_\-\-Stop\-Sequence().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_tick_8h_ab3e7e710e30409b5e98b715960bacf39}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback@{Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback}}
+\index{Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback@{Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-Tick\-\_\-\-Cancel\-Timeout\-From\-Callback (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_ab3e7e710e30409b5e98b715960bacf39}
+Cancel the timeout running this callback. The timeout structure is deleted from the list. 
+
+Definition at line 301 of file Timer\-Tick.\-c.
+
+
+
+Referenced by \-\_\-\-Play\-Sequence(), and Ui\-Manager\-\_\-\-Stop\-Sequence().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_tick_8h_adb98d4d39efa0b1d72a6c9f674b11745}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Disable\-Tick\-Isr@{Timer\-Tick\-\_\-\-Disable\-Tick\-Isr}}
+\index{Timer\-Tick\-\_\-\-Disable\-Tick\-Isr@{Timer\-Tick\-\_\-\-Disable\-Tick\-Isr}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Disable\-Tick\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-Tick\-\_\-\-Disable\-Tick\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Tick\-Isr\-Handle\-\_\-t}}]{handle}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_adb98d4d39efa0b1d72a6c9f674b11745}
+Disables the tick I\-S\-R with the given handle.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & -\/ Handle of tick I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 402 of file Timer\-Tick.\-c.
+
+
+
+Referenced by Timer\-Tick\-\_\-\-Register\-Tick\-Isr(), and Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_tick_8h_a6bedf032273a75ee5e6c5017caa9c959}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Enable\-Tick\-Isr@{Timer\-Tick\-\_\-\-Enable\-Tick\-Isr}}
+\index{Timer\-Tick\-\_\-\-Enable\-Tick\-Isr@{Timer\-Tick\-\_\-\-Enable\-Tick\-Isr}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Enable\-Tick\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-Tick\-\_\-\-Enable\-Tick\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Tick\-Isr\-Handle\-\_\-t}}]{handle}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_a6bedf032273a75ee5e6c5017caa9c959}
+Enables the tick I\-S\-R with the given handle. The timer interrupt flag is cleared first, so the I\-S\-R will not be called for up to one tick period.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & -\/ Handle of tick I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 390 of file Timer\-Tick.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init(), and Push\-Button\-Control\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_tick_8h_a90cc5aa0c45b59b5ac949121c2e0f76e}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Get\-Max\-Active\-Timeouts@{Timer\-Tick\-\_\-\-Get\-Max\-Active\-Timeouts}}
+\index{Timer\-Tick\-\_\-\-Get\-Max\-Active\-Timeouts@{Timer\-Tick\-\_\-\-Get\-Max\-Active\-Timeouts}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Get\-Max\-Active\-Timeouts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Timer\-Tick\-\_\-\-Get\-Max\-Active\-Timeouts (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_a90cc5aa0c45b59b5ac949121c2e0f76e}
+\begin{DoxyReturn}{Returns}
+The maximum number of timeouts that are active at one time. 
+\end{DoxyReturn}
+
+
+Definition at line 330 of file Timer\-Tick.\-c.
+
+\hypertarget{_timer_tick_8h_ac51da30062b458baf53226328f414dea}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Init@{Timer\-Tick\-\_\-\-Init}}
+\index{Timer\-Tick\-\_\-\-Init@{Timer\-Tick\-\_\-\-Init}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-Tick\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_ac51da30062b458baf53226328f414dea}
+Initializes the timer tick module. Uses Timer A1 C\-C0 with timer in continuous mode. 
+
+Definition at line 91 of file Timer\-Tick.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_tick_8h_a941a359873731d53d2dd29d9fc7d97e7}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Is\-Timer\-Active@{Timer\-Tick\-\_\-\-Is\-Timer\-Active}}
+\index{Timer\-Tick\-\_\-\-Is\-Timer\-Active@{Timer\-Tick\-\_\-\-Is\-Timer\-Active}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Is\-Timer\-Active}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Timer\-Tick\-\_\-\-Is\-Timer\-Active (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_a941a359873731d53d2dd29d9fc7d97e7}
+Get timer active status and reset status.
+
+\begin{DoxyReturn}{Returns}
+The timer interrupt is active or not. 
+\end{DoxyReturn}
+
+
+Definition at line 318 of file Timer\-Tick.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_tick_8h_a1b3457c5f6b3c3d931971588f479fb39}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Process\-Timeouts@{Timer\-Tick\-\_\-\-Process\-Timeouts}}
+\index{Timer\-Tick\-\_\-\-Process\-Timeouts@{Timer\-Tick\-\_\-\-Process\-Timeouts}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Process\-Timeouts}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-Tick\-\_\-\-Process\-Timeouts (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_a1b3457c5f6b3c3d931971588f479fb39}
+Processes the timeouts. This function must be called at a regular rate to process the timer tick timeouts. 
+
+Definition at line 116 of file Timer\-Tick.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_tick_8h_a1d5b6997b1a4455234bd5e5482615cf5}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Register\-Tick\-Isr@{Timer\-Tick\-\_\-\-Register\-Tick\-Isr}}
+\index{Timer\-Tick\-\_\-\-Register\-Tick\-Isr@{Timer\-Tick\-\_\-\-Register\-Tick\-Isr}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Register\-Tick\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tick\-Isr\-Handle\-\_\-t} Timer\-Tick\-\_\-\-Register\-Tick\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Tick\-Isr\-Pointer\-\_\-t}}]{tick\-Isr}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_a1d5b6997b1a4455234bd5e5482615cf5}
+Register a tick I\-S\-R, that is an I\-S\-R that fires once every tick.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tick\-Isr} & -\/ I\-S\-R to register.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Handle of tick I\-S\-R. If handle is negative, registration failed. 
+\end{DoxyReturn}
+
+
+Definition at line 342 of file Timer\-Tick.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init(), and Push\-Button\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_tick_8h_a2bd17b27521b73890cadba2767679193}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Request\-Timeout@{Timer\-Tick\-\_\-\-Request\-Timeout}}
+\index{Timer\-Tick\-\_\-\-Request\-Timeout@{Timer\-Tick\-\_\-\-Request\-Timeout}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Request\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tick\-Timeout\-Handle\-\_\-t} Timer\-Tick\-\_\-\-Request\-Timeout (
+\begin{DoxyParamCaption}
+\item[{{\bf Tick\-Timeout\-Type\-\_\-t}}]{type, }
+\item[{{\bf uint16\-\_\-t}}]{milliseconds, }
+\item[{{\bf Tick\-Timeout\-Callback\-\_\-t}}]{callback}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_a2bd17b27521b73890cadba2767679193}
+Request a timeout. Adds a timeout structure to a sorted list. List is sorted from smallest (earliest expiration time) to largest (latest expiration time).
+
+\begin{DoxyNote}{Note}
+The resolution is equal to T\-I\-M\-E\-R\-T\-I\-C\-K\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N\-\_\-\-M\-S\-E\-C.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em type} & -\/ Type of timeout \\
+\hline
+\mbox{\tt in}  & {\em milliseconds} & -\/ Length of timeout in milliseconds \\
+\hline
+\mbox{\tt in}  & {\em callback} & -\/ Pointer to the function called when the timeout expires\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A handle to the requested timeout. 
+\end{DoxyReturn}
+
+
+Definition at line 174 of file Timer\-Tick.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T(), \-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T(), Barometer\-Control\-\_\-\-Set\-Config(), Digital\-Input\-Control\-\_\-\-Set\-Config(), Enc\-Control\-\_\-\-Set\-Config(), Led\-Control\-\_\-\-Init(), main(), Self\-Test\-\_\-\-Process(), Thermometer\-Control\-\_\-\-Set\-Config(), and Ui\-Manager\-\_\-\-Play\-Sequence().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_tick_8h_a9d0d76021db28e792e2ae483fd32de3c}{\index{Timer\-Tick.\-h@{Timer\-Tick.\-h}!Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr@{Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr}}
+\index{Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr@{Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr}!TimerTick.h@{Timer\-Tick.\-h}}
+\subsubsection[{Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-Tick\-\_\-\-Unregister\-Tick\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Tick\-Isr\-Handle\-\_\-t}}]{handle}
+\end{DoxyParamCaption}
+)}}\label{_timer_tick_8h_a9d0d76021db28e792e2ae483fd32de3c}
+Unregister the tick I\-S\-R with the given handle.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & -\/ Handle of tick I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 376 of file Timer\-Tick.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+

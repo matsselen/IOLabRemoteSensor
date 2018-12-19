@@ -1,0 +1,155 @@
+\hypertarget{_ui_manager_sequence_data_8h}{\section{Ui\-Manager\-Sequence\-Data.\-h File Reference}
+\label{_ui_manager_sequence_data_8h}\index{Ui\-Manager\-Sequence\-Data.\-h@{Ui\-Manager\-Sequence\-Data.\-h}}
+}
+
+
+Stores the data for the different sequences in the U\-I.  
+
+
+{\ttfamily \#include $<$Pitch\-To\-Frequency.\-h$>$}\\*
+Include dependency graph for Ui\-Manager\-Sequence\-Data.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_ui_manager_sequence_data_8h_struct_buzzer_sequence_step__t}{Buzzer\-Sequence\-Step\-\_\-t}
+\item 
+struct \hyperlink{_ui_manager_sequence_data_8h_struct_buzzer_sequence__t}{Buzzer\-Sequence\-\_\-t}
+\item 
+struct \hyperlink{_ui_manager_sequence_data_8h_struct_back_light_sequence_step__t}{Back\-Light\-Sequence\-Step\-\_\-t}
+\item 
+struct \hyperlink{_ui_manager_sequence_data_8h_struct_back_light_sequence__t}{Back\-Light\-Sequence\-\_\-t}
+\item 
+struct \hyperlink{_ui_manager_sequence_data_8h_struct_ui_sequence_data__t}{Ui\-Sequence\-Data\-\_\-t}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the data for the different sequences in the U\-I. {\bfseries Description} Stores the data for the different sequences in the U\-I. 
+
+Definition in file \hyperlink{_ui_manager_sequence_data_8h_source}{Ui\-Manager\-Sequence\-Data.\-h}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{Buzzer\-Sequence\-Step\-\_\-t@{Buzzer\-Sequence\-Step\-\_\-t}}\label{struct_buzzer_sequence_step__t}
+\hypertarget{_ui_manager_sequence_data_8h_struct_buzzer_sequence_step__t}{}
+\subsubsection{struct Buzzer\-Sequence\-Step\-\_\-t}
+Defines the contents of a single step in a buzzer sequence 
+
+Definition at line 27 of file Ui\-Manager\-Sequence\-Data.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_ui_manager_sequence_data_8h_af5c33d98509b3616d7b8055bc97aced4}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_ui_manager_sequence_data_8h_af5c33d98509b3616d7b8055bc97aced4}
+&
+duration\-Ms&
+\\
+\hline
+
+\hypertarget{_ui_manager_sequence_data_8h_a8740ba80e30dd75e71d09fa1dcf04f3d}{\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool}}\label{_ui_manager_sequence_data_8h_a8740ba80e30dd75e71d09fa1dcf04f3d}
+&
+enabled&
+\\
+\hline
+
+\hypertarget{_ui_manager_sequence_data_8h_a527d7b7f39a2a2b6f85086e1e67f6712}{\hyperlink{_pitch_to_frequency_8h_a63c4ff9f68016392f5e3897c6661a900}{Pitch\-Frequency\-\_\-t}}\label{_ui_manager_sequence_data_8h_a527d7b7f39a2a2b6f85086e1e67f6712}
+&
+pitch&
+\\
+\hline
+
+\end{DoxyFields}
+\index{Buzzer\-Sequence\-\_\-t@{Buzzer\-Sequence\-\_\-t}}\label{struct_buzzer_sequence__t}
+\hypertarget{_ui_manager_sequence_data_8h_struct_buzzer_sequence__t}{}
+\subsubsection{struct Buzzer\-Sequence\-\_\-t}
+Define a structure that holds a buzzer sequence 
+
+Definition at line 35 of file Ui\-Manager\-Sequence\-Data.\-h.
+
+
+
+Collaboration diagram for Buzzer\-Sequence\-\_\-t\-:
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_ui_manager_sequence_data_8h_a0a551db86a87ba0070c3bd9c04be7a17}{const \hyperlink{_ui_manager_sequence_data_8h_struct_buzzer_sequence_step__t}{Buzzer\-Sequence\-Step\-\_\-t} $\ast$const}\label{_ui_manager_sequence_data_8h_a0a551db86a87ba0070c3bd9c04be7a17}
+&
+step\-List&
+\\
+\hline
+
+\hypertarget{_ui_manager_sequence_data_8h_a56003c931a843036d37e9a4767e74371}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_ui_manager_sequence_data_8h_a56003c931a843036d37e9a4767e74371}
+&
+steps\-In\-Sequence&
+\\
+\hline
+
+\end{DoxyFields}
+\index{Back\-Light\-Sequence\-Step\-\_\-t@{Back\-Light\-Sequence\-Step\-\_\-t}}\label{struct_back_light_sequence_step__t}
+\hypertarget{_ui_manager_sequence_data_8h_struct_back_light_sequence_step__t}{}
+\subsubsection{struct Back\-Light\-Sequence\-Step\-\_\-t}
+Define a structure that holds a single step in the backlight sequence 
+
+Definition at line 42 of file Ui\-Manager\-Sequence\-Data.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_ui_manager_sequence_data_8h_a61e7f4bbe65ad3029357668b5e595488}{\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool}}\label{_ui_manager_sequence_data_8h_a61e7f4bbe65ad3029357668b5e595488}
+&
+backlight\-On&
+\\
+\hline
+
+\hypertarget{_ui_manager_sequence_data_8h_af5c33d98509b3616d7b8055bc97aced4}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_ui_manager_sequence_data_8h_af5c33d98509b3616d7b8055bc97aced4}
+&
+duration\-Ms&
+\\
+\hline
+
+\end{DoxyFields}
+\index{Back\-Light\-Sequence\-\_\-t@{Back\-Light\-Sequence\-\_\-t}}\label{struct_back_light_sequence__t}
+\hypertarget{_ui_manager_sequence_data_8h_struct_back_light_sequence__t}{}
+\subsubsection{struct Back\-Light\-Sequence\-\_\-t}
+Define a structure to hold a backlight sequence 
+
+Definition at line 49 of file Ui\-Manager\-Sequence\-Data.\-h.
+
+
+
+Collaboration diagram for Back\-Light\-Sequence\-\_\-t\-:
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_ui_manager_sequence_data_8h_a0d68938eeaacdb05f789eb97a0cb0e58}{const \hyperlink{_ui_manager_sequence_data_8h_struct_back_light_sequence_step__t}{Back\-Light\-Sequence\-Step\-\_\-t} \\*
+$\ast$const}\label{_ui_manager_sequence_data_8h_a0d68938eeaacdb05f789eb97a0cb0e58}
+&
+step\-List&
+\\
+\hline
+
+\hypertarget{_ui_manager_sequence_data_8h_a56003c931a843036d37e9a4767e74371}{\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}}\label{_ui_manager_sequence_data_8h_a56003c931a843036d37e9a4767e74371}
+&
+steps\-In\-Sequence&
+\\
+\hline
+
+\end{DoxyFields}
+\index{Ui\-Sequence\-Data\-\_\-t@{Ui\-Sequence\-Data\-\_\-t}}\label{struct_ui_sequence_data__t}
+\hypertarget{_ui_manager_sequence_data_8h_struct_ui_sequence_data__t}{}
+\subsubsection{struct Ui\-Sequence\-Data\-\_\-t}
+Define a structure that will hold the settings for a U\-I sequence 
+
+Definition at line 56 of file Ui\-Manager\-Sequence\-Data.\-h.
+
+
+
+Collaboration diagram for Ui\-Sequence\-Data\-\_\-t\-:
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_ui_manager_sequence_data_8h_a4078cba846baaf15111c411becdc1877}{const \hyperlink{_ui_manager_sequence_data_8h_struct_back_light_sequence__t}{Back\-Light\-Sequence\-\_\-t}}\label{_ui_manager_sequence_data_8h_a4078cba846baaf15111c411becdc1877}
+&
+back\-Light\-Sequence&
+\\
+\hline
+
+\hypertarget{_ui_manager_sequence_data_8h_ac35defd8a0970ded487de52b3e712460}{const \hyperlink{_ui_manager_sequence_data_8h_struct_buzzer_sequence__t}{Buzzer\-Sequence\-\_\-t}}\label{_ui_manager_sequence_data_8h_ac35defd8a0970ded487de52b3e712460}
+&
+buzzer\-Sequence&
+\\
+\hline
+
+\end{DoxyFields}

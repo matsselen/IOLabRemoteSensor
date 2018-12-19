@@ -1,0 +1,6 @@
+<map id="Magnetometer.h" name="Magnetometer.h">
+<area shape="rect" href="$_configuration_manager_8c.html" title="The configuration manager keeps track of all the sensor configurations. " alt="" coords="5,80,168,107" />
+<area shape="rect" href="$_magnetometer_control_8c.html" title="Magnetometer control module. " alt="" coords="192,80,352,107" />
+<area shape="rect" href="$_test_protocol_8c.html" title="Manages the self&#45;test protocol. " alt="" coords="376,80,483,107" />
+<area shape="rect" href="$_magnetometer_8c.html" title="Magnetometer sensor interface module. " alt="" coords="507,80,624,107" />
+</map>

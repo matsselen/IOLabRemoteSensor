@@ -1,0 +1,10 @@
+<map id="SpiSlave_Init" name="SpiSlave_Init">
+<area shape="rect" href="$_gpio_8c.html#a2b292615af2329f2e90ecc791ac3c161" title="Gpio_Configure" alt="" coords="160,5,275,32" />
+<area shape="rect" href="$_dma_8c.html#a0bd08908753ae9ae69f9502bad4229fa" title="Dma_Configure" alt="" coords="160,56,275,83" />
+<area shape="rect" href="$_dma_8c.html#ab10a2a28e0516ad46de214ade58839f7" title="Dma_RegisterIsr" alt="" coords="157,107,277,133" />
+<area shape="rect" href="$_spi_slave_8c.html#a366c0a75d1f233fbd263825dc0fe7907" title="_HandleDmaRxIsr" alt="" coords="152,157,283,184" />
+<area shape="rect" href="$_spi_slave_8c.html#a56e510a9f87c444daed7ffcc5f5479bd" title="_HandleDmaTxIsr" alt="" coords="153,208,281,235" />
+<area shape="rect" href="$_event_queue_8c.html#afd41d1979b21c13ff21bab60d9c57c27" title="EventQueue_Add" alt="" coords="332,183,457,209" />
+<area shape="rect" href="$_interrupt_8c.html#a0e5431ce2b9097e2a21c245e7c75e953" title="Interrupt_Lock" alt="" coords="513,157,620,184" />
+<area shape="rect" href="$_interrupt_8c.html#a4f840d0ee81cd63fc8ab0c938a6e755b" title="Interrupt_Unlock" alt="" coords="508,208,625,235" />
+</map>

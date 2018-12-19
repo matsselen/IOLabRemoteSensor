@@ -1,0 +1,4 @@
+<map id="_HandleStatusPacket" name="_HandleStatusPacket">
+<area shape="rect" href="$_comm_protocol_8c.html#afd67693872dec702559be107e645ed53" title="_SetTxCommand" alt="" coords="208,5,333,32" />
+<area shape="rect" href="$_led_control_8c.html#a15c78074311de3071ee99c4905d1c87e" title="LedControl_SetLed" alt="" coords="203,56,339,83" />
+</map>

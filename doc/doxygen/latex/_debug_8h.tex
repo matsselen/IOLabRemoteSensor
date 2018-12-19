@@ -1,0 +1,61 @@
+\hypertarget{_debug_8h}{\section{Debug.\-h File Reference}
+\label{_debug_8h}\index{Debug.\-h@{Debug.\-h}}
+}
+
+
+Debug module that enables/disables debugging.  
+
+
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for Debug.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_debug_8h_ab94a24f0a37b3963eb64f201cebf60a9}{D\-E\-B\-U\-G}(message)
+\item 
+\#define \hyperlink{_debug_8h_aae0f60b91c05206bf7fa44f390e174e4}{D\-E\-B\-U\-G\-\_\-\-B\-L\-O\-C\-K\-I\-N\-G}(message)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Debug module that enables/disables debugging. {\bfseries Project} I\-O\-Lab\-Remote\-Sensor\-Application
+
+{\bfseries Description} The debug module controls the if the debugging is enabled or disabled.
+
+\begin{DoxyNote}{Note}
+{\bfseries This file assumes that \hyperlink{_serial_8h}{Serial.\-h} is included for printing serial debug messages}. 
+\end{DoxyNote}
+
+
+Definition in file \hyperlink{_debug_8h_source}{Debug.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_debug_8h_ab94a24f0a37b3963eb64f201cebf60a9}{\index{Debug.\-h@{Debug.\-h}!D\-E\-B\-U\-G@{D\-E\-B\-U\-G}}
+\index{D\-E\-B\-U\-G@{D\-E\-B\-U\-G}!Debug.h@{Debug.\-h}}
+\subsubsection[{D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-B\-U\-G(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{_debug_8h_ab94a24f0a37b3963eb64f201cebf60a9}
+If defined, debug messages are enabled. Debug messages are off. Macro definition is empty 
+
+Definition at line 52 of file Debug.\-h.
+
+
+
+Referenced by \-\_\-\-Adc\-Start(), \-\_\-\-Adc\-Stop(), \-\_\-\-Handle\-Get\-Calibration\-Packet(), \-\_\-\-Handle\-Get\-Fixed\-Config\-Packet(), \-\_\-\-Handle\-Get\-Output\-Config\-Packet(), \-\_\-\-Handle\-Get\-Packet\-Config\-Packet(), \-\_\-\-Handle\-Get\-Sensor\-Config\-Packet(), \-\_\-\-Handle\-Get\-Status\-Packet(), \-\_\-\-Handle\-Human\-Acc\-Command(), \-\_\-\-Handle\-Human\-Adc\-Command(), \-\_\-\-Handle\-Human\-Mag\-Command(), \-\_\-\-Handle\-Human\-Packets(), \-\_\-\-Handle\-Human\-Stop\-Command(), \-\_\-\-Handle\-Power\-Down\-Packet(), \-\_\-\-Handle\-Set\-Fixed\-Config\-Packet(), \-\_\-\-Handle\-Set\-Output\-Config\-Packet(), \-\_\-\-Handle\-Set\-Sensor\-Config\-Packet(), \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T(), \-\_\-\-Process\-Events\-\_\-\-S\-E\-L\-F\-\_\-\-T\-E\-S\-T(), \-\_\-\-Unlatch\-Power(), \-\_\-\-Write\-Message\-Data(), Acc\-Control\-\_\-\-Set\-Config(), Accelerometer\-\_\-\-Start(), Accelerometer\-\_\-\-Trigger\-Sample\-Blocking(), Adc\-\_\-\-Init(), Adc\-Manager\-\_\-\-Disable\-Channel(), Adc\-Manager\-\_\-\-Enable\-Channel(), Adc\-Manager\-\_\-\-Single\-Sample\-Blocking(), Barometer\-Control\-\_\-\-Read\-Bar(), Buzzer\-Control\-\_\-\-Set\-Config(), Comm\-Protocol\-\_\-\-Handle\-Start\-Data\-Packet(), Comm\-Protocol\-\_\-\-Handle\-Stop\-Data\-Packet(), Comm\-Protocol\-\_\-\-Rx\-Handler(), Con\-Man\-\_\-\-Get\-Calibration(), Con\-Man\-\_\-\-Get\-Packet\-Config(), Con\-Man\-\_\-\-Set\-Fixed\-Config(), Con\-Man\-\_\-\-Set\-Output\-Config(), Con\-Man\-\_\-\-Set\-Sensor\-Config(), Con\-Man\-\_\-\-Start\-Data(), Con\-Man\-\_\-\-Stop\-Data(), Dac\-Control\-\_\-\-Set\-Config(), Gyro\-Control\-\_\-\-Set\-Config(), Header1\-Control\-\_\-\-Set\-Config(), Header2\-Control\-\_\-\-Set\-Config(), Header3\-Control\-\_\-\-Set\-Config(), Header4\-Control\-\_\-\-Set\-Config(), Header5\-Control\-\_\-\-Set\-Config(), Header6\-Control\-\_\-\-Set\-Config(), Mag\-Control\-\_\-\-Set\-Config(), main(), Self\-Test\-\_\-\-Process(), and Ui\-Manager\-\_\-\-Play\-Sequence().
+
+\hypertarget{_debug_8h_aae0f60b91c05206bf7fa44f390e174e4}{\index{Debug.\-h@{Debug.\-h}!D\-E\-B\-U\-G\-\_\-\-B\-L\-O\-C\-K\-I\-N\-G@{D\-E\-B\-U\-G\-\_\-\-B\-L\-O\-C\-K\-I\-N\-G}}
+\index{D\-E\-B\-U\-G\-\_\-\-B\-L\-O\-C\-K\-I\-N\-G@{D\-E\-B\-U\-G\-\_\-\-B\-L\-O\-C\-K\-I\-N\-G}!Debug.h@{Debug.\-h}}
+\subsubsection[{D\-E\-B\-U\-G\-\_\-\-B\-L\-O\-C\-K\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-B\-U\-G\-\_\-\-B\-L\-O\-C\-K\-I\-N\-G(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{_debug_8h_aae0f60b91c05206bf7fa44f390e174e4}
+Debug messages are off. Macro definition is empty 
+
+Definition at line 54 of file Debug.\-h.
+

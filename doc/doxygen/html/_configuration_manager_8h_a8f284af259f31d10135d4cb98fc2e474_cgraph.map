@@ -1,0 +1,14 @@
+<map id="ConMan_GetCalibration" name="ConMan_GetCalibration">
+<area shape="rect" href="$_barometer_control_8c.html#af46a0eb22c9d26bb77fce5faf8a0de08" title="BarometerControl_ReadCalibration" alt="" coords="219,36,448,63" />
+<area shape="rect" href="$_battery_control_8c.html#aa73f0d4496f54547367c417814d67358" title="BatteryControl_ReadCalibration" alt="" coords="229,92,437,119" />
+<area shape="rect" href="$_thermometer_control_8c.html#a8e18cea4a17294d3d4ede9d04f421460" title="ThermometerControl\l_ReadCalibration" alt="" coords="261,154,405,196" />
+<area shape="rect" href="$_barometer_8c.html#a8ba8dee3537ee8605d8a17a906fc594d" title="Barometer_ReadCoeffArray" alt="" coords="499,31,685,58" />
+<area shape="rect" href="$_barometer_8c.html#a68205b78d3fed44531eb4d88f5df60dc" title="_BarReadMultipleRegisters" alt="" coords="736,31,920,58" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="969,6,1097,32" />
+<area shape="rect" href="$_spi_master_8c.html#a77dac8d70655f0b711a13787359f723e" title="Spi_WriteByte" alt="" coords="981,56,1085,83" />
+<area shape="rect" href="$_adc_manager_8c.html#a0df4026e1d37dd4f723f43d3e9ee467c" title="AdcManager_GetGainFactor" alt="" coords="496,82,688,108" />
+<area shape="rect" href="$_adc_manager_8c.html#a5544660c514f863363f4c4e0763c8561" title="AdcManager_GetOffset" alt="" coords="512,132,672,159" />
+<area shape="rect" href="$_adc_8c.html#a0842a80966234b58516235a957b58083" title="Adc_GetGainFactor" alt="" coords="759,82,897,108" />
+<area shape="rect" href="$_adc_8c.html#ada428cf10ffb15cbb03e1ea5daa36786" title="Adc_GetOffset" alt="" coords="773,132,883,159" />
+<area shape="rect" href="$_adc_8c.html#ab5bb9ded6c4d0124cb23c44d21109009" title="Adc_GetTempCalib" alt="" coords="524,183,660,210" />
+</map>

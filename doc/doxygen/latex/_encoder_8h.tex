@@ -1,0 +1,175 @@
+\hypertarget{_encoder_8h}{\section{Encoder.\-h File Reference}
+\label{_encoder_8h}\index{Encoder.\-h@{Encoder.\-h}}
+}
+
+
+Hardware driver for the Quadrature Encoder.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_encoder_8h_aec382a01a008a58028aef12cc54de987}{Encoder\-Status\-\_\-t} \{ \\*
+{\bfseries Encoder\-Status\-\_\-\-I\-N\-V\-A\-L\-I\-D}, 
+\\*
+{\bfseries Encoder\-Status\-\_\-\-O\-K\-A\-Y}, 
+\\*
+{\bfseries Encoder\-Status\-\_\-\-C\-A\-P\-T\-U\-R\-E\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W}, 
+\\*
+{\bfseries Encoder\-Status\-\_\-\-S\-W\-\_\-\-C\-A\-P\-T\-U\-R\-E\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W}, 
+\\*
+{\bfseries Encoder\-Status\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W}, 
+\\*
+{\bfseries Encoder\-Status\-\_\-\-O\-T\-H\-E\-R\-\_\-\-E\-R\-R\-O\-R}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_encoder_8h_a1c8318d644fc2e61cc1ef9cb0710feb6}{Encoder\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_encoder_8h_aebbaa45bf07e0fe0c34185589998f871}{Encoder\-\_\-\-Start} (void)
+\item 
+void \hyperlink{_encoder_8h_a70d889a12cdee37e168987ba50cc02f6}{Encoder\-\_\-\-Stop} (void)
+\item 
+\hyperlink{_encoder_8h_aec382a01a008a58028aef12cc54de987}{Encoder\-Status\-\_\-t} \hyperlink{_encoder_8h_a433dcdf1689d78f0710da855c15f2aa4}{Encoder\-\_\-\-Read} (\hyperlink{_project_types_8h_a932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t} counts\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$elements, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Elements)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hardware driver for the Quadrature Encoder. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The quadrature encoder uses a a direction and count input to count how many pulses and in which direction a specially designed encoder moved. 
+
+Definition in file \hyperlink{_encoder_8h_source}{Encoder.\-h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_encoder_8h_aec382a01a008a58028aef12cc54de987}{\index{Encoder.\-h@{Encoder.\-h}!Encoder\-Status\-\_\-t@{Encoder\-Status\-\_\-t}}
+\index{Encoder\-Status\-\_\-t@{Encoder\-Status\-\_\-t}!Encoder.h@{Encoder.\-h}}
+\subsubsection[{Encoder\-Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Encoder\-Status\-\_\-t}}}\label{_encoder_8h_aec382a01a008a58028aef12cc54de987}
+Defines the status options for the encoder 
+
+Definition at line 28 of file Encoder.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_encoder_8h_a1c8318d644fc2e61cc1ef9cb0710feb6}{\index{Encoder.\-h@{Encoder.\-h}!Encoder\-\_\-\-Init@{Encoder\-\_\-\-Init}}
+\index{Encoder\-\_\-\-Init@{Encoder\-\_\-\-Init}!Encoder.h@{Encoder.\-h}}
+\subsubsection[{Encoder\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Encoder\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8h_a1c8318d644fc2e61cc1ef9cb0710feb6}
+Initializes the encoder module. 
+
+Definition at line 75 of file Encoder.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_8h_a433dcdf1689d78f0710da855c15f2aa4}{\index{Encoder.\-h@{Encoder.\-h}!Encoder\-\_\-\-Read@{Encoder\-\_\-\-Read}}
+\index{Encoder\-\_\-\-Read@{Encoder\-\_\-\-Read}!Encoder.h@{Encoder.\-h}}
+\subsubsection[{Encoder\-\_\-\-Read}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoder\-Status\-\_\-t} Encoder\-\_\-\-Read (
+\begin{DoxyParamCaption}
+\item[{{\bf int16\-\_\-t}}]{counts\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{elements, }
+\item[{{\bf uint16\-\_\-t}}]{max\-Elements}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8h_a433dcdf1689d78f0710da855c15f2aa4}
+Read the value of the encoder counts.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em counts} & -\/ the counts and direction of the encoder. \\
+\hline
+\mbox{\tt out}  & {\em elements} & -\/ the actual number of samples that were put in counts \\
+\hline
+\mbox{\tt in}  & {\em max\-Elements} & -\/ the maximum number of samples that fit into counts\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of the encoder over the last sample. 
+\end{DoxyReturn}
+
+
+Definition at line 138 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Encoder\-Command(), and Enc\-Control\-\_\-\-Read\-Enc().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_8h_aebbaa45bf07e0fe0c34185589998f871}{\index{Encoder.\-h@{Encoder.\-h}!Encoder\-\_\-\-Start@{Encoder\-\_\-\-Start}}
+\index{Encoder\-\_\-\-Start@{Encoder\-\_\-\-Start}!Encoder.h@{Encoder.\-h}}
+\subsubsection[{Encoder\-\_\-\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Encoder\-\_\-\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8h_aebbaa45bf07e0fe0c34185589998f871}
+Starts the counting of the encoder. 
+
+Definition at line 97 of file Encoder.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Encoder\-Command(), and Enc\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_encoder_8h_a70d889a12cdee37e168987ba50cc02f6}{\index{Encoder.\-h@{Encoder.\-h}!Encoder\-\_\-\-Stop@{Encoder\-\_\-\-Stop}}
+\index{Encoder\-\_\-\-Stop@{Encoder\-\_\-\-Stop}!Encoder.h@{Encoder.\-h}}
+\subsubsection[{Encoder\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Encoder\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_encoder_8h_a70d889a12cdee37e168987ba50cc02f6}
+Stops the counting of the encoder. 
+
+Definition at line 117 of file Encoder.\-c.
+
+
+
+Referenced by Enc\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

@@ -1,0 +1,9 @@
+SCMBranch=Macmillan_1814_IOLab
+SCMRepository=Macmillan_1814_IOLab/Code/RemoteSensorProcessor/priv/Applications/IOLabRemoteSensor
+SCMMainlineUUID={6b77b1ac-5ed9-4911-998b-1ee71966676c}
+SCMBranchRepositoryID=126
+.ccsproject;786380887;4;1412256734;|13|2950
+.cproject;1969372712;14;1437114297;|14|3203
+.project;2601583814;3;1333575008;|15|1089
+lnk_msp430f5325.cmd;4270873143;3;1432065707;|562|3093
+lnk_msp430f5329.cmd;2835212573;4;1415920116;|17|3079

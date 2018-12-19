@@ -1,0 +1,7 @@
+<map id="Magnetometer_Stop" name="Magnetometer_Stop">
+<area shape="rect" href="$_magnetometer_8c.html#a61f3794e7c618ee6443c8ec9436e26ad" title="_WriteSingleRegister" alt="" coords="198,81,344,108" />
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="395,5,539,32" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="404,56,530,83" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="404,107,530,133" />
+<area shape="rect" href="$_i2c_8c.html#afbfb0c0fbc0025ced1d88290aa899fa9" title="I2c_TransmitByteEnd" alt="" coords="392,157,542,184" />
+</map>

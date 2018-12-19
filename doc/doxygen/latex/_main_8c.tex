@@ -1,0 +1,200 @@
+\hypertarget{_main_8c}{\section{Main.\-c File Reference}
+\label{_main_8c}\index{Main.\-c@{Main.\-c}}
+}
+
+
+Remote Sensor Microcontroller main processing.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Main.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Interrupt.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Event\-Queue.\-h$>$}\\*
+{\ttfamily \#include $<$State\-Machine.\-h$>$}\\*
+{\ttfamily \#include $<$Sensor\-Id.\-h$>$}\\*
+{\ttfamily \#include $<$Configuration\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Watchdog.\-h$>$}\\*
+{\ttfamily \#include $<$Timer\-Tick.\-h$>$}\\*
+{\ttfamily \#include $<$System.\-h$>$}\\*
+{\ttfamily \#include $<$Uart.\-h$>$}\\*
+{\ttfamily \#include $<$I2c.\-h$>$}\\*
+{\ttfamily \#include $<$Spi\-Master.\-h$>$}\\*
+{\ttfamily \#include $<$Version.\-h$>$}\\*
+{\ttfamily \#include $<$Adc\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Pwm.\-h$>$}\\*
+{\ttfamily \#include $<$Spi\-Slave.\-h$>$}\\*
+{\ttfamily \#include $<$Dma.\-h$>$}\\*
+{\ttfamily \#include $<$Comm\-Protocol.\-h$>$}\\*
+{\ttfamily \#include $<$Test\-Protocol.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Push\-Button\-Control.\-h$>$}\\*
+{\ttfamily \#include $<$Led\-Control.\-h$>$}\\*
+{\ttfamily \#include $<$Self\-Test.\-h$>$}\\*
+Include dependency graph for Main.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{main} (void)
+\item 
+static void \hyperlink{_main_8c_a683ad5b1dadeef16388083d819af7e77}{\-\_\-\-Clear\-Startup} (void)
+\item 
+int \hyperlink{_main_8c_aa958d386681db61ba1e277ee9c5fc8f8}{\-\_\-system\-\_\-pre\-\_\-init} (void)
+\item 
+static void \hyperlink{_main_8c_aeafb6d64cae8baf4edc845afb0875fe9}{\-\_\-\-Print\-Reset\-Reason} (\hyperlink{_system_8h_ad3db0297e321095f6efefab4d3b6eeed}{System\-Reset\-Reason\-\_\-t} reset\-Reason)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{_i2c_8h_struct_i2c_port_config__t}{I2c\-Port\-Config\-\_\-t} \hyperlink{_main_8c_adccef4910be43ce337ff69579c75f444}{\-\_\-i2c\-Config}
+\item 
+static const \hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} \hyperlink{_main_8c_a67f9806c0208fec53bebdc1b9e93e3d6}{\-\_\-i2c\-Port} = I2c\-Port\-\_\-0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Remote Sensor Microcontroller main processing. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Initialized all of the hardware and enters the infinite main processing loop. 
+
+Definition in file \hyperlink{_main_8c_source}{Main.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_main_8c_a683ad5b1dadeef16388083d819af7e77}{\index{Main.\-c@{Main.\-c}!\-\_\-\-Clear\-Startup@{\-\_\-\-Clear\-Startup}}
+\index{\-\_\-\-Clear\-Startup@{\-\_\-\-Clear\-Startup}!Main.c@{Main.\-c}}
+\subsubsection[{\-\_\-\-Clear\-Startup}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Clear\-Startup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_main_8c_a683ad5b1dadeef16388083d819af7e77}
+Clear the things that the startup left set. 
+
+Definition at line 279 of file Main.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_main_8c_aeafb6d64cae8baf4edc845afb0875fe9}{\index{Main.\-c@{Main.\-c}!\-\_\-\-Print\-Reset\-Reason@{\-\_\-\-Print\-Reset\-Reason}}
+\index{\-\_\-\-Print\-Reset\-Reason@{\-\_\-\-Print\-Reset\-Reason}!Main.c@{Main.\-c}}
+\subsubsection[{\-\_\-\-Print\-Reset\-Reason}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Print\-Reset\-Reason (
+\begin{DoxyParamCaption}
+\item[{{\bf System\-Reset\-Reason\-\_\-t}}]{reset\-Reason}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_main_8c_aeafb6d64cae8baf4edc845afb0875fe9}
+Prints the reason this device reset using blocking writes. Should only be called during the init sequence.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reset\-Reason} & -\/ Reset reason to print. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 168 of file Main.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_main_8c_aa958d386681db61ba1e277ee9c5fc8f8}{\index{Main.\-c@{Main.\-c}!\-\_\-system\-\_\-pre\-\_\-init@{\-\_\-system\-\_\-pre\-\_\-init}}
+\index{\-\_\-system\-\_\-pre\-\_\-init@{\-\_\-system\-\_\-pre\-\_\-init}!Main.c@{Main.\-c}}
+\subsubsection[{\-\_\-system\-\_\-pre\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int \-\_\-system\-\_\-pre\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_main_8c_aa958d386681db61ba1e277ee9c5fc8f8}
+System pre-\/init function that is the very first code to be run. Overrides the function provided by the T\-I library.
+
+\begin{DoxyNote}{Note}
+Only microcontroller registers should be accessed. Any use of variables will probably be overwritten.
+\end{DoxyNote}
+From T\-I\-: \hyperlink{_main_8c_aa958d386681db61ba1e277ee9c5fc8f8}{\-\_\-system\-\_\-pre\-\_\-init()} is called in the C/\-C++ startup routine (\-\_\-c\-\_\-int100() in boot.\-c) and provides a mechanism for the user to insert application specific low level initialization instructions prior to calling \hyperlink{_main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{main()}. The return value of \hyperlink{_main_8c_aa958d386681db61ba1e277ee9c5fc8f8}{\-\_\-system\-\_\-pre\-\_\-init()} is used to determine whether or not C/\-C++ global data initialization will be performed (return value of 0 to bypass C/\-C++ auto-\/initialization).
+
+P\-L\-E\-A\-S\-E N\-O\-T\-E T\-H\-A\-T B\-Y\-P\-A\-S\-S\-I\-N\-G T\-H\-E C/\-C++ A\-U\-T\-O-\/\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N R\-O\-U\-T\-I\-N\-E M\-A\-Y R\-E\-S\-U\-L\-T I\-N P\-R\-O\-G\-R\-A\-M F\-A\-I\-L\-U\-R\-E.
+
+The linker will include the updated version if it is linked in prior to linking with the C/\-C++ runtime library (rts430.\-lib).
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/ if variable auto-\/init code should N\-O\-T be run \\
+\hline
+{\em 1} & -\/ if variable auto-\/init code should be run \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 149 of file Main.\-c.
+
+\hypertarget{_main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{\index{Main.\-c@{Main.\-c}!main@{main}}
+\index{main@{main}!Main.c@{Main.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}void main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}
+Main function. 
+
+Definition at line 181 of file Main.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_main_8c_adccef4910be43ce337ff69579c75f444}{\index{Main.\-c@{Main.\-c}!\-\_\-i2c\-Config@{\-\_\-i2c\-Config}}
+\index{\-\_\-i2c\-Config@{\-\_\-i2c\-Config}!Main.c@{Main.\-c}}
+\subsubsection[{\-\_\-i2c\-Config}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf I2c\-Port\-Config\-\_\-t} \-\_\-i2c\-Config\hspace{0.3cm}{\ttfamily [static]}}}\label{_main_8c_adccef4910be43ce337ff69579c75f444}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        I2cMode\_MASTER,
+        I2cAddressing\_7\_bits,
+        I2cBaudRate\_400000
+\}
+\end{DoxyCode}
+Defines the configuration for the I2\-C bus 
+
+Definition at line 108 of file Main.\-c.
+
+\hypertarget{_main_8c_a67f9806c0208fec53bebdc1b9e93e3d6}{\index{Main.\-c@{Main.\-c}!\-\_\-i2c\-Port@{\-\_\-i2c\-Port}}
+\index{\-\_\-i2c\-Port@{\-\_\-i2c\-Port}!Main.c@{Main.\-c}}
+\subsubsection[{\-\_\-i2c\-Port}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf I2c\-Port\-\_\-t} \-\_\-i2c\-Port = I2c\-Port\-\_\-0\hspace{0.3cm}{\ttfamily [static]}}}\label{_main_8c_a67f9806c0208fec53bebdc1b9e93e3d6}
+Defines the active i2c port 
+
+Definition at line 115 of file Main.\-c.
+
+
+
+Referenced by main().
+

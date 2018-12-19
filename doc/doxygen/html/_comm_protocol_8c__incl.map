@@ -1,0 +1,18 @@
+<map id="CommProtocol.c" name="CommProtocol.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_event_queue_8h.html" title="Event queue module header file. " alt="" coords="139,80,246,107" />
+<area shape="rect" href="$_comm_protocol_8h.html" title="Header for the communications protocol module. " alt="" coords="270,80,390,107" />
+<area shape="rect" href="$_spi_slave_8h.html" title="SPI module using this device as a SPI slave. " alt="" coords="414,80,499,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="523,80,592,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="632,155,699,182" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="667,80,739,107" />
+<area shape="rect" href="$_data_buffer_8h.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="763,80,859,107" />
+<area shape="rect" href="$_led_control_8h.html" title="LED Controller header. " alt="" coords="883,80,979,107" />
+<area shape="rect" href="$_sensor_id_8h.html" title="Sensor Id stores the list of Sensor IDs. " alt="" coords="1003,80,1088,107" />
+<area shape="rect" href="$_battery_control_8h.html" title="Controls the battery voltage readings. " alt="" coords="1112,80,1230,107" />
+<area shape="rect" href="$_configuration_manager_8h.html" title="The configuration manager keeps track of all the sensor configurations. " alt="" coords="1254,80,1416,107" />
+<area shape="rect" href="$_system_8h.html" title="System module driver. " alt="" coords="1440,80,1518,107" />
+<area shape="rect" href="$_timer_tick_8h.html" title="Timer Tick utility header file. " alt="" coords="1542,80,1632,107" />
+<area shape="rect" href="$_version_8h.html" title="Version header. " alt="" coords="1656,80,1734,107" />
+<area shape="rect" href="$_fixed_config_list_8h.html" title="Contains the list of the fixed config options. " alt="" coords="1274,155,1396,182" />
+</map>

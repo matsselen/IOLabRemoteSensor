@@ -1,0 +1,82 @@
+\hypertarget{_star_wars_sequence_data_8h}{\section{Star\-Wars\-Sequence\-Data.\-h File Reference}
+\label{_star_wars_sequence_data_8h}\index{Star\-Wars\-Sequence\-Data.\-h@{Star\-Wars\-Sequence\-Data.\-h}}
+}
+
+
+Contains the sequence data information for the star wars U\-I sequence.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Ui\-Manager\-Sequence\-Data.\-h$>$}\\*
+{\ttfamily \#include $<$Note\-Duration\-To\-Ms.\-h$>$}\\*
+Include dependency graph for Star\-Wars\-Sequence\-Data.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_star_wars_sequence_data_8h_a6b0737f7563a283b74251d421fafea97}{static const \hyperlink{_ui_manager_sequence_data_8h_struct_buzzer_sequence_step__t}{Buzzer\-Sequence\-Step\-\_\-t} {\bfseries star\-Wars\-Buzzer\-Steps} \mbox{[}$\,$\mbox{]}}\label{_star_wars_sequence_data_8h_a6b0737f7563a283b74251d421fafea97}
+
+\item 
+static const \\*
+\hyperlink{_ui_manager_sequence_data_8h_struct_back_light_sequence_step__t}{Back\-Light\-Sequence\-Step\-\_\-t} {\bfseries star\-Wars\-Backlight\-Steps} \mbox{[}$\,$\mbox{]}
+\item 
+static const \hyperlink{_ui_manager_sequence_data_8h_struct_ui_sequence_data__t}{Ui\-Sequence\-Data\-\_\-t} {\bfseries star\-Wars\-Sequence}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the sequence data information for the star wars U\-I sequence. {\bfseries Description} Contains the sequence data information for the star wars \char`\"{}special\char`\"{} U\-I sequence. 
+
+Definition in file \hyperlink{_star_wars_sequence_data_8h_source}{Star\-Wars\-Sequence\-Data.\-h}.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_star_wars_sequence_data_8h_a64789e4beab586fc252b1b4da30a9d02}{\index{Star\-Wars\-Sequence\-Data.\-h@{Star\-Wars\-Sequence\-Data.\-h}!star\-Wars\-Backlight\-Steps@{star\-Wars\-Backlight\-Steps}}
+\index{star\-Wars\-Backlight\-Steps@{star\-Wars\-Backlight\-Steps}!StarWarsSequenceData.h@{Star\-Wars\-Sequence\-Data.\-h}}
+\subsubsection[{star\-Wars\-Backlight\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Back\-Light\-Sequence\-Step\-\_\-t} star\-Wars\-Backlight\-Steps\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_star_wars_sequence_data_8h_a64789e4beab586fc252b1b4da30a9d02}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        \{ 
+                .backlightOn = \textcolor{keyword}{false},
+                .durationMs = 100,
+        \},
+        \{ 
+                .backlightOn = \textcolor{keyword}{true},
+                .durationMs = 100,
+        \},
+        \{ 
+                .backlightOn = \textcolor{keyword}{false},
+                .durationMs = 100,
+        \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 71 of file Star\-Wars\-Sequence\-Data.\-h.
+
+\hypertarget{_star_wars_sequence_data_8h_abf8305a809d79999b107ffd3bb1fc77f}{\index{Star\-Wars\-Sequence\-Data.\-h@{Star\-Wars\-Sequence\-Data.\-h}!star\-Wars\-Sequence@{star\-Wars\-Sequence}}
+\index{star\-Wars\-Sequence@{star\-Wars\-Sequence}!StarWarsSequenceData.h@{Star\-Wars\-Sequence\-Data.\-h}}
+\subsubsection[{star\-Wars\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ui\-Sequence\-Data\-\_\-t} star\-Wars\-Sequence\hspace{0.3cm}{\ttfamily [static]}}}\label{_star_wars_sequence_data_8h_abf8305a809d79999b107ffd3bb1fc77f}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    .buzzerSequence =
+    \{
+        .stepsInSequence = \hyperlink{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{ARRAY\_LENGTH}(starWarsBuzzerSteps),
+        .stepList = starWarsBuzzerSteps,
+    \},
+    .backLightSequence =
+    \{
+        .stepsInSequence = \hyperlink{_project_types_8h_a4a21612c647552b916d9de1f911995ad}{ARRAY\_LENGTH}(starWarsBacklightSteps),
+        .stepList = starWarsBacklightSteps,
+    \},
+\}
+\end{DoxyCode}
+
+
+Definition at line 87 of file Star\-Wars\-Sequence\-Data.\-h.
+

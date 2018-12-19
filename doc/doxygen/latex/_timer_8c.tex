@@ -1,0 +1,374 @@
+\hypertarget{_timer_8c}{\section{Timer.\-c File Reference}
+\label{_timer_8c}\index{Timer.\-c@{Timer.\-c}}
+}
+
+
+Hardware timer module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Timer.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+Include dependency graph for Timer.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_timer_8c_a8e17a0e45208c996106fb010cc3ce801}{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}~(5u)
+\item 
+\#define \hyperlink{_timer_8c_a7e20c3265c03e31e54cc8aedbcfde6e5}{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}~(3u)
+\item 
+\#define \hyperlink{_timer_8c_ae9aad007f014e9401b9c284c9de9ae77}{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}~(3u)
+\item 
+\#define \hyperlink{_timer_8c_a9c6544b1051e61fe436027a498032ba5}{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}~(7u)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_timer_8c_a02f931c9a4a5037b499d531f49ebc3b9}{Timer\-\_\-\-A0\-\_\-\-Configure} (\hyperlink{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{Timer\-Source\-\_\-t} source, \hyperlink{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{Timer\-Divider\-\_\-t} divider, \hyperlink{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{Timer\-Run\-Mode\-\_\-t} run\-Mode, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8c_a3b787ac79e251ea6217447ed05be53bb}{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure} (\hyperlink{_timer_8h_ad4295b0fbc2aaed508b7a16cdfa55112}{Timer\-A0\-C\-C\-\_\-t} module, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8c_ade533e0f813484fc2c427f9d5d0297f2}{Timer\-\_\-\-A1\-\_\-\-Configure} (\hyperlink{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{Timer\-Source\-\_\-t} source, \hyperlink{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{Timer\-Divider\-\_\-t} divider, \hyperlink{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{Timer\-Run\-Mode\-\_\-t} run\-Mode, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8c_afb3862d95c76b43ac62e67852bbf9bfc}{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure} (\hyperlink{_timer_8h_ad2a4d94ac9c9637565210368ca11f654}{Timer\-A1\-C\-C\-\_\-t} module, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8c_a80a6a3058ed404d5fe9f247424d1b32f}{Timer\-\_\-\-A2\-\_\-\-Configure} (\hyperlink{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{Timer\-Source\-\_\-t} source, \hyperlink{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{Timer\-Divider\-\_\-t} divider, \hyperlink{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{Timer\-Run\-Mode\-\_\-t} run\-Mode, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8c_a41f12d88c0d6062ad6161df56c9ad074}{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure} (\hyperlink{_timer_8h_af4799ee4a995ac39e238e8cf6117d2b0}{Timer\-A2\-C\-C\-\_\-t} module, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8c_a9c2492c1b5bfb4de29379c4ab7881d9c}{Timer\-\_\-\-B0\-\_\-\-Configure} (\hyperlink{_timer_8h_a15564035ba8cb8c25d85025d989bc36a}{Timer\-Source\-\_\-t} source, \hyperlink{_timer_8h_a7a883bb1c3c75877ec8693a4b3a6b240}{Timer\-Divider\-\_\-t} divider, \hyperlink{_timer_8h_a124e2c52a033b7f176ad9eaf36c7b91a}{Timer\-Counter\-Length\-\_\-t} counter\-Length, \hyperlink{_timer_8h_a5fd8d0adbbdf7a26d89bb4da74de8421}{Timer\-Run\-Mode\-\_\-t} run\-Mode, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\item 
+void \hyperlink{_timer_8c_a6590a26eceba06333f451e69d6ea3987}{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure} (\hyperlink{_timer_8h_a2d8c984959809cc4ad4447896226521a}{Timer\-B0\-C\-C\-\_\-t} module, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} config, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hardware timer module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Provides functions to setup the hardware timers. The control of the timers and their interrupts are handled using the macros defined in the header file. 
+
+Definition in file \hyperlink{_timer_8c_source}{Timer.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_timer_8c_a8e17a0e45208c996106fb010cc3ce801}{\index{Timer.\-c@{Timer.\-c}!T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S@{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}}
+\index{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S@{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}!Timer.c@{Timer.\-c}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S~(5u)}}\label{_timer_8c_a8e17a0e45208c996106fb010cc3ce801}
+Number of compare/capture modules within timer A0 
+
+Definition at line 35 of file Timer.\-c.
+
+
+
+Referenced by Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure().
+
+\hypertarget{_timer_8c_a7e20c3265c03e31e54cc8aedbcfde6e5}{\index{Timer.\-c@{Timer.\-c}!T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S@{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}}
+\index{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S@{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}!Timer.c@{Timer.\-c}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A1\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S~(3u)}}\label{_timer_8c_a7e20c3265c03e31e54cc8aedbcfde6e5}
+Number of compare/capture modules within timer A1 
+
+Definition at line 37 of file Timer.\-c.
+
+
+
+Referenced by Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure().
+
+\hypertarget{_timer_8c_ae9aad007f014e9401b9c284c9de9ae77}{\index{Timer.\-c@{Timer.\-c}!T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}}
+\index{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S@{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}!Timer.c@{Timer.\-c}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-A2\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S~(3u)}}\label{_timer_8c_ae9aad007f014e9401b9c284c9de9ae77}
+Number of compare/capture modules within timer A2 
+
+Definition at line 39 of file Timer.\-c.
+
+
+
+Referenced by Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure().
+
+\hypertarget{_timer_8c_a9c6544b1051e61fe436027a498032ba5}{\index{Timer.\-c@{Timer.\-c}!T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S@{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}}
+\index{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S@{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}!Timer.c@{Timer.\-c}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-M\-E\-R\-\_\-\-B0\-\_\-\-N\-U\-M\-\_\-\-C\-C\-\_\-\-M\-O\-D\-U\-L\-E\-S~(7u)}}\label{_timer_8c_a9c6544b1051e61fe436027a498032ba5}
+Number of compare/capture modules within timer B0 
+
+Definition at line 41 of file Timer.\-c.
+
+
+
+Referenced by Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_timer_8c_a02f931c9a4a5037b499d531f49ebc3b9}{\index{Timer.\-c@{Timer.\-c}!Timer\-\_\-\-A0\-\_\-\-Configure@{Timer\-\_\-\-A0\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A0\-\_\-\-Configure@{Timer\-\_\-\-A0\-\_\-\-Configure}!Timer.c@{Timer.\-c}}
+\subsubsection[{Timer\-\_\-\-A0\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A0\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-Source\-\_\-t}}]{source, }
+\item[{{\bf Timer\-Divider\-\_\-t}}]{divider, }
+\item[{{\bf Timer\-Run\-Mode\-\_\-t}}]{run\-Mode, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_a02f931c9a4a5037b499d531f49ebc3b9}
+Configure timer A0 using the given parameters. If the selected run mode is either Up or Up/\-Down, the compare/capture 0 module is also configured and the timer counts to {\ttfamily value}. If the selected run mode is Continuous, the timer counts up to 2$^\wedge$16-\/1. The timer is not started.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em source} & -\/ Timer source \\
+\hline
+\mbox{\tt in}  & {\em divider} & -\/ Timer divider \\
+\hline
+\mbox{\tt in}  & {\em run\-Mode} & -\/ Timer mode \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value for timer to count up to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Timer.\-c.
+
+
+
+Referenced by \-\_\-\-Setup\-Timer\-Config().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8c_a3b787ac79e251ea6217447ed05be53bb}{\index{Timer.\-c@{Timer.\-c}!Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure}!Timer.c@{Timer.\-c}}
+\subsubsection[{Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A0\-C\-C\-X\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-A0\-C\-C\-\_\-t}}]{module, }
+\item[{{\bf uint16\-\_\-t}}]{config, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_a3b787ac79e251ea6217447ed05be53bb}
+Configure a timer A0 compare/capture (C\-C) module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em module} & -\/ Compare/capture module to configure \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Configuration value to set control register to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Initial compare/capture value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file Timer.\-c.
+
+
+
+Referenced by \-\_\-\-Setup\-Timer\-Config().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8c_ade533e0f813484fc2c427f9d5d0297f2}{\index{Timer.\-c@{Timer.\-c}!Timer\-\_\-\-A1\-\_\-\-Configure@{Timer\-\_\-\-A1\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A1\-\_\-\-Configure@{Timer\-\_\-\-A1\-\_\-\-Configure}!Timer.c@{Timer.\-c}}
+\subsubsection[{Timer\-\_\-\-A1\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A1\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-Source\-\_\-t}}]{source, }
+\item[{{\bf Timer\-Divider\-\_\-t}}]{divider, }
+\item[{{\bf Timer\-Run\-Mode\-\_\-t}}]{run\-Mode, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_ade533e0f813484fc2c427f9d5d0297f2}
+Configure timer A1 using the given parameters. If the selected run mode is either Up or Up/\-Down, the compare/capture 0 module is also configured and the timer counts to {\ttfamily value}. If the selected run mode is Continuous, the timer counts up to 2$^\wedge$16-\/1. The timer is not started.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em source} & -\/ Timer source \\
+\hline
+\mbox{\tt in}  & {\em divider} & -\/ Timer divider \\
+\hline
+\mbox{\tt in}  & {\em run\-Mode} & -\/ Timer mode \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value for timer to count up to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file Timer.\-c.
+
+
+
+Referenced by Timer\-Tick\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8c_afb3862d95c76b43ac62e67852bbf9bfc}{\index{Timer.\-c@{Timer.\-c}!Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure}!Timer.c@{Timer.\-c}}
+\subsubsection[{Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A1\-C\-C\-X\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-A1\-C\-C\-\_\-t}}]{module, }
+\item[{{\bf uint16\-\_\-t}}]{config, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_afb3862d95c76b43ac62e67852bbf9bfc}
+Configure a timer A1 compare/capture (C\-C) module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em module} & -\/ Compare/capture module to configure \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Configuration value to set control register to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Initial compare/capture value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file Timer.\-c.
+
+\hypertarget{_timer_8c_a80a6a3058ed404d5fe9f247424d1b32f}{\index{Timer.\-c@{Timer.\-c}!Timer\-\_\-\-A2\-\_\-\-Configure@{Timer\-\_\-\-A2\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A2\-\_\-\-Configure@{Timer\-\_\-\-A2\-\_\-\-Configure}!Timer.c@{Timer.\-c}}
+\subsubsection[{Timer\-\_\-\-A2\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A2\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-Source\-\_\-t}}]{source, }
+\item[{{\bf Timer\-Divider\-\_\-t}}]{divider, }
+\item[{{\bf Timer\-Run\-Mode\-\_\-t}}]{run\-Mode, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_a80a6a3058ed404d5fe9f247424d1b32f}
+Configure timer A2 using the given parameters. If the selected run mode is either Up or Up/\-Down, the compare/capture 0 module is also configured and the timer counts to {\ttfamily value}. If the selected run mode is Continuous, the timer counts up to 2$^\wedge$16-\/1. The timer is not started.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em source} & -\/ Timer source \\
+\hline
+\mbox{\tt in}  & {\em divider} & -\/ Timer divider \\
+\hline
+\mbox{\tt in}  & {\em run\-Mode} & -\/ Timer mode \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value for timer to count up to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 273 of file Timer.\-c.
+
+
+
+Referenced by Encoder\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8c_a41f12d88c0d6062ad6161df56c9ad074}{\index{Timer.\-c@{Timer.\-c}!Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure}}
+\index{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure}!Timer.c@{Timer.\-c}}
+\subsubsection[{Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-A2\-C\-C\-X\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-A2\-C\-C\-\_\-t}}]{module, }
+\item[{{\bf uint16\-\_\-t}}]{config, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_a41f12d88c0d6062ad6161df56c9ad074}
+Configure a timer A2 compare/capture (C\-C) module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em module} & -\/ Compare/capture module to configure \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Configuration value to set control register to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Initial compare/capture value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 341 of file Timer.\-c.
+
+
+
+Referenced by Encoder\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8c_a9c2492c1b5bfb4de29379c4ab7881d9c}{\index{Timer.\-c@{Timer.\-c}!Timer\-\_\-\-B0\-\_\-\-Configure@{Timer\-\_\-\-B0\-\_\-\-Configure}}
+\index{Timer\-\_\-\-B0\-\_\-\-Configure@{Timer\-\_\-\-B0\-\_\-\-Configure}!Timer.c@{Timer.\-c}}
+\subsubsection[{Timer\-\_\-\-B0\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-B0\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-Source\-\_\-t}}]{source, }
+\item[{{\bf Timer\-Divider\-\_\-t}}]{divider, }
+\item[{{\bf Timer\-Counter\-Length\-\_\-t}}]{counter\-Length, }
+\item[{{\bf Timer\-Run\-Mode\-\_\-t}}]{run\-Mode, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_a9c2492c1b5bfb4de29379c4ab7881d9c}
+Configure timer B0 using the given parameters. If the selected run mode is either Up or Up/\-Down, the compare/capture 0 module is also configured and the timer counts to {\ttfamily value}. If the selected run mode is Continuous, a range of either 16, 12, 10, or 8 bits is selected. The timer is not started.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em source} & -\/ Timer source \\
+\hline
+\mbox{\tt in}  & {\em divider} & -\/ Timer divider \\
+\hline
+\mbox{\tt in}  & {\em counter\-Length} & -\/ Length of timer counter \\
+\hline
+\mbox{\tt in}  & {\em run\-Mode} & -\/ Timer mode \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Value for timer to count up to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 381 of file Timer.\-c.
+
+
+
+Referenced by Pwm\-\_\-\-Init(), and Pwm\-\_\-\-Set\-Frequency().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_timer_8c_a6590a26eceba06333f451e69d6ea3987}{\index{Timer.\-c@{Timer.\-c}!Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure}}
+\index{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure@{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure}!Timer.c@{Timer.\-c}}
+\subsubsection[{Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Timer\-\_\-\-B0\-C\-C\-X\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\-B0\-C\-C\-\_\-t}}]{module, }
+\item[{{\bf uint16\-\_\-t}}]{config, }
+\item[{{\bf uint16\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_a6590a26eceba06333f451e69d6ea3987}
+Configure a timer B0 compare/capture (C\-C) module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em module} & -\/ Compare/capture module to configure \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Configuration value to set control register to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ Initial compare/capture value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 453 of file Timer.\-c.
+
+
+
+Referenced by Pwm\-\_\-\-Enable(), and Pwm\-\_\-\-Set\-Duty().
+
+
+
+Here is the caller graph for this function\-:
+
+

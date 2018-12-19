@@ -1,0 +1,24 @@
+<map id="AdcManager_EnableChannel" name="AdcManager_EnableChannel">
+<area shape="rect" href="$_ambient_light_control_8h.html#aa498cb345e57a444bc154ed18c85843e" title="AmbientLightControl\l_SetConfig" alt="" coords="280,5,421,48" />
+<area shape="rect" href="$_analog7_control_8h.html#a5182ee8301561e4dc211a66c51ff4e77" title="Analog7Control_SetConfig" alt="" coords="261,72,440,99" />
+<area shape="rect" href="$_analog8_control_8h.html#adbff1fc45d17c98f6c5235e023114e4b" title="Analog8Control_SetConfig" alt="" coords="261,123,440,149" />
+<area shape="rect" href="$_analog9_control_8h.html#ae71cc8586b3113337d65e9987bda14ff" title="Analog9Control_SetConfig" alt="" coords="261,173,440,200" />
+<area shape="rect" href="$_battery_control_8h.html#a28abd70494fdf139972215bd60606698" title="BatteryControl_SetConfig" alt="" coords="265,224,436,251" />
+<area shape="rect" href="$_ecg_control_8h.html#af23ac3a526d06ab4cb41fda6ee5872ec" title="EcgControl_SetConfig" alt="" coords="275,275,427,301" />
+<area shape="rect" href="$_force_gauge_control_8h.html#a9321d9e7031e7db50ebfe60e5a8ac7bb" title="FgControl_SetConfig" alt="" coords="279,325,423,352" />
+<area shape="rect" href="$_high_gain_control_8h.html#ad418efb991a502d179523b3f9a6eabde" title="HighGainControl_SetConfig" alt="" coords="259,376,443,403" />
+<area shape="rect" href="$_microphone_control_8h.html#a5ca19e88fae90de2777d203448eefc79" title="MicrophoneControl_SetConfig" alt="" coords="251,427,451,453" />
+<area shape="rect" href="$_thermometer_control_8h.html#a66bc07257860cca63270cdbab132e418" title="ThermometerControl\l_SetConfig" alt="" coords="279,477,423,520" />
+<area shape="rect" href="$_configuration_manager_8h.html#a183e4b53a492c32bbe799d7e209b8b4f" title="ConMan_SetSensorConfig" alt="" coords="500,249,679,276" />
+<area shape="rect" href="$_configuration_manager_8h.html#a4af394c25a5c58205d8832071eae3b0b" title="ConMan_StartData" alt="" coords="728,216,864,243" />
+<area shape="rect" href="$_configuration_manager_8h.html#a7e20b92732fc46ab8a1937e144066938" title="ConMan_StopData" alt="" coords="729,275,863,301" />
+<area shape="rect" href="$_comm_protocol_8h.html#a11fcf3a095c467e5da58a75e746059f1" title="CommProtocol_HandleStart\lDataPacket" alt="" coords="927,204,1113,247" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="1177,220,1356,247" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="1204,271,1329,297" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1407,220,1591,247" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1889,220,2087,247" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1664,169,1816,196" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1640,271,1840,297" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="2136,220,2187,247" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1f65077f8bed3f077ec2a561f20bf4b5" title="CommProtocol_HandleStopData\lPacket" alt="" coords="913,271,1127,313" />
+</map>

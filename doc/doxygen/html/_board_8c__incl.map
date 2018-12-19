@@ -1,0 +1,13 @@
+<map id="Board.c" name="Board.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="239,155,311,182" />
+<area shape="rect" href="$_board_8h.html" title="Board initialization module header file. " alt="" coords="189,80,256,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="280,80,349,107" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="456,80,528,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="495,155,561,182" />
+<area shape="rect" href="$_gpio_8h.html" title="GPIO configuration and control macros and functions. " alt="" coords="373,80,432,107" />
+<area shape="rect" href="$_watchdog_8h.html" title="Watchdog module header file. " alt="" coords="603,80,693,107" />
+<area shape="rect" href="$_system_8h.html" title="System module driver. " alt="" coords="717,80,795,107" />
+<area shape="rect" href="$_pmm_8h.html" title="Power Management Module header. " alt="" coords="819,80,883,107" />
+<area shape="rect" href="$_clock_8h.html" title="Clock configuration module header file. " alt="" coords="907,80,971,107" />
+</map>

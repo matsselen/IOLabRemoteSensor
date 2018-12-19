@@ -1,0 +1,124 @@
+\hypertarget{_header2_control_8c}{\section{Header2\-Control.\-c File Reference}
+\label{_header2_control_8c}\index{Header2\-Control.\-c@{Header2\-Control.\-c}}
+}
+
+
+Controls header pin 2.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Header2\-Control.\-h$>$}\\*
+Include dependency graph for Header2\-Control.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_header2_control_8c_a4200f8aa24a5710734f128acac3fd2a0}{static void {\bfseries \-\_\-\-Header2\-Control\-\_\-\-Set\-Pin\-Output} (void)}\label{_header2_control_8c_a4200f8aa24a5710734f128acac3fd2a0}
+
+\item 
+void \hyperlink{_header2_control_8c_aaf2a4c13f53273cc92627519e2ef54d4}{Header2\-Control\-\_\-\-Init} ()
+\item 
+void \hyperlink{_header2_control_8c_a71c69a758af1a8be2539126dfceadf9e}{Header2\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_key_value_8h_a4c8f437f61806a906bfcad52cc595f7f}{Header2\-Mode\-\_\-t} \hyperlink{_header2_control_8c_a3aa2c318c56844db3c67fda4b8d6f033}{\-\_\-header2\-Mode} = Header2\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D
+\item 
+static \hyperlink{_key_value_8h_a18bd7038d87266572b82595d0e50f91f}{Header2\-Output\-Value\-\_\-t} \hyperlink{_header2_control_8c_a74a3c128ed07cabacdcbd24634968037}{\-\_\-header\-Output\-Value} = \hyperlink{_key_value_8h_ae172f7c170c633e17c00988e58e48cc6}{D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R2\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls header pin 2. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls and manages the settings for header pin 2. 
+
+Definition in file \hyperlink{_header2_control_8c_source}{Header2\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_header2_control_8c_aaf2a4c13f53273cc92627519e2ef54d4}{\index{Header2\-Control.\-c@{Header2\-Control.\-c}!Header2\-Control\-\_\-\-Init@{Header2\-Control\-\_\-\-Init}}
+\index{Header2\-Control\-\_\-\-Init@{Header2\-Control\-\_\-\-Init}!Header2Control.c@{Header2\-Control.\-c}}
+\subsubsection[{Header2\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Header2\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_header2_control_8c_aaf2a4c13f53273cc92627519e2ef54d4}
+Initialize header pin 2. 
+
+Definition at line 50 of file Header2\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_header2_control_8c_a71c69a758af1a8be2539126dfceadf9e}{\index{Header2\-Control.\-c@{Header2\-Control.\-c}!Header2\-Control\-\_\-\-Set\-Config@{Header2\-Control\-\_\-\-Set\-Config}}
+\index{Header2\-Control\-\_\-\-Set\-Config@{Header2\-Control\-\_\-\-Set\-Config}!Header2Control.c@{Header2\-Control.\-c}}
+\subsubsection[{Header2\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Header2\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_header2_control_8c_a71c69a758af1a8be2539126dfceadf9e}
+Sets a configuration value to header pin 2
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Header2\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Output\-Config(), and Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_header2_control_8c_a3aa2c318c56844db3c67fda4b8d6f033}{\index{Header2\-Control.\-c@{Header2\-Control.\-c}!\-\_\-header2\-Mode@{\-\_\-header2\-Mode}}
+\index{\-\_\-header2\-Mode@{\-\_\-header2\-Mode}!Header2Control.c@{Header2\-Control.\-c}}
+\subsubsection[{\-\_\-header2\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Header2\-Mode\-\_\-t} \-\_\-header2\-Mode = Header2\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D\hspace{0.3cm}{\ttfamily [static]}}}\label{_header2_control_8c_a3aa2c318c56844db3c67fda4b8d6f033}
+Tracks what mode header pin 2 is in 
+
+Definition at line 39 of file Header2\-Control.\-c.
+
+
+
+Referenced by Header2\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_header2_control_8c_a74a3c128ed07cabacdcbd24634968037}{\index{Header2\-Control.\-c@{Header2\-Control.\-c}!\-\_\-header\-Output\-Value@{\-\_\-header\-Output\-Value}}
+\index{\-\_\-header\-Output\-Value@{\-\_\-header\-Output\-Value}!Header2Control.c@{Header2\-Control.\-c}}
+\subsubsection[{\-\_\-header\-Output\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Header2\-Output\-Value\-\_\-t} \-\_\-header\-Output\-Value = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-E\-A\-D\-E\-R2\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-V\-A\-L\-U\-E}\hspace{0.3cm}{\ttfamily [static]}}}\label{_header2_control_8c_a74a3c128ed07cabacdcbd24634968037}
+Tracks what output value header pin 2 was last set to 
+
+Definition at line 42 of file Header2\-Control.\-c.
+
+
+
+Referenced by Header2\-Control\-\_\-\-Set\-Config().
+

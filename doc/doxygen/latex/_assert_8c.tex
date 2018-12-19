@@ -1,0 +1,115 @@
+\hypertarget{_assert_8c}{\section{Assert.\-c File Reference}
+\label{_assert_8c}\index{Assert.\-c@{Assert.\-c}}
+}
+
+
+Manages asserts use to check expected logic conditions.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Assert.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Clock.\-h$>$}\\*
+{\ttfamily \#include $<$Interrupt.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+Include dependency graph for Assert.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_assert_8c_aa96f06c34f7c120b1359ea0ed0582672}{E\-R\-R\-O\-R\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S\-E\-C\-S}~(100000ul)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$ \hyperlink{_assert_8c_a5ca9023f62882e4a31913e14b8f2d375}{\-\_\-\-Error\-Mode\-To\-String} (\hyperlink{_assert_8h_ab506034a8cdc90744170ed2ef1052882}{Error\-Led\-Mode\-\_\-t} error\-Mode)
+\item 
+void \hyperlink{_assert_8c_ac68ca5ec5093d5e7d9b6f17c5a9bfd6b}{Assert} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} line\-Number, const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} $\ast$file\-Name\-With\-Path, \hyperlink{_assert_8h_ab506034a8cdc90744170ed2ef1052882}{Error\-Led\-Mode\-\_\-t} error\-Mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages asserts use to check expected logic conditions. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The assert module can be used to check for certain logic conditions and stop execution if the expected conditions were not present. 
+
+Definition in file \hyperlink{_assert_8c_source}{Assert.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_assert_8c_aa96f06c34f7c120b1359ea0ed0582672}{\index{Assert.\-c@{Assert.\-c}!E\-R\-R\-O\-R\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S\-E\-C\-S@{E\-R\-R\-O\-R\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S\-E\-C\-S}}
+\index{E\-R\-R\-O\-R\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S\-E\-C\-S@{E\-R\-R\-O\-R\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S\-E\-C\-S}!Assert.c@{Assert.\-c}}
+\subsubsection[{E\-R\-R\-O\-R\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S\-E\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-O\-R\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S\-E\-C\-S~(100000ul)}}\label{_assert_8c_aa96f06c34f7c120b1359ea0ed0582672}
+The delay between loops of the assert handler. 
+
+Definition at line 45 of file Assert.\-c.
+
+
+
+Referenced by Assert().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_assert_8c_a5ca9023f62882e4a31913e14b8f2d375}{\index{Assert.\-c@{Assert.\-c}!\-\_\-\-Error\-Mode\-To\-String@{\-\_\-\-Error\-Mode\-To\-String}}
+\index{\-\_\-\-Error\-Mode\-To\-String@{\-\_\-\-Error\-Mode\-To\-String}!Assert.c@{Assert.\-c}}
+\subsubsection[{\-\_\-\-Error\-Mode\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}static const {\bf char\-\_\-t} $\ast$ \-\_\-\-Error\-Mode\-To\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf Error\-Led\-Mode\-\_\-t}}]{error\-Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_assert_8c_a5ca9023f62882e4a31913e14b8f2d375}
+Converts the Error\-Led\-Mode\-\_\-t enum into string names
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em error\-Mode} & -\/ the error mode enum to be converted to a string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the string. 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file Assert.\-c.
+
+
+
+Referenced by Assert().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_assert_8c_ac68ca5ec5093d5e7d9b6f17c5a9bfd6b}{\index{Assert.\-c@{Assert.\-c}!Assert@{Assert}}
+\index{Assert@{Assert}!Assert.c@{Assert.\-c}}
+\subsubsection[{Assert}]{\setlength{\rightskip}{0pt plus 5cm}void Assert (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{line\-Number, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{file\-Name\-With\-Path, }
+\item[{{\bf Error\-Led\-Mode\-\_\-t}}]{error\-Mode}
+\end{DoxyParamCaption}
+)}}\label{_assert_8c_ac68ca5ec5093d5e7d9b6f17c5a9bfd6b}
+Called when an assertion fails. Writes the file name and line number via the serial debug port and then enters an infinite loop. Within the loop, the L\-E\-D Control error handler is called periodically so that the value of the error mode is displayed on the L\-E\-Ds.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em line\-Number} & -\/ Line number where the assertion failed. \\
+\hline
+\mbox{\tt in}  & {\em file\-Name\-With\-Path} & -\/ Pointer to the name of the file with path where the assertion failed. \\
+\hline
+\mbox{\tt in}  & {\em error\-Mode} & -\/ Assigned error mode for this assertion. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Assert.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+

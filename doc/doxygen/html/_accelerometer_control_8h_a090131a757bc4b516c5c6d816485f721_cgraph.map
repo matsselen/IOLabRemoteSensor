@@ -1,0 +1,16 @@
+<map id="AccControl_Init" name="AccControl_Init">
+<area shape="rect" href="$_accelerometer_8c.html#aab95b4004ca553f62854d5ef981d83f3" title="Accelerometer_Init" alt="" coords="190,183,320,209" />
+<area shape="rect" href="$_accelerometer_8c.html#a38496c82db2e6068b2f0fa6d66a1f4f0" title="Accelerometer_RegisterIsr" alt="" coords="166,233,344,260" />
+<area shape="rect" href="$_accelerometer_control_8c.html#a7c69937db815f51c340e3ead3314cda0" title="_AccDataReadyIsr" alt="" coords="190,284,320,311" />
+<area shape="rect" href="$_accelerometer_8c.html#a0699e7afdbf83edc44f0800ad5cc65f7" title="_AccReadSingleRegister" alt="" coords="402,81,570,108" />
+<area shape="rect" href="$_gpio_8c.html#a56f194230a70ea64fd0b563c90b6d2d0" title="Gpio_RegisterIsr" alt="" coords="426,132,546,159" />
+<area shape="rect" href="$_accelerometer_8c.html#abffbea3ffff0c24e1b68e3fbf6d57e57" title="_HandleDataReadyInterrupt" alt="" coords="392,183,579,209" />
+<area shape="rect" href="$_accelerometer_8c.html#a9d2b62e3dd4358e27f614be64cd7283a" title="_HandleOtherInterrupt" alt="" coords="410,233,562,260" />
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="628,5,772,32" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="638,56,763,83" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="638,107,763,133" />
+<area shape="rect" href="$_i2c_8c.html#a0df5e64148fcf1e7c7c1cc90e107db49" title="I2c_ReceiveByteEnd" alt="" coords="628,157,772,184" />
+<area shape="rect" href="$_event_queue_8c.html#afd41d1979b21c13ff21bab60d9c57c27" title="EventQueue_Add" alt="" coords="423,284,548,311" />
+<area shape="rect" href="$_interrupt_8c.html#a0e5431ce2b9097e2a21c245e7c75e953" title="Interrupt_Lock" alt="" coords="647,259,754,285" />
+<area shape="rect" href="$_interrupt_8c.html#a4f840d0ee81cd63fc8ab0c938a6e755b" title="Interrupt_Unlock" alt="" coords="642,309,759,336" />
+</map>

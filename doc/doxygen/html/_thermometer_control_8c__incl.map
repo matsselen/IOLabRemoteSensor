@@ -1,0 +1,11 @@
+<map id="ThermometerControl.c" name="ThermometerControl.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_thermometer_control_8h.html" title="Controls the Thermometer driver. " alt="" coords="139,80,294,107" />
+<area shape="rect" href="$_adc_manager_8h.html" title="Analog to digital conversion manager header file. " alt="" coords="318,80,424,107" />
+<area shape="rect" href="$_timer_tick_8h.html" title="Timer Tick utility header file. " alt="" coords="448,80,539,107" />
+<area shape="rect" href="$_data_buffer_8h.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="563,80,659,107" />
+<area shape="rect" href="$_sensor_id_8h.html" title="Sensor Id stores the list of Sensor IDs. " alt="" coords="683,80,768,107" />
+<area shape="rect" href="$_key_value_8h.html" title="Contains the definitions of the Key&#45;Value pairs. " alt="" coords="792,80,880,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="904,80,974,107" />
+<area shape="rect" href="$_adc_8h.html" title="Analog to digital conversion module header file. " alt="" coords="343,155,399,182" />
+</map>

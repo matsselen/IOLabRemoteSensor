@@ -1,0 +1,546 @@
+\hypertarget{_barometer_8c}{\section{Barometer.\-c File Reference}
+\label{_barometer_8c}\index{Barometer.\-c@{Barometer.\-c}}
+}
+
+
+Driver for the barometer sensor.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Barometer.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Clock.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Spi\-Master.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for Barometer.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_barometer_8c_aa7e5f779081fe0a5b8aa34b664936589}{C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-U\-S}~5000u
+\item 
+\#define \hyperlink{_barometer_8c_a90c92fe07811f012cb82086b8539cfec}{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}~\hyperlink{_gpio_8h_a2df7dc3f599d820ac15aa68739e1f17a}{G\-P\-I\-O\-\_\-\-C\-L\-E\-A\-R}(C\-S\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-P\-O\-R\-T, C\-S\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-P\-I\-N);
+\item 
+\hypertarget{_barometer_8c_a1ca872920eba25022e0ee11f17f42a5a}{\#define {\bfseries B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-E\-N\-D\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}~\hyperlink{_gpio_8h_a2e03c55fa0950ef058109fad6b06e368}{G\-P\-I\-O\-\_\-\-S\-E\-T}(C\-S\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-P\-O\-R\-T, C\-S\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-P\-I\-N);}\label{_barometer_8c_a1ca872920eba25022e0ee11f17f42a5a}
+
+\item 
+\#define \hyperlink{_barometer_8c_a6ffef9d7cb437fa5720e949021c85cf6}{B\-L\-A\-N\-K\-\_\-\-B\-Y\-T\-E}~0u
+\item 
+\#define \hyperlink{_barometer_8c_a25065cd833bcfecfb404093aed3edaca}{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}~4u
+\item 
+\#define \hyperlink{_barometer_8c_a8aeed8d26a6747b078fbb58eb26525ba}{N\-U\-M\-\_\-\-C\-O\-E\-F\-F\-\_\-\-B\-Y\-T\-E\-S}~8u
+\item 
+\#define \hyperlink{_barometer_8c_af0e7ca49f7aa10a6744889efc3744c9e}{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}~1u
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0d}{Barometer\-Reg\-\_\-t} \{ \\*
+{\bfseries Barometer\-Reg\-\_\-\-P\-A\-D\-C\-\_\-\-M\-S\-B} = 0x00$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da39f24d7f027fe99d054099b76a64aa61}{Barometer\-Reg\-\_\-\-P\-A\-D\-C\-\_\-\-L\-S\-B} = 0x01$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0dab1073e82e8b0fcf40cdbc8714080b44c}{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-M\-S\-B} = 0x02$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da972c2591647839b58b8444cd89167383}{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-L\-S\-B} = 0x03$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da74573b3a96105db4b15cd429059be239}{Barometer\-Reg\-\_\-\-A0\-\_\-\-M\-S\-B} = 0x04$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da1f6dd5681a7e8d0b5f928a999077f260}{Barometer\-Reg\-\_\-\-A0\-\_\-\-L\-S\-B} = 0x05$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da23ed491f1256238339360ead575a2e22}{Barometer\-Reg\-\_\-\-B1\-\_\-\-M\-S\-B} = 0x06$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da3333cf8ab81af50aeed0b9bebd702115}{Barometer\-Reg\-\_\-\-B1\-\_\-\-L\-S\-B} = 0x07$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0dad37a9194bdd4ca3cbaeeb038fee096c7}{Barometer\-Reg\-\_\-\-B2\-\_\-\-M\-S\-B} = 0x08$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da00b9a3da2fad26d3e00bdb7fe23ebccb}{Barometer\-Reg\-\_\-\-B2\-\_\-\-L\-S\-B} = 0x09$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da9594d76c597c35e3837073d682c6a10f}{Barometer\-Reg\-\_\-\-C12\-\_\-\-M\-S\-B} = 0x0\-A$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0dae2838c2f2cbd02ddfa4a65533ae2c695}{Barometer\-Reg\-\_\-\-C12\-\_\-\-L\-S\-B} = 0x0\-B$<$$<$1, 
+\\*
+\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da45e30eeb9a2022374aa13bbf8dec6726}{Barometer\-Reg\-\_\-\-C\-O\-N\-V\-E\-R\-T} = 0x12$<$$<$1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_barometer_8c_abf5eb0c18eefbe5dcdafccb258e055d0}{\-\_\-\-Bar\-Read\-Register} (\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0d}{Barometer\-Reg\-\_\-t} reg\-Address)
+\item 
+void \hyperlink{_barometer_8c_a0e23021916eeffe45a8b5ee622d45bc5}{\-\_\-\-Bar\-Write\-Register} (\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0d}{Barometer\-Reg\-\_\-t} reg\-Address, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} reg\-Value)
+\item 
+void \hyperlink{_barometer_8c_a68205b78d3fed44531eb4d88f5df60dc}{\-\_\-\-Bar\-Read\-Multiple\-Registers} (\hyperlink{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0d}{Barometer\-Reg\-\_\-t} reg\-Start\-Address, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} number\-Of\-Registers, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} values\mbox{[}$\,$\mbox{]})
+\item 
+\hypertarget{_barometer_8c_a8b848f235937fa4652cf145399453f60}{void {\bfseries Barometer\-\_\-\-Init} (void)}\label{_barometer_8c_a8b848f235937fa4652cf145399453f60}
+
+\item 
+\hypertarget{_barometer_8c_a01f9cfec4a6b1bda1c1f589477d8d402}{void {\bfseries Barometer\-\_\-\-Config} (const \hyperlink{_barometer_8h_struct_barometer_config__t}{Barometer\-Config\-\_\-t} $\ast$config)}\label{_barometer_8c_a01f9cfec4a6b1bda1c1f589477d8d402}
+
+\item 
+\hypertarget{_barometer_8c_a5eb477b0e348b484a57e6c75c12225a6}{void {\bfseries Barometer\-\_\-\-Start} (void)}\label{_barometer_8c_a5eb477b0e348b484a57e6c75c12225a6}
+
+\item 
+\hypertarget{_barometer_8c_a870a9dbcaade0ff055d5a826ad1d3c04}{void {\bfseries Barometer\-\_\-\-Stop} (void)}\label{_barometer_8c_a870a9dbcaade0ff055d5a826ad1d3c04}
+
+\item 
+void \hyperlink{_barometer_8c_a6648002e5620f2482d65aebc9fb74a87}{Barometer\-\_\-\-Trigger\-Sample\-Blocking} (\hyperlink{_barometer_8h_struct_barometer_sample__t}{Barometer\-Sample\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_barometer_8c_a98ecada381db13090b6700291a2681c4}{Barometer\-\_\-\-Start\-Sample\-Conversion} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_barometer_8c_a91a50f620e6bae96b4279bf29ada9e86}{Barometer\-\_\-\-Read\-Sample} (\hyperlink{_barometer_8h_struct_barometer_sample__t}{Barometer\-Sample\-\_\-t} $\ast$sample)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_barometer_8c_ac36db77cd862d57a26d7de1474e76f39}{Barometer\-\_\-\-Read\-Sample\-Array} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_barometer_8c_a10764bee54c53faa6e0a2c5deff5dd52}{Barometer\-\_\-\-Read\-Coefficients} (\hyperlink{_barometer_8h_struct_barometer_coef__t}{Barometer\-Coef\-\_\-t} $\ast$coefficients)
+\item 
+void \hyperlink{_barometer_8c_a8ba8dee3537ee8605d8a17a906fc594d}{Barometer\-\_\-\-Read\-Coeff\-Array} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} coefficients\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_barometer_8c_ad9452ac0b5fe2afc071675347e6fd157}{\-\_\-conversion\-In\-Progress} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Driver for the barometer sensor. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This module interfaces to a S\-P\-I barometer sensor to read the barometric pressure and temperature data. This driver is designed to work with a Freescale M\-P\-L115\-A1 S\-P\-I Barometer. 
+
+Definition in file \hyperlink{_barometer_8c_source}{Barometer.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_barometer_8c_a90c92fe07811f012cb82086b8539cfec}{\index{Barometer.\-c@{Barometer.\-c}!B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R@{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}}
+\index{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R@{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-P\-I\-\_\-\-X\-F\-E\-R~{\bf G\-P\-I\-O\-\_\-\-C\-L\-E\-A\-R}(C\-S\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-P\-O\-R\-T, C\-S\-\_\-\-B\-A\-R\-O\-M\-E\-T\-E\-R\-\_\-\-P\-I\-N);}}\label{_barometer_8c_a90c92fe07811f012cb82086b8539cfec}
+Defines the chip select enable and disable for the barometer 
+
+Definition at line 63 of file Barometer.\-c.
+
+
+
+Referenced by \-\_\-\-Bar\-Read\-Multiple\-Registers(), \-\_\-\-Bar\-Read\-Register(), and \-\_\-\-Bar\-Write\-Register().
+
+\hypertarget{_barometer_8c_a6ffef9d7cb437fa5720e949021c85cf6}{\index{Barometer.\-c@{Barometer.\-c}!B\-L\-A\-N\-K\-\_\-\-B\-Y\-T\-E@{B\-L\-A\-N\-K\-\_\-\-B\-Y\-T\-E}}
+\index{B\-L\-A\-N\-K\-\_\-\-B\-Y\-T\-E@{B\-L\-A\-N\-K\-\_\-\-B\-Y\-T\-E}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{B\-L\-A\-N\-K\-\_\-\-B\-Y\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-L\-A\-N\-K\-\_\-\-B\-Y\-T\-E~0u}}\label{_barometer_8c_a6ffef9d7cb437fa5720e949021c85cf6}
+Defines the value of a \char`\"{}\-Blank Byte\char`\"{} to write to the barometer 
+
+Definition at line 67 of file Barometer.\-c.
+
+
+
+Referenced by \-\_\-\-Bar\-Read\-Multiple\-Registers(), and Barometer\-\_\-\-Start\-Sample\-Conversion().
+
+\hypertarget{_barometer_8c_a25065cd833bcfecfb404093aed3edaca}{\index{Barometer.\-c@{Barometer.\-c}!B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E@{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}}
+\index{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E@{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E~4u}}\label{_barometer_8c_a25065cd833bcfecfb404093aed3edaca}
+Defines the number of registers to read a sample 
+
+Definition at line 70 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-\_\-\-Read\-Sample(), and Barometer\-\_\-\-Read\-Sample\-Array().
+
+\hypertarget{_barometer_8c_aa7e5f779081fe0a5b8aa34b664936589}{\index{Barometer.\-c@{Barometer.\-c}!C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-U\-S@{C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-U\-S}}
+\index{C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-U\-S@{C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-U\-S}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-U\-S~5000u}}\label{_barometer_8c_aa7e5f779081fe0a5b8aa34b664936589}
+defines how long the Barometer conversion takes in microseconds 
+
+Definition at line 60 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+\hypertarget{_barometer_8c_a8aeed8d26a6747b078fbb58eb26525ba}{\index{Barometer.\-c@{Barometer.\-c}!N\-U\-M\-\_\-\-C\-O\-E\-F\-F\-\_\-\-B\-Y\-T\-E\-S@{N\-U\-M\-\_\-\-C\-O\-E\-F\-F\-\_\-\-B\-Y\-T\-E\-S}}
+\index{N\-U\-M\-\_\-\-C\-O\-E\-F\-F\-\_\-\-B\-Y\-T\-E\-S@{N\-U\-M\-\_\-\-C\-O\-E\-F\-F\-\_\-\-B\-Y\-T\-E\-S}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-C\-O\-E\-F\-F\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-C\-O\-E\-F\-F\-\_\-\-B\-Y\-T\-E\-S~8u}}\label{_barometer_8c_a8aeed8d26a6747b078fbb58eb26525ba}
+Defines the number of registers to read the coefficients 
+
+Definition at line 73 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-\_\-\-Read\-Coeff\-Array(), and Barometer\-\_\-\-Read\-Coefficients().
+
+\hypertarget{_barometer_8c_af0e7ca49f7aa10a6744889efc3744c9e}{\index{Barometer.\-c@{Barometer.\-c}!S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S@{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}}
+\index{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S@{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-I\-\_\-\-C\-S\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-U\-S~1u}}\label{_barometer_8c_af0e7ca49f7aa10a6744889efc3744c9e}
+Defines the number of microseconds to delay between de/asserting the chip select line and ending/starting the S\-P\-I communication to allow the chip to become ready 
+
+Definition at line 78 of file Barometer.\-c.
+
+
+
+Referenced by \-\_\-\-Bar\-Read\-Multiple\-Registers(), \-\_\-\-Bar\-Read\-Register(), and \-\_\-\-Bar\-Write\-Register().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0d}{\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-t@{Barometer\-Reg\-\_\-t}}
+\index{Barometer\-Reg\-\_\-t@{Barometer\-Reg\-\_\-t}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{Barometer\-Reg\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Barometer\-Reg\-\_\-t}}}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0d}
+Defines the valid register addresses for the barometer registers \begin{DoxyNote}{Note}
+The values in the barometer are shifted left 1 bit from the datasheet definition ($<$$<$1). 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Barometer\-Reg\-\_\-\-P\-A\-D\-C\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-P\-A\-D\-C\-\_\-\-L\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-P\-A\-D\-C\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-P\-A\-D\-C\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da39f24d7f027fe99d054099b76a64aa61}{Barometer\-Reg\-\_\-\-P\-A\-D\-C\-\_\-\-L\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da39f24d7f027fe99d054099b76a64aa61}
+}]pressure A\-D\-C M\-S\-B \index{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-M\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0dab1073e82e8b0fcf40cdbc8714080b44c}{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-M\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0dab1073e82e8b0fcf40cdbc8714080b44c}
+}]pressure A\-D\-C L\-S\-B \index{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-L\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da972c2591647839b58b8444cd89167383}{Barometer\-Reg\-\_\-\-T\-A\-D\-C\-\_\-\-L\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da972c2591647839b58b8444cd89167383}
+}]temperature A\-D\-C M\-S\-B \index{Barometer\-Reg\-\_\-\-A0\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-A0\-\_\-\-M\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-A0\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-A0\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da74573b3a96105db4b15cd429059be239}{Barometer\-Reg\-\_\-\-A0\-\_\-\-M\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da74573b3a96105db4b15cd429059be239}
+}]temperature A\-D\-C L\-S\-B \index{Barometer\-Reg\-\_\-\-A0\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-A0\-\_\-\-L\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-A0\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-A0\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da1f6dd5681a7e8d0b5f928a999077f260}{Barometer\-Reg\-\_\-\-A0\-\_\-\-L\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da1f6dd5681a7e8d0b5f928a999077f260}
+}]pressure offset coefficient M\-S\-B \index{Barometer\-Reg\-\_\-\-B1\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-B1\-\_\-\-M\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-B1\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-B1\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da23ed491f1256238339360ead575a2e22}{Barometer\-Reg\-\_\-\-B1\-\_\-\-M\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da23ed491f1256238339360ead575a2e22}
+}]pressure offset coefficient L\-S\-B \index{Barometer\-Reg\-\_\-\-B1\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-B1\-\_\-\-L\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-B1\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-B1\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da3333cf8ab81af50aeed0b9bebd702115}{Barometer\-Reg\-\_\-\-B1\-\_\-\-L\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da3333cf8ab81af50aeed0b9bebd702115}
+}]pressure sensitivity coefficient M\-S\-B \index{Barometer\-Reg\-\_\-\-B2\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-B2\-\_\-\-M\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-B2\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-B2\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0dad37a9194bdd4ca3cbaeeb038fee096c7}{Barometer\-Reg\-\_\-\-B2\-\_\-\-M\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0dad37a9194bdd4ca3cbaeeb038fee096c7}
+}]pressure sensitivity coefficient L\-S\-B \index{Barometer\-Reg\-\_\-\-B2\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-B2\-\_\-\-L\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-B2\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-B2\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da00b9a3da2fad26d3e00bdb7fe23ebccb}{Barometer\-Reg\-\_\-\-B2\-\_\-\-L\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da00b9a3da2fad26d3e00bdb7fe23ebccb}
+}]temperature offset coefficient M\-S\-B \index{Barometer\-Reg\-\_\-\-C12\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-C12\-\_\-\-M\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-C12\-\_\-\-M\-S\-B@{Barometer\-Reg\-\_\-\-C12\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da9594d76c597c35e3837073d682c6a10f}{Barometer\-Reg\-\_\-\-C12\-\_\-\-M\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da9594d76c597c35e3837073d682c6a10f}
+}]temperature offset coefficient L\-S\-B \index{Barometer\-Reg\-\_\-\-C12\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-C12\-\_\-\-L\-S\-B}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-C12\-\_\-\-L\-S\-B@{Barometer\-Reg\-\_\-\-C12\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0dae2838c2f2cbd02ddfa4a65533ae2c695}{Barometer\-Reg\-\_\-\-C12\-\_\-\-L\-S\-B}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0dae2838c2f2cbd02ddfa4a65533ae2c695}
+}]temperature sensitivity coefficient M\-S\-B \index{Barometer\-Reg\-\_\-\-C\-O\-N\-V\-E\-R\-T@{Barometer\-Reg\-\_\-\-C\-O\-N\-V\-E\-R\-T}!Barometer.\-c@{Barometer.\-c}}\index{Barometer.\-c@{Barometer.\-c}!Barometer\-Reg\-\_\-\-C\-O\-N\-V\-E\-R\-T@{Barometer\-Reg\-\_\-\-C\-O\-N\-V\-E\-R\-T}}\item[{\em 
+\hypertarget{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da45e30eeb9a2022374aa13bbf8dec6726}{Barometer\-Reg\-\_\-\-C\-O\-N\-V\-E\-R\-T}\label{_barometer_8c_a920cc28101a2714d6e059a4b0d5d7d0da45e30eeb9a2022374aa13bbf8dec6726}
+}]temperature sensitivity coefficient L\-S\-B \end{description}
+\end{Desc}
+
+
+Definition at line 41 of file Barometer.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_barometer_8c_a68205b78d3fed44531eb4d88f5df60dc}{\index{Barometer.\-c@{Barometer.\-c}!\-\_\-\-Bar\-Read\-Multiple\-Registers@{\-\_\-\-Bar\-Read\-Multiple\-Registers}}
+\index{\-\_\-\-Bar\-Read\-Multiple\-Registers@{\-\_\-\-Bar\-Read\-Multiple\-Registers}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{\-\_\-\-Bar\-Read\-Multiple\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Bar\-Read\-Multiple\-Registers (
+\begin{DoxyParamCaption}
+\item[{{\bf Barometer\-Reg\-\_\-t}}]{reg\-Start\-Address, }
+\item[{{\bf uint8\-\_\-t}}]{number\-Of\-Registers, }
+\item[{{\bf uint8\-\_\-t}}]{values\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_barometer_8c_a68205b78d3fed44531eb4d88f5df60dc}
+Reads from consecutive registers using the S\-P\-I port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\-Start\-Address} & -\/ the register address to read from the device \\
+\hline
+\mbox{\tt in}  & {\em number\-Of\-Registers} & -\/ the number of consecutive registers to read \\
+\hline
+\mbox{\tt in}  & {\em values\mbox{[}$\,$\mbox{]}} & -\/ the location to store the register values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The length of values $>$= number\-Of\-Registers 
+\end{DoxyNote}
+
+
+Definition at line 288 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-\_\-\-Read\-Coeff\-Array(), Barometer\-\_\-\-Read\-Coefficients(), Barometer\-\_\-\-Read\-Sample(), and Barometer\-\_\-\-Read\-Sample\-Array().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_8c_abf5eb0c18eefbe5dcdafccb258e055d0}{\index{Barometer.\-c@{Barometer.\-c}!\-\_\-\-Bar\-Read\-Register@{\-\_\-\-Bar\-Read\-Register}}
+\index{\-\_\-\-Bar\-Read\-Register@{\-\_\-\-Bar\-Read\-Register}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{\-\_\-\-Bar\-Read\-Register}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} \-\_\-\-Bar\-Read\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf Barometer\-Reg\-\_\-t}}]{reg\-Address}
+\end{DoxyParamCaption}
+)}}\label{_barometer_8c_abf5eb0c18eefbe5dcdafccb258e055d0}
+Reads from a specific register using the S\-P\-I port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\-Address} & -\/ the register address to read from the device\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value read from the register. 
+\end{DoxyReturn}
+
+
+Definition at line 250 of file Barometer.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_barometer_8c_a0e23021916eeffe45a8b5ee622d45bc5}{\index{Barometer.\-c@{Barometer.\-c}!\-\_\-\-Bar\-Write\-Register@{\-\_\-\-Bar\-Write\-Register}}
+\index{\-\_\-\-Bar\-Write\-Register@{\-\_\-\-Bar\-Write\-Register}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{\-\_\-\-Bar\-Write\-Register}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Bar\-Write\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf Barometer\-Reg\-\_\-t}}]{reg\-Address, }
+\item[{{\bf uint8\-\_\-t}}]{reg\-Value}
+\end{DoxyParamCaption}
+)}}\label{_barometer_8c_a0e23021916eeffe45a8b5ee622d45bc5}
+Writes a value to a specific register using the S\-P\-I port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg\-Address} & -\/ the register address to write at on device \\
+\hline
+\mbox{\tt in}  & {\em reg\-Value} & -\/ the value at reg\-Address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 269 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-\_\-\-Start\-Sample\-Conversion().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_8c_a8ba8dee3537ee8605d8a17a906fc594d}{\index{Barometer.\-c@{Barometer.\-c}!Barometer\-\_\-\-Read\-Coeff\-Array@{Barometer\-\_\-\-Read\-Coeff\-Array}}
+\index{Barometer\-\_\-\-Read\-Coeff\-Array@{Barometer\-\_\-\-Read\-Coeff\-Array}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{Barometer\-\_\-\-Read\-Coeff\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void Barometer\-\_\-\-Read\-Coeff\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{coefficients\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_barometer_8c_a8ba8dee3537ee8605d8a17a906fc594d}
+Reads in the conversion coefficients from the barometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Length} & -\/ the number of bytes allocated for coefficients\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em actual\-Length} & -\/ the actual number of bytes that were put in coefficients\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em coefficients\mbox{[}$\,$\mbox{]}} & -\/ the coefficient data from the barometer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 230 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Read\-Calibration().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_8c_a10764bee54c53faa6e0a2c5deff5dd52}{\index{Barometer.\-c@{Barometer.\-c}!Barometer\-\_\-\-Read\-Coefficients@{Barometer\-\_\-\-Read\-Coefficients}}
+\index{Barometer\-\_\-\-Read\-Coefficients@{Barometer\-\_\-\-Read\-Coefficients}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{Barometer\-\_\-\-Read\-Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}void Barometer\-\_\-\-Read\-Coefficients (
+\begin{DoxyParamCaption}
+\item[{{\bf Barometer\-Coef\-\_\-t} $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)}}\label{_barometer_8c_a10764bee54c53faa6e0a2c5deff5dd52}
+Reads in the value of the conversion coefficients from the barometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em coefficients} & -\/ the location to store the coefficients \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 205 of file Barometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Barc\-Command().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_8c_a91a50f620e6bae96b4279bf29ada9e86}{\index{Barometer.\-c@{Barometer.\-c}!Barometer\-\_\-\-Read\-Sample@{Barometer\-\_\-\-Read\-Sample}}
+\index{Barometer\-\_\-\-Read\-Sample@{Barometer\-\_\-\-Read\-Sample}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{Barometer\-\_\-\-Read\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Barometer\-\_\-\-Read\-Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf Barometer\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_barometer_8c_a91a50f620e6bae96b4279bf29ada9e86}
+Reads in the value of the conversion from the barometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample-\/} & the location to store the sample data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a sample conversion was already in progress and the data could be read, false otherwise. True does N\-O\-T mean the sample was ready, just that the conversion was started before the reading. 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-\_\-\-Trigger\-Sample\-Blocking(), and Barometer\-Control\-\_\-\-Read\-Bar().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_8c_ac36db77cd862d57a26d7de1474e76f39}{\index{Barometer.\-c@{Barometer.\-c}!Barometer\-\_\-\-Read\-Sample\-Array@{Barometer\-\_\-\-Read\-Sample\-Array}}
+\index{Barometer\-\_\-\-Read\-Sample\-Array@{Barometer\-\_\-\-Read\-Sample\-Array}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{Barometer\-\_\-\-Read\-Sample\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Barometer\-\_\-\-Read\-Sample\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_barometer_8c_ac36db77cd862d57a26d7de1474e76f39}
+Reads in the value of the conversion from the barometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Length} & -\/ the number of bytes allocated for data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em actual\-Length} & -\/ the actual number of bytes that were put in data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em data\mbox{[}$\,$\mbox{]}} & -\/ the pressure and temperature data from the barometer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a sample conversion was already in progress and the data could be read, false otherwise. True does N\-O\-T mean the sample was ready, just that the conversion was started before the reading. 
+\end{DoxyReturn}
+
+
+Definition at line 184 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-Control\-\_\-\-Read\-Bar().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_8c_a98ecada381db13090b6700291a2681c4}{\index{Barometer.\-c@{Barometer.\-c}!Barometer\-\_\-\-Start\-Sample\-Conversion@{Barometer\-\_\-\-Start\-Sample\-Conversion}}
+\index{Barometer\-\_\-\-Start\-Sample\-Conversion@{Barometer\-\_\-\-Start\-Sample\-Conversion}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{Barometer\-\_\-\-Start\-Sample\-Conversion}]{\setlength{\rightskip}{0pt plus 5cm}void Barometer\-\_\-\-Start\-Sample\-Conversion (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_barometer_8c_a98ecada381db13090b6700291a2681c4}
+Starts a barometer conversion on the sensor. 
+
+Definition at line 131 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-\_\-\-Trigger\-Sample\-Blocking(), Barometer\-Control\-\_\-\-Read\-Bar(), and Barometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_barometer_8c_a6648002e5620f2482d65aebc9fb74a87}{\index{Barometer.\-c@{Barometer.\-c}!Barometer\-\_\-\-Trigger\-Sample\-Blocking@{Barometer\-\_\-\-Trigger\-Sample\-Blocking}}
+\index{Barometer\-\_\-\-Trigger\-Sample\-Blocking@{Barometer\-\_\-\-Trigger\-Sample\-Blocking}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{Barometer\-\_\-\-Trigger\-Sample\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Barometer\-\_\-\-Trigger\-Sample\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Barometer\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_barometer_8c_a6648002e5620f2482d65aebc9fb74a87}
+Starts a sample conversion on the Barometer and blocks until it is complete and returns the data from that conversion.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample} & -\/ the location to store the result of the sample conversion \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file Barometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Bar\-Command().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_barometer_8c_ad9452ac0b5fe2afc071675347e6fd157}{\index{Barometer.\-c@{Barometer.\-c}!\-\_\-conversion\-In\-Progress@{\-\_\-conversion\-In\-Progress}}
+\index{\-\_\-conversion\-In\-Progress@{\-\_\-conversion\-In\-Progress}!Barometer.c@{Barometer.\-c}}
+\subsubsection[{\-\_\-conversion\-In\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-conversion\-In\-Progress = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_barometer_8c_ad9452ac0b5fe2afc071675347e6fd157}
+Define a variable that will track if the barometer conversion is in progress 
+
+Definition at line 82 of file Barometer.\-c.
+
+
+
+Referenced by Barometer\-\_\-\-Read\-Sample(), and Barometer\-\_\-\-Start\-Sample\-Conversion().
+

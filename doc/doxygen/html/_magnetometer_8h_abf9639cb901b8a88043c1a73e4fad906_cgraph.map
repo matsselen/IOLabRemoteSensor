@@ -1,0 +1,7 @@
+<map id="Magnetometer_SetCalibration" name="Magnetometer_SetCalibration">
+<area shape="rect" href="$_magnetometer_8c.html#a61f3794e7c618ee6443c8ec9436e26ad" title="_WriteSingleRegister" alt="" coords="254,81,400,108" />
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="451,5,595,32" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="460,56,586,83" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="460,107,586,133" />
+<area shape="rect" href="$_i2c_8c.html#afbfb0c0fbc0025ced1d88290aa899fa9" title="I2c_TransmitByteEnd" alt="" coords="448,157,598,184" />
+</map>

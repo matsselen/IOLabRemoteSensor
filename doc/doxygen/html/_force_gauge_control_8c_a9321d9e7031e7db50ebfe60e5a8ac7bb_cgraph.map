@@ -1,0 +1,27 @@
+<map id="FgControl_SetConfig" name="FgControl_SetConfig">
+<area shape="rect" href="$_key_value_8c.html#a30aa66a5e57b84caf453be8ec13a23f8" title="KeyValue_Separate" alt="" coords="231,85,370,112" />
+<area shape="rect" href="$_adc_manager_8c.html#af6718cd4b7d0e37e05766a6920a4ba63" title="AdcManager_DisableChannel" alt="" coords="202,136,399,163" />
+<area shape="rect" href="$_adc_manager_8c.html#a7318da3a09c3c259f7de0f9ce7a9bd90" title="AdcManager_EnableChannel" alt="" coords="203,212,398,239" />
+<area shape="rect" href="$_force_gauge_control_8c.html#aed4ced7786a5d206544c65bce641959d" title="_ForceGaugeDataCallback" alt="" coords="210,507,391,533" />
+<area shape="rect" href="$_adc_manager_8c.html#af8416f3a8c779a5631aa5335064ed481" title="AdcManager_PoweredChannel\lControl" alt="" coords="454,5,659,48" />
+<area shape="rect" href="$_adc_manager_8c.html#acb5db715bc62a5ddfe2b5cb71e889afa" title="_AllChannelsDisabled" alt="" coords="480,72,632,99" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaff7c685a2d029cb452bb271c369716" title="_AdcStop" alt="" coords="518,123,595,149" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaa24713515810380e7943554d22b137" title="_SetupAdcForNormalMode" alt="" coords="466,224,647,251" />
+<area shape="rect" href="$_adc_8c.html#a48bd94f6c7b5c13bae12ee2ae824145b" title="Adc_StopConversion" alt="" coords="756,123,903,149" />
+<area shape="rect" href="$_adc_8c.html#aeb038bcf326000ca3a320d29351100a3" title="Adc_Config" alt="" coords="784,181,875,208" />
+<area shape="rect" href="$_adc_manager_8c.html#a52cb89e87f72c24ad896dfc4151724e3" title="AdcManager_AdcManRefToAdcRef" alt="" coords="714,248,946,275" />
+<area shape="rect" href="$_adc_manager_8c.html#a5e91c4affb5c1439c47170585670a2bf" title="_SetupTimerConfig" alt="" coords="762,331,898,357" />
+<area shape="rect" href="$_timer_8c.html#a02f931c9a4a5037b499d531f49ebc3b9" title="Timer_A0_Configure" alt="" coords="1010,280,1154,307" />
+<area shape="rect" href="$_timer_8c.html#a3b787ac79e251ea6217447ed05be53bb" title="Timer_A0CCX_Configure" alt="" coords="996,331,1167,357" />
+<area shape="rect" href="$_adc_manager_8c.html#a9d5382aa474494126282fe96a47dbea1" title="_InitialzeXAdcChannels" alt="" coords="1000,381,1163,408" />
+<area shape="rect" href="$_adc_8c.html#a8201a8154546752a07f766fa604c77d1" title="Adc_SetChannelSequence" alt="" coords="1216,381,1398,408" />
+<area shape="rect" href="$_adc_manager_8c.html#a203f0fe862e6ee89e504de5a33f1c61b" title="_GetSamplesToSkip" alt="" coords="484,325,628,352" />
+<area shape="rect" href="$_adc_manager_8c.html#a784154032c1c75450380b319ed845320" title="_AdcStart" alt="" coords="516,427,596,453" />
+<area shape="rect" href="$_adc_8c.html#adc40c1d1983f3470f32d9d2b6f999285" title="Adc_StartConversionSequence\lOfChannels" alt="" coords="727,389,932,432" />
+<area shape="rect" href="$_data_buffer_8c.html#a3b77682af68cdfbdf4dbcf06f5468008" title="DataBuffer_AddToSubarray16Bit" alt="" coords="448,583,664,609" />
+<area shape="rect" href="$_serial_8c.html#ae3c36491780ee25b86bf0b3ac9e61fa7" title="Serial_SendStringNumber" alt="" coords="468,507,644,533" />
+<area shape="rect" href="$_data_buffer_8c.html#ad726ed4ec48df844bfd5225ccca52117" title="_IndexOfSubarrayId" alt="" coords="760,608,899,635" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="774,557,886,584" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="758,456,902,483" />
+<area shape="rect" href="$_uart_8c.html#aba2063d7e89a1358197b4643996daaed" title="Uart_WriteByteHex" alt="" coords="762,507,898,533" />
+</map>

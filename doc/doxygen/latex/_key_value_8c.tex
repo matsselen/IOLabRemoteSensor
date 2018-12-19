@@ -1,0 +1,107 @@
+\hypertarget{_key_value_8c}{\section{Key\-Value.\-c File Reference}
+\label{_key_value_8c}\index{Key\-Value.\-c@{Key\-Value.\-c}}
+}
+
+
+Contains the definitions of the Key-\/\-Value pairs.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Key\-Value.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for Key\-Value.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_key_value_8c_a6da05febd1615e40a7978a68e2bce614}{V\-A\-L\-U\-E\-\_\-\-B\-I\-T\-\_\-\-M\-A\-S\-K}~( 0x1\-F )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_key_value_8c_a30aa66a5e57b84caf453be8ec13a23f8}{Key\-Value\-\_\-\-Separate} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} key\-Value, \hyperlink{_key_value_8h_ac0021207a3006e2fdee4dd548efb121b}{Key\-\_\-t} $\ast$key, \hyperlink{_key_value_8h_ae4f885993210de8f325613124dbd14a8}{Value\-\_\-t} $\ast$value)
+\item 
+\hyperlink{_key_value_8h_ab1715655efd8f48a5527cd1c8abcf8c1}{Key\-Value\-\_\-t} \hyperlink{_key_value_8c_ab005de5fd051ae974f41254f2ea7a5f9}{Key\-Value\-\_\-\-Combine} (\hyperlink{_key_value_8h_ac0021207a3006e2fdee4dd548efb121b}{Key\-\_\-t} key, \hyperlink{_key_value_8h_ae4f885993210de8f325613124dbd14a8}{Value\-\_\-t} value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the definitions of the Key-\/\-Value pairs. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Contains the definitions of the Key-\/\-Value pairs used for configuring the different sensors in the I\-O\-Lab system. The keys and values defined in this module are based on the document 1814\-F08 Data Protocol Key-\/\-Value table. 
+
+Definition in file \hyperlink{_key_value_8c_source}{Key\-Value.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_key_value_8c_a6da05febd1615e40a7978a68e2bce614}{\index{Key\-Value.\-c@{Key\-Value.\-c}!V\-A\-L\-U\-E\-\_\-\-B\-I\-T\-\_\-\-M\-A\-S\-K@{V\-A\-L\-U\-E\-\_\-\-B\-I\-T\-\_\-\-M\-A\-S\-K}}
+\index{V\-A\-L\-U\-E\-\_\-\-B\-I\-T\-\_\-\-M\-A\-S\-K@{V\-A\-L\-U\-E\-\_\-\-B\-I\-T\-\_\-\-M\-A\-S\-K}!KeyValue.c@{Key\-Value.\-c}}
+\subsubsection[{V\-A\-L\-U\-E\-\_\-\-B\-I\-T\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-L\-U\-E\-\_\-\-B\-I\-T\-\_\-\-M\-A\-S\-K~( 0x1\-F )}}\label{_key_value_8c_a6da05febd1615e40a7978a68e2bce614}
+Defines the bit mask for the value portion of the key-\/value 
+
+Definition at line 34 of file Key\-Value.\-c.
+
+
+
+Referenced by Key\-Value\-\_\-\-Combine(), and Key\-Value\-\_\-\-Separate().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_key_value_8c_ab005de5fd051ae974f41254f2ea7a5f9}{\index{Key\-Value.\-c@{Key\-Value.\-c}!Key\-Value\-\_\-\-Combine@{Key\-Value\-\_\-\-Combine}}
+\index{Key\-Value\-\_\-\-Combine@{Key\-Value\-\_\-\-Combine}!KeyValue.c@{Key\-Value.\-c}}
+\subsubsection[{Key\-Value\-\_\-\-Combine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Key\-Value\-\_\-t} Key\-Value\-\_\-\-Combine (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\-\_\-t}}]{key, }
+\item[{{\bf Value\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)}}\label{_key_value_8c_ab005de5fd051ae974f41254f2ea7a5f9}
+Combine the key and the value to form the Key\-Value pair.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em key} & -\/ the key from the key value pair \\
+\hline
+\mbox{\tt out}  & {\em value} & -\/ the value from the key value pair\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The key-\/value pair made from the input key and value 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file Key\-Value.\-c.
+
+\hypertarget{_key_value_8c_a30aa66a5e57b84caf453be8ec13a23f8}{\index{Key\-Value.\-c@{Key\-Value.\-c}!Key\-Value\-\_\-\-Separate@{Key\-Value\-\_\-\-Separate}}
+\index{Key\-Value\-\_\-\-Separate@{Key\-Value\-\_\-\-Separate}!KeyValue.c@{Key\-Value.\-c}}
+\subsubsection[{Key\-Value\-\_\-\-Separate}]{\setlength{\rightskip}{0pt plus 5cm}void Key\-Value\-\_\-\-Separate (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{key\-Value, }
+\item[{{\bf Key\-\_\-t} $\ast$}]{key, }
+\item[{{\bf Value\-\_\-t} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{_key_value_8c_a30aa66a5e57b84caf453be8ec13a23f8}
+Separate the key and the value from the Key\-Value pair.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ The key-\/value pair \\
+\hline
+\mbox{\tt out}  & {\em key} & -\/ the key from the key value pair \\
+\hline
+\mbox{\tt out}  & {\em value} & -\/ the value from the key value pair \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Key\-Value.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Set\-Config(), Ambient\-Light\-Control\-\_\-\-Set\-Config(), Analog7\-Control\-\_\-\-Set\-Config(), Analog8\-Control\-\_\-\-Set\-Config(), Analog9\-Control\-\_\-\-Set\-Config(), Barometer\-Control\-\_\-\-Set\-Config(), Battery\-Control\-\_\-\-Set\-Config(), Buzzer\-Control\-\_\-\-Set\-Config(), Dac\-Control\-\_\-\-Set\-Config(), Digital\-Input\-Control\-\_\-\-Set\-Config(), Ecg\-Control\-\_\-\-Set\-Config(), Enc\-Control\-\_\-\-Set\-Config(), Fg\-Control\-\_\-\-Set\-Config(), Gyro\-Control\-\_\-\-Set\-Config(), Header1\-Control\-\_\-\-Set\-Config(), Header2\-Control\-\_\-\-Set\-Config(), Header3\-Control\-\_\-\-Set\-Config(), Header4\-Control\-\_\-\-Set\-Config(), Header5\-Control\-\_\-\-Set\-Config(), Header6\-Control\-\_\-\-Set\-Config(), High\-Gain\-Control\-\_\-\-Set\-Config(), Mag\-Control\-\_\-\-Set\-Config(), Microphone\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the caller graph for this function\-:
+
+

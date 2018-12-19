@@ -1,0 +1,16 @@
+<map id="EventQueue.h" name="EventQueue.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="6,80,64,107" />
+<area shape="rect" href="$_self_test_8c_source.html" title="SelfTest.c" alt="" coords="88,80,168,107" />
+<area shape="rect" href="$_state_machine_8c.html" title="State logic handling. " alt="" coords="192,80,304,107" />
+<area shape="rect" href="$_accelerometer_control_8c.html" title="Controls the accelerometer driver. " alt="" coords="328,80,488,107" />
+<area shape="rect" href="$_comm_protocol_8c.html" title="Communications protocol module. " alt="" coords="512,80,632,107" />
+<area shape="rect" href="$_gyroscope_control_8c.html" title="Controls the gyroscope driver. " alt="" coords="656,80,795,107" />
+<area shape="rect" href="$_magnetometer_control_8c.html" title="Magnetometer control module. " alt="" coords="819,80,979,107" />
+<area shape="rect" href="$_push_button_control_8c.html" title="Control for the push buttons. " alt="" coords="1003,80,1147,107" />
+<area shape="rect" href="$_ui_manager_8c.html" title="Manages Feedback to the user. " alt="" coords="1171,80,1267,107" />
+<area shape="rect" href="$_adc_8c.html" title="Analog&#45;to&#45;digital conversion module driver. " alt="" coords="1291,80,1344,107" />
+<area shape="rect" href="$_spi_slave_8c.html" title="SPI Slave Module. " alt="" coords="1368,80,1451,107" />
+<area shape="rect" href="$_event_queue_8c.html" title="Event queue module. " alt="" coords="1475,80,1579,107" />
+<area shape="rect" href="$_serial_8c.html" title="Serial communication module. " alt="" coords="1603,80,1667,107" />
+<area shape="rect" href="$_timer_tick_8c.html" title="The system tick. " alt="" coords="1691,80,1782,107" />
+</map>

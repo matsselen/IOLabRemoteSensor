@@ -1,0 +1,13 @@
+<map id="GyroControl_ReadGyro" name="GyroControl_ReadGyro">
+<area shape="rect" href="$_gyroscope_8c.html#a3442d46e2e13980e37951e2196e7e6bb" title="Gyroscope_ReadSampleArray" alt="" coords="220,56,423,83" />
+<area shape="rect" href="$_data_buffer_8c.html#aa05e29733eb661098d83ecf808fb1c40" title="DataBuffer_AddToSubarray8Bit" alt="" coords="218,107,426,134" />
+<area shape="rect" href="$_gyroscope_8c.html#ab65933152860c82db86c5da812e0bf51" title="Gyroscope_ReadSample" alt="" coords="236,6,407,32" />
+<area shape="rect" href="$_serial_8c.html#aaca97bf3f80cf18c351ef116009e9467" title="Serial_SendString3Numbers" alt="" coords="227,208,416,235" />
+<area shape="rect" href="$_serial_8c.html#a7bea63da00a48ff6a233658e1bffb244" title="Serial_SendString" alt="" coords="258,158,386,184" />
+<area shape="rect" href="$_gyroscope_8c.html#a7c3643655affa818995c762203dca652" title="_GyroReadMultipleRegisters" alt="" coords="475,31,667,58" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="716,31,844,58" />
+<area shape="rect" href="$_data_buffer_8c.html#ad726ed4ec48df844bfd5225ccca52117" title="_IndexOfSubarrayId" alt="" coords="502,107,640,134" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="515,208,627,235" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="499,158,643,184" />
+<area shape="rect" href="$_uart_8c.html#aba2063d7e89a1358197b4643996daaed" title="Uart_WriteByteHex" alt="" coords="503,259,639,286" />
+</map>

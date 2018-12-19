@@ -1,0 +1,7 @@
+<map id="CurrentSequence_t" name="CurrentSequence_t">
+<area shape="rect" href="$_ui_manager_sequence_data_8h.html#struct_ui_sequence_data__t" title="UiSequenceData_t" alt="" coords="128,187,261,213" />
+<area shape="rect" href="$_ui_manager_sequence_data_8h.html#struct_back_light_sequence__t" title="BackLightSequence_t" alt="" coords="28,96,177,123" />
+<area shape="rect" href="$_ui_manager_sequence_data_8h.html#struct_back_light_sequence_step__t" title="BackLightSequenceStep_t" alt="" coords="5,5,184,32" />
+<area shape="rect" href="$_ui_manager_sequence_data_8h.html#struct_buzzer_sequence__t" title="BuzzerSequence_t" alt="" coords="215,96,348,123" />
+<area shape="rect" href="$_ui_manager_sequence_data_8h.html#struct_buzzer_sequence_step__t" title="BuzzerSequenceStep_t" alt="" coords="208,5,368,32" />
+</map>

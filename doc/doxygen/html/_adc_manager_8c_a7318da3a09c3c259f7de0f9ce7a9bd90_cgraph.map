@@ -1,0 +1,17 @@
+<map id="AdcManager_EnableChannel" name="AdcManager_EnableChannel">
+<area shape="rect" href="$_adc_manager_8c.html#acb5db715bc62a5ddfe2b5cb71e889afa" title="_AllChannelsDisabled" alt="" coords="279,6,431,32" />
+<area shape="rect" href="$_adc_8c.html#aeb038bcf326000ca3a320d29351100a3" title="Adc_Config" alt="" coords="579,63,669,90" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaff7c685a2d029cb452bb271c369716" title="_AdcStop" alt="" coords="316,259,393,286" />
+<area shape="rect" href="$_adc_manager_8c.html#a52cb89e87f72c24ad896dfc4151724e3" title="AdcManager_AdcManRefToAdcRef" alt="" coords="508,126,740,152" />
+<area shape="rect" href="$_adc_manager_8c.html#a203f0fe862e6ee89e504de5a33f1c61b" title="_GetSamplesToSkip" alt="" coords="283,310,427,336" />
+<area shape="rect" href="$_adc_manager_8c.html#a5e91c4affb5c1439c47170585670a2bf" title="_SetupTimerConfig" alt="" coords="556,202,692,228" />
+<area shape="rect" href="$_adc_manager_8c.html#aaaa24713515810380e7943554d22b137" title="_SetupAdcForNormalMode" alt="" coords="264,158,445,184" />
+<area shape="rect" href="$_adc_manager_8c.html#af8416f3a8c779a5631aa5335064ed481" title="AdcManager_PoweredChannel\lControl" alt="" coords="252,360,457,403" />
+<area shape="rect" href="$_adc_manager_8c.html#a784154032c1c75450380b319ed845320" title="_AdcStart" alt="" coords="315,427,395,454" />
+<area shape="rect" href="$_adc_8c.html#a48bd94f6c7b5c13bae12ee2ae824145b" title="Adc_StopConversion" alt="" coords="551,259,697,286" />
+<area shape="rect" href="$_timer_8c.html#a02f931c9a4a5037b499d531f49ebc3b9" title="Timer_A0_Configure" alt="" coords="804,151,948,178" />
+<area shape="rect" href="$_timer_8c.html#a3b787ac79e251ea6217447ed05be53bb" title="Timer_A0CCX_Configure" alt="" coords="791,202,961,228" />
+<area shape="rect" href="$_adc_manager_8c.html#a9d5382aa474494126282fe96a47dbea1" title="_InitialzeXAdcChannels" alt="" coords="795,252,957,279" />
+<area shape="rect" href="$_adc_8c.html#a8201a8154546752a07f766fa604c77d1" title="Adc_SetChannelSequence" alt="" coords="1011,252,1192,279" />
+<area shape="rect" href="$_adc_8c.html#adc40c1d1983f3470f32d9d2b6f999285" title="Adc_StartConversionSequence\lOfChannels" alt="" coords="521,419,727,462" />
+</map>

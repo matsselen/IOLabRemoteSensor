@@ -1,0 +1,28 @@
+<map id="I2c_ReceiveByte" name="I2c_ReceiveByte">
+<area shape="rect" href="$_accelerometer_8c.html#a95df76fc222507aa3e76ed437159e1dc" title="_AccReadMultipleRegisters" alt="" coords="178,211,362,237" />
+<area shape="rect" href="$_magnetometer_8c.html#a2d8c5304acdfccd9f4cbbd54ff8b493c" title="_ReadMultipleRegisters" alt="" coords="188,85,351,112" />
+<area shape="rect" href="$_accelerometer_8h.html#a7f7a735f35344e05636854b28df834b9" title="Accelerometer_ReadSample" alt="" coords="427,240,619,267" />
+<area shape="rect" href="$_accelerometer_8h.html#ae8796d84277befae45dcd5bd63a143fb" title="Accelerometer_ReadSample\lArray" alt="" coords="427,173,619,216" />
+<area shape="rect" href="$_accelerometer_8h.html#a50c3ab0bd7821b6522abfe15d809d340" title="Accelerometer_Start" alt="" coords="452,291,594,317" />
+<area shape="rect" href="$_accelerometer_control_8h.html#ae2f3f44a125f53254293fad30727ad71" title="AccControl_ReadAcc" alt="" coords="711,181,858,208" />
+<area shape="rect" href="$_accelerometer_8h.html#a2daa1344e52ddb15175faf6fa207a4ab" title="Accelerometer_TriggerSample\lBlocking" alt="" coords="683,232,886,275" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1858,193,2042,220" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="2340,207,2538,233" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="2115,207,2267,233" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="2091,257,2291,284" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="2587,207,2638,233" />
+<area shape="rect" href="$_test_protocol_8c.html#aeb99f4a37f3a85763ed4d59a5212741c" title="_HandleHumanAccCommand" alt="" coords="934,240,1131,267" />
+<area shape="rect" href="$_accelerometer_control_8h.html#adf3f26f825cd0d8225f95864c4ea80dc" title="AccControl_SetConfig" alt="" coords="708,299,860,325" />
+<area shape="rect" href="$_configuration_manager_8h.html#a183e4b53a492c32bbe799d7e209b8b4f" title="ConMan_SetSensorConfig" alt="" coords="943,299,1122,325" />
+<area shape="rect" href="$_configuration_manager_8h.html#a4af394c25a5c58205d8832071eae3b0b" title="ConMan_StartData" alt="" coords="1179,301,1315,328" />
+<area shape="rect" href="$_configuration_manager_8h.html#a7e20b92732fc46ab8a1937e144066938" title="ConMan_StopData" alt="" coords="1180,243,1314,269" />
+<area shape="rect" href="$_comm_protocol_8h.html#a11fcf3a095c467e5da58a75e746059f1" title="CommProtocol_HandleStart\lDataPacket" alt="" coords="1378,297,1564,340" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="1628,235,1807,261" />
+<area shape="rect" href="$_self_test_8h.html#a4209f10042474cadbca3c93180599304" title="SelfTest_Process" alt="" coords="1655,285,1780,312" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1f65077f8bed3f077ec2a561f20bf4b5" title="CommProtocol_HandleStopData\lPacket" alt="" coords="1364,231,1578,273" />
+<area shape="rect" href="$_magnetometer_8h.html#a74a9a63d349b4532ea66269102cb9768" title="Magnetometer_TriggerSample\lBlocking" alt="" coords="422,107,624,149" />
+<area shape="rect" href="$_magnetometer_8h.html#aaddbb66c4df1f1e47afc3cdbe4c1122a" title="Magnetometer_ReadSample" alt="" coords="427,5,619,32" />
+<area shape="rect" href="$_magnetometer_8h.html#a20958a3807b25a8b07da31a385af787a" title="Magnetometer_ReadSampleArray" alt="" coords="411,56,635,83" />
+<area shape="rect" href="$_test_protocol_8c.html#ac199ffeaa6cfb4ea2d155d22b06f98b9" title="_HandleHumanMagCommand" alt="" coords="684,115,884,141" />
+<area shape="rect" href="$_magnetometer_control_8h.html#ad749af8babba2a3ca08af61ffdb4fb10" title="MagControl_ReadMag" alt="" coords="707,56,862,83" />
+</map>

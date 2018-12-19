@@ -1,0 +1,17 @@
+<map id="_HandleGetCalibrationPacket" name="_HandleGetCalibrationPacket">
+<area shape="rect" href="$_comm_protocol_8c.html#afd67693872dec702559be107e645ed53" title="_SetTxCommand" alt="" coords="271,42,396,68" />
+<area shape="rect" href="$_configuration_manager_8c.html#a8f284af259f31d10135d4cb98fc2e474" title="ConMan_GetCalibration" alt="" coords="252,92,415,119" />
+<area shape="rect" href="$_comm_protocol_8c.html#a868481fb326a9bb0b259b475aa7d09b4" title="_WriteMessageData" alt="" coords="263,143,404,170" />
+<area shape="rect" href="$_barometer_control_8c.html#af46a0eb22c9d26bb77fce5faf8a0de08" title="BarometerControl_ReadCalibration" alt="" coords="464,36,693,63" />
+<area shape="rect" href="$_battery_control_8c.html#aa73f0d4496f54547367c417814d67358" title="BatteryControl_ReadCalibration" alt="" coords="475,92,683,119" />
+<area shape="rect" href="$_thermometer_control_8c.html#a8e18cea4a17294d3d4ede9d04f421460" title="ThermometerControl\l_ReadCalibration" alt="" coords="507,154,651,196" />
+<area shape="rect" href="$_barometer_8c.html#a8ba8dee3537ee8605d8a17a906fc594d" title="Barometer_ReadCoeffArray" alt="" coords="744,31,931,58" />
+<area shape="rect" href="$_barometer_8c.html#a68205b78d3fed44531eb4d88f5df60dc" title="_BarReadMultipleRegisters" alt="" coords="981,31,1165,58" />
+<area shape="rect" href="$_spi_master_8c.html#a64368c42de0bf348078be3cc001e7fe4" title="Spi_ReadRegister" alt="" coords="1215,6,1343,32" />
+<area shape="rect" href="$_spi_master_8c.html#a77dac8d70655f0b711a13787359f723e" title="Spi_WriteByte" alt="" coords="1227,56,1331,83" />
+<area shape="rect" href="$_adc_manager_8c.html#a0df4026e1d37dd4f723f43d3e9ee467c" title="AdcManager_GetGainFactor" alt="" coords="741,82,933,108" />
+<area shape="rect" href="$_adc_manager_8c.html#a5544660c514f863363f4c4e0763c8561" title="AdcManager_GetOffset" alt="" coords="757,132,917,159" />
+<area shape="rect" href="$_adc_8c.html#a0842a80966234b58516235a957b58083" title="Adc_GetGainFactor" alt="" coords="1004,82,1143,108" />
+<area shape="rect" href="$_adc_8c.html#ada428cf10ffb15cbb03e1ea5daa36786" title="Adc_GetOffset" alt="" coords="1019,132,1128,159" />
+<area shape="rect" href="$_adc_8c.html#ab5bb9ded6c4d0124cb23c44d21109009" title="Adc_GetTempCalib" alt="" coords="769,183,905,210" />
+</map>

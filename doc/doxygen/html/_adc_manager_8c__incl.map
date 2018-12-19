@@ -1,0 +1,12 @@
+<map id="AdcManager.c" name="AdcManager.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="421,155,493,182" />
+<area shape="rect" href="$_adc_8h.html" title="Analog to digital conversion module header file. " alt="" coords="169,155,225,182" />
+<area shape="rect" href="$_adc_manager_8h.html" title="Analog to digital conversion manager header file. " alt="" coords="189,80,296,107" />
+<area shape="rect" href="$_timer_8h.html" title="Timer module driver. " alt="" coords="371,80,437,107" />
+<area shape="rect" href="$_board_8h.html" title="Board initialization module header file. " alt="" coords="461,80,528,107" />
+<area shape="rect" href="$_gpio_8h.html" title="GPIO configuration and control macros and functions. " alt="" coords="552,80,611,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="635,80,704,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="744,155,811,182" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="779,80,851,107" />
+</map>

@@ -1,0 +1,10 @@
+<map id="UiManager_Init" name="UiManager_Init">
+<area shape="rect" href="$_buzzer_8h.html#a6b75e04c90a3c65be473f9eba13031cd" title="Buzzer_Init" alt="" coords="166,56,254,83" />
+<area shape="rect" href="$_pwm_8c.html#ad446fe4f34c49868e778a20d4f6dbe06" title="Pwm_Init" alt="" coords="335,5,410,32" />
+<area shape="rect" href="$_pwm_8c.html#a3bcc133bd11de8cdebe6cca148a86697" title="Pwm_SetFrequency" alt="" coords="302,56,443,83" />
+<area shape="rect" href="$_pwm_8c.html#a0b1227ceeeff83336f29d8b94d6ef238" title="Pwm_SetDuty" alt="" coords="518,107,622,133" />
+<area shape="rect" href="$_timer_8c.html#a9c2492c1b5bfb4de29379c4ab7881d9c" title="Timer_B0_Configure" alt="" coords="498,5,642,32" />
+<area shape="rect" href="$_pwm_8c.html#a4cde0daf6b044c1a1fc69b618509c8d6" title="_AnyChannelsEnabled" alt="" coords="491,56,648,83" />
+<area shape="rect" href="$_pwm_8c.html#a44f8de75f3f084d05fff0a54dc0b7df5" title="_DutyToCount" alt="" coords="730,81,836,108" />
+<area shape="rect" href="$_timer_8c.html#a6590a26eceba06333f451e69d6ea3987" title="Timer_B0CCX_Configure" alt="" coords="698,132,868,159" />
+</map>

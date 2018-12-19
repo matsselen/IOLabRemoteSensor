@@ -1,0 +1,33 @@
+<map id="Main.c" name="Main.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_main_8h.html" title="Main. " alt="" coords="139,80,200,107" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="1586,155,1658,182" />
+<area shape="rect" href="$_board_8h.html" title="Board initialization module header file. " alt="" coords="275,80,342,107" />
+<area shape="rect" href="$_interrupt_8h.html" title="Global interrupt control. " alt="" coords="366,80,448,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="339,155,406,182" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="472,80,544,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="755,80,824,107" />
+<area shape="rect" href="$_event_queue_8h.html" title="Event queue module header file. " alt="" coords="848,80,955,107" />
+<area shape="rect" href="$_state_machine_8h.html" title="Sensor State machine logic. " alt="" coords="979,80,1091,107" />
+<area shape="rect" href="$_sensor_id_8h.html" title="Sensor Id stores the list of Sensor IDs. " alt="" coords="1115,80,1200,107" />
+<area shape="rect" href="$_configuration_manager_8h.html" title="The configuration manager keeps track of all the sensor configurations. " alt="" coords="568,80,731,107" />
+<area shape="rect" href="$_watchdog_8h.html" title="Watchdog module header file. " alt="" coords="1275,80,1366,107" />
+<area shape="rect" href="$_timer_tick_8h.html" title="Timer Tick utility header file. " alt="" coords="1390,80,1480,107" />
+<area shape="rect" href="$_system_8h.html" title="System module driver. " alt="" coords="1504,80,1582,107" />
+<area shape="rect" href="$_uart_8h.html" title="UART module header. " alt="" coords="1606,80,1662,107" />
+<area shape="rect" href="$_i2c_8h.html" title="I2C Module header file. " alt="" coords="1686,80,1736,107" />
+<area shape="rect" href="$_spi_master_8h.html" title="SPI Master Module. " alt="" coords="1760,80,1851,107" />
+<area shape="rect" href="$_version_8h.html" title="Version header. " alt="" coords="1875,80,1952,107" />
+<area shape="rect" href="$_adc_manager_8h.html" title="Analog to digital conversion manager header file. " alt="" coords="2611,80,2718,107" />
+<area shape="rect" href="$_pwm_8h.html" title="Pulse width modulation module. " alt="" coords="2059,80,2120,107" />
+<area shape="rect" href="$_spi_slave_8h.html" title="SPI module using this device as a SPI slave. " alt="" coords="2144,80,2230,107" />
+<area shape="rect" href="$_dma_8h.html" title="Configuration and control functions and macros for the DMA. " alt="" coords="2254,80,2312,107" />
+<area shape="rect" href="$_comm_protocol_8h.html" title="Header for the communications protocol module. " alt="" coords="2336,80,2456,107" />
+<area shape="rect" href="$_test_protocol_8h.html" title="Test Protocol header file. " alt="" coords="2480,80,2587,107" />
+<area shape="rect" href="$_gpio_8h.html" title="GPIO configuration and control macros and functions. " alt="" coords="1976,80,2035,107" />
+<area shape="rect" href="$_push_button_control_8h.html" title="Control for the push buttons. " alt="" coords="2742,80,2886,107" />
+<area shape="rect" href="$_led_control_8h.html" title="LED Controller header. " alt="" coords="2910,80,3006,107" />
+<area shape="rect" href="$_self_test_8h.html" title="Manages the self test mode. " alt="" coords="3030,80,3110,107" />
+<area shape="rect" href="$_fixed_config_list_8h.html" title="Contains the list of the fixed config options. " alt="" coords="588,155,711,182" />
+<area shape="rect" href="$_adc_8h.html" title="Analog to digital conversion module header file. " alt="" coords="2636,155,2692,182" />
+</map>

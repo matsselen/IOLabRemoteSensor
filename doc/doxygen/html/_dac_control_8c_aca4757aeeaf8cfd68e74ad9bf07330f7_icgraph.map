@@ -1,0 +1,11 @@
+<map id="_DacControl_SetAmplitude" name="_DacControl_SetAmplitude">
+<area shape="rect" href="$_dac_control_8h.html#a4ac43b8f2c1b096dd3b9ef529bf74e4b" title="DacControl_SetConfig" alt="" coords="239,56,391,83" />
+<area shape="rect" href="$_configuration_manager_8h.html#adbdfea8b605f6178d2e63cfd0eb3723b" title="ConMan_SetOutputConfig" alt="" coords="441,56,617,83" />
+<area shape="rect" href="$_comm_protocol_8c.html#ad5fef6fd66017234708bd9c6b471679f" title="_HandleSetOutputConfigPacket" alt="" coords="667,56,877,83" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="927,56,1105,83" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1156,56,1340,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="1639,56,1836,83" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1413,56,1565,83" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1389,107,1589,134" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1885,56,1936,83" />
+</map>

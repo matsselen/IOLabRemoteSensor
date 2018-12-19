@@ -1,0 +1,64 @@
+\hypertarget{_dac_8h}{\section{Dac.\-h File Reference}
+\label{_dac_8h}\index{Dac.\-h@{Dac.\-h}}
+}
+
+
+Header file for D\-A\-C driver.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_dac_8h_ae5996f5128099e0041eae7f8773812b1}{void {\bfseries Dac\-Init} (void)}\label{_dac_8h_ae5996f5128099e0041eae7f8773812b1}
+
+\item 
+\hypertarget{_dac_8h_aae935c01223fd7eb5b611c7c2b9b51f5}{void {\bfseries Dac\-Config} (void)}\label{_dac_8h_aae935c01223fd7eb5b611c7c2b9b51f5}
+
+\item 
+void \hyperlink{_dac_8h_a1d12be81bd477b096918fb872060aa1c}{Dac\-Set\-Voltage} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} voltage)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for D\-A\-C driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The D\-A\-C driver sets the voltage level out of the D\-A\-C 
+
+Definition in file \hyperlink{_dac_8h_source}{Dac.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_dac_8h_a1d12be81bd477b096918fb872060aa1c}{\index{Dac.\-h@{Dac.\-h}!Dac\-Set\-Voltage@{Dac\-Set\-Voltage}}
+\index{Dac\-Set\-Voltage@{Dac\-Set\-Voltage}!Dac.h@{Dac.\-h}}
+\subsubsection[{Dac\-Set\-Voltage}]{\setlength{\rightskip}{0pt plus 5cm}void Dac\-Set\-Voltage (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{voltage}
+\end{DoxyParamCaption}
+)}}\label{_dac_8h_a1d12be81bd477b096918fb872060aa1c}
+Writes a value to a specific register using the S\-P\-I port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em voltage} & -\/ the decimal equivalent of binary code used to set the voltage, given by the equation voltage = Vout/\-A\-V\-D\-D$\ast$2$^\wedge$8 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file Dac.\-c.
+
+
+
+Referenced by \-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude(), \-\_\-\-Handle\-Human\-Dac\-Command(), and Dac\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

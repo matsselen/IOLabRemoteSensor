@@ -1,0 +1,120 @@
+\hypertarget{_thermometer_control_8h}{\section{Thermometer\-Control.\-h File Reference}
+\label{_thermometer_control_8h}\index{Thermometer\-Control.\-h@{Thermometer\-Control.\-h}}
+}
+
+
+Controls the Thermometer driver.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_thermometer_control_8h_a87713dd20daa3ab9edd10f3d710bd4bb}{Thermometer\-Control\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_thermometer_control_8h_a66bc07257860cca63270cdbab132e418}{Thermometer\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} value)
+\item 
+void \hyperlink{_thermometer_control_8h_a8e18cea4a17294d3d4ede9d04f421460}{Thermometer\-Control\-\_\-\-Read\-Calibration} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Calibration\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Calibration\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} calibration\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the Thermometer driver. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls the Thermometer driver and controls the configuration for it. 
+
+Definition in file \hyperlink{_thermometer_control_8h_source}{Thermometer\-Control.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_thermometer_control_8h_a87713dd20daa3ab9edd10f3d710bd4bb}{\index{Thermometer\-Control.\-h@{Thermometer\-Control.\-h}!Thermometer\-Control\-\_\-\-Init@{Thermometer\-Control\-\_\-\-Init}}
+\index{Thermometer\-Control\-\_\-\-Init@{Thermometer\-Control\-\_\-\-Init}!ThermometerControl.h@{Thermometer\-Control.\-h}}
+\subsubsection[{Thermometer\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Thermometer\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_thermometer_control_8h_a87713dd20daa3ab9edd10f3d710bd4bb}
+Initializes the thermometer controller. 
+
+Definition at line 95 of file Thermometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_thermometer_control_8h_a8e18cea4a17294d3d4ede9d04f421460}{\index{Thermometer\-Control.\-h@{Thermometer\-Control.\-h}!Thermometer\-Control\-\_\-\-Read\-Calibration@{Thermometer\-Control\-\_\-\-Read\-Calibration}}
+\index{Thermometer\-Control\-\_\-\-Read\-Calibration@{Thermometer\-Control\-\_\-\-Read\-Calibration}!ThermometerControl.h@{Thermometer\-Control.\-h}}
+\subsubsection[{Thermometer\-Control\-\_\-\-Read\-Calibration}]{\setlength{\rightskip}{0pt plus 5cm}void Thermometer\-Control\-\_\-\-Read\-Calibration (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Calibration\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Calibration\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{calibration\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_thermometer_control_8h_a8e18cea4a17294d3d4ede9d04f421460}
+Reads the calibration values from the thermometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Calibration\-Length} & -\/ the maximum number of bytes allocated for calibration\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em actual\-Calibration\-Length} & -\/ the number of bytes of calibration data placed in calibration\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em calibration\mbox{[}$\,$\mbox{]}} & -\/ the calibration data from the battery. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 302 of file Thermometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Get\-Calibration().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_thermometer_control_8h_a66bc07257860cca63270cdbab132e418}{\index{Thermometer\-Control.\-h@{Thermometer\-Control.\-h}!Thermometer\-Control\-\_\-\-Set\-Config@{Thermometer\-Control\-\_\-\-Set\-Config}}
+\index{Thermometer\-Control\-\_\-\-Set\-Config@{Thermometer\-Control\-\_\-\-Set\-Config}!ThermometerControl.h@{Thermometer\-Control.\-h}}
+\subsubsection[{Thermometer\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Thermometer\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{key\-Value}
+\end{DoxyParamCaption}
+)}}\label{_thermometer_control_8h_a66bc07257860cca63270cdbab132e418}
+Sets a configuration value to the Thermometer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\-Value} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file Thermometer\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Sensor\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

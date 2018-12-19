@@ -1,0 +1,80 @@
+\hypertarget{_dac_control_8h}{\section{Dac\-Control.\-h File Reference}
+\label{_dac_control_8h}\index{Dac\-Control.\-h@{Dac\-Control.\-h}}
+}
+
+
+Controls the settings of the hardware D\-A\-C.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_dac_control_8h_a9933bf276e4c829705d35141419c9ea4}{Dac\-Control\-\_\-\-Init} ()
+\item 
+void \hyperlink{_dac_control_8h_a4ac43b8f2c1b096dd3b9ef529bf74e4b}{Dac\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the settings of the hardware D\-A\-C. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls and manages the settings for the hardware D\-A\-C. 
+
+Definition in file \hyperlink{_dac_control_8h_source}{Dac\-Control.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_dac_control_8h_a9933bf276e4c829705d35141419c9ea4}{\index{Dac\-Control.\-h@{Dac\-Control.\-h}!Dac\-Control\-\_\-\-Init@{Dac\-Control\-\_\-\-Init}}
+\index{Dac\-Control\-\_\-\-Init@{Dac\-Control\-\_\-\-Init}!DacControl.h@{Dac\-Control.\-h}}
+\subsubsection[{Dac\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Dac\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_dac_control_8h_a9933bf276e4c829705d35141419c9ea4}
+Initialized the D\-A\-C and driver. 
+
+Definition at line 46 of file Dac\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dac_control_8h_a4ac43b8f2c1b096dd3b9ef529bf74e4b}{\index{Dac\-Control.\-h@{Dac\-Control.\-h}!Dac\-Control\-\_\-\-Set\-Config@{Dac\-Control\-\_\-\-Set\-Config}}
+\index{Dac\-Control\-\_\-\-Set\-Config@{Dac\-Control\-\_\-\-Set\-Config}!DacControl.h@{Dac\-Control.\-h}}
+\subsubsection[{Dac\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Dac\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_dac_control_8h_a4ac43b8f2c1b096dd3b9ef529bf74e4b}
+Sets a configuration value to the D\-A\-C
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Dac\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Output\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+

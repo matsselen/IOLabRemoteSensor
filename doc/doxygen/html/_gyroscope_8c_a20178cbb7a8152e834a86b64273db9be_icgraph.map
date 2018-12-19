@@ -1,0 +1,7 @@
+<map id="_GyroReadSingleRegister" name="_GyroReadSingleRegister">
+<area shape="rect" href="$_gyroscope_8h.html#af21c974c68ac43ddcbe29cd0b2e0c84f" title="Gyroscope_Init" alt="" coords="276,5,386,32" />
+<area shape="rect" href="$_gyroscope_8h.html#aa4f36bdacf69079c5b83860981bffb8c" title="Gyroscope_ReadTemperature" alt="" coords="231,56,431,83" />
+<area shape="rect" href="$_gyroscope_control_8h.html#a62c5033ca6c32f4b11a24dcba13e43e5" title="GyroControl_Init" alt="" coords="482,5,599,32" />
+<area shape="rect" href="$_configuration_manager_8h.html#ac8b698cc609b8b41fe3ff823b2046b85" title="ConMan_Init" alt="" coords="650,5,746,32" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="795,5,846,32" />
+</map>

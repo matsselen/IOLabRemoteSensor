@@ -1,0 +1,459 @@
+\hypertarget{_i2c_8h}{\section{I2c.\-h File Reference}
+\label{_i2c_8h}\index{I2c.\-h@{I2c.\-h}}
+}
+
+
+I2\-C Module header file.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{_i2c_8h_struct_i2c_port_config__t}{I2c\-Port\-Config\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_i2c_8h_aebd0214cabb8da238ec7a494f92d7e4f}{I2\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-P\-O\-R\-T\-\_\-0}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_i2c_8h_a527473c46a79e51f1107866ab5e3a706}{I2c\-Error\-\_\-t} \{ \\*
+{\bfseries I2c\-Error\-\_\-\-O\-K}, 
+\\*
+{\bfseries I2c\-Error\-\_\-\-N\-A\-C\-K}, 
+\\*
+{\bfseries I2c\-Error\-\_\-\-S\-T\-O\-P}
+ \}
+\item 
+enum \hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} \{ {\bfseries I2c\-Port\-\_\-0} = 0u
+ \}
+\item 
+enum \hyperlink{_i2c_8h_aa0eb80a6d7478b98d9d03bb8388220d7}{I2c\-Operation\-\_\-t} \{ \\*
+{\bfseries I2c\-Operation\-\_\-\-W\-R\-I\-T\-E}, 
+\\*
+{\bfseries I2c\-Operation\-\_\-\-R\-E\-A\-D}
+ \}
+\item 
+enum \hyperlink{_i2c_8h_a29f4119d22d73678588f27e14d012ab7}{I2c\-Mode\-\_\-t} \{ \\*
+{\bfseries I2c\-Mode\-\_\-\-S\-L\-A\-V\-E}, 
+\\*
+{\bfseries I2c\-Mode\-\_\-\-M\-A\-S\-T\-E\-R}
+ \}
+\item 
+enum \hyperlink{_i2c_8h_a12edb00e73c89ef449351377ca02dd90}{I2c\-Addressing\-\_\-t} \{ \\*
+{\bfseries I2c\-Addressing\-\_\-7\-\_\-bits}, 
+\\*
+{\bfseries I2c\-Addressing\-\_\-10\-\_\-bits}
+ \}
+\item 
+enum \hyperlink{_i2c_8h_a064e9c4d31586871eb2f1b229d83b5bf}{I2c\-Baud\-Rate\-\_\-t} \{ \\*
+{\bfseries I2c\-Baud\-Rate\-\_\-100000}, 
+\\*
+{\bfseries I2c\-Baud\-Rate\-\_\-400000}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_i2c_8h_aea2a28f568b5b8c71a2370d61346fe4f}{I2c\-\_\-\-Init} (\hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} port, const \hyperlink{_i2c_8h_struct_i2c_port_config__t}{I2c\-Port\-Config\-\_\-t} $\ast$config)
+\item 
+void \hyperlink{_i2c_8h_aa91766f6c1be05608f130666decd822e}{I2c\-\_\-\-Open} (\hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} port)
+\item 
+void \hyperlink{_i2c_8h_a7277b60b1569f305587f435abfcded85}{I2c\-\_\-\-Close} (\hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} port)
+\item 
+\hyperlink{_i2c_8h_a527473c46a79e51f1107866ab5e3a706}{I2c\-Error\-\_\-t} \hyperlink{_i2c_8h_af522d7dae99259cc9f606cbfbdac40bd}{I2c\-\_\-\-Transmit\-Start} (\hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} address, \hyperlink{_i2c_8h_aa0eb80a6d7478b98d9d03bb8388220d7}{I2c\-Operation\-\_\-t} operation)
+\item 
+\hyperlink{_i2c_8h_a527473c46a79e51f1107866ab5e3a706}{I2c\-Error\-\_\-t} \hyperlink{_i2c_8h_a3726e5f74248386aed11bf2f06c3c377}{I2c\-\_\-\-Transmit\-Byte} (\hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} byte)
+\item 
+\hyperlink{_i2c_8h_a527473c46a79e51f1107866ab5e3a706}{I2c\-Error\-\_\-t} \hyperlink{_i2c_8h_afbfb0c0fbc0025ced1d88290aa899fa9}{I2c\-\_\-\-Transmit\-Byte\-End} (\hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} byte)
+\item 
+void \hyperlink{_i2c_8h_a6f3a9e8f5dd4856ddf5a891e84ea82ea}{I2c\-\_\-\-Receive\-Byte} (\hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$byte)
+\item 
+void \hyperlink{_i2c_8h_a0df5e64148fcf1e7c7c1cc90e107db49}{I2c\-\_\-\-Receive\-Byte\-End} (\hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} port, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$byte)
+\item 
+void \hyperlink{_i2c_8h_ac797994f6b66484a07cbd90c9a8353b4}{I2c\-\_\-\-Wait\-Until\-Bus\-Idle} (\hyperlink{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{I2c\-Port\-\_\-t} port)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+I2\-C Module header file. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This module provides functions to configure an I2\-C port to communicate to various peripheral devices. 
+
+Definition in file \hyperlink{_i2c_8h_source}{I2c.\-h}.
+
+
+
+\subsection{Data Structure Documentation}
+\index{I2c\-Port\-Config\-\_\-t@{I2c\-Port\-Config\-\_\-t}}\label{struct_i2c_port_config__t}
+\hypertarget{_i2c_8h_struct_i2c_port_config__t}{}
+\subsubsection{struct I2c\-Port\-Config\-\_\-t}
+Defines the I2\-C port configuration structure 
+
+Definition at line 85 of file I2c.\-h.
+
+\begin{DoxyFields}{Data Fields}
+\hypertarget{_i2c_8h_aa189a51583e9d7748a40cda4665176cd}{\hyperlink{_i2c_8h_a12edb00e73c89ef449351377ca02dd90}{I2c\-Addressing\-\_\-t}}\label{_i2c_8h_aa189a51583e9d7748a40cda4665176cd}
+&
+addressing&
+\\
+\hline
+
+\hypertarget{_i2c_8h_a27b4563ca874302d66e2874d00a9de91}{\hyperlink{_i2c_8h_a064e9c4d31586871eb2f1b229d83b5bf}{I2c\-Baud\-Rate\-\_\-t}}\label{_i2c_8h_a27b4563ca874302d66e2874d00a9de91}
+&
+baud\-Rate&
+\\
+\hline
+
+\hypertarget{_i2c_8h_a17cb3ed580b1ed1b2b19524146c1673c}{\hyperlink{_i2c_8h_a29f4119d22d73678588f27e14d012ab7}{I2c\-Mode\-\_\-t}}\label{_i2c_8h_a17cb3ed580b1ed1b2b19524146c1673c}
+&
+mode\-Type&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_i2c_8h_aebd0214cabb8da238ec7a494f92d7e4f}{\index{I2c.\-h@{I2c.\-h}!I2\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-P\-O\-R\-T\-\_\-0@{I2\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-P\-O\-R\-T\-\_\-0}}
+\index{I2\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-P\-O\-R\-T\-\_\-0@{I2\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-P\-O\-R\-T\-\_\-0}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-P\-O\-R\-T\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define I2\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-P\-O\-R\-T\-\_\-0}}\label{_i2c_8h_aebd0214cabb8da238ec7a494f92d7e4f}
+If defined, I2\-C port 0 is enabled. 
+
+Definition at line 28 of file I2c.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_i2c_8h_a12edb00e73c89ef449351377ca02dd90}{\index{I2c.\-h@{I2c.\-h}!I2c\-Addressing\-\_\-t@{I2c\-Addressing\-\_\-t}}
+\index{I2c\-Addressing\-\_\-t@{I2c\-Addressing\-\_\-t}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-Addressing\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf I2c\-Addressing\-\_\-t}}}\label{_i2c_8h_a12edb00e73c89ef449351377ca02dd90}
+The possible addressing modes when configuring a I2\-C port 
+
+Definition at line 71 of file I2c.\-h.
+
+\hypertarget{_i2c_8h_a064e9c4d31586871eb2f1b229d83b5bf}{\index{I2c.\-h@{I2c.\-h}!I2c\-Baud\-Rate\-\_\-t@{I2c\-Baud\-Rate\-\_\-t}}
+\index{I2c\-Baud\-Rate\-\_\-t@{I2c\-Baud\-Rate\-\_\-t}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-Baud\-Rate\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf I2c\-Baud\-Rate\-\_\-t}}}\label{_i2c_8h_a064e9c4d31586871eb2f1b229d83b5bf}
+The possible baud rates when configuring a I2\-C port 
+
+Definition at line 78 of file I2c.\-h.
+
+\hypertarget{_i2c_8h_a527473c46a79e51f1107866ab5e3a706}{\index{I2c.\-h@{I2c.\-h}!I2c\-Error\-\_\-t@{I2c\-Error\-\_\-t}}
+\index{I2c\-Error\-\_\-t@{I2c\-Error\-\_\-t}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-Error\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf I2c\-Error\-\_\-t}}}\label{_i2c_8h_a527473c46a79e51f1107866ab5e3a706}
+Enumeration type for I2\-C module errors. 
+
+Definition at line 38 of file I2c.\-h.
+
+\hypertarget{_i2c_8h_a29f4119d22d73678588f27e14d012ab7}{\index{I2c.\-h@{I2c.\-h}!I2c\-Mode\-\_\-t@{I2c\-Mode\-\_\-t}}
+\index{I2c\-Mode\-\_\-t@{I2c\-Mode\-\_\-t}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-Mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf I2c\-Mode\-\_\-t}}}\label{_i2c_8h_a29f4119d22d73678588f27e14d012ab7}
+The possible Modes when configuring a I2\-C port 
+
+Definition at line 64 of file I2c.\-h.
+
+\hypertarget{_i2c_8h_aa0eb80a6d7478b98d9d03bb8388220d7}{\index{I2c.\-h@{I2c.\-h}!I2c\-Operation\-\_\-t@{I2c\-Operation\-\_\-t}}
+\index{I2c\-Operation\-\_\-t@{I2c\-Operation\-\_\-t}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-Operation\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf I2c\-Operation\-\_\-t}}}\label{_i2c_8h_aa0eb80a6d7478b98d9d03bb8388220d7}
+The possible operations when using the I2\-C port 
+
+Definition at line 57 of file I2c.\-h.
+
+\hypertarget{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}{\index{I2c.\-h@{I2c.\-h}!I2c\-Port\-\_\-t@{I2c\-Port\-\_\-t}}
+\index{I2c\-Port\-\_\-t@{I2c\-Port\-\_\-t}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-Port\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf I2c\-Port\-\_\-t}}}\label{_i2c_8h_a78935d543e776af051f7d01c92b2acf7}
+The available I2\-C ports 
+
+Definition at line 46 of file I2c.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_i2c_8h_a7277b60b1569f305587f435abfcded85}{\index{I2c.\-h@{I2c.\-h}!I2c\-\_\-\-Close@{I2c\-\_\-\-Close}}
+\index{I2c\-\_\-\-Close@{I2c\-\_\-\-Close}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-\_\-\-Close}]{\setlength{\rightskip}{0pt plus 5cm}void I2c\-\_\-\-Close (
+\begin{DoxyParamCaption}
+\item[{{\bf I2c\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)}}\label{_i2c_8h_a7277b60b1569f305587f435abfcded85}
+Close the I2\-C port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected I2\-C port. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 249 of file I2c.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_i2c_8h_aea2a28f568b5b8c71a2370d61346fe4f}{\index{I2c.\-h@{I2c.\-h}!I2c\-\_\-\-Init@{I2c\-\_\-\-Init}}
+\index{I2c\-\_\-\-Init@{I2c\-\_\-\-Init}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void I2c\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf I2c\-Port\-\_\-t}}]{port, }
+\item[{const {\bf I2c\-Port\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_i2c_8h_aea2a28f568b5b8c71a2370d61346fe4f}
+Initialize the I2\-C hardware.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selection of which I2\-C hardware port to initialize. \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ Structure of selected I2\-C H\-W settings. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file I2c.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_i2c_8h_aa91766f6c1be05608f130666decd822e}{\index{I2c.\-h@{I2c.\-h}!I2c\-\_\-\-Open@{I2c\-\_\-\-Open}}
+\index{I2c\-\_\-\-Open@{I2c\-\_\-\-Open}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-\_\-\-Open}]{\setlength{\rightskip}{0pt plus 5cm}void I2c\-\_\-\-Open (
+\begin{DoxyParamCaption}
+\item[{{\bf I2c\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)}}\label{_i2c_8h_aa91766f6c1be05608f130666decd822e}
+Open the I2\-C port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected I2\-C port. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 220 of file I2c.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_i2c_8h_a6f3a9e8f5dd4856ddf5a891e84ea82ea}{\index{I2c.\-h@{I2c.\-h}!I2c\-\_\-\-Receive\-Byte@{I2c\-\_\-\-Receive\-Byte}}
+\index{I2c\-\_\-\-Receive\-Byte@{I2c\-\_\-\-Receive\-Byte}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-\_\-\-Receive\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}void I2c\-\_\-\-Receive\-Byte (
+\begin{DoxyParamCaption}
+\item[{{\bf I2c\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t} $\ast$}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_i2c_8h_a6f3a9e8f5dd4856ddf5a891e84ea82ea}
+Receives a byte via I2\-C.
+
+This assumes that the I2\-C port has been configured as a M\-A\-S\-T\-E\-R device.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected I2\-C port. \\
+\hline
+\mbox{\tt in}  & {\em byte} & -\/ Pointer to where received byte should be stored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 457 of file I2c.\-c.
+
+
+
+Referenced by \-\_\-\-Acc\-Read\-Multiple\-Registers(), and \-\_\-\-Read\-Multiple\-Registers().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_i2c_8h_a0df5e64148fcf1e7c7c1cc90e107db49}{\index{I2c.\-h@{I2c.\-h}!I2c\-\_\-\-Receive\-Byte\-End@{I2c\-\_\-\-Receive\-Byte\-End}}
+\index{I2c\-\_\-\-Receive\-Byte\-End@{I2c\-\_\-\-Receive\-Byte\-End}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-\_\-\-Receive\-Byte\-End}]{\setlength{\rightskip}{0pt plus 5cm}void I2c\-\_\-\-Receive\-Byte\-End (
+\begin{DoxyParamCaption}
+\item[{{\bf I2c\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t} $\ast$}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_i2c_8h_a0df5e64148fcf1e7c7c1cc90e107db49}
+Receives a byte via I2\-C, then send the I2\-C Stop bit. This is required to end the transaction with the slave device.
+
+This assumes that the I2\-C port has been configured as a M\-A\-S\-T\-E\-R device.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected I2\-C port. \\
+\hline
+\mbox{\tt in}  & {\em byte} & -\/ Pointer to where received byte should be stored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 489 of file I2c.\-c.
+
+
+
+Referenced by \-\_\-\-Acc\-Read\-Multiple\-Registers(), \-\_\-\-Acc\-Read\-Single\-Register(), \-\_\-\-Read\-Multiple\-Registers(), and \-\_\-\-Read\-Single\-Register().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_i2c_8h_a3726e5f74248386aed11bf2f06c3c377}{\index{I2c.\-h@{I2c.\-h}!I2c\-\_\-\-Transmit\-Byte@{I2c\-\_\-\-Transmit\-Byte}}
+\index{I2c\-\_\-\-Transmit\-Byte@{I2c\-\_\-\-Transmit\-Byte}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-\_\-\-Transmit\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I2c\-Error\-\_\-t} I2c\-\_\-\-Transmit\-Byte (
+\begin{DoxyParamCaption}
+\item[{{\bf I2c\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_i2c_8h_a3726e5f74248386aed11bf2f06c3c377}
+Transmits a byte via I2\-C. This is used to send multiple bytes on I2\-C, as the Stop Bit is N\-O\-T sent.
+
+This assumes that the I2\-C port has been configured as a M\-A\-S\-T\-E\-R device.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected I2\-C port. \\
+\hline
+\mbox{\tt in}  & {\em byte} & -\/ Data byte to send out over I2\-C.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the byte was sent O\-K. Otherwise, false. 
+\end{DoxyReturn}
+
+
+Definition at line 347 of file I2c.\-c.
+
+
+
+Referenced by \-\_\-\-Acc\-Read\-Multiple\-Registers(), \-\_\-\-Acc\-Read\-Single\-Register(), \-\_\-\-Acc\-Write\-Single\-Register(), \-\_\-\-Read\-Multiple\-Registers(), \-\_\-\-Read\-Single\-Register(), and \-\_\-\-Write\-Single\-Register().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_i2c_8h_afbfb0c0fbc0025ced1d88290aa899fa9}{\index{I2c.\-h@{I2c.\-h}!I2c\-\_\-\-Transmit\-Byte\-End@{I2c\-\_\-\-Transmit\-Byte\-End}}
+\index{I2c\-\_\-\-Transmit\-Byte\-End@{I2c\-\_\-\-Transmit\-Byte\-End}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-\_\-\-Transmit\-Byte\-End}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I2c\-Error\-\_\-t} I2c\-\_\-\-Transmit\-Byte\-End (
+\begin{DoxyParamCaption}
+\item[{{\bf I2c\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{byte}
+\end{DoxyParamCaption}
+)}}\label{_i2c_8h_afbfb0c0fbc0025ced1d88290aa899fa9}
+Transmits a byte via I2\-C, then send the I2\-C Stop bit. This is required to end the transaction with the slave device.
+
+This assumes that the I2\-C port has been configured as a M\-A\-S\-T\-E\-R device.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected I2\-C port. \\
+\hline
+\mbox{\tt in}  & {\em byte} & -\/ Data byte to send out over I2\-C.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the byte and Stop Bit was sent O\-K. Otherwise, false. 
+\end{DoxyReturn}
+
+
+Definition at line 392 of file I2c.\-c.
+
+
+
+Referenced by \-\_\-\-Acc\-Write\-Single\-Register(), and \-\_\-\-Write\-Single\-Register().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_i2c_8h_af522d7dae99259cc9f606cbfbdac40bd}{\index{I2c.\-h@{I2c.\-h}!I2c\-\_\-\-Transmit\-Start@{I2c\-\_\-\-Transmit\-Start}}
+\index{I2c\-\_\-\-Transmit\-Start@{I2c\-\_\-\-Transmit\-Start}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-\_\-\-Transmit\-Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I2c\-Error\-\_\-t} I2c\-\_\-\-Transmit\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf I2c\-Port\-\_\-t}}]{port, }
+\item[{{\bf uint8\-\_\-t}}]{address, }
+\item[{{\bf I2c\-Operation\-\_\-t}}]{operation}
+\end{DoxyParamCaption}
+)}}\label{_i2c_8h_af522d7dae99259cc9f606cbfbdac40bd}
+Transmit the Start Bit on the I2\-C port, immediately followed by sending the selected Slave Address out to the I2\-C port.
+
+This assumes that the I2\-C port has been configured as a M\-A\-S\-T\-E\-R device. Slave devices do not send out the Start bit.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected I2\-C port. \\
+\hline
+\mbox{\tt in}  & {\em address} & -\/ Slave address to communicate with. \\
+\hline
+\mbox{\tt in}  & {\em operation} & -\/ Select I2\-C Write or I2\-C Read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Start Bit and address were sent O\-K. Otherwise, false. 
+\end{DoxyReturn}
+
+
+Definition at line 281 of file I2c.\-c.
+
+
+
+Referenced by \-\_\-\-Acc\-Read\-Multiple\-Registers(), \-\_\-\-Acc\-Read\-Single\-Register(), \-\_\-\-Acc\-Write\-Single\-Register(), \-\_\-\-Read\-Multiple\-Registers(), \-\_\-\-Read\-Single\-Register(), and \-\_\-\-Write\-Single\-Register().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_i2c_8h_ac797994f6b66484a07cbd90c9a8353b4}{\index{I2c.\-h@{I2c.\-h}!I2c\-\_\-\-Wait\-Until\-Bus\-Idle@{I2c\-\_\-\-Wait\-Until\-Bus\-Idle}}
+\index{I2c\-\_\-\-Wait\-Until\-Bus\-Idle@{I2c\-\_\-\-Wait\-Until\-Bus\-Idle}!I2c.h@{I2c.\-h}}
+\subsubsection[{I2c\-\_\-\-Wait\-Until\-Bus\-Idle}]{\setlength{\rightskip}{0pt plus 5cm}void I2c\-\_\-\-Wait\-Until\-Bus\-Idle (
+\begin{DoxyParamCaption}
+\item[{{\bf I2c\-Port\-\_\-t}}]{port}
+\end{DoxyParamCaption}
+)}}\label{_i2c_8h_ac797994f6b66484a07cbd90c9a8353b4}
+Delays until the I2\-C bus becomes idle. This is useful to ensure that the I2\-C bus is available between rapid bus accesses.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & -\/ Selected I2\-C port. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 547 of file I2c.\-c.
+
+
+
+Referenced by \-\_\-\-Acc\-Read\-Multiple\-Registers(), \-\_\-\-Acc\-Read\-Single\-Register(), \-\_\-\-Acc\-Write\-Single\-Register(), \-\_\-\-Read\-Multiple\-Registers(), \-\_\-\-Read\-Single\-Register(), and \-\_\-\-Write\-Single\-Register().
+
+
+
+Here is the caller graph for this function\-:
+
+

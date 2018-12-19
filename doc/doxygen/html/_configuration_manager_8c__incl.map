@@ -1,0 +1,41 @@
+<map id="ConfigurationManager.c" name="ConfigurationManager.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="6,80,115,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="139,80,208,107" />
+<area shape="rect" href="$_debug_8h.html" title="Debug module that enables/disables debugging. " alt="" coords="232,80,304,107" />
+<area shape="rect" href="$_serial_8h.html" title="Serial interface module header. " alt="" coords="247,155,314,182" />
+<area shape="rect" href="$_sensor_id_8h.html" title="Sensor Id stores the list of Sensor IDs. " alt="" coords="2612,155,2698,182" />
+<area shape="rect" href="$_data_buffer_8h.html" title="Data buffer is the memory space reserved to store sensor data. " alt="" coords="430,80,526,107" />
+<area shape="rect" href="$_accelerometer_8h.html" title="Accelerometer interface header. " alt="" coords="550,80,667,107" />
+<area shape="rect" href="$_accelerometer_control_8h.html" title="Controls the accelerometer driver. " alt="" coords="691,80,851,107" />
+<area shape="rect" href="$_magnetometer_8h.html" title="Magnetometer Interface Header. " alt="" coords="875,80,992,107" />
+<area shape="rect" href="$_magnetometer_control_8h.html" title="Header for the magnetometer control module. " alt="" coords="1016,80,1176,107" />
+<area shape="rect" href="$_encoder_control_8h.html" title="Controls the driver for the Quadrature Encoder. " alt="" coords="1200,80,1326,107" />
+<area shape="rect" href="$_force_gauge_control_8h.html" title="Controls the force gauge. " alt="" coords="1350,80,1499,107" />
+<area shape="rect" href="$_gyroscope_control_8h.html" title="Controls the gyroscope driver. " alt="" coords="1523,80,1662,107" />
+<area shape="rect" href="$_barometer_control_8h.html" title="Controls the barometer driver. " alt="" coords="1686,80,1822,107" />
+<area shape="rect" href="$_gyroscope_8h.html" title="Header file for Gyroscope sensor driver. " alt="" coords="1846,80,1942,107" />
+<area shape="rect" href="$_ultrasound_8h.html" title="Header file for Ultrasonic Transducer Circuit driver. " alt="" coords="1966,80,2062,107" />
+<area shape="rect" href="$_dac_control_8h.html" title="Controls the settings of the hardware DAC. " alt="" coords="2086,80,2184,107" />
+<area shape="rect" href="$_buzzer_control_8h.html" title="Controls the settings of the buzzer. " alt="" coords="2208,80,2326,107" />
+<area shape="rect" href="$_battery_control_8h.html" title="Controls the battery voltage readings. " alt="" coords="2350,80,2467,107" />
+<area shape="rect" href="$_ambient_light_control_8h.html" title="Controls the ambient light sensor readings. " alt="" coords="2491,80,2643,107" />
+<area shape="rect" href="$_high_gain_control_8h.html" title="Controls the high gain input readings. " alt="" coords="2667,80,2798,107" />
+<area shape="rect" href="$_ecg_control_8h.html" title="Controls the 6&#45;channel ECG sensor readings. " alt="" coords="2822,80,2920,107" />
+<area shape="rect" href="$_analog7_control_8h.html" title="Controls the analog input readings on header pin 7. " alt="" coords="2944,80,3067,107" />
+<area shape="rect" href="$_analog8_control_8h.html" title="Controls the analog input readings on header pin 8. " alt="" coords="3091,80,3214,107" />
+<area shape="rect" href="$_analog9_control_8h.html" title="Controls the analog input readings on header pin 9. " alt="" coords="3238,80,3360,107" />
+<area shape="rect" href="$_header1_control_8h.html" title="Controls the settings of header pin 1. " alt="" coords="3384,80,3510,107" />
+<area shape="rect" href="$_header2_control_8h_source.html" title="Header2Control.h" alt="" coords="3534,80,3659,107" />
+<area shape="rect" href="$_header3_control_8h.html" title="Controls the settings of header pin 3. " alt="" coords="3683,80,3808,107" />
+<area shape="rect" href="$_header4_control_8h.html" title="Controls the settings of header pin 4. " alt="" coords="3832,80,3958,107" />
+<area shape="rect" href="$_header5_control_8h.html" title="Controls the settings of header pin 5. " alt="" coords="3982,80,4107,107" />
+<area shape="rect" href="$_header6_control_8h.html" title="Controls the settings of header pin 6. " alt="" coords="4131,80,4256,107" />
+<area shape="rect" href="$_digital_input_control_8h.html" title="Controls the digital input readings on the header and buttons. " alt="" coords="4280,80,4422,107" />
+<area shape="rect" href="$_microphone_control_8h.html" title="Controls the microphone readings. " alt="" coords="4446,80,4590,107" />
+<area shape="rect" href="$_thermometer_control_8h.html" title="Controls the Thermometer driver. " alt="" coords="4614,80,4768,107" />
+<area shape="rect" href="$_ecg6_chan_control_8h_source.html" title="Ecg6ChanControl.h" alt="" coords="4792,80,4928,107" />
+<area shape="rect" href="$_key_value_8h.html" title="Contains the definitions of the Key&#45;Value pairs. " alt="" coords="5035,155,5123,182" />
+<area shape="rect" href="$_fixed_config_settings_8h.html" title="Stores all of the settings for the supported fixed configurations. " alt="" coords="4952,80,5104,107" />
+<area shape="rect" href="$_configuration_manager_8h.html" title="The configuration manager keeps track of all the sensor configurations. " alt="" coords="5179,80,5342,107" />
+<area shape="rect" href="$_fixed_config_list_8h.html" title="Contains the list of the fixed config options. " alt="" coords="5199,155,5322,182" />
+</map>

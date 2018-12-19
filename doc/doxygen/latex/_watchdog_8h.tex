@@ -1,0 +1,119 @@
+\hypertarget{_watchdog_8h}{\section{Watchdog.\-h File Reference}
+\label{_watchdog_8h}\index{Watchdog.\-h@{Watchdog.\-h}}
+}
+
+
+Watchdog module header file.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_watchdog_8h_a6bbe3ed5209784ae3dc660fcb9db576d}{E\-N\-A\-B\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G}
+\item 
+\#define \hyperlink{_watchdog_8h_a1e3e73b7d8dc553fc60b35b20ed32b96}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}~(W\-D\-T\-C\-N\-T\-C\-L $|$ W\-D\-T\-S\-S\-E\-L\-\_\-\-\_\-\-A\-C\-L\-K $|$ W\-D\-T\-I\-S\-\_\-\-\_\-8192\-K)
+\item 
+\#define \hyperlink{_watchdog_8h_acb6a8a347ee9c1e3f918655d3899ed30}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-R\-E\-\_\-\-I\-N\-I\-T}()~(W\-D\-T\-C\-T\-L = (W\-D\-T\-P\-W $|$ W\-D\-T\-S\-S\-E\-L\-\_\-\-\_\-\-V\-L\-O $|$ W\-D\-T\-I\-S\-\_\-\-\_\-512\-K))
+\item 
+\#define \hyperlink{_watchdog_8h_a699afe63902dc5ec361248a68ed96ce9}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-I\-N\-I\-T}()~\hyperlink{_watchdog_8h_a156d0b10570480e3ef02a4fca9430abc}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T}()
+\item 
+\#define \hyperlink{_watchdog_8h_a156d0b10570480e3ef02a4fca9430abc}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T}()~(W\-D\-T\-C\-T\-L = (W\-D\-T\-P\-W $|$ \hyperlink{_watchdog_8h_a1e3e73b7d8dc553fc60b35b20ed32b96}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}))
+\item 
+\#define \hyperlink{_watchdog_8h_a7f47a09c8922dd2653f82adead8d4602}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T}()~\hyperlink{_watchdog_8h_a156d0b10570480e3ef02a4fca9430abc}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T}()
+\item 
+\#define \hyperlink{_watchdog_8h_aab4376d5c465ae7e221451f31f87b95f}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-O\-P}()~(W\-D\-T\-C\-T\-L = (W\-D\-T\-P\-W $|$ W\-D\-T\-H\-O\-L\-D $|$ \hyperlink{_watchdog_8h_a1e3e73b7d8dc553fc60b35b20ed32b96}{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}))
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Watchdog module header file. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This file contains macros that control the watchdog timer. 
+
+Definition in file \hyperlink{_watchdog_8h_source}{Watchdog.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_watchdog_8h_a6bbe3ed5209784ae3dc660fcb9db576d}{\index{Watchdog.\-h@{Watchdog.\-h}!E\-N\-A\-B\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G@{E\-N\-A\-B\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G}}
+\index{E\-N\-A\-B\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G@{E\-N\-A\-B\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G}!Watchdog.h@{Watchdog.\-h}}
+\subsubsection[{E\-N\-A\-B\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-A\-B\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G}}\label{_watchdog_8h_a6bbe3ed5209784ae3dc660fcb9db576d}
+If defined, the watchdog timer is enabled. 
+
+Definition at line 27 of file Watchdog.\-h.
+
+\hypertarget{_watchdog_8h_a699afe63902dc5ec361248a68ed96ce9}{\index{Watchdog.\-h@{Watchdog.\-h}!W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-I\-N\-I\-T@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-I\-N\-I\-T}}
+\index{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-I\-N\-I\-T@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-I\-N\-I\-T}!Watchdog.h@{Watchdog.\-h}}
+\subsubsection[{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-I\-N\-I\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T}()}}\label{_watchdog_8h_a699afe63902dc5ec361248a68ed96ce9}
+Initialize the watchdog timer with the above settings. 
+
+Definition at line 44 of file Watchdog.\-h.
+
+
+
+Referenced by Board\-\_\-\-Init().
+
+\hypertarget{_watchdog_8h_acb6a8a347ee9c1e3f918655d3899ed30}{\index{Watchdog.\-h@{Watchdog.\-h}!W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-R\-E\-\_\-\-I\-N\-I\-T@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-R\-E\-\_\-\-I\-N\-I\-T}}
+\index{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-R\-E\-\_\-\-I\-N\-I\-T@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-R\-E\-\_\-\-I\-N\-I\-T}!Watchdog.h@{Watchdog.\-h}}
+\subsubsection[{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-R\-E\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-R\-E\-\_\-\-I\-N\-I\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(W\-D\-T\-C\-T\-L = (W\-D\-T\-P\-W $|$ W\-D\-T\-S\-S\-E\-L\-\_\-\-\_\-\-V\-L\-O $|$ W\-D\-T\-I\-S\-\_\-\-\_\-512\-K))}}\label{_watchdog_8h_acb6a8a347ee9c1e3f918655d3899ed30}
+Pre-\/initialize the watchdog timer. This is just to get the memory initialized before main starts 
+
+Definition at line 42 of file Watchdog.\-h.
+
+
+
+Referenced by \-\_\-system\-\_\-pre\-\_\-init().
+
+\hypertarget{_watchdog_8h_a7f47a09c8922dd2653f82adead8d4602}{\index{Watchdog.\-h@{Watchdog.\-h}!W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T}}
+\index{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T}!Watchdog.h@{Watchdog.\-h}}
+\subsubsection[{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T}()}}\label{_watchdog_8h_a7f47a09c8922dd2653f82adead8d4602}
+Reset the watchdog timer (keeps the above settings). 
+
+Definition at line 48 of file Watchdog.\-h.
+
+
+
+Referenced by Board\-\_\-\-Init(), main(), and Ultrasound\-Start\-Transmit().
+
+\hypertarget{_watchdog_8h_a1e3e73b7d8dc553fc60b35b20ed32b96}{\index{Watchdog.\-h@{Watchdog.\-h}!W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}}
+\index{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}!Watchdog.h@{Watchdog.\-h}}
+\subsubsection[{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S~(W\-D\-T\-C\-N\-T\-C\-L $|$ W\-D\-T\-S\-S\-E\-L\-\_\-\-\_\-\-A\-C\-L\-K $|$ W\-D\-T\-I\-S\-\_\-\-\_\-8192\-K)}}\label{_watchdog_8h_a1e3e73b7d8dc553fc60b35b20ed32b96}
+Defines the following watchdog timer settings\-: -\/\-Timer will expire after 512\-K (512 $\ast$ 1024) clock cycles -\/\-Timer is source from A\-C\-L\-K -\/\-Reset timer when written 
+
+Definition at line 39 of file Watchdog.\-h.
+
+\hypertarget{_watchdog_8h_a156d0b10570480e3ef02a4fca9430abc}{\index{Watchdog.\-h@{Watchdog.\-h}!W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T}}
+\index{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T}!Watchdog.h@{Watchdog.\-h}}
+\subsubsection[{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-A\-R\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(W\-D\-T\-C\-T\-L = (W\-D\-T\-P\-W $|$ {\bf W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}))}}\label{_watchdog_8h_a156d0b10570480e3ef02a4fca9430abc}
+Starts the watchdog timer with the above settings. 
+
+Definition at line 46 of file Watchdog.\-h.
+
+\hypertarget{_watchdog_8h_aab4376d5c465ae7e221451f31f87b95f}{\index{Watchdog.\-h@{Watchdog.\-h}!W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-O\-P@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-O\-P}}
+\index{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-O\-P@{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-O\-P}!Watchdog.h@{Watchdog.\-h}}
+\subsubsection[{W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-T\-O\-P(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(W\-D\-T\-C\-T\-L = (W\-D\-T\-P\-W $|$ W\-D\-T\-H\-O\-L\-D $|$ {\bf W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}))}}\label{_watchdog_8h_aab4376d5c465ae7e221451f31f87b95f}
+Stops the watchdog timer. 
+
+Definition at line 73 of file Watchdog.\-h.
+

@@ -1,0 +1,538 @@
+\hypertarget{_dma_8c}{\section{Dma.\-c File Reference}
+\label{_dma_8c}\index{Dma.\-c@{Dma.\-c}}
+}
+
+
+Configuration and control functions and macros for the D\-M\-A.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Dma.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+Include dependency graph for Dma.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}~3u
+\item 
+\#define \hyperlink{_dma_8c_a8a1661d2e29ed7bf965c7e12f07693b1}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-S}~4u
+\item 
+\hypertarget{_dma_8c_ae9d0148dd4475144b78eeaa123a30ab5}{\#define {\bfseries D\-M\-A\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S\-\_\-\-P\-E\-R\-\_\-\-T\-R\-I\-G\-\_\-\-R\-E\-G}~2}\label{_dma_8c_ae9d0148dd4475144b78eeaa123a30ab5}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{_dma_8c_a44e9864026a65cc077f1cd1312e2c89a}{\-\_\-\-Dma\-Isr} (void)
+\item 
+void \hyperlink{_dma_8c_ae7d076d2088825a148065075892f58dc}{Dma\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_dma_8c_a0bd08908753ae9ae69f9502bad4229fa}{Dma\-\_\-\-Configure} (\hyperlink{_dma_8h_a527ad51e8e8c784e9693fe57f67d9018}{Dma\-Channel\-\_\-t} channel, const \hyperlink{_dma_8h_struct_dma_config__t}{Dma\-Config\-\_\-t} $\ast$config)
+\item 
+void \hyperlink{_dma_8c_a00be3dd2e9072289f4fdc5ff9e8be464}{Dma\-\_\-\-Arm} (\hyperlink{_dma_8h_a527ad51e8e8c784e9693fe57f67d9018}{Dma\-Channel\-\_\-t} channel, void $\ast$source\-Address, void $\ast$destination\-Address, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} dma\-Transfer\-Size)
+\item 
+void \hyperlink{_dma_8c_ab02da096f284fbc5aca75db83495311c}{Dma\-\_\-\-Enable} (\hyperlink{_dma_8h_a527ad51e8e8c784e9693fe57f67d9018}{Dma\-Channel\-\_\-t} channel)
+\item 
+void \hyperlink{_dma_8c_a44dce30248e54529e1210634a4103917}{Dma\-\_\-\-Disable} (\hyperlink{_dma_8h_a527ad51e8e8c784e9693fe57f67d9018}{Dma\-Channel\-\_\-t} channel)
+\item 
+void \hyperlink{_dma_8c_ace1b64b414579f027067eaead7040ad8}{Dma\-\_\-\-Trigger} (\hyperlink{_dma_8h_a527ad51e8e8c784e9693fe57f67d9018}{Dma\-Channel\-\_\-t} channel)
+\item 
+void \hyperlink{_dma_8c_ab10a2a28e0516ad46de214ade58839f7}{Dma\-\_\-\-Register\-Isr} (\hyperlink{_dma_8h_a527ad51e8e8c784e9693fe57f67d9018}{Dma\-Channel\-\_\-t} channel, \hyperlink{_dma_8h_ad9e7b6845d8cfd947ea8267789964bbc}{Dma\-Isr\-Pointer\-\_\-t} isr\-Ptr)
+\item 
+void \hyperlink{_dma_8c_abefa73b4d88b5681595f89b5d48a051b}{Dma\-\_\-\-Unregister\-Isr} (\hyperlink{_dma_8h_a527ad51e8e8c784e9693fe57f67d9018}{Dma\-Channel\-\_\-t} channel)
+\item 
+void \hyperlink{_dma_8c_a6d04ad19261f694c3b6848c805a29d98}{Dma\-\_\-\-Enable\-Isr} (\hyperlink{_dma_8h_a527ad51e8e8c784e9693fe57f67d9018}{Dma\-Channel\-\_\-t} channel)
+\item 
+void \hyperlink{_dma_8c_ae7c8ff98ddcd86c66c7de8446ea4a5cc}{Dma\-\_\-\-Disable\-Isr} (\hyperlink{_dma_8h_a527ad51e8e8c784e9693fe57f67d9018}{Dma\-Channel\-\_\-t} channel)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$const \hyperlink{_dma_8c_a4a9b1f8838bd5ad3e1a59d52638d067e}{\-\_\-dma\-Control\-Registers} \mbox{[}\hyperlink{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$const \hyperlink{_dma_8c_a68754801db316f2699f7a79e7b135694}{\-\_\-dma\-Trigger\-Registers} \mbox{[}\hyperlink{_dma_8c_a8a1661d2e29ed7bf965c7e12f07693b1}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-S}\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} $\ast$const \hyperlink{_dma_8c_af524cbd1456f47b5e4eaf4013556ec40}{\-\_\-dma\-Source\-Address\-Registers} \mbox{[}\hyperlink{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\-\_\-t} $\ast$const \hyperlink{_dma_8c_a3249e1163059e0c47fab2002d0e04344}{\-\_\-dma\-Destination\-Address\-Registers} \mbox{[}\hyperlink{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$const \hyperlink{_dma_8c_a5e51d36a23849c9cee36eb685d2b401a}{\-\_\-dma\-Size\-Registers} \mbox{[}\hyperlink{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]}
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_dma_8c_a85a4e3c46edd2a71bd0a666aadd6492a}{\-\_\-dma\-Initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_dma_8c_adbbbb2f151821148396acd96848e299a}{\-\_\-dma\-Configured} \mbox{[}\hyperlink{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]} = \{ \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}, \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}, \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false} \}
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_dma_8c_a4e78b2f48f93bfdac7f13a2970cd01a6}{\-\_\-dma\-Armed} \mbox{[}\hyperlink{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]} = \{ \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}, \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}, \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false} \}
+\item 
+static \hyperlink{_dma_8h_ad9e7b6845d8cfd947ea8267789964bbc}{Dma\-Isr\-Pointer\-\_\-t} \hyperlink{_dma_8c_a426ec943c7023df102265cb6e4ff68bb}{\-\_\-dma\-Isr\-List} \mbox{[}\hyperlink{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]} = \{ \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}, \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L} \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Configuration and control functions and macros for the D\-M\-A. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Provides configuration and control for the direct memory access (D\-M\-A) controller on the M\-S\-P430\-F5xx family. 
+
+Definition in file \hyperlink{_dma_8c_source}{Dma.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}{\index{Dma.\-c@{Dma.\-c}!D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S@{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}}
+\index{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S@{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}!Dma.c@{Dma.\-c}}
+\subsubsection[{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S~3u}}\label{_dma_8c_a9a0d4125e898eac7ebc6130adacb8f2d}
+Defines the number of D\-M\-A channels available 
+
+Definition at line 33 of file Dma.\-c.
+
+
+
+Referenced by Dma\-\_\-\-Arm(), Dma\-\_\-\-Configure(), Dma\-\_\-\-Disable(), Dma\-\_\-\-Disable\-Isr(), Dma\-\_\-\-Enable(), Dma\-\_\-\-Enable\-Isr(), Dma\-\_\-\-Register\-Isr(), Dma\-\_\-\-Trigger(), and Dma\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_dma_8c_a8a1661d2e29ed7bf965c7e12f07693b1}{\index{Dma.\-c@{Dma.\-c}!D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-S@{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-S}}
+\index{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-S@{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-S}!Dma.c@{Dma.\-c}}
+\subsubsection[{D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-S~4u}}\label{_dma_8c_a8a1661d2e29ed7bf965c7e12f07693b1}
+Defines the number of trigger registers there are 
+
+Definition at line 36 of file Dma.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_dma_8c_a44e9864026a65cc077f1cd1312e2c89a}{\index{Dma.\-c@{Dma.\-c}!\-\_\-\-Dma\-Isr@{\-\_\-\-Dma\-Isr}}
+\index{\-\_\-\-Dma\-Isr@{\-\_\-\-Dma\-Isr}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-\-Dma\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void \-\_\-\-Dma\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_a44e9864026a65cc077f1cd1312e2c89a}
+Interrupt service routine for the D\-M\-A. The interrupt flag of the interrupt specified in D\-M\-A\-I\-V is cleared when D\-M\-A\-I\-V is read. 
+
+Definition at line 319 of file Dma.\-c.
+
+\hypertarget{_dma_8c_a00be3dd2e9072289f4fdc5ff9e8be464}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Arm@{Dma\-\_\-\-Arm}}
+\index{Dma\-\_\-\-Arm@{Dma\-\_\-\-Arm}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Arm}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Arm (
+\begin{DoxyParamCaption}
+\item[{{\bf Dma\-Channel\-\_\-t}}]{channel, }
+\item[{void $\ast$}]{source\-Address, }
+\item[{void $\ast$}]{destination\-Address, }
+\item[{{\bf uint16\-\_\-t}}]{dma\-Transfer\-Size}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_a00be3dd2e9072289f4fdc5ff9e8be464}
+Arms the D\-M\-A to make a D\-M\-A transaction as soon as it is enabled and triggered.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the D\-M\-A channel to arm \\
+\hline
+\mbox{\tt in}  & {\em source\-Address} & -\/ the address that is the source of the D\-M\-A transfer \\
+\hline
+\mbox{\tt in}  & {\em destination\-Address} & -\/ the address that is the destination of the D\-M\-A transfer \\
+\hline
+\mbox{\tt in}  & {\em dma\-Transfer\-Size} & -\/ the number of D\-M\-A transfers to make in a transaction\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function does not enable the D\-M\-A. Use Dma\-\_\-\-Enable or the enable macro to enable the D\-M\-A. 
+\end{DoxyNote}
+
+
+Definition at line 180 of file Dma.\-c.
+
+
+
+Referenced by Spi\-Slave\-\_\-\-Load\-Packet(), and Spi\-Slave\-\_\-\-Read\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dma_8c_a0bd08908753ae9ae69f9502bad4229fa}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Configure@{Dma\-\_\-\-Configure}}
+\index{Dma\-\_\-\-Configure@{Dma\-\_\-\-Configure}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf Dma\-Channel\-\_\-t}}]{channel, }
+\item[{const {\bf Dma\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_a0bd08908753ae9ae69f9502bad4229fa}
+Configures the D\-M\-A to be ready to use.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the D\-M\-A channel to configure \\
+\hline
+\mbox{\tt in}  & {\em config} & -\/ the configuration struct of configuration options \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file Dma.\-c.
+
+
+
+Referenced by Spi\-Slave\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dma_8c_a44dce30248e54529e1210634a4103917}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Disable@{Dma\-\_\-\-Disable}}
+\index{Dma\-\_\-\-Disable@{Dma\-\_\-\-Disable}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Disable}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Disable (
+\begin{DoxyParamCaption}
+\item[{{\bf Dma\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_a44dce30248e54529e1210634a4103917}
+Disables the D\-M\-A.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the D\-M\-A channel to disable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function provides better safety checking (verifying that the D\-M\-A channel is valid) than the macro but the disable macro takes fewer clock cycles. 
+\end{DoxyNote}
+
+
+Definition at line 225 of file Dma.\-c.
+
+
+
+Referenced by Spi\-Slave\-\_\-\-Flush\-Read(), and Spi\-Slave\-\_\-\-Unload\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dma_8c_ae7c8ff98ddcd86c66c7de8446ea4a5cc}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Disable\-Isr@{Dma\-\_\-\-Disable\-Isr}}
+\index{Dma\-\_\-\-Disable\-Isr@{Dma\-\_\-\-Disable\-Isr}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Disable\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Disable\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Dma\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_ae7c8ff98ddcd86c66c7de8446ea4a5cc}
+Disables the I\-S\-R for a D\-M\-A channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the D\-M\-A channel for the I\-S\-R\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function provides better safety checking (verifying that the D\-M\-A channel is valid) than the macro but the macro takes fewer clock cycles. 
+\end{DoxyNote}
+
+
+Definition at line 307 of file Dma.\-c.
+
+
+
+Referenced by Spi\-Slave\-\_\-\-Flush\-Read(), and Spi\-Slave\-\_\-\-Unload\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dma_8c_ab02da096f284fbc5aca75db83495311c}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Enable@{Dma\-\_\-\-Enable}}
+\index{Dma\-\_\-\-Enable@{Dma\-\_\-\-Enable}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Enable (
+\begin{DoxyParamCaption}
+\item[{{\bf Dma\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_ab02da096f284fbc5aca75db83495311c}
+Enables the D\-M\-A to perform a transaction as soon as it is triggered.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the D\-M\-A channel to enable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function provides better safety checking (verifying that the D\-M\-A is configured and armed) than the macro but the enable macro takes fewer clock cycles. 
+\end{DoxyNote}
+
+
+Definition at line 206 of file Dma.\-c.
+
+
+
+Referenced by Spi\-Slave\-\_\-\-Load\-Packet(), and Spi\-Slave\-\_\-\-Read\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dma_8c_a6d04ad19261f694c3b6848c805a29d98}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Enable\-Isr@{Dma\-\_\-\-Enable\-Isr}}
+\index{Dma\-\_\-\-Enable\-Isr@{Dma\-\_\-\-Enable\-Isr}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Enable\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Enable\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Dma\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_a6d04ad19261f694c3b6848c805a29d98}
+Enables the I\-S\-R for a D\-M\-A channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the D\-M\-A channel for the I\-S\-R\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function provides better safety checking (verifying that the D\-M\-A channel is valid) than the macro but the macro takes fewer clock cycles. 
+\end{DoxyNote}
+
+
+Definition at line 291 of file Dma.\-c.
+
+
+
+Referenced by Spi\-Slave\-\_\-\-Load\-Packet(), and Spi\-Slave\-\_\-\-Read\-Packet().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dma_8c_ae7d076d2088825a148065075892f58dc}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Init@{Dma\-\_\-\-Init}}
+\index{Dma\-\_\-\-Init@{Dma\-\_\-\-Init}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_ae7d076d2088825a148065075892f58dc}
+Initializes the D\-M\-A. 
+
+Definition at line 103 of file Dma.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dma_8c_ab10a2a28e0516ad46de214ade58839f7}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Register\-Isr@{Dma\-\_\-\-Register\-Isr}}
+\index{Dma\-\_\-\-Register\-Isr@{Dma\-\_\-\-Register\-Isr}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Register\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Register\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Dma\-Channel\-\_\-t}}]{channel, }
+\item[{{\bf Dma\-Isr\-Pointer\-\_\-t}}]{isr\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_ab10a2a28e0516ad46de214ade58839f7}
+Register an I\-S\-R for a D\-M\-A channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the D\-M\-A channel for the I\-S\-R \\
+\hline
+\mbox{\tt in}  & {\em isr\-Ptr} & -\/ pointer to the I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 253 of file Dma.\-c.
+
+
+
+Referenced by Spi\-Slave\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dma_8c_ace1b64b414579f027067eaead7040ad8}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Trigger@{Dma\-\_\-\-Trigger}}
+\index{Dma\-\_\-\-Trigger@{Dma\-\_\-\-Trigger}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Trigger}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Trigger (
+\begin{DoxyParamCaption}
+\item[{{\bf Dma\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_ace1b64b414579f027067eaead7040ad8}
+Triggers the D\-M\-A to start a transaction.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the D\-M\-A channel to trigger \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 237 of file Dma.\-c.
+
+\hypertarget{_dma_8c_abefa73b4d88b5681595f89b5d48a051b}{\index{Dma.\-c@{Dma.\-c}!Dma\-\_\-\-Unregister\-Isr@{Dma\-\_\-\-Unregister\-Isr}}
+\index{Dma\-\_\-\-Unregister\-Isr@{Dma\-\_\-\-Unregister\-Isr}!Dma.c@{Dma.\-c}}
+\subsubsection[{Dma\-\_\-\-Unregister\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\-\_\-\-Unregister\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Dma\-Channel\-\_\-t}}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_dma_8c_abefa73b4d88b5681595f89b5d48a051b}
+Unregister an I\-S\-R for a D\-M\-A channel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & -\/ the D\-M\-A channel for the I\-S\-R to unregister \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 271 of file Dma.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_dma_8c_a4e78b2f48f93bfdac7f13a2970cd01a6}{\index{Dma.\-c@{Dma.\-c}!\-\_\-dma\-Armed@{\-\_\-dma\-Armed}}
+\index{\-\_\-dma\-Armed@{\-\_\-dma\-Armed}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-dma\-Armed}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-dma\-Armed\mbox{[}{\bf D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]} = \{ {\bf false}, {\bf false}, {\bf false} \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_dma_8c_a4e78b2f48f93bfdac7f13a2970cd01a6}
+Tracks if the D\-M\-A channel is armed 
+
+Definition at line 92 of file Dma.\-c.
+
+
+
+Referenced by Dma\-\_\-\-Arm(), Dma\-\_\-\-Enable(), and Dma\-\_\-\-Trigger().
+
+\hypertarget{_dma_8c_adbbbb2f151821148396acd96848e299a}{\index{Dma.\-c@{Dma.\-c}!\-\_\-dma\-Configured@{\-\_\-dma\-Configured}}
+\index{\-\_\-dma\-Configured@{\-\_\-dma\-Configured}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-dma\-Configured}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-dma\-Configured\mbox{[}{\bf D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]} = \{ {\bf false}, {\bf false}, {\bf false} \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_dma_8c_adbbbb2f151821148396acd96848e299a}
+Tracks if the D\-M\-A channel has been configured 
+
+Definition at line 89 of file Dma.\-c.
+
+
+
+Referenced by Dma\-\_\-\-Arm(), Dma\-\_\-\-Configure(), Dma\-\_\-\-Enable(), and Dma\-\_\-\-Trigger().
+
+\hypertarget{_dma_8c_a4a9b1f8838bd5ad3e1a59d52638d067e}{\index{Dma.\-c@{Dma.\-c}!\-\_\-dma\-Control\-Registers@{\-\_\-dma\-Control\-Registers}}
+\index{\-\_\-dma\-Control\-Registers@{\-\_\-dma\-Control\-Registers}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-dma\-Control\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint16\-\_\-t}$\ast$ const \-\_\-dma\-Control\-Registers\mbox{[}{\bf D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_dma_8c_a4a9b1f8838bd5ad3e1a59d52638d067e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        &DMA0CTL,
+        &DMA1CTL,
+        &DMA2CTL
+\}
+\end{DoxyCode}
+Look up table for D\-M\-A control registers 
+
+Definition at line 39 of file Dma.\-c.
+
+
+
+Referenced by Dma\-\_\-\-Configure(), Dma\-\_\-\-Disable(), Dma\-\_\-\-Disable\-Isr(), Dma\-\_\-\-Enable(), Dma\-\_\-\-Enable\-Isr(), Dma\-\_\-\-Register\-Isr(), Dma\-\_\-\-Trigger(), and Dma\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_dma_8c_a3249e1163059e0c47fab2002d0e04344}{\index{Dma.\-c@{Dma.\-c}!\-\_\-dma\-Destination\-Address\-Registers@{\-\_\-dma\-Destination\-Address\-Registers}}
+\index{\-\_\-dma\-Destination\-Address\-Registers@{\-\_\-dma\-Destination\-Address\-Registers}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-dma\-Destination\-Address\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint32\-\_\-t}$\ast$ const \-\_\-dma\-Destination\-Address\-Registers\mbox{[}{\bf D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_dma_8c_a3249e1163059e0c47fab2002d0e04344}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        
+        (\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\_t}*)(&DMA0DA),
+        (\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\_t}*)(&DMA1DA),
+        (\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\_t}*)(&DMA2DA)
+\}
+\end{DoxyCode}
+Look up table for the D\-M\-A destination address registers 
+
+Definition at line 67 of file Dma.\-c.
+
+
+
+Referenced by Dma\-\_\-\-Arm().
+
+\hypertarget{_dma_8c_a85a4e3c46edd2a71bd0a666aadd6492a}{\index{Dma.\-c@{Dma.\-c}!\-\_\-dma\-Initialized@{\-\_\-dma\-Initialized}}
+\index{\-\_\-dma\-Initialized@{\-\_\-dma\-Initialized}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-dma\-Initialized}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-dma\-Initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_dma_8c_a85a4e3c46edd2a71bd0a666aadd6492a}
+Tracks if the D\-M\-A has been initialized 
+
+Definition at line 86 of file Dma.\-c.
+
+
+
+Referenced by Dma\-\_\-\-Arm(), Dma\-\_\-\-Configure(), Dma\-\_\-\-Enable(), Dma\-\_\-\-Init(), and Dma\-\_\-\-Trigger().
+
+\hypertarget{_dma_8c_a426ec943c7023df102265cb6e4ff68bb}{\index{Dma.\-c@{Dma.\-c}!\-\_\-dma\-Isr\-List@{\-\_\-dma\-Isr\-List}}
+\index{\-\_\-dma\-Isr\-List@{\-\_\-dma\-Isr\-List}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-dma\-Isr\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dma\-Isr\-Pointer\-\_\-t} \-\_\-dma\-Isr\-List\mbox{[}{\bf D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]} = \{ {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L}, {\bf N\-U\-L\-L} \}\hspace{0.3cm}{\ttfamily [static]}}}\label{_dma_8c_a426ec943c7023df102265cb6e4ff68bb}
+Stores the D\-M\-A I\-S\-R pointers 
+
+Definition at line 95 of file Dma.\-c.
+
+
+
+Referenced by \-\_\-\-Dma\-Isr(), Dma\-\_\-\-Register\-Isr(), and Dma\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_dma_8c_a5e51d36a23849c9cee36eb685d2b401a}{\index{Dma.\-c@{Dma.\-c}!\-\_\-dma\-Size\-Registers@{\-\_\-dma\-Size\-Registers}}
+\index{\-\_\-dma\-Size\-Registers@{\-\_\-dma\-Size\-Registers}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-dma\-Size\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint16\-\_\-t}$\ast$ const \-\_\-dma\-Size\-Registers\mbox{[}{\bf D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_dma_8c_a5e51d36a23849c9cee36eb685d2b401a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        &DMA0SZ,
+        &DMA1SZ,
+        &DMA2SZ
+\}
+\end{DoxyCode}
+Look up table for the D\-M\-A size registers 
+
+Definition at line 78 of file Dma.\-c.
+
+
+
+Referenced by Dma\-\_\-\-Arm().
+
+\hypertarget{_dma_8c_af524cbd1456f47b5e4eaf4013556ec40}{\index{Dma.\-c@{Dma.\-c}!\-\_\-dma\-Source\-Address\-Registers@{\-\_\-dma\-Source\-Address\-Registers}}
+\index{\-\_\-dma\-Source\-Address\-Registers@{\-\_\-dma\-Source\-Address\-Registers}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-dma\-Source\-Address\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint32\-\_\-t}$\ast$ const \-\_\-dma\-Source\-Address\-Registers\mbox{[}{\bf D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_dma_8c_af524cbd1456f47b5e4eaf4013556ec40}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        
+        (\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\_t}*)(&DMA0SA),
+        (\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\_t}*)(&DMA1SA),
+        (\hyperlink{_project_types_8h_a33594304e786b158f3fb30289278f5af}{uint32\_t}*)(&DMA2SA)
+\}
+\end{DoxyCode}
+Look up table for the D\-M\-A source address registers 
+
+Definition at line 56 of file Dma.\-c.
+
+
+
+Referenced by Dma\-\_\-\-Arm().
+
+\hypertarget{_dma_8c_a68754801db316f2699f7a79e7b135694}{\index{Dma.\-c@{Dma.\-c}!\-\_\-dma\-Trigger\-Registers@{\-\_\-dma\-Trigger\-Registers}}
+\index{\-\_\-dma\-Trigger\-Registers@{\-\_\-dma\-Trigger\-Registers}!Dma.c@{Dma.\-c}}
+\subsubsection[{\-\_\-dma\-Trigger\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint16\-\_\-t}$\ast$ const \-\_\-dma\-Trigger\-Registers\mbox{[}{\bf D\-M\-A\-\_\-\-N\-U\-M\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_dma_8c_a68754801db316f2699f7a79e7b135694}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+        &DMACTL0,
+        &DMACTL1,
+        &DMACTL2,
+        &DMACTL3
+\}
+\end{DoxyCode}
+Look up table for the D\-M\-A trigger registers 
+
+Definition at line 47 of file Dma.\-c.
+
+
+
+Referenced by Dma\-\_\-\-Configure().
+

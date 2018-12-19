@@ -1,0 +1,840 @@
+\hypertarget{_magnetometer_8c}{\section{Magnetometer.\-c File Reference}
+\label{_magnetometer_8c}\index{Magnetometer.\-c@{Magnetometer.\-c}}
+}
+
+
+Magnetometer sensor interface module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Magnetometer.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$I2c.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+Include dependency graph for Magnetometer.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_magnetometer_8c_a9fcb9e460d175bfc7ab4d80bf788b43a}{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}~((\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t})0x\-C4)
+\item 
+\#define \hyperlink{_magnetometer_8c_ae011f991fef90987bbd4a8a31ea07347}{M\-A\-G\-\_\-\-P\-O\-R\-T}~I2c\-Port\-\_\-0
+\item 
+\#define \hyperlink{_magnetometer_8c_ade4e63fac819c67040e374f08d2d7230}{M\-A\-G\-\_\-\-A\-D\-D\-R\-E\-S\-S}~((\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t})0x0\-E)
+\item 
+\hypertarget{_magnetometer_8c_a2f4bc012a4b968315cb30094bd07c8a2}{\#define {\bfseries B\-Y\-T\-E\-S\-\_\-\-I\-N\-\_\-\-S\-A\-M\-P\-L\-E}~6u}\label{_magnetometer_8c_a2f4bc012a4b968315cb30094bd07c8a2}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237}{Mag\-Reg\-\_\-t} \{ \\*
+{\bfseries Mag\-Reg\-\_\-\-D\-R\-\_\-\-S\-T\-A\-T\-U\-S} = 0x00, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a8ce097b152c39cd732ab463f3084200b}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B} = 0x01, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a80de27f1f71bfdc9501979f7a15f46b7}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B} = 0x02, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a29ab98a87251a61350c4d39f3ddc2b12}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B} = 0x03, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a979db1e24ec0d7762b095f4379cb675e}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B} = 0x04, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a091f19b1b1219c0dee7e5146c36612ac}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B} = 0x05, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a7750d8d6f8829912849a5a7b0edf8830}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B} = 0x06, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237ab1e9051811f7ec6e38c4e2fb8e25519b}{Mag\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I} = 0x07, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a47df885a1e80633f98c9a8d9993b678a}{Mag\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D} = 0x08, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237aac2f1580b3609755d04331348d0d39a7}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-M\-S\-B} = 0x09, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a876d0fc7d58bf56c8f18d07fc71fe0fa}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-L\-S\-B} = 0x0\-A, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a3110edcd5697c318b31762d964da1cf5}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-M\-S\-B} = 0x0\-B, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237aa230d4b7f080a1e1608cadff0d36b3c2}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-L\-S\-B} = 0x0\-C, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a00b7f2b2fbe95c2000b550da79717bda}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-M\-S\-B} = 0x0\-D, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237aee7e3ab1e60c7ac417367191de28661f}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-L\-S\-B} = 0x0\-E, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a6e76fa50dd331296a9e8722d142986a1}{Mag\-Reg\-\_\-\-D\-I\-E\-\_\-\-T\-E\-M\-P} = 0x0\-F, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237af28586785c97910ba615fe973412bc52}{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1} = 0x10, 
+\\*
+\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237ac6e6166ec8f13fe839958c88a8f98dd1}{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2} = 0x11
+ \}
+\item 
+enum \hyperlink{_magnetometer_8c_a7c73219810c365799403c7e8000c07c5}{Data\-Ready\-Status} \{ \\*
+{\bfseries Data\-Ready\-Status\-\_\-\-X\-D\-R} = 0x01, 
+\\*
+{\bfseries Data\-Ready\-Status\-\_\-\-Y\-D\-R} = 0x02, 
+\\*
+{\bfseries Data\-Ready\-Status\-\_\-\-Z\-D\-R} = 0x04, 
+\\*
+{\bfseries Data\-Ready\-Status\-\_\-\-Z\-Y\-X\-D\-R} = 0x08, 
+\\*
+{\bfseries Data\-Ready\-Status\-\_\-\-X\-O\-W} = 0x10, 
+\\*
+{\bfseries Data\-Ready\-Status\-\_\-\-Y\-O\-W} = 0x20, 
+\\*
+{\bfseries Data\-Ready\-Status\-\_\-\-Z\-O\-W} = 0x40, 
+\\*
+{\bfseries Data\-Ready\-Status\-\_\-\-Z\-Y\-X\-O\-W} = 0x80
+ \}
+\item 
+enum \hyperlink{_magnetometer_8c_a8434a19661102ef71cf2f5dc52cf7eb6}{Sys\-Mod} \{ \\*
+{\bfseries Sys\-Mod\-\_\-\-S\-T\-A\-N\-D\-B\-Y} = 0x00, 
+\\*
+{\bfseries Sys\-Mod\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-R\-A\-W\-\_\-\-D\-A\-T\-A} = 0x01, 
+\\*
+{\bfseries Sys\-Mod\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-S\-C\-A\-L\-E\-D\-\_\-\-D\-A\-T\-A} = 0x02
+ \}
+\item 
+enum \hyperlink{_magnetometer_8c_a327aa32535df77ad38ca4d124aae4dc6}{Ctrl\-Reg\-One} \{ \\*
+{\bfseries A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-1280} = 0x00, 
+\\*
+\hyperlink{_magnetometer_8c_a327aa32535df77ad38ca4d124aae4dc6a33e474730dcf02b31db6ad2ad0e31c49}{A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-640} = 0x20, 
+\\*
+{\bfseries A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-320} = 0x40, 
+\\*
+{\bfseries A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-160} = 0x60, 
+\\*
+{\bfseries A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-80} = 0x80, 
+\\*
+{\bfseries A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-40} = 0x\-A0, 
+\\*
+{\bfseries A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-20} = 0x\-C0, 
+\\*
+{\bfseries A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-10} = 0x\-E0, 
+\\*
+{\bfseries O\-S\-R\-\_\-16} = 0x00, 
+\\*
+\hyperlink{_magnetometer_8c_a327aa32535df77ad38ca4d124aae4dc6ab3beff6f8d7e1ecfb1b813abdda9945c}{O\-S\-R\-\_\-32} = 0x08, 
+\\*
+{\bfseries O\-S\-R\-\_\-64} = 0x10, 
+\\*
+{\bfseries O\-S\-R\-\_\-128} = 0x18, 
+\\*
+{\bfseries F\-A\-S\-T\-\_\-\-R\-E\-A\-D\-\_\-\-E\-N\-A\-B\-L\-E} = 0x04, 
+\\*
+{\bfseries T\-R\-I\-G\-G\-E\-R\-\_\-\-M\-E\-A\-S\-U\-R\-E\-M\-E\-N\-T} = 0x02, 
+\\*
+{\bfseries A\-C\-T\-I\-V\-E\-\_\-\-M\-O\-D\-E\-\_\-\-E\-N\-A\-B\-L\-E} = 0x01
+ \}
+\item 
+enum \hyperlink{_magnetometer_8c_a8a8b2fe15ae027dc0aaab9d5db17e1db}{Ctrl\-Reg\-Two} \{ \\*
+{\bfseries Mag\-\_\-\-R\-S\-T} = 0x10, 
+\\*
+\hyperlink{_magnetometer_8c_a8a8b2fe15ae027dc0aaab9d5db17e1dba6af75e9f21013eae2e3f9b7f81f32842}{R\-A\-W\-\_\-\-E\-N\-A\-B\-L\-E} = 0x20, 
+\\*
+\hyperlink{_magnetometer_8c_a8a8b2fe15ae027dc0aaab9d5db17e1dbad54fac7b42137d575e7b66194917e6c5}{A\-U\-T\-O\-\_\-\-M\-R\-S\-T\-\_\-\-E\-N} = 0x80
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_magnetometer_8c_abffbea3ffff0c24e1b68e3fbf6d57e57}{\-\_\-\-Handle\-Data\-Ready\-Interrupt} (void)
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_magnetometer_8c_a10389d45bccf31b7fa39dbd26f851803}{\-\_\-\-Read\-Single\-Register} (\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237}{Mag\-Reg\-\_\-t} reg)
+\item 
+static void \hyperlink{_magnetometer_8c_a2d8c5304acdfccd9f4cbbd54ff8b493c}{\-\_\-\-Read\-Multiple\-Registers} (\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237}{Mag\-Reg\-\_\-t} start\-Reg, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} num\-Registers, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} registers\mbox{[}$\,$\mbox{]})
+\item 
+static \hyperlink{_i2c_8h_a527473c46a79e51f1107866ab5e3a706}{I2c\-Error\-\_\-t} \hyperlink{_magnetometer_8c_a61f3794e7c618ee6443c8ec9436e26ad}{\-\_\-\-Write\-Single\-Register} (\hyperlink{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237}{Mag\-Reg\-\_\-t} reg, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} value)
+\item 
+void \hyperlink{_magnetometer_8c_a24236d83f8ad5a94c17e6414904ea6f6}{Magnetometer\-\_\-\-Init} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_magnetometer_8c_ae85c6dbba68d26df7855b25d8979f9ce}{Magnetometer\-\_\-\-Config} (const \hyperlink{_magnetometer_8h_struct_mag_config__t}{Mag\-Config\-\_\-t} $\ast$config)
+\item 
+void \hyperlink{_magnetometer_8c_ab1c7f61cf144d63503818c735afe6834}{Magnetometer\-\_\-\-Start} (void)
+\item 
+void \hyperlink{_magnetometer_8c_aa859a7cf895fd5118acfcb44fc596517}{Magnetometer\-\_\-\-Stop} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_magnetometer_8c_a74a9a63d349b4532ea66269102cb9768}{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking} (\hyperlink{_magnetometer_8h_struct_mag_sample__t}{Mag\-Sample\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_magnetometer_8c_a2f8aa103b7db96d01167f9dfa83bb053}{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking} (void)
+\item 
+void \hyperlink{_magnetometer_8c_abf9639cb901b8a88043c1a73e4fad906}{Magnetometer\-\_\-\-Set\-Calibration} (const \hyperlink{_magnetometer_8h_struct_mag_sample__t}{Mag\-Sample\-\_\-t} $\ast$calibration)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_magnetometer_8c_aaddbb66c4df1f1e47afc3cdbe4c1122a}{Magnetometer\-\_\-\-Read\-Sample} (\hyperlink{_magnetometer_8h_struct_mag_sample__t}{Mag\-Sample\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_magnetometer_8c_a20958a3807b25a8b07da31a385af787a}{Magnetometer\-\_\-\-Read\-Sample\-Array} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_project_types_8h_aef44329758059c91c76d334e8fc09700}{int8\-\_\-t} \hyperlink{_magnetometer_8c_aff2683c4a9992b3fb92207239d130622}{Magnetometer\-\_\-\-Read\-Temp} (void)
+\item 
+void \hyperlink{_magnetometer_8c_aa39b22c63f0f6fda46569d535070334e}{Magnetometer\-\_\-\-Register\-Isr} (\hyperlink{_magnetometer_8h_a20bc53d859cc96133576afd1193ddba1}{Mag\-Isr\-Pointer\-\_\-t} isr)
+\item 
+void \hyperlink{_magnetometer_8c_a565ba3b8fa0996f539ed35d52fbc2410}{Magnetomter\-\_\-\-Unregister\-Isr} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_magnetometer_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_magnetometer_8h_a20bc53d859cc96133576afd1193ddba1}{Mag\-Isr\-Pointer\-\_\-t} \hyperlink{_magnetometer_8c_a74f2fdf34e5d18172079f0d791831850}{\-\_\-mag\-Isr\-Pointer} = \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}
+\item 
+static \hyperlink{_magnetometer_8h_struct_mag_config__t}{Mag\-Config\-\_\-t} \hyperlink{_magnetometer_8c_a1d3ba5ed03acbb3f828fed88cdddb6f8}{\-\_\-parameters}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_magnetometer_8c_a115ec046d09a014933e350a2d374b87a}{\-\_\-control\-Reg\-One} = 0u
+\item 
+\hypertarget{_magnetometer_8c_ab3fb578f0e4422bea3f0fac6c33a6e57}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-control\-Reg\-Two} = 0u}\label{_magnetometer_8c_ab3fb578f0e4422bea3f0fac6c33a6e57}
+
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_magnetometer_8c_a11dbd8006370044a4d0ddadf9cc3e735}{\-\_\-data\-Ready} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Magnetometer sensor interface module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This module provides logic to interface with the magnetometer (3-\/axis Hall effect sensor). This logic assumes that the magnetometer in use is the Freescale M\-A\-G3110 I2\-C Digital Magnetometer.
+
+\href{http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=MAG3110}{\tt Link to Product Webpage}
+
+\href{http://cache.freescale.com/files/sensors/doc/data_sheet/MAG3110.pdf?pspll=1}{\tt Link to Datasheet} 
+
+Definition in file \hyperlink{_magnetometer_8c_source}{Magnetometer.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_magnetometer_8c_ade4e63fac819c67040e374f08d2d7230}{\index{Magnetometer.\-c@{Magnetometer.\-c}!M\-A\-G\-\_\-\-A\-D\-D\-R\-E\-S\-S@{M\-A\-G\-\_\-\-A\-D\-D\-R\-E\-S\-S}}
+\index{M\-A\-G\-\_\-\-A\-D\-D\-R\-E\-S\-S@{M\-A\-G\-\_\-\-A\-D\-D\-R\-E\-S\-S}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{M\-A\-G\-\_\-\-A\-D\-D\-R\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-G\-\_\-\-A\-D\-D\-R\-E\-S\-S~(({\bf uint8\-\_\-t})0x0\-E)}}\label{_magnetometer_8c_ade4e63fac819c67040e374f08d2d7230}
+defines the magnetometer's I2\-C address 
+
+Definition at line 126 of file Magnetometer.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Multiple\-Registers(), \-\_\-\-Read\-Single\-Register(), and \-\_\-\-Write\-Single\-Register().
+
+\hypertarget{_magnetometer_8c_ae011f991fef90987bbd4a8a31ea07347}{\index{Magnetometer.\-c@{Magnetometer.\-c}!M\-A\-G\-\_\-\-P\-O\-R\-T@{M\-A\-G\-\_\-\-P\-O\-R\-T}}
+\index{M\-A\-G\-\_\-\-P\-O\-R\-T@{M\-A\-G\-\_\-\-P\-O\-R\-T}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{M\-A\-G\-\_\-\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-G\-\_\-\-P\-O\-R\-T~I2c\-Port\-\_\-0}}\label{_magnetometer_8c_ae011f991fef90987bbd4a8a31ea07347}
+defines the port the magnetometer is attached to 
+
+Definition at line 123 of file Magnetometer.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Multiple\-Registers(), \-\_\-\-Read\-Single\-Register(), and \-\_\-\-Write\-Single\-Register().
+
+\hypertarget{_magnetometer_8c_a9fcb9e460d175bfc7ab4d80bf788b43a}{\index{Magnetometer.\-c@{Magnetometer.\-c}!W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}}
+\index{W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-O\-\_\-\-A\-M\-\_\-\-I~(({\bf uint8\-\_\-t})0x\-C4)}}\label{_magnetometer_8c_a9fcb9e460d175bfc7ab4d80bf788b43a}
+Define the expected value of the W\-H\-O\-\_\-\-A\-M\-\_\-\-I query 
+
+Definition at line 83 of file Magnetometer.\-c.
+
+
+
+Referenced by Magnetometer\-\_\-\-Init().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_magnetometer_8c_a327aa32535df77ad38ca4d124aae4dc6}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Ctrl\-Reg\-One@{Ctrl\-Reg\-One}}
+\index{Ctrl\-Reg\-One@{Ctrl\-Reg\-One}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Ctrl\-Reg\-One}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-One}}}\label{_magnetometer_8c_a327aa32535df77ad38ca4d124aae4dc6}
+Defines the settings for control register one. The output data rate (O\-D\-R) is equal to the A\-D\-C\-\_\-\-R\-A\-T\-E/\-O\-S\-R. E.\-g. A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-1280/\-O\-S\-R\-\_\-16 = 80 Hz O\-D\-R \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-640@{A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-640}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-640@{A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-640}}\item[{\em 
+\hypertarget{_magnetometer_8c_a327aa32535df77ad38ca4d124aae4dc6a33e474730dcf02b31db6ad2ad0e31c49}{A\-D\-C\-\_\-\-R\-A\-T\-E\-\_\-640}\label{_magnetometer_8c_a327aa32535df77ad38ca4d124aae4dc6a33e474730dcf02b31db6ad2ad0e31c49}
+}]analog sample rate in Hz \index{O\-S\-R\-\_\-32@{O\-S\-R\-\_\-32}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!O\-S\-R\-\_\-32@{O\-S\-R\-\_\-32}}\item[{\em 
+\hypertarget{_magnetometer_8c_a327aa32535df77ad38ca4d124aae4dc6ab3beff6f8d7e1ecfb1b813abdda9945c}{O\-S\-R\-\_\-32}\label{_magnetometer_8c_a327aa32535df77ad38ca4d124aae4dc6ab3beff6f8d7e1ecfb1b813abdda9945c}
+}]over sampling ratio \end{description}
+\end{Desc}
+
+
+Definition at line 96 of file Magnetometer.\-c.
+
+\hypertarget{_magnetometer_8c_a8a8b2fe15ae027dc0aaab9d5db17e1db}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Ctrl\-Reg\-Two@{Ctrl\-Reg\-Two}}
+\index{Ctrl\-Reg\-Two@{Ctrl\-Reg\-Two}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Ctrl\-Reg\-Two}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-Two}}}\label{_magnetometer_8c_a8a8b2fe15ae027dc0aaab9d5db17e1db}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\-A\-W\-\_\-\-E\-N\-A\-B\-L\-E@{R\-A\-W\-\_\-\-E\-N\-A\-B\-L\-E}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!R\-A\-W\-\_\-\-E\-N\-A\-B\-L\-E@{R\-A\-W\-\_\-\-E\-N\-A\-B\-L\-E}}\item[{\em 
+\hypertarget{_magnetometer_8c_a8a8b2fe15ae027dc0aaab9d5db17e1dba6af75e9f21013eae2e3f9b7f81f32842}{R\-A\-W\-\_\-\-E\-N\-A\-B\-L\-E}\label{_magnetometer_8c_a8a8b2fe15ae027dc0aaab9d5db17e1dba6af75e9f21013eae2e3f9b7f81f32842}
+}]resets the magnetic sensor after exposure to large magnetic field \index{A\-U\-T\-O\-\_\-\-M\-R\-S\-T\-\_\-\-E\-N@{A\-U\-T\-O\-\_\-\-M\-R\-S\-T\-\_\-\-E\-N}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!A\-U\-T\-O\-\_\-\-M\-R\-S\-T\-\_\-\-E\-N@{A\-U\-T\-O\-\_\-\-M\-R\-S\-T\-\_\-\-E\-N}}\item[{\em 
+\hypertarget{_magnetometer_8c_a8a8b2fe15ae027dc0aaab9d5db17e1dbad54fac7b42137d575e7b66194917e6c5}{A\-U\-T\-O\-\_\-\-M\-R\-S\-T\-\_\-\-E\-N}\label{_magnetometer_8c_a8a8b2fe15ae027dc0aaab9d5db17e1dbad54fac7b42137d575e7b66194917e6c5}
+}]if enabled, sensor will output raw data not scaled by user offset \end{description}
+\end{Desc}
+
+
+Definition at line 115 of file Magnetometer.\-c.
+
+\hypertarget{_magnetometer_8c_a7c73219810c365799403c7e8000c07c5}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Data\-Ready\-Status@{Data\-Ready\-Status}}
+\index{Data\-Ready\-Status@{Data\-Ready\-Status}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Data\-Ready\-Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Data\-Ready\-Status}}}\label{_magnetometer_8c_a7c73219810c365799403c7e8000c07c5}
+Defines the bitmask for the data ready status register 
+
+Definition at line 70 of file Magnetometer.\-c.
+
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-t@{Mag\-Reg\-\_\-t}}
+\index{Mag\-Reg\-\_\-t@{Mag\-Reg\-\_\-t}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Mag\-Reg\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Mag\-Reg\-\_\-t}}}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237}
+Defines the possible registers that can be read from or written to on the magnetometer. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a8ce097b152c39cd732ab463f3084200b}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a8ce097b152c39cd732ab463f3084200b}
+}]Data Ready Status (r ) \index{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a80de27f1f71bfdc9501979f7a15f46b7}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a80de27f1f71bfdc9501979f7a15f46b7}
+}]Sensor data (r ) \index{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a29ab98a87251a61350c4d39f3ddc2b12}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a29ab98a87251a61350c4d39f3ddc2b12}
+}](r ) \index{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a979db1e24ec0d7762b095f4379cb675e}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a979db1e24ec0d7762b095f4379cb675e}
+}](r ) \index{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a091f19b1b1219c0dee7e5146c36612ac}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a091f19b1b1219c0dee7e5146c36612ac}
+}](r ) \index{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a7750d8d6f8829912849a5a7b0edf8830}{Mag\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a7750d8d6f8829912849a5a7b0edf8830}
+}](r ) \index{Mag\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{Mag\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{Mag\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237ab1e9051811f7ec6e38c4e2fb8e25519b}{Mag\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237ab1e9051811f7ec6e38c4e2fb8e25519b}
+}](r ) \index{Mag\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D@{Mag\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D@{Mag\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a47df885a1e80633f98c9a8d9993b678a}{Mag\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a47df885a1e80633f98c9a8d9993b678a}
+}]chip identifier byte (r ) \index{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-M\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237aac2f1580b3609755d04331348d0d39a7}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-M\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237aac2f1580b3609755d04331348d0d39a7}
+}]system mode (r ) \index{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-L\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a876d0fc7d58bf56c8f18d07fc71fe0fa}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-X\-\_\-\-L\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a876d0fc7d58bf56c8f18d07fc71fe0fa}
+}](r/w) \index{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-M\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a3110edcd5697c318b31762d964da1cf5}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-M\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a3110edcd5697c318b31762d964da1cf5}
+}](r/w) \index{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-L\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237aa230d4b7f080a1e1608cadff0d36b3c2}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y\-\_\-\-L\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237aa230d4b7f080a1e1608cadff0d36b3c2}
+}](r/w) \index{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-M\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-M\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a00b7f2b2fbe95c2000b550da79717bda}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-M\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a00b7f2b2fbe95c2000b550da79717bda}
+}](r/w) \index{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-L\-S\-B}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-L\-S\-B@{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237aee7e3ab1e60c7ac417367191de28661f}{Mag\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z\-\_\-\-L\-S\-B}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237aee7e3ab1e60c7ac417367191de28661f}
+}](r/w) \index{Mag\-Reg\-\_\-\-D\-I\-E\-\_\-\-T\-E\-M\-P@{Mag\-Reg\-\_\-\-D\-I\-E\-\_\-\-T\-E\-M\-P}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-D\-I\-E\-\_\-\-T\-E\-M\-P@{Mag\-Reg\-\_\-\-D\-I\-E\-\_\-\-T\-E\-M\-P}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a6e76fa50dd331296a9e8722d142986a1}{Mag\-Reg\-\_\-\-D\-I\-E\-\_\-\-T\-E\-M\-P}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237a6e76fa50dd331296a9e8722d142986a1}
+}](r/w) \index{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1@{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1@{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237af28586785c97910ba615fe973412bc52}{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237af28586785c97910ba615fe973412bc52}
+}](r ) \index{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2@{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2}!Magnetometer.\-c@{Magnetometer.\-c}}\index{Magnetometer.\-c@{Magnetometer.\-c}!Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2@{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2}}\item[{\em 
+\hypertarget{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237ac6e6166ec8f13fe839958c88a8f98dd1}{Mag\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2}\label{_magnetometer_8c_a4dcfc6e16b201756dfc37500aac53237ac6e6166ec8f13fe839958c88a8f98dd1}
+}](r/w) \end{description}
+\end{Desc}
+
+
+Definition at line 47 of file Magnetometer.\-c.
+
+\hypertarget{_magnetometer_8c_a8434a19661102ef71cf2f5dc52cf7eb6}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Sys\-Mod@{Sys\-Mod}}
+\index{Sys\-Mod@{Sys\-Mod}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Sys\-Mod}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Sys\-Mod}}}\label{_magnetometer_8c_a8434a19661102ef71cf2f5dc52cf7eb6}
+Defines the states of the system mode register 
+
+Definition at line 86 of file Magnetometer.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_magnetometer_8c_abffbea3ffff0c24e1b68e3fbf6d57e57}{\index{Magnetometer.\-c@{Magnetometer.\-c}!\-\_\-\-Handle\-Data\-Ready\-Interrupt@{\-\_\-\-Handle\-Data\-Ready\-Interrupt}}
+\index{\-\_\-\-Handle\-Data\-Ready\-Interrupt@{\-\_\-\-Handle\-Data\-Ready\-Interrupt}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Data\-Ready\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Data\-Ready\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_8c_abffbea3ffff0c24e1b68e3fbf6d57e57}
+Handles the G\-P\-I\-O event that indicates that data is ready on the magnetometer. 
+
+Definition at line 620 of file Magnetometer.\-c.
+
+
+
+Referenced by Magnetometer\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_a2d8c5304acdfccd9f4cbbd54ff8b493c}{\index{Magnetometer.\-c@{Magnetometer.\-c}!\-\_\-\-Read\-Multiple\-Registers@{\-\_\-\-Read\-Multiple\-Registers}}
+\index{\-\_\-\-Read\-Multiple\-Registers@{\-\_\-\-Read\-Multiple\-Registers}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{\-\_\-\-Read\-Multiple\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Read\-Multiple\-Registers (
+\begin{DoxyParamCaption}
+\item[{{\bf Mag\-Reg\-\_\-t}}]{start\-Reg, }
+\item[{{\bf uint8\-\_\-t}}]{num\-Registers, }
+\item[{{\bf uint8\-\_\-t}}]{registers\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_8c_a2d8c5304acdfccd9f4cbbd54ff8b493c}
+Reads a multiple consecutive registers from the magnetometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\-Reg} & -\/ the first register to read of the consecutive registers \\
+\hline
+\mbox{\tt in}  & {\em num\-Registers} & -\/ The number of consecutive registers to read \\
+\hline
+\mbox{\tt in}  & {\em registers\mbox{[}$\,$\mbox{]}} & -\/ the array in which the register values will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Make sure that registers\mbox{[}\mbox{]} has at least num\-Registers elements to hold the register data. 
+\end{DoxyNote}
+
+
+Definition at line 668 of file Magnetometer.\-c.
+
+
+
+Referenced by Magnetometer\-\_\-\-Read\-Sample(), Magnetometer\-\_\-\-Read\-Sample\-Array(), and Magnetometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_a10389d45bccf31b7fa39dbd26f851803}{\index{Magnetometer.\-c@{Magnetometer.\-c}!\-\_\-\-Read\-Single\-Register@{\-\_\-\-Read\-Single\-Register}}
+\index{\-\_\-\-Read\-Single\-Register@{\-\_\-\-Read\-Single\-Register}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{\-\_\-\-Read\-Single\-Register}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf uint8\-\_\-t} \-\_\-\-Read\-Single\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf Mag\-Reg\-\_\-t}}]{reg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_8c_a10389d45bccf31b7fa39dbd26f851803}
+Reads a single register from the magnetometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg-\/} & the register to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value read from the magnetometer register 
+\end{DoxyReturn}
+
+
+Definition at line 638 of file Magnetometer.\-c.
+
+
+
+Referenced by Magnetometer\-\_\-\-Config(), Magnetometer\-\_\-\-Init(), Magnetometer\-\_\-\-Read\-Temp(), Magnetometer\-\_\-\-Reset\-Sensor\-Blocking(), Magnetometer\-\_\-\-Start(), and Magnetometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_a61f3794e7c618ee6443c8ec9436e26ad}{\index{Magnetometer.\-c@{Magnetometer.\-c}!\-\_\-\-Write\-Single\-Register@{\-\_\-\-Write\-Single\-Register}}
+\index{\-\_\-\-Write\-Single\-Register@{\-\_\-\-Write\-Single\-Register}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{\-\_\-\-Write\-Single\-Register}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I2c\-Error\-\_\-t} \-\_\-\-Write\-Single\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf Mag\-Reg\-\_\-t}}]{reg, }
+\item[{{\bf uint8\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_8c_a61f3794e7c618ee6443c8ec9436e26ad}
+Writes a single register to the magnetometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg} & -\/ the register to write to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ The value to write to the register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I2c\-Error\-\_\-\-O\-K if the register could be written successfully. Otherwise return an I2c\-Error. 
+\end{DoxyReturn}
+
+
+Definition at line 708 of file Magnetometer.\-c.
+
+
+
+Referenced by Magnetometer\-\_\-\-Config(), Magnetometer\-\_\-\-Init(), Magnetometer\-\_\-\-Reset\-Sensor\-Blocking(), Magnetometer\-\_\-\-Set\-Calibration(), Magnetometer\-\_\-\-Start(), Magnetometer\-\_\-\-Stop(), and Magnetometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_ae85c6dbba68d26df7855b25d8979f9ce}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Config@{Magnetometer\-\_\-\-Config}}
+\index{Magnetometer\-\_\-\-Config@{Magnetometer\-\_\-\-Config}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Magnetometer\-\_\-\-Config (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mag\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_ae85c6dbba68d26df7855b25d8979f9ce}
+Configures the magnetometer, but does not start the sampling.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ Structure of selected magnetometer settings.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the configuration was successful, false otherwise. The configuration will fail if the magnetometer is not in standby when configured. 
+\end{DoxyReturn}
+
+
+Definition at line 193 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_a24236d83f8ad5a94c17e6414904ea6f6}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Init@{Magnetometer\-\_\-\-Init}}
+\index{Magnetometer\-\_\-\-Init@{Magnetometer\-\_\-\-Init}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_a24236d83f8ad5a94c17e6414904ea6f6}
+Initializes the magnetometer, but does not configure or start the sampling. 
+
+Definition at line 159 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_aaddbb66c4df1f1e47afc3cdbe4c1122a}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Read\-Sample@{Magnetometer\-\_\-\-Read\-Sample}}
+\index{Magnetometer\-\_\-\-Read\-Sample@{Magnetometer\-\_\-\-Read\-Sample}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Read\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Magnetometer\-\_\-\-Read\-Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf Mag\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_aaddbb66c4df1f1e47afc3cdbe4c1122a}
+Reads a sample from the magnetometer if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample} & -\/ structure to hold the sample data once it is collected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sample was ready, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 526 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Read\-Mag().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_a20958a3807b25a8b07da31a385af787a}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Read\-Sample\-Array@{Magnetometer\-\_\-\-Read\-Sample\-Array}}
+\index{Magnetometer\-\_\-\-Read\-Sample\-Array@{Magnetometer\-\_\-\-Read\-Sample\-Array}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Read\-Sample\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Read\-Sample\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_a20958a3807b25a8b07da31a385af787a}
+Reads a sample from the magnetometer if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Length} & -\/ the maximum number of items that can be written to data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em actua\-Length} & -\/ the actual number of items written to data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em data} & -\/ the array that the data will be stored in. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 560 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Read\-Mag().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_aff2683c4a9992b3fb92207239d130622}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Read\-Temp@{Magnetometer\-\_\-\-Read\-Temp}}
+\index{Magnetometer\-\_\-\-Read\-Temp@{Magnetometer\-\_\-\-Read\-Temp}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Read\-Temp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int8\-\_\-t} Magnetometer\-\_\-\-Read\-Temp (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_aff2683c4a9992b3fb92207239d130622}
+Reads the die temperature of the device.
+
+\begin{DoxyReturn}{Returns}
+Temperature in °\-C as a signed 8-\/bit integer number 
+\end{DoxyReturn}
+
+
+Definition at line 590 of file Magnetometer.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_aa39b22c63f0f6fda46569d535070334e}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Register\-Isr@{Magnetometer\-\_\-\-Register\-Isr}}
+\index{Magnetometer\-\_\-\-Register\-Isr@{Magnetometer\-\_\-\-Register\-Isr}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Register\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Register\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Mag\-Isr\-Pointer\-\_\-t}}]{isr}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_aa39b22c63f0f6fda46569d535070334e}
+Sets a function that will be ran when the data ready interrupt occurs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em isr} & -\/ pointer to the accelerometer data ready I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 603 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_a2f8aa103b7db96d01167f9dfa83bb053}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Reset\-Sensor\-Blocking@{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking}}
+\index{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking@{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Reset\-Sensor\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Reset\-Sensor\-Blocking (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_a2f8aa103b7db96d01167f9dfa83bb053}
+Resets the sensor in the magnetometer and blocks until the sensor is reset. 
+
+Definition at line 460 of file Magnetometer.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_abf9639cb901b8a88043c1a73e4fad906}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Set\-Calibration@{Magnetometer\-\_\-\-Set\-Calibration}}
+\index{Magnetometer\-\_\-\-Set\-Calibration@{Magnetometer\-\_\-\-Set\-Calibration}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Set\-Calibration}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Set\-Calibration (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mag\-Sample\-\_\-t} $\ast$}]{calibration}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_abf9639cb901b8a88043c1a73e4fad906}
+Writes the sensor calibration data to the magnetometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em calibration} & -\/ structure to hold the calibration data to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 487 of file Magnetometer.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_ab1c7f61cf144d63503818c735afe6834}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Start@{Magnetometer\-\_\-\-Start}}
+\index{Magnetometer\-\_\-\-Start@{Magnetometer\-\_\-\-Start}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_ab1c7f61cf144d63503818c735afe6834}
+Starts the magnetometer sampling at its configured data rate. 
+
+Definition at line 368 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_aa859a7cf895fd5118acfcb44fc596517}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Stop@{Magnetometer\-\_\-\-Stop}}
+\index{Magnetometer\-\_\-\-Stop@{Magnetometer\-\_\-\-Stop}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetometer\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_aa859a7cf895fd5118acfcb44fc596517}
+Stops the data collecting of the magnetometer. 
+
+Definition at line 399 of file Magnetometer.\-c.
+
+
+
+Referenced by Mag\-Control\-\_\-\-Set\-Config(), and Thermometer\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_a74a9a63d349b4532ea66269102cb9768}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetometer\-\_\-\-Trigger\-Sample\-Blocking@{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking}}
+\index{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking@{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetometer\-\_\-\-Trigger\-Sample\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Magnetometer\-\_\-\-Trigger\-Sample\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Mag\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_a74a9a63d349b4532ea66269102cb9768}
+Triggers a sample from the magnetometer and blocks until the sample is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sample} & -\/ structure to hold the sample data once it is collected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sample was aquired, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 419 of file Magnetometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Mag\-Command().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_magnetometer_8c_a565ba3b8fa0996f539ed35d52fbc2410}{\index{Magnetometer.\-c@{Magnetometer.\-c}!Magnetomter\-\_\-\-Unregister\-Isr@{Magnetomter\-\_\-\-Unregister\-Isr}}
+\index{Magnetomter\-\_\-\-Unregister\-Isr@{Magnetomter\-\_\-\-Unregister\-Isr}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{Magnetomter\-\_\-\-Unregister\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Magnetomter\-\_\-\-Unregister\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_magnetometer_8c_a565ba3b8fa0996f539ed35d52fbc2410}
+Clears the custom I\-S\-R for the magnetometer. 
+
+Definition at line 612 of file Magnetometer.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_magnetometer_8c_a115ec046d09a014933e350a2d374b87a}{\index{Magnetometer.\-c@{Magnetometer.\-c}!\-\_\-control\-Reg\-One@{\-\_\-control\-Reg\-One}}
+\index{\-\_\-control\-Reg\-One@{\-\_\-control\-Reg\-One}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{\-\_\-control\-Reg\-One}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t} \-\_\-control\-Reg\-One = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_8c_a115ec046d09a014933e350a2d374b87a}
+Stores the values written to the control registers because the chip always reads back 0x00 when reading the register. 
+
+Definition at line 142 of file Magnetometer.\-c.
+
+
+
+Referenced by Magnetometer\-\_\-\-Config(), Magnetometer\-\_\-\-Init(), Magnetometer\-\_\-\-Start(), and Magnetometer\-\_\-\-Stop().
+
+\hypertarget{_magnetometer_8c_a11dbd8006370044a4d0ddadf9cc3e735}{\index{Magnetometer.\-c@{Magnetometer.\-c}!\-\_\-data\-Ready@{\-\_\-data\-Ready}}
+\index{\-\_\-data\-Ready@{\-\_\-data\-Ready}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{\-\_\-data\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-data\-Ready = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_8c_a11dbd8006370044a4d0ddadf9cc3e735}
+Tracks if data is ready to be read from the magnetometer 
+
+Definition at line 146 of file Magnetometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Data\-Ready\-Interrupt(), Magnetometer\-\_\-\-Read\-Sample(), and Magnetometer\-\_\-\-Read\-Sample\-Array().
+
+\hypertarget{_magnetometer_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Magnetometer.\-c@{Magnetometer.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the magnetometer is initialized 
+
+Definition at line 130 of file Magnetometer.\-c.
+
+\hypertarget{_magnetometer_8c_a74f2fdf34e5d18172079f0d791831850}{\index{Magnetometer.\-c@{Magnetometer.\-c}!\-\_\-mag\-Isr\-Pointer@{\-\_\-mag\-Isr\-Pointer}}
+\index{\-\_\-mag\-Isr\-Pointer@{\-\_\-mag\-Isr\-Pointer}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{\-\_\-mag\-Isr\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mag\-Isr\-Pointer\-\_\-t} \-\_\-mag\-Isr\-Pointer = {\bf N\-U\-L\-L}\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_8c_a74f2fdf34e5d18172079f0d791831850}
+Stores the I\-S\-R pointer 
+
+Definition at line 134 of file Magnetometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Data\-Ready\-Interrupt(), Magnetometer\-\_\-\-Register\-Isr(), and Magnetomter\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_magnetometer_8c_a1d3ba5ed03acbb3f828fed88cdddb6f8}{\index{Magnetometer.\-c@{Magnetometer.\-c}!\-\_\-parameters@{\-\_\-parameters}}
+\index{\-\_\-parameters@{\-\_\-parameters}!Magnetometer.c@{Magnetometer.\-c}}
+\subsubsection[{\-\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mag\-Config\-\_\-t} \-\_\-parameters\hspace{0.3cm}{\ttfamily [static]}}}\label{_magnetometer_8c_a1d3ba5ed03acbb3f828fed88cdddb6f8}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{MagSampleRate\_1280, MagOverSampleRatio\_16, MagDataScaling\_RAW, MagAutoReset\_ENABLED,
+                                  MagSampling\_Auto, MagResolution\_16BIT\}
+\end{DoxyCode}
+Stores the configuration parameters for the \-\_\-initialized port 
+
+Definition at line 137 of file Magnetometer.\-c.
+

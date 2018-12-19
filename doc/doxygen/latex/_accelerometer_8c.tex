@@ -1,0 +1,1710 @@
+\hypertarget{_accelerometer_8c}{\section{Accelerometer.\-c File Reference}
+\label{_accelerometer_8c}\index{Accelerometer.\-c@{Accelerometer.\-c}}
+}
+
+
+Accelerometer sensor interface module.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Accelerometer.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$I2c.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+Include dependency graph for Accelerometer.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_accelerometer_8c_a9fcb9e460d175bfc7ab4d80bf788b43a}{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}~((\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t})0x1\-A)
+\item 
+\#define \hyperlink{_accelerometer_8c_a5c2c27ee09f782613f5cbfdd6536ff48}{A\-C\-C\-\_\-\-P\-O\-R\-T}~I2c\-Port\-\_\-0
+\item 
+\#define \hyperlink{_accelerometer_8c_a27341a8e1cb1a6ace5a5cf3caea1c99f}{A\-C\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S}~((\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t})0x1\-C)
+\item 
+\#define \hyperlink{_accelerometer_8c_a25065cd833bcfecfb404093aed3edaca}{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}~6
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9}{Acc\-Reg\-\_\-t} \{ \\*
+{\bfseries Acc\-Reg\-\_\-\-S\-T\-A\-T\-U\-S} = 0x00, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9af86aaedacce184e26d35f9a251cea2f5}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a8486e772c9998144e4257f75f9bc3b96}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ad2f2d732a972bc75561b181f4228518f}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B} = 0x03, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a2e2d8494d40cb64eadf6beab9e56ca2f}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab05c521d876a5c1818d91a2a516a21c1}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B} = 0x05, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a23b2479eebd25c9a7700a4e751242786}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B} = 0x06, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a998899e02b11f293a40fb026ce913112}{Acc\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-E\-T\-U\-P} = 0x09, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a6aa7d962c425c1d9b4c3172c0aa46c54}{Acc\-Reg\-\_\-\-T\-R\-I\-G\-\_\-\-C\-O\-N\-F\-I\-G} = 0x0\-A, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a3fcc66d1b4eb659c23ceff265c38ac5b}{Acc\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D} = 0x0\-B, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ac1f8a7ce4ef9cd98293027f337e99e3d}{Acc\-Reg\-\_\-\-I\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-A\-T} = 0x0\-C, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a63b26cb1aed7e072ea0d4311ff90e411}{Acc\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I} = 0x0\-D, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a320b9e85a21929a98ea1c83bd9e43e01}{Acc\-Reg\-\_\-\-X\-Y\-Z\-\_\-\-D\-A\-T\-A\-\_\-\-C\-O\-N\-F\-I\-G} = 0x0\-E, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a7b041b8c1f4afffcfc859b6fe3a540b4}{Acc\-Reg\-\_\-\-H\-P\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-C\-U\-T\-O\-F\-F} = 0x0\-F, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a0be5d6b7ae7699723ab9095fce82db8c}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-S\-T\-A\-T\-U\-S} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a8534a3df7d4335282a73472ded0fc583}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-N\-F\-I\-G} = 0x11, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab60cc579541ee7c2adf36f8b423ddaf6}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-U\-N\-T} = 0x12, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9aad26a120142b527ebec9c0a4cdb1b9c2}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-B\-F\-\_\-\-Z\-C\-O\-M\-P} = 0x13, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a229194a5404bbe743fb1606b6bbc91b7}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-T\-H\-S\-\_\-\-R\-E\-G} = 0x14, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a6161d6988523b9a348545c973fedc542}{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-N\-F\-I\-G} = 0x15, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a7a24648a48784eeb8a9403e27e975ed5}{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-S\-O\-U\-R\-C\-E} = 0x16, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a672b02ab9a5d2e140a385ce14818057a}{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-T\-H\-S} = 0x17, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a0ba6bd9de199f0d89b8a192a2433377b}{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-U\-N\-T} = 0x18, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ad6e4a520f3f6b5529447113064ed9d69}{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-N\-F\-I\-G} = 0x1\-D, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab40c1a1fd95c7d64b145c43aabe94dc2}{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E} = 0x1\-E, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a5a6b2b06cc18b2457f4a50ba605f0da0}{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-T\-H\-S} = 0x1\-F, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a47dacc18e9c7bbf194c86748e73552f7}{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-U\-N\-T} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9aac23833d7334d3011ab01ef18f1d825d}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G} = 0x21, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a01a6464daf579edb35cc52985e6d9a24}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-O\-U\-R\-C\-E} = 0x22, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a08288764a48b1eb2429f2b029fed1707}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-X} = 0x23, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a3f023d159ad687985cf98d206ad3448f}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Y} = 0x24, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ae7b6dc3a780e2c4520545de51aa4d1a6}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Z} = 0x25, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a3bcbfa889a343a46a7c53e3427346e2f}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-M\-L\-T} = 0x26, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a242c5a2b1add3ba353db915b87f8a129}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-L\-T\-C\-Y} = 0x27, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ac6fad1d1c39a6f3a80048e2148df822d}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-W\-I\-N\-D} = 0x28, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a31ba95108756e1ad82b9c8245b81be20}{Acc\-Reg\-\_\-\-A\-S\-L\-P\-\_\-\-C\-O\-U\-N\-T} = 0x29, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a9e2548ce37261b4eabb316820674430c}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1} = 0x2\-A, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab8331a03c96406da515ad7705346b706}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2} = 0x2\-B, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab256e04d298e910db663231e926edfe5}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G3} = 0x2\-C, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ad0296c9017d9330370035fb41bb2ca56}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G4} = 0x2\-D, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a8d71e324607ffcae93f24aae6bdf1c5b}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G5} = 0x2\-E, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab31ca798255b2c21387796849d2753d1}{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-X} = 0x2\-F, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a2801150a8fbe2888f67ff8d1e89eb7b0}{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y} = 0x30, 
+\\*
+\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9af93779a0fce2853f297ec308708f666e}{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z} = 0x31
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a952ea32d355af359a672bae581818c9d}{Status\-\_\-t} \{ \\*
+{\bfseries Status\-\_\-\-Z\-Y\-X\-O\-W} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a952ea32d355af359a672bae581818c9da5f61c3357d3a4f38dd9dbd6489b5812c}{Status\-\_\-\-Z\-O\-W} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a952ea32d355af359a672bae581818c9dab9404bbedb577e6d1baf79723d50e728}{Status\-\_\-\-Y\-O\-W} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_a952ea32d355af359a672bae581818c9daaddcc50cd355c158fe2e681d5d6404d3}{Status\-\_\-\-X\-O\-W} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a952ea32d355af359a672bae581818c9daae184a0d80d1676c72262dd3eb29da24}{Status\-\_\-\-Z\-Y\-X\-D\-R} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a952ea32d355af359a672bae581818c9dab8ea36906227ff3ebf344ee50e4b761d}{Status\-\_\-\-Z\-D\-R} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_a952ea32d355af359a672bae581818c9da77567236e0ffa1cee366cf5690c9ba09}{Status\-\_\-\-Y\-D\-R} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a952ea32d355af359a672bae581818c9da347b03025d237c19217a5b2f93c1ddf6}{Status\-\_\-\-X\-D\-R} = 0x01
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131}{Fifo\-Status\-\_\-t} \{ \\*
+{\bfseries Fifo\-Status\-\_\-\-F\-\_\-\-O\-V\-F} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131ad9757ba9057d82fc48624182841dba99}{Fifo\-Status\-\_\-\-F\-\_\-\-W\-M\-R\-K\-\_\-\-F\-L\-A\-G} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131abd0392a251f1aa66ce4b59f1ece056c5}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T5} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131aad064d002397d4403431d24a5529eae9}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T4} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131af08fbbf8bb8360d4fc4794b1368c9ff8}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T3} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131a0407a1e602b653840da0530ebeb4c469}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T2} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131a1107925cb397126059b4bb4a27d4abf7}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T1} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131a290d3a49d7a0bd3abcee6e1a5b340ee9}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T0} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131aa31ddd0a0c22dbebec49ad0973eddee5}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T}
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6}{Fifo\-Setup\-\_\-t} \{ \\*
+{\bfseries Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E1} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6ac3487c54725f2d0e0521e05d1c69e22f}{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E0} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6ae844fb24d06feb89ca773c7702b0c1d3}{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E} = Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E1 $|$ Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E0, 
+\\*
+{\bfseries Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K5} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a2d5dd49d98a2626c3f73833ea0f7d274}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K4} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6af14b0a9474d63f4b21d16f8f5f5ba3ef}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K3} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a92d052b9ea02365c36cb725d9ec4d859}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K2} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a479aec936005d3b37f69d45c54f0b644}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K1} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a2a6c0380d8a3b5795d9f40875ec558e9}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K0} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a458ddd175aef016b24b1f61cb19226ca}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K}
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20daf}{Trigger\-Config\-\_\-t} \{ \\*
+{\bfseries Trigger\-Config\-\_\-\-T\-R\-A\-N\-S} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20dafaba27fbb4a71e017ce0b5dc83733e907e}{Trigger\-Config\-\_\-\-L\-N\-D\-P\-R\-T} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20dafa5690d34feae39371efad5b13c740f1a3}{Trigger\-Config\-\_\-\-P\-U\-L\-S\-E} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20dafa86d60021ed469fcdbefe9a2d218464a1}{Trigger\-Config\-\_\-\-F\-F\-\_\-\-M\-T} = 0x04
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316b}{Sys\-Mod\-\_\-t} \{ \\*
+{\bfseries Sys\-Mod\-\_\-\-F\-G\-E\-R\-R} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba94dbf99430815940dc235c081e5d2803}{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-4} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba3abfcc7302dae149595abcdd8e54eefc}{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-3} = 0x20, 
+\\*
+{\bfseries Sys\-Mod\-\_\-\-F\-G\-T\-\_\-2} = 0x10, 
+\\*
+{\bfseries Sys\-Mod\-\_\-\-F\-G\-T\-\_\-1} = 0x08, 
+\\*
+{\bfseries Sys\-Mod\-\_\-\-F\-G\-T\-\_\-0} = 0x04, 
+\\*
+{\bfseries Sys\-Mod\-\_\-\-F\-G\-T}, 
+\\*
+{\bfseries Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D1} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba574f1d5fa677553ce7d67a01a6ac289a}{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D0} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba3f3178e42b2c5cb146eda72d6f108265}{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D} = Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D1 $|$ Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D0, 
+\\*
+{\bfseries Sys\-Mod\-\_\-\-S\-T\-N\-D\-B\-Y} = 0x00, 
+\\*
+\hyperlink{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316baf5bd11b200ec6e8b09cc24f179770c73}{Sys\-Mod\-\_\-\-W\-A\-K\-E} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316baafbd7943c294bcc8137a84e38c5d6551}{Sys\-Mod\-\_\-\-S\-L\-E\-E\-P} = 0x02
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6}{Int\-Source\-Status\-\_\-t} \{ \\*
+{\bfseries Int\-Source\-Status\-\_\-\-A\-S\-L\-P} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6aacd7e567efac5964fa0ae569b8d1c215}{Int\-Source\-Status\-\_\-\-F\-I\-F\-O} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6a2f470df3f8a0727126f9511214557ab3}{Int\-Source\-Status\-\_\-\-T\-R\-A\-N\-S} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6a3c11a31d7a8e171441bb93e482c4b1cb}{Int\-Source\-Status\-\_\-\-L\-N\-D\-P\-R\-T} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6ade443974fe023894c76536b64bad21cb}{Int\-Source\-Status\-\_\-\-P\-U\-L\-S\-E} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6a2234a177a24b8da57790ecaaa43dc7da}{Int\-Source\-Status\-\_\-\-F\-F\-\_\-\-M\-T} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6aa5f630fe6ac8dfd636c1491095f4dde4}{Int\-Source\-Status\-\_\-\-D\-R\-D\-Y} = 0x01
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42}{Xyz\-Data\-Config\-\_\-t} \{ \\*
+{\bfseries Xyz\-Data\-Config\-\_\-\-H\-P\-F\-\_\-\-O\-U\-T} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a157a8c80c6c4ac2d07a609365e5e4e78}{Xyz\-Data\-Config\-\_\-\-F\-S1} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42ac27d68c931a3187991317fcc122318a3}{Xyz\-Data\-Config\-\_\-\-F\-S0} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a52a880a970fccf05161f38b67612b04a}{Xyz\-Data\-Config\-\_\-\-F\-S} = Xyz\-Data\-Config\-\_\-\-F\-S1 $|$ Xyz\-Data\-Config\-\_\-\-F\-S0, 
+\\*
+{\bfseries Xyz\-Data\-Config\-\_\-2g} = 0x00, 
+\\*
+\hyperlink{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a2bcbdf68a2df205ef1ef8ba3ba046cae}{Xyz\-Data\-Config\-\_\-4g} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a2d924d103f750436fda218a747b2b2a2}{Xyz\-Data\-Config\-\_\-8g} = 0x02
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1}{Hp\-Filter\-Cutoff\-\_\-t} \{ \\*
+{\bfseries Hp\-Filter\-Cutoff\-\_\-\-H\-P\-F\-\_\-\-B\-Y\-P} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1aa0a65b109622b2f9b7c1af0f3993e9f7}{Hp\-Filter\-Cutoff\-\_\-\-L\-P\-F\-\_\-\-E\-N} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1a3c2f26c2ab11837511ef4a3a09162368}{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L1} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1adc0e72da0c9eabf71ecb4d4ff61e12dc}{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L0} = 0x01, 
+\\*
+{\bfseries Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L} = Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L1 $|$ Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L0
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6}{Pl\-Status\-\_\-t} \{ \\*
+{\bfseries Pl\-Status\-\_\-\-N\-E\-W\-L\-P} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6a78bba235303230d208ba51abf697bf7d}{Pl\-Status\-\_\-\-L\-O} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6aa4dae433c4fd6b65b72c30e38fe13584}{Pl\-Status\-\_\-\-L\-A\-P\-O1} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6a5e855cf7ba18360b0fb76f88645343f6}{Pl\-Status\-\_\-\-L\-A\-P\-O0} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6a76c071edc81181465f6de9351abd3801}{Pl\-Status\-\_\-\-L\-A\-P\-O} = Pl\-Status\-\_\-\-L\-A\-P\-O1 $|$ Pl\-Status\-\_\-\-L\-A\-P\-O0, 
+\\*
+{\bfseries Pl\-Status\-\_\-\-B\-A\-F\-R\-O} = 0x01
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a76e443f4bb0470286be39d8ec4a94fb6}{Pl\-Config\-\_\-t} \{ \\*
+{\bfseries Pl\-Config\-\_\-\-D\-B\-C\-N\-T\-M} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a76e443f4bb0470286be39d8ec4a94fb6af60d7ae259df4ea37d1f6f86b5ecac4b}{Pl\-Config\-\_\-\-P\-L\-\_\-\-E\-N} = 0x40
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_acafcd5818a51a00bae93c0061ff206af}{Pl\-Bf\-Comp\-\_\-t} \{ \\*
+{\bfseries Pl\-Bf\-Comp\-\_\-\-B\-K\-F\-R} = 0x\-C0, 
+\\*
+\hyperlink{_accelerometer_8c_acafcd5818a51a00bae93c0061ff206afae9c29a0b4fc33f6537219ce4c29e0f35}{Pl\-Bf\-Comp\-\_\-\-Z\-L\-O\-C\-K} = 0x07
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a6ed8659bcef02cdc8a60ac8ac8d9256e}{Pl\-Threshold\-\_\-t} \{ \\*
+{\bfseries Pl\-Threshold\-\_\-\-T\-H\-S} = 0x\-F8, 
+\\*
+\hyperlink{_accelerometer_8c_a6ed8659bcef02cdc8a60ac8ac8d9256eab23333daa6e246ecaadd7d829ffcdaaf}{Pl\-Threshold\-\_\-\-H\-Y\-S\-T} = 0x07
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370}{Ctrl\-Reg\-One\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E1} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370adb88e9b1746dc05cfda96b5970feb255}{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a73abcc43ec91cb9b2c79983d6fb6be4b}{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E} = Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E1 $|$ Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a7489fabf8c4c8d87032bc094cca64d0b}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2} = 0x20, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R1} = 0x10, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R0} = 0x08, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aac1433cc7d34b81441277a6b0d6d09dc}{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a019b379fd6b3c2cdc4f478dbb015a8ea}{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aed7e900f4f151aeb85bccb2287185e22}{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370acdd9244c59ca7a58914d84aeb3f52505}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800} = 0x00, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-400} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-200} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-100} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-50} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-12\-\_\-5} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-6\-\_\-25} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R1, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-1\-\_\-56} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R2 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R1} = 0x80, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R0} = 0x40, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a538ec2d7e405b767d53d9e877939c13c}{Ctrl\-Reg\-One\-\_\-\-B\-W1} = 0x20, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-B\-W0} = 0x10, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-B\-W} = Ctrl\-Reg\-One\-\_\-\-B\-W1 $|$ Ctrl\-Reg\-One\-\_\-\-B\-W0, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a039c3112ddc78eb37ab15d924b413d3d}{Ctrl\-Reg\-One\-\_\-\-P\-D} = 0x08, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aff3b305765477683c437ffe5ce20e0a8}{Ctrl\-Reg\-One\-\_\-\-Zen} = 0x04, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a22fd8ac984dfbc6b745e5cba208f11a2}{Ctrl\-Reg\-One\-\_\-\-Yen} = 0x02, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a035ca1ae64c0562f41ffa632b8c57c03}{Ctrl\-Reg\-One\-\_\-\-Xen} = 0x01, 
+\\*
+\hyperlink{_gyroscope_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a769b8a9a870190f0b67f73262ad647b0}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1 $|$ Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-380} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R1, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-190} = Ctrl\-Reg\-One\-\_\-\-O\-D\-R0, 
+\\*
+{\bfseries Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-95} = 0x00
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9e}{Ctrl\-Reg\-Two\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-T\-\_\-\-E\-N} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea13be3979b9873f3bd6f90c9c3086965d}{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea8ce4d738f28ba2685d7dd28da16d0508}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea9cdc7f767bced2ef75ea841fce5a211a}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea6f57cc9b01f414ea341c556836814871}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S} = Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1 $|$ Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea0ac14cb9f12c4565762786994d25339c}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L} = 0x00, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-L\-N\-L\-P} = Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-H\-R\-E\-S} = Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-L\-P\-W\-R} = Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1 $|$ Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-S\-L\-P\-E} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9eaa5ea90013b646da44be35ce56d8b1672}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9eab1c43b792a4a8ac5d92b9ec039034e1d}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0} = 0x01, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea82982c455e20c50d7c2cf07270a3fa29}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S} = Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1 $|$ Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0, 
+\\*
+\hyperlink{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea806f3328704ef68b4bf433fe61a0123d}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L} = 0x00, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-L\-N\-L\-P} = Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-H\-R\-E\-S} = Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-L\-P\-W\-R} = Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1 $|$ Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-M1} = 0x20, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-M0} = 0x10, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-M} = Ctrl\-Reg\-Two\-\_\-\-H\-P\-M1 $|$ Ctrl\-Reg\-Two\-\_\-\-H\-P\-M0, 
+\\*
+\hyperlink{_gyroscope_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea102c368479ef1d536f146e4678dc4b3a}{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3} = 0x08, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F2} = 0x04, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F1} = 0x02, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F0} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F} = Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3 $|$ Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3 $|$ Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F1 $|$ Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F0
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165}{Ctrl\-Reg\-Three\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-Three\-\_\-\-F\-I\-F\-O\-\_\-\-G\-A\-T\-E} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a3a1ad6c9a92ff492feb1cbb0bc9728b8}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a536a922d52daf1dd8e733e13c41b527a}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165ad0861e8380ba5fcdd1ef97095c309e9a}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a60c6caf426a40b086975ca2d09623d42}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165adb83e08c04a9bcac9d7acc88e06cd010}{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L} = 0x02, 
+\\*
+\hyperlink{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Int1} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a516f7253e3d4b6c10d22a673261dc5b0}{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a86c0999cb59a4f1b4d7dd945f11a0680}{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive} = 0x20, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D} = 0x10, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a83ceccc6dbc29a2f059eb514f0b6f4b5}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y} = 0x08, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165afa1c0ceb3e736d14f3a7a48a3dbd3327}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M} = 0x04, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165a84e6e773af12ca5f6546dce68a3ca15f}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run} = 0x02, 
+\\*
+\hyperlink{_gyroscope_8c_a88442bcd2a633cd42f649152ee23c165ac70c75fe75ed7d9a4f48c0120013c86d}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty} = 0x01
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7f}{Ctrl\-Reg\-Four\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-A\-S\-L\-P} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa4f1c431db5082a17e5e8d7bd453567d2}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fabdf7a05e3127ea3ec32a12ae724ecb68}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa7e08e96c572b5db00dd74b53a274d4dd}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa71e39a2081393c105034d86cf4e2c3d7}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa5bdb30c31efae2b6e5df6a0454cfde1b}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fab0da1fc76394c5987d2256872993aca6}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-B\-D\-U} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fad0dc00af62c34a63f94f72d1e7d10a6e}{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa28b8bbd687d2aca8799043ef041f2eb1}{Ctrl\-Reg\-Four\-\_\-\-F\-S1} = 0x20, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-F\-S0} = 0x10, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-F\-S} = Ctrl\-Reg\-Four\-\_\-\-F\-S1 $|$ Ctrl\-Reg\-Four\-\_\-\-F\-S0, 
+\\*
+\hyperlink{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa21559de50369d6295aa9ab79fc346bcc}{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M} = 0x01, 
+\\*
+\hyperlink{_gyroscope_8c_af6c4d01c55429c66eb0b79ea13484f7fa0ce81dd31daf7b346886a0a4cd818662}{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250} = 0x00, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-500} = Ctrl\-Reg\-Four\-\_\-\-F\-S0, 
+\\*
+{\bfseries Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-2000} = Ctrl\-Reg\-Four\-\_\-\-F\-S1
+ \}
+\item 
+enum \hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5}{Ctrl\-Reg\-Five\-\_\-t} \{ \\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-A\-S\-L\-P} = 0x80, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a57383af2f8bb7cc103d17381369688bc}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O} = 0x40, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5adb606d83df0b962cb71d5fb5bd51ae59}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S} = 0x20, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a1fd2a55dab7021da55db32c63316a523}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T} = 0x10, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac104fdd741fbe3b161e055ac9e969d78}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E} = 0x08, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac1417b81276ec0563615130c7ae1eeb0}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T} = 0x04, 
+\\*
+\hyperlink{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a01ac34b134f82cd3535b4d7191781600}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-B\-O\-O\-T} = 0x80, 
+\\*
+\hyperlink{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a5140bf870617e41d41cd03017486e650}{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N} = 0x40, 
+\\*
+\hyperlink{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5a2c99dde36ebad9eb86d78598f864340d}{Ctrl\-Reg\-Five\-\_\-\-H\-Pen} = 0x10, 
+\\*
+\hyperlink{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab93e27aded55004856be0ca48205146f}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1} = 0x08, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel0} = 0x04, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel} = Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1 $|$ Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel0, 
+\\*
+\hyperlink{_gyroscope_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab023711371db89dc3c94d417881363c6}{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1} = 0x02, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel0} = 0x01, 
+\\*
+{\bfseries Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel} = Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1 $|$ Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_accelerometer_8c_abffbea3ffff0c24e1b68e3fbf6d57e57}{\-\_\-\-Handle\-Data\-Ready\-Interrupt} (void)
+\item 
+static void \hyperlink{_accelerometer_8c_a9d2b62e3dd4358e27f614be64cd7283a}{\-\_\-\-Handle\-Other\-Interrupt} (void)
+\item 
+static \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_accelerometer_8c_a0699e7afdbf83edc44f0800ad5cc65f7}{\-\_\-\-Acc\-Read\-Single\-Register} (\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9}{Acc\-Reg\-\_\-t})
+\item 
+static void \hyperlink{_accelerometer_8c_a95df76fc222507aa3e76ed437159e1dc}{\-\_\-\-Acc\-Read\-Multiple\-Registers} (\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9}{Acc\-Reg\-\_\-t} start\-Reg, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} num\-Registers, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} registers\mbox{[}$\,$\mbox{]})
+\item 
+static \hyperlink{_i2c_8h_a527473c46a79e51f1107866ab5e3a706}{I2c\-Error\-\_\-t} \hyperlink{_accelerometer_8c_ac4d20255c523c786b86f430d083bf28a}{\-\_\-\-Acc\-Write\-Single\-Register} (\hyperlink{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9}{Acc\-Reg\-\_\-t} reg, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} value)
+\item 
+void \hyperlink{_accelerometer_8c_aab95b4004ca553f62854d5ef981d83f3}{Accelerometer\-\_\-\-Init} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_accelerometer_8c_a7e17ec73aec4e5e30c29c770600c8bbb}{Accelerometer\-\_\-\-Config} (const \hyperlink{_accelerometer_8h_struct_acc_config__t}{Acc\-Config\-\_\-t} $\ast$config)
+\item 
+void \hyperlink{_accelerometer_8c_a50c3ab0bd7821b6522abfe15d809d340}{Accelerometer\-\_\-\-Start} (void)
+\item 
+void \hyperlink{_accelerometer_8c_ac8a2ae0e168a1a611f846d6c8e3eaa63}{Accelerometer\-\_\-\-Stop} (void)
+\item 
+void \hyperlink{_accelerometer_8c_a2daa1344e52ddb15175faf6fa207a4ab}{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking} (\hyperlink{_accelerometer_8h_struct_acc_sample__t}{Acc\-Sample\-\_\-t} $\ast$sample)
+\item 
+\hypertarget{_accelerometer_8c_a6692d28df6233f41b9be5efdca98d9ec}{void {\bfseries Accelerometer\-\_\-\-Set\-Calibration} (const \hyperlink{_accelerometer_8h_struct_acc_sample__t}{Acc\-Sample\-\_\-t} $\ast$calibration)}\label{_accelerometer_8c_a6692d28df6233f41b9be5efdca98d9ec}
+
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_accelerometer_8c_a7f7a735f35344e05636854b28df834b9}{Accelerometer\-\_\-\-Read\-Sample} (\hyperlink{_accelerometer_8h_struct_acc_sample__t}{Acc\-Sample\-\_\-t} $\ast$sample)
+\item 
+void \hyperlink{_accelerometer_8c_ae8796d84277befae45dcd5bd63a143fb}{Accelerometer\-\_\-\-Read\-Sample\-Array} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} max\-Length, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$actual\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_accelerometer_8c_a38496c82db2e6068b2f0fa6d66a1f4f0}{Accelerometer\-\_\-\-Register\-Isr} (\hyperlink{_accelerometer_8h_a95871830017785e9918f254c63da3795}{Acc\-Isr\-Pointer\-\_\-t} isr)
+\item 
+void \hyperlink{_accelerometer_8c_a242fe4636491b9aabe4b78fc09bf5765}{Accelerometer\-\_\-\-Unregister\-Isr} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_accelerometer_8c_a4eb99285a0129893d3f48de7de237df5}{\-\_\-initialized} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_accelerometer_8c_af39e83a13943924b810540dd2d22fedb}{\-\_\-configured} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static \hyperlink{_accelerometer_8h_a95871830017785e9918f254c63da3795}{Acc\-Isr\-Pointer\-\_\-t} \hyperlink{_accelerometer_8c_a72b81e12fee6ca0807c56afd39fbebd0}{\-\_\-acc\-Isr\-Pointer} = \hyperlink{_project_types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}
+\item 
+static \hyperlink{_accelerometer_8h_struct_acc_config__t}{Acc\-Config\-\_\-t} \hyperlink{_accelerometer_8c_a858931594fd60bff6bbb37d767322d39}{\-\_\-parameters}
+\item 
+static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} \hyperlink{_accelerometer_8c_abfc3e4b112787a4d97990393a64626d4}{\-\_\-ctrl\-Reg\-One} = 0u
+\item 
+\hypertarget{_accelerometer_8c_a040aca61369edef14804d1dda7a1ada5}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-ctrl\-Reg\-Two} = 0u}\label{_accelerometer_8c_a040aca61369edef14804d1dda7a1ada5}
+
+\item 
+\hypertarget{_accelerometer_8c_a999ab60dfe109a3781666db4dda6057d}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-ctrl\-Reg\-Three} = 0u}\label{_accelerometer_8c_a999ab60dfe109a3781666db4dda6057d}
+
+\item 
+\hypertarget{_accelerometer_8c_a5d90df8f4e95b496d582aafaaaad29b1}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-ctrl\-Reg\-Four} = 0u}\label{_accelerometer_8c_a5d90df8f4e95b496d582aafaaaad29b1}
+
+\item 
+\hypertarget{_accelerometer_8c_aed08b5ebcee5eaf18ca5d47463481779}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-ctrl\-Reg\-Five} = 0u}\label{_accelerometer_8c_aed08b5ebcee5eaf18ca5d47463481779}
+
+\item 
+\hypertarget{_accelerometer_8c_aa112c4bad731accfcb0640d5912138dc}{static volatile \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} {\bfseries \-\_\-xyz\-Data\-Config} = 0u}\label{_accelerometer_8c_aa112c4bad731accfcb0640d5912138dc}
+
+\item 
+static \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_accelerometer_8c_aaf6261fa6a915445f7c09d64ba940e4e}{\-\_\-active} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\item 
+static volatile \hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_accelerometer_8c_a11dbd8006370044a4d0ddadf9cc3e735}{\-\_\-data\-Ready} = \hyperlink{_project_types_8h_a65e9886d74aaee76545e83dd09011727}{false}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Accelerometer sensor interface module. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} This module provides logic to interface with the 3-\/axis accelerometer. This logic assumes that the accelerometer in use is the Freescale M\-M\-A8451\-Q I2\-C digital accelerometer.
+
+\href{http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=MMA8451Q&fsrch=1&sr=5}{\tt Link to Product Webpage}
+
+\href{http://cache.freescale.com/files/sensors/doc/data_sheet/MMA8451Q.pdf?fpsp=1&WT_TYPE=Data%20Sheets&WT_VENDOR=FREESCALE&WT_FILE_FORMAT=pdf&WT_ASSET=Documentation}{\tt Link to Product Datasheet} 
+
+Definition in file \hyperlink{_accelerometer_8c_source}{Accelerometer.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_accelerometer_8c_a27341a8e1cb1a6ace5a5cf3caea1c99f}{\index{Accelerometer.\-c@{Accelerometer.\-c}!A\-C\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S@{A\-C\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S}}
+\index{A\-C\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S@{A\-C\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{A\-C\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-\_\-\-A\-D\-D\-R\-E\-S\-S~(({\bf uint8\-\_\-t})0x1\-C)}}\label{_accelerometer_8c_a27341a8e1cb1a6ace5a5cf3caea1c99f}
+Defines the accelerometer's I2\-C address. The primary address is 0x1\-C and the alternate address is 0x1\-D 
+
+Definition at line 476 of file Accelerometer.\-c.
+
+
+
+Referenced by \-\_\-\-Acc\-Read\-Multiple\-Registers(), \-\_\-\-Acc\-Read\-Single\-Register(), and \-\_\-\-Acc\-Write\-Single\-Register().
+
+\hypertarget{_accelerometer_8c_a5c2c27ee09f782613f5cbfdd6536ff48}{\index{Accelerometer.\-c@{Accelerometer.\-c}!A\-C\-C\-\_\-\-P\-O\-R\-T@{A\-C\-C\-\_\-\-P\-O\-R\-T}}
+\index{A\-C\-C\-\_\-\-P\-O\-R\-T@{A\-C\-C\-\_\-\-P\-O\-R\-T}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{A\-C\-C\-\_\-\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-\_\-\-P\-O\-R\-T~I2c\-Port\-\_\-0}}\label{_accelerometer_8c_a5c2c27ee09f782613f5cbfdd6536ff48}
+Defines the port the accelerometer is attached to 
+
+Definition at line 472 of file Accelerometer.\-c.
+
+
+
+Referenced by \-\_\-\-Acc\-Read\-Multiple\-Registers(), \-\_\-\-Acc\-Read\-Single\-Register(), and \-\_\-\-Acc\-Write\-Single\-Register().
+
+\hypertarget{_accelerometer_8c_a25065cd833bcfecfb404093aed3edaca}{\index{Accelerometer.\-c@{Accelerometer.\-c}!B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E@{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}}
+\index{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E@{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-Y\-T\-E\-S\-\_\-\-P\-E\-R\-\_\-\-S\-A\-M\-P\-L\-E~6}}\label{_accelerometer_8c_a25065cd833bcfecfb404093aed3edaca}
+Defines the number of bytes per sample reading in normal 14-\/bit mode 
+
+Definition at line 482 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Read\-Sample(), Accelerometer\-\_\-\-Read\-Sample\-Array(), and Accelerometer\-\_\-\-Start().
+
+\hypertarget{_accelerometer_8c_a9fcb9e460d175bfc7ab4d80bf788b43a}{\index{Accelerometer.\-c@{Accelerometer.\-c}!W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}}
+\index{W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{W\-H\-O\-\_\-\-A\-M\-\_\-\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-O\-\_\-\-A\-M\-\_\-\-I~(({\bf uint8\-\_\-t})0x1\-A)}}\label{_accelerometer_8c_a9fcb9e460d175bfc7ab4d80bf788b43a}
+Define the expected value of the W\-H\-O\-\_\-\-A\-M\-\_\-\-I query 
+
+Definition at line 212 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Init().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-t@{Acc\-Reg\-\_\-t}}
+\index{Acc\-Reg\-\_\-t@{Acc\-Reg\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Acc\-Reg\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Acc\-Reg\-\_\-t}}}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9}
+Defines the possible registers that can be read from or written to on the accelerometer. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9af86aaedacce184e26d35f9a251cea2f5}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-M\-S\-B}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9af86aaedacce184e26d35f9a251cea2f5}
+}](R ) Real time status \index{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a8486e772c9998144e4257f75f9bc3b96}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-X\-\_\-\-L\-S\-B}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a8486e772c9998144e4257f75f9bc3b96}
+}](R ) M\-S\-B of X sample, root pointer to X\-Y\-Z F\-I\-F\-O \index{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ad2f2d732a972bc75561b181f4228518f}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-M\-S\-B}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ad2f2d732a972bc75561b181f4228518f}
+}](R ) L\-S\-B of X sample \index{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a2e2d8494d40cb64eadf6beab9e56ca2f}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Y\-\_\-\-L\-S\-B}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a2e2d8494d40cb64eadf6beab9e56ca2f}
+}](R ) M\-S\-B of Y sample \index{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab05c521d876a5c1818d91a2a516a21c1}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-M\-S\-B}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab05c521d876a5c1818d91a2a516a21c1}
+}](R ) L\-S\-B of Y sample \index{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B@{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a23b2479eebd25c9a7700a4e751242786}{Acc\-Reg\-\_\-\-O\-U\-T\-\_\-\-Z\-\_\-\-L\-S\-B}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a23b2479eebd25c9a7700a4e751242786}
+}](R ) M\-S\-B of Z sample \index{Acc\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-E\-T\-U\-P@{Acc\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-E\-T\-U\-P}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-E\-T\-U\-P@{Acc\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-E\-T\-U\-P}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a998899e02b11f293a40fb026ce913112}{Acc\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-E\-T\-U\-P}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a998899e02b11f293a40fb026ce913112}
+}](R ) L\-S\-B of Z sample 0x07 -\/ 0x08 are reserved \index{Acc\-Reg\-\_\-\-T\-R\-I\-G\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-T\-R\-I\-G\-\_\-\-C\-O\-N\-F\-I\-G}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-T\-R\-I\-G\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-T\-R\-I\-G\-\_\-\-C\-O\-N\-F\-I\-G}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a6aa7d962c425c1d9b4c3172c0aa46c54}{Acc\-Reg\-\_\-\-T\-R\-I\-G\-\_\-\-C\-O\-N\-F\-I\-G}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a6aa7d962c425c1d9b4c3172c0aa46c54}
+}](R/\-W) F\-I\-F\-O setup \index{Acc\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D@{Acc\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D@{Acc\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a3fcc66d1b4eb659c23ceff265c38ac5b}{Acc\-Reg\-\_\-\-S\-Y\-S\-M\-O\-D}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a3fcc66d1b4eb659c23ceff265c38ac5b}
+}](R/\-W) Map of F\-I\-F\-O data capture events \index{Acc\-Reg\-\_\-\-I\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-A\-T@{Acc\-Reg\-\_\-\-I\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-A\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-I\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-A\-T@{Acc\-Reg\-\_\-\-I\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-A\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ac1f8a7ce4ef9cd98293027f337e99e3d}{Acc\-Reg\-\_\-\-I\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-A\-T}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ac1f8a7ce4ef9cd98293027f337e99e3d}
+}](R ) Current system mode \index{Acc\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{Acc\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I@{Acc\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a63b26cb1aed7e072ea0d4311ff90e411}{Acc\-Reg\-\_\-\-W\-H\-O\-\_\-\-A\-M\-\_\-\-I}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a63b26cb1aed7e072ea0d4311ff90e411}
+}](R ) Interrupt status \index{Acc\-Reg\-\_\-\-X\-Y\-Z\-\_\-\-D\-A\-T\-A\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-X\-Y\-Z\-\_\-\-D\-A\-T\-A\-\_\-\-C\-O\-N\-F\-I\-G}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-X\-Y\-Z\-\_\-\-D\-A\-T\-A\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-X\-Y\-Z\-\_\-\-D\-A\-T\-A\-\_\-\-C\-O\-N\-F\-I\-G}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a320b9e85a21929a98ea1c83bd9e43e01}{Acc\-Reg\-\_\-\-X\-Y\-Z\-\_\-\-D\-A\-T\-A\-\_\-\-C\-O\-N\-F\-I\-G}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a320b9e85a21929a98ea1c83bd9e43e01}
+}](R ) Device I\-D (0x1\-A) \index{Acc\-Reg\-\_\-\-H\-P\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-C\-U\-T\-O\-F\-F@{Acc\-Reg\-\_\-\-H\-P\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-C\-U\-T\-O\-F\-F}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-H\-P\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-C\-U\-T\-O\-F\-F@{Acc\-Reg\-\_\-\-H\-P\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-C\-U\-T\-O\-F\-F}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a7b041b8c1f4afffcfc859b6fe3a540b4}{Acc\-Reg\-\_\-\-H\-P\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-C\-U\-T\-O\-F\-F}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a7b041b8c1f4afffcfc859b6fe3a540b4}
+}](R/\-W) Dynamic range settings \index{Acc\-Reg\-\_\-\-P\-L\-\_\-\-S\-T\-A\-T\-U\-S@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-S\-T\-A\-T\-U\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-L\-\_\-\-S\-T\-A\-T\-U\-S@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-S\-T\-A\-T\-U\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a0be5d6b7ae7699723ab9095fce82db8c}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-S\-T\-A\-T\-U\-S}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a0be5d6b7ae7699723ab9095fce82db8c}
+}](R/\-W) Cutoff frequency is 16\-Hz @ 800 Hz \index{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-N\-F\-I\-G}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-N\-F\-I\-G}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a8534a3df7d4335282a73472ded0fc583}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-N\-F\-I\-G}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a8534a3df7d4335282a73472ded0fc583}
+}](R ) Landscape/\-Portrait orientation status \index{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-U\-N\-T@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-U\-N\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-U\-N\-T@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-U\-N\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab60cc579541ee7c2adf36f8b423ddaf6}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-U\-N\-T}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab60cc579541ee7c2adf36f8b423ddaf6}
+}](R/\-W) Landscape/\-Portrait configuration \index{Acc\-Reg\-\_\-\-P\-L\-\_\-\-B\-F\-\_\-\-Z\-C\-O\-M\-P@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-B\-F\-\_\-\-Z\-C\-O\-M\-P}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-L\-\_\-\-B\-F\-\_\-\-Z\-C\-O\-M\-P@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-B\-F\-\_\-\-Z\-C\-O\-M\-P}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9aad26a120142b527ebec9c0a4cdb1b9c2}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-B\-F\-\_\-\-Z\-C\-O\-M\-P}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9aad26a120142b527ebec9c0a4cdb1b9c2}
+}](R/\-W) Landscape/\-Portrait debounce counter \index{Acc\-Reg\-\_\-\-P\-L\-\_\-\-T\-H\-S\-\_\-\-R\-E\-G@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-T\-H\-S\-\_\-\-R\-E\-G}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-L\-\_\-\-T\-H\-S\-\_\-\-R\-E\-G@{Acc\-Reg\-\_\-\-P\-L\-\_\-\-T\-H\-S\-\_\-\-R\-E\-G}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a229194a5404bbe743fb1606b6bbc91b7}{Acc\-Reg\-\_\-\-P\-L\-\_\-\-T\-H\-S\-\_\-\-R\-E\-G}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a229194a5404bbe743fb1606b6bbc91b7}
+}](R/\-W) Back/\-Front Z-\/\-Lock trip threshold \index{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-N\-F\-I\-G}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-N\-F\-I\-G}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a6161d6988523b9a348545c973fedc542}{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-N\-F\-I\-G}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a6161d6988523b9a348545c973fedc542}
+}](R/\-W) Portrait to Landscape trip angle is 29 deg \index{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-S\-O\-U\-R\-C\-E@{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-S\-O\-U\-R\-C\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-S\-O\-U\-R\-C\-E@{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-S\-O\-U\-R\-C\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a7a24648a48784eeb8a9403e27e975ed5}{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-S\-O\-U\-R\-C\-E}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a7a24648a48784eeb8a9403e27e975ed5}
+}](R/\-W) Freefall/\-Motion functional block config \index{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-T\-H\-S@{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-T\-H\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-T\-H\-S@{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-T\-H\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a672b02ab9a5d2e140a385ce14818057a}{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-T\-H\-S}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a672b02ab9a5d2e140a385ce14818057a}
+}](R ) Freefall/\-Motion event source \index{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-U\-N\-T@{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-U\-N\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-U\-N\-T@{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-U\-N\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a0ba6bd9de199f0d89b8a192a2433377b}{Acc\-Reg\-\_\-\-F\-F\-\_\-\-M\-T\-\_\-\-C\-O\-U\-N\-T}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a0ba6bd9de199f0d89b8a192a2433377b}
+}](R/\-W) Freefall/\-Motion threshold \index{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-N\-F\-I\-G}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-N\-F\-I\-G}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ad6e4a520f3f6b5529447113064ed9d69}{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-N\-F\-I\-G}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ad6e4a520f3f6b5529447113064ed9d69}
+}](R/\-W) Freefall/\-Motion debounce counter 0x19 -\/ 0x1\-C are reserved \index{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E@{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E@{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab40c1a1fd95c7d64b145c43aabe94dc2}{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab40c1a1fd95c7d64b145c43aabe94dc2}
+}](R/\-W) Transient functional block configuration \index{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-T\-H\-S@{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-T\-H\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-T\-H\-S@{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-T\-H\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a5a6b2b06cc18b2457f4a50ba605f0da0}{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-T\-H\-S}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a5a6b2b06cc18b2457f4a50ba605f0da0}
+}](R ) Transient event status register \index{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-U\-N\-T@{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-U\-N\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-U\-N\-T@{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-U\-N\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a47dacc18e9c7bbf194c86748e73552f7}{Acc\-Reg\-\_\-\-T\-R\-A\-N\-S\-I\-E\-N\-T\-\_\-\-C\-O\-U\-N\-T}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a47dacc18e9c7bbf194c86748e73552f7}
+}](R/\-W) Transient event threshold \index{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9aac23833d7334d3011ab01ef18f1d825d}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9aac23833d7334d3011ab01ef18f1d825d}
+}](R/\-W) Transient debounce counter \index{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-O\-U\-R\-C\-E@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-O\-U\-R\-C\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-O\-U\-R\-C\-E@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-O\-U\-R\-C\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a01a6464daf579edb35cc52985e6d9a24}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-O\-U\-R\-C\-E}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a01a6464daf579edb35cc52985e6d9a24}
+}](R/\-W) E\-L\-E, Double\-\_\-\-X\-Y\-Z or Single\-\_\-\-X\-Y\-Z \index{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-X@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-X}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-X@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-X}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a08288764a48b1eb2429f2b029fed1707}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-X}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a08288764a48b1eb2429f2b029fed1707}
+}](R ) E\-A, Double\-\_\-\-X\-Y\-Z or Single\-\_\-\-X\-Y\-Z \index{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Y@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Y}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Y@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Y}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a3f023d159ad687985cf98d206ad3448f}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Y}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a3f023d159ad687985cf98d206ad3448f}
+}](R/\-W) X pulse threshold \index{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Z@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Z}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Z@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Z}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ae7b6dc3a780e2c4520545de51aa4d1a6}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-H\-S\-\_\-\-Z}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ae7b6dc3a780e2c4520545de51aa4d1a6}
+}](R/\-W) Y pulse threshold \index{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-M\-L\-T@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-M\-L\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-M\-L\-T@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-M\-L\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a3bcbfa889a343a46a7c53e3427346e2f}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-M\-L\-T}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a3bcbfa889a343a46a7c53e3427346e2f}
+}](R/\-W) Z pulse threshold \index{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-L\-T\-C\-Y@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-L\-T\-C\-Y}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-L\-T\-C\-Y@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-L\-T\-C\-Y}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a242c5a2b1add3ba353db915b87f8a129}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-L\-T\-C\-Y}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a242c5a2b1add3ba353db915b87f8a129}
+}](R/\-W) Time limit for pulse \index{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-W\-I\-N\-D@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-W\-I\-N\-D}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-W\-I\-N\-D@{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-W\-I\-N\-D}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ac6fad1d1c39a6f3a80048e2148df822d}{Acc\-Reg\-\_\-\-P\-U\-L\-S\-E\-\_\-\-W\-I\-N\-D}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ac6fad1d1c39a6f3a80048e2148df822d}
+}](R/\-W) Latency time for 2nd pulse \index{Acc\-Reg\-\_\-\-A\-S\-L\-P\-\_\-\-C\-O\-U\-N\-T@{Acc\-Reg\-\_\-\-A\-S\-L\-P\-\_\-\-C\-O\-U\-N\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-A\-S\-L\-P\-\_\-\-C\-O\-U\-N\-T@{Acc\-Reg\-\_\-\-A\-S\-L\-P\-\_\-\-C\-O\-U\-N\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a31ba95108756e1ad82b9c8245b81be20}{Acc\-Reg\-\_\-\-A\-S\-L\-P\-\_\-\-C\-O\-U\-N\-T}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a31ba95108756e1ad82b9c8245b81be20}
+}](R/\-W) Window time for 2nd pulse \index{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a9e2548ce37261b4eabb316820674430c}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G1}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a9e2548ce37261b4eabb316820674430c}
+}](R/\-W) Counter setting for auto-\/sleep \index{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab8331a03c96406da515ad7705346b706}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab8331a03c96406da515ad7705346b706}
+}](R/\-W) O\-D\-R = 800\-Hz, S\-T\-A\-N\-D\-B\-Y Mode \index{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G3@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G3}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G3@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G3}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab256e04d298e910db663231e926edfe5}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G3}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab256e04d298e910db663231e926edfe5}
+}](R/\-W) Sleep Enable, O\-S Modes, R\-S\-T, S\-T \index{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G4@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G4}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G4@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G4}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ad0296c9017d9330370035fb41bb2ca56}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G4}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ad0296c9017d9330370035fb41bb2ca56}
+}](R/\-W) Wake from Sleep, I\-P\-O\-L, P\-P\-\_\-\-O\-D \index{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G5@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G5}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G5@{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G5}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a8d71e324607ffcae93f24aae6bdf1c5b}{Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G5}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a8d71e324607ffcae93f24aae6bdf1c5b}
+}](R/\-W) Interrupt enable register \index{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-X@{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-X}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-X@{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-X}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab31ca798255b2c21387796849d2753d1}{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-X}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9ab31ca798255b2c21387796849d2753d1}
+}](R/\-W) Interrupt pin (I\-N\-T1/\-I\-N\-T2) map \index{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y@{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y@{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a2801150a8fbe2888f67ff8d1e89eb7b0}{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Y}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9a2801150a8fbe2888f67ff8d1e89eb7b0}
+}](R/\-W) X-\/axis offset adjust \index{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z@{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z@{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z}}\item[{\em 
+\hypertarget{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9af93779a0fce2853f297ec308708f666e}{Acc\-Reg\-\_\-\-O\-F\-F\-\_\-\-Z}\label{_accelerometer_8c_aad08370e3935d75acb5f035d986158b9af93779a0fce2853f297ec308708f666e}
+}](R/\-W) Y-\/axis offset adjust \end{description}
+\end{Desc}
+
+
+Definition at line 47 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-t@{Ctrl\-Reg\-Five\-\_\-t}}
+\index{Ctrl\-Reg\-Five\-\_\-t@{Ctrl\-Reg\-Five\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Ctrl\-Reg\-Five\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-Five\-\_\-t}}}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5}
+Defines the bitmask for hte Control register 5 Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G5 of Acc\-Reg\-\_\-t. This register control which pin the interrupt are routed to. A value of '0' routes to I\-N\-T2 pin and a value of '1' routes to I\-N\-T1 pin. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a57383af2f8bb7cc103d17381369688bc}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-I\-F\-O}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a57383af2f8bb7cc103d17381369688bc}
+}]auto sleep/wake interrupt routing \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5adb606d83df0b962cb71d5fb5bd51ae59}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-T\-R\-A\-N\-S}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5adb606d83df0b962cb71d5fb5bd51ae59}
+}]F\-I\-F\-O interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a1fd2a55dab7021da55db32c63316a523}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-L\-N\-D\-P\-R\-T}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a1fd2a55dab7021da55db32c63316a523}
+}]Transient interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac104fdd741fbe3b161e055ac9e969d78}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-P\-U\-L\-S\-E}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac104fdd741fbe3b161e055ac9e969d78}
+}]Landscape/portrait interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac1417b81276ec0563615130c7ae1eeb0}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-F\-F\-\_\-\-M\-T}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ac1417b81276ec0563615130c7ae1eeb0}
+}]Pulse interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a01ac34b134f82cd3535b4d7191781600}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T\-\_\-\-C\-F\-G\-\_\-\-D\-R\-D\-Y}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a01ac34b134f82cd3535b4d7191781600}
+}]Freefall/motion interrupt routing. \index{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N@{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N@{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a5140bf870617e41d41cd03017486e650}{Ctrl\-Reg\-Five\-\_\-\-F\-I\-F\-O\-\_\-\-E\-N}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a5140bf870617e41d41cd03017486e650}
+}]reboot memory content \index{Ctrl\-Reg\-Five\-\_\-\-H\-Pen@{Ctrl\-Reg\-Five\-\_\-\-H\-Pen}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-H\-Pen@{Ctrl\-Reg\-Five\-\_\-\-H\-Pen}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a2c99dde36ebad9eb86d78598f864340d}{Ctrl\-Reg\-Five\-\_\-\-H\-Pen}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5a2c99dde36ebad9eb86d78598f864340d}
+}]F\-I\-F\-O enable. \index{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1@{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab93e27aded55004856be0ca48205146f}{Ctrl\-Reg\-Five\-\_\-\-I\-N\-T1\-\_\-\-Sel1}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab93e27aded55004856be0ca48205146f}
+}]high-\/pass filter enable \index{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1@{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1@{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1}}\item[{\em 
+\hypertarget{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab023711371db89dc3c94d417881363c6}{Ctrl\-Reg\-Five\-\_\-\-Out\-\_\-\-Sel1}\label{_accelerometer_8c_a68ff1c89d56a1ac3526f0bf645f222f5ab023711371db89dc3c94d417881363c6}
+}]I\-N\-T1 selection configuration. \end{description}
+\end{Desc}
+
+
+Definition at line 460 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7f}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-t@{Ctrl\-Reg\-Four\-\_\-t}}
+\index{Ctrl\-Reg\-Four\-\_\-t@{Ctrl\-Reg\-Four\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Ctrl\-Reg\-Four\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-Four\-\_\-t}}}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7f}
+Defines the bitmask for the Control register 4 Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G4 of Acc\-Reg\-\_\-t. This register controls the interrupt enables. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa4f1c431db5082a17e5e8d7bd453567d2}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-I\-F\-O}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa4f1c431db5082a17e5e8d7bd453567d2}
+}]auto sleep/wake interrupt enable \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fabdf7a05e3127ea3ec32a12ae724ecb68}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-T\-R\-A\-N\-S}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fabdf7a05e3127ea3ec32a12ae724ecb68}
+}]F\-I\-F\-O interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa7e08e96c572b5db00dd74b53a274d4dd}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-L\-N\-D\-P\-R\-T}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa7e08e96c572b5db00dd74b53a274d4dd}
+}]Transient interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa71e39a2081393c105034d86cf4e2c3d7}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-P\-U\-L\-S\-E}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa71e39a2081393c105034d86cf4e2c3d7}
+}]Landscape/portrait interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa5bdb30c31efae2b6e5df6a0454cfde1b}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-F\-F\-\_\-\-M\-T}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa5bdb30c31efae2b6e5df6a0454cfde1b}
+}]Pulse detection interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fab0da1fc76394c5987d2256872993aca6}{Ctrl\-Reg\-Four\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-D\-R\-D\-Y}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fab0da1fc76394c5987d2256872993aca6}
+}]Freefall/motion interrupt enable. \index{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E@{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-B\-L\-E@{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fad0dc00af62c34a63f94f72d1e7d10a6e}{Ctrl\-Reg\-Four\-\_\-\-B\-L\-E}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fad0dc00af62c34a63f94f72d1e7d10a6e}
+}]block data update \index{Ctrl\-Reg\-Four\-\_\-\-F\-S1@{Ctrl\-Reg\-Four\-\_\-\-F\-S1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-F\-S1@{Ctrl\-Reg\-Four\-\_\-\-F\-S1}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa28b8bbd687d2aca8799043ef041f2eb1}{Ctrl\-Reg\-Four\-\_\-\-F\-S1}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa28b8bbd687d2aca8799043ef041f2eb1}
+}]big/little endian data selection \index{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M@{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-S\-I\-M@{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa21559de50369d6295aa9ab79fc346bcc}{Ctrl\-Reg\-Four\-\_\-\-S\-I\-M}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa21559de50369d6295aa9ab79fc346bcc}
+}]full scale selection \index{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250@{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250@{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250}}\item[{\em 
+\hypertarget{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa0ce81dd31daf7b346886a0a4cd818662}{Ctrl\-Reg\-Four\-\_\-\-R\-E\-S\-\_\-250}\label{_accelerometer_8c_af6c4d01c55429c66eb0b79ea13484f7fa0ce81dd31daf7b346886a0a4cd818662}
+}]S\-P\-I serial interface mode selection. \end{description}
+\end{Desc}
+
+
+Definition at line 445 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-t@{Ctrl\-Reg\-One\-\_\-t}}
+\index{Ctrl\-Reg\-One\-\_\-t@{Ctrl\-Reg\-One\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Ctrl\-Reg\-One\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-One\-\_\-t}}}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370}
+Defines the bitmask for the control register one Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G\-\_\-1 of the Acc\-Reg\-\_\-t.
+
+A\-S\-L\-P\-\_\-\-R\-A\-T\-E -\/ 00\-: 50 Hz 01\-: 12.\-5 Hz 10\-: 6.\-25 Hz 11\-: 1.\-56 Hz
+
+Frequency (Hz) Period (ms) O\-D\-R -\/ 000\-: 800 1.\-25 001\-: 400 2.\-5 010\-: 200 5 011\-: 100 10 100\-: 50 20 101\-: 12.\-5 80 110\-: 6.\-25 160 111\-: 1.\-56 640
+
+\begin{DoxyNote}{Note}
+except for active/standby, the device must be in standby mode to change any fields within this register. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0@{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0@{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370adb88e9b1746dc05cfda96b5970feb255}{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E0}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370adb88e9b1746dc05cfda96b5970feb255}
+}]bit 1 of the autowake sample frequency \index{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E@{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E@{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a73abcc43ec91cb9b2c79983d6fb6be4b}{Ctrl\-Reg\-One\-\_\-\-A\-S\-L\-P\-\_\-\-R\-A\-T\-E}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a73abcc43ec91cb9b2c79983d6fb6be4b}
+}]bit 0 of the autowake sample frequency \index{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-O\-D\-R2@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a7489fabf8c4c8d87032bc094cca64d0b}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R2}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a7489fabf8c4c8d87032bc094cca64d0b}
+}]Configures the autowake sample frequency. \index{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E@{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E@{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aac1433cc7d34b81441277a6b0d6d09dc}{Ctrl\-Reg\-One\-\_\-\-L\-N\-O\-I\-S\-E}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aac1433cc7d34b81441277a6b0d6d09dc}
+}]output data rate selection \index{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D@{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D@{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a019b379fd6b3c2cdc4f478dbb015a8ea}{Ctrl\-Reg\-One\-\_\-\-F\-\_\-\-R\-E\-A\-D}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a019b379fd6b3c2cdc4f478dbb015a8ea}
+}]reduced noise enabled \index{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E@{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E@{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aed7e900f4f151aeb85bccb2287185e22}{Ctrl\-Reg\-One\-\_\-\-A\-C\-T\-I\-V\-E}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aed7e900f4f151aeb85bccb2287185e22}
+}]fast read mode enable \index{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370acdd9244c59ca7a58914d84aeb3f52505}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-800}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370acdd9244c59ca7a58914d84aeb3f52505}
+}]active mode enable \index{Ctrl\-Reg\-One\-\_\-\-B\-W1@{Ctrl\-Reg\-One\-\_\-\-B\-W1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-B\-W1@{Ctrl\-Reg\-One\-\_\-\-B\-W1}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a538ec2d7e405b767d53d9e877939c13c}{Ctrl\-Reg\-One\-\_\-\-B\-W1}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a538ec2d7e405b767d53d9e877939c13c}
+}]output data rate selection \index{Ctrl\-Reg\-One\-\_\-\-P\-D@{Ctrl\-Reg\-One\-\_\-\-P\-D}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-P\-D@{Ctrl\-Reg\-One\-\_\-\-P\-D}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a039c3112ddc78eb37ab15d924b413d3d}{Ctrl\-Reg\-One\-\_\-\-P\-D}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a039c3112ddc78eb37ab15d924b413d3d}
+}]bandwidth selection \index{Ctrl\-Reg\-One\-\_\-\-Zen@{Ctrl\-Reg\-One\-\_\-\-Zen}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-Zen@{Ctrl\-Reg\-One\-\_\-\-Zen}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aff3b305765477683c437ffe5ce20e0a8}{Ctrl\-Reg\-One\-\_\-\-Zen}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370aff3b305765477683c437ffe5ce20e0a8}
+}]power-\/down mode enable \index{Ctrl\-Reg\-One\-\_\-\-Yen@{Ctrl\-Reg\-One\-\_\-\-Yen}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-Yen@{Ctrl\-Reg\-One\-\_\-\-Yen}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a22fd8ac984dfbc6b745e5cba208f11a2}{Ctrl\-Reg\-One\-\_\-\-Yen}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a22fd8ac984dfbc6b745e5cba208f11a2}
+}]Z axis enable. \index{Ctrl\-Reg\-One\-\_\-\-Xen@{Ctrl\-Reg\-One\-\_\-\-Xen}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-Xen@{Ctrl\-Reg\-One\-\_\-\-Xen}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a035ca1ae64c0562f41ffa632b8c57c03}{Ctrl\-Reg\-One\-\_\-\-Xen}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a035ca1ae64c0562f41ffa632b8c57c03}
+}]Y axis enable. \index{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760@{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760}}\item[{\em 
+\hypertarget{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a769b8a9a870190f0b67f73262ad647b0}{Ctrl\-Reg\-One\-\_\-\-O\-D\-R\-\_\-760}\label{_accelerometer_8c_ac14fa037bfd1d23a86d8fb22f7ab8370a769b8a9a870190f0b67f73262ad647b0}
+}]X axis enable. \end{description}
+\end{Desc}
+
+
+Definition at line 372 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-t@{Ctrl\-Reg\-Three\-\_\-t}}
+\index{Ctrl\-Reg\-Three\-\_\-t@{Ctrl\-Reg\-Three\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Ctrl\-Reg\-Three\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-Three\-\_\-t}}}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165}
+Defines the bitmask for the Control register 3 Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G3 of Acc\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a3a1ad6c9a92ff492feb1cbb0bc9728b8}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-T\-R\-A\-N\-S}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a3a1ad6c9a92ff492feb1cbb0bc9728b8}
+}]Enable the gate to block the F\-I\-F\-O once full. \index{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a536a922d52daf1dd8e733e13c41b527a}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-L\-N\-D\-P\-R\-T}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a536a922d52daf1dd8e733e13c41b527a}
+}]Transient function interrupt can wake up system. \index{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165ad0861e8380ba5fcdd1ef97095c309e9a}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-P\-U\-L\-S\-E}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165ad0861e8380ba5fcdd1ef97095c309e9a}
+}]Orientation interrupt can wake system. \index{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T@{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a60c6caf426a40b086975ca2d09623d42}{Ctrl\-Reg\-Three\-\_\-\-W\-A\-K\-E\-\_\-\-F\-F\-\_\-\-M\-T}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a60c6caf426a40b086975ca2d09623d42}
+}]Pulse interrupt can wake system. \index{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L@{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L@{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165adb83e08c04a9bcac9d7acc88e06cd010}{Ctrl\-Reg\-Three\-\_\-\-I\-P\-O\-L}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165adb83e08c04a9bcac9d7acc88e06cd010}
+}]Freefall/motion interrupt can wake system. \index{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D@{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D@{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}
+}]Interrupt polarity active high enable. \index{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot@{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot@{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a516f7253e3d4b6c10d22a673261dc5b0}{Ctrl\-Reg\-Three\-\_\-\-I1\-\_\-\-Boot}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a516f7253e3d4b6c10d22a673261dc5b0}
+}]interrupt enable on I\-N\-T1 pin \index{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive@{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive@{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a86c0999cb59a4f1b4d7dd945f11a0680}{Ctrl\-Reg\-Three\-\_\-\-H\-\_\-\-Lactive}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a86c0999cb59a4f1b4d7dd945f11a0680}
+}]boot status available on I\-N\-T1 \index{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D@{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D@{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}{Ctrl\-Reg\-Three\-\_\-\-P\-P\-\_\-\-O\-D}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a67e72ff90aad588846aa513125f83636}
+}]interrupt active configuration on I\-N\-T1 \index{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a83ceccc6dbc29a2f059eb514f0b6f4b5}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-D\-R\-D\-Y}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a83ceccc6dbc29a2f059eb514f0b6f4b5}
+}]push-\/pull/ open drain \index{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165afa1c0ceb3e736d14f3a7a48a3dbd3327}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-W\-T\-M}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165afa1c0ceb3e736d14f3a7a48a3dbd3327}
+}]data ready on D\-R\-D\-Y/\-I\-N\-T2 \index{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a84e6e773af12ca5f6546dce68a3ca15f}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-O\-Run}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165a84e6e773af12ca5f6546dce68a3ca15f}
+}]F\-I\-F\-O watermark interrupt on D\-R\-D\-Y/\-I\-N\-T2. \index{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty@{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty}}\item[{\em 
+\hypertarget{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165ac70c75fe75ed7d9a4f48c0120013c86d}{Ctrl\-Reg\-Three\-\_\-\-I2\-\_\-\-Empty}\label{_accelerometer_8c_a88442bcd2a633cd42f649152ee23c165ac70c75fe75ed7d9a4f48c0120013c86d}
+}]F\-I\-F\-O overrun interrupt on D\-R\-D\-Y/\-I\-N\-T2. \end{description}
+\end{Desc}
+
+
+Definition at line 431 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9e}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-t@{Ctrl\-Reg\-Two\-\_\-t}}
+\index{Ctrl\-Reg\-Two\-\_\-t@{Ctrl\-Reg\-Two\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Ctrl\-Reg\-Two\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ctrl\-Reg\-Two\-\_\-t}}}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9e}
+Defines the bitmask for the Control register 2 Acc\-Reg\-\_\-\-C\-T\-R\-L\-\_\-\-R\-E\-G2 of Acc\-Reg\-\_\-t.
+
+The software reset can be activated in standby or active mode. Resetting the device causes all registers to immediately be cleared. \begin{DoxyVerb}          Mode
+\end{DoxyVerb}
+ (S)M\-O\-D\-S -\/ 00\-: Normal 01\-: Low Noise, Low Power 10\-: High Resolution 11\-: Low Power
+
+\begin{DoxyNote}{Note}
+Low noise and high resolution modes only work for 2g and 4g range, not 8g. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T@{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-R\-S\-T@{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea13be3979b9873f3bd6f90c9c3086965d}{Ctrl\-Reg\-Two\-\_\-\-R\-S\-T}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea13be3979b9873f3bd6f90c9c3086965d}
+}]Self test enable. \index{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea8ce4d738f28ba2685d7dd28da16d0508}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S1}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea8ce4d738f28ba2685d7dd28da16d0508}
+}]Software Reset enable. \index{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea9cdc7f767bced2ef75ea841fce5a211a}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S0}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea9cdc7f767bced2ef75ea841fce5a211a}
+}]Sleep mode power scheme bit 1. \index{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea6f57cc9b01f414ea341c556836814871}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea6f57cc9b01f414ea341c556836814871}
+}]Sleep mode power scheme bit 0. \index{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L@{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea0ac14cb9f12c4565762786994d25339c}{Ctrl\-Reg\-Two\-\_\-\-S\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea0ac14cb9f12c4565762786994d25339c}
+}]Sleep mode power scheme selection. \index{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9eaa5ea90013b646da44be35ce56d8b1672}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S1}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9eaa5ea90013b646da44be35ce56d8b1672}
+}]Auto sleep mode enable. \index{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9eab1c43b792a4a8ac5d92b9ec039034e1d}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S0}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9eab1c43b792a4a8ac5d92b9ec039034e1d}
+}]Active mode power scheme bit 1. \index{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea82982c455e20c50d7c2cf07270a3fa29}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea82982c455e20c50d7c2cf07270a3fa29}
+}]Active mode power scheme bit 0. \index{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L@{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea806f3328704ef68b4bf433fe61a0123d}{Ctrl\-Reg\-Two\-\_\-\-M\-O\-D\-S\-\_\-\-N\-R\-M\-L}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea806f3328704ef68b4bf433fe61a0123d}
+}]Active mode power scheme selection. \index{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3@{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3@{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3}}\item[{\em 
+\hypertarget{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea102c368479ef1d536f146e4678dc4b3a}{Ctrl\-Reg\-Two\-\_\-\-H\-P\-C\-F3}\label{_accelerometer_8c_a82f8c091f01c16b90a862a2fcdfbcb9ea102c368479ef1d536f146e4678dc4b3a}
+}]high-\/pass filter mode selection \end{description}
+\end{Desc}
+
+
+Definition at line 407 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Setup\-\_\-t@{Fifo\-Setup\-\_\-t}}
+\index{Fifo\-Setup\-\_\-t@{Fifo\-Setup\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Fifo\-Setup\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Fifo\-Setup\-\_\-t}}}\label{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6}
+Defines the bitmasks for the bits in the Acc\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-E\-T\-U\-P register of Acc\-Reg\-\_\-t.
+
+F\-\_\-\-M\-O\-D\-E -\/ 00\-: F\-I\-F\-O is disabled 01\-: F\-I\-F\-O is circular buffer 10\-: F\-I\-F\-O stops when full 11\-: F\-I\-F\-O will take W\-M\-R\-K samples then stop \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E0@{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E0@{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E0}}\item[{\em 
+\hypertarget{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6ac3487c54725f2d0e0521e05d1c69e22f}{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E0}\label{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6ac3487c54725f2d0e0521e05d1c69e22f}
+}]F\-I\-F\-O mode bit 1. \index{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E@{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E@{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6ae844fb24d06feb89ca773c7702b0c1d3}{Fifo\-Setup\-\_\-\-F\-\_\-\-M\-O\-D\-E}\label{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6ae844fb24d06feb89ca773c7702b0c1d3}
+}]F\-I\-F\-O mode bit 0. \index{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K4@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K4}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K4@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K4}}\item[{\em 
+\hypertarget{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a2d5dd49d98a2626c3f73833ea0f7d274}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K4}\label{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a2d5dd49d98a2626c3f73833ea0f7d274}
+}]Bit 5 of the watermark setpoint. \index{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K3@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K3}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K3@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K3}}\item[{\em 
+\hypertarget{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6af14b0a9474d63f4b21d16f8f5f5ba3ef}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K3}\label{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6af14b0a9474d63f4b21d16f8f5f5ba3ef}
+}]Bit 4 of the watermark setpoint. \index{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K2@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K2}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K2@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K2}}\item[{\em 
+\hypertarget{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a92d052b9ea02365c36cb725d9ec4d859}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K2}\label{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a92d052b9ea02365c36cb725d9ec4d859}
+}]Bit 3 of the watermark setpoint. \index{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K1@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K1@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K1}}\item[{\em 
+\hypertarget{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a479aec936005d3b37f69d45c54f0b644}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K1}\label{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a479aec936005d3b37f69d45c54f0b644}
+}]Bit 2 of the watermark setpoint. \index{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K0@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K0@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K0}}\item[{\em 
+\hypertarget{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a2a6c0380d8a3b5795d9f40875ec558e9}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K0}\label{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a2a6c0380d8a3b5795d9f40875ec558e9}
+}]Bit 1 of the watermark setpoint. \index{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K@{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K}}\item[{\em 
+\hypertarget{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a458ddd175aef016b24b1f61cb19226ca}{Fifo\-Setup\-\_\-\-F\-\_\-\-W\-M\-R\-K}\label{_accelerometer_8c_a031ebbee1ada2300a373003354295cc6a458ddd175aef016b24b1f61cb19226ca}
+}]Bit 0 of the watermark setpoint. \end{description}
+\end{Desc}
+
+
+Definition at line 147 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Status\-\_\-t@{Fifo\-Status\-\_\-t}}
+\index{Fifo\-Status\-\_\-t@{Fifo\-Status\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Fifo\-Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Fifo\-Status\-\_\-t}}}\label{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131}
+Defines the bitmasks for the bits in the Acc\-Reg\-\_\-\-Status register of Acc\-Reg\-\_\-t when using the F\-I\-F\-O (F\-\_\-\-M\-O\-D\-E $>$ 0 in Acc\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-E\-T\-U\-P).
+
+\begin{DoxyNote}{Note}
+These bits are only correct when U\-S\-I\-N\-G T\-H\-E F\-I\-F\-O! This register has a different meaning when not using the F\-I\-F\-O.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See Also}
+See Status. 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Fifo\-Status\-\_\-\-F\-\_\-\-W\-M\-R\-K\-\_\-\-F\-L\-A\-G@{Fifo\-Status\-\_\-\-F\-\_\-\-W\-M\-R\-K\-\_\-\-F\-L\-A\-G}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Status\-\_\-\-F\-\_\-\-W\-M\-R\-K\-\_\-\-F\-L\-A\-G@{Fifo\-Status\-\_\-\-F\-\_\-\-W\-M\-R\-K\-\_\-\-F\-L\-A\-G}}\item[{\em 
+\hypertarget{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131ad9757ba9057d82fc48624182841dba99}{Fifo\-Status\-\_\-\-F\-\_\-\-W\-M\-R\-K\-\_\-\-F\-L\-A\-G}\label{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131ad9757ba9057d82fc48624182841dba99}
+}]Set when the fifo overflows. \index{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T5@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T5}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T5@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T5}}\item[{\em 
+\hypertarget{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131abd0392a251f1aa66ce4b59f1ece056c5}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T5}\label{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131abd0392a251f1aa66ce4b59f1ece056c5}
+}]Set when the F\-I\-F\-O hits the watermark. \index{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T4@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T4}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T4@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T4}}\item[{\em 
+\hypertarget{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131aad064d002397d4403431d24a5529eae9}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T4}\label{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131aad064d002397d4403431d24a5529eae9}
+}]Bit 5 of the F\-I\-F\-O counter (how many samples are in the F\-I\-F\-O) \index{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T3@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T3}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T3@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T3}}\item[{\em 
+\hypertarget{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131af08fbbf8bb8360d4fc4794b1368c9ff8}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T3}\label{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131af08fbbf8bb8360d4fc4794b1368c9ff8}
+}]Bit 4 of the F\-I\-F\-O counter. \index{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T2@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T2}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T2@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T2}}\item[{\em 
+\hypertarget{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131a0407a1e602b653840da0530ebeb4c469}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T2}\label{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131a0407a1e602b653840da0530ebeb4c469}
+}]Bit 3 of the F\-I\-F\-O counter. \index{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T1@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T1@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T1}}\item[{\em 
+\hypertarget{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131a1107925cb397126059b4bb4a27d4abf7}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T1}\label{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131a1107925cb397126059b4bb4a27d4abf7}
+}]Bit 2 of the F\-I\-F\-O counter. \index{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T0@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T0@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T0}}\item[{\em 
+\hypertarget{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131a290d3a49d7a0bd3abcee6e1a5b340ee9}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T0}\label{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131a290d3a49d7a0bd3abcee6e1a5b340ee9}
+}]Bit 1 of the F\-I\-F\-O counter. \index{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T@{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131aa31ddd0a0c22dbebec49ad0973eddee5}{Fifo\-Status\-\_\-\-F\-\_\-\-C\-N\-T}\label{_accelerometer_8c_af123d12c5d044ad4b74abe6a9dd64131aa31ddd0a0c22dbebec49ad0973eddee5}
+}]Bit 0 of the F\-I\-F\-O counter. \end{description}
+\end{Desc}
+
+
+Definition at line 126 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Hp\-Filter\-Cutoff\-\_\-t@{Hp\-Filter\-Cutoff\-\_\-t}}
+\index{Hp\-Filter\-Cutoff\-\_\-t@{Hp\-Filter\-Cutoff\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Hp\-Filter\-Cutoff\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Hp\-Filter\-Cutoff\-\_\-t}}}\label{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1}
+Defines the bitmasks for the high pass filter cutoff settings. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Hp\-Filter\-Cutoff\-\_\-\-L\-P\-F\-\_\-\-E\-N@{Hp\-Filter\-Cutoff\-\_\-\-L\-P\-F\-\_\-\-E\-N}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Hp\-Filter\-Cutoff\-\_\-\-L\-P\-F\-\_\-\-E\-N@{Hp\-Filter\-Cutoff\-\_\-\-L\-P\-F\-\_\-\-E\-N}}\item[{\em 
+\hypertarget{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1aa0a65b109622b2f9b7c1af0f3993e9f7}{Hp\-Filter\-Cutoff\-\_\-\-L\-P\-F\-\_\-\-E\-N}\label{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1aa0a65b109622b2f9b7c1af0f3993e9f7}
+}]Bypass the high pass filter for pulse processing. \index{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L1@{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L1@{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L1}}\item[{\em 
+\hypertarget{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1a3c2f26c2ab11837511ef4a3a09162368}{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L1}\label{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1a3c2f26c2ab11837511ef4a3a09162368}
+}]Enable the low pass filter for pulse processing. \index{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L0@{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L0@{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L0}}\item[{\em 
+\hypertarget{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1adc0e72da0c9eabf71ecb4d4ff61e12dc}{Hp\-Filter\-Cutoff\-\_\-\-S\-E\-L0}\label{_accelerometer_8c_a306a5815ca781682b1e819e2639a33d1adc0e72da0c9eabf71ecb4d4ff61e12dc}
+}]High Pass cutoff frequency selection. See datasheet Table 22. \end{description}
+\end{Desc}
+
+
+Definition at line 237 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Int\-Source\-Status\-\_\-t@{Int\-Source\-Status\-\_\-t}}
+\index{Int\-Source\-Status\-\_\-t@{Int\-Source\-Status\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Int\-Source\-Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Int\-Source\-Status\-\_\-t}}}\label{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6}
+Defines the bitmasks for the interrupt source status register Acc\-Reg\-\_\-\-I\-N\-T\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-A\-T of the Acc\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Int\-Source\-Status\-\_\-\-F\-I\-F\-O@{Int\-Source\-Status\-\_\-\-F\-I\-F\-O}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Int\-Source\-Status\-\_\-\-F\-I\-F\-O@{Int\-Source\-Status\-\_\-\-F\-I\-F\-O}}\item[{\em 
+\hypertarget{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6aacd7e567efac5964fa0ae569b8d1c215}{Int\-Source\-Status\-\_\-\-F\-I\-F\-O}\label{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6aacd7e567efac5964fa0ae569b8d1c215}
+}]W\-A\-K\-E to S\-L\-E\-E\-P or S\-L\-E\-E\-P to W\-A\-K\-E interrupt occurred. \index{Int\-Source\-Status\-\_\-\-T\-R\-A\-N\-S@{Int\-Source\-Status\-\_\-\-T\-R\-A\-N\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Int\-Source\-Status\-\_\-\-T\-R\-A\-N\-S@{Int\-Source\-Status\-\_\-\-T\-R\-A\-N\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6a2f470df3f8a0727126f9511214557ab3}{Int\-Source\-Status\-\_\-\-T\-R\-A\-N\-S}\label{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6a2f470df3f8a0727126f9511214557ab3}
+}]F\-I\-F\-O overflow or watermark occurred. \index{Int\-Source\-Status\-\_\-\-L\-N\-D\-P\-R\-T@{Int\-Source\-Status\-\_\-\-L\-N\-D\-P\-R\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Int\-Source\-Status\-\_\-\-L\-N\-D\-P\-R\-T@{Int\-Source\-Status\-\_\-\-L\-N\-D\-P\-R\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6a3c11a31d7a8e171441bb93e482c4b1cb}{Int\-Source\-Status\-\_\-\-L\-N\-D\-P\-R\-T}\label{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6a3c11a31d7a8e171441bb93e482c4b1cb}
+}]Acceleration transient value $>$ T\-H\-R\-E\-S\-H occurred. \index{Int\-Source\-Status\-\_\-\-P\-U\-L\-S\-E@{Int\-Source\-Status\-\_\-\-P\-U\-L\-S\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Int\-Source\-Status\-\_\-\-P\-U\-L\-S\-E@{Int\-Source\-Status\-\_\-\-P\-U\-L\-S\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6ade443974fe023894c76536b64bad21cb}{Int\-Source\-Status\-\_\-\-P\-U\-L\-S\-E}\label{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6ade443974fe023894c76536b64bad21cb}
+}]Device orientation change occurred. \index{Int\-Source\-Status\-\_\-\-F\-F\-\_\-\-M\-T@{Int\-Source\-Status\-\_\-\-F\-F\-\_\-\-M\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Int\-Source\-Status\-\_\-\-F\-F\-\_\-\-M\-T@{Int\-Source\-Status\-\_\-\-F\-F\-\_\-\-M\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6a2234a177a24b8da57790ecaaa43dc7da}{Int\-Source\-Status\-\_\-\-F\-F\-\_\-\-M\-T}\label{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6a2234a177a24b8da57790ecaaa43dc7da}
+}]A single or double pulse occurred. \index{Int\-Source\-Status\-\_\-\-D\-R\-D\-Y@{Int\-Source\-Status\-\_\-\-D\-R\-D\-Y}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Int\-Source\-Status\-\_\-\-D\-R\-D\-Y@{Int\-Source\-Status\-\_\-\-D\-R\-D\-Y}}\item[{\em 
+\hypertarget{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6aa5f630fe6ac8dfd636c1491095f4dde4}{Int\-Source\-Status\-\_\-\-D\-R\-D\-Y}\label{_accelerometer_8c_a4c591e2dd8cad8c79c594ec58d5958f6aa5f630fe6ac8dfd636c1491095f4dde4}
+}]A freefall or motion event occurred. \end{description}
+\end{Desc}
+
+
+Definition at line 200 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_acafcd5818a51a00bae93c0061ff206af}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Bf\-Comp\-\_\-t@{Pl\-Bf\-Comp\-\_\-t}}
+\index{Pl\-Bf\-Comp\-\_\-t@{Pl\-Bf\-Comp\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Pl\-Bf\-Comp\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Pl\-Bf\-Comp\-\_\-t}}}\label{_accelerometer_8c_acafcd5818a51a00bae93c0061ff206af}
+Defines the bitmasks for the back to front z-\/lockout compensation register Acc\-Reg\-\_\-\-P\-L\-\_\-\-B\-F\-\_\-\-C\-O\-M\-P of the Acc\-Reg\-\_\-t. \begin{DoxyVerb}       Back/Front Transistion(deg)   Front/Back Transistion(deg)
+\end{DoxyVerb}
+ B\-K\-F\-R = 00\-: Z $<$ 80 or Z $>$ 280 Z $>$ 100 and Z $<$ 260 01\-: Z $<$ 75 or Z $>$ 285 Z $>$ 105 and Z $<$ 255 10\-: Z $<$ 70 or Z $>$ 290 Z $>$ 110 and Z $<$ 250 11 Z $<$ 65 or Z $>$ 295 Z $>$ 115 and Z $<$ 245 \begin{DoxyVerb}  Threshold Angle (deg)
+\end{DoxyVerb}
+ Z\-L\-O\-C\-K = 0x00\-: 14 0x01\-: 18 0x02\-: 21 0x03\-: 25 0x04\-: 29 0x05\-: 33 0x06\-: 37 0x07\-: 42 \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Pl\-Bf\-Comp\-\_\-\-Z\-L\-O\-C\-K@{Pl\-Bf\-Comp\-\_\-\-Z\-L\-O\-C\-K}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Bf\-Comp\-\_\-\-Z\-L\-O\-C\-K@{Pl\-Bf\-Comp\-\_\-\-Z\-L\-O\-C\-K}}\item[{\em 
+\hypertarget{_accelerometer_8c_acafcd5818a51a00bae93c0061ff206afae9c29a0b4fc33f6537219ce4c29e0f35}{Pl\-Bf\-Comp\-\_\-\-Z\-L\-O\-C\-K}\label{_accelerometer_8c_acafcd5818a51a00bae93c0061ff206afae9c29a0b4fc33f6537219ce4c29e0f35}
+}]Back to front transition setpoint. \end{description}
+\end{Desc}
+
+
+Definition at line 293 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a76e443f4bb0470286be39d8ec4a94fb6}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Config\-\_\-t@{Pl\-Config\-\_\-t}}
+\index{Pl\-Config\-\_\-t@{Pl\-Config\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Pl\-Config\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Pl\-Config\-\_\-t}}}\label{_accelerometer_8c_a76e443f4bb0470286be39d8ec4a94fb6}
+Defines the bitmasks for the portrait landscape configuration register Acc\-Reg\-\_\-\-P\-L\-\_\-\-C\-O\-N\-F\-I\-G of the Acc\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Pl\-Config\-\_\-\-P\-L\-\_\-\-E\-N@{Pl\-Config\-\_\-\-P\-L\-\_\-\-E\-N}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Config\-\_\-\-P\-L\-\_\-\-E\-N@{Pl\-Config\-\_\-\-P\-L\-\_\-\-E\-N}}\item[{\em 
+\hypertarget{_accelerometer_8c_a76e443f4bb0470286be39d8ec4a94fb6af60d7ae259df4ea37d1f6f86b5ecac4b}{Pl\-Config\-\_\-\-P\-L\-\_\-\-E\-N}\label{_accelerometer_8c_a76e443f4bb0470286be39d8ec4a94fb6af60d7ae259df4ea37d1f6f86b5ecac4b}
+}]0 -\/ decrement counter, 1 -\/ clear counter on event \end{description}
+\end{Desc}
+
+
+Definition at line 267 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Status\-\_\-t@{Pl\-Status\-\_\-t}}
+\index{Pl\-Status\-\_\-t@{Pl\-Status\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Pl\-Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Pl\-Status\-\_\-t}}}\label{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6}
+Defines the bitmasks for the portrait landscape status register Acc\-Reg\-\_\-\-P\-L\-\_\-\-S\-T\-A\-T\-U\-S of the Acc\-Reg\-\_\-t.
+
+L\-A\-P\-O -\/ 00\-: Portrait up 01\-: Portrait down 10\-: Landscape right 11\-: Landscape left \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Pl\-Status\-\_\-\-L\-O@{Pl\-Status\-\_\-\-L\-O}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Status\-\_\-\-L\-O@{Pl\-Status\-\_\-\-L\-O}}\item[{\em 
+\hypertarget{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6a78bba235303230d208ba51abf697bf7d}{Pl\-Status\-\_\-\-L\-O}\label{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6a78bba235303230d208ba51abf697bf7d}
+}]Landscape/\-Portrait status has changed. \index{Pl\-Status\-\_\-\-L\-A\-P\-O1@{Pl\-Status\-\_\-\-L\-A\-P\-O1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Status\-\_\-\-L\-A\-P\-O1@{Pl\-Status\-\_\-\-L\-A\-P\-O1}}\item[{\em 
+\hypertarget{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6aa4dae433c4fd6b65b72c30e38fe13584}{Pl\-Status\-\_\-\-L\-A\-P\-O1}\label{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6aa4dae433c4fd6b65b72c30e38fe13584}
+}]Z-\/tilt lockout angle has been exceeded. \index{Pl\-Status\-\_\-\-L\-A\-P\-O0@{Pl\-Status\-\_\-\-L\-A\-P\-O0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Status\-\_\-\-L\-A\-P\-O0@{Pl\-Status\-\_\-\-L\-A\-P\-O0}}\item[{\em 
+\hypertarget{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6a5e855cf7ba18360b0fb76f88645343f6}{Pl\-Status\-\_\-\-L\-A\-P\-O0}\label{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6a5e855cf7ba18360b0fb76f88645343f6}
+}]Landscape/\-Portrait orientation bit 1. \index{Pl\-Status\-\_\-\-L\-A\-P\-O@{Pl\-Status\-\_\-\-L\-A\-P\-O}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Status\-\_\-\-L\-A\-P\-O@{Pl\-Status\-\_\-\-L\-A\-P\-O}}\item[{\em 
+\hypertarget{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6a76c071edc81181465f6de9351abd3801}{Pl\-Status\-\_\-\-L\-A\-P\-O}\label{_accelerometer_8c_a568cf8a2728cf91b586a4b0eb33683a6a76c071edc81181465f6de9351abd3801}
+}]Landscape/\-Portrait orientation bit 0. \end{description}
+\end{Desc}
+
+
+Definition at line 254 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a6ed8659bcef02cdc8a60ac8ac8d9256e}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Threshold\-\_\-t@{Pl\-Threshold\-\_\-t}}
+\index{Pl\-Threshold\-\_\-t@{Pl\-Threshold\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Pl\-Threshold\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Pl\-Threshold\-\_\-t}}}\label{_accelerometer_8c_a6ed8659bcef02cdc8a60ac8ac8d9256e}
+Defines the bit masks for the portrait to landscape threshold and hysteresis settings for the Acc\-Reg\-\_\-\-P\-L\-\_\-\-T\-H\-S\-\_\-\-R\-E\-G of the Acc\-Reg\-\_\-t. The default trip angle is 45 deg (0x10) and the default hysteresis is +/-\/14 deg.
+
+5-\/bit register Threshold Angle (degrees) T\-H\-S -\/ 0x07\-: 15 0x09\-: 20 0x0\-C\-: 30 0x0\-D\-: 35 0x0\-F\-: 40 0x10\-: 45 0x13\-: 55 0x14\-: 60 0x17\-: 70 0x19\-: 75
+
+3-\/bit register Hysteresis L-\/$>$P P-\/$>$L H\-Y\-S\-T -\/ 0x00\-: 0 45 45 0x01\-: 4 49 41 0x02\-: 7 52 38 0x03\-: 11 56 34 0x04\-: 14 59 31 0x05\-: 17 62 28 0x06\-: 21 66 24 0x07\-: 24 69 21
+
+\begin{DoxyNote}{Note}
+T\-H\-S+\-H\-Y\-S\-T $>$ 0 and T\-H\-S + H\-Y\-S\-T $<$ 32 for Landscape/\-Portrait detection to work correctly. All angles accurate to +/-\/ 2 degrees. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Pl\-Threshold\-\_\-\-H\-Y\-S\-T@{Pl\-Threshold\-\_\-\-H\-Y\-S\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Pl\-Threshold\-\_\-\-H\-Y\-S\-T@{Pl\-Threshold\-\_\-\-H\-Y\-S\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a6ed8659bcef02cdc8a60ac8ac8d9256eab23333daa6e246ecaadd7d829ffcdaaf}{Pl\-Threshold\-\_\-\-H\-Y\-S\-T}\label{_accelerometer_8c_a6ed8659bcef02cdc8a60ac8ac8d9256eab23333daa6e246ecaadd7d829ffcdaaf}
+}]Portrait/\-Landscape trip threshold. \end{description}
+\end{Desc}
+
+
+Definition at line 328 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a952ea32d355af359a672bae581818c9d}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Status\-\_\-t@{Status\-\_\-t}}
+\index{Status\-\_\-t@{Status\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Status\-\_\-t}}}\label{_accelerometer_8c_a952ea32d355af359a672bae581818c9d}
+Defines the bitmasks for the bits in the Acc\-Reg\-\_\-\-Status register of Acc\-Reg\-\_\-t when not using the F\-I\-F\-O (F\-\_\-\-M\-O\-D\-E = 0 in Acc\-Reg\-\_\-\-F\-I\-F\-O\-\_\-\-S\-E\-T\-U\-P).
+
+\begin{DoxyNote}{Note}
+These bits are only correct when N\-O\-T U\-S\-I\-N\-G T\-H\-E F\-I\-F\-O! This register has a different meaning when using the F\-I\-F\-O.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See Also}
+See Fifo\-Status. 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Status\-\_\-\-Z\-O\-W@{Status\-\_\-\-Z\-O\-W}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Status\-\_\-\-Z\-O\-W@{Status\-\_\-\-Z\-O\-W}}\item[{\em 
+\hypertarget{_accelerometer_8c_a952ea32d355af359a672bae581818c9da5f61c3357d3a4f38dd9dbd6489b5812c}{Status\-\_\-\-Z\-O\-W}\label{_accelerometer_8c_a952ea32d355af359a672bae581818c9da5f61c3357d3a4f38dd9dbd6489b5812c}
+}]X\-Y\-X-\/axis data overwrite occurred. \index{Status\-\_\-\-Y\-O\-W@{Status\-\_\-\-Y\-O\-W}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Status\-\_\-\-Y\-O\-W@{Status\-\_\-\-Y\-O\-W}}\item[{\em 
+\hypertarget{_accelerometer_8c_a952ea32d355af359a672bae581818c9dab9404bbedb577e6d1baf79723d50e728}{Status\-\_\-\-Y\-O\-W}\label{_accelerometer_8c_a952ea32d355af359a672bae581818c9dab9404bbedb577e6d1baf79723d50e728}
+}]Z-\/axis data overwrite occurred. \index{Status\-\_\-\-X\-O\-W@{Status\-\_\-\-X\-O\-W}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Status\-\_\-\-X\-O\-W@{Status\-\_\-\-X\-O\-W}}\item[{\em 
+\hypertarget{_accelerometer_8c_a952ea32d355af359a672bae581818c9daaddcc50cd355c158fe2e681d5d6404d3}{Status\-\_\-\-X\-O\-W}\label{_accelerometer_8c_a952ea32d355af359a672bae581818c9daaddcc50cd355c158fe2e681d5d6404d3}
+}]Y-\/axis data overwrite occurred. \index{Status\-\_\-\-Z\-Y\-X\-D\-R@{Status\-\_\-\-Z\-Y\-X\-D\-R}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Status\-\_\-\-Z\-Y\-X\-D\-R@{Status\-\_\-\-Z\-Y\-X\-D\-R}}\item[{\em 
+\hypertarget{_accelerometer_8c_a952ea32d355af359a672bae581818c9daae184a0d80d1676c72262dd3eb29da24}{Status\-\_\-\-Z\-Y\-X\-D\-R}\label{_accelerometer_8c_a952ea32d355af359a672bae581818c9daae184a0d80d1676c72262dd3eb29da24}
+}]X-\/axis data overwrite occurred. \index{Status\-\_\-\-Z\-D\-R@{Status\-\_\-\-Z\-D\-R}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Status\-\_\-\-Z\-D\-R@{Status\-\_\-\-Z\-D\-R}}\item[{\em 
+\hypertarget{_accelerometer_8c_a952ea32d355af359a672bae581818c9dab8ea36906227ff3ebf344ee50e4b761d}{Status\-\_\-\-Z\-D\-R}\label{_accelerometer_8c_a952ea32d355af359a672bae581818c9dab8ea36906227ff3ebf344ee50e4b761d}
+}]Z\-Y\-X-\/axis new data ready (cleared when A\-L\-L axis M\-S\-Bs are read) \index{Status\-\_\-\-Y\-D\-R@{Status\-\_\-\-Y\-D\-R}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Status\-\_\-\-Y\-D\-R@{Status\-\_\-\-Y\-D\-R}}\item[{\em 
+\hypertarget{_accelerometer_8c_a952ea32d355af359a672bae581818c9da77567236e0ffa1cee366cf5690c9ba09}{Status\-\_\-\-Y\-D\-R}\label{_accelerometer_8c_a952ea32d355af359a672bae581818c9da77567236e0ffa1cee366cf5690c9ba09}
+}]Z-\/axis new data ready. \index{Status\-\_\-\-X\-D\-R@{Status\-\_\-\-X\-D\-R}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Status\-\_\-\-X\-D\-R@{Status\-\_\-\-X\-D\-R}}\item[{\em 
+\hypertarget{_accelerometer_8c_a952ea32d355af359a672bae581818c9da347b03025d237c19217a5b2f93c1ddf6}{Status\-\_\-\-X\-D\-R}\label{_accelerometer_8c_a952ea32d355af359a672bae581818c9da347b03025d237c19217a5b2f93c1ddf6}
+}]Y-\/axis new data ready. \end{description}
+\end{Desc}
+
+
+Definition at line 106 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316b}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Sys\-Mod\-\_\-t@{Sys\-Mod\-\_\-t}}
+\index{Sys\-Mod\-\_\-t@{Sys\-Mod\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Sys\-Mod\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Sys\-Mod\-\_\-t}}}\label{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316b}
+Defines the bitmasks for the system mode Acc\-Reg\-\_\-\-S\-Y\-S\-\_\-\-M\-O\-D of the Acc\-Reg\-\_\-t.
+
+S\-Y\-S\-M\-O\-D -\/ 00\-: S\-T\-A\-N\-D\-B\-Y mode 01\-: W\-A\-K\-E mode 10\-: S\-L\-E\-E\-P mode \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-4@{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-4}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Sys\-Mod\-\_\-\-F\-G\-T\-\_\-4@{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-4}}\item[{\em 
+\hypertarget{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba94dbf99430815940dc235c081e5d2803}{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-4}\label{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba94dbf99430815940dc235c081e5d2803}
+}]F\-I\-F\-O gate error. Emptying the F\-I\-F\-O clears the error. \index{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-3@{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-3}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Sys\-Mod\-\_\-\-F\-G\-T\-\_\-3@{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-3}}\item[{\em 
+\hypertarget{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba3abfcc7302dae149595abcdd8e54eefc}{Sys\-Mod\-\_\-\-F\-G\-T\-\_\-3}\label{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba3abfcc7302dae149595abcdd8e54eefc}
+}]Number of O\-D\-R time units since F\-G\-E\-R\-R was asserted. Reset when F\-G\-E\-R\-R is cleared. \index{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D0@{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D0@{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D0}}\item[{\em 
+\hypertarget{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba574f1d5fa677553ce7d67a01a6ac289a}{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D0}\label{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba574f1d5fa677553ce7d67a01a6ac289a}
+}]Bit 1 of the system mode. \index{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D@{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D@{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D}}\item[{\em 
+\hypertarget{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba3f3178e42b2c5cb146eda72d6f108265}{Sys\-Mod\-\_\-\-S\-Y\-S\-M\-O\-D}\label{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316ba3f3178e42b2c5cb146eda72d6f108265}
+}]Bit 0 of the system mode. \index{Sys\-Mod\-\_\-\-W\-A\-K\-E@{Sys\-Mod\-\_\-\-W\-A\-K\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Sys\-Mod\-\_\-\-W\-A\-K\-E@{Sys\-Mod\-\_\-\-W\-A\-K\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316baf5bd11b200ec6e8b09cc24f179770c73}{Sys\-Mod\-\_\-\-W\-A\-K\-E}\label{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316baf5bd11b200ec6e8b09cc24f179770c73}
+}]Value of the S\-Y\-S\-M\-O\-D bits when system is in standby. \index{Sys\-Mod\-\_\-\-S\-L\-E\-E\-P@{Sys\-Mod\-\_\-\-S\-L\-E\-E\-P}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Sys\-Mod\-\_\-\-S\-L\-E\-E\-P@{Sys\-Mod\-\_\-\-S\-L\-E\-E\-P}}\item[{\em 
+\hypertarget{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316baafbd7943c294bcc8137a84e38c5d6551}{Sys\-Mod\-\_\-\-S\-L\-E\-E\-P}\label{_accelerometer_8c_a2138f43bd5098b99990cab0eafcd316baafbd7943c294bcc8137a84e38c5d6551}
+}]Value of the S\-Y\-S\-M\-O\-D bits when the system is active. \end{description}
+\end{Desc}
+
+
+Definition at line 179 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20daf}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Trigger\-Config\-\_\-t@{Trigger\-Config\-\_\-t}}
+\index{Trigger\-Config\-\_\-t@{Trigger\-Config\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Trigger\-Config\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Trigger\-Config\-\_\-t}}}\label{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20daf}
+Defines the bitmasks for the interrupt trigger configuration Acc\-Reg\-\_\-\-T\-R\-I\-G\-\_\-\-C\-O\-N\-F\-I\-G register of the Acc\-Reg\-\_\-t. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Trigger\-Config\-\_\-\-L\-N\-D\-P\-R\-T@{Trigger\-Config\-\_\-\-L\-N\-D\-P\-R\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Trigger\-Config\-\_\-\-L\-N\-D\-P\-R\-T@{Trigger\-Config\-\_\-\-L\-N\-D\-P\-R\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20dafaba27fbb4a71e017ce0b5dc83733e907e}{Trigger\-Config\-\_\-\-L\-N\-D\-P\-R\-T}\label{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20dafaba27fbb4a71e017ce0b5dc83733e907e}
+}]Transient interrupt trigger. \index{Trigger\-Config\-\_\-\-P\-U\-L\-S\-E@{Trigger\-Config\-\_\-\-P\-U\-L\-S\-E}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Trigger\-Config\-\_\-\-P\-U\-L\-S\-E@{Trigger\-Config\-\_\-\-P\-U\-L\-S\-E}}\item[{\em 
+\hypertarget{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20dafa5690d34feae39371efad5b13c740f1a3}{Trigger\-Config\-\_\-\-P\-U\-L\-S\-E}\label{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20dafa5690d34feae39371efad5b13c740f1a3}
+}]Landscape/\-Portrait orientation interrupt trigger. \index{Trigger\-Config\-\_\-\-F\-F\-\_\-\-M\-T@{Trigger\-Config\-\_\-\-F\-F\-\_\-\-M\-T}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Trigger\-Config\-\_\-\-F\-F\-\_\-\-M\-T@{Trigger\-Config\-\_\-\-F\-F\-\_\-\-M\-T}}\item[{\em 
+\hypertarget{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20dafa86d60021ed469fcdbefe9a2d218464a1}{Trigger\-Config\-\_\-\-F\-F\-\_\-\-M\-T}\label{_accelerometer_8c_a7168a571f836c1bebe1c2094c5b20dafa86d60021ed469fcdbefe9a2d218464a1}
+}]Pulse interrupt trigger. \end{description}
+\end{Desc}
+
+
+Definition at line 165 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Xyz\-Data\-Config\-\_\-t@{Xyz\-Data\-Config\-\_\-t}}
+\index{Xyz\-Data\-Config\-\_\-t@{Xyz\-Data\-Config\-\_\-t}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Xyz\-Data\-Config\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Xyz\-Data\-Config\-\_\-t}}}\label{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42}
+Defines the bitmasks for the X\-Y\-Z configuration register that sets the dynamic range and the high pass filter for the output data.
+
+Full scale range\-: F\-S -\/ 00\-: 2g 01\-: 4g 10\-: 8g 11\-: reserved
+
+\begin{DoxyNote}{Note}
+8g mode will not work with low noise or high resolution modes. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Xyz\-Data\-Config\-\_\-\-F\-S1@{Xyz\-Data\-Config\-\_\-\-F\-S1}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Xyz\-Data\-Config\-\_\-\-F\-S1@{Xyz\-Data\-Config\-\_\-\-F\-S1}}\item[{\em 
+\hypertarget{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a157a8c80c6c4ac2d07a609365e5e4e78}{Xyz\-Data\-Config\-\_\-\-F\-S1}\label{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a157a8c80c6c4ac2d07a609365e5e4e78}
+}]Enable high pass output data. \index{Xyz\-Data\-Config\-\_\-\-F\-S0@{Xyz\-Data\-Config\-\_\-\-F\-S0}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Xyz\-Data\-Config\-\_\-\-F\-S0@{Xyz\-Data\-Config\-\_\-\-F\-S0}}\item[{\em 
+\hypertarget{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42ac27d68c931a3187991317fcc122318a3}{Xyz\-Data\-Config\-\_\-\-F\-S0}\label{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42ac27d68c931a3187991317fcc122318a3}
+}]Full scale range bit 1. \index{Xyz\-Data\-Config\-\_\-\-F\-S@{Xyz\-Data\-Config\-\_\-\-F\-S}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Xyz\-Data\-Config\-\_\-\-F\-S@{Xyz\-Data\-Config\-\_\-\-F\-S}}\item[{\em 
+\hypertarget{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a52a880a970fccf05161f38b67612b04a}{Xyz\-Data\-Config\-\_\-\-F\-S}\label{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a52a880a970fccf05161f38b67612b04a}
+}]Full scale range bit 0. \index{Xyz\-Data\-Config\-\_\-4g@{Xyz\-Data\-Config\-\_\-4g}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Xyz\-Data\-Config\-\_\-4g@{Xyz\-Data\-Config\-\_\-4g}}\item[{\em 
+\hypertarget{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a2bcbdf68a2df205ef1ef8ba3ba046cae}{Xyz\-Data\-Config\-\_\-4g}\label{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a2bcbdf68a2df205ef1ef8ba3ba046cae}
+}]F\-S value when range is 2g. \index{Xyz\-Data\-Config\-\_\-8g@{Xyz\-Data\-Config\-\_\-8g}!Accelerometer.\-c@{Accelerometer.\-c}}\index{Accelerometer.\-c@{Accelerometer.\-c}!Xyz\-Data\-Config\-\_\-8g@{Xyz\-Data\-Config\-\_\-8g}}\item[{\em 
+\hypertarget{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a2d924d103f750436fda218a747b2b2a2}{Xyz\-Data\-Config\-\_\-8g}\label{_accelerometer_8c_a717552591e92cbcfc96c652fe1a42d42a2d924d103f750436fda218a747b2b2a2}
+}]F\-S value when range is 4g. \end{description}
+\end{Desc}
+
+
+Definition at line 225 of file Accelerometer.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_accelerometer_8c_a95df76fc222507aa3e76ed437159e1dc}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-\-Acc\-Read\-Multiple\-Registers@{\-\_\-\-Acc\-Read\-Multiple\-Registers}}
+\index{\-\_\-\-Acc\-Read\-Multiple\-Registers@{\-\_\-\-Acc\-Read\-Multiple\-Registers}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-\-Acc\-Read\-Multiple\-Registers}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Acc\-Read\-Multiple\-Registers (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Reg\-\_\-t}}]{start\-Reg, }
+\item[{{\bf uint8\-\_\-t}}]{num\-Registers, }
+\item[{{\bf uint8\-\_\-t}}]{registers\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_a95df76fc222507aa3e76ed437159e1dc}
+Reads a multiple consecutive registers from the accelerometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\-Reg} & -\/ the first register to read of the consecutive registers \\
+\hline
+\mbox{\tt in}  & {\em num\-Registers} & -\/ The number of consecutive registers to read \\
+\hline
+\mbox{\tt in}  & {\em registers\mbox{[}$\,$\mbox{]}} & -\/ the array in which the register values will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Make sure that registers\mbox{[}\mbox{]} has at least num\-Registers elements to hold the register data. 
+\end{DoxyNote}
+
+
+Definition at line 966 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Read\-Sample(), Accelerometer\-\_\-\-Read\-Sample\-Array(), and Accelerometer\-\_\-\-Start().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_a0699e7afdbf83edc44f0800ad5cc65f7}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-\-Acc\-Read\-Single\-Register@{\-\_\-\-Acc\-Read\-Single\-Register}}
+\index{\-\_\-\-Acc\-Read\-Single\-Register@{\-\_\-\-Acc\-Read\-Single\-Register}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-\-Acc\-Read\-Single\-Register}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf uint8\-\_\-t} \-\_\-\-Acc\-Read\-Single\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Reg\-\_\-t}}]{reg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_a0699e7afdbf83edc44f0800ad5cc65f7}
+Reads a single register from the accelerometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg-\/} & the register to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value read from the accelerometer register 
+\end{DoxyReturn}
+
+
+Definition at line 936 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Config(), and Accelerometer\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_ac4d20255c523c786b86f430d083bf28a}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-\-Acc\-Write\-Single\-Register@{\-\_\-\-Acc\-Write\-Single\-Register}}
+\index{\-\_\-\-Acc\-Write\-Single\-Register@{\-\_\-\-Acc\-Write\-Single\-Register}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-\-Acc\-Write\-Single\-Register}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I2c\-Error\-\_\-t} \-\_\-\-Acc\-Write\-Single\-Register (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Reg\-\_\-t}}]{reg, }
+\item[{{\bf uint8\-\_\-t}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_ac4d20255c523c786b86f430d083bf28a}
+Writes a single register to the accelerometer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reg} & -\/ the register to write to \\
+\hline
+\mbox{\tt in}  & {\em value} & -\/ The value to write to the register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I2c\-Error\-\_\-\-O\-K if the register could be written successfully. Otherwise return an I2c\-Error. 
+\end{DoxyReturn}
+
+
+Definition at line 1006 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Config(), Accelerometer\-\_\-\-Start(), and Accelerometer\-\_\-\-Stop().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_abffbea3ffff0c24e1b68e3fbf6d57e57}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-\-Handle\-Data\-Ready\-Interrupt@{\-\_\-\-Handle\-Data\-Ready\-Interrupt}}
+\index{\-\_\-\-Handle\-Data\-Ready\-Interrupt@{\-\_\-\-Handle\-Data\-Ready\-Interrupt}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Data\-Ready\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Data\-Ready\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_abffbea3ffff0c24e1b68e3fbf6d57e57}
+Handles the G\-P\-I\-O event that indicates that data is ready on the accelerometer. 
+
+Definition at line 910 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_a9d2b62e3dd4358e27f614be64cd7283a}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-\-Handle\-Other\-Interrupt@{\-\_\-\-Handle\-Other\-Interrupt}}
+\index{\-\_\-\-Handle\-Other\-Interrupt@{\-\_\-\-Handle\-Other\-Interrupt}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Other\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-Handle\-Other\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_a9d2b62e3dd4358e27f614be64cd7283a}
+Handles the G\-P\-I\-O event that indicates that a special event on the accelerometer. 
+
+Definition at line 924 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_a7e17ec73aec4e5e30c29c770600c8bbb}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Accelerometer\-\_\-\-Config@{Accelerometer\-\_\-\-Config}}
+\index{Accelerometer\-\_\-\-Config@{Accelerometer\-\_\-\-Config}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Accelerometer\-\_\-\-Config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Accelerometer\-\_\-\-Config (
+\begin{DoxyParamCaption}
+\item[{const {\bf Acc\-Config\-\_\-t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8c_a7e17ec73aec4e5e30c29c770600c8bbb}
+Configures the accelerometer, but does not start the sampling.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ Structure of selected accelerometer settings.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the configuration was successful, false otherwise. The configuration will fail if the accelerometer is not in standby when configured. 
+\end{DoxyReturn}
+
+
+Definition at line 556 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Set\-Config(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_aab95b4004ca553f62854d5ef981d83f3}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Accelerometer\-\_\-\-Init@{Accelerometer\-\_\-\-Init}}
+\index{Accelerometer\-\_\-\-Init@{Accelerometer\-\_\-\-Init}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Accelerometer\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8c_aab95b4004ca553f62854d5ef981d83f3}
+Initializes the accelerometer, but does not configure or start sampling 
+
+Definition at line 527 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Init().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_a7f7a735f35344e05636854b28df834b9}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Accelerometer\-\_\-\-Read\-Sample@{Accelerometer\-\_\-\-Read\-Sample}}
+\index{Accelerometer\-\_\-\-Read\-Sample@{Accelerometer\-\_\-\-Read\-Sample}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Accelerometer\-\_\-\-Read\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Accelerometer\-\_\-\-Read\-Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8c_a7f7a735f35344e05636854b28df834b9}
+Reads a sample from the accelerometer if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em sample} & -\/ structure to hold the sample data once it is collected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sample was ready, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 818 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Read\-Acc(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_ae8796d84277befae45dcd5bd63a143fb}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Accelerometer\-\_\-\-Read\-Sample\-Array@{Accelerometer\-\_\-\-Read\-Sample\-Array}}
+\index{Accelerometer\-\_\-\-Read\-Sample\-Array@{Accelerometer\-\_\-\-Read\-Sample\-Array}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Accelerometer\-\_\-\-Read\-Sample\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Read\-Sample\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{max\-Length, }
+\item[{{\bf uint16\-\_\-t} $\ast$}]{actual\-Length, }
+\item[{{\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8c_ae8796d84277befae45dcd5bd63a143fb}
+Reads a sample from the accelerometer if a sample was ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\-Length} & -\/ the maximum length of bytes data\mbox{[}\mbox{]} can hold \\
+\hline
+\mbox{\tt out}  & {\em actual\-Length} & -\/ the actual number of bytes written to data\mbox{[}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em data} & -\/ an array to hold the data from the accelerometer reading \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 855 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Read\-Acc().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_a38496c82db2e6068b2f0fa6d66a1f4f0}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Accelerometer\-\_\-\-Register\-Isr@{Accelerometer\-\_\-\-Register\-Isr}}
+\index{Accelerometer\-\_\-\-Register\-Isr@{Accelerometer\-\_\-\-Register\-Isr}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Accelerometer\-\_\-\-Register\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Register\-Isr (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Isr\-Pointer\-\_\-t}}]{isr}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8c_a38496c82db2e6068b2f0fa6d66a1f4f0}
+Sets a function that will be ran when the data ready interrupt occurs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em isr} & -\/ pointer to the accelerometer data ready I\-S\-R \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 890 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_a50c3ab0bd7821b6522abfe15d809d340}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Accelerometer\-\_\-\-Start@{Accelerometer\-\_\-\-Start}}
+\index{Accelerometer\-\_\-\-Start@{Accelerometer\-\_\-\-Start}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Accelerometer\-\_\-\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8c_a50c3ab0bd7821b6522abfe15d809d340}
+Starts the accelerometer sampling at its configured data rate. 
+
+Definition at line 717 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Set\-Config(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_ac8a2ae0e168a1a611f846d6c8e3eaa63}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Accelerometer\-\_\-\-Stop@{Accelerometer\-\_\-\-Stop}}
+\index{Accelerometer\-\_\-\-Stop@{Accelerometer\-\_\-\-Stop}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Accelerometer\-\_\-\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8c_ac8a2ae0e168a1a611f846d6c8e3eaa63}
+Stops the data collecting of the accelerometer. 
+
+Definition at line 752 of file Accelerometer.\-c.
+
+
+
+Referenced by Acc\-Control\-\_\-\-Set\-Config(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_a2daa1344e52ddb15175faf6fa207a4ab}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Accelerometer\-\_\-\-Trigger\-Sample\-Blocking@{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking}}
+\index{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking@{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Accelerometer\-\_\-\-Trigger\-Sample\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Trigger\-Sample\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Sample\-\_\-t} $\ast$}]{sample}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8c_a2daa1344e52ddb15175faf6fa207a4ab}
+Triggers the accelerometer to take a sample and block until the sample is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em sample} & -\/ the result of the accelerometer sample. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 772 of file Accelerometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Acc\-Command().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_accelerometer_8c_a242fe4636491b9aabe4b78fc09bf5765}{\index{Accelerometer.\-c@{Accelerometer.\-c}!Accelerometer\-\_\-\-Unregister\-Isr@{Accelerometer\-\_\-\-Unregister\-Isr}}
+\index{Accelerometer\-\_\-\-Unregister\-Isr@{Accelerometer\-\_\-\-Unregister\-Isr}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{Accelerometer\-\_\-\-Unregister\-Isr}]{\setlength{\rightskip}{0pt plus 5cm}void Accelerometer\-\_\-\-Unregister\-Isr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_accelerometer_8c_a242fe4636491b9aabe4b78fc09bf5765}
+Clears the custom I\-S\-R for the accelerometer. 
+
+Definition at line 901 of file Accelerometer.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_accelerometer_8c_a72b81e12fee6ca0807c56afd39fbebd0}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-acc\-Isr\-Pointer@{\-\_\-acc\-Isr\-Pointer}}
+\index{\-\_\-acc\-Isr\-Pointer@{\-\_\-acc\-Isr\-Pointer}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-acc\-Isr\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Acc\-Isr\-Pointer\-\_\-t} \-\_\-acc\-Isr\-Pointer = {\bf N\-U\-L\-L}\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_a72b81e12fee6ca0807c56afd39fbebd0}
+Stores the I\-S\-R pointer 
+
+Definition at line 492 of file Accelerometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Data\-Ready\-Interrupt(), Accelerometer\-\_\-\-Register\-Isr(), and Accelerometer\-\_\-\-Unregister\-Isr().
+
+\hypertarget{_accelerometer_8c_aaf6261fa6a915445f7c09d64ba940e4e}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-active@{\-\_\-active}}
+\index{\-\_\-active@{\-\_\-active}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-active}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-active = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_aaf6261fa6a915445f7c09d64ba940e4e}
+Tracks if the accelerometer is actively collecting data 
+
+Definition at line 509 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Start(), Accelerometer\-\_\-\-Stop(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+\hypertarget{_accelerometer_8c_af39e83a13943924b810540dd2d22fedb}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-configured@{\-\_\-configured}}
+\index{\-\_\-configured@{\-\_\-configured}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-configured}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-configured = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_af39e83a13943924b810540dd2d22fedb}
+Tracks if the accelerometer has ever been configured before 
+
+Definition at line 489 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Config(), Accelerometer\-\_\-\-Start(), and Accelerometer\-\_\-\-Trigger\-Sample\-Blocking().
+
+\hypertarget{_accelerometer_8c_abfc3e4b112787a4d97990393a64626d4}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-ctrl\-Reg\-One@{\-\_\-ctrl\-Reg\-One}}
+\index{\-\_\-ctrl\-Reg\-One@{\-\_\-ctrl\-Reg\-One}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-ctrl\-Reg\-One}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf uint8\-\_\-t} \-\_\-ctrl\-Reg\-One = 0u\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_abfc3e4b112787a4d97990393a64626d4}
+Store the values written to the control registers so they don't have to be read back. 
+
+Definition at line 501 of file Accelerometer.\-c.
+
+
+
+Referenced by Accelerometer\-\_\-\-Config(), Accelerometer\-\_\-\-Start(), and Accelerometer\-\_\-\-Stop().
+
+\hypertarget{_accelerometer_8c_a11dbd8006370044a4d0ddadf9cc3e735}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-data\-Ready@{\-\_\-data\-Ready}}
+\index{\-\_\-data\-Ready@{\-\_\-data\-Ready}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-data\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf bool} \-\_\-data\-Ready = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_a11dbd8006370044a4d0ddadf9cc3e735}
+Tracks if data is ready to be read from the accelerometer 
+
+Definition at line 512 of file Accelerometer.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Data\-Ready\-Interrupt(), Accelerometer\-\_\-\-Read\-Sample(), and Accelerometer\-\_\-\-Read\-Sample\-Array().
+
+\hypertarget{_accelerometer_8c_a4eb99285a0129893d3f48de7de237df5}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} \-\_\-initialized = {\bf false}\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_a4eb99285a0129893d3f48de7de237df5}
+Tracks if the accelerometer has been initialized. 
+
+Definition at line 486 of file Accelerometer.\-c.
+
+\hypertarget{_accelerometer_8c_a858931594fd60bff6bbb37d767322d39}{\index{Accelerometer.\-c@{Accelerometer.\-c}!\-\_\-parameters@{\-\_\-parameters}}
+\index{\-\_\-parameters@{\-\_\-parameters}!Accelerometer.c@{Accelerometer.\-c}}
+\subsubsection[{\-\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Acc\-Config\-\_\-t} \-\_\-parameters\hspace{0.3cm}{\ttfamily [static]}}}\label{_accelerometer_8c_a858931594fd60bff6bbb37d767322d39}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{AccOdr\_100, AccResolution\_14bit, AccFullScaleRange\_4g,
+                                  \hyperlink{_accelerometer_8h_a8b39bc2b8a765b28c61e490f14a4b741a76b689b411a2003fc30732a315b5399e}{AccOverSample\_HighRes}\}
+\end{DoxyCode}
+Stores the configuration parameters for the initialized accelerometer 
+
+Definition at line 495 of file Accelerometer.\-c.
+

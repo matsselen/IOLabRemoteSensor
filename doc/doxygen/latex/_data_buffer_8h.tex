@@ -1,0 +1,365 @@
+\hypertarget{_data_buffer_8h}{\section{Data\-Buffer.\-h File Reference}
+\label{_data_buffer_8h}\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}}
+}
+
+
+Data buffer is the memory space reserved to store sensor data.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_data_buffer_8h_ab5946581a35b97466ba9abf5ca217528}{M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S}~(33u)
+\item 
+\#define \hyperlink{_data_buffer_8h_a01464ed9cb0292540d7e0fb3d16d3844}{M\-I\-N\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~(100u)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_data_buffer_8h_a8108e383cde1958a0bbfbdffc5068858}{Data\-Buffer\-\_\-\-Init} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} array0\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} array1\mbox{[}$\,$\mbox{]}, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} array\-Size)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8h_adb6f152c38817dfbb87000bf1b9c58ac}{Data\-Buffer\-\_\-\-Set\-Data} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} start\-Index, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} length, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_data_buffer_8h_ad42e09510e8b4c7ffeb89e1641a3d96d}{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$buffer\-Length, \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} $\ast$$\ast$buffer)
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_data_buffer_8h_a20cc73afb2cfc749b7ff31f7610eb034}{Data\-Buffer\-\_\-\-Rotate\-Buffer} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8h_a1076e54100ff8b0b70400da353c838d2}{Data\-Buffer\-\_\-\-Create\-Subarray} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} sub\-Array\-Id, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} length)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8h_aa05e29733eb661098d83ecf808fb1c40}{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} sub\-Array\-Id, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} length, const \hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8h_a3b77682af68cdfbdf4dbcf06f5468008}{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} sub\-Array\-Id, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} length, const \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} data\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_data_buffer_8h_a850d89976bc47e7b042b147550929713}{Data\-Buffer\-\_\-\-Clear\-Subarrays} (void)
+\item 
+\hyperlink{_project_types_8h_a6e2560c92901098cb3cd008a79dcdeba}{bool} \hyperlink{_data_buffer_8h_a402d58a4c760b0dbba6f51dab2efa11b}{Data\-Buffer\-\_\-\-Subarray\-Exists} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} sub\-Array\-Id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data buffer is the memory space reserved to store sensor data. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The data buffer contains memory space to store sensor data and can be written to and read from. The buffer contains locking mechanisms to ensure that data is not compromised and is valid. 
+
+Definition in file \hyperlink{_data_buffer_8h_source}{Data\-Buffer.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_data_buffer_8h_ab5946581a35b97466ba9abf5ca217528}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S@{M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S}}
+\index{M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S@{M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-S\-U\-B\-\_\-\-A\-R\-R\-A\-Y\-S~(33u)}}\label{_data_buffer_8h_ab5946581a35b97466ba9abf5ca217528}
+Defines the maximum number of subarrays that can be handled 
+
+Definition at line 28 of file Data\-Buffer.\-h.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Create\-Subarray().
+
+\hypertarget{_data_buffer_8h_a01464ed9cb0292540d7e0fb3d16d3844}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!M\-I\-N\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{M\-I\-N\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{M\-I\-N\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{M\-I\-N\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{M\-I\-N\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-N\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~(100u)}}\label{_data_buffer_8h_a01464ed9cb0292540d7e0fb3d16d3844}
+Defines the minimum size acceptable for the buffer arrays 
+
+Definition at line 30 of file Data\-Buffer.\-h.
+
+
+
+Referenced by Data\-Buffer\-\_\-\-Init().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_data_buffer_8h_a3b77682af68cdfbdf4dbcf06f5468008}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit@{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit}}
+\index{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit@{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Add\-To\-Subarray16\-Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{sub\-Array\-Id, }
+\item[{{\bf uint16\-\_\-t}}]{length, }
+\item[{const {\bf uint16\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8h_a3b77682af68cdfbdf4dbcf06f5468008}
+If there is room, it adds length of data to subarray\-Id.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em subarray\-Id-\/} & the identifier for the subarray. \\
+\hline
+\mbox{\tt in}  & {\em length} & -\/ the actual number of pieces of data to add to the subarray.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the data could be added and would fit. False otherwise. Will return false if the length would cause an out of bounds array access. Or if the subarray Id is not found. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 343 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Ambient\-Light\-Data\-Callback(), \-\_\-\-Analog7\-Data\-Callback(), \-\_\-\-Analog8\-Data\-Callback(), \-\_\-\-Analog9\-Data\-Callback(), \-\_\-\-Battery\-Voltage\-Data\-Callback(), \-\_\-\-Ecg\-Add\-To\-Data\-Buffer(), \-\_\-\-Force\-Gauge\-Data\-Callback(), \-\_\-\-High\-Gain\-Data\-Callback(), \-\_\-\-Microphone\-Data\-Callback(), \-\_\-thermometer\-Data\-Call\-Back(), and Enc\-Control\-\_\-\-Read\-Enc().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8h_aa05e29733eb661098d83ecf808fb1c40}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit@{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit}}
+\index{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit@{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Add\-To\-Subarray8\-Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{sub\-Array\-Id, }
+\item[{{\bf uint16\-\_\-t}}]{length, }
+\item[{const {\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8h_aa05e29733eb661098d83ecf808fb1c40}
+If there is room, it adds length of data to subarray\-Id.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em subarray\-Id-\/} & the identifier for the subarray. \\
+\hline
+\mbox{\tt in}  & {\em length} & -\/ the actual number of pieces of data to add to the subarray.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the data could be added and would fit. False otherwise. Will return false if the length would cause an out of bounds array access. Or if the subarray Id is not found. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 289 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Read\-Pins(), Acc\-Control\-\_\-\-Read\-Acc(), Barometer\-Control\-\_\-\-Read\-Bar(), Gyro\-Control\-\_\-\-Read\-Gyro(), and Mag\-Control\-\_\-\-Read\-Mag().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8h_a850d89976bc47e7b042b147550929713}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!Data\-Buffer\-\_\-\-Clear\-Subarrays@{Data\-Buffer\-\_\-\-Clear\-Subarrays}}
+\index{Data\-Buffer\-\_\-\-Clear\-Subarrays@{Data\-Buffer\-\_\-\-Clear\-Subarrays}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{Data\-Buffer\-\_\-\-Clear\-Subarrays}]{\setlength{\rightskip}{0pt plus 5cm}void Data\-Buffer\-\_\-\-Clear\-Subarrays (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8h_a850d89976bc47e7b042b147550929713}
+Deletes all the subarrays from the data arrays. 
+
+Definition at line 394 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Start\-Data(), and Con\-Man\-\_\-\-Stop\-Data().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8h_a1076e54100ff8b0b70400da353c838d2}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!Data\-Buffer\-\_\-\-Create\-Subarray@{Data\-Buffer\-\_\-\-Create\-Subarray}}
+\index{Data\-Buffer\-\_\-\-Create\-Subarray@{Data\-Buffer\-\_\-\-Create\-Subarray}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{Data\-Buffer\-\_\-\-Create\-Subarray}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Create\-Subarray (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{sub\-Array\-Id, }
+\item[{{\bf uint16\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8h_a1076e54100ff8b0b70400da353c838d2}
+If there is room, it creates a subarray of length spaces. The subarray will always be appended to the end of the active subarrays.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em subarray\-Id-\/} & the identifier for the subarray. \\
+\hline
+\mbox{\tt in}  & {\em length} & -\/ the maximum number of pieces of data to store in the subarray.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the subarray could be created. False otherwise. Will return false if the length would cause an out of bounds array access. Or if the subarray Id is already used. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 220 of file Data\-Buffer.\-c.
+
+
+
+Referenced by \-\_\-\-Con\-Man\-\_\-\-Allocate\-Buffer().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8h_ad42e09510e8b4c7ffeb89e1641a3d96d}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!Data\-Buffer\-\_\-\-Get\-Idle\-Buffer@{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer}}
+\index{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer@{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{Data\-Buffer\-\_\-\-Get\-Idle\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Data\-Buffer\-\_\-\-Get\-Idle\-Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t} $\ast$}]{buffer\-Length, }
+\item[{{\bf uint8\-\_\-t} $\ast$$\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8h_ad42e09510e8b4c7ffeb89e1641a3d96d}
+Gets a reference to the idle buffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buffer\-Length} & -\/ the length of the returned buffer \\
+\hline
+\mbox{\tt out}  & {\em buffer} & -\/ the pointer to the array of data in the buffer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file Data\-Buffer.\-c.
+
+\hypertarget{_data_buffer_8h_a8108e383cde1958a0bbfbdffc5068858}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!Data\-Buffer\-\_\-\-Init@{Data\-Buffer\-\_\-\-Init}}
+\index{Data\-Buffer\-\_\-\-Init@{Data\-Buffer\-\_\-\-Init}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{Data\-Buffer\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Data\-Buffer\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{array0\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint8\-\_\-t}}]{array1\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf uint16\-\_\-t}}]{array\-Size}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8h_a8108e383cde1958a0bbfbdffc5068858}
+Initialized the data buffer and points this module to the memory to use as the data buffers.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em array0} & -\/ the first array to be used to pingpong between. \\
+\hline
+\mbox{\tt in}  & {\em array1} & -\/ the second array to be used to pingpong between. \\
+\hline
+\mbox{\tt in}  & {\em array\-Size} & -\/ the size of the array0 and array1 in bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+array0 and array1 must be the same size. 
+\end{DoxyNote}
+
+
+Definition at line 104 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8h_a20cc73afb2cfc749b7ff31f7610eb034}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!Data\-Buffer\-\_\-\-Rotate\-Buffer@{Data\-Buffer\-\_\-\-Rotate\-Buffer}}
+\index{Data\-Buffer\-\_\-\-Rotate\-Buffer@{Data\-Buffer\-\_\-\-Rotate\-Buffer}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{Data\-Buffer\-\_\-\-Rotate\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Data\-Buffer\-\_\-\-Rotate\-Buffer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8h_a20cc73afb2cfc749b7ff31f7610eb034}
+Rotates which buffer the new data is going to and resets the old buffer.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & value of the now active buffer, 0 or 1.\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+D\-O N\-O\-T C\-A\-L\-L F\-R\-O\-M I\-N\-T\-E\-R\-R\-U\-P\-T C\-O\-N\-T\-E\-X\-T!!! There is currently no way to rotate the buffers from interrupt context and guarantee data integrity of the data within the buffers. 
+\end{DoxyNote}
+
+
+Definition at line 187 of file Data\-Buffer.\-c.
+
+
+
+Referenced by Comm\-Protocol\-\_\-\-Tx\-Handler().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_data_buffer_8h_adb6f152c38817dfbb87000bf1b9c58ac}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!Data\-Buffer\-\_\-\-Set\-Data@{Data\-Buffer\-\_\-\-Set\-Data}}
+\index{Data\-Buffer\-\_\-\-Set\-Data@{Data\-Buffer\-\_\-\-Set\-Data}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{Data\-Buffer\-\_\-\-Set\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Set\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{start\-Index, }
+\item[{{\bf uint16\-\_\-t}}]{length, }
+\item[{const {\bf uint8\-\_\-t}}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8h_adb6f152c38817dfbb87000bf1b9c58ac}
+Sets the memory to the values in data starting at start\-Index and ending at start\-Index+length.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\-Index-\/} & the index of the array to start inserting data at. \\
+\hline
+\mbox{\tt in}  & {\em length} & -\/ the number of pieces of data in data\mbox{[}\mbox{]}. \\
+\hline
+\mbox{\tt in}  & {\em data} & -\/ the array of data to set in the data buffer array.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the data could be set. False otherwise. Will return false if the index or length would cause an out of bounds array access. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 129 of file Data\-Buffer.\-c.
+
+\hypertarget{_data_buffer_8h_a402d58a4c760b0dbba6f51dab2efa11b}{\index{Data\-Buffer.\-h@{Data\-Buffer.\-h}!Data\-Buffer\-\_\-\-Subarray\-Exists@{Data\-Buffer\-\_\-\-Subarray\-Exists}}
+\index{Data\-Buffer\-\_\-\-Subarray\-Exists@{Data\-Buffer\-\_\-\-Subarray\-Exists}!DataBuffer.h@{Data\-Buffer.\-h}}
+\subsubsection[{Data\-Buffer\-\_\-\-Subarray\-Exists}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Data\-Buffer\-\_\-\-Subarray\-Exists (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{sub\-Array\-Id}
+\end{DoxyParamCaption}
+)}}\label{_data_buffer_8h_a402d58a4c760b0dbba6f51dab2efa11b}
+Checks if a subarray by the name of sub\-Array\-Id exists.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em subarray\-Id-\/} & the identifier for the subarray.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & True if the subarray I\-D exists. False otherwise. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 412 of file Data\-Buffer.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+

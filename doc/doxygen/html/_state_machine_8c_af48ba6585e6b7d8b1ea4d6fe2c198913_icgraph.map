@@ -1,0 +1,8 @@
+<map id="_UnlatchPower" name="_UnlatchPower">
+<area shape="rect" href="$_state_machine_8c.html#a4999feb5cd4d41edea833a218eda4fe0" title="_HandlePowerOffRequest" alt="" coords="165,56,341,83" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="648,6,800,32" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="624,107,824,134" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="391,56,575,83" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="873,56,1071,83" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1120,56,1171,83" />
+</map>

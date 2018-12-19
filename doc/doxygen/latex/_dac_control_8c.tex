@@ -1,0 +1,146 @@
+\hypertarget{_dac_control_8c}{\section{Dac\-Control.\-c File Reference}
+\label{_dac_control_8c}\index{Dac\-Control.\-c@{Dac\-Control.\-c}}
+}
+
+
+Controls the hardware D\-A\-C.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Dac\-Control.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Dac.\-h$>$}\\*
+{\ttfamily \#include $<$Key\-Value.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+Include dependency graph for Dac\-Control.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_dac_control_8c_aca4757aeeaf8cfd68e74ad9bf07330f7}{\-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude} (void)
+\item 
+void \hyperlink{_dac_control_8c_a9933bf276e4c829705d35141419c9ea4}{Dac\-Control\-\_\-\-Init} ()
+\item 
+void \hyperlink{_dac_control_8c_a4ac43b8f2c1b096dd3b9ef529bf74e4b}{Dac\-Control\-\_\-\-Set\-Config} (\hyperlink{_project_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} config)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_key_value_8h_a7ea366ee4dbbd46b8e55b3cbc96c5fc6}{Dac\-Mode\-\_\-t} \hyperlink{_dac_control_8c_a947332e2c9c6a4d21c47a401e3a2a435}{\-\_\-dac\-Mode} = Dac\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D
+\item 
+\hyperlink{_key_value_8h_a6383b4e00f53aa50d14a3c6b117b5795}{Dac\-Amplitude\-\_\-t} \hyperlink{_dac_control_8c_ac2f0869a2393412873c64b801a6319a9}{\-\_\-dac\-Amplitude} = \hyperlink{_key_value_8h_afa3061fa307a5077f984369b8507ce11}{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-C\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controls the hardware D\-A\-C. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} Controls and manages the settings for the hardware D\-A\-C. 
+
+Definition in file \hyperlink{_dac_control_8c_source}{Dac\-Control.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_dac_control_8c_aca4757aeeaf8cfd68e74ad9bf07330f7}{\index{Dac\-Control.\-c@{Dac\-Control.\-c}!\-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude@{\-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude}}
+\index{\-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude@{\-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude}!DacControl.c@{Dac\-Control.\-c}}
+\subsubsection[{\-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_dac_control_8c_aca4757aeeaf8cfd68e74ad9bf07330f7}
+Sets the output of the D\-A\-C to the amplitude stored in \-\_\-dac\-Amplitude. 
+
+Definition at line 113 of file Dac\-Control.\-c.
+
+
+
+Referenced by Dac\-Control\-\_\-\-Set\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dac_control_8c_a9933bf276e4c829705d35141419c9ea4}{\index{Dac\-Control.\-c@{Dac\-Control.\-c}!Dac\-Control\-\_\-\-Init@{Dac\-Control\-\_\-\-Init}}
+\index{Dac\-Control\-\_\-\-Init@{Dac\-Control\-\_\-\-Init}!DacControl.c@{Dac\-Control.\-c}}
+\subsubsection[{Dac\-Control\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Dac\-Control\-\_\-\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_dac_control_8c_a9933bf276e4c829705d35141419c9ea4}
+Initialized the D\-A\-C and driver. 
+
+Definition at line 46 of file Dac\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Init().
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_dac_control_8c_a4ac43b8f2c1b096dd3b9ef529bf74e4b}{\index{Dac\-Control.\-c@{Dac\-Control.\-c}!Dac\-Control\-\_\-\-Set\-Config@{Dac\-Control\-\_\-\-Set\-Config}}
+\index{Dac\-Control\-\_\-\-Set\-Config@{Dac\-Control\-\_\-\-Set\-Config}!DacControl.c@{Dac\-Control.\-c}}
+\subsubsection[{Dac\-Control\-\_\-\-Set\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void Dac\-Control\-\_\-\-Set\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{config}
+\end{DoxyParamCaption}
+)}}\label{_dac_control_8c_a4ac43b8f2c1b096dd3b9ef529bf74e4b}
+Sets a configuration value to the D\-A\-C
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & -\/ the key/value pair with the configuration information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Dac\-Control.\-c.
+
+
+
+Referenced by Con\-Man\-\_\-\-Set\-Output\-Config().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_dac_control_8c_ac2f0869a2393412873c64b801a6319a9}{\index{Dac\-Control.\-c@{Dac\-Control.\-c}!\-\_\-dac\-Amplitude@{\-\_\-dac\-Amplitude}}
+\index{\-\_\-dac\-Amplitude@{\-\_\-dac\-Amplitude}!DacControl.c@{Dac\-Control.\-c}}
+\subsubsection[{\-\_\-dac\-Amplitude}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dac\-Amplitude\-\_\-t} \-\_\-dac\-Amplitude = {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-C\-\_\-\-A\-M\-P\-L\-I\-T\-U\-D\-E}}}\label{_dac_control_8c_ac2f0869a2393412873c64b801a6319a9}
+Tracks what amplitude the D\-A\-C is set at 
+
+Definition at line 38 of file Dac\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude(), and Dac\-Control\-\_\-\-Set\-Config().
+
+\hypertarget{_dac_control_8c_a947332e2c9c6a4d21c47a401e3a2a435}{\index{Dac\-Control.\-c@{Dac\-Control.\-c}!\-\_\-dac\-Mode@{\-\_\-dac\-Mode}}
+\index{\-\_\-dac\-Mode@{\-\_\-dac\-Mode}!DacControl.c@{Dac\-Control.\-c}}
+\subsubsection[{\-\_\-dac\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dac\-Mode\-\_\-t} \-\_\-dac\-Mode = Dac\-Mode\-\_\-\-I\-N\-V\-A\-L\-I\-D}}\label{_dac_control_8c_a947332e2c9c6a4d21c47a401e3a2a435}
+Tracks what mode the D\-A\-C is in 
+
+Definition at line 36 of file Dac\-Control.\-c.
+
+
+
+Referenced by \-\_\-\-Dac\-Control\-\_\-\-Set\-Amplitude(), and Dac\-Control\-\_\-\-Set\-Config().
+

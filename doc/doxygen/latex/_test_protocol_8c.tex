@@ -1,0 +1,635 @@
+\hypertarget{_test_protocol_8c}{\section{Test\-Protocol.\-c File Reference}
+\label{_test_protocol_8c}\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}}
+}
+
+
+Manages the self-\/test protocol.  
+
+
+{\ttfamily \#include $<$Project\-Types.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Test\-Protocol.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$Assert.\-h$>$}\\*
+{\ttfamily \#include $<$Debug.\-h$>$}\\*
+{\ttfamily \#include $<$Serial.\-h$>$}\\*
+{\ttfamily \#include $<$Conversion.\-h$>$}\\*
+{\ttfamily \#include $<$Gpio.\-h$>$}\\*
+{\ttfamily \#include $<$Pwm.\-h$>$}\\*
+{\ttfamily \#include $<$Barometer.\-h$>$}\\*
+{\ttfamily \#include $<$Accelerometer.\-h$>$}\\*
+{\ttfamily \#include $<$Magnetometer.\-h$>$}\\*
+{\ttfamily \#include $<$Gyroscope.\-h$>$}\\*
+{\ttfamily \#include $<$Encoder.\-h$>$}\\*
+{\ttfamily \#include $<$D\-A\-C.\-h$>$}\\*
+{\ttfamily \#include $<$Adc\-Manager.\-h$>$}\\*
+{\ttfamily \#include $<$Ultrasound.\-h$>$}\\*
+{\ttfamily \#include $<$Version.\-h$>$}\\*
+{\ttfamily \#include $<$Comm\-Protocol.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$Interrupt.\-h$>$}\\*
+{\ttfamily \#include $<$Device.\-h$>$}\\*
+{\ttfamily \#include $<$Board.\-h$>$}\\*
+{\ttfamily \#include $<$Watchdog.\-h$>$}\\*
+{\ttfamily \#include $<$Clock.\-h$>$}\\*
+Include dependency graph for Test\-Protocol.\-c\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_human_command__t}{Human\-Command\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_test_protocol_8c_ab210af8ab81ed38843b618e0be199f9a}{H\-U\-M\-A\-N\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-S}~(\char`\"{} \-\_\-\textbackslash{}r\textbackslash{}n\char`\"{})
+\item 
+\#define \hyperlink{_test_protocol_8c_a7bfc1124eafd16334dbc2dfb5ede07a5}{N\-U\-M\-\_\-\-H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S}~(17u)
+\item 
+\#define \hyperlink{_test_protocol_8c_a1fa22ae210976e6581a207cc26024982}{H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}~(4u)
+\item 
+\#define \hyperlink{_test_protocol_8c_a82056244cbd014dcfea9512b2cdf5f45}{H\-E\-L\-P\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}~(25u)
+\item 
+\hypertarget{_test_protocol_8c_a7b7ee9006ff6d66d384435d99718e73b}{\#define {\bfseries P\-O\-R\-T\-\_\-\-J\-\_\-\-U\-I\-N\-T}~(99u)}\label{_test_protocol_8c_a7b7ee9006ff6d66d384435d99718e73b}
+
+\item 
+\hypertarget{_test_protocol_8c_ac660e3fa4bbbc3a83eba698b696ed270}{\#define {\bfseries P\-O\-R\-T\-\_\-\-U\-\_\-\-U\-I\-N\-T}~(98u)}\label{_test_protocol_8c_ac660e3fa4bbbc3a83eba698b696ed270}
+
+\item 
+\hypertarget{_test_protocol_8c_a7b7ee9006ff6d66d384435d99718e73b}{\#define {\bfseries P\-O\-R\-T\-\_\-\-J\-\_\-\-U\-I\-N\-T}~(99u)}\label{_test_protocol_8c_a7b7ee9006ff6d66d384435d99718e73b}
+
+\item 
+\hypertarget{_test_protocol_8c_ac660e3fa4bbbc3a83eba698b696ed270}{\#define {\bfseries P\-O\-R\-T\-\_\-\-U\-\_\-\-U\-I\-N\-T}~(98u)}\label{_test_protocol_8c_ac660e3fa4bbbc3a83eba698b696ed270}
+
+\item 
+\hypertarget{_test_protocol_8c_aca15684578e8dac6cd61aa029875bed1}{\#define {\bfseries N\-U\-M\-\_\-\-E\-N\-C\-\_\-\-I\-T\-E\-M\-S}~( 2u )}\label{_test_protocol_8c_aca15684578e8dac6cd61aa029875bed1}
+
+\item 
+\hypertarget{_test_protocol_8c_a3c66961f1db85d5ffef3c76db8b2f44c}{\#define {\bfseries N\-U\-M\-B\-E\-R\-\_\-\-A\-D\-C\-\_\-\-U\-S\-E\-D}~1u}\label{_test_protocol_8c_a3c66961f1db85d5ffef3c76db8b2f44c}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_test_protocol_8c_a3e26c1fc517e74aedbb8d0ba6ebb1a4f}{Nak\-Error\-Code\-\_\-t} \{ \\*
+{\bfseries Nak\-Error\-Code\-\_\-\-N\-O\-\_\-\-C\-O\-M\-M\-A\-N\-D} = 1, 
+\\*
+{\bfseries Nak\-Error\-Code\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D} = 2, 
+\\*
+{\bfseries Nak\-Error\-Code\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A\-\_\-\-L\-E\-N\-G\-T\-H} = 3, 
+\\*
+{\bfseries Nak\-Error\-Code\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A} = 4, 
+\\*
+{\bfseries Nak\-Error\-Code\-\_\-\-C\-A\-N\-N\-O\-T\-\_\-\-P\-E\-R\-F\-O\-R\-M} = 5, 
+\\*
+{\bfseries Nak\-Error\-Code\-\_\-\-E\-R\-R\-O\-R} = 6
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_test_protocol_8c_a75d20203c77562f64d24aa08408bbbbe}{\-\_\-\-Handle\-Human\-Packets} (\hyperlink{_serial_8h_struct_serial_buffer__t}{Serial\-Buffer\-\_\-t} $\ast$packet\-Received)
+\item 
+static void \hyperlink{_test_protocol_8c_a3e17b7f0ea75d81df7184177163d4218}{\-\_\-\-Handle\-Human\-Gpo\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_af990b619e59f887b8a3ebda4018f5572}{\-\_\-\-Handle\-Human\-Gpi\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_a4b5deac7c3ac5591099f8f6aad558cc0}{\-\_\-\-Handle\-Human\-Adc1\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_ac35b5896ffde73a23847ea8181bc6db5}{\-\_\-\-Handle\-Human\-Adc\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_af936261d5ccefcb6e3b8f3e5992dad24}{\-\_\-\-Handle\-Human\-Pwm\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_aeb99f4a37f3a85763ed4d59a5212741c}{\-\_\-\-Handle\-Human\-Acc\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_ac199ffeaa6cfb4ea2d155d22b06f98b9}{\-\_\-\-Handle\-Human\-Mag\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_aa3fd189e464c9fb5b9892696bac16a62}{\-\_\-\-Handle\-Human\-Barc\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_a03a46700129b81db8e5cc680816a3860}{\-\_\-\-Handle\-Human\-Bar\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_a5a0700d249688ed73deb98b8ce5bf961}{\-\_\-\-Handle\-Human\-Gyro\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_a0641163fc741c3b7bfec95b97b8c636b}{\-\_\-\-Handle\-Human\-Encoder\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_a8bf36becb1edff6d6074509646469406}{\-\_\-\-Handle\-Human\-Dac\-Command} (void)
+\item 
+\hypertarget{_test_protocol_8c_a50ac96d91b2c3829d693d1fbbd148119}{static void {\bfseries \-\_\-\-Handle\-Human\-Us\-Go\-Command} (void)}\label{_test_protocol_8c_a50ac96d91b2c3829d693d1fbbd148119}
+
+\item 
+static void \hyperlink{_test_protocol_8c_a27b932df14c5511112f2b45747741c12}{\-\_\-\-Handle\-Human\-Stop\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_a08064d32bf6d4497ab6ac11f80873ecb}{\-\_\-\-Handle\-Human\-Ver\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_af0191e2b517192cafcf36ae2140acd97}{\-\_\-\-Handle\-Human\-Rf\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_a30594c72326498eb05c051f8ea858c8e}{\-\_\-\-Handle\-Human\-Bsl\-Command} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_a9a6c77304d30771f67961c7100ad749a}{\-\_\-\-Send\-Ack\-Human} (void)
+\item 
+static void \hyperlink{_test_protocol_8c_a1d3faf9e9f7a628cd5d12fea2cee234a}{\-\_\-\-Send\-Nak\-Human} (\hyperlink{_test_protocol_8c_a3e26c1fc517e74aedbb8d0ba6ebb1a4f}{Nak\-Error\-Code\-\_\-t} error\-Code)
+\item 
+void \hyperlink{_test_protocol_8c_a5563b89c8fb7d89532da39e8d606893a}{Test\-Protocol\-\_\-\-Init} (void)
+\item 
+void \hyperlink{_test_protocol_8c_a36f1fd4255a8167a0df6b7a81cab6b40}{Test\-Protocol\-\_\-\-Handle\-Received\-Packet} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_serial_8h_struct_serial_buffer__t}{Serial\-Buffer\-\_\-t} \hyperlink{_test_protocol_8c_ae85b7147219c6585dbd88cb7eb30384a}{\-\_\-packet\-Tx}
+\item 
+static const \hyperlink{struct_human_command__t}{Human\-Command\-\_\-t} \hyperlink{_test_protocol_8c_af60f8565c8c040e712ba165b088ee55c}{\-\_\-human\-Commands} \mbox{[}\hyperlink{_test_protocol_8c_a7bfc1124eafd16334dbc2dfb5ede07a5}{N\-U\-M\-\_\-\-H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages the self-\/test protocol. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The test protocol module manages the tests that are performed using a P\-C via the serial interface. 
+
+Definition in file \hyperlink{_test_protocol_8c_source}{Test\-Protocol.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_test_protocol_8c_a82056244cbd014dcfea9512b2cdf5f45}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!H\-E\-L\-P\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H@{H\-E\-L\-P\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{H\-E\-L\-P\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H@{H\-E\-L\-P\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{H\-E\-L\-P\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-E\-L\-P\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H~(25u)}}\label{_test_protocol_8c_a82056244cbd014dcfea9512b2cdf5f45}
+Maximum length of a command help string 
+
+Definition at line 90 of file Test\-Protocol.\-c.
+
+\hypertarget{_test_protocol_8c_a1fa22ae210976e6581a207cc26024982}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H@{H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H@{H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H~(4u)}}\label{_test_protocol_8c_a1fa22ae210976e6581a207cc26024982}
+Maximum length of a human command string 
+
+Definition at line 87 of file Test\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Packets().
+
+\hypertarget{_test_protocol_8c_ab210af8ab81ed38843b618e0be199f9a}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!H\-U\-M\-A\-N\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-S@{H\-U\-M\-A\-N\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-S}}
+\index{H\-U\-M\-A\-N\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-S@{H\-U\-M\-A\-N\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-S}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{H\-U\-M\-A\-N\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-U\-M\-A\-N\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-S~(\char`\"{} \-\_\-\textbackslash{}r\textbackslash{}n\char`\"{})}}\label{_test_protocol_8c_ab210af8ab81ed38843b618e0be199f9a}
+Defines the characters used to separate parameters in human-\/readable commands. 
+
+Definition at line 81 of file Test\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Adc1\-Command(), \-\_\-\-Handle\-Human\-Dac\-Command(), \-\_\-\-Handle\-Human\-Gpi\-Command(), \-\_\-\-Handle\-Human\-Gpo\-Command(), \-\_\-\-Handle\-Human\-Packets(), and \-\_\-\-Handle\-Human\-Pwm\-Command().
+
+\hypertarget{_test_protocol_8c_a7bfc1124eafd16334dbc2dfb5ede07a5}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!N\-U\-M\-\_\-\-H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S@{N\-U\-M\-\_\-\-H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S}}
+\index{N\-U\-M\-\_\-\-H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S@{N\-U\-M\-\_\-\-H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S~(17u)}}\label{_test_protocol_8c_a7bfc1124eafd16334dbc2dfb5ede07a5}
+Number of defined human-\/readable commands 
+
+Definition at line 84 of file Test\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Packets().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_test_protocol_8c_a3e26c1fc517e74aedbb8d0ba6ebb1a4f}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!Nak\-Error\-Code\-\_\-t@{Nak\-Error\-Code\-\_\-t}}
+\index{Nak\-Error\-Code\-\_\-t@{Nak\-Error\-Code\-\_\-t}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{Nak\-Error\-Code\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Nak\-Error\-Code\-\_\-t}}}\label{_test_protocol_8c_a3e26c1fc517e74aedbb8d0ba6ebb1a4f}
+Possible N\-A\-K error codes. The values are fixed to match the protocol document. 
+
+Definition at line 55 of file Test\-Protocol.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_test_protocol_8c_aeb99f4a37f3a85763ed4d59a5212741c}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Acc\-Command@{\-\_\-\-Handle\-Human\-Acc\-Command}}
+\index{\-\_\-\-Handle\-Human\-Acc\-Command@{\-\_\-\-Handle\-Human\-Acc\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Acc\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Acc\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_aeb99f4a37f3a85763ed4d59a5212741c}
+Enables the accelerometer and starts taking samples of the accelerometer. 
+
+Definition at line 606 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a4b5deac7c3ac5591099f8f6aad558cc0}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Adc1\-Command@{\-\_\-\-Handle\-Human\-Adc1\-Command}}
+\index{\-\_\-\-Handle\-Human\-Adc1\-Command@{\-\_\-\-Handle\-Human\-Adc1\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Adc1\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Adc1\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a4b5deac7c3ac5591099f8f6aad558cc0}
+Sets a selected analog input and takes a single sample of that A\-D\-C channel. 
+
+Definition at line 465 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_ac35b5896ffde73a23847ea8181bc6db5}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Adc\-Command@{\-\_\-\-Handle\-Human\-Adc\-Command}}
+\index{\-\_\-\-Handle\-Human\-Adc\-Command@{\-\_\-\-Handle\-Human\-Adc\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Adc\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Adc\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_ac35b5896ffde73a23847ea8181bc6db5}
+Sets a selected analog input and takes repeating samples of that A\-D\-C channel 
+
+Definition at line 517 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_aa3fd189e464c9fb5b9892696bac16a62}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Barc\-Command@{\-\_\-\-Handle\-Human\-Barc\-Command}}
+\index{\-\_\-\-Handle\-Human\-Barc\-Command@{\-\_\-\-Handle\-Human\-Barc\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Barc\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Barc\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_aa3fd189e464c9fb5b9892696bac16a62}
+Enables the barometer and reads the barometer coefficients. 
+
+Definition at line 669 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a03a46700129b81db8e5cc680816a3860}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Bar\-Command@{\-\_\-\-Handle\-Human\-Bar\-Command}}
+\index{\-\_\-\-Handle\-Human\-Bar\-Command@{\-\_\-\-Handle\-Human\-Bar\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Bar\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Bar\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a03a46700129b81db8e5cc680816a3860}
+Enables the barometer and starts taking samples of the barometer. 
+
+Definition at line 696 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a30594c72326498eb05c051f8ea858c8e}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Bsl\-Command@{\-\_\-\-Handle\-Human\-Bsl\-Command}}
+\index{\-\_\-\-Handle\-Human\-Bsl\-Command@{\-\_\-\-Handle\-Human\-Bsl\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Bsl\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Bsl\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a30594c72326498eb05c051f8ea858c8e}
+Puts the device in the serial bootloader mode 
+
+Definition at line 985 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a8bf36becb1edff6d6074509646469406}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Dac\-Command@{\-\_\-\-Handle\-Human\-Dac\-Command}}
+\index{\-\_\-\-Handle\-Human\-Dac\-Command@{\-\_\-\-Handle\-Human\-Dac\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Dac\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Dac\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a8bf36becb1edff6d6074509646469406}
+Enables the D\-A\-C and sets voltage. 
+
+Definition at line 825 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a0641163fc741c3b7bfec95b97b8c636b}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Encoder\-Command@{\-\_\-\-Handle\-Human\-Encoder\-Command}}
+\index{\-\_\-\-Handle\-Human\-Encoder\-Command@{\-\_\-\-Handle\-Human\-Encoder\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Encoder\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Encoder\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a0641163fc741c3b7bfec95b97b8c636b}
+Enables the gyroscope and starts taking samples of the gyroscope. 
+
+Definition at line 750 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_af990b619e59f887b8a3ebda4018f5572}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Gpi\-Command@{\-\_\-\-Handle\-Human\-Gpi\-Command}}
+\index{\-\_\-\-Handle\-Human\-Gpi\-Command@{\-\_\-\-Handle\-Human\-Gpi\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Gpi\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Gpi\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_af990b619e59f887b8a3ebda4018f5572}
+Sets a selected port and pin to a digital input and reads the logic level of that pin. 
+
+Definition at line 348 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a3e17b7f0ea75d81df7184177163d4218}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Gpo\-Command@{\-\_\-\-Handle\-Human\-Gpo\-Command}}
+\index{\-\_\-\-Handle\-Human\-Gpo\-Command@{\-\_\-\-Handle\-Human\-Gpo\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Gpo\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Gpo\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a3e17b7f0ea75d81df7184177163d4218}
+Sets a selected port and pin to a digital output and sets the logic level of the output. 
+
+Definition at line 229 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a5a0700d249688ed73deb98b8ce5bf961}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Gyro\-Command@{\-\_\-\-Handle\-Human\-Gyro\-Command}}
+\index{\-\_\-\-Handle\-Human\-Gyro\-Command@{\-\_\-\-Handle\-Human\-Gyro\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Gyro\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Gyro\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a5a0700d249688ed73deb98b8ce5bf961}
+Enables the gyroscope and starts taking samples of the gyroscope. 
+
+Definition at line 723 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_ac199ffeaa6cfb4ea2d155d22b06f98b9}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Mag\-Command@{\-\_\-\-Handle\-Human\-Mag\-Command}}
+\index{\-\_\-\-Handle\-Human\-Mag\-Command@{\-\_\-\-Handle\-Human\-Mag\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Mag\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Mag\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_ac199ffeaa6cfb4ea2d155d22b06f98b9}
+Enables the magnetometer and starts taking samples of the magnetometer. 
+
+Definition at line 637 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a75d20203c77562f64d24aa08408bbbbe}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Packets@{\-\_\-\-Handle\-Human\-Packets}}
+\index{\-\_\-\-Handle\-Human\-Packets@{\-\_\-\-Handle\-Human\-Packets}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Packets}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Packets (
+\begin{DoxyParamCaption}
+\item[{{\bf Serial\-Buffer\-\_\-t} $\ast$}]{packet\-Received}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a75d20203c77562f64d24aa08408bbbbe}
+Handles any of the human-\/readable packets received.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em packet\-Received} & -\/ Pointer to the received packet. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file Test\-Protocol.\-c.
+
+
+
+Referenced by Test\-Protocol\-\_\-\-Handle\-Received\-Packet().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_af936261d5ccefcb6e3b8f3e5992dad24}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Pwm\-Command@{\-\_\-\-Handle\-Human\-Pwm\-Command}}
+\index{\-\_\-\-Handle\-Human\-Pwm\-Command@{\-\_\-\-Handle\-Human\-Pwm\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Pwm\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Pwm\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_af936261d5ccefcb6e3b8f3e5992dad24}
+Sets a selected P\-W\-M output and enables it 
+
+Definition at line 526 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_af0191e2b517192cafcf36ae2140acd97}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Rf\-Command@{\-\_\-\-Handle\-Human\-Rf\-Command}}
+\index{\-\_\-\-Handle\-Human\-Rf\-Command@{\-\_\-\-Handle\-Human\-Rf\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Rf\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Rf\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_af0191e2b517192cafcf36ae2140acd97}
+Prints the current R\-F information 
+
+Definition at line 922 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a27b932df14c5511112f2b45747741c12}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Stop\-Command@{\-\_\-\-Handle\-Human\-Stop\-Command}}
+\index{\-\_\-\-Handle\-Human\-Stop\-Command@{\-\_\-\-Handle\-Human\-Stop\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Stop\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Stop\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a27b932df14c5511112f2b45747741c12}
+Stops the currently running command. 
+
+Definition at line 882 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a08064d32bf6d4497ab6ac11f80873ecb}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Handle\-Human\-Ver\-Command@{\-\_\-\-Handle\-Human\-Ver\-Command}}
+\index{\-\_\-\-Handle\-Human\-Ver\-Command@{\-\_\-\-Handle\-Human\-Ver\-Command}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Handle\-Human\-Ver\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Handle\-Human\-Ver\-Command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a08064d32bf6d4497ab6ac11f80873ecb}
+Prints the current version numbers of the system 
+
+Definition at line 891 of file Test\-Protocol.\-c.
+
+
+
+Here is the call graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a9a6c77304d30771f67961c7100ad749a}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Send\-Ack\-Human@{\-\_\-\-Send\-Ack\-Human}}
+\index{\-\_\-\-Send\-Ack\-Human@{\-\_\-\-Send\-Ack\-Human}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Send\-Ack\-Human}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Send\-Ack\-Human (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a9a6c77304d30771f67961c7100ad749a}
+Attempts to send a human-\/readable acknowledgement packet. An assert will occur if the send fails. 
+
+Definition at line 1009 of file Test\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Acc\-Command(), \-\_\-\-Handle\-Human\-Adc1\-Command(), \-\_\-\-Handle\-Human\-Barc\-Command(), \-\_\-\-Handle\-Human\-Bar\-Command(), \-\_\-\-Handle\-Human\-Dac\-Command(), \-\_\-\-Handle\-Human\-Encoder\-Command(), \-\_\-\-Handle\-Human\-Gpi\-Command(), \-\_\-\-Handle\-Human\-Gpo\-Command(), \-\_\-\-Handle\-Human\-Gyro\-Command(), \-\_\-\-Handle\-Human\-Mag\-Command(), \-\_\-\-Handle\-Human\-Pwm\-Command(), \-\_\-\-Handle\-Human\-Rf\-Command(), and \-\_\-\-Handle\-Human\-Ver\-Command().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a1d3faf9e9f7a628cd5d12fea2cee234a}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-\-Send\-Nak\-Human@{\-\_\-\-Send\-Nak\-Human}}
+\index{\-\_\-\-Send\-Nak\-Human@{\-\_\-\-Send\-Nak\-Human}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-\-Send\-Nak\-Human}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-Send\-Nak\-Human (
+\begin{DoxyParamCaption}
+\item[{{\bf Nak\-Error\-Code\-\_\-t}}]{error\-Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_a1d3faf9e9f7a628cd5d12fea2cee234a}
+Attempts to send a human-\/readable negative-\/acknowledgement packet with the given error code. An assert will occur if the send fails.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em error\-Code} & -\/ Error code to include in the packet. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1032 of file Test\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Handle\-Human\-Adc1\-Command(), \-\_\-\-Handle\-Human\-Adc\-Command(), \-\_\-\-Handle\-Human\-Dac\-Command(), \-\_\-\-Handle\-Human\-Gpi\-Command(), \-\_\-\-Handle\-Human\-Gpo\-Command(), \-\_\-\-Handle\-Human\-Packets(), \-\_\-\-Handle\-Human\-Pwm\-Command(), and \-\_\-\-Handle\-Human\-Stop\-Command().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a36f1fd4255a8167a0df6b7a81cab6b40}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!Test\-Protocol\-\_\-\-Handle\-Received\-Packet@{Test\-Protocol\-\_\-\-Handle\-Received\-Packet}}
+\index{Test\-Protocol\-\_\-\-Handle\-Received\-Packet@{Test\-Protocol\-\_\-\-Handle\-Received\-Packet}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{Test\-Protocol\-\_\-\-Handle\-Received\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Protocol\-\_\-\-Handle\-Received\-Packet (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_test_protocol_8c_a36f1fd4255a8167a0df6b7a81cab6b40}
+Directs any received packets to the correct handler. 
+
+Definition at line 158 of file Test\-Protocol.\-c.
+
+
+
+Referenced by \-\_\-\-Process\-Events\-\_\-\-D\-E\-F\-A\-U\-L\-T().
+
+
+
+Here is the call graph for this function\-:
+
+
+
+
+Here is the caller graph for this function\-:
+
+
+\hypertarget{_test_protocol_8c_a5563b89c8fb7d89532da39e8d606893a}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!Test\-Protocol\-\_\-\-Init@{Test\-Protocol\-\_\-\-Init}}
+\index{Test\-Protocol\-\_\-\-Init@{Test\-Protocol\-\_\-\-Init}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{Test\-Protocol\-\_\-\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Protocol\-\_\-\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_test_protocol_8c_a5563b89c8fb7d89532da39e8d606893a}
+Initializes all the variables and settings for the test protocol module. 
+
+Definition at line 150 of file Test\-Protocol.\-c.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_test_protocol_8c_af60f8565c8c040e712ba165b088ee55c}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-human\-Commands@{\-\_\-human\-Commands}}
+\index{\-\_\-human\-Commands@{\-\_\-human\-Commands}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-human\-Commands}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Human\-Command\-\_\-t} \-\_\-human\-Commands\mbox{[}{\bf N\-U\-M\-\_\-\-H\-U\-M\-A\-N\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_af60f8565c8c040e712ba165b088ee55c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{\textcolor{stringliteral}{"gpo"},  \textcolor{stringliteral}{" gpo [port] [pin] [1|0]"}, &\hyperlink{_test_protocol_8c_a3e17b7f0ea75d81df7184177163d4218}{\_HandleHumanGpoCommand}\},
+    \{\textcolor{stringliteral}{"gpi"},  \textcolor{stringliteral}{" gpi [port] [pin]"}, &\hyperlink{_test_protocol_8c_af990b619e59f887b8a3ebda4018f5572}{\_HandleHumanGpiCommand}\},
+    \{\textcolor{stringliteral}{"adc1"}, \textcolor{stringliteral}{" adc1 [channel]"}, &\hyperlink{_test_protocol_8c_a4b5deac7c3ac5591099f8f6aad558cc0}{\_HandleHumanAdc1Command}\},
+    \{\textcolor{stringliteral}{"adc"},  \textcolor{stringliteral}{" adc [channel]"}, &\hyperlink{_test_protocol_8c_ac35b5896ffde73a23847ea8181bc6db5}{\_HandleHumanAdcCommand}\},
+    \{\textcolor{stringliteral}{"pwm"},  \textcolor{stringliteral}{" pwm [chan] [%] [f]"}, &\hyperlink{_test_protocol_8c_af936261d5ccefcb6e3b8f3e5992dad24}{\_HandleHumanPwmCommand}\},
+    \{\textcolor{stringliteral}{"acc"},  \textcolor{stringliteral}{" acc"}, &\hyperlink{_test_protocol_8c_aeb99f4a37f3a85763ed4d59a5212741c}{\_HandleHumanAccCommand}\},
+    \{\textcolor{stringliteral}{"mag"},  \textcolor{stringliteral}{" mag"}, &\hyperlink{_test_protocol_8c_ac199ffeaa6cfb4ea2d155d22b06f98b9}{\_HandleHumanMagCommand}\},
+    \{\textcolor{stringliteral}{"barc"}, \textcolor{stringliteral}{" barc"}, &\hyperlink{_test_protocol_8c_aa3fd189e464c9fb5b9892696bac16a62}{\_HandleHumanBarcCommand}\},
+    \{\textcolor{stringliteral}{"bar"},  \textcolor{stringliteral}{" bar"}, &\hyperlink{_test_protocol_8c_a03a46700129b81db8e5cc680816a3860}{\_HandleHumanBarCommand}\},
+    \{\textcolor{stringliteral}{"gyro"}, \textcolor{stringliteral}{" gyro"}, & \hyperlink{_test_protocol_8c_a5a0700d249688ed73deb98b8ce5bf961}{\_HandleHumanGyroCommand}\},
+    \{\textcolor{stringliteral}{"enc"},  \textcolor{stringliteral}{" enc"}, &\hyperlink{_test_protocol_8c_a0641163fc741c3b7bfec95b97b8c636b}{\_HandleHumanEncoderCommand}\},
+    \{\textcolor{stringliteral}{"dac"},  \textcolor{stringliteral}{" dac [d]"}, & \hyperlink{_test_protocol_8c_a8bf36becb1edff6d6074509646469406}{\_HandleHumanDacCommand}\},
+    \{\textcolor{stringliteral}{"ugo"},  \textcolor{stringliteral}{" ugo"}, & \_HandleHumanUsGoCommand\},
+    \{\textcolor{stringliteral}{"stop"}, \textcolor{stringliteral}{" stop"}, &\hyperlink{_test_protocol_8c_a27b932df14c5511112f2b45747741c12}{\_HandleHumanStopCommand}\},
+    \{\textcolor{stringliteral}{"ver"},  \textcolor{stringliteral}{" ver"}, &\hyperlink{_test_protocol_8c_a08064d32bf6d4497ab6ac11f80873ecb}{\_HandleHumanVerCommand}\},
+    \{\textcolor{stringliteral}{"rf"},   \textcolor{stringliteral}{" rf"}, &\hyperlink{_test_protocol_8c_af0191e2b517192cafcf36ae2140acd97}{\_HandleHumanRfCommand}\},
+    \{\textcolor{stringliteral}{"bsl"},  \textcolor{stringliteral}{"bsl"}, &\hyperlink{_test_protocol_8c_a30594c72326498eb05c051f8ea858c8e}{\_HandleHumanBslCommand}\}
+\}
+\end{DoxyCode}
+Look-\/up table for human-\/readable commands 
+
+Definition at line 126 of file Test\-Protocol.\-c.
+
+\hypertarget{_test_protocol_8c_ae85b7147219c6585dbd88cb7eb30384a}{\index{Test\-Protocol.\-c@{Test\-Protocol.\-c}!\-\_\-packet\-Tx@{\-\_\-packet\-Tx}}
+\index{\-\_\-packet\-Tx@{\-\_\-packet\-Tx}!TestProtocol.c@{Test\-Protocol.\-c}}
+\subsubsection[{\-\_\-packet\-Tx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Serial\-Buffer\-\_\-t} \-\_\-packet\-Tx\hspace{0.3cm}{\ttfamily [static]}}}\label{_test_protocol_8c_ae85b7147219c6585dbd88cb7eb30384a}
+Stores the most recently sent packet 
+
+Definition at line 95 of file Test\-Protocol.\-c.
+

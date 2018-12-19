@@ -1,0 +1,13 @@
+<map id="DigitalInputControl_SetConfig" name="DigitalInputControl_SetConfig">
+<area shape="rect" href="$_key_value_8c.html#a30aa66a5e57b84caf453be8ec13a23f8" title="KeyValue_Separate" alt="" coords="208,5,347,32" />
+<area shape="rect" href="$_timer_tick_8c.html#a2e533e7d0f92d79186280f85476710be" title="TimerTick_CancelTimeout" alt="" coords="190,56,366,83" />
+<area shape="rect" href="$_timer_tick_8c.html#a2bd17b27521b73890cadba2767679193" title="TimerTick_RequestTimeout" alt="" coords="186,107,370,133" />
+<area shape="rect" href="$_digital_input_control_8c.html#ab60a1549ef29d84f956765d466e3ef3d" title="_ReadPins" alt="" coords="235,157,320,184" />
+<area shape="rect" href="$_timer_tick_8c.html#a5d2a66cec0fe5f6d8554c05bfeacfd2c" title="_InsertTimeout" alt="" coords="470,107,579,133" />
+<area shape="rect" href="$_data_buffer_8c.html#aa05e29733eb661098d83ecf808fb1c40" title="DataBuffer_AddToSubarray8Bit" alt="" coords="420,157,628,184" />
+<area shape="rect" href="$_serial_8c.html#ae3c36491780ee25b86bf0b3ac9e61fa7" title="Serial_SendStringNumber" alt="" coords="436,233,612,260" />
+<area shape="rect" href="$_data_buffer_8c.html#ad726ed4ec48df844bfd5225ccca52117" title="_IndexOfSubarrayId" alt="" coords="680,144,819,171" />
+<area shape="rect" href="$_uart_8c.html#a2bfb989e50deb61ce964159a673c5060" title="Uart_WriteByte" alt="" coords="694,195,806,221" />
+<area shape="rect" href="$_uart_8c.html#a6eaac6b6bedf1229c0f1727e012195e4" title="Uart_WriteByteArray" alt="" coords="678,245,822,272" />
+<area shape="rect" href="$_uart_8c.html#aba2063d7e89a1358197b4643996daaed" title="Uart_WriteByteHex" alt="" coords="682,296,818,323" />
+</map>

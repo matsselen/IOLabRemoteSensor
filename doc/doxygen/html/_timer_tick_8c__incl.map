@@ -1,0 +1,8 @@
+<map id="TimerTick.c" name="TimerTick.c">
+<area shape="rect" href="$_project_types_8h.html" title="Definitions for portable types. " alt="" coords="5,80,115,107" />
+<area shape="rect" href="$_device_8h.html" title="Device specific include file. " alt="" coords="139,80,211,107" />
+<area shape="rect" href="$_timer_tick_8h.html" title="Timer Tick utility header file. " alt="" coords="235,80,325,107" />
+<area shape="rect" href="$_timer_8h.html" title="Timer module driver. " alt="" coords="349,80,416,107" />
+<area shape="rect" href="$_event_queue_8h.html" title="Event queue module header file. " alt="" coords="440,80,547,107" />
+<area shape="rect" href="$_assert_8h.html" title="Manages asserts use to check expected logic conditions. " alt="" coords="571,80,640,107" />
+</map>

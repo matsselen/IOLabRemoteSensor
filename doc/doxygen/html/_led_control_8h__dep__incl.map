@@ -1,0 +1,7 @@
+<map id="LedControl.h" name="LedControl.h">
+<area shape="rect" href="$_main_8c.html" title="Remote Sensor Microcontroller main processing. " alt="" coords="5,80,64,107" />
+<area shape="rect" href="$_self_test_8c_source.html" title="SelfTest.c" alt="" coords="88,80,168,107" />
+<area shape="rect" href="$_state_machine_8c.html" title="State logic handling. " alt="" coords="192,80,304,107" />
+<area shape="rect" href="$_comm_protocol_8c.html" title="Communications protocol module. " alt="" coords="328,80,448,107" />
+<area shape="rect" href="$_led_control_8c.html" title="LED Controller. " alt="" coords="472,80,568,107" />
+</map>

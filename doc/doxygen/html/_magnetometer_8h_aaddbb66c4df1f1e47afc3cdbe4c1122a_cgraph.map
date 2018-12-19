@@ -1,0 +1,8 @@
+<map id="Magnetometer_ReadSample" name="Magnetometer_ReadSample">
+<area shape="rect" href="$_magnetometer_8c.html#a2d8c5304acdfccd9f4cbbd54ff8b493c" title="_ReadMultipleRegisters" alt="" coords="245,107,408,133" />
+<area shape="rect" href="$_i2c_8c.html#ac797994f6b66484a07cbd90c9a8353b4" title="I2c_WaitUntilBusIdle" alt="" coords="457,5,601,32" />
+<area shape="rect" href="$_i2c_8c.html#af522d7dae99259cc9f606cbfbdac40bd" title="I2c_TransmitStart" alt="" coords="467,56,592,83" />
+<area shape="rect" href="$_i2c_8c.html#a3726e5f74248386aed11bf2f06c3c377" title="I2c_TransmitByte" alt="" coords="467,107,592,133" />
+<area shape="rect" href="$_i2c_8c.html#a6f3a9e8f5dd4856ddf5a891e84ea82ea" title="I2c_ReceiveByte" alt="" coords="469,157,589,184" />
+<area shape="rect" href="$_i2c_8c.html#a0df5e64148fcf1e7c7c1cc90e107db49" title="I2c_ReceiveByteEnd" alt="" coords="457,208,601,235" />
+</map>

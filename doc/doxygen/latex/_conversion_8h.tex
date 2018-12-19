@@ -1,0 +1,86 @@
+\hypertarget{_conversion_8h}{\section{Conversion.\-h File Reference}
+\label{_conversion_8h}\index{Conversion.\-h@{Conversion.\-h}}
+}
+
+
+Header for the conversion module that will perform generic conversions.  
+
+
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_conversion_8h_a72feb356df51c4604c5badc161514ba6}{Conversion\-Status\-\_\-t} \{ \\*
+{\bfseries Conversion\-Status\-\_\-\-F\-A\-I\-L\-U\-R\-E} = 0u, 
+\\*
+{\bfseries Conversion\-Status\-\_\-\-S\-U\-C\-C\-E\-S\-S} = 1u
+ \}
+\item 
+enum \hyperlink{_conversion_8h_a373f04746a60fe927b56cd5012dd37e2}{Number\-Size\-\_\-t} \{ \\*
+{\bfseries Number\-Size\-\_\-4\-\_\-\-B\-I\-T\-S}, 
+\\*
+{\bfseries Number\-Size\-\_\-8\-\_\-\-B\-I\-T\-S}, 
+\\*
+{\bfseries Number\-Size\-\_\-12\-\_\-\-B\-I\-T\-S}, 
+\\*
+{\bfseries Number\-Size\-\_\-16\-\_\-\-B\-I\-T\-S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_conversion_8h_ab964be05be045121c4399af42ae19818}{\hyperlink{_conversion_8h_a72feb356df51c4604c5badc161514ba6}{Conversion\-Status\-\_\-t} {\bfseries Conversion\-\_\-\-Hex\-String\-To\-Uint} (const \hyperlink{_project_types_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\-\_\-t} string\mbox{[}$\,$\mbox{]}, \hyperlink{_conversion_8h_a373f04746a60fe927b56cd5012dd37e2}{Number\-Size\-\_\-t} size, \hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} $\ast$result)}\label{_conversion_8h_ab964be05be045121c4399af42ae19818}
+
+\item 
+\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} \hyperlink{_conversion_8h_a317ef7641c368ea1d9f1660884133d2a}{Conversion\-\_\-\-Swap\-Bytes} (\hyperlink{_project_types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t} number)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header for the conversion module that will perform generic conversions. {\bfseries Project} 1814 I\-O\-Lab Remote Sensor Application
+
+{\bfseries Description} The conversion module contains functions and macros that will perform generic conversion such as string to integer type conversions. 
+
+Definition in file \hyperlink{_conversion_8h_source}{Conversion.\-h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_conversion_8h_a72feb356df51c4604c5badc161514ba6}{\index{Conversion.\-h@{Conversion.\-h}!Conversion\-Status\-\_\-t@{Conversion\-Status\-\_\-t}}
+\index{Conversion\-Status\-\_\-t@{Conversion\-Status\-\_\-t}!Conversion.h@{Conversion.\-h}}
+\subsubsection[{Conversion\-Status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Conversion\-Status\-\_\-t}}}\label{_conversion_8h_a72feb356df51c4604c5badc161514ba6}
+Possible conversion status values. Fixed values are required as this is often converted into an integer or boolean. 
+
+Definition at line 31 of file Conversion.\-h.
+
+\hypertarget{_conversion_8h_a373f04746a60fe927b56cd5012dd37e2}{\index{Conversion.\-h@{Conversion.\-h}!Number\-Size\-\_\-t@{Number\-Size\-\_\-t}}
+\index{Number\-Size\-\_\-t@{Number\-Size\-\_\-t}!Conversion.h@{Conversion.\-h}}
+\subsubsection[{Number\-Size\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Number\-Size\-\_\-t}}}\label{_conversion_8h_a373f04746a60fe927b56cd5012dd37e2}
+Possible number sizes to convert to 
+
+Definition at line 38 of file Conversion.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_conversion_8h_a317ef7641c368ea1d9f1660884133d2a}{\index{Conversion.\-h@{Conversion.\-h}!Conversion\-\_\-\-Swap\-Bytes@{Conversion\-\_\-\-Swap\-Bytes}}
+\index{Conversion\-\_\-\-Swap\-Bytes@{Conversion\-\_\-\-Swap\-Bytes}!Conversion.h@{Conversion.\-h}}
+\subsubsection[{Conversion\-\_\-\-Swap\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} Conversion\-\_\-\-Swap\-Bytes (
+\begin{DoxyParamCaption}
+\item[{{\bf uint16\-\_\-t}}]{number}
+\end{DoxyParamCaption}
+)}}\label{_conversion_8h_a317ef7641c368ea1d9f1660884133d2a}
+Swaps the bytes of the input variable.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em number} & -\/ The number to swap the bytes in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The byte swapped version of number 
+\end{DoxyReturn}
+
+
+Definition at line 138 of file Conversion.\-c.
+

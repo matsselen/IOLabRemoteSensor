@@ -1,0 +1,26 @@
+<map id="Timer_B0_Configure" name="Timer_B0_Configure">
+<area shape="rect" href="$_pwm_8h.html#ad446fe4f34c49868e778a20d4f6dbe06" title="Pwm_Init" alt="" coords="1400,128,1475,155" />
+<area shape="rect" href="$_pwm_8h.html#a3bcc133bd11de8cdebe6cca148a86697" title="Pwm_SetFrequency" alt="" coords="198,229,339,256" />
+<area shape="rect" href="$_buzzer_8h.html#a6b75e04c90a3c65be473f9eba13031cd" title="Buzzer_Init" alt="" coords="1626,185,1714,212" />
+<area shape="rect" href="$_main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="2307,160,2358,187" />
+<area shape="rect" href="$_buzzer_control_8h.html#a3b6991a46219affd721e0ca21edbda78" title="BuzzerControl_Init" alt="" coords="1604,84,1735,111" />
+<area shape="rect" href="$_header5_control_8h.html#a73b874e61725ba51e48b234b7f97a121" title="Header5Control_Init" alt="" coords="1600,135,1739,161" />
+<area shape="rect" href="$_ui_manager_8h.html#adee285ad94e23c403c0be6bf499813f4" title="UiManager_Init" alt="" coords="1855,185,1967,212" />
+<area shape="rect" href="$_self_test_8h.html#a9810103c7f9760198241166a99d2ca79" title="SelfTest_Init" alt="" coords="2111,185,2207,212" />
+<area shape="rect" href="$_configuration_manager_8h.html#ac8b698cc609b8b41fe3ff823b2046b85" title="ConMan_Init" alt="" coords="1863,135,1959,161" />
+<area shape="rect" href="$_buzzer_control_8c.html#a45d1a9d49f6652adb4373f95dbc3dcd2" title="_BuzzerControl_SetOutput" alt="" coords="400,280,579,307" />
+<area shape="rect" href="$_test_protocol_8c.html#af936261d5ccefcb6e3b8f3e5992dad24" title="_HandleHumanPwmCommand" alt="" coords="387,331,592,357" />
+<area shape="rect" href="$_buzzer_8h.html#a82cbbadfc4f17ae9a96d34230aea2a5c" title="Buzzer_SetFrequency" alt="" coords="414,229,566,256" />
+<area shape="rect" href="$_buzzer_control_8h.html#a11222160d9edeed9188bfe2b283a7bab" title="BuzzerControl_SetConfig" alt="" coords="642,305,812,332" />
+<area shape="rect" href="$_configuration_manager_8h.html#adbdfea8b605f6178d2e63cfd0eb3723b" title="ConMan_SetOutputConfig" alt="" coords="863,331,1039,357" />
+<area shape="rect" href="$_comm_protocol_8c.html#ad5fef6fd66017234708bd9c6b471679f" title="_HandleSetOutputConfigPacket" alt="" coords="1088,319,1299,345" />
+<area shape="rect" href="$_comm_protocol_8h.html#a1601bc62252475a299e517b13e49766d" title="CommProtocol_RxHandler" alt="" coords="1348,293,1527,320" />
+<area shape="rect" href="$_state_machine_8c.html#ad7bd6065bce5082e3a9b485202c74035" title="_ProcessEvents_DEFAULT" alt="" coords="1578,291,1762,317" />
+<area shape="rect" href="$_state_machine_8c.html#a260232d8362a0678d13436b492aa485b" title="_ProcessEvents_RUN" alt="" coords="1835,340,1987,367" />
+<area shape="rect" href="$_state_machine_8h.html#a77e9c7c153d9badecbcfdfa49475617b" title="StateMachine_ProcessEvents" alt="" coords="2060,264,2258,291" />
+<area shape="rect" href="$_state_machine_8c.html#af9ef2eb2c4780d1d53f04624ff8cab73" title="_ProcessEvents_SELF_TEST" alt="" coords="1811,239,2011,265" />
+<area shape="rect" href="$_ui_manager_8c.html#a4aabb887cd84641062375402ec60026b" title="_PlaySequence" alt="" coords="670,229,784,256" />
+<area shape="rect" href="$_ui_manager_8h.html#a64c0bf6dac5078278c785307c7e2befe" title="UiManager_PlaySequence" alt="" coords="1104,239,1283,265" />
+<area shape="rect" href="$_ui_manager_8c.html#ac066839b7cc3e3b90ae5bdd7f629b3c4" title="_UiTickCallBack" alt="" coords="892,229,1010,256" />
+<area shape="rect" href="$_self_test_8h.html#a282b024bc0ec38174285fce7402142c9" title="SelfTest_Start" alt="" coords="1386,239,1490,265" />
+</map>
