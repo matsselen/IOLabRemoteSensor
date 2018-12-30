@@ -200,34 +200,34 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-1814\ IOLab\ Remote\ Sensor\ Application.out \
+IOLab_Sensor_Micro.out \
 
 EXE_OUTPUTS__QUOTED += \
-"1814 IOLab Remote Sensor Application.out" \
+"IOLab_Sensor_Micro.out" \
 
 BIN_OUTPUTS += \
-1814\ IOLab\ Remote\ Sensor\ Application.txt \
+IOLab_Sensor_Micro.txt \
 
 BIN_OUTPUTS__QUOTED += \
-"1814 IOLab Remote Sensor Application.txt" \
+"IOLab_Sensor_Micro.txt" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "1814 IOLab Remote Sensor Application.out" secondary-outputs
+	@$(MAKE) --no-print-directory -Onone "IOLab_Sensor_Micro.out" secondary-outputs
 
 # Tool invocations
-1814\ IOLab\ Remote\ Sensor\ Application.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+IOLab_Sensor_Micro.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ti-cgt-msp430_4.4.8/bin/cl430" -vmspx --abi=eabi --code_model=small --data_model=small -O3 --opt_for_speed=3 --use_hw_mpy=F5 -g --relaxed_ansi --define=__MSP430F5329__ --display_error_number --diag_warning=225 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=nofloat -z -m"1814 IOLab Remote Sensor Application.map" --stack_size=200 --heap_size=0 --cinit_hold_wdt=on -i"C:/ti/ccsv8/ccs_base/msp430/include" -i"C:/ti/ti-cgt-msp430_4.4.8/lib" -i"C:/ti/ti-cgt-msp430_4.4.8/include" -i"C:/ti/ccsv8/ccs_base/msp430/lib/5xx_6xx_FRxx" --reread_libs --warn_sections --xml_link_info="1814 IOLab Remote Sensor Application_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "1814 IOLab Remote Sensor Application.out" $(ORDERED_OBJS)
+	"C:/ti/ti-cgt-msp430_4.4.8/bin/cl430" -vmspx --abi=eabi --code_model=small --data_model=small -O3 --opt_for_speed=3 --use_hw_mpy=F5 -g --relaxed_ansi --define=__MSP430F5329__ --display_error_number --diag_warning=225 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=nofloat -z -m"IOLab_Sensor_Micro.map" --stack_size=200 --heap_size=0 --cinit_hold_wdt=on -i"C:/ti/ccsv8/ccs_base/msp430/include" -i"C:/ti/ti-cgt-msp430_4.4.8/lib" -i"C:/ti/ti-cgt-msp430_4.4.8/include" -i"C:/ti/ccsv8/ccs_base/msp430/lib/5xx_6xx_FRxx" --reread_libs --warn_sections --xml_link_info="IOLab_Sensor_Micro_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "IOLab_Sensor_Micro.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-1814\ IOLab\ Remote\ Sensor\ Application.txt: $(EXE_OUTPUTS)
+IOLab_Sensor_Micro.txt: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: MSP430 Hex Utility'
-	"C:/ti/ti-cgt-msp430_4.4.8/bin/hex430" --memwidth=8 --romwidth=8 --ti_txt -o "1814 IOLab Remote Sensor Application.txt" $(EXE_OUTPUTS__QUOTED)
+	"C:/ti/ti-cgt-msp430_4.4.8/bin/hex430" --memwidth=8 --romwidth=8 --ti_txt -o "IOLab_Sensor_Micro.txt" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
@@ -246,7 +246,7 @@ clean:
 
 post-build:
 	-@echo 'Create flash image: TI-TXT'
-	-"C:/ti/ti-cgt-msp430_4.4.8/bin/hex430" --ti_txt "1814 IOLab Remote Sensor Application.out" -o "1814 IOLab Remote Sensor Application.txt" -order MS -romwidth 16
+	-"C:/ti/ti-cgt-msp430_4.4.8/bin/hex430" --ti_txt "IOLab_Sensor_Micro.out" -o "IOLab_Sensor_Micro.txt" -order MS -romwidth 16
 	-@echo ' '
 
 secondary-outputs: $(BIN_OUTPUTS)
