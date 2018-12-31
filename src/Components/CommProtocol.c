@@ -126,6 +126,9 @@ typedef enum CommCommand
 /** Defines the maximum amount of time the system is allowed to be "not connected" */
 #define MAX_NO_CONNECT_TIME_MSEC  ((uint32_t)( 1000u * 60u )) /* 60 seconds in msec */
 
+/** Mats: Defines the maximum amount of time the system is allowed to be "idle" (connected but not recording) */
+#define MAX_IDLE_TICK ((uint32_t)( 100u * 30u )) /* 30 sec at 100 ticks/sec */
+
 /*-----------------------LOCAL VARIABLES-------------------------------------*/
 /** A buffer to store the protocol data in */
 static uint8_t _bufferTxZero[DATA_PACKET_SIZE] = { 0u };
@@ -795,17 +798,31 @@ bool _WriteMessageData(
 static void _HandleRfStatusISR(void)
 {
 	static uint32_t noConnectTime = 0u;
+	static uint32_t idleTick = 0u; /* Mats */
 
 	if ((_rfStatus.connectionStatus >= RfConnectionStatus_FIRST) &&
 		(_rfStatus.connectionStatus <= RfConnectionStatus_PAIRED_NOT_CONNECTED))
 	{
 		noConnectTime += TIMERTICK_MSEC_PER_TICK;
+		idleTick = 0u; /* Mats */
 
 		if (noConnectTime >= MAX_NO_CONNECT_TIME_MSEC)
 		{
 		    EventQueue_Add(Event_SHUTDOWN, EventPriority_NORMAL);
 		}
 	}
+
+	/* Mats: Keep track of how long we are idle and shut down after MAX_IDLE_TICK ticks*/
+	else if (_rfStatus.connectionStatus == RfConnectionStatus_CONNECTED)
+	{
+		idleTick += 1;
+
+		if (idleTick >= MAX_IDLE_TICK)
+		{
+			EventQueue_Add(Event_SHUTDOWN, EventPriority_NORMAL);
+		}
+	}
+
 	else
 	{
 		noConnectTime = 0u;
