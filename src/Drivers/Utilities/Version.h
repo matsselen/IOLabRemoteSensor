@@ -26,7 +26,13 @@
 /** Defines the major version of the firmware */
 #define USER_FIRMWARE_MAJOR           (0x01u)
 /** Defines the minor version of the firmware */
-#define USER_FIRMWARE_MINOR           (0x10u)
+
+/* Mats: #define USER_FIRMWARE_MINOR           (0x10u) */
+/* Mats: Designate my own modifications by bumping the minor version number starting at 0x20 */
+/* Mats: version 0x20u has the 5 minute Idle Timeout feature */ 
+#define USER_FIRMWARE_MINOR           (0x20u)
+
+
 /** Defines the user firmware version with the high byte the major release and the
     low byte the minor release.
  */

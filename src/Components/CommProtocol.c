@@ -127,7 +127,7 @@ typedef enum CommCommand
 #define MAX_NO_CONNECT_TIME_MSEC  ((uint32_t)( 1000u * 60u )) /* 60 seconds in msec */
 
 /** Mats: Defines the maximum amount of time the system is allowed to be "idle" (connected but not recording) */
-#define MAX_IDLE_TICK ((uint32_t)( 100u * 30u )) /* 30 sec at 100 ticks/sec */
+#define MAX_IDLE_TICK ((uint32_t)( 100u * 300u )) /* 300 sec (5 minutes) at 100 ticks/sec */
 
 /*-----------------------LOCAL VARIABLES-------------------------------------*/
 /** A buffer to store the protocol data in */
@@ -143,6 +143,9 @@ static uint8_t _bufferRx[DATA_PACKET_SIZE]   = { 0u };
 
 /** Tracks if the protocol is in data mode or not */
 static bool _dataMode = false;
+
+/** Mats: This keeps track of how long device is Idle (in 10 ms ticks) **/
+static uint32_t idleTick = 0u; 
 
 /** Stores the current RF Status */
 static RfStatus_t _rfStatus = { RfConnectionStatus_INVLALID, 0u, 0u };
@@ -467,6 +470,7 @@ void CommProtocol_HandleStopDataPacket(
 	{
 		_dataMode = false;
 		ConMan_StopData();
+		idleTick = 0u; /* Mats: Reset the idle counter whenever acquisition stops */
 
 		/* clear all the buffers */
 		_messageBuffer[COMMAND_INDEX] = (uint8_t) CommCommand_STOP_DATA;
@@ -567,6 +571,8 @@ void _HandleSetFixedConfigPacket(
 		uint8_t messageLength)
 {
 	DEBUG("set fixed config");
+	idleTick = 0u; /* Mats: Reset the idle counter whenever the fixed configuration changes */
+
 	_SetTxCommand(CommCommand_SET_FIXED_CONFIG);
 	/** define an offset that will skip over the unimportant bytes in the message */
 #define FIXED_CONFIG_USEFUL_DATA_OFFSET    ( 1u )
@@ -798,13 +804,13 @@ bool _WriteMessageData(
 static void _HandleRfStatusISR(void)
 {
 	static uint32_t noConnectTime = 0u;
-	static uint32_t idleTick = 0u; /* Mats */
 
 	if ((_rfStatus.connectionStatus >= RfConnectionStatus_FIRST) &&
 		(_rfStatus.connectionStatus <= RfConnectionStatus_PAIRED_NOT_CONNECTED))
 	{
 		noConnectTime += TIMERTICK_MSEC_PER_TICK;
-		idleTick = 0u; /* Mats */
+		idleTick = 0u;  /* Mats: Keep the Idle counter zeroed until the device is connected */
+						/* (This may be redundant) */
 
 		if (noConnectTime >= MAX_NO_CONNECT_TIME_MSEC)
 		{
@@ -815,7 +821,12 @@ static void _HandleRfStatusISR(void)
 	/* Mats: Keep track of how long we are idle and shut down after MAX_IDLE_TICK ticks*/
 	else if (_rfStatus.connectionStatus == RfConnectionStatus_CONNECTED)
 	{
-		idleTick += 1;
+		/* Mats: Advance the idleTick counter only if we aren't recording data */
+		/* Probably not be needed since it seems this routine is not called during acquisition ? */
+		if (_dataMode == false) 
+		{
+			idleTick += 1;
+		}
 
 		if (idleTick >= MAX_IDLE_TICK)
 		{
