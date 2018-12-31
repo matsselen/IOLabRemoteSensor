@@ -17,6 +17,13 @@
 
     Copyright (C) 2012 Indesign LLC  (Indesign Coding Standard Revision 3)
 
+    Mats: 12/31/2018. Made changes to add a 5-minute Idle Timeout to a connected remote. 
+    The remote shuts down after being idle for 300 seconds, the start of which is defined by one f
+    the following events:
+       1) The device is turned on and connected a dongle.
+       2) The fixed configuration is changed.
+       3) Data acquisition is stopped. 
+
 *******************************************************************************/
 
 
