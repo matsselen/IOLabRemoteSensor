@@ -30,8 +30,9 @@
 /* Mats: #define USER_FIRMWARE_MINOR           (0x10u) */
 /* Mats: Designate my own modifications by bumping the minor version number starting at 0x20 */
 /* Mats: version 0x20u has the 5 minute Idle Timeout feature */ 
-#define USER_FIRMWARE_MINOR           (0x20u)
-
+/* Mats: #define USER_FIRMWARE_MINOR           (0x20u) */
+/* Mats: version 0x21u has the 5 minute Idle Timeout feature plus a 4.8 kHz A7 readout configuration */ 
+#define USER_FIRMWARE_MINOR           (0x21u)
 
 /** Defines the user firmware version with the high byte the major release and the
     low byte the minor release.

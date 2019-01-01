@@ -16,6 +16,8 @@
 
     Copyright (C) 2014 Indesign LLC  (Indesign Coding Standard Revision 3)
 
+    Mats: 1/1/2019. Added new configuration to read A7 at 4.8 kHz
+
 *******************************************************************************/
 
 #ifndef __FIXEDCONFIGLIST_H__
@@ -40,6 +42,10 @@ typedef enum FixedConfigList
     FixedConfigList_MAGNETIC    = 0x0Au,
     FixedConfigList_ANLG_HEAD   = 0x0Bu,
     FixedConfigList_HEADER_3V3  = 0x0Cu,
+
+    /* Mats New Configurations */
+    FixedConfigList_ANALOG_HI1  = 0x15u,
+
     /* High Data Rate Configurations */
     FixedConfigList_GYRO_HI     = 0x20u,
     FixedConfigList_ACCEL_HI    = 0x21u,

@@ -16,6 +16,8 @@
 
     Copyright (C) 2014 Indesign LLC  (Indesign Coding Standard Revision 3)
 
+    Mats: 1/1/2019. Added new configuration to read A7 at 4.8 kHz
+
 *******************************************************************************/
 
 #ifndef __FIXEDCONFIGSETTINGS_H__
@@ -314,6 +316,48 @@ static const uint8_t _ecgBuffer[BUFFER_SIZE_ECG] =
         1u,                          /* number of sensors */
         SensorId_ECG, 48u
 };
+
+/* Mats: The following "hi1" static arrays contain the info needed to configure and run a new 
+         fixed configuration in which A7 is read out at warp speed (4800 Hz) */
+
+/** \} */
+
+/** \name Analog_hi1 Input Configuration
+    \{
+*/
+/** Defines how many bytes are in _analog_hi1Config */
+#define CONFIG_SIZE_ANALOG_HI1         ( 7u )
+/** Defines the configuration settings for the ANALOG_HI1 fixed config */
+static const uint8_t _analog_hi1Config[CONFIG_SIZE_ANALOG_HI1] =
+{
+        3u, /* number of Key-Value pairs */
+        SensorId_HEADER_7, (Analog7Key_SAMPLE_RATE| Analog7SampleRate_4800),
+        SensorId_HEADER_7, (Analog7Key_REF_VOLT| Analog7RefVolt_3v3),
+        SensorId_HEADER_7, (Analog7Key_MODE| Analog7Mode_ENABLE)
+
+};
+
+/** Defines how many bytes are in _analog_hi1Disable */
+#define DISABLE_SIZE_ANALOG_HI1        ( 3u )
+/** Defines the configuration to disable the ANALOG_HI1 fixed config */
+static const uint8_t _analog_hi1Disable[DISABLE_SIZE_ANALOG_HI1] =
+{
+        1u, /* number of Key-Value pairs */
+        SensorId_HEADER_7,      (Analog7Key_MODE| Analog7Mode_DISABLE)
+};
+
+/** Defines how many bytes are in _analog_hi1Buffer */
+#define BUFFER_SIZE_ANALOG_HI1           ( 4u )
+/** Defines the data buffer configuration for the ANALOG_HI1 fixed config */
+static const uint8_t _analog_hi1Buffer[BUFFER_SIZE_ANALOG_HI1] =
+{
+        BUFFER_SIZE_ANALOG_HI1 - 1u,     /* number of meaningful bytes */
+        1u,                              /* number of sensors */
+        SensorId_HEADER_7,      96u      /* 96 is expected size, there is no extra room */
+
+};
+
+
 /** \} */
 
 /** \name Header Input Configuration

@@ -18,6 +18,8 @@
 
     Copyright (C) 2012 Indesign LLC  (Indesign Coding Standard Revision 3)
 
+    Mats: 1/1/2019. Added new configuration to read A7 at 4.8 kHz
+
 *******************************************************************************/
 
 
@@ -408,6 +410,12 @@ const uint8_t* ConMan_GetPacketConfig(uint16_t *packetLength)
 			*packetLength = BUFFER_SIZE_ACCEL;
 			break;
 
+		/* Mats: added new configuration to read A7 at 4800 Hz */
+		case FixedConfigList_ANALOG_HI1:
+			packet = _analog_hi1Buffer;
+			*packetLength = BUFFER_SIZE_ANALOG_HI1;
+			break;
+
 		case FixedConfigList_IMU:
 			packet = _imuBuffer;
 			*packetLength = BUFFER_SIZE_IMU;
@@ -717,6 +725,13 @@ void ConMan_StartData()
 			_dataModeActive = true;
 			break;
 
+		case FixedConfigList_ANALOG_HI1:
+			DEBUG("fixed analog_hi1");
+			_ConMan_AllocateBuffer(_analog_hi1Buffer);
+			ConMan_SetSensorConfig(CONFIG_SIZE_ANALOG_HI1 - LENGTH_BYTE_OFFSET, &_analog_hi1Config[LENGTH_BYTE_OFFSET]);
+			_dataModeActive = true;
+			break;
+
 		case FixedConfigList_IMU:
 			DEBUG("fixed IMU");
 			_ConMan_AllocateBuffer(_imuBuffer);
@@ -946,6 +961,11 @@ void ConMan_StopData()
 
 		case FixedConfigList_ACCEL:
 			ConMan_SetSensorConfig(DISABLE_SIZE_ACCEL, &_accelDisable[LENGTH_BYTE_OFFSET]);
+			_dataModeActive = false;
+			break;
+
+		case FixedConfigList_ANALOG_HI1:
+			ConMan_SetSensorConfig(DISABLE_SIZE_ANALOG_HI1, &_analog_hi1Disable[LENGTH_BYTE_OFFSET]);
 			_dataModeActive = false;
 			break;
 
