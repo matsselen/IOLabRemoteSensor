@@ -17,6 +17,8 @@
 
     Copyright (C) 2012 Indesign LLC  (Indesign Coding Standard Revision 3)
 
+    Mats: Modifying minor firmware version number, starting with 0x20, as I make changes
+
 *******************************************************************************/
 #ifndef VERSION_H_
 #define VERSION_H_
@@ -29,10 +31,10 @@
 
 /* Mats: #define USER_FIRMWARE_MINOR           (0x10u) */
 /* Mats: Designate my own modifications by bumping the minor version number starting at 0x20 */
-/* Mats: version 0x20u has the 5 minute Idle Timeout feature */ 
-/* Mats: #define USER_FIRMWARE_MINOR           (0x20u) */
-/* Mats: version 0x21u has the 5 minute Idle Timeout feature plus a 4.8 kHz A7 readout configuration */ 
-#define USER_FIRMWARE_MINOR           (0x21u)
+/* Mats: version 0x20 is same as 0x10 plus 5 minute Idle Timeout feature */ 
+/* Mats: version 0x21 is same as 0x20 plus new 4.8 kHz A7 readout configuration */ 
+/* Mats: version 0x22 is same as 0x21 plus self test volume is always medium */ 
+#define USER_FIRMWARE_MINOR           (0x22u)
 
 /** Defines the user firmware version with the high byte the major release and the
     low byte the minor release.

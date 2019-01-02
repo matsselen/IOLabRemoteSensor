@@ -15,6 +15,9 @@
 
     Copyright (C) 2014 Indesign LLC  (Indesign Coding Standard Revision 3)
 
+    Mats: Modified self test volume so that is is always medium instead of having it increase 
+          to maximum at the end, which seems to cause the device to turn off if batteries are low.
+
 *******************************************************************************/
 
 #include <ProjectTypes.h>
@@ -115,7 +118,10 @@ PlaySequenceStatus_t UiManager_PlaySequence(UiSequence_t sequence, PlayMode_t mo
 {
     const UiSequenceData_t *newSequence;
     PlaySequenceStatus_t status = PlaySequenceStatus_INVALID;
-    uint8_t desiredVolume = BUZZER_DUTY_MAX_VOLUME;
+    /* Mats: Change the default volume to medium since there seems to be some evidence
+            that using maximum volume uses too much power when batteries are low-ish */
+    /* Mats: uint8_t desiredVolume = BUZZER_DUTY_MAX_VOLUME; */
+    uint8_t desiredVolume = BUZZER_DUTY_MEDIUM_VOLUME;
 
     switch(sequence)
     {
@@ -132,7 +138,8 @@ PlaySequenceStatus_t UiManager_PlaySequence(UiSequence_t sequence, PlayMode_t mo
             break;
 
         case UiSequence_IN_PROGRESS:
-            desiredVolume = BUZZER_DUTY_MEDIUM_VOLUME;
+            /* Mats: This is now default so we don't need it here */
+            /* Mats: desiredVolume = BUZZER_DUTY_MEDIUM_VOLUME; */
             newSequence = &girlILeftBehindSequence;
             break;
 
