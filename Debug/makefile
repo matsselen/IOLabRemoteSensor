@@ -92,6 +92,8 @@ RMDIR := RMDIR /S/Q
 -include sources.mk
 -include subdir_vars.mk
 -include Products/subdir_vars.mk
+-include Products/OTA_v2/subdir_vars.mk
+-include Products/OTA_v3/subdir_vars.mk
 -include src/Application/subdir_vars.mk
 -include src/Components/subdir_vars.mk
 -include src/Drivers/Devices/subdir_vars.mk
@@ -100,6 +102,8 @@ RMDIR := RMDIR /S/Q
 -include src/Include/subdir_vars.mk
 -include subdir_rules.mk
 -include Products/subdir_rules.mk
+-include Products/OTA_v2/subdir_rules.mk
+-include Products/OTA_v3/subdir_rules.mk
 -include src/Application/subdir_rules.mk
 -include src/Components/subdir_rules.mk
 -include src/Drivers/Devices/subdir_rules.mk
@@ -222,7 +226,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 IOLab_Sensor_Micro.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ti-cgt-msp430_4.4.8/bin/cl430" -vmspx --abi=eabi --code_model=small --data_model=small -O3 --opt_for_speed=3 --use_hw_mpy=F5 -g --relaxed_ansi --define=__MSP430F5329__ --display_error_number --diag_warning=225 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=nofloat -z -m"IOLab_Sensor_Micro.map" --stack_size=200 --heap_size=0 --cinit_hold_wdt=on -i"C:/ti/ccsv8/ccs_base/msp430/include" -i"C:/ti/ti-cgt-msp430_4.4.8/lib" -i"C:/ti/ti-cgt-msp430_4.4.8/include" -i"C:/ti/ccsv8/ccs_base/msp430/lib/5xx_6xx_FRxx" --reread_libs --warn_sections --xml_link_info="IOLab_Sensor_Micro_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "IOLab_Sensor_Micro.out" $(ORDERED_OBJS)
+	"C:/ti/ti-cgt-msp430_4.4.8/bin/cl430" -vmspx --abi=eabi --code_model=small --data_model=small -O4 --opt_for_speed=5 --use_hw_mpy=F5 -g --relaxed_ansi --define=__MSP430F5329__ --display_error_number --diag_warning=225 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=nofloat -z -m"IOLab_Sensor_Micro.map" --stack_size=200 --heap_size=0 --cinit_hold_wdt=on -i"C:/ti/ccsv8/ccs_base/msp430/include" -i"C:/ti/ti-cgt-msp430_4.4.8/lib" -i"C:/ti/ti-cgt-msp430_4.4.8/include" -i"C:/ti/ccsv8/ccs_base/msp430/lib/5xx_6xx_FRxx" --reread_libs --warn_sections --xml_link_info="IOLab_Sensor_Micro_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "IOLab_Sensor_Micro.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 

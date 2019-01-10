@@ -113,6 +113,8 @@ PDE_DEPS__QUOTED :=
 SUBDIRS := \
 . \
 Products \
+Products/OTA_v2 \
+Products/OTA_v3 \
 src/Application \
 src/Components \
 src/Drivers/Devices \
