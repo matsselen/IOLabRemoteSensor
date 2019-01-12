@@ -112,7 +112,6 @@ PDE_DEPS__QUOTED :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 . \
-Products \
 Products/OTA_v2 \
 Products/OTA_v3 \
 src/Application \

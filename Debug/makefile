@@ -91,7 +91,6 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
--include Products/subdir_vars.mk
 -include Products/OTA_v2/subdir_vars.mk
 -include Products/OTA_v3/subdir_vars.mk
 -include src/Application/subdir_vars.mk
@@ -101,7 +100,6 @@ RMDIR := RMDIR /S/Q
 -include src/Drivers/Utilities/subdir_vars.mk
 -include src/Include/subdir_vars.mk
 -include subdir_rules.mk
--include Products/subdir_rules.mk
 -include Products/OTA_v2/subdir_rules.mk
 -include Products/OTA_v3/subdir_rules.mk
 -include src/Application/subdir_rules.mk

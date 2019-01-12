@@ -16,7 +16,10 @@
 
     Copyright (C) 2014 Indesign LLC  (Indesign Coding Standard Revision 3)
 
-    Mats: 1/1/2019. Added new configuration to read A7 at 4.8 kHz
+    Mats: 1/1/2019.  Added a new fixed configuration to read A7 at 4800 kHz
+    Mats: 1/12/2019. Added 2 more fixed configurations to 
+                     (i)  read A7 and A8 at 2400 Hz, and
+                     (ii) read A7, A8, and A9 at 800 Hz 
 
 *******************************************************************************/
 
@@ -316,10 +319,104 @@ static const uint8_t _ecgBuffer[BUFFER_SIZE_ECG] =
         1u,                          /* number of sensors */
         SensorId_ECG, 48u
 };
+/** \} */
 
-/* Mats: The following "hi1" static arrays contain the info needed to configure and run a new 
-         fixed configuration in which A7 is read out at warp speed (4800 Hz) */
+/* Mats: The following _analog_hi1, hi2, hi3 static arrays contain the info needed to configure and run a new 
+         fixed configuration in which A7/A8/A9 are read out at high speed.
+         hi1 reads A7 at 4800 Hz
+         hi2 reads A7 and A8 at 2400 Hz
+         hi3 reads A7, A8, and A9 at 800 Hz 
 
+*/
+
+/** \name Analog_hi3 Input Configuration
+    \{
+*/
+/** Defines how many bytes are in _analogConfig */
+#define CONFIG_SIZE_ANALOG_HI3         ( 19u )
+/** Defines the configuration settings for the ANALOG_HI3 fixed config */
+static const uint8_t _analog_hi3Config[CONFIG_SIZE_ANALOG_HI3] =
+{
+        9u, /* number of Key-Value pairs */
+        SensorId_HEADER_7, (Analog7Key_SAMPLE_RATE| Analog7SampleRate_800),
+		SensorId_HEADER_7, (Analog7Key_REF_VOLT| Analog7RefVolt_3v3),
+        SensorId_HEADER_7, (Analog7Key_MODE| Analog7Mode_ENABLE),
+
+        SensorId_HEADER_8, (Analog8Key_SAMPLE_RATE| Analog8SampleRate_800),
+		SensorId_HEADER_8, (Analog8Key_REF_VOLT| Analog8RefVolt_3v3),
+        SensorId_HEADER_8, (Analog8Key_MODE| Analog8Mode_ENABLE),
+
+        SensorId_HEADER_9, (Analog9Key_SAMPLE_RATE| Analog9SampleRate_800),
+		SensorId_HEADER_9, (Analog9Key_REF_VOLT| Analog9RefVolt_3v3),
+        SensorId_HEADER_9, (Analog9Key_MODE| Analog9Mode_ENABLE)
+
+};
+
+/** Defines how many bytes are in _analog_hi3Disable */
+#define DISABLE_SIZE_ANALOG_HI3          ( 7u )
+/** Defines the configuration to disable the ANALOG_HI3 fixed config */
+static const uint8_t _analog_hi3Disable[DISABLE_SIZE_ANALOG_HI3] =
+{
+        3u, /* number of Key-Value pairs */
+        SensorId_HEADER_7,      (Analog7Key_MODE| Analog7Mode_DISABLE),
+        SensorId_HEADER_8,      (Analog8Key_MODE| Analog8Mode_DISABLE),
+        SensorId_HEADER_9,      (Analog9Key_MODE| Analog9Mode_DISABLE)
+};
+
+/** Defines how many bytes are in _analogBuffer */
+#define BUFFER_SIZE_ANALOG_HI3           ( 8u )
+/** Defines the data buffer configuration for the ANALOG_HI3 fixed config */
+static const uint8_t _analog_hi3Buffer[BUFFER_SIZE_ANALOG_HI3] =
+{
+        BUFFER_SIZE_ANALOG_HI3 - 1u, /* number of meaningful bytes */
+        3u,                          /* number of sensors */
+        SensorId_HEADER_7,      32u,
+        SensorId_HEADER_8,      32u,
+        SensorId_HEADER_9,      32u
+
+};
+/** \} */
+
+/** \name Analog_hi2 Input Configuration
+    \{
+*/
+/** Defines how many bytes are in _analog_hi2Config */
+#define CONFIG_SIZE_ANALOG_HI2         ( 13u )
+/** Defines the configuration settings for the ANALOG_HI2 fixed config */
+static const uint8_t _analog_hi2Config[CONFIG_SIZE_ANALOG_HI2] =
+{
+        6u, /* number of Key-Value pairs */
+        SensorId_HEADER_7, (Analog7Key_SAMPLE_RATE| Analog7SampleRate_2400),
+		SensorId_HEADER_7, (Analog7Key_REF_VOLT| Analog7RefVolt_3v3),
+        SensorId_HEADER_7, (Analog7Key_MODE| Analog7Mode_ENABLE),
+
+        SensorId_HEADER_8, (Analog8Key_SAMPLE_RATE| Analog8SampleRate_2400),
+		SensorId_HEADER_8, (Analog8Key_REF_VOLT| Analog8RefVolt_3v3),
+        SensorId_HEADER_8, (Analog8Key_MODE| Analog8Mode_ENABLE)
+
+};
+
+/** Defines how many bytes are in _analog_hi2Disable */
+#define DISABLE_SIZE_ANALOG_HI2        ( 5u )
+/** Defines the configuration to disable the ANALOG_HI2 fixed config */
+static const uint8_t _analog_hi2Disable[DISABLE_SIZE_ANALOG_HI2] =
+{
+        2u, /* number of Key-Value pairs */
+        SensorId_HEADER_7,      (Analog7Key_MODE| Analog7Mode_DISABLE),
+        SensorId_HEADER_8,      (Analog8Key_MODE| Analog8Mode_DISABLE)
+};
+
+/** Defines how many bytes are in _analog_hi2Buffer */
+#define BUFFER_SIZE_ANALOG_HI2           ( 6u )
+/** Defines the data buffer configuration for the ANALOG_HI2 fixed config */
+static const uint8_t _analog_hi2Buffer[BUFFER_SIZE_ANALOG_HI2] =
+{
+        BUFFER_SIZE_ANALOG_HI2 - 1u,     /* number of meaningful bytes */
+        2u,                              /* number of sensors */
+        SensorId_HEADER_7,      48u,     /* 48 is expected size, there is no extra room */
+        SensorId_HEADER_8,      48u      /* 48 is expected size, there is no extra room */
+
+};
 /** \} */
 
 /** \name Analog_hi1 Input Configuration

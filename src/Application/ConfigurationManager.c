@@ -18,7 +18,10 @@
 
     Copyright (C) 2012 Indesign LLC  (Indesign Coding Standard Revision 3)
 
-    Mats: 1/1/2019. Added new configuration to read A7 at 4.8 kHz
+    Mats: 1/1/2019.  Added a new fixed configuration to read A7 at 4800 kHz
+    Mats: 1/12/2019. Added 2 more fixed configurations to 
+                     (i)  read A7 and A8 at 2400 Hz, and
+                     (ii) read A7, A8, and A9 at 800 Hz 
 
 *******************************************************************************/
 
@@ -410,10 +413,22 @@ const uint8_t* ConMan_GetPacketConfig(uint16_t *packetLength)
 			*packetLength = BUFFER_SIZE_ACCEL;
 			break;
 
-		/* Mats: added new configuration to read A7 at 4800 Hz */
+		/* Mats: new configuration to read A7 at 4800 Hz */
 		case FixedConfigList_ANALOG_HI1:
 			packet = _analog_hi1Buffer;
 			*packetLength = BUFFER_SIZE_ANALOG_HI1;
+			break;
+
+		/* Mats: new configuration to read A7, A8 at 2400 Hz */
+		case FixedConfigList_ANALOG_HI2:
+			packet = _analog_hi2Buffer;
+			*packetLength = BUFFER_SIZE_ANALOG_HI2;
+			break;
+
+		/* Mats: new configuration to read A7, A8, A9 at 800 Hz */
+		case FixedConfigList_ANALOG_HI3:
+			packet = _analog_hi3Buffer;
+			*packetLength = BUFFER_SIZE_ANALOG_HI3;
 			break;
 
 		case FixedConfigList_IMU:
@@ -725,6 +740,24 @@ void ConMan_StartData()
 			_dataModeActive = true;
 			break;
 
+
+		/* Mats: new configuration to read A7, A8, A9 at 800 Hz */
+		case FixedConfigList_ANALOG_HI3:
+			DEBUG("fixed analog_hi3");
+			_ConMan_AllocateBuffer(_analog_hi3Buffer);
+			ConMan_SetSensorConfig(CONFIG_SIZE_ANALOG_HI3 - LENGTH_BYTE_OFFSET, &_analog_hi3Config[LENGTH_BYTE_OFFSET]);
+			_dataModeActive = true;
+			break;
+
+		/* Mats: new configuration to read A7, A8 at 2400 Hz */
+		case FixedConfigList_ANALOG_HI2:
+			DEBUG("fixed analog_hi2");
+			_ConMan_AllocateBuffer(_analog_hi2Buffer);
+			ConMan_SetSensorConfig(CONFIG_SIZE_ANALOG_HI2 - LENGTH_BYTE_OFFSET, &_analog_hi2Config[LENGTH_BYTE_OFFSET]);
+			_dataModeActive = true;
+			break;
+
+		/* Mats: new configuration to read A7 at 4800 Hz */
 		case FixedConfigList_ANALOG_HI1:
 			DEBUG("fixed analog_hi1");
 			_ConMan_AllocateBuffer(_analog_hi1Buffer);
@@ -964,6 +997,19 @@ void ConMan_StopData()
 			_dataModeActive = false;
 			break;
 
+		/* Mats: new configuration to read A7, A8, A9 at 800 Hz */
+		case FixedConfigList_ANALOG_HI3:
+			ConMan_SetSensorConfig(DISABLE_SIZE_ANALOG_HI3, &_analog_hi3Disable[LENGTH_BYTE_OFFSET]);
+			_dataModeActive = false;
+			break;
+
+		/* Mats: new configuration to read A7, A8 at 2400 Hz */
+		case FixedConfigList_ANALOG_HI2:
+			ConMan_SetSensorConfig(DISABLE_SIZE_ANALOG_HI2, &_analog_hi2Disable[LENGTH_BYTE_OFFSET]);
+			_dataModeActive = false;
+			break;
+
+		/* Mats: new configuration to read A7 at 4800 Hz */
 		case FixedConfigList_ANALOG_HI1:
 			ConMan_SetSensorConfig(DISABLE_SIZE_ANALOG_HI1, &_analog_hi1Disable[LENGTH_BYTE_OFFSET]);
 			_dataModeActive = false;

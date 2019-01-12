@@ -34,7 +34,8 @@
 /* Mats: version 0x20 is same as 0x10 plus 5 minute Idle Timeout feature */ 
 /* Mats: version 0x21 is same as 0x20 plus new 4.8 kHz A7 readout configuration */ 
 /* Mats: version 0x22 is same as 0x21 plus self test volume is always medium */ 
-#define USER_FIRMWARE_MINOR           (0x22u)
+/* Mats: version 0x23 is same as 0x22 plus self A7+A8 and A7+A8+A8 high speed configurations */ 
+#define USER_FIRMWARE_MINOR           (0x23u)
 
 /** Defines the user firmware version with the high byte the major release and the
     low byte the minor release.
