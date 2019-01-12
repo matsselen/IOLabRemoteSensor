@@ -19,7 +19,7 @@
     Mats: 1/1/2019. Added new configuration to read A7 at 4.8 kHz
     Mats: 1/12/2019. Added 2 more fixed configurations to 
                      (i)  read A7 and A8 at 2400 Hz, and
-                     (ii) read A7, A8, and A9 at 800 Hz 
+                     (ii) read A7, A8, and A9 at 800 Hz
 *******************************************************************************/
 
 #ifndef __FIXEDCONFIGLIST_H__
