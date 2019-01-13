@@ -1,0 +1,31 @@
+
+/* Mats: version 0x10 was the last official Indesign version */
+/* Mats: Designate my own modifications by bumping the minor version number starting at 0x20 */
+
+/* The following (0x20, 0x21, 0x22) were built using the original compiler optimization settings (3: intra-process optimization and 3 on the size (1) vs speed (5) scale. Memory model is set to "small" to prevent FLASH2 from being used. This should be needed but the OTA programmer seems a bit flaky for FLASH2 programming so this is an effort to keep it simple).
+*/
+
+/* Mats: version 0x20 is same as 0x10 plus 5 minute Idle Timeout feature.
+This powers the device down 5 minutes after the latest acquisition ends or configuration 
+is changed. In the past a device connected to a paired dongle plugged into a computer never shut 
+down, so this should save batteries in cases where students just leave the device running after finishing a lab.  
+*/ 
+
+/* Mats: version 0x21 is same as 0x20 plus new 4.8 kHz A7 readout configuration.
+This new fixed configuration requires a slightly modified .../resources/app/client/xxx_iolab.config.js file in the application folder in order to be accessible. See "master2_fastA7_iolab.config.js" in this folder for an example. 
+*/ 
+
+/* Mats: version 0x22 is same as 0x21 plus self test volume is always medium.
+This is not a feature that will matter to anyone unless they want to run the device "self-test" function, which is most useful for unit-testing at the factory and perhaps for buy-back or rental programs to verify device operation. The self-test is documented elsewhere. 
+*/ 
+
+/* The following were done using modified compiler optimization settings (4: whole-program optimization and 5 on the size (1) vs speed (5) scale. Memory model is still set to "small".
+*/
+
+/* Mats: version 0x23 is same as 0x22 plus self A7+A8 and A7+A8+A8 high speed configurations.
+Adds two more high-speed analog fixed configurations that may be useful for people that want to read out more than A7 at the maximum sample rate.  Requires a modified .../resources/app/client/xxx_iolab.config.js file in the application folder in order to be accessible. See "master3_fastA7A8A9_iolab.config.js" in this folder for an example.*/ 
+
+/* Mats: version 0x24 is same as 0x23 plus a high speed 8g accelerometer configurations.
+Having just a single 8g full scale accelerometer mode may or may not be that useful since the calibration will reflect 4g full scale and will hence be off by a factor of 2. Ask mats for example xxx_iolab.config.js file if you are feeling brave. I suggest you use the formware in which all accelerometer modes just use 8g by default, since the calibration will take care of any issues and all will be simple (albeit with a slightly lower lsb sensitivity).
+*/ 
+
