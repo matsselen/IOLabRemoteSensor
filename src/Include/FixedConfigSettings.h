@@ -20,6 +20,10 @@
     Mats: 1/12/2019. Added 2 more fixed configurations to 
                      (i)  read A7 and A8 at 2400 Hz, and
                      (ii) read A7, A8, and A9 at 800 Hz 
+    Mats: 1/13/2019. Added 8g full scale 800Hz accelerometer configuration.
+                     This is identical to the ACCEL_HI configuration except for the 8g full scale. 
+                     This configuration will have calibration issue since the magnitude of all numbers will be 
+                     too small by a factor of around two, but it may be useful anyway.
 
 *******************************************************************************/
 
@@ -745,6 +749,17 @@ static const uint8_t _accelHiConfig[CONFIG_SIZE_ACCEL_HI] =
         SensorId_ACCELEROMETER, (AccelerometerKey_OVER_SAMPLE | AccelerometerOverSample_HI_RES),
         SensorId_ACCELEROMETER, (AccelerometerKey_MODE        | AccelerometerMode_ENABLE)
 };
+
+/* Mats: This is basically a copy of the above for use when configuring the 8g full-scale version of this configuration */
+static const uint8_t _accelHi8gConfig[CONFIG_SIZE_ACCEL_HI] =
+{
+        4u, /* number of Key-Value pairs */
+        SensorId_ACCELEROMETER, (AccelerometerKey_SAMPLE_RATE | AccelerometerSampleRate_800),
+        SensorId_ACCELEROMETER, (AccelerometerKey_RESOLUTION  | AccelerometerResolution_8g),
+        SensorId_ACCELEROMETER, (AccelerometerKey_OVER_SAMPLE | AccelerometerOverSample_HI_RES),
+        SensorId_ACCELEROMETER, (AccelerometerKey_MODE        | AccelerometerMode_ENABLE)
+};
+
 
 /** Defines how many bytes are in _accelHiDisable */
 #define DISABLE_SIZE_ACCEL_HI   ( 3u )

@@ -20,6 +20,8 @@
     Mats: 1/12/2019. Added 2 more fixed configurations to 
                      (i)  read A7 and A8 at 2400 Hz, and
                      (ii) read A7, A8, and A9 at 800 Hz
+    Mats: 1/13/2019. Added 8g full scale 800Hz accelerometer configuration (will have calibration issue) 
+
 *******************************************************************************/
 
 #ifndef __FIXEDCONFIGLIST_H__
@@ -45,6 +47,7 @@ typedef enum FixedConfigList
     FixedConfigList_ANLG_HEAD   = 0x0Bu,
     FixedConfigList_HEADER_3V3  = 0x0Cu,
     /* Mats New Configurations */
+    FixedConfigList_ACCEL_HI8G  = 0x12u, /* accelerometer with 8g full scale at 800 Hz */
 	FixedConfigList_ANALOG_HI3  = 0x13u, /* reads A7, A8, A9 at 800 Hz */
 	FixedConfigList_ANALOG_HI2  = 0x14u, /* reads A7, A8 at 2400 Hz */
 	FixedConfigList_ANALOG_HI1  = 0x15u, /* reads A7 at 4800 Hz */

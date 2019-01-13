@@ -22,6 +22,8 @@
     Mats: 1/12/2019. Added 2 more fixed configurations to 
                      (i)  read A7 and A8 at 2400 Hz, and
                      (ii) read A7, A8, and A9 at 800 Hz 
+    Mats: 1/13/2019. Added 8g full scale 800Hz accelerometer configuration (will have calibration issue) 
+
 
 *******************************************************************************/
 
@@ -496,6 +498,12 @@ const uint8_t* ConMan_GetPacketConfig(uint16_t *packetLength)
 			*packetLength = BUFFER_SIZE_ACCEL_HI;
 			break;
 
+		/* Mats: new HI8G configuration has same packet configuration as the regular one above */
+		case FixedConfigList_ACCEL_HI8G:
+			packet = _accelHiBuffer;
+			*packetLength = BUFFER_SIZE_ACCEL_HI;
+			break;
+
 		case FixedConfigList_IMU_HI:
 			packet = _imuHiBuffer;
 			*packetLength = BUFFER_SIZE_IMU_HI;
@@ -856,6 +864,14 @@ void ConMan_StartData()
 			_dataModeActive = true;
 			break;
 
+        /* Mats: configuring the new fast HI8G uses _accelHi8gConfig, defined in FixedConfigSettings.h  */
+		case FixedConfigList_ACCEL_HI8G:
+			DEBUG("fixed accel hi 8g");
+			_ConMan_AllocateBuffer(_accelHiBuffer);
+			ConMan_SetSensorConfig(CONFIG_SIZE_ACCEL_HI - LENGTH_BYTE_OFFSET, &_accelHi8gConfig[LENGTH_BYTE_OFFSET]);
+			_dataModeActive = true;
+			break;
+
 		case FixedConfigList_IMU_HI:
 			DEBUG("fixed imu hi");
 			_ConMan_AllocateBuffer(_imuHiBuffer);
@@ -1076,6 +1092,12 @@ void ConMan_StopData()
 			break;
 
 		case FixedConfigList_ACCEL_HI:
+			ConMan_SetSensorConfig(DISABLE_SIZE_ACCEL_HI, &_accelHiDisable[LENGTH_BYTE_OFFSET]);
+			_dataModeActive = false;
+			break;
+
+		/* Mats: Stopping acquisition with HI8G looks the same as it does for HI */
+		case FixedConfigList_ACCEL_HI8G:
 			ConMan_SetSensorConfig(DISABLE_SIZE_ACCEL_HI, &_accelHiDisable[LENGTH_BYTE_OFFSET]);
 			_dataModeActive = false;
 			break;
