@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "powerOffDelay": "300",
+  "chartMeanParameters": {
+    "duration": 0.5,
+    "numberOfDigits": 2
+  },
+  "fixedConfigurations": [
+    {
+        "code": 19,
+        "desc": "Analog High 3-Input (3.3V)",
+        "highSpeed": false,
+        "frequencies": [200, 400, 800],
+        "sensors": [
+            { "sensorKey": 21, "sampleRate": 800 },
+            { "sensorKey": 22, "sampleRate": 800 },
+            { "sensorKey": 23, "sampleRate": 800 }
+        ]
+    },
+    {
+        "code": 20,
+        "desc": "Analog High 2-Input (3.3V)",
+        "highSpeed": true,
+        "frequencies": [400, 800, 2400],
+        "sensors": [
+            { "sensorKey": 21, "sampleRate": 2400 },
+            { "sensorKey": 22, "sampleRate": 2400 }
+        ]
+    },
+    {
+        "code": 21,
+        "desc": "Analog High 1-Input (3.3V)",
+        "highSpeed": true,
+        "frequencies": [800, 2400, 4800],
+        "sensors": [
+            { "sensorKey": 21, "sampleRate": 4800 }
+        ]
+    }
+  ]
+}
