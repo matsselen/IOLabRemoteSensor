@@ -26,6 +26,7 @@ This is not a feature that will matter to anyone unless they want to run the dev
 Adds two more high-speed analog fixed configurations that may be useful for people that want to read out more than A7 at the maximum sample rate.  Requires a modified .../resources/app/client/xxx_iolab.config.js file in the application folder in order to be accessible. See "master3_fastA7A8A9_iolab.config.js" in this folder for an example.*/ 
 
 /* Mats: version 0x24 is same as 0x23 plus a high speed 8g accelerometer configurations.
-Having just a single 8g full scale accelerometer mode may or may not be that useful since the calibration will reflect 4g full scale and will hence be off by a factor of 2. Ask mats for example xxx_iolab.config.js file if you are feeling brave. I suggest you use the formware in which all accelerometer modes just use 8g by default, since the calibration will take care of any issues and all will be simple (albeit with a slightly lower lsb sensitivity).
-*/ 
+Having just a single 8g full scale accelerometer mode may or may not be that useful since the calibration will reflect 4g full scale and will hence be off by a factor of 2. Ask mats for example xxx_iolab.config.js file if you are feeling brave. I suggest you use the firmware in which all accelerometer modes just use 8g by default, since the calibration will take care of any issues and all will be simple (albeit with a slightly lower lsb sensitivity). */ 
+
+/* Mats: version 0x25 is same as 0x23 but with the 5 minute inactivity timeout disabled since this is now done in the application as long as you are running v1.70.1530 or later. */ 
 

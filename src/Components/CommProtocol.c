@@ -136,6 +136,9 @@ typedef enum CommCommand
 /** Mats: Defines the maximum amount of time the system is allowed to be "idle" (connected but not recording) */
 #define MAX_IDLE_TICK ((uint32_t)( 100u * 300u )) /* 300 sec (5 minutes) at 100 ticks/sec */
 
+/** Mats: Use this to enable/disable idle timeout 1=enabled, 0=disabled*/
+#define ENABLE_IDLE_TIMEOUT (0u)
+
 /*-----------------------LOCAL VARIABLES-------------------------------------*/
 /** A buffer to store the protocol data in */
 static uint8_t _bufferTxZero[DATA_PACKET_SIZE] = { 0u };
@@ -835,7 +838,7 @@ static void _HandleRfStatusISR(void)
 			idleTick += 1;
 		}
 
-		if (idleTick >= MAX_IDLE_TICK)
+		if ( (idleTick >= MAX_IDLE_TICK) && (ENABLE_IDLE_TIMEOUT > 0) )
 		{
 			EventQueue_Add(Event_SHUTDOWN, EventPriority_NORMAL);
 		}
